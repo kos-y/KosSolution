@@ -31,18 +31,4 @@ public partial class MainWindow : Window
 
         DataContext = _viewModel;
     }
-
-    /// <summary>
-    /// イベントログリストの選択変更
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-#pragma warning disable IDE1006
-    private void lbEventLog_SelectionChanged(object sender, SelectionChangedEventArgs e)
-#pragma warning restore IDE1006
-    {
-        if (lbEventLog.SelectedItem is not null) {
-            _viewModel.SelectionChangeEventLog((KEventLog)lbEventLog.SelectedItem);
-        }
-    }
 }

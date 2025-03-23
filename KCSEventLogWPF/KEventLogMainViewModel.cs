@@ -17,9 +17,19 @@ public class KEventLogMainViewModel : KNotifyPropertyChanged
     public ICommand GetEventLogsLocalComputerCommand { get; set; }
 
     /// <summary>
+    /// イベントログの選択変更コマンド
+    /// </summary>
+    public KCommand EventLogSelectionChangedCommand { get; set; }
+
+    /// <summary>
     /// コンピューターから取得したイベントログコレクション
     /// </summary>
     public ObservableCollection<KEventLog> EventLogs { get; } = [];
+
+    /// <summary>
+    /// 選択中のイベントログ
+    /// </summary>
+    public KEventLog? SelectedEventLog { get; set; } = null;
 
     /// <summary>
     /// コンピューターから取得したイベントログエントリコレクション
@@ -33,16 +43,22 @@ public class KEventLogMainViewModel : KNotifyPropertyChanged
     public KEventLogMainViewModel()
     {
         GetEventLogsLocalComputerCommand = new KGetEventLogsLocalComputerCommand(this);
+
+        EventLogSelectionChangedCommand = new KCommand(SelectionChangeEventLog);
     }
 
     /// <summary>
     /// イベントログ変更時の処理
     /// </summary>
-    /// <param name="eventLog">イベントログ</param>
-    public void SelectionChangeEventLog(KEventLog eventLog)
+    public void SelectionChangeEventLog()
     {
+        if (SelectedEventLog is null)
+        {
+            return;
+        }
+
         EventLogEntries.Clear();
-        foreach (KEventLogEntry entry in eventLog.Entries) {
+        foreach (KEventLogEntry entry in SelectedEventLog.Entries) {
             EventLogEntries.Add(entry);
         }
 
