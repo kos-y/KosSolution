@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCSSandBox", "KCSSandBox\KCSSandBox.csproj", "{528ED3E0-51E4-4726-B7A5-C8B8C1E61416}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KCSSandBox", "KCSSandBox\KCSSandBox.csproj", "{528ED3E0-51E4-4726-B7A5-C8B8C1E61416}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCSEventLog", "KCSEventLog\KCSEventLog.csproj", "{29050D50-8782-48F4-A79E-805D6DFE6245}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KCSEventLog", "KCSEventLog\KCSEventLog.csproj", "{29050D50-8782-48F4-A79E-805D6DFE6245}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCSWindows", "KCSWindows\KCSWindows.csproj", "{50BA6BE3-6968-43F8-B988-3F70ED34DEA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KCSWindows", "KCSWindows\KCSWindows.csproj", "{50BA6BE3-6968-43F8-B988-3F70ED34DEA6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KCSCore", "KCSCore\KCSCore.csproj", "{BD43A7C3-4D65-4470-931A-243AEC69BFA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCSWPFCore", "KCSWPFCore\KCSWPFCore.csproj", "{3CC51488-8FBF-4C09-A0FB-288064DA263F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCSEventLogWPF", "KCSEventLogWPF\KCSEventLogWPF.csproj", "{BD4F769D-70CD-475C-A230-B38E2E431B93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCSEventLogViewerWPF", "KCSEventLogViewerWPF\KCSEventLogViewerWPF.csproj", "{BC9E4C72-D204-4772-80A6-674A1054D9A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{BD43A7C3-4D65-4470-931A-243AEC69BFA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD43A7C3-4D65-4470-931A-243AEC69BFA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD43A7C3-4D65-4470-931A-243AEC69BFA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CC51488-8FBF-4C09-A0FB-288064DA263F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CC51488-8FBF-4C09-A0FB-288064DA263F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CC51488-8FBF-4C09-A0FB-288064DA263F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CC51488-8FBF-4C09-A0FB-288064DA263F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD4F769D-70CD-475C-A230-B38E2E431B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4F769D-70CD-475C-A230-B38E2E431B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4F769D-70CD-475C-A230-B38E2E431B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4F769D-70CD-475C-A230-B38E2E431B93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC9E4C72-D204-4772-80A6-674A1054D9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC9E4C72-D204-4772-80A6-674A1054D9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC9E4C72-D204-4772-80A6-674A1054D9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC9E4C72-D204-4772-80A6-674A1054D9A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
