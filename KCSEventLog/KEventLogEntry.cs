@@ -16,7 +16,7 @@ public class KEventLogEntry
     /// <summary>
     /// イベントログ エントリ
     /// </summary>
-    private EventLogEntry _eventLogEntry;
+    private readonly EventLogEntry _eventLogEntry;
 
     /// <summary>
     /// イベントログエントリの種類

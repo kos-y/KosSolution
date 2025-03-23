@@ -7,7 +7,7 @@ namespace KCSSandBox;
 internal class Program
 {
     [SupportedOSPlatform("windows")]
-    static void Main(string[] args)
+    static void Main()
     {
     }
 }

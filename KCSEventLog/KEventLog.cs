@@ -18,7 +18,7 @@ public class KEventLog
     /// <summary>
     /// イベントログ
     /// </summary>
-    private EventLog _eventLog;
+    private readonly EventLog _eventLog;
 
     /// <summary>
     /// イベントログエントリー
@@ -91,7 +91,7 @@ public class KEventLog
     [SupportedOSPlatform("windows")]
     public static ConcurrentBag<KEventLogRecord> GetEventLogRecordsFromEventLogFileFilterEventID(string eventLogFilePath, int eventID)
     {
-        KEventLogQuery q = new KEventLogQuery();
+        KEventLogQuery q = new();
         q.AddEventID(eventID);
 
         return GetEventLogRecordsFromEventLogFileQuery(eventLogFilePath, q);
@@ -107,7 +107,7 @@ public class KEventLog
     [SupportedOSPlatform("windows")]
     public static ConcurrentBag<KEventLogRecord> GetEventLogRecordsFromEventLogFileFilterTimeCreated(string eventLogFilePath, DateTime begin, DateTime end)
     {
-        KEventLogQuery q = new KEventLogQuery();
+        KEventLogQuery q = new();
         q.AddTimeCreatedGreaterThanOrEqual(begin);
         q.AddTimeCreatedLessThanOrEqual(end);
 
@@ -124,7 +124,7 @@ public class KEventLog
     [SupportedOSPlatform("windows")]
     public static ConcurrentBag<KEventLogRecord> GetEventLogRecordsFromEventLogFileFilterTimeCreatedBegin(string eventLogFilePath, DateTime begin)
     {
-        KEventLogQuery q = new KEventLogQuery();
+        KEventLogQuery q = new();
         q.AddTimeCreatedGreaterThanOrEqual(begin);
 
         return GetEventLogRecordsFromEventLogFileQuery(eventLogFilePath, q);
@@ -140,7 +140,7 @@ public class KEventLog
     [SupportedOSPlatform("windows")]
     public static ConcurrentBag<KEventLogRecord> GetEventLogRecordsFromEventLogFileFilterTimeCreatedEnd(string eventLogFilePath, DateTime end)
     {
-        KEventLogQuery q = new KEventLogQuery();
+        KEventLogQuery q = new();
         q.AddTimeCreatedLessThanOrEqual(end);
 
         return GetEventLogRecordsFromEventLogFileQuery(eventLogFilePath, q);
@@ -155,7 +155,7 @@ public class KEventLog
     [SupportedOSPlatform("windows")]
     public static ConcurrentBag<KEventLogRecord> GetEventLogRecordsFromEventLogFileFilterComputer(string eventLogFilePath, string computer)
     {
-        KEventLogQuery q = new KEventLogQuery();
+        KEventLogQuery q = new();
         q.AddComputer(computer);
 
         return GetEventLogRecordsFromEventLogFileQuery(eventLogFilePath, q);

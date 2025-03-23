@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCSEventLog", "KCSEventLog\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KCSWindows", "KCSWindows\KCSWindows.csproj", "{50BA6BE3-6968-43F8-B988-3F70ED34DEA6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KCSCore", "KCSCore\KCSCore.csproj", "{BD43A7C3-4D65-4470-931A-243AEC69BFA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{50BA6BE3-6968-43F8-B988-3F70ED34DEA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50BA6BE3-6968-43F8-B988-3F70ED34DEA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50BA6BE3-6968-43F8-B988-3F70ED34DEA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD43A7C3-4D65-4470-931A-243AEC69BFA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD43A7C3-4D65-4470-931A-243AEC69BFA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD43A7C3-4D65-4470-931A-243AEC69BFA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD43A7C3-4D65-4470-931A-243AEC69BFA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

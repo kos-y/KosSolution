@@ -14,17 +14,17 @@ public class KEventLogQuery
     /// <summary>
     /// System配下の絞り込み条件
     /// </summary>
-    private List<string> _systemConditions = [];
+    private readonly List<string> _systemConditions = [];
 
     /// <summary>
     /// TimeCreatedの絞り込み条件
     /// </summary>
-    private List<string> _timeCreatedConditions = [];
+    private readonly List<string> _timeCreatedConditions = [];
 
     /// <summary>
     /// EventData配下の絞り込み条件
     /// </summary>
-    private List<string> _eventDataConditions = [];
+    private readonly List<string> _eventDataConditions = [];
 
 
     /// <summary>
