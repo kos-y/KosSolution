@@ -12,9 +12,9 @@ namespace KCSEventLogWPF;
 public class KEventLogMainViewModel : KNotifyPropertyChanged
 {
     /// <summary>
-    /// ローカルコンピューターからい弁ログを取得するコマンド
+    /// ローカルコンピューターからイベントログを取得するコマンド
     /// </summary>
-    public ICommand GetEventLogsLocalComputerCommand { get; set; }
+    public KCommand GetEventLogsLocalComputerCommand { get; set; }
 
     /// <summary>
     /// イベントログの選択変更コマンド
@@ -42,15 +42,27 @@ public class KEventLogMainViewModel : KNotifyPropertyChanged
     /// </summary>
     public KEventLogMainViewModel()
     {
-        GetEventLogsLocalComputerCommand = new KGetEventLogsLocalComputerCommand(this);
-
+        GetEventLogsLocalComputerCommand = new KCommand(GetEventLogsLocalComputer);
         EventLogSelectionChangedCommand = new KCommand(SelectionChangeEventLog);
+    }
+
+    /// <summary>
+    /// イベントログをローカルコンピューターから取得
+    /// </summary>
+    private void GetEventLogsLocalComputer()
+    {
+        IEnumerable<KEventLog> eventLogs = KEventLog.GetEventLogsLocalComputer();
+
+        EventLogs.Clear();
+        foreach (KEventLog eventLog in eventLogs) {
+            EventLogs.Add(eventLog);
+        }
     }
 
     /// <summary>
     /// イベントログ変更時の処理
     /// </summary>
-    public void SelectionChangeEventLog()
+    private void SelectionChangeEventLog()
     {
         if (SelectedEventLog is null)
         {
