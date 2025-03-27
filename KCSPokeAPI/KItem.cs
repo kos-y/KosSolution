@@ -79,7 +79,7 @@ public class KItem
     /// <summary>
     /// ベビーポケモンの進化トリガー
     /// </summary>
-    public KAPIResource BabyTriggerFor { get; set; } = new();
+    public required KAPIResource BabyTriggerFor { get; set; }
 
     /// <summary>
     /// 技マシンリスト

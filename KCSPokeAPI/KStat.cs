@@ -54,5 +54,5 @@ public class KStat
     /// <summary>
     /// 名前リスト
     /// </summary>
-    public List<KName> Names { get; set; } = new();
+    public List<KName> Names { get; set; } = [];
 }

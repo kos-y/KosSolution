@@ -1,4 +1,6 @@
-﻿namespace KCSPokeAPI;
+﻿using System.Text.Json.Serialization;
+
+namespace KCSPokeAPI;
 
 /// <summary>
 /// API リソース
@@ -8,5 +10,6 @@ public class KAPIResource
     /// <summary>
     /// URL
     /// </summary>
-    public string URL { get; set; } = string.Empty;
+    [JsonPropertyName("url")]
+    public required string URL { get; set; } = string.Empty;
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace KCSPokeAPI;
 
@@ -14,20 +10,24 @@ public class KAPIResourceList
     /// <summary>
     /// 件数
     /// </summary>
-    public int Count { get; set; }
+    [JsonPropertyName("count")]
+    public required int Count { get; set; }
 
     /// <summary>
     /// 次ページへのURL
     /// </summary>
-    public string Next { get; set; } = string.Empty;
+    [JsonPropertyName("next")]
+    public required string? Next { get; set; }
 
     /// <summary>
     /// 前ページへのURL
     /// </summary>
-    public string Previous { get; set; } = string.Empty;
+    [JsonPropertyName("previous")]
+    public required string? Previous { get; set; }
 
     /// <summary>
     /// 結果リスト
     /// </summary>
-    public List<KAPIResource> Results { get; set; } = [];
+    [JsonPropertyName("results")]
+    public required List<KAPIResource> Results { get; set; }
 }

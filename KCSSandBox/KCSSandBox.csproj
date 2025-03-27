@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KCSEventLog\KCSEventLog.csproj" />
+    <ProjectReference Include="..\KCSPokeAPI\KCSPokeAPI.csproj" />
   </ItemGroup>
 
 </Project>

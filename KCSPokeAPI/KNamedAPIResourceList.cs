@@ -19,12 +19,12 @@ public class KNamedAPIResourceList
     /// <summary>
     /// 次ページへのURL
     /// </summary>
-    public string Next { get; set; } = string.Empty;
+    public string? Next { get; set; } = string.Empty;
 
     /// <summary>
     /// 前ページへのURL
     /// </summary>
-    public string Previous { get; set; } = string.Empty;
+    public string? Previous { get; set; } = string.Empty;
 
     /// <summary>
     /// 結果リスト

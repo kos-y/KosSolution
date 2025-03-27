@@ -14,7 +14,7 @@ public class KMachineVersionDetail
     /// <summary>
     /// 技マシン
     /// </summary>
-    public KAPIResource Machine { get; set; } = new();
+    public required KAPIResource Machine { get; set; }
 
     /// <summary>
     /// バージョングループ

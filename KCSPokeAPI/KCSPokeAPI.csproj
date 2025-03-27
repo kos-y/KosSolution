@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\KCSCore\KCSCore.csproj" />
+  </ItemGroup>
+
 </Project>
