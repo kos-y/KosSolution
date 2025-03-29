@@ -19,6 +19,6 @@ public class KVersionGameIndex
     /// <summary>
     /// バージョン
     /// </summary>
-    public KNamedAPIResource Version { get; set; } = new();
+    public KNamedAPIResource Version { get; set; }
 
 }

@@ -14,7 +14,7 @@ public class KPokemonHeldItem
     /// <summary>
     /// アイテム
     /// </summary>
-    public KNamedAPIResource Item { get; set; } = new();
+    public KNamedAPIResource Item { get; set; }
 
     /// <summary>
     /// バージョンごとの詳細情報

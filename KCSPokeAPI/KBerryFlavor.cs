@@ -29,7 +29,7 @@ public class KBerryFlavor
     /// <summary>
     /// ポケモンコンテストの部門
     /// </summary>
-    public KNamedAPIResource ContestType { get; set; } = new();
+    public KNamedAPIResource ContestType { get; set; }
 
     /// <summary>
     /// きのみの味名リスト

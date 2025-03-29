@@ -19,5 +19,5 @@ public class KPokemonFormType
     /// <summary>
     /// タイプ
     /// </summary>
-    public KNamedAPIResource Type { get; set; } = new();
+    public KNamedAPIResource Type { get; set; }
 }

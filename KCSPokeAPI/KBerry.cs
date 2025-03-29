@@ -54,7 +54,7 @@ public class KBerry
     /// <summary>
     /// 固さ
     /// </summary>
-    public KNamedAPIResource Firmness { get; set; } = new();
+    public KNamedAPIResource Firmness { get; set; }
 
     /// <summary>
     /// 味リスト
@@ -64,10 +64,10 @@ public class KBerry
     /// <summary>
     /// アイテム
     /// </summary>
-    public KNamedAPIResource Item { get; set; } = new();
+    public KNamedAPIResource Item { get; set; }
 
     /// <summary>
     /// 「しぜんのめぐみ」の技タイプ
     /// </summary>
-    public KNamedAPIResource NaturalGiftType { get; set; } = new();
+    public KNamedAPIResource NaturalGiftType { get; set; }
 }

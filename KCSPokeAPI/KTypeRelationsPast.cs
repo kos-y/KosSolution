@@ -14,10 +14,10 @@ public class KTypeRelationsPast
     /// <summary>
     /// 世代
     /// </summary>
-    public KNamedAPIResource Generation { get; set; } = new();
+    public KNamedAPIResource Generation { get; set; }
 
     /// <summary>
     /// タイプ相性
     /// </summary>
-    public KTypeRelations DamageRelations { get; set; } = new();
+    public KTypeRelations DamageRelations { get; set; }
 }

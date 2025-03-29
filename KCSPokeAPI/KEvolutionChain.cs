@@ -19,7 +19,7 @@ public class KEvolutionChain
     /// <summary>
     /// ベビーポケモンが進化するアイテム
     /// </summary>
-    public KNamedAPIResource BabyTriggerItem { get; set; } = new();
+    public KNamedAPIResource BabyTriggerItem { get; set; }
 
     /// <summary>
     /// チェーン

@@ -29,7 +29,7 @@ public class KCharacteristic
     /// <summary>
     /// 最高ステータス
     /// </summary>
-    public KNamedAPIResource HighestStat { get; set; } = new();
+    public KNamedAPIResource HighestStat { get; set; }
 
     /// <summary>
     /// 説明リスト

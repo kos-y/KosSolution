@@ -19,5 +19,5 @@ public class KNaturePokeathlonStatAffect
     /// <summary>
     /// 性格
     /// </summary>
-    public KNamedAPIResource Nature { get; set; } = new();
+    public KNamedAPIResource Nature { get; set; }
 }

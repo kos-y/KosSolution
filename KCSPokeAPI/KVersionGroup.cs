@@ -29,7 +29,7 @@ public class KVersionGroup
     /// <summary>
     /// 世代
     /// </summary>
-    public KNamedAPIResource Generation { get; set; } = new();
+    public KNamedAPIResource Generation { get; set; }
 
     /// <summary>
     /// 技の習得方法リスト

@@ -54,7 +54,7 @@ public class KPokemonForm
     /// <summary>
     /// ポケモン
     /// </summary>
-    public KNamedAPIResource Pokemon { get; set; } = new();
+    public KNamedAPIResource Pokemon { get; set; }
 
     /// <summary>
     /// タイプリスト
@@ -69,7 +69,7 @@ public class KPokemonForm
     /// <summary>
     /// バージョングループ
     /// </summary>
-    public KNamedAPIResource VersionGroup { get; set; } = new();
+    public KNamedAPIResource VersionGroup { get; set; }
 
     /// <summary>
     /// 名前リスト

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KCSPokeAPI;
+﻿namespace KCSPokeAPI;
 
 /// <summary>
 /// 愛称
@@ -19,5 +13,5 @@ public class KAwesomeName
     /// <summary>
     /// 言語
     /// </summary>
-    public KNamedAPIResource Language { get; set; } = new();
+    public KNamedAPIResource Language { get; set; }
 }

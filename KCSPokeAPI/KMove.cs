@@ -54,17 +54,17 @@ public class KMove
     /// <summary>
     /// コンテストのタイプ
     /// </summary>
-    public KNamedAPIResource ContestType { get; set; } = new();
+    public KNamedAPIResource ContestType { get; set; }
 
     /// <summary>
     /// コンテストで使用した場合の効果
     /// </summary>
-    public KNamedAPIResource ContestEffect { get; set; } = new();
+    public KNamedAPIResource ContestEffect { get; set; }
 
     /// <summary>
     /// ダメージの種類
     /// </summary>
-    public KNamedAPIResource DamageClass { get; set; } = new();
+    public KNamedAPIResource DamageClass { get; set; }
 
     /// <summary>
     /// 効果リスト
@@ -84,12 +84,12 @@ public class KMove
     /// <summary>
     /// 世代
     /// </summary>
-    public KNamedAPIResource Generation { get; set; } = new();
+    public KNamedAPIResource Generation { get; set; }
 
     /// <summary>
     /// 技マシンリスト
     /// </summary>
-    public List<KMachineVersionDetail> Machines { get; set; } = new();
+    public List<KMachineVersionDetail> Machines { get; set; } = [];
 
     /// <summary>
     /// メタデータ
@@ -114,15 +114,15 @@ public class KMove
     /// <summary>
     /// スーパーコンテストの効果
     /// </summary>
-    public KNamedAPIResource SuperContestEffect { get; set; } = new();
+    public KNamedAPIResource SuperContestEffect { get; set; }
 
     /// <summary>
     /// 対象
     /// </summary>
-    public KNamedAPIResource Target { get; set; } = new();
+    public KNamedAPIResource Target { get; set; }
 
     /// <summary>
     /// 技タイプ
     /// </summary>
-    public KNamedAPIResource Type { get; set; } = new();
+    public KNamedAPIResource Type { get; set; }
 }

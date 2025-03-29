@@ -39,10 +39,10 @@ public class KPastMoveStatValues
     /// <summary>
     /// 技タイプ
     /// </summary>
-    public KNamedAPIResource Type { get; set; } = new();
+    public KNamedAPIResource Type { get; set; }
 
     /// <summary>
     /// バージョングループ
     /// </summary>
-    public KNamedAPIResource VersionGroup { get; set; } = new();
+    public KNamedAPIResource VersionGroup { get; set; }
 }

@@ -19,5 +19,5 @@ public class KMoveStatChange
     /// <summary>
     /// 影響を与えるステータス
     /// </summary>
-    public KNamedAPIResource Stat { get; set; } = new();
+    public KNamedAPIResource Stat { get; set; }
 }

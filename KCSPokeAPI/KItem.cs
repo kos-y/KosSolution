@@ -34,7 +34,7 @@ public class KItem
     /// <summary>
     /// なげつけるの効果
     /// </summary>
-    public KNamedAPIResource FlingEffect { get; set; } = new();
+    public KNamedAPIResource FlingEffect { get; set; }
 
     /// <summary>
     /// アイテムを持っていることによる特性
@@ -44,7 +44,7 @@ public class KItem
     /// <summary>
     /// カテゴリ
     /// </summary>
-    public KNamedAPIResource Category { get; set; } = new();
+    public KNamedAPIResource Category { get; set; }
 
     /// <summary>
     /// 効果リスト

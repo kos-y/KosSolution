@@ -14,7 +14,7 @@ public class KLocationAreaEncounter
     /// <summary>
     /// 場所エリア
     /// </summary>
-    public KNamedAPIResource LocationArea { get; set; } = new();
+    public KNamedAPIResource LocationArea { get; set; }
 
     /// <summary>
     /// バージョンごとの詳細

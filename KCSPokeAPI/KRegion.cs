@@ -34,7 +34,7 @@ public class KRegion
     /// <summary>
     /// メインの世代
     /// </summary>
-    public KNamedAPIResource MainGeneration { get; set; } = new();
+    public KNamedAPIResource MainGeneration { get; set; }
 
     /// <summary>
     /// ポケモン図鑑リスト

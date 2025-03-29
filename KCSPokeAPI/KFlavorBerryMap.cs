@@ -19,5 +19,5 @@ public class KFlavorBerryMap
     /// <summary>
     /// 味
     /// </summary>
-    public KNamedAPIResource Flavor { get; set; } = new();
+    public KNamedAPIResource Flavor { get; set; }
 }

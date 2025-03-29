@@ -19,15 +19,15 @@ public class KMachine
     /// <summary>
     /// アイテム
     /// </summary>
-    public KNamedAPIResource Item { get; set; } = new();
+    public KNamedAPIResource Item { get; set; }
 
     /// <summary>
     /// 技
     /// </summary>
-    public KNamedAPIResource Move { get; set; } = new();
+    public KNamedAPIResource Move { get; set; }
 
     /// <summary>
     /// バージョングループ
     /// </summary>
-    public KNamedAPIResource VersionGroup { get; set; } = new();
+    public KNamedAPIResource VersionGroup { get; set; }
 }

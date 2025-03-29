@@ -24,22 +24,22 @@ public class KNature
     /// <summary>
     /// 下降するステータス
     /// </summary>
-    public KNamedAPIResource DecreasedStat { get; set; } = new();
+    public KNamedAPIResource DecreasedStat { get; set; }
 
     /// <summary>
     /// 上昇するステータス
     /// </summary>
-    public KNamedAPIResource IncreasedStat { get; set; } = new();
+    public KNamedAPIResource IncreasedStat { get; set; }
 
     /// <summary>
     /// 嫌いなきのみの味
     /// </summary>
-    public KNamedAPIResource HatesFlavor { get; set; } = new();
+    public KNamedAPIResource HatesFlavor { get; set; }
 
     /// <summary>
     /// 好きなきのみの味
     /// </summary>
-    public KNamedAPIResource LikesFlavor { get; set; } = new();
+    public KNamedAPIResource LikesFlavor { get; set; }
 
     /// <summary>
     /// 影響を与えるポケスロンのステータス

@@ -14,7 +14,7 @@ public class KVersionEncounterDetail
     /// <summary>
     /// バージョン
     /// </summary>
-    public KNamedAPIResource Version { get; set; } = new();
+    public KNamedAPIResource Version { get; set; }
 
     /// <summary>
     /// エンカウントの最大確率

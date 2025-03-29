@@ -19,10 +19,10 @@ public class KMoveFlavorText
     /// <summary>
     /// 言語
     /// </summary>
-    public KNamedAPIResource Language { get; set; } = new();
+    public KNamedAPIResource Language { get; set; }
 
     /// <summary>
     /// バージョングループ
     /// </summary>
-    public KNamedAPIResource VersionGroup { get; set; } = new();
+    public KNamedAPIResource VersionGroup { get; set; }
 }

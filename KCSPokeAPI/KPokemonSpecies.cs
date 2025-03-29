@@ -74,7 +74,7 @@ public class KPokemonSpecies
     /// <summary>
     /// 成長速度
     /// </summary>
-    public KNamedAPIResource GrowthRate { get; set; } = new();
+    public KNamedAPIResource GrowthRate { get; set; }
 
     /// <summary>
     /// ポケモン図鑑番号リスト
@@ -89,32 +89,32 @@ public class KPokemonSpecies
     /// <summary>
     /// 色
     /// </summary>
-    public KNamedAPIResource Color { get; set; } = new();
+    public KNamedAPIResource Color { get; set; }
 
     /// <summary>
     /// 形状
     /// </summary>
-    public KNamedAPIResource Shape { get; set; } = new();
+    public KNamedAPIResource Shape { get; set; }
 
     /// <summary>
     /// 進化元
     /// </summary>
-    public KNamedAPIResource EvolvesFromSpecies { get; set; } = new();
+    public KNamedAPIResource EvolvesFromSpecies { get; set; }
 
     /// <summary>
     /// 進化チェーン
     /// </summary>
-    public KNamedAPIResource EvolutionChain { get; set; } = new();
+    public KNamedAPIResource EvolutionChain { get; set; }
 
     /// <summary>
     /// 生息地
     /// </summary>
-    public KNamedAPIResource Habitat { get; set; } = new();
+    public KNamedAPIResource Habitat { get; set; }
 
     /// <summary>
     /// 世代
     /// </summary>
-    public KNamedAPIResource Generation { get; set; } = new();
+    public KNamedAPIResource Generation { get; set; }
 
     /// <summary>
     /// 名前リスト

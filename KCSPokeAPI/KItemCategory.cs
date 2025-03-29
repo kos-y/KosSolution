@@ -34,5 +34,5 @@ public class KItemCategory
     /// <summary>
     /// ポケット
     /// </summary>
-    public KNamedAPIResource Pocket { get; set; } = new KNamedAPIResource();
+    public KNamedAPIResource Pocket { get; set; }
 }

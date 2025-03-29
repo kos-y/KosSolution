@@ -19,5 +19,5 @@ public class KPokemonSpeciesDexEntry
     /// <summary>
     /// ポケモン図鑑
     /// </summary>
-    public KNamedAPIResource Pokedex { get; set; } = new();
+    public KNamedAPIResource Pokedex { get; set; }
 }

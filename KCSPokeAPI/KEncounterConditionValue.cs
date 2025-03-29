@@ -24,7 +24,7 @@ public class KEncounterConditionValue
     /// <summary>
     /// エンカウント条件
     /// </summary>
-    public KNamedAPIResource Condition { get; set; } = new();
+    public KNamedAPIResource Condition { get; set; }
 
     /// <summary>
     /// エンカウント条件値名リスト

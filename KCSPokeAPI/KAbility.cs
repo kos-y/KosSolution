@@ -29,7 +29,7 @@ public class KAbility
     /// <summary>
     /// 世代
     /// </summary>
-    public KNamedAPIResource Generation { get; set; } = new();
+    public KNamedAPIResource Generation { get; set; }
 
     /// <summary>
     /// 特性名リスト

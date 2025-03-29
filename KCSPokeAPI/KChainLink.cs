@@ -19,7 +19,7 @@ public class KChainLink
     /// <summary>
     /// 種族
     /// </summary>
-    public KNamedAPIResource Species { get; set; } = new();
+    public KNamedAPIResource Species { get; set; }
 
     /// <summary>
     /// 進化条件詳細リスト

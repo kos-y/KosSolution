@@ -19,5 +19,5 @@ public class KPokemonSpeciesVariety
     /// <summary>
     /// ポケモン
     /// </summary>
-    public KNamedAPIResource Pokemon { get; set; } = new();
+    public KNamedAPIResource Pokemon { get; set; }
 }

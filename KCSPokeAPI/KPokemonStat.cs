@@ -14,7 +14,7 @@ public class KPokemonStat
     /// <summary>
     /// ステータス
     /// </summary>
-    public KNamedAPIResource Stat { get; set; } = new();
+    public KNamedAPIResource Stat { get; set; }
 
     /// <summary>
     /// 努力値

@@ -24,7 +24,7 @@ public class KContestType
     /// <summary>
     /// きのみの味
     /// </summary>
-    public KNamedAPIResource BerryFlavor { get; set; } = new();
+    public KNamedAPIResource BerryFlavor { get; set; }
 
     /// <summary>
     /// コンテストの部門名リスト

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace KCSPokeAPI;
@@ -14,10 +15,12 @@ public class KNamedAPIResource
     /// <summary>
     /// リソース名
     /// </summary>
-    public string Name { get; set; } = string.Empty;
+    [JsonPropertyName("name")]
+    public required string Name { get; set; }
 
     /// <summary>
     /// URL
     /// </summary>
-    public string URL { get; set; } = string.Empty;
+    [JsonPropertyName("url")]
+    public required string URL { get; set; }
 }

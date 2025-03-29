@@ -14,12 +14,12 @@ public class KMoveMetaData
     /// <summary>
     /// 状態異常
     /// </summary>
-    public KNamedAPIResource Ailment { get; set; } = new();
+    public KNamedAPIResource Ailment { get; set; }
 
     /// <summary>
     /// 技のカテゴリ
     /// </summary>
-    public KNamedAPIResource Category { get; set; } = new();
+    public KNamedAPIResource Category { get; set; }
 
     /// <summary>
     /// 最低攻撃回数

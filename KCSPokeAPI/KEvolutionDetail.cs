@@ -19,7 +19,7 @@ public class KEvolutionDetail
     /// <summary>
     /// 進化するトリガー
     /// </summary>
-    public KNamedAPIResource Trigger { get; set; } = new();
+    public KNamedAPIResource Trigger { get; set; }
 
     /// <summary>
     /// ポケモンの性別
@@ -29,22 +29,22 @@ public class KEvolutionDetail
     /// <summary>
     /// 所持アイテム
     /// </summary>
-    public KNamedAPIResource HeldItem { get; set; } = new();
+    public KNamedAPIResource HeldItem { get; set; }
 
     /// <summary>
     /// 覚えている技
     /// </summary>
-    public KNamedAPIResource KnownMove { get; set; } = new();
+    public KNamedAPIResource KnownMove { get; set; }
 
     /// <summary>
     /// 覚えている技タイプ
     /// </summary>
-    public KNamedAPIResource KnownMoveType { get; set; } = new();
+    public KNamedAPIResource KnownMoveType { get; set; }
 
     /// <summary>
     /// 進化する場所
     /// </summary>
-    public KNamedAPIResource Location { get; set; } = new();
+    public KNamedAPIResource Location { get; set; }
 
     /// <summary>
     /// 進化する最低レベル
@@ -74,12 +74,12 @@ public class KEvolutionDetail
     /// <summary>
     /// 進化に必要な手持ち種族
     /// </summary>
-    public KNamedAPIResource PartySpecies { get; set; } = new();
+    public KNamedAPIResource PartySpecies { get; set; }
 
     /// <summary>
     /// 進化に必要な手持ちポケモンタイプ
     /// </summary>
-    public KNamedAPIResource PartyType { get; set; } = new();
+    public KNamedAPIResource PartyType { get; set; }
 
     /// <summary>
     /// 攻撃と防御の関係性
@@ -99,7 +99,7 @@ public class KEvolutionDetail
     /// <summary>
     /// 進化する交換条件
     /// </summary>
-    public KNamedAPIResource TrageSpecies { get; set; } = new();
+    public KNamedAPIResource TrageSpecies { get; set; }
 
     /// <summary>
     /// 進化時にゲーム機を逆さまにする必要があるか

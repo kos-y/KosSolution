@@ -19,5 +19,5 @@ public class KNatureStatChange
     /// <summary>
     /// ポケスロンのステータス
     /// </summary>
-    public KNamedAPIResource PokeathlonStat { get; set; } = new();
+    public KNamedAPIResource PokeathlonStat { get; set; }
 }

@@ -19,5 +19,5 @@ public class KName
     /// <summary>
     /// 言語
     /// </summary>
-    public KNamedAPIResource Language { get; set; } = new();
+    public KNamedAPIResource Language { get; set; }
 }

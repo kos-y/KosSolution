@@ -19,10 +19,10 @@ public class KFlavorText
     /// <summary>
     /// 言語
     /// </summary>
-    public KNamedAPIResource Language { get; set; } = new();
+    public KNamedAPIResource Language { get; set; }
 
     /// <summary>
     /// バージョン
     /// </summary>
-    public KNamedAPIResource Version { get; set; } = new();
+    public KNamedAPIResource Version { get; set; }
 }

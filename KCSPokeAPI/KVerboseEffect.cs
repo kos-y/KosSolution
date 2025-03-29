@@ -24,5 +24,5 @@ public class KVerboseEffect
     /// <summary>
     /// 言語
     /// </summary>
-    public KNamedAPIResource Language { get; set; } = new();
+    public KNamedAPIResource Language { get; set; }
 }

@@ -34,7 +34,7 @@ public class KGeneration
     /// <summary>
     /// メイン地域
     /// </summary>
-    public KNamedAPIResource MainRegion { get; set; } = new();
+    public KNamedAPIResource MainRegion { get; set; }
 
     /// <summary>
     /// 技リスト

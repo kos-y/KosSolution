@@ -24,5 +24,5 @@ public class KMoveBattleStylePreference
     /// <summary>
     /// 戦闘スタイル
     /// </summary>
-    public KNamedAPIResource MoveBattleStyle { get; set; } = new();
+    public KNamedAPIResource MoveBattleStyle { get; set; }
 }

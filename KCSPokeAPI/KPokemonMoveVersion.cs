@@ -14,12 +14,12 @@ public class KPokemonMoveVersion
     /// <summary>
     /// 技の習得方法
     /// </summary>
-    public KNamedAPIResource MoveLearnMethod { get; set; } = new();
+    public KNamedAPIResource MoveLearnMethod { get; set; }
 
     /// <summary>
     /// バージョングループ
     /// </summary>
-    public KNamedAPIResource VersionGroup { get; set; } = new();
+    public KNamedAPIResource VersionGroup { get; set; }
 
     /// <summary>
     /// 習得最低レベル

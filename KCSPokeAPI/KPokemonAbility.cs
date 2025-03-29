@@ -24,5 +24,5 @@ public class KPokemonAbility
     /// <summary>
     /// 特性
     /// </summary>
-    public KNamedAPIResource Ability { get; set; } = new();
+    public KNamedAPIResource Ability { get; set; }
 }

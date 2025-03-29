@@ -24,5 +24,5 @@ public class KPalParkEncounterArea
     /// <summary>
     /// エリア
     /// </summary>
-    public KNamedAPIResource Area { get; set; } = new();
+    public KNamedAPIResource Area { get; set; }
 }

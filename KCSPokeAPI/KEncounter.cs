@@ -34,5 +34,5 @@ public class KEncounter
     /// <summary>
     /// エンカウント方法
     /// </summary>
-    public KNamedAPIResource Method { get; set; } = new KNamedAPIResource();
+    public KNamedAPIResource Method { get; set; }
 }

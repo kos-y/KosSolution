@@ -34,7 +34,7 @@ public class KLocationArea
     /// <summary>
     /// 場所
     /// </summary>
-    public KNamedAPIResource Location { get; set; } = new();
+    public KNamedAPIResource Location { get; set; }
 
     /// <summary>
     /// エンカウントポケモンリスト

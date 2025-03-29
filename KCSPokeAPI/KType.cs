@@ -39,12 +39,12 @@ public class KType
     /// <summary>
     /// 世代
     /// </summary>
-    public KNamedAPIResource Generation { get; set; } = new();
+    public KNamedAPIResource Generation { get; set; }
 
     /// <summary>
     /// 技のダメージ分類
     /// </summary>
-    public KNamedAPIResource MoveDamageClass { get; set; } = new();
+    public KNamedAPIResource MoveDamageClass { get; set; }
 
     /// <summary>
     /// 名前リスト

@@ -14,7 +14,7 @@ public class KEncounterMethodRate
     /// <summary>
     /// エンカウント方法
     /// </summary>
-    public KNamedAPIResource EncounterMethod { get; set; } = new();
+    public KNamedAPIResource EncounterMethod { get; set; }
 
     /// <summary>
     /// バージョンごとのエンカウント詳細

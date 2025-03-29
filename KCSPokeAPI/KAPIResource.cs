@@ -11,5 +11,5 @@ public class KAPIResource
     /// URL
     /// </summary>
     [JsonPropertyName("url")]
-    public required string URL { get; set; } = string.Empty;
+    public required string URL { get; set; }
 }

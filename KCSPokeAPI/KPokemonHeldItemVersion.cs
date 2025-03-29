@@ -14,7 +14,7 @@ public class KPokemonHeldItemVersion
     /// <summary>
     /// バージョン
     /// </summary>
-    public KNamedAPIResource Version { get; set; } = new();
+    public KNamedAPIResource Version { get; set; }
 
     /// <summary>
     /// 確率

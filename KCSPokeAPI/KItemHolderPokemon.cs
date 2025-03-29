@@ -14,7 +14,7 @@ public class KItemHolderPokemon
     /// <summary>
     /// ポケモン
     /// </summary>
-    public KNamedAPIResource Pokemon { get; set; } = new();
+    public KNamedAPIResource Pokemon { get; set; }
 
     /// <summary>
     /// 詳細リスト

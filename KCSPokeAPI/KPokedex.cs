@@ -44,7 +44,7 @@ public class KPokedex
     /// <summary>
     /// 地域
     /// </summary>
-    public KNamedAPIResource Region { get; set; } = new();
+    public KNamedAPIResource Region { get; set; }
 
     /// <summary>
     /// バージョングループリスト

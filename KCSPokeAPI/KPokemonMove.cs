@@ -14,7 +14,7 @@ public class KPokemonMove
     /// <summary>
     /// 技
     /// </summary>
-    public KNamedAPIResource Move { get; set; } = new();
+    public KNamedAPIResource Move { get; set; }
 
     /// <summary>
     /// バージョンごとの詳細
