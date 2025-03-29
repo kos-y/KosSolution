@@ -61,7 +61,7 @@ public class KPokeAPI
     /// コンテスト効果リソースリストの取得
     /// </summary>
     /// <returns></returns>
-    public static KAPIResourceList GetContestEffect()
+    public static KAPIResourceList GetContestEffects()
     {
         return GetAPIResourceList("contest-effect");
     }
@@ -70,9 +70,14 @@ public class KPokeAPI
     /// スーパーコンテストの効果リソースリストの取得
     /// </summary>
     /// <returns></returns>
-    public static KAPIResourceList GetSuperContestEffect()
+    public static KAPIResourceList GetSuperContestEffects()
     {
         return GetAPIResourceList("super-contest-effect");
+    }
+
+    public static KNamedAPIResourceList GetEncounterMethods()
+    {
+        return GetNamedAPIResourceList("encounter-method");
     }
 
 
