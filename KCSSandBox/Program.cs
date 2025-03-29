@@ -8,10 +8,10 @@ internal class Program
 {
     static void Main()
     {
-        KNamedAPIResourceList langs = KPokeAPI.GetLanguages();
-        foreach (KNamedAPIResource r in langs.Results) {
-            KLanguage lang = KLanguage.GetLanguage(r.URL);
-            Console.WriteLine(lang.Name);
+        KNamedAPIResourceList apiList = KPokeAPI.GetBerries();
+        foreach (KNamedAPIResource api in apiList.Results) {
+            KBerry r = KBerry.GetBerry(api.URL);
+            Console.WriteLine(r.Name);
         }
     }
 }

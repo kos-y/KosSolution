@@ -22,6 +22,15 @@ public class KPokeAPI
     }
 
     /// <summary>
+    /// きのみリソースリストの取得
+    /// </summary>
+    /// <returns>きのみリソースリスト</returns>
+    public static KNamedAPIResourceList GetBerries()
+    {
+        return GetNamedAPIResourceList("berry");
+    }
+
+    /// <summary>
     /// APIリソースリストの解析
     /// </summary>
     /// <param name="endPoint">エンド・ポイント</param>
