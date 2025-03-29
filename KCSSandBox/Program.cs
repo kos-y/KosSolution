@@ -10,7 +10,8 @@ internal class Program
     {
         KNamedAPIResourceList langs = KPokeAPI.GetLanguages();
         foreach (KNamedAPIResource r in langs.Results) {
-            Console.WriteLine(r.Name);
+            KLanguage lang = KLanguage.GetLanguage(r.URL);
+            Console.WriteLine(lang.Name);
         }
     }
 }

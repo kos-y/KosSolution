@@ -53,7 +53,7 @@ public class KLanguage
     /// <exception cref="Exception"></exception>
     public static KLanguage GetLanguage(string url)
     {
-        string json = KPokeAPIClient.GetAPIResourceListEndPoint(url);
+        string json = KPokeAPIClient.GetJson(url);
 
         return JsonSerializer.Deserialize<KLanguage>(json) ?? throw new Exception("Failed to parse JSON string.");
     }
