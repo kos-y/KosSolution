@@ -39,6 +39,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("berry-firmness");
     }
 
+    /// <summary>
+    /// きのみの味リソースリストの取得
+    /// </summary>
+    /// <returns>きのみの味リソースリスト</returns>
+    public static KNamedAPIResourceList GetBerryFlavors()
+    {
+        return GetNamedAPIResourceList("berry-flavor");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析

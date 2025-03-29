@@ -4,18 +4,18 @@ using System.Text.Json.Serialization;
 namespace KCSPokeAPI;
 
 /// <summary>
-/// きのみの固さ
+/// きのみの味
 /// </summary>
-public class KBerryFirmness
+public class KBerryFlavor
 {
     /// <summary>
-    /// きのみの固さID
+    /// きのみの味ID
     /// </summary>
     [JsonPropertyName("id")]
-    public required int ID { get; set; }
+    public required int ID {  get; set; }
 
     /// <summary>
-    /// きのみの固さ名
+    /// きのみの味名
     /// </summary>
     [JsonPropertyName("name")]
     public required string Name { get; set; }
@@ -24,25 +24,31 @@ public class KBerryFirmness
     /// きのみリスト
     /// </summary>
     [JsonPropertyName("berries")]
-    public required List<KNamedAPIResource> Berries { get; set; }
+    public required List<KFlavorBerryMap> Berries { get; set; }
 
     /// <summary>
-    /// きのみの固さ名リスト
+    /// ポケモンコンテストの部門
+    /// </summary>
+    [JsonPropertyName("contest_type")]
+    public required KNamedAPIResource ContestType { get; set; }
+
+    /// <summary>
+    /// きのみの味名リスト
     /// </summary>
     [JsonPropertyName("names")]
     public required List<KName> Names { get; set; }
 
 
     /// <summary>
-    /// きのみの固さリソースの取得
+    /// きのみの味リソースの取得
     /// </summary>
     /// <param name="url">URL</param>
-    /// <returns>きのみの固さ</returns>
+    /// <returns>きのみの味リソース</returns>
     /// <exception cref="Exception"></exception>
-    public static KBerryFirmness GetBerryFirmness(string url)
+    public static KBerryFlavor GetBerryFlavor(string url)
     {
         string json = KPokeAPIClient.GetJson(url);
 
-        return JsonSerializer.Deserialize<KBerryFirmness>(json) ?? throw new Exception("Failed to parse JSON string.");
+        return JsonSerializer.Deserialize<KBerryFlavor>(json) ?? throw new Exception("Failed to parse JSON string.");
     }
 }
