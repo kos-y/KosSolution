@@ -57,6 +57,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("contest-type");
     }
 
+    /// <summary>
+    /// コンテスト効果リソースリストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KAPIResourceList GetContestEffect()
+    {
+        return GetAPIResourceList("contest-effect");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace KCSPokeAPI;
 
@@ -14,10 +10,12 @@ public class KEffect
     /// <summary>
     /// 効果
     /// </summary>
-    public string Effect { get; set; } = string.Empty;
+    [JsonPropertyName("effect")]
+    public required string Effect { get; set; }
 
     /// <summary>
     /// 言語
     /// </summary>
-    public KNamedAPIResource Language { get; set; }
+    [JsonPropertyName("language")]
+    public required KNamedAPIResource Language { get; set; }
 }

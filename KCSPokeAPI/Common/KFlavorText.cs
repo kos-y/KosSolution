@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace KCSPokeAPI;
 
@@ -14,15 +10,12 @@ public class KFlavorText
     /// <summary>
     /// フレーバーテキスト
     /// </summary>
-    public string FlavorText { get; set; } = string.Empty;
+    [JsonPropertyName("flavor_text")]
+    public required string FlavorText { get; set; }
 
     /// <summary>
     /// 言語
     /// </summary>
-    public KNamedAPIResource Language { get; set; }
-
-    /// <summary>
-    /// バージョン
-    /// </summary>
-    public KNamedAPIResource Version { get; set; }
+    [JsonPropertyName("language")]
+    public required KNamedAPIResource Language { get; set; }
 }

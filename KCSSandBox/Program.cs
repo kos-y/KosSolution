@@ -8,10 +8,10 @@ internal class Program
 {
     static void Main()
     {
-        KNamedAPIResourceList apiList = KPokeAPI.GetContestTypes();
-        foreach (KNamedAPIResource api in apiList.Results) {
-            KContestType r = KContestType.GetContestType(api.URL);
-            Console.WriteLine(r.Name);
+        KAPIResourceList apiList = KPokeAPI.GetContestEffect();
+        foreach (KAPIResource api in apiList.Results) {
+            KContestEffect r = KContestEffect.GetContestEffect(api.URL);
+            Console.WriteLine(r.EffectEntries.First().Effect);
         }
     }
 }
