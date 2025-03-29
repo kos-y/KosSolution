@@ -31,6 +31,16 @@ public class KPokeAPI
     }
 
     /// <summary>
+    /// きのみの固さリソースリストの取得
+    /// </summary>
+    /// <returns>きのみの固さリソースリスト</returns>
+    public static KNamedAPIResourceList GetBerryFirmnesses()
+    {
+        return GetNamedAPIResourceList("berry-firmness");
+    }
+
+
+    /// <summary>
     /// APIリソースリストの解析
     /// </summary>
     /// <param name="endPoint">エンド・ポイント</param>

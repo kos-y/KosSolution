@@ -98,9 +98,4 @@ public class KBerry
 
         return JsonSerializer.Deserialize<KBerry>(json) ?? throw new Exception("Failed to parse JSON string.");
     }
-
-    public static KBerry GetBerry(object uRL)
-    {
-        throw new NotImplementedException();
-    }
 }

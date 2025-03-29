@@ -8,9 +8,9 @@ internal class Program
 {
     static void Main()
     {
-        KNamedAPIResourceList apiList = KPokeAPI.GetBerries();
+        KNamedAPIResourceList apiList = KPokeAPI.GetBerryFirmnesses();
         foreach (KNamedAPIResource api in apiList.Results) {
-            KBerry r = KBerry.GetBerry(api.URL);
+            KBerryFirmness r = KBerryFirmness.GetBerryFirmness(api.URL);
             Console.WriteLine(r.Name);
         }
     }
