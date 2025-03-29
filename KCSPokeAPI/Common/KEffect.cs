@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace KCSPokeAPI;
 
 /// <summary>
-/// エフェクト
+/// 効果
 /// </summary>
 public class KEffect
 {
     /// <summary>
-    /// 絵ジェクト
+    /// 効果
     /// </summary>
     public string Effect { get; set; } = string.Empty;
 
