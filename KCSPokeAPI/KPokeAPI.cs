@@ -13,6 +13,15 @@ namespace KCSPokeAPI;
 public class KPokeAPI
 {
     /// <summary>
+    /// 言語リソースリストの取得
+    /// </summary>
+    /// <returns>言語リソースリスト</returns>
+    public static KNamedAPIResourceList GetLanguages()
+    {
+        return GetNamedAPIResourceList("language");
+    }
+
+    /// <summary>
     /// APIリソースリストの解析
     /// </summary>
     /// <param name="endPoint">エンド・ポイント</param>
