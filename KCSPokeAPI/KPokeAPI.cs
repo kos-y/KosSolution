@@ -66,6 +66,15 @@ public class KPokeAPI
         return GetAPIResourceList("contest-effect");
     }
 
+    /// <summary>
+    /// スーパーコンテストの効果リソースリストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KAPIResourceList GetSuperContestEffect()
+    {
+        return GetAPIResourceList("super-contest-effect");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析
