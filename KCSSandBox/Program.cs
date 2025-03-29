@@ -8,9 +8,9 @@ internal class Program
 {
     static void Main()
     {
-        KNamedAPIResourceList apiList = KPokeAPI.GetBerryFlavors();
+        KNamedAPIResourceList apiList = KPokeAPI.GetContestTypes();
         foreach (KNamedAPIResource api in apiList.Results) {
-            KBerryFlavor r = KBerryFlavor.GetBerryFlavor(api.URL);
+            KContestType r = KContestType.GetContestType(api.URL);
             Console.WriteLine(r.Name);
         }
     }

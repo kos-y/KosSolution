@@ -48,6 +48,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("berry-flavor");
     }
 
+    /// <summary>
+    /// コンテストタイプリソースリストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetContestTypes()
+    {
+        return GetNamedAPIResourceList("contest-type");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析
