@@ -102,6 +102,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("encounter-condition-value");
     }
 
+    /// <summary>
+    /// 進化チェーン
+    /// </summary>
+    /// <returns></returns>
+    public static KAPIResourceList GetEvolutionChains()
+    {
+        return GetAPIResourceList("evolution-chain");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析
