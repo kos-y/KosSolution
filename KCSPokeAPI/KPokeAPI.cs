@@ -75,9 +75,22 @@ public class KPokeAPI
         return GetAPIResourceList("super-contest-effect");
     }
 
+    /// <summary>
+    /// エンカウントの方法リソースリストの取得
+    /// </summary>
+    /// <returns></returns>
     public static KNamedAPIResourceList GetEncounterMethods()
     {
         return GetNamedAPIResourceList("encounter-method");
+    }
+
+    /// <summary>
+    /// エンカウント条件リソースリストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetEncounterConditions()
+    {
+        return GetNamedAPIResourceList("encounter-condition");
     }
 
 
