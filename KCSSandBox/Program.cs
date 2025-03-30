@@ -8,9 +8,9 @@ internal class Program
 {
     static void Main()
     {
-        KNamedAPIResourceList apiList = KPokeAPI.GetEncounterConditions();
+        KNamedAPIResourceList apiList = KPokeAPI.GetEncounterConditionValues();
         foreach (KNamedAPIResource api in apiList.Results) {
-            KEncounterCondition r = KEncounterCondition.GetEncountCondition(api.URL);
+            KEncounterConditionValue r = KEncounterConditionValue.GetEncountConditionValue(api.URL);
             Console.WriteLine(r.Name);
         }
     }

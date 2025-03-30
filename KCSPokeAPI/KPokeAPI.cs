@@ -93,6 +93,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("encounter-condition");
     }
 
+    /// <summary>
+    /// エンカウント条件値リソースリストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetEncounterConditionValues()
+    {
+        return GetNamedAPIResourceList("encounter-condition-value");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析
