@@ -120,6 +120,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("evolution-trigger");
     }
 
+    /// <summary>
+    /// 世代リソースリストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetGenerations()
+    {
+        return GetNamedAPIResourceList("generation");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析

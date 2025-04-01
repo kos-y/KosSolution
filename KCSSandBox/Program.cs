@@ -9,9 +9,9 @@ internal class Program
     static void Main()
     {
 #if true
-        KNamedAPIResourceList apiList = KPokeAPI.GetEvolutionTriggers();
+        KNamedAPIResourceList apiList = KPokeAPI.GetGenerations();
         foreach (KNamedAPIResource api in apiList.Results) {
-            KEvolutionTrigger r = KEvolutionTrigger.GetEvolutionTrigger(api.URL);
+            KGeneration r = KGeneration.GetGeneration(api.URL);
             Console.WriteLine(r.Name);
         }
 #else
