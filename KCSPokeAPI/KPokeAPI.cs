@@ -103,12 +103,21 @@ public class KPokeAPI
     }
 
     /// <summary>
-    /// 進化チェーン
+    /// 進化チェーンリソースリストの取得
     /// </summary>
     /// <returns></returns>
     public static KAPIResourceList GetEvolutionChains()
     {
         return GetAPIResourceList("evolution-chain");
+    }
+
+    /// <summary>
+    /// 進化トリガーリソースリストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetEvolutionTriggers()
+    {
+        return GetNamedAPIResourceList("evolution-trigger");
     }
 
 

@@ -8,10 +8,10 @@ internal class Program
 {
     static void Main()
     {
-#if false
-        KNamedAPIResourceList apiList = KPokeAPI.GetEncounterConditionValues();
+#if true
+        KNamedAPIResourceList apiList = KPokeAPI.GetEvolutionTriggers();
         foreach (KNamedAPIResource api in apiList.Results) {
-            KEncounterConditionValue r = KEncounterConditionValue.GetEncountConditionValue(api.URL);
+            KEvolutionTrigger r = KEvolutionTrigger.GetEvolutionTrigger(api.URL);
             Console.WriteLine(r.Name);
         }
 #else
