@@ -129,6 +129,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("generation");
     }
 
+    /// <summary>
+    /// ポケモン図鑑リストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetPokedexes()
+    {
+        return GetNamedAPIResourceList("pokedex");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析

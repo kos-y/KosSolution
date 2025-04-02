@@ -9,10 +9,14 @@ internal class Program
     static void Main()
     {
 #if true
-        KNamedAPIResourceList apiList = KPokeAPI.GetGenerations();
+        KNamedAPIResourceList apiList = KPokeAPI.GetPokedexes();
         foreach (KNamedAPIResource api in apiList.Results) {
-            KGeneration r = KGeneration.GetGeneration(api.URL);
+            KPokedex r = KPokedex.GetPokedex(api.URL);
             Console.WriteLine(r.Name);
+            foreach (var e in r.Names) {
+                Console.WriteLine($"{e.Language.Name} {e.Name}");
+            }
+            Console.WriteLine();
         }
 #else
        KAPIResourceList apiList = KPokeAPI.GetEvolutionChains();

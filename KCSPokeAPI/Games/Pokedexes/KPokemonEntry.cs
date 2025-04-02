@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace KCSPokeAPI;
 
@@ -14,10 +10,12 @@ public class KPokemonEntry
     /// <summary>
     /// ポケモン図鑑No.
     /// </summary>
-    public int EntryNumber { get; set; }
+    [JsonPropertyName("entry_number")]
+    public required int EntryNumber { get; set; }
 
     /// <summary>
     /// ポケモン種族
     /// </summary>
-    public KNamedAPIResource PokemonSpecies { get; set; }
+    [JsonPropertyName("pokemon_species")]
+    public required KNamedAPIResource PokemonSpecies { get; set; }
 }
