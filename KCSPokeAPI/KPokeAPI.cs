@@ -138,6 +138,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("pokedex");
     }
 
+    /// <summary>
+    /// バージョンリストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetVersions()
+    {
+        return GetNamedAPIResourceList("version");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析

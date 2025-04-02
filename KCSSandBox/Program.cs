@@ -9,9 +9,9 @@ internal class Program
     static void Main()
     {
 #if true
-        KNamedAPIResourceList apiList = KPokeAPI.GetPokedexes();
+        KNamedAPIResourceList apiList = KPokeAPI.GetVersions();
         foreach (KNamedAPIResource api in apiList.Results) {
-            KPokedex r = KPokedex.GetPokedex(api.URL);
+            var r = KVersion.GetVersion(api.URL);
             Console.WriteLine(r.Name);
             foreach (var e in r.Names) {
                 Console.WriteLine($"{e.Language.Name} {e.Name}");
