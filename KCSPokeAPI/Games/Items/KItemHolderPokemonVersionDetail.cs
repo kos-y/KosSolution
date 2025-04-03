@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace KCSPokeAPI;
 
@@ -14,10 +10,12 @@ public class KItemHolderPokemonVersionDetail
     /// <summary>
     /// 所持確率
     /// </summary>
-    public int Rarity { get; set; }
+    [JsonPropertyName("rarity")]
+    public required int Rarity { get; set; }
 
     /// <summary>
     /// バージョン
     /// </summary>
-    public KNamedAPIResource Version { get; set; }
+    [JsonPropertyName("version")]
+    public required KNamedAPIResource Version { get; set; }
 }
