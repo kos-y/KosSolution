@@ -165,6 +165,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("item");
     }
 
+    /// <summary>
+    /// アイテムリストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetItemAttributes()
+    {
+        return GetNamedAPIResourceList("item-attribute");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析

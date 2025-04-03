@@ -9,9 +9,9 @@ internal class Program
     static void Main()
     {
 #if true
-        KNamedAPIResourceList apiList = KPokeAPI.GetItems();
+        KNamedAPIResourceList apiList = KPokeAPI.GetItemAttributes();
         foreach (KNamedAPIResource api in apiList.Results) {
-            var r = KItem.GetItem(api.URL);
+            var r = KItemAttribute.GetItemAttribute(api.URL);
             Console.WriteLine(r.Name);
             foreach (var e in r.Names) {
                 Console.WriteLine($"{e.Language.Name} - {e.Name}");
