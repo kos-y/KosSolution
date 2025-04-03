@@ -183,6 +183,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("item-category");
     }
 
+    /// <summary>
+    /// アイテムを投げつけた時の効果リストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetItemFlingEffects()
+    {
+        return GetNamedAPIResourceList("item-fling-effect");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析
