@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 namespace KCSPokeAPI;
 
 /// <summary>
-/// アイテム特性
+/// アイテムカテゴリ
 /// </summary>
-public class KItemAttribute
+public class KItemCategory
 {
     /// <summary>
-    /// アイテム特性ID
+    /// アイテムカテゴリID
     /// </summary>
     [JsonPropertyName("id")]
     public required int ID { get; set; }
 
     /// <summary>
-    /// アイテム特性名
+    /// アイテムカテゴリ名
     /// </summary>
     [JsonPropertyName("name")]
     public required string Name { get; set; }
@@ -32,28 +32,28 @@ public class KItemAttribute
     public required List<KNamedAPIResource> Items { get; set; }
 
     /// <summary>
-    /// アイテム特性名リスト
+    /// アイテムカテゴリ名リスト
     /// </summary>
     [JsonPropertyName("names")]
     public required List<KName> Names { get; set; }
 
     /// <summary>
-    /// 説明リスト
+    /// ポケット
     /// </summary>
-    [JsonPropertyName("descriptions")]
-    public required List<KDescription> Descriptions { get; set; }
+    [JsonPropertyName("pocket")]
+    public required KNamedAPIResource Pocket { get; set; }
 
 
     /// <summary>
-    /// アイテムリソースの取得
+    /// リソースの取得
     /// </summary>
     /// <param name="url">URL</param>
-    /// <returns>アイテムリソース</returns>
+    /// <returns>リソース</returns>
     /// <exception cref="Exception"></exception>
-    public static KItemAttribute GetItemAttribute(string url)
+    public static KItemCategory GetItemCategory(string url)
     {
         string json = KPokeAPIClient.GetJson(url);
 
-        return JsonSerializer.Deserialize<KItemAttribute>(json) ?? throw new Exception("Failed to parse JSON string.");
+        return JsonSerializer.Deserialize<KItemCategory>(json) ?? throw new Exception("Failed to parse JSON string.");
     }
 }
