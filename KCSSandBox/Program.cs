@@ -9,12 +9,12 @@ internal class Program
     static void Main()
     {
 #if true
-        KNamedAPIResourceList apiList = KPokeAPI.GetVersions();
+        KNamedAPIResourceList apiList = KPokeAPI.GetVersionGroups();
         foreach (KNamedAPIResource api in apiList.Results) {
-            var r = KVersion.GetVersion(api.URL);
+            var r = KVersionGroup.GetVersionGroup(api.URL);
             Console.WriteLine(r.Name);
-            foreach (var e in r.Names) {
-                Console.WriteLine($"{e.Language.Name} {e.Name}");
+            foreach (var e in r.Version) {
+                Console.WriteLine($"{e.Name}");
             }
             Console.WriteLine();
         }

@@ -147,6 +147,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("version");
     }
 
+    /// <summary>
+    /// バージョンリストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetVersionGroups()
+    {
+        return GetNamedAPIResourceList("version-group");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析
