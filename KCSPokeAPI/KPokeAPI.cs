@@ -192,6 +192,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("item-fling-effect");
     }
 
+    /// <summary>
+    /// アイテムポケットリストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetItemPockets()
+    {
+        return GetNamedAPIResourceList("item-pocket");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析

@@ -9,12 +9,12 @@ internal class Program
     static void Main()
     {
 #if true
-        KNamedAPIResourceList apiList = KPokeAPI.GetItemFlingEffects();
+        KNamedAPIResourceList apiList = KPokeAPI.GetItemPockets();
         foreach (KNamedAPIResource api in apiList.Results) {
-            var r = KItemFlingEffect.GetResource(api.URL);
+            var r = KItemPocket.GetResource(api.URL);
             Console.WriteLine(r.Name);
-            foreach (var e in r.Items) {
-                Console.WriteLine($"{e.Name}");
+            foreach (var e in r.Names) {
+                Console.WriteLine($"{e.Language.Name} - {e.Name}");
             }
             Console.WriteLine();
         }
