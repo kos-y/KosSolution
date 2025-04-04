@@ -201,6 +201,15 @@ public class KPokeAPI
         return GetNamedAPIResourceList("item-pocket");
     }
 
+    /// <summary>
+    /// 場所リストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetItemLocations()
+    {
+        return GetNamedAPIResourceList("location");
+    }
+
 
     /// <summary>
     /// APIリソースリストの解析
