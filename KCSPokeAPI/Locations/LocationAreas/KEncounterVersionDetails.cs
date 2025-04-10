@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace KCSPokeAPI;
@@ -14,10 +15,12 @@ public class KEncounterVersionDetails
     /// <summary>
     /// エンカウント確率
     /// </summary>
-    public int Rage { get; set; }
+    [JsonPropertyName("rate")]
+    public required int Rage { get; set; }
 
     /// <summary>
     /// バージョン
     /// </summary>
-    public KNamedAPIResource Version { get; set; }
+    [JsonPropertyName("version")]
+    public required KNamedAPIResource Version { get; set; }
 }

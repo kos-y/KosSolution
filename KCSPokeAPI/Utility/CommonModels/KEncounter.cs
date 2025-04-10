@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace KCSPokeAPI;
@@ -14,25 +15,30 @@ public class KEncounter
     /// <summary>
     /// 最低レベル
     /// </summary>
-    public int MinLevel {  get; set; }
+    [JsonPropertyName("min_level")]
+    public required int MinLevel {  get; set; }
 
     /// <summary>
     /// 最高レベル
     /// </summary>
-    public int MaxLevel { get; set; }
+    [JsonPropertyName("max_level")]
+    public required int MaxLevel { get; set; }
 
     /// <summary>
     /// エンカウント条件
     /// </summary>
-    public List<KNamedAPIResource> ConditionValues { get; set; } = [];
+    [JsonPropertyName("condition_values")]
+    public required List<KNamedAPIResource> ConditionValues { get; set; }
 
     /// <summary>
     /// エンカウント確率
     /// </summary>
-    public int Chance { get; set; }
+    [JsonPropertyName("chance")]
+    public required int Chance { get; set; }
 
     /// <summary>
     /// エンカウント方法
     /// </summary>
-    public KNamedAPIResource Method { get; set; }
+    [JsonPropertyName("method")]
+    public required KNamedAPIResource Method { get; set; }
 }

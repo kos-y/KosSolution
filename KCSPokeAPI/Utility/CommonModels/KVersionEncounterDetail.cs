@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace KCSPokeAPI;
@@ -14,15 +15,18 @@ public class KVersionEncounterDetail
     /// <summary>
     /// バージョン
     /// </summary>
-    public KNamedAPIResource Version { get; set; }
+    [JsonPropertyName("version")]
+    public required KNamedAPIResource Version { get; set; }
 
     /// <summary>
     /// エンカウントの最大確率
     /// </summary>
-    public int MaxChance { get; set; }
+    [JsonPropertyName("max_chance")]
+    public required int MaxChance { get; set; }
 
     /// <summary>
     /// エンカウントの詳細
     /// </summary>
-    public List<KEncounter> EncounterDetails { get; set; } = [];
+    [JsonPropertyName("encounter_details")]
+    public required List<KEncounter> EncounterDetails { get; set; } = [];
 }

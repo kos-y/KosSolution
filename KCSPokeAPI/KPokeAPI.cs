@@ -205,11 +205,20 @@ public class KPokeAPI
     /// 場所リストの取得
     /// </summary>
     /// <returns></returns>
-    public static KNamedAPIResourceList GetItemLocations()
+    public static KNamedAPIResourceList GetLocations()
     {
         return GetNamedAPIResourceList("location");
     }
 
+
+    /// <summary>
+    /// 場所リストの取得
+    /// </summary>
+    /// <returns></returns>
+    public static KNamedAPIResourceList GetLocationAreas()
+    {
+        return GetNamedAPIResourceList("location-area");
+    }
 
     /// <summary>
     /// APIリソースリストの解析

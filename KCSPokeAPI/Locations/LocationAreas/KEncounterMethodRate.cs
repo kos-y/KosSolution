@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace KCSPokeAPI;
@@ -14,10 +15,12 @@ public class KEncounterMethodRate
     /// <summary>
     /// エンカウント方法
     /// </summary>
-    public KNamedAPIResource EncounterMethod { get; set; }
+    [JsonPropertyName("encounter_method")]
+    public required KNamedAPIResource EncounterMethod { get; set; }
 
     /// <summary>
     /// バージョンごとのエンカウント詳細
     /// </summary>
-    public List<KVersionEncounterDetail> VersionDetails { get; set; } = [];
+    [JsonPropertyName("version_details")]
+    public required List<KEncounterVersionDetails> VersionDetails { get; set; }
 }
