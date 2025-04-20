@@ -235,6 +235,9 @@ public partial class PokeAPIViewer : Form
             nameof(EndPoint.EncounterConditions) =>
                 new NamedAPIResourceListForm(eca, typeof(EncounterConditionInfoForm)),
 
+            nameof(EndPoint.EncounterConditionValues) =>
+                new NamedAPIResourceListForm(eca, typeof(EncounterConditionValueInfoForm)),
+
             nameof(EndPoint.Languages) =>
                 new NamedAPIResourceListForm(eca, typeof(LanguageInfoForm)),
 

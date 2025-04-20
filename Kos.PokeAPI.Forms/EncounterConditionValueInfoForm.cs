@@ -4,19 +4,19 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Kos.PokeAPI.Encounters.EncounterConditions;
-using Kos.PokeAPI.Encounters.EncounterMethods;
+using Kos.PokeAPI.Encounters.EncounterConditionValues;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
 
 /// <summary>
-/// 遭遇条件
+/// 遭遇条件値
 /// </summary>
-public partial class EncounterConditionInfoForm : Form
+public partial class EncounterConditionValueInfoForm : Form
 {
     // フィールド
 
@@ -35,7 +35,7 @@ public partial class EncounterConditionInfoForm : Form
     /// コンストラクタ
     /// </summary>
     /// <param name="url">URL</param>
-    public EncounterConditionInfoForm(string url)
+    public EncounterConditionValueInfoForm(string url)
     {
         InitializeComponent();
         _url = url;
@@ -48,15 +48,36 @@ public partial class EncounterConditionInfoForm : Form
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void EncounterConditionInfoForm_Load(object sender, EventArgs e)
+    private void EncounterConditionValueInfoForm_Load(object sender, EventArgs e)
     {
         SetData(_url);
     }
     #endregion
 
-    #region NamesDataGridView CellClick
+    #region Condition Info Click
     /// <summary>
-    /// NamesDataGridView CellClick
+    /// Condition Info Click
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ConditionInfoButton_Click(object sender, EventArgs e)
+    {
+        if (ConditionInfoButton.Tag is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using EncounterConditionInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region names DataGridView CellClick
+    /// <summary>
+    /// names DataGridView CellClick
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -83,9 +104,9 @@ public partial class EncounterConditionInfoForm : Form
     }
     #endregion
 
-    #region NamesDataGridView CellDoubleClick
+    #region names DataGridView CellDoubleClick
     /// <summary>
-    /// NamesDataGridView CellClick
+    /// names DataGridView CellDoubleClick
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -127,17 +148,17 @@ public partial class EncounterConditionInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        EncounterCondition? ec = EncounterCondition.GetEncountCondition(url);
-        if (ec is null) {
+        EncounterConditionValue? ecv = EncounterConditionValue.GetEncountConditionValue(url);
+        if (ecv is null) {
             return;
         }
 
-        Tag = ec;
-        IdLabel.Text = $"{ec.Id}";
-        NameLabel.Text = ec.Name;
-        NamesDataGridView.DataSource = ec.Names;
-        ValuesDataGridView.AutoGenerateColumns = false;
-        ValuesDataGridView.DataSource = ec.Values;
+        Tag = ecv;
+        IdLabel.Text = $"{ecv.Id}";
+        NameLabel.Text = ecv.Name;
+        ConditionLabel.Text = ecv.Condition?.Name ?? string.Empty;
+        ConditionInfoButton.Tag = ecv.Condition;
+        NamesDataGridView.DataSource = ecv.Names;
     }
     #endregion
 }
