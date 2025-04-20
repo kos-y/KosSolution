@@ -229,6 +229,9 @@ public partial class PokeAPIViewer : Form
             nameof(EndPoint.SuperContestEffects) =>
                 new APIResourceListForm(eca, typeof(SuperContestEffectInfoForm)),
 
+            nameof(EndPoint.EncounterMethods) =>
+                new NamedAPIResourceListForm(eca, typeof(EncounterMethodInfoForm)),
+
             nameof(EndPoint.Languages) =>
                 new NamedAPIResourceListForm(eca, typeof(LanguageInfoForm)),
 
