@@ -5,23 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace KCSWPFCore;
+namespace Kos.Core.WPF;
 
 /// <summary>
 /// コマンド
 /// </summary>
-public class KCommand : ICommand
+public class Command : ICommand
 {
+    // フィールド
+
+    #region 実行処理
     /// <summary>
-    /// 実行
+    /// 実行処理
     /// </summary>
     private readonly Action? _execute;
+    #endregion
 
+    #region 実行可否判定処理
     /// <summary>
-    /// 実行可否判定
+    /// 実行可否判定処理
     /// </summary>
     private readonly Func<bool>? _canExecute;
+    #endregion
 
+    #region イベントハンドラ CanExecuteChanged
     /// <summary>
     /// コマンド実行可否イベントハンドラ
     /// </summary>
@@ -30,29 +37,35 @@ public class KCommand : ICommand
         add => CommandManager.RequerySuggested += value;
         remove => CommandManager.RequerySuggested -= value;
     }
+    #endregion
 
 
+    // メソッド
+
+    #region コンストラクタ
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    /// <param name="execute">コマンド実行Action</param>
-    public KCommand(Action execute)
+    /// <param name="execute">実行処理</param>
+    public Command(Action execute)
     {
         _execute = execute;
-        _canExecute = new Func<bool>(() => true);
+        _canExecute = new Func<bool>(static () => true);
     }
 
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    /// <param name="execute">コマンド実行Action</param>
-    /// <param name="canExecute">コマンド実行可否Func</param>
-    public KCommand(Action execute, Func<bool> canExecute)
+    /// <param name="execute">実行処理</param>
+    /// <param name="canExecute">実行可否判定処理</param>
+    public Command(Action execute, Func<bool> canExecute)
     {
         _execute = execute;
         _canExecute = canExecute;
     }
+    #endregion
 
+    #region コマンド実行可否判定
     /// <summary>
     /// コマンド実行可否判定
     /// </summary>
@@ -66,14 +79,18 @@ public class KCommand : ICommand
 
         return false;
     }
+    #endregion
 
+    #region コマンド実行
     /// <summary>
     /// コマンド実行
     /// </summary>
     /// <param name="_">未使用</param>
-    public void Execute(object? _) {
+    public void Execute(object? _)
+    {
         if (_execute is not null) {
             _execute();
         }
     }
+    #endregion
 }
