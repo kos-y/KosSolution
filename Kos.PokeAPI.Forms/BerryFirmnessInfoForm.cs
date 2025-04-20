@@ -7,18 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.PokeAPI.Berries.Berries;
 using Kos.PokeAPI.Berries.BerryFirmnesses;
-using Kos.PokeAPI.Berries.BerryFlavors;
 using Kos.PokeAPI.Utility.CommonModels;
-using Kos.PokeAPI.Utility.Forms;
-using Kos.PokeAPI.Utility.Languages;
 
-namespace Kos.PokeAPI.Berries.Forms;
+namespace Kos.PokeAPI.Forms;
 
 /// <summary>
-/// Berry Flavor Form
+/// 木の実の硬さ情報フォーム
 /// </summary>
-public partial class BerryFlavorInfoForm : Form
+public partial class BerryFirmnessInfoForm : Form
 {
     // フィールド
 
@@ -26,26 +24,8 @@ public partial class BerryFlavorInfoForm : Form
     /// <summary>
     /// URL
     /// </summary>
-    private readonly string _url;
+    private readonly string _url = string.Empty;
     #endregion
-
-
-    // 静的メソッド
-
-    #region 画面の表示
-    /// <summary>
-    /// 画面の表示
-    /// </summary>
-    /// <param name="owner"></param>
-    /// <param name="url"></param>
-    public static void Show(IWin32Window owner, string url)
-    {
-        using BerryFlavorInfoForm form = new(url);
-
-        _ = form.ShowDialog(owner);
-    }
-    #endregion
-
 
     // メソッド
 
@@ -54,7 +34,7 @@ public partial class BerryFlavorInfoForm : Form
     /// コンストラクタ
     /// </summary>
     /// <param name="url">URL</param>
-    public BerryFlavorInfoForm(string url)
+    public BerryFirmnessInfoForm(string url)
     {
         InitializeComponent();
         _url = url;
@@ -67,15 +47,15 @@ public partial class BerryFlavorInfoForm : Form
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void BerryFlavorInfoForm_Load(object sender, EventArgs e)
+    private void BerryFirmnessInfoForm_Load(object sender, EventArgs e)
     {
         SetData(_url);
     }
     #endregion
 
-    #region berries CellClick
+    #region Berries CellClick
     /// <summary>
-    /// berries CellClick
+    /// Berries CellClick
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -85,20 +65,19 @@ public partial class BerryFlavorInfoForm : Form
             return;
         }
 
-        DataGridViewCell cell = BerriesDataGridView[e.ColumnIndex, e.RowIndex];
-        if (cell is not DataGridViewButtonCell) {
+        if (BerriesDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
             return;
         }
 
-        if (BerriesDataGridView.Rows[e.RowIndex].DataBoundItem is not FlavorBerryMap item) {
+        if (BerriesDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource berry) {
             return;
         }
 
-        if (item?.Berry?.Url is null) {
+        if (berry.Url is null) {
             return;
         }
 
-        using BerryInfoForm form = new(item.Berry.Url);
+        using BerryInfoForm form = new(berry.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -115,15 +94,15 @@ public partial class BerryFlavorInfoForm : Form
             return;
         }
 
-        if (BerriesDataGridView.Rows[e.RowIndex].DataBoundItem is not FlavorBerryMap item) {
+        if (BerriesDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource berry) {
             return;
         }
 
-        if (item?.Berry?.Url is null) {
+        if (berry.Url is null) {
             return;
         }
 
-        using BerryInfoForm form = new(item.Berry.Url);
+        using BerryInfoForm form = new(berry.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -144,22 +123,22 @@ public partial class BerryFlavorInfoForm : Form
             return;
         }
 
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name item) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        if (item.Language?.Url is null) {
+        if (name?.Language?.Url is null) {
             return;
         }
 
-        using LanguageInfoForm form = new(item.Language.Url);
+        using LanguageInfoForm form = new(name.Language.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region namaes CellDoubleClick
+    #region names CellDoubleClick
     /// <summary>
-    /// namaes CellDoubleClick
+    /// names CellDoubleClick
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -169,15 +148,15 @@ public partial class BerryFlavorInfoForm : Form
             return;
         }
 
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name item) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        if (item.Language?.Url is null) {
+        if (name?.Language?.Url is null) {
             return;
         }
 
-        using LanguageInfoForm form = new(item.Language.Url);
+        using LanguageInfoForm form = new(name.Language.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -201,7 +180,7 @@ public partial class BerryFlavorInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        BerryFlavor? bf = BerryFlavor.GetBerryFlavor(url);
+        BerryFirmness? bf = BerryFirmness.GetBerryFirmness(url);
         if (bf is null) {
             return;
         }
@@ -211,8 +190,6 @@ public partial class BerryFlavorInfoForm : Form
         NameLabel.Text = bf.Name;
         BerriesDataGridView.AutoGenerateColumns = false;
         BerriesDataGridView.DataSource = bf.Berries;
-        ContestTypeLabel.Text = $"{bf.ContestType?.Name}";
-        ContestTypeInfoButton.Tag = bf;
         NamesDataGridView.DataSource = bf.Names;
     }
     #endregion

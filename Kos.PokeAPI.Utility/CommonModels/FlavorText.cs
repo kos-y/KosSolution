@@ -29,4 +29,12 @@ public class FlavorText
     [JsonPropertyName("language")]
     public NamedAPIResource? Language { get; set; }
     #endregion
+
+    #region バージョン
+    /// <summary>
+    /// バージョン
+    /// </summary>
+    [JsonPropertyName("version")]
+    public NamedAPIResource? Version { get; set; }
+    #endregion
 }

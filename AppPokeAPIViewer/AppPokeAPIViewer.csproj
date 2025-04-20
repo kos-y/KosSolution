@@ -9,9 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Kos.PokeAPI.Berries.Forms\Kos.PokeAPI.Berries.Forms.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.ResourceLists.Forms\Kos.PokeAPI.ResourceLists.Forms.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Utility.Forms\Kos.PokeAPI.Utility.Forms.csproj" />
+    <ProjectReference Include="..\Kos.PokeAPI.Forms\Kos.PokeAPI.Forms.csproj" />
     <ProjectReference Include="..\Kos.PokeAPI\Kos.PokeAPI.csproj" />
   </ItemGroup>
 

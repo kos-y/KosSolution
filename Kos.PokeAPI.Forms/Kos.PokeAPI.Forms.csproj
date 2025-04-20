@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kos.Core.Forms\Kos.Core.Forms.csproj" />
+    <ProjectReference Include="..\Kos.PokeAPI.Berries\Kos.PokeAPI.Berries.csproj" />
+    <ProjectReference Include="..\Kos.PokeAPI.Contests\Kos.PokeAPI.Contests.csproj" />
+    <ProjectReference Include="..\Kos.PokeAPI.ResourceLists\Kos.PokeAPI.ResourceLists.csproj" />
+    <ProjectReference Include="..\Kos.PokeAPI.Utility\Kos.PokeAPI.Utility.csproj" />
+    <ProjectReference Include="..\Kos.PokeAPI\Kos.PokeAPI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="BerryFirmnessInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BerryFlavorInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BerryInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ContestTypeInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LanguageInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NamedAPIResourceListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

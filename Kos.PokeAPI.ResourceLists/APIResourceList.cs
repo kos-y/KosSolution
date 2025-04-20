@@ -62,4 +62,21 @@ public class APIResourceList
             throw new Exception("Failed to parse JSON string.");
     }
     #endregion
+
+    #region APIリソースリストの取得
+    /// <summary>
+    /// APIリソースリストの取得
+    /// </summary>
+    /// <param name="url">URL</param>
+    /// <returns>APIリソースリスト</returns>
+    /// <exception cref="Exception"></exception>
+    public static APIResourceList GetAPIResourceListUrl(string url)
+    {
+        string json = PokeAPIClient.GetAPIResourceUrl(url);
+
+        return
+            JsonSerializer.Deserialize<APIResourceList>(json) ??
+            throw new Exception("Failed to parse JSON string.");
+    }
+    #endregion
 }

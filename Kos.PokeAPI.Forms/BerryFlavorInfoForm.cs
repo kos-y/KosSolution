@@ -10,10 +10,9 @@ using System.Windows.Forms;
 using Kos.PokeAPI.Berries.BerryFirmnesses;
 using Kos.PokeAPI.Berries.BerryFlavors;
 using Kos.PokeAPI.Utility.CommonModels;
-using Kos.PokeAPI.Utility.Forms;
 using Kos.PokeAPI.Utility.Languages;
 
-namespace Kos.PokeAPI.Berries.Forms;
+namespace Kos.PokeAPI.Forms;
 
 /// <summary>
 /// Berry Flavor Form
@@ -128,6 +127,32 @@ public partial class BerryFlavorInfoForm : Form
     }
     #endregion
 
+    #region ContestType Click
+    /// <summary>
+    /// ContestType Click
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ContestTypeInfoButton_Click(object sender, EventArgs e)
+    {
+        object? tag = ContestTypeInfoButton.Tag;
+        if (tag is null) {
+            return;
+        }
+
+        if (tag is not NamedAPIResource r) {
+            return;
+        }
+
+        if (r.Url is null) {
+            return;
+        }
+
+        ContestTypeInfoForm form = new(r.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region names CellClick
     /// <summary>
     /// names CellClick
@@ -212,7 +237,7 @@ public partial class BerryFlavorInfoForm : Form
         BerriesDataGridView.AutoGenerateColumns = false;
         BerriesDataGridView.DataSource = bf.Berries;
         ContestTypeLabel.Text = $"{bf.ContestType?.Name}";
-        ContestTypeInfoButton.Tag = bf;
+        ContestTypeInfoButton.Tag = bf.ContestType;
         NamesDataGridView.DataSource = bf.Names;
     }
     #endregion

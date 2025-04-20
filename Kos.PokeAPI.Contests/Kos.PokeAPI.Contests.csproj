@@ -1,15 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Library</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Kos.PokeAPI.Berries\Kos.PokeAPI.Berries.csproj" />
     <ProjectReference Include="..\Kos.PokeAPI.Utility\Kos.PokeAPI.Utility.csproj" />
     <ProjectReference Include="..\Kos.PokeAPI\Kos.PokeAPI.csproj" />
   </ItemGroup>

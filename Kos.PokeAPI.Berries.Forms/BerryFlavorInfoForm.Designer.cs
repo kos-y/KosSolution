@@ -226,7 +226,7 @@ partial class BerryFlavorInfoForm
         Controls.Add(IdCaptionLabel);
         MinimizeBox = false;
         Name = "BerryFlavorInfoForm";
-        Text = "Berry Flavor Info";
+        Text = "Berry Flavor";
         Load += BerryFlavorInfoForm_Load;
         ((System.ComponentModel.ISupportInitialize)BerriesDataGridView).EndInit();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).EndInit();

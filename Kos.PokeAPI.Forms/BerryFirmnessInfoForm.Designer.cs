@@ -1,4 +1,4 @@
-﻿namespace Kos.PokeAPI.Berries.Forms;
+﻿namespace Kos.PokeAPI.Forms;
 
 partial class BerryFirmnessInfoForm
 {

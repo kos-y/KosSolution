@@ -1,11 +1,9 @@
 using System.Reflection;
 using Kos.PokeAPI;
 using Kos.PokeAPI.Attribute;
-using Kos.PokeAPI.Berries.Forms;
+using Kos.PokeAPI.Forms;
 using Kos.PokeAPI.ResourceLists;
-using Kos.PokeAPI.ResourceLists.Forms;
 using Kos.PokeAPI.Utility.CommonModels;
-using Kos.PokeAPI.Utility.Forms;
 
 namespace AppPokeAPIViewer;
 
@@ -221,6 +219,12 @@ public partial class PokeAPIViewer : Form
 
             nameof(EndPoint.BerryFlavors) =>
                 new NamedAPIResourceListForm(eca, typeof(BerryFlavorInfoForm)),
+
+            nameof(EndPoint.ContestTypes) =>
+                new NamedAPIResourceListForm(eca, typeof(ContestTypeInfoForm)),
+
+            nameof(EndPoint.ContestEffects) =>
+                new APIResourceListForm(eca, typeof(ContestEffectInfoForm)),
 
             nameof(EndPoint.Languages) =>
                 new NamedAPIResourceListForm(eca, typeof(LanguageInfoForm)),

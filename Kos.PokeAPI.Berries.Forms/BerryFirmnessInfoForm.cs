@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Kos.PokeAPI.Berries.Berries;
 using Kos.PokeAPI.Berries.BerryFirmnesses;
 using Kos.PokeAPI.Utility.CommonModels;
-using Kos.PokeAPI.Utility.Forms;
 
 namespace Kos.PokeAPI.Berries.Forms;
 

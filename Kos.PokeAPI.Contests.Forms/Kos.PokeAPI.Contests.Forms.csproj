@@ -9,9 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Kos.PokeAPI.Berries\Kos.PokeAPI.Berries.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Utility\Kos.PokeAPI.Utility.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI\Kos.PokeAPI.csproj" />
+    <ProjectReference Include="..\Kos.PokeAPI.Contests\Kos.PokeAPI.Contests.csproj" />
   </ItemGroup>
 
 </Project>
