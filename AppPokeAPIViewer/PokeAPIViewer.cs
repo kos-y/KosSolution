@@ -241,6 +241,9 @@ public partial class PokeAPIViewer : Form
             nameof(EndPoint.EvolutionChains) =>
                 new APIResourceListForm(eca, typeof(EvolutionChainInfoForm)),
 
+            nameof(EndPoint.EvolutionTriggers) =>
+                new NamedAPIResourceListForm(eca, typeof(EvolutionTriggerInfoForm)),
+
             nameof(EndPoint.Languages) =>
                 new NamedAPIResourceListForm(eca, typeof(LanguageInfoForm)),
 
