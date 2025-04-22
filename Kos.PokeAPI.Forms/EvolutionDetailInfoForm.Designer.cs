@@ -488,6 +488,7 @@ partial class EvolutionDetailInfoForm
         CloseButton.TabIndex = 45;
         CloseButton.Text = "Close";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
         // 
         // EvolutionDetailInfoForm
         // 

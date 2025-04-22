@@ -77,6 +77,7 @@ public partial class ChainLinkInfoForm : Form
     }
     #endregion
 
+    #region evolves_to DataGridView CellClick
     /// <summary>
     /// evolves_to DataGridView CellClick
     /// </summary>
@@ -99,6 +100,40 @@ public partial class ChainLinkInfoForm : Form
         using ChainLinkInfoForm form = new(cl);
         _ = form.ShowDialog(this);
     }
+    #endregion
+
+    #region evolves_to DataGridView CellDoubleClick
+    /// <summary>
+    /// evolves_to DataGridView CellDoubleClick
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void EvolvesToDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0) {
+            return;
+        }
+
+        if (EvolvesToDataGridView.Rows[e.RowIndex].DataBoundItem is not ChainLink cl) {
+            return;
+        }
+
+        using ChainLinkInfoForm form = new(cl);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region Close クリック
+    /// <summary>
+    /// Close クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void CloseButton_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
+    #endregion
 
     #region データの表示
     /// <summary>

@@ -145,6 +145,7 @@ partial class ChainLinkInfoForm
         EvolvesToDataGridView.Size = new Size(434, 150);
         EvolvesToDataGridView.TabIndex = 8;
         EvolvesToDataGridView.CellClick += EvolvesToDataGridView_CellClick;
+        EvolvesToDataGridView.CellDoubleClick += EvolvesToDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn1
         // 
@@ -169,6 +170,7 @@ partial class ChainLinkInfoForm
         CloseButton.TabIndex = 9;
         CloseButton.Text = "Close";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
         // 
         // ChainLinkInfoForm
         // 

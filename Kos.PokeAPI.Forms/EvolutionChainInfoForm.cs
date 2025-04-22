@@ -61,6 +61,7 @@ public partial class EvolutionChainInfoForm : Form
     }
     #endregion
 
+    #region Chain Info Click
     /// <summary>
     /// Chain Info Click
     /// </summary>
@@ -75,6 +76,19 @@ public partial class EvolutionChainInfoForm : Form
         using ChainLinkInfoForm form = new(tag);
         _ = form.ShowDialog(this);
     }
+    #endregion
+
+    #region Close Click
+    /// <summary>
+    /// Close Click
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void CloseButton_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
+    #endregion
 
     #region データの表示
     /// <summary>

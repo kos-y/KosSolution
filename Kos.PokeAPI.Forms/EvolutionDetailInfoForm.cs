@@ -16,8 +16,6 @@ namespace Kos.PokeAPI.Forms;
 /// </summary>
 public partial class EvolutionDetailInfoForm : Form
 {
-    // フィールド
-
     // メソッド
 
     #region コンストラクタ
@@ -29,6 +27,18 @@ public partial class EvolutionDetailInfoForm : Form
     {
         InitializeComponent();
         SetData(ed);
+    }
+    #endregion
+
+    #region Close Click
+    /// <summary>
+    /// Close Click
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void CloseButton_Click(object sender, EventArgs e)
+    {
+        Close();
     }
     #endregion
 
