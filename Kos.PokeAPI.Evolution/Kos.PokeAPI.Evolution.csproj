@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kos.PokeAPI.Utility\Kos.PokeAPI.Utility.csproj" />
+    <ProjectReference Include="..\Kos.PokeAPI\Kos.PokeAPI.csproj" />
+  </ItemGroup>
+
+</Project>
