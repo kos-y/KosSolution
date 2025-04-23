@@ -206,6 +206,7 @@ partial class LanguageInfoForm
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         Name = "LanguageInfoForm";
         Text = "Language";

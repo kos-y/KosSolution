@@ -230,6 +230,7 @@ partial class ContestEffectInfoForm
         Controls.Add(AppealCaptionLabel);
         Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MinimizeBox = false;
         Name = "ContestEffectInfoForm";
         Text = "Contest Effect";

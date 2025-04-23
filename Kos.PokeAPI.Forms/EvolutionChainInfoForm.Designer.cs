@@ -136,6 +136,7 @@ partial class EvolutionChainInfoForm
         Controls.Add(BabyTriggerItemLabel);
         Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         MinimizeBox = false;
         Name = "EvolutionChainInfoForm";

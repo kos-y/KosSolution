@@ -120,6 +120,7 @@ partial class APIResourceListForm
         Controls.Add(OpenButton);
         Controls.Add(CloseButton);
         Controls.Add(APIResourceListDataGridView);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         Name = "APIResourceListForm";
         Text = "APIResourceList";

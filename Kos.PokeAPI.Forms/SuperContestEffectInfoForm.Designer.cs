@@ -198,6 +198,7 @@ partial class SuperContestEffectInfoForm
         Controls.Add(AppealCaptionLabel);
         Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         MinimizeBox = false;
         Name = "SuperContestEffectInfoForm";

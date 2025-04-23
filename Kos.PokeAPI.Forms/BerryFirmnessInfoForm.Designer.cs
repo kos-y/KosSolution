@@ -183,6 +183,7 @@ partial class BerryFirmnessInfoForm
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         Name = "BerryFirmnessInfoForm";
         Text = "Berry Firmness";

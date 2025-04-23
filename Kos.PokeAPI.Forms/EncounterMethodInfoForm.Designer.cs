@@ -162,6 +162,7 @@ partial class EncounterMethodInfoForm
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MinimizeBox = false;
         Name = "EncounterMethodInfoForm";
         Text = "Encounter Method";

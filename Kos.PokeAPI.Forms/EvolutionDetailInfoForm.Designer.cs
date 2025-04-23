@@ -541,6 +541,7 @@ partial class EvolutionDetailInfoForm
         Controls.Add(ItemInfoButton);
         Controls.Add(ItemCaptionLabel);
         Controls.Add(ItemLabel);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         Name = "EvolutionDetailInfoForm";
         Text = "Evolution Detail";

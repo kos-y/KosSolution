@@ -180,6 +180,7 @@ partial class EvolutionTriggerInfoForm
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         Name = "EvolutionTriggerInfoForm";
         Text = "Evolution Trigger";

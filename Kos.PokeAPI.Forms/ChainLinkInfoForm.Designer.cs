@@ -187,6 +187,7 @@ partial class ChainLinkInfoForm
         Controls.Add(SpeciesLabel);
         Controls.Add(IsBabyCaptionLabel);
         Controls.Add(IsBabyLabel);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         Name = "ChainLinkInfoForm";
         Text = "Chain Link";

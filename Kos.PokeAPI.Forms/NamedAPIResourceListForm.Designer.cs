@@ -129,6 +129,7 @@ partial class NamedAPIResourceListForm
         Controls.Add(OpenButton);
         Controls.Add(CloseButton);
         Controls.Add(NamedAPIResourceListDataGridView);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         Name = "NamedAPIResourceListForm";
         Text = "NamedAPIResourceList";
