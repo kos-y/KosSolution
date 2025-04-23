@@ -138,6 +138,8 @@ partial class GenerationInfoForm
         NamesDataGridView.RowHeadersVisible = false;
         NamesDataGridView.Size = new Size(434, 150);
         NamesDataGridView.TabIndex = 9;
+        NamesDataGridView.CellClick += NamesDataGridView_CellClick;
+        NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
         // NameColumn
         // 
@@ -276,6 +278,7 @@ partial class GenerationInfoForm
         CloseButton.TabIndex = 14;
         CloseButton.Text = "Close";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
         // 
         // GenerationInfoForm
         // 
