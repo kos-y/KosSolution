@@ -250,6 +250,9 @@ public partial class PokeAPIViewer : Form
             nameof(EndPoint.Pokedexes) =>
                 new NamedAPIResourceListForm(eca, typeof(PokedexInfoForm)),
 
+            nameof(EndPoint.Version) =>
+                new NamedAPIResourceListForm(eca, typeof(VersionInfoForm)),
+
             nameof(EndPoint.Languages) =>
                 new NamedAPIResourceListForm(eca, typeof(LanguageInfoForm)),
 
