@@ -83,6 +83,61 @@ public partial class GenerationInfoForm : Form
     }
     #endregion
 
+    #region version_group DataGridView CellClick
+    /// <summary>
+    /// version_group DataGridView CellClick
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void VersionGroupDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (VersionGroupDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+            return;
+        }
+
+        if (VersionGroupDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api?.Url is null) {
+            return;
+        }
+
+        using VersionGroupInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region version_group DataGridView CellDoubleClick
+    /// <summary>
+    /// version_group DataGridView CellDoubleClick
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private
+        void VersionGroupDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0) {
+            return;
+        }
+
+        if (VersionGroupDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api?.Url is null) {
+            return;
+        }
+
+        using VersionGroupInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region Close Click
     /// <summary>
     /// Close Click

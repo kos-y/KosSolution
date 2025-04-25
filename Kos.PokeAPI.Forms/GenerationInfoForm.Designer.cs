@@ -255,6 +255,8 @@ partial class GenerationInfoForm
         VersionGroupDataGridView.RowHeadersVisible = false;
         VersionGroupDataGridView.Size = new Size(434, 150);
         VersionGroupDataGridView.TabIndex = 13;
+        VersionGroupDataGridView.CellClick += VersionGroupDataGridView_CellClick;
+        VersionGroupDataGridView.CellDoubleClick += VersionGroupDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn4
         // 

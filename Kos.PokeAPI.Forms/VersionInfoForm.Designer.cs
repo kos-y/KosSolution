@@ -145,18 +145,19 @@ partial class VersionInfoForm
         VersionGroupLabel.BorderStyle = BorderStyle.Fixed3D;
         VersionGroupLabel.Location = new Point(117, 213);
         VersionGroupLabel.Name = "VersionGroupLabel";
-        VersionGroupLabel.Size = new Size(147, 23);
+        VersionGroupLabel.Size = new Size(252, 23);
         VersionGroupLabel.TabIndex = 7;
         VersionGroupLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // VersionGroupInfoButton
         // 
-        VersionGroupInfoButton.Location = new Point(270, 213);
+        VersionGroupInfoButton.Location = new Point(375, 213);
         VersionGroupInfoButton.Name = "VersionGroupInfoButton";
         VersionGroupInfoButton.Size = new Size(43, 23);
         VersionGroupInfoButton.TabIndex = 8;
         VersionGroupInfoButton.Text = "Info...";
         VersionGroupInfoButton.UseVisualStyleBackColor = true;
+        VersionGroupInfoButton.Click += VersionGroupInfoButton_Click;
         // 
         // VersionInfoForm
         // 

@@ -256,6 +256,9 @@ public partial class PokeAPIViewer : Form
             nameof(EndPoint.Languages) =>
                 new NamedAPIResourceListForm(eca, typeof(LanguageInfoForm)),
 
+            nameof(EndPoint.VersionGroups) =>
+                new NamedAPIResourceListForm(eca, typeof(VersionGroupInfoForm)),
+
             _ => null,
         };
     }

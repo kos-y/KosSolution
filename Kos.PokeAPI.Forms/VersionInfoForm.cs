@@ -83,6 +83,32 @@ public partial class VersionInfoForm : Form
     }
     #endregion
 
+    #region version_group Info Click
+    /// <summary>
+    /// version_group Info Click
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void VersionGroupInfoButton_Click(object sender, EventArgs e)
+    {
+        object? tag = VersionGroupInfoButton.Tag;
+        if (tag is null) {
+            return;
+        }
+
+        if (tag is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api?.Url is null) {
+            return;
+        }
+
+        using VersionGroupInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region Close Click
     /// <summary>
     /// Close Click
