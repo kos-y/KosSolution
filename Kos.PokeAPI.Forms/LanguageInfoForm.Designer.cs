@@ -218,6 +218,7 @@ partial class LanguageInfoForm
         MaximizeBox = false;
         MinimumSize = new Size(379, 445);
         Name = "LanguageInfoForm";
+        StartPosition = FormStartPosition.CenterParent;
         Text = "言語";
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).EndInit();
         ResumeLayout(false);

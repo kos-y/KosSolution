@@ -31,7 +31,7 @@ partial class ChainLinkInfoForm
         IsBabyLabel = new Label();
         SpeciesCaptionLabel = new Label();
         SpeciesLabel = new Label();
-        SpeciesInfoButton = new Button();
+        SpeciesDetailButton = new Button();
         EvolutionDetailsCaptionLabel = new Label();
         EvolutionDetailsDataGridView = new DataGridView();
         EvolutionDetailColumn = new DataGridViewTextBoxColumn();
@@ -47,153 +47,177 @@ partial class ChainLinkInfoForm
         // 
         // IsBabyCaptionLabel
         // 
-        IsBabyCaptionLabel.Location = new Point(12, 9);
+        IsBabyCaptionLabel.AutoSize = true;
+        IsBabyCaptionLabel.Location = new Point(15, 10);
+        IsBabyCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IsBabyCaptionLabel.Name = "IsBabyCaptionLabel";
-        IsBabyCaptionLabel.Size = new Size(104, 23);
+        IsBabyCaptionLabel.Size = new Size(81, 17);
         IsBabyCaptionLabel.TabIndex = 0;
-        IsBabyCaptionLabel.Text = "is_baby";
+        IsBabyCaptionLabel.Text = "ベビーポケモン";
         IsBabyCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IsBabyLabel
         // 
         IsBabyLabel.BorderStyle = BorderStyle.Fixed3D;
-        IsBabyLabel.Location = new Point(122, 3);
+        IsBabyLabel.Location = new Point(104, 5);
+        IsBabyLabel.Margin = new Padding(4, 0, 4, 0);
         IsBabyLabel.Name = "IsBabyLabel";
-        IsBabyLabel.Size = new Size(147, 23);
+        IsBabyLabel.Size = new Size(189, 26);
         IsBabyLabel.TabIndex = 1;
         IsBabyLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SpeciesCaptionLabel
         // 
-        SpeciesCaptionLabel.Location = new Point(12, 32);
+        SpeciesCaptionLabel.AutoSize = true;
+        SpeciesCaptionLabel.Location = new Point(15, 36);
+        SpeciesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         SpeciesCaptionLabel.Name = "SpeciesCaptionLabel";
-        SpeciesCaptionLabel.Size = new Size(104, 23);
+        SpeciesCaptionLabel.Size = new Size(75, 17);
         SpeciesCaptionLabel.TabIndex = 2;
-        SpeciesCaptionLabel.Text = "species";
+        SpeciesCaptionLabel.Text = "ポケモン種族";
         SpeciesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SpeciesLabel
         // 
         SpeciesLabel.BorderStyle = BorderStyle.Fixed3D;
-        SpeciesLabel.Location = new Point(122, 26);
+        SpeciesLabel.Location = new Point(104, 31);
+        SpeciesLabel.Margin = new Padding(4, 0, 4, 0);
         SpeciesLabel.Name = "SpeciesLabel";
-        SpeciesLabel.Size = new Size(147, 23);
+        SpeciesLabel.Size = new Size(189, 26);
         SpeciesLabel.TabIndex = 3;
         SpeciesLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // SpeciesInfoButton
+        // SpeciesDetailButton
         // 
-        SpeciesInfoButton.Location = new Point(275, 26);
-        SpeciesInfoButton.Name = "SpeciesInfoButton";
-        SpeciesInfoButton.Size = new Size(43, 23);
-        SpeciesInfoButton.TabIndex = 4;
-        SpeciesInfoButton.Text = "Info...";
-        SpeciesInfoButton.UseVisualStyleBackColor = true;
+        SpeciesDetailButton.Location = new Point(301, 31);
+        SpeciesDetailButton.Margin = new Padding(4, 3, 4, 3);
+        SpeciesDetailButton.Name = "SpeciesDetailButton";
+        SpeciesDetailButton.Size = new Size(55, 26);
+        SpeciesDetailButton.TabIndex = 4;
+        SpeciesDetailButton.Text = "詳細";
+        SpeciesDetailButton.UseVisualStyleBackColor = true;
         // 
         // EvolutionDetailsCaptionLabel
         // 
-        EvolutionDetailsCaptionLabel.Location = new Point(12, 55);
+        EvolutionDetailsCaptionLabel.AutoSize = true;
+        EvolutionDetailsCaptionLabel.Location = new Point(15, 62);
+        EvolutionDetailsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         EvolutionDetailsCaptionLabel.Name = "EvolutionDetailsCaptionLabel";
-        EvolutionDetailsCaptionLabel.Size = new Size(104, 23);
+        EvolutionDetailsCaptionLabel.Size = new Size(60, 17);
         EvolutionDetailsCaptionLabel.TabIndex = 5;
-        EvolutionDetailsCaptionLabel.Text = "evolution_details";
+        EvolutionDetailsCaptionLabel.Text = "進化詳細";
         EvolutionDetailsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // EvolutionDetailsDataGridView
         // 
         EvolutionDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         EvolutionDetailsDataGridView.Columns.AddRange(new DataGridViewColumn[] { EvolutionDetailColumn, DetailColumn });
-        EvolutionDetailsDataGridView.Location = new Point(122, 55);
+        EvolutionDetailsDataGridView.Location = new Point(104, 64);
+        EvolutionDetailsDataGridView.Margin = new Padding(4, 3, 4, 3);
         EvolutionDetailsDataGridView.Name = "EvolutionDetailsDataGridView";
         EvolutionDetailsDataGridView.RowHeadersVisible = false;
-        EvolutionDetailsDataGridView.Size = new Size(434, 150);
+        EvolutionDetailsDataGridView.Size = new Size(558, 170);
         EvolutionDetailsDataGridView.TabIndex = 6;
         EvolutionDetailsDataGridView.CellClick += EvolutionDetailsDataGridView_CellClick;
         EvolutionDetailsDataGridView.CellDoubleClick += EvolutionDetailsDataGridView_CellDoubleClick;
         // 
         // EvolutionDetailColumn
         // 
+        EvolutionDetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         EvolutionDetailColumn.DataPropertyName = "Text";
-        EvolutionDetailColumn.HeaderText = "detail";
+        EvolutionDetailColumn.HeaderText = "進化詳細";
         EvolutionDetailColumn.Name = "EvolutionDetailColumn";
         EvolutionDetailColumn.ReadOnly = true;
-        EvolutionDetailColumn.Width = 250;
+        EvolutionDetailColumn.Width = 85;
         // 
         // DetailColumn
         // 
-        DetailColumn.HeaderText = "Info";
+        DetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        DetailColumn.HeaderText = "詳細";
         DetailColumn.Name = "DetailColumn";
-        DetailColumn.Text = "Info..";
+        DetailColumn.Text = "詳細";
         DetailColumn.UseColumnTextForButtonValue = true;
+        DetailColumn.Width = 40;
         // 
         // EvolvesToCaptionLabel
         // 
-        EvolvesToCaptionLabel.Location = new Point(12, 214);
+        EvolvesToCaptionLabel.AutoSize = true;
+        EvolvesToCaptionLabel.Location = new Point(15, 243);
+        EvolvesToCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         EvolvesToCaptionLabel.Name = "EvolvesToCaptionLabel";
-        EvolvesToCaptionLabel.Size = new Size(104, 23);
+        EvolvesToCaptionLabel.Size = new Size(47, 17);
         EvolvesToCaptionLabel.TabIndex = 7;
-        EvolvesToCaptionLabel.Text = "evolves_to";
+        EvolvesToCaptionLabel.Text = "進化先";
         EvolvesToCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // EvolvesToDataGridView
         // 
         EvolvesToDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         EvolvesToDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewButtonColumn1 });
-        EvolvesToDataGridView.Location = new Point(122, 208);
+        EvolvesToDataGridView.Location = new Point(104, 238);
+        EvolvesToDataGridView.Margin = new Padding(4, 3, 4, 3);
         EvolvesToDataGridView.Name = "EvolvesToDataGridView";
         EvolvesToDataGridView.RowHeadersVisible = false;
-        EvolvesToDataGridView.Size = new Size(434, 150);
+        EvolvesToDataGridView.Size = new Size(558, 170);
         EvolvesToDataGridView.TabIndex = 8;
         EvolvesToDataGridView.CellClick += EvolvesToDataGridView_CellClick;
         EvolvesToDataGridView.CellDoubleClick += EvolvesToDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn1
         // 
+        dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewTextBoxColumn1.DataPropertyName = "Text";
-        dataGridViewTextBoxColumn1.HeaderText = "detail";
+        dataGridViewTextBoxColumn1.HeaderText = "進化先";
         dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
         dataGridViewTextBoxColumn1.ReadOnly = true;
-        dataGridViewTextBoxColumn1.Width = 250;
+        dataGridViewTextBoxColumn1.Width = 72;
         // 
         // dataGridViewButtonColumn1
         // 
-        dataGridViewButtonColumn1.HeaderText = "Info";
+        dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn1.HeaderText = "詳細";
         dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-        dataGridViewButtonColumn1.Text = "Info..";
+        dataGridViewButtonColumn1.Text = "詳細";
         dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn1.Width = 40;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(481, 364);
+        CloseButton.Location = new Point(566, 414);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 23);
+        CloseButton.Size = new Size(96, 26);
         CloseButton.TabIndex = 9;
-        CloseButton.Text = "Close";
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
         // ChainLinkInfoForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(566, 393);
+        ClientSize = new Size(679, 445);
         Controls.Add(CloseButton);
         Controls.Add(EvolvesToDataGridView);
         Controls.Add(EvolvesToCaptionLabel);
         Controls.Add(EvolutionDetailsDataGridView);
         Controls.Add(EvolutionDetailsCaptionLabel);
-        Controls.Add(SpeciesInfoButton);
+        Controls.Add(SpeciesDetailButton);
         Controls.Add(SpeciesCaptionLabel);
         Controls.Add(SpeciesLabel);
         Controls.Add(IsBabyCaptionLabel);
         Controls.Add(IsBabyLabel);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "ChainLinkInfoForm";
-        Text = "Chain Link";
+        StartPosition = FormStartPosition.CenterParent;
+        Text = "進化チェーンリンク";
         ((System.ComponentModel.ISupportInitialize)EvolutionDetailsDataGridView).EndInit();
         ((System.ComponentModel.ISupportInitialize)EvolvesToDataGridView).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
@@ -202,7 +226,7 @@ partial class ChainLinkInfoForm
     private Label IsBabyLabel;
     private Label SpeciesCaptionLabel;
     private Label SpeciesLabel;
-    private Button SpeciesInfoButton;
+    private Button SpeciesDetailButton;
     private Label EvolutionDetailsCaptionLabel;
     private DataGridView EvolutionDetailsDataGridView;
     private Label EvolvesToCaptionLabel;

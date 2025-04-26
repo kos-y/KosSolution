@@ -34,9 +34,9 @@ public partial class BerryInfoForm : Form
     }
     #endregion
 
-    #region Form Load
+    #region ロード
     /// <summary>
-    /// Form Load
+    /// ロード
     /// </summary>
     /// <param name="sender">イベント発生オブジェクト</param>
     /// <param name="e">イベント引数</param>
@@ -46,35 +46,63 @@ public partial class BerryInfoForm : Form
     }
     #endregion
 
-    #region firmness Info Click
+    #region きのみの硬さ 詳細 クリック
     /// <summary>
-    /// firmness Info Click
+    /// きのみの硬さ 詳細 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void FirmnessInfoButton_Click(object sender, EventArgs e)
+    private void FirmnessDetailButton_Click(object sender, EventArgs e)
     {
-        object? tag = FirmnessInfoButton.Tag;
-        if (tag is null) {
+        if (FirmnessDetailButton.Tag is null) {
             return;
         }
 
-        if (tag is not NamedAPIResource r) {
+        if (FirmnessDetailButton.Tag is not NamedAPIResource api) {
             return;
         }
 
-        if (string.IsNullOrWhiteSpace(r.Url)) {
+        if (string.IsNullOrWhiteSpace(api.Url)) {
             return;
         }
 
-        using BerryFirmnessInfoForm form = new(r.Url);
+        if (api.Url is null) {
+            return;
+        }
+
+        using BerryFirmnessInfoForm form = new(api.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Flavor CellClick
+    #region アイテム 詳細 クリック
     /// <summary>
-    /// Flavor CellClick
+    /// アイテム 詳細 クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ItemDetailButton_Click(object sender, EventArgs e)
+    {
+        if (ItemDetailButton.Tag is null) {
+            return;
+        }
+
+        if (ItemDetailButton.Tag is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using ItemInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 味 セルクリック
+    /// <summary>
+    /// 味 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -101,9 +129,9 @@ public partial class BerryInfoForm : Form
     }
     #endregion
 
-    #region flavor CellDoubleClick
+    #region 味 セルダブルクリック
     /// <summary>
-    /// flavor CellDoubleClick
+    /// 味 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -126,9 +154,9 @@ public partial class BerryInfoForm : Form
     }
     #endregion
 
-    #region Close Click
+    #region 閉じる クリック
     /// <summary>
-    /// Close Click
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender">イベント発生オブジェクト</param>
     /// <param name="e">イベント引数</param>
@@ -160,10 +188,11 @@ public partial class BerryInfoForm : Form
         SmoothnessLabel.Text = $"{berry.Smoothness}";
         SoilDrynessLabel.Text = $"{berry.SoilDryness}";
         FirmnessLabel.Text = berry.Firmness?.Name ?? string.Empty;
-        FirmnessInfoButton.Tag = berry.Firmness;
+        FirmnessDetailButton.Tag = berry.Firmness;
+        FlavorDataGridView.AutoGenerateColumns = false;
         FlavorDataGridView.DataSource = berry.Flavors;
         ItemLabel.Text = berry.Item?.Name ?? string.Empty;
-        ItemInfoButton.Tag = berry.Item;
+        ItemDetailButton.Tag = berry.Item;
         NaturalGiftTypeLabel.Text = berry.NaturalGiftType?.Name ?? string.Empty;
         NaturalGiftTypeInfoButton.Tag = berry.NaturalGiftType;
     }

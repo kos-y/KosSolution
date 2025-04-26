@@ -61,7 +61,7 @@ partial class NameInfoForm
         NameTextBox.Location = new Point(54, 6);
         NameTextBox.Name = "NameTextBox";
         NameTextBox.ReadOnly = true;
-        NameTextBox.Size = new Size(232, 24);
+        NameTextBox.Size = new Size(311, 24);
         NameTextBox.TabIndex = 1;
         NameTextBox.Text = "ピカチュウ";
         // 
@@ -71,14 +71,14 @@ partial class NameInfoForm
         LanguageTextBox.Location = new Point(54, 36);
         LanguageTextBox.Name = "LanguageTextBox";
         LanguageTextBox.ReadOnly = true;
-        LanguageTextBox.Size = new Size(173, 24);
+        LanguageTextBox.Size = new Size(252, 24);
         LanguageTextBox.TabIndex = 3;
         LanguageTextBox.Text = "ja-Hrkt";
         // 
         // LanguageDetailButton
         // 
         LanguageDetailButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        LanguageDetailButton.Location = new Point(233, 36);
+        LanguageDetailButton.Location = new Point(312, 36);
         LanguageDetailButton.Name = "LanguageDetailButton";
         LanguageDetailButton.Size = new Size(53, 23);
         LanguageDetailButton.TabIndex = 4;
@@ -89,7 +89,7 @@ partial class NameInfoForm
         // CloseButton
         // 
         CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        CloseButton.Location = new Point(223, 74);
+        CloseButton.Location = new Point(302, 74);
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(63, 35);
         CloseButton.TabIndex = 5;
@@ -101,7 +101,7 @@ partial class NameInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(298, 121);
+        ClientSize = new Size(377, 121);
         Controls.Add(CloseButton);
         Controls.Add(LanguageDetailButton);
         Controls.Add(LanguageTextBox);
@@ -109,7 +109,9 @@ partial class NameInfoForm
         Controls.Add(LanguageCaptionLabel);
         Controls.Add(NameCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
+        MaximizeBox = false;
         Name = "NameInfoForm";
+        StartPosition = FormStartPosition.CenterParent;
         Text = "名前";
         ResumeLayout(false);
         PerformLayout();

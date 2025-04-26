@@ -29,9 +29,9 @@ public partial class ContestEffectInfoForm : Form
     }
     #endregion
 
-    #region Load
+    #region ロード
     /// <summary>
-    /// Load
+    /// ロード
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -41,9 +41,9 @@ public partial class ContestEffectInfoForm : Form
     }
     #endregion
 
-    #region effect_entries DataGridView CellClick
+    #region 効果 セルクリック
     /// <summary>
-    /// effect_entries DataGridView CellClick
+    /// 効果 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -70,9 +70,9 @@ public partial class ContestEffectInfoForm : Form
     }
     #endregion
 
-    #region effect_entries DataGridView CellDoubleClick
+    #region  効果 セルダブルクリック
     /// <summary>
-    /// effect_entries DataGridView CellDoubleClick
+    /// 効果 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -96,9 +96,9 @@ public partial class ContestEffectInfoForm : Form
     }
     #endregion
 
-    #region flavor_text_entries DataGridView CellClick
+    #region フレーバーテキスト セルクリック
     /// <summary>
-    /// flavor_text_entries DataGridView CellClick
+    /// フレーバーテキスト セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -118,37 +118,19 @@ public partial class ContestEffectInfoForm : Form
             return;
         }
 
-        switch (FlavorTextEntriesDataGridView.Columns[e.ColumnIndex].Name) {
-        case nameof(FlavorTextLanguageInfoButtonColumn): {
-                if (ft.Language?.Url is null) {
-                    return;
-                }
-
-                using LanguageInfoForm form = new(ft.Language.Url);
-                _ = form.ShowDialog(this);
-            }
-            break;
-
-        case nameof(FlavorTextVersionInfoButtonColumn): {
-                if (ft.Version?.Url is null) {
-                    return;
-                }
-            }
-            break;
-
-        default:
-            break;
-        }
+        using FlavorTextInfoForm form = new(ft);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region flavor_text_entries DataGridView CellDoubleClick
+    #region フレーバーテキスト セルダブルクリック
     /// <summary>
-    /// flavor_text_entries DataGridView CellDoubleClick
+    /// フレーバーテキスト セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void FlavorTextEntriesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    private void
+        FlavorTextEntriesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
     {
         if (e.RowIndex < 0) {
             return;
@@ -158,30 +140,8 @@ public partial class ContestEffectInfoForm : Form
             return;
         }
 
-        Select2Form selForm = new("Language", "Version");
-        if (selForm.ShowDialog(this) == DialogResult.OK) {
-            switch (selForm.Result) {
-            case Select2Result.Select1: {
-                    if (ft.Language?.Url is null) {
-                        return;
-                    }
-
-                    using LanguageInfoForm form = new(ft.Language.Url);
-                    _ = form.ShowDialog(this);
-                }
-                break;
-
-            case Select2Result.Select2: {
-                    if (ft.Version?.Url is null) {
-                        return;
-                    }
-                }
-                break;
-
-            default:
-                break;
-            }
-        }
+        using FlavorTextInfoForm form = new(ft);
+        _ = form.ShowDialog(this);
     }
     #endregion
 

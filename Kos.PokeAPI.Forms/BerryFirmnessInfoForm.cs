@@ -41,9 +41,9 @@ public partial class BerryFirmnessInfoForm : Form
     }
     #endregion
 
-    #region Load
+    #region ロード
     /// <summary>
-    /// Load
+    /// ロード
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -53,9 +53,9 @@ public partial class BerryFirmnessInfoForm : Form
     }
     #endregion
 
-    #region Berries CellClick
+    #region きのみ セルクリック
     /// <summary>
-    /// Berries CellClick
+    /// きのみ セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -82,9 +82,9 @@ public partial class BerryFirmnessInfoForm : Form
     }
     #endregion
 
-    #region berries CellDoubleClick
+    #region きのみ セルダブルクリック
     /// <summary>
-    /// berries CellDoubleClick
+    /// きのみ セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -107,9 +107,9 @@ public partial class BerryFirmnessInfoForm : Form
     }
     #endregion
 
-    #region names CellClick
+    #region 言語ごとの名前 セルクリック
     /// <summary>
-    /// names CellClick
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -131,12 +131,12 @@ public partial class BerryFirmnessInfoForm : Form
             return;
         }
 
-        using LanguageInfoForm form = new(name.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region names CellDoubleClick
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
     /// names CellDoubleClick
     /// </summary>
@@ -156,14 +156,14 @@ public partial class BerryFirmnessInfoForm : Form
             return;
         }
 
-        using LanguageInfoForm form = new(name.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Close Click
+    #region 閉じる クリック
     /// <summary>
-    /// Close Click
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

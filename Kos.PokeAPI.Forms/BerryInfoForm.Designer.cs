@@ -45,20 +45,20 @@ partial class BerryInfoForm
         FirmnessCaptionLabel = new Label();
         SoilDrynessLabel = new Label();
         SoilDrynessCaptionLabel = new Label();
-        FirmnessInfoButton = new Button();
+        FirmnessDetailButton = new Button();
         FlavorsCaptionLabel = new Label();
         FlavorDataGridView = new DataGridView();
-        FlavorColumn = new DataGridViewTextBoxColumn();
-        PotencyColumn = new DataGridViewTextBoxColumn();
-        FlavorInfoColumn = new DataGridViewButtonColumn();
         ItemLabel = new Label();
         ItemCaptionLabel = new Label();
-        ItemInfoButton = new Button();
+        ItemDetailButton = new Button();
         NaturalGiftTypeLabel = new Label();
         NaturalGiftTypeCaptionLabel = new Label();
         NaturalGiftTypeInfoButton = new Button();
         CloseButton = new Button();
         NaturalGiftGroupBox = new GroupBox();
+        FlavorColumn = new DataGridViewTextBoxColumn();
+        PotencyColumn = new DataGridViewTextBoxColumn();
+        FlavorDetailColumn = new DataGridViewButtonColumn();
         ((System.ComponentModel.ISupportInitialize)FlavorDataGridView).BeginInit();
         NaturalGiftGroupBox.SuspendLayout();
         SuspendLayout();
@@ -252,16 +252,16 @@ partial class BerryInfoForm
         SoilDrynessCaptionLabel.Text = "土壌乾燥速度";
         SoilDrynessCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // FirmnessInfoButton
+        // FirmnessDetailButton
         // 
-        FirmnessInfoButton.Location = new Point(278, 65);
-        FirmnessInfoButton.Margin = new Padding(4, 3, 4, 3);
-        FirmnessInfoButton.Name = "FirmnessInfoButton";
-        FirmnessInfoButton.Size = new Size(45, 26);
-        FirmnessInfoButton.TabIndex = 8;
-        FirmnessInfoButton.Text = "詳細";
-        FirmnessInfoButton.UseVisualStyleBackColor = true;
-        FirmnessInfoButton.Click += FirmnessInfoButton_Click;
+        FirmnessDetailButton.Location = new Point(278, 65);
+        FirmnessDetailButton.Margin = new Padding(4, 3, 4, 3);
+        FirmnessDetailButton.Name = "FirmnessDetailButton";
+        FirmnessDetailButton.Size = new Size(45, 26);
+        FirmnessDetailButton.TabIndex = 8;
+        FirmnessDetailButton.Text = "詳細";
+        FirmnessDetailButton.UseVisualStyleBackColor = true;
+        FirmnessDetailButton.Click += FirmnessDetailButton_Click;
         // 
         // FlavorsCaptionLabel
         // 
@@ -277,7 +277,7 @@ partial class BerryInfoForm
         // FlavorDataGridView
         // 
         FlavorDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        FlavorDataGridView.Columns.AddRange(new DataGridViewColumn[] { FlavorColumn, PotencyColumn, FlavorInfoColumn });
+        FlavorDataGridView.Columns.AddRange(new DataGridViewColumn[] { FlavorColumn, PotencyColumn, FlavorDetailColumn });
         FlavorDataGridView.Location = new Point(13, 177);
         FlavorDataGridView.Margin = new Padding(4, 3, 4, 3);
         FlavorDataGridView.Name = "FlavorDataGridView";
@@ -286,28 +286,6 @@ partial class BerryInfoForm
         FlavorDataGridView.TabIndex = 21;
         FlavorDataGridView.CellClick += FlavorDataGridView_CellClick;
         FlavorDataGridView.CellDoubleClick += FlavorDataGridView_CellDoubleClick;
-        // 
-        // FlavorColumn
-        // 
-        FlavorColumn.DataPropertyName = "Flavor";
-        FlavorColumn.HeaderText = "味";
-        FlavorColumn.Name = "FlavorColumn";
-        FlavorColumn.ReadOnly = true;
-        // 
-        // PotencyColumn
-        // 
-        PotencyColumn.DataPropertyName = "Potency";
-        PotencyColumn.HeaderText = "強さ";
-        PotencyColumn.Name = "PotencyColumn";
-        PotencyColumn.ReadOnly = true;
-        // 
-        // FlavorInfoColumn
-        // 
-        FlavorInfoColumn.HeaderText = "詳細";
-        FlavorInfoColumn.Name = "FlavorInfoColumn";
-        FlavorInfoColumn.ReadOnly = true;
-        FlavorInfoColumn.Text = "詳細";
-        FlavorInfoColumn.UseColumnTextForButtonValue = true;
         // 
         // ItemLabel
         // 
@@ -330,15 +308,16 @@ partial class BerryInfoForm
         ItemCaptionLabel.Text = "アイテム";
         ItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // ItemInfoButton
+        // ItemDetailButton
         // 
-        ItemInfoButton.Location = new Point(601, 65);
-        ItemInfoButton.Margin = new Padding(4, 3, 4, 3);
-        ItemInfoButton.Name = "ItemInfoButton";
-        ItemInfoButton.Size = new Size(47, 26);
-        ItemInfoButton.TabIndex = 15;
-        ItemInfoButton.Text = "詳細";
-        ItemInfoButton.UseVisualStyleBackColor = true;
+        ItemDetailButton.Location = new Point(601, 65);
+        ItemDetailButton.Margin = new Padding(4, 3, 4, 3);
+        ItemDetailButton.Name = "ItemDetailButton";
+        ItemDetailButton.Size = new Size(47, 26);
+        ItemDetailButton.TabIndex = 15;
+        ItemDetailButton.Text = "詳細";
+        ItemDetailButton.UseVisualStyleBackColor = true;
+        ItemDetailButton.Click += ItemDetailButton_Click;
         // 
         // NaturalGiftTypeLabel
         // 
@@ -396,6 +375,34 @@ partial class BerryInfoForm
         NaturalGiftGroupBox.TabStop = false;
         NaturalGiftGroupBox.Text = "しぜんのめぐみ";
         // 
+        // FlavorColumn
+        // 
+        FlavorColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        FlavorColumn.DataPropertyName = "Flavor";
+        FlavorColumn.HeaderText = "味";
+        FlavorColumn.Name = "FlavorColumn";
+        FlavorColumn.ReadOnly = true;
+        FlavorColumn.Width = 46;
+        // 
+        // PotencyColumn
+        // 
+        PotencyColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        PotencyColumn.DataPropertyName = "Potency";
+        PotencyColumn.HeaderText = "強さ";
+        PotencyColumn.Name = "PotencyColumn";
+        PotencyColumn.ReadOnly = true;
+        PotencyColumn.Width = 56;
+        // 
+        // FlavorDetailColumn
+        // 
+        FlavorDetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        FlavorDetailColumn.HeaderText = "詳細";
+        FlavorDetailColumn.Name = "FlavorDetailColumn";
+        FlavorDetailColumn.ReadOnly = true;
+        FlavorDetailColumn.Text = "詳細";
+        FlavorDetailColumn.UseColumnTextForButtonValue = true;
+        FlavorDetailColumn.Width = 40;
+        // 
         // BerryInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
@@ -403,12 +410,12 @@ partial class BerryInfoForm
         ClientSize = new Size(658, 454);
         Controls.Add(NaturalGiftGroupBox);
         Controls.Add(CloseButton);
-        Controls.Add(ItemInfoButton);
+        Controls.Add(ItemDetailButton);
         Controls.Add(ItemCaptionLabel);
         Controls.Add(ItemLabel);
         Controls.Add(FlavorDataGridView);
         Controls.Add(FlavorsCaptionLabel);
-        Controls.Add(FirmnessInfoButton);
+        Controls.Add(FirmnessDetailButton);
         Controls.Add(SoilDrynessCaptionLabel);
         Controls.Add(SoilDrynessLabel);
         Controls.Add(FirmnessCaptionLabel);
@@ -430,6 +437,7 @@ partial class BerryInfoForm
         Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "BerryInfoForm";
+        StartPosition = FormStartPosition.CenterParent;
         Text = "きのみ";
         Load += BerryInfoForm_Load;
         ((System.ComponentModel.ISupportInitialize)FlavorDataGridView).EndInit();
@@ -459,12 +467,12 @@ partial class BerryInfoForm
     private Label FirmnessCaptionLabel;
     private Label SoilDrynessLabel;
     private Label SoilDrynessCaptionLabel;
-    private Button FirmnessInfoButton;
+    private Button FirmnessDetailButton;
     private Label FlavorsCaptionLabel;
     private DataGridView FlavorDataGridView;
     private Label ItemLabel;
     private Label ItemCaptionLabel;
-    private Button ItemInfoButton;
+    private Button ItemDetailButton;
     private Label NaturalGiftTypeLabel;
     private Label NaturalGiftTypeCaptionLabel;
     private Button NaturalGiftTypeInfoButton;
@@ -472,5 +480,5 @@ partial class BerryInfoForm
     private GroupBox NaturalGiftGroupBox;
     private DataGridViewTextBoxColumn FlavorColumn;
     private DataGridViewTextBoxColumn PotencyColumn;
-    private DataGridViewButtonColumn FlavorInfoColumn;
+    private DataGridViewButtonColumn FlavorDetailColumn;
 }

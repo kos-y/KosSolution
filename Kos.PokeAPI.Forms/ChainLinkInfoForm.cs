@@ -27,9 +27,9 @@ public partial class ChainLinkInfoForm : Form
     }
     #endregion
 
-    #region evolution_details DataGridView CellClick
+    #region 進化詳細 セルクリック
     /// <summary>
-    /// evolution_details DataGridView CellClick
+    /// 進化詳細 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -54,9 +54,9 @@ public partial class ChainLinkInfoForm : Form
     }
     #endregion
 
-    #region evolution_details DataGridView CellDoubleClick
+    #region 進化詳細 セルダブルクリック
     /// <summary>
-    /// evolution_details DataGridView CellDoubleClick
+    /// 進化詳細 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -77,9 +77,9 @@ public partial class ChainLinkInfoForm : Form
     }
     #endregion
 
-    #region evolves_to DataGridView CellClick
+    #region 進化先 セルクリック
     /// <summary>
-    /// evolves_to DataGridView CellClick
+    /// 進化先 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -102,9 +102,9 @@ public partial class ChainLinkInfoForm : Form
     }
     #endregion
 
-    #region evolves_to DataGridView CellDoubleClick
+    #region 進化先 セルダブルクリック
     /// <summary>
-    /// evolves_to DataGridView CellDoubleClick
+    /// 進化先 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -123,9 +123,9 @@ public partial class ChainLinkInfoForm : Form
     }
     #endregion
 
-    #region Close クリック
+    #region 閉じる クリック
     /// <summary>
-    /// Close クリック
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -143,7 +143,7 @@ public partial class ChainLinkInfoForm : Form
     {
         IsBabyLabel.Text = $"{cl.IsBaby}";
         SpeciesLabel.Text = cl.Species?.Name ?? string.Empty;
-        SpeciesInfoButton.Tag = cl.Species;
+        SpeciesDetailButton.Tag = cl.Species;
         EvolutionDetailsDataGridView.AutoGenerateColumns = false;
         EvolutionDetailsDataGridView.DataSource = cl.EvolutionDetails;
         EvolvesToDataGridView.AutoGenerateColumns = false;

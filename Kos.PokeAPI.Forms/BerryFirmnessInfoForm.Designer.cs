@@ -37,7 +37,7 @@ partial class BerryFirmnessInfoForm
         NamesCaptionLabel = new Label();
         CloseButton = new Button();
         BerriesNameColumn = new DataGridViewTextBoxColumn();
-        BerrieInfoButtonColumn = new DataGridViewButtonColumn();
+        BerrieDetailButtonColumn = new DataGridViewButtonColumn();
         NameColumn = new DataGridViewTextBoxColumn();
         LanguageColumn = new DataGridViewTextBoxColumn();
         DetailColumn = new DataGridViewButtonColumn();
@@ -101,7 +101,7 @@ partial class BerryFirmnessInfoForm
         // BerriesDataGridView
         // 
         BerriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        BerriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { BerriesNameColumn, BerrieInfoButtonColumn });
+        BerriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { BerriesNameColumn, BerrieDetailButtonColumn });
         BerriesDataGridView.Location = new Point(150, 66);
         BerriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         BerriesDataGridView.Name = "BerriesDataGridView";
@@ -148,39 +148,49 @@ partial class BerryFirmnessInfoForm
         // 
         // BerriesNameColumn
         // 
+        BerriesNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         BerriesNameColumn.DataPropertyName = "Name";
         BerriesNameColumn.HeaderText = "きのみ";
         BerriesNameColumn.Name = "BerriesNameColumn";
         BerriesNameColumn.ReadOnly = true;
+        BerriesNameColumn.Width = 66;
         // 
-        // BerrieInfoButtonColumn
+        // BerrieDetailButtonColumn
         // 
-        BerrieInfoButtonColumn.HeaderText = "詳細";
-        BerrieInfoButtonColumn.Name = "BerrieInfoButtonColumn";
-        BerrieInfoButtonColumn.ReadOnly = true;
-        BerrieInfoButtonColumn.Text = "詳細";
-        BerrieInfoButtonColumn.UseColumnTextForButtonValue = true;
+        BerrieDetailButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        BerrieDetailButtonColumn.HeaderText = "詳細";
+        BerrieDetailButtonColumn.Name = "BerrieDetailButtonColumn";
+        BerrieDetailButtonColumn.ReadOnly = true;
+        BerrieDetailButtonColumn.Text = "詳細";
+        BerrieDetailButtonColumn.UseColumnTextForButtonValue = true;
+        BerrieDetailButtonColumn.Width = 40;
         // 
         // NameColumn
         // 
+        NameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         NameColumn.DataPropertyName = "Text";
         NameColumn.HeaderText = "名前";
         NameColumn.Name = "NameColumn";
         NameColumn.ReadOnly = true;
+        NameColumn.Width = 59;
         // 
         // LanguageColumn
         // 
+        LanguageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         LanguageColumn.DataPropertyName = "Language";
         LanguageColumn.HeaderText = "言語";
         LanguageColumn.Name = "LanguageColumn";
         LanguageColumn.ReadOnly = true;
+        LanguageColumn.Width = 59;
         // 
         // DetailColumn
         // 
+        DetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         DetailColumn.HeaderText = "詳細";
         DetailColumn.Name = "DetailColumn";
         DetailColumn.Text = "詳細";
         DetailColumn.UseColumnTextForButtonValue = true;
+        DetailColumn.Width = 40;
         // 
         // BerryFirmnessInfoForm
         // 
@@ -201,6 +211,7 @@ partial class BerryFirmnessInfoForm
         Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "BerryFirmnessInfoForm";
+        StartPosition = FormStartPosition.CenterParent;
         Text = "きのみの硬さ";
         Load += BerryFirmnessInfoForm_Load;
         ((System.ComponentModel.ISupportInitialize)BerriesDataGridView).EndInit();
@@ -221,7 +232,7 @@ partial class BerryFirmnessInfoForm
     private Label NamesCaptionLabel;
     private Button CloseButton;
     private DataGridViewTextBoxColumn BerriesNameColumn;
-    private DataGridViewButtonColumn BerrieInfoButtonColumn;
+    private DataGridViewButtonColumn BerrieDetailButtonColumn;
     private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn LanguageColumn;
     private DataGridViewButtonColumn DetailColumn;
