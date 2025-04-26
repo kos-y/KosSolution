@@ -106,7 +106,7 @@ partial class ContestTypeInfoForm
         BerryFlavorInfoButton.TabIndex = 6;
         BerryFlavorInfoButton.Text = "Info...";
         BerryFlavorInfoButton.UseVisualStyleBackColor = true;
-        BerryFlavorInfoButton.Click += BerryFlavorInfoButton_Click;
+        BerryFlavorInfoButton.Click += BerryFlavorDetailButton_Click;
         // 
         // NamesDataGridView
         // 

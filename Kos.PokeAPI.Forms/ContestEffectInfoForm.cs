@@ -61,11 +61,7 @@ public partial class ContestEffectInfoForm : Form
             return;
         }
 
-        if (effect.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(effect.Language.Url);
+        using EffectInfoForm form = new(effect);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -87,11 +83,7 @@ public partial class ContestEffectInfoForm : Form
             return;
         }
 
-        if (effect.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(effect.Language.Url);
+        using EffectInfoForm form = new(effect);
         _ = form.ShowDialog(this);
     }
     #endregion

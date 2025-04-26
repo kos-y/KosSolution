@@ -32,9 +32,9 @@ public partial class ContestTypeInfoForm : Form
     }
     #endregion
 
-    #region Load
+    #region ロード
     /// <summary>
-    /// Load
+    /// ロード
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -44,21 +44,19 @@ public partial class ContestTypeInfoForm : Form
     }
     #endregion
 
-    #region Berry Flavor Info Click
+    #region きのみの味 詳細 クリック
     /// <summary>
-    /// Berry Flavor Info Click
+    /// きのみの味 詳細 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void BerryFlavorInfoButton_Click(object sender, EventArgs e)
+    private void BerryFlavorDetailButton_Click(object sender, EventArgs e)
     {
-        object? tag = BerryFlavorInfoButton.Tag;
-
-        if (tag is null) {
+        if (BerryFlavorInfoButton.Tag is null) {
             return;
         }
 
-        if (tag is not NamedAPIResource api) {
+        if (BerryFlavorInfoButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -71,9 +69,9 @@ public partial class ContestTypeInfoForm : Form
     }
     #endregion
 
-    #region Names DataGridView CellClick
+    #region 言語ごとの名前 セルクリック
     /// <summary>
-    /// Names DataGridView CellClick
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -91,18 +89,14 @@ public partial class ContestTypeInfoForm : Form
             return;
         }
 
-        if (cn?.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(cn.Language.Url);
+        using ContestNameInfoForm form = new(cn);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Names DataGridView CellDoubleClick
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
-    /// Names DataGridView CellDoubleClick
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -116,18 +110,14 @@ public partial class ContestTypeInfoForm : Form
             return;
         }
 
-        if (cn?.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(cn.Language.Url);
+        using ContestNameInfoForm form = new(cn);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Close Click
+    #region 閉じる クリック
     /// <summary>
-    /// Close Click
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

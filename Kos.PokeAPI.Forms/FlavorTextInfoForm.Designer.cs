@@ -132,6 +132,7 @@ partial class FlavorTextInfoForm
         CloseButton.TabIndex = 8;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
         // 
         // FlavorTextInfoForm
         // 

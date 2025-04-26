@@ -7,25 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.PokeAPI.Contests.ContestTypes;
 using Kos.PokeAPI.Utility.CommonModels;
-using Kos.PokeAPI.Utility.Languages;
 
 namespace Kos.PokeAPI.Forms;
 
 /// <summary>
-/// フレーバーテキスト
+/// コンテストの名前
 /// </summary>
-public partial class FlavorTextInfoForm : Form
+public partial class ContestNameInfoForm : Form
 {
     #region コンストラクタ
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    /// <param name="ft"></param>
-    public FlavorTextInfoForm(FlavorText ft)
+    /// <param name="cn">コンテストの名前</param>
+    public ContestNameInfoForm(ContestName cn)
     {
         InitializeComponent();
-        SetData(ft);
+        SetData(cn);
     }
     #endregion
 
@@ -54,31 +54,6 @@ public partial class FlavorTextInfoForm : Form
     }
     #endregion
 
-    #region バージョン 詳細 クリック
-    /// <summary>
-    /// バージョン 詳細 クリック
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void VersionDetailButton_Click(object sender, EventArgs e)
-    {
-        if (VersionDetailButton.Tag is null) {
-            return;
-        }
-
-        if (VersionDetailButton.Tag is not NamedAPIResource api) {
-            return;
-        }
-
-        if (api.Url is null) {
-            return;
-        }
-
-        using VersionInfoForm form = new(api.Url);
-        _ = form.ShowDialog(this);
-    }
-    #endregion
-
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -91,20 +66,17 @@ public partial class FlavorTextInfoForm : Form
     }
     #endregion
 
-    #region データを画面に表示
+    #region データに画面を表示
     /// <summary>
-    /// データを画面に表示
+    /// データに画面を表示
     /// </summary>
-    /// <param name="ft"></param>
-    private void SetData(FlavorText ft)
+    /// <param name="cn"></param>
+    public void SetData(ContestName cn)
     {
-        FlavorTextTextBox.Text
-            = (ft.Text ?? string.Empty).Replace("\r\n", "\n")
-                                       .Replace("\n", Environment.NewLine);
-        LanguageTextBox.Text = ft.Language?.Name ?? string.Empty;
-        LanguageDetailButton.Tag = ft.Language;
-        VersionTextBox.Text = ft.Version?.Name ?? string.Empty;
-        VersionDetailButton.Tag = ft.Version;
+        ContestNameTextBox.Text = cn.Name ?? string.Empty;
+        ColorTextBox.Text = cn.Color ?? string.Empty;
+        LanguageTextBox.Text = cn.Language?.Name ?? string.Empty;
+        LanguageDetailButton.Tag = cn.Language;
     }
     #endregion
 }
