@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kos.PokeAPI.Evolution", "Ko
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kos.PokeAPI.Games", "Kos.PokeAPI.Games\Kos.PokeAPI.Games.csproj", "{1CB2A4B1-583F-4185-8E65-F9A5399111E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kos.PokeAPI.Items", "Kos.PokeAPI.Items\Kos.PokeAPI.Items.csproj", "{A891F48B-005A-4EA3-A069-22105BDC7D2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -177,6 +179,10 @@ Global
 		{1CB2A4B1-583F-4185-8E65-F9A5399111E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CB2A4B1-583F-4185-8E65-F9A5399111E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CB2A4B1-583F-4185-8E65-F9A5399111E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A891F48B-005A-4EA3-A069-22105BDC7D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A891F48B-005A-4EA3-A069-22105BDC7D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A891F48B-005A-4EA3-A069-22105BDC7D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A891F48B-005A-4EA3-A069-22105BDC7D2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

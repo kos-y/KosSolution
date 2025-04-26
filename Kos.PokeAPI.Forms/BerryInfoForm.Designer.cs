@@ -48,8 +48,8 @@ partial class BerryInfoForm
         FirmnessInfoButton = new Button();
         FlavorsCaptionLabel = new Label();
         FlavorDataGridView = new DataGridView();
-        PotencyColumn = new DataGridViewTextBoxColumn();
         FlavorColumn = new DataGridViewTextBoxColumn();
+        PotencyColumn = new DataGridViewTextBoxColumn();
         FlavorInfoColumn = new DataGridViewButtonColumn();
         ItemLabel = new Label();
         ItemCaptionLabel = new Label();
@@ -58,297 +58,351 @@ partial class BerryInfoForm
         NaturalGiftTypeCaptionLabel = new Label();
         NaturalGiftTypeInfoButton = new Button();
         CloseButton = new Button();
+        NaturalGiftGroupBox = new GroupBox();
         ((System.ComponentModel.ISupportInitialize)FlavorDataGridView).BeginInit();
+        NaturalGiftGroupBox.SuspendLayout();
         SuspendLayout();
         // 
         // NameLabel
         // 
         NameLabel.BorderStyle = BorderStyle.Fixed3D;
-        NameLabel.Location = new Point(133, 32);
+        NameLabel.Location = new Point(404, 5);
+        NameLabel.Margin = new Padding(4, 0, 4, 0);
         NameLabel.Name = "NameLabel";
-        NameLabel.Size = new Size(147, 23);
+        NameLabel.Size = new Size(189, 26);
         NameLabel.TabIndex = 3;
         NameLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NameCaptionLabel
         // 
-        NameCaptionLabel.Location = new Point(12, 32);
+        NameCaptionLabel.AutoSize = true;
+        NameCaptionLabel.Location = new Point(317, 10);
+        NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(115, 23);
+        NameCaptionLabel.Size = new Size(79, 17);
         NameCaptionLabel.TabIndex = 2;
-        NameCaptionLabel.Text = "name";
+        NameCaptionLabel.Text = "きのみの名前";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdLabel
         // 
         IdLabel.BorderStyle = BorderStyle.Fixed3D;
-        IdLabel.Location = new Point(133, 9);
+        IdLabel.Location = new Point(81, 5);
+        IdLabel.Margin = new Padding(4, 0, 4, 0);
         IdLabel.Name = "IdLabel";
-        IdLabel.Size = new Size(147, 23);
+        IdLabel.Size = new Size(189, 26);
         IdLabel.TabIndex = 1;
         IdLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
-        IdCaptionLabel.Location = new Point(12, 9);
+        IdCaptionLabel.AutoSize = true;
+        IdCaptionLabel.Location = new Point(15, 10);
+        IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(115, 23);
+        IdCaptionLabel.Size = new Size(58, 17);
         IdCaptionLabel.TabIndex = 0;
-        IdCaptionLabel.Text = "id";
+        IdCaptionLabel.Text = "きのみID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // GrowthTimeLabel
         // 
         GrowthTimeLabel.BorderStyle = BorderStyle.Fixed3D;
-        GrowthTimeLabel.Location = new Point(133, 55);
+        GrowthTimeLabel.Location = new Point(81, 92);
+        GrowthTimeLabel.Margin = new Padding(4, 0, 4, 0);
         GrowthTimeLabel.Name = "GrowthTimeLabel";
-        GrowthTimeLabel.Size = new Size(147, 23);
-        GrowthTimeLabel.TabIndex = 5;
+        GrowthTimeLabel.Size = new Size(189, 26);
+        GrowthTimeLabel.TabIndex = 10;
         GrowthTimeLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // GrowthTimeCaptionLabel
         // 
-        GrowthTimeCaptionLabel.Location = new Point(12, 54);
+        GrowthTimeCaptionLabel.AutoSize = true;
+        GrowthTimeCaptionLabel.Location = new Point(13, 97);
+        GrowthTimeCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         GrowthTimeCaptionLabel.Name = "GrowthTimeCaptionLabel";
-        GrowthTimeCaptionLabel.Size = new Size(115, 23);
-        GrowthTimeCaptionLabel.TabIndex = 4;
-        GrowthTimeCaptionLabel.Text = "growth_time";
+        GrowthTimeCaptionLabel.Size = new Size(60, 17);
+        GrowthTimeCaptionLabel.TabIndex = 9;
+        GrowthTimeCaptionLabel.Text = "成長時間";
         GrowthTimeCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // MaxHarvestLabel
         // 
         MaxHarvestLabel.BorderStyle = BorderStyle.Fixed3D;
-        MaxHarvestLabel.Location = new Point(133, 78);
+        MaxHarvestLabel.Location = new Point(404, 99);
+        MaxHarvestLabel.Margin = new Padding(4, 0, 4, 0);
         MaxHarvestLabel.Name = "MaxHarvestLabel";
-        MaxHarvestLabel.Size = new Size(147, 23);
-        MaxHarvestLabel.TabIndex = 7;
+        MaxHarvestLabel.Size = new Size(189, 26);
+        MaxHarvestLabel.TabIndex = 17;
         MaxHarvestLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NaturalGiftPowerLabel
         // 
         NaturalGiftPowerLabel.BorderStyle = BorderStyle.Fixed3D;
-        NaturalGiftPowerLabel.Location = new Point(133, 101);
+        NaturalGiftPowerLabel.Location = new Point(68, 49);
+        NaturalGiftPowerLabel.Margin = new Padding(4, 0, 4, 0);
         NaturalGiftPowerLabel.Name = "NaturalGiftPowerLabel";
-        NaturalGiftPowerLabel.Size = new Size(147, 23);
-        NaturalGiftPowerLabel.TabIndex = 9;
+        NaturalGiftPowerLabel.Size = new Size(189, 26);
+        NaturalGiftPowerLabel.TabIndex = 4;
         NaturalGiftPowerLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // MaxHarvestCaptionLabel
         // 
-        MaxHarvestCaptionLabel.Location = new Point(12, 77);
+        MaxHarvestCaptionLabel.AutoSize = true;
+        MaxHarvestCaptionLabel.Location = new Point(286, 95);
+        MaxHarvestCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         MaxHarvestCaptionLabel.Name = "MaxHarvestCaptionLabel";
-        MaxHarvestCaptionLabel.Size = new Size(115, 23);
-        MaxHarvestCaptionLabel.TabIndex = 6;
-        MaxHarvestCaptionLabel.Text = "max_harvest";
+        MaxHarvestCaptionLabel.Size = new Size(112, 34);
+        MaxHarvestCaptionLabel.TabIndex = 16;
+        MaxHarvestCaptionLabel.Text = "収穫最大数\r\n（第４世代以降）";
         MaxHarvestCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NaturalGiftPowerCaptionLabel
         // 
-        NaturalGiftPowerCaptionLabel.Location = new Point(12, 100);
+        NaturalGiftPowerCaptionLabel.AutoSize = true;
+        NaturalGiftPowerCaptionLabel.Location = new Point(26, 54);
+        NaturalGiftPowerCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NaturalGiftPowerCaptionLabel.Name = "NaturalGiftPowerCaptionLabel";
-        NaturalGiftPowerCaptionLabel.Size = new Size(115, 23);
-        NaturalGiftPowerCaptionLabel.TabIndex = 8;
-        NaturalGiftPowerCaptionLabel.Text = "natural_gift_power";
+        NaturalGiftPowerCaptionLabel.Size = new Size(34, 17);
+        NaturalGiftPowerCaptionLabel.TabIndex = 3;
+        NaturalGiftPowerCaptionLabel.Text = "威力";
         NaturalGiftPowerCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SizeLabel
         // 
         SizeLabel.BorderStyle = BorderStyle.Fixed3D;
-        SizeLabel.Location = new Point(133, 124);
+        SizeLabel.Location = new Point(81, 40);
+        SizeLabel.Margin = new Padding(4, 0, 4, 0);
         SizeLabel.Name = "SizeLabel";
-        SizeLabel.Size = new Size(147, 23);
-        SizeLabel.TabIndex = 11;
+        SizeLabel.Size = new Size(189, 26);
+        SizeLabel.TabIndex = 5;
         SizeLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SizeCaptionLabel
         // 
-        SizeCaptionLabel.Location = new Point(12, 124);
+        SizeCaptionLabel.AutoSize = true;
+        SizeCaptionLabel.Location = new Point(32, 45);
+        SizeCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         SizeCaptionLabel.Name = "SizeCaptionLabel";
-        SizeCaptionLabel.Size = new Size(115, 23);
-        SizeCaptionLabel.TabIndex = 10;
-        SizeCaptionLabel.Text = "size";
+        SizeCaptionLabel.Size = new Size(41, 17);
+        SizeCaptionLabel.TabIndex = 4;
+        SizeCaptionLabel.Text = "大きさ";
         SizeCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SmoothnessLabel
         // 
         SmoothnessLabel.BorderStyle = BorderStyle.Fixed3D;
-        SmoothnessLabel.Location = new Point(133, 147);
+        SmoothnessLabel.Location = new Point(404, 40);
+        SmoothnessLabel.Margin = new Padding(4, 0, 4, 0);
         SmoothnessLabel.Name = "SmoothnessLabel";
-        SmoothnessLabel.Size = new Size(147, 23);
-        SmoothnessLabel.TabIndex = 13;
+        SmoothnessLabel.Size = new Size(189, 26);
+        SmoothnessLabel.TabIndex = 12;
         SmoothnessLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SmoothnessCaptionLabel
         // 
-        SmoothnessCaptionLabel.Location = new Point(12, 147);
+        SmoothnessCaptionLabel.AutoSize = true;
+        SmoothnessCaptionLabel.Location = new Point(344, 45);
+        SmoothnessCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         SmoothnessCaptionLabel.Name = "SmoothnessCaptionLabel";
-        SmoothnessCaptionLabel.Size = new Size(115, 23);
-        SmoothnessCaptionLabel.TabIndex = 12;
-        SmoothnessCaptionLabel.Text = "smoothness";
+        SmoothnessCaptionLabel.Size = new Size(52, 17);
+        SmoothnessCaptionLabel.TabIndex = 11;
+        SmoothnessCaptionLabel.Text = "滑らかさ";
         SmoothnessCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // FirmnessLabel
         // 
         FirmnessLabel.BorderStyle = BorderStyle.Fixed3D;
-        FirmnessLabel.Location = new Point(133, 193);
+        FirmnessLabel.Location = new Point(81, 66);
+        FirmnessLabel.Margin = new Padding(4, 0, 4, 0);
         FirmnessLabel.Name = "FirmnessLabel";
-        FirmnessLabel.Size = new Size(147, 23);
-        FirmnessLabel.TabIndex = 17;
+        FirmnessLabel.Size = new Size(189, 26);
+        FirmnessLabel.TabIndex = 7;
         FirmnessLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // FirmnessCaptionLabel
         // 
-        FirmnessCaptionLabel.Location = new Point(12, 193);
+        FirmnessCaptionLabel.AutoSize = true;
+        FirmnessCaptionLabel.Location = new Point(42, 70);
+        FirmnessCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         FirmnessCaptionLabel.Name = "FirmnessCaptionLabel";
-        FirmnessCaptionLabel.Size = new Size(115, 23);
-        FirmnessCaptionLabel.TabIndex = 16;
-        FirmnessCaptionLabel.Text = "firmness";
+        FirmnessCaptionLabel.Size = new Size(31, 17);
+        FirmnessCaptionLabel.TabIndex = 6;
+        FirmnessCaptionLabel.Text = "硬さ";
         FirmnessCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SoilDrynessLabel
         // 
         SoilDrynessLabel.BorderStyle = BorderStyle.Fixed3D;
-        SoilDrynessLabel.Location = new Point(133, 170);
+        SoilDrynessLabel.Location = new Point(404, 136);
+        SoilDrynessLabel.Margin = new Padding(4, 0, 4, 0);
         SoilDrynessLabel.Name = "SoilDrynessLabel";
-        SoilDrynessLabel.Size = new Size(147, 23);
-        SoilDrynessLabel.TabIndex = 15;
+        SoilDrynessLabel.Size = new Size(189, 26);
+        SoilDrynessLabel.TabIndex = 19;
         SoilDrynessLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SoilDrynessCaptionLabel
         // 
-        SoilDrynessCaptionLabel.Location = new Point(12, 165);
+        SoilDrynessCaptionLabel.AutoSize = true;
+        SoilDrynessCaptionLabel.Location = new Point(312, 141);
+        SoilDrynessCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         SoilDrynessCaptionLabel.Name = "SoilDrynessCaptionLabel";
-        SoilDrynessCaptionLabel.Size = new Size(115, 28);
-        SoilDrynessCaptionLabel.TabIndex = 14;
-        SoilDrynessCaptionLabel.Text = "soil_dryness";
+        SoilDrynessCaptionLabel.Size = new Size(86, 17);
+        SoilDrynessCaptionLabel.TabIndex = 18;
+        SoilDrynessCaptionLabel.Text = "土壌乾燥速度";
         SoilDrynessCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // FirmnessInfoButton
         // 
-        FirmnessInfoButton.Location = new Point(286, 193);
+        FirmnessInfoButton.Location = new Point(278, 65);
+        FirmnessInfoButton.Margin = new Padding(4, 3, 4, 3);
         FirmnessInfoButton.Name = "FirmnessInfoButton";
-        FirmnessInfoButton.Size = new Size(43, 23);
-        FirmnessInfoButton.TabIndex = 18;
-        FirmnessInfoButton.Text = "Info...";
+        FirmnessInfoButton.Size = new Size(45, 26);
+        FirmnessInfoButton.TabIndex = 8;
+        FirmnessInfoButton.Text = "詳細";
         FirmnessInfoButton.UseVisualStyleBackColor = true;
         FirmnessInfoButton.Click += FirmnessInfoButton_Click;
         // 
         // FlavorsCaptionLabel
         // 
-        FlavorsCaptionLabel.Location = new Point(12, 216);
+        FlavorsCaptionLabel.AutoSize = true;
+        FlavorsCaptionLabel.Location = new Point(13, 157);
+        FlavorsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         FlavorsCaptionLabel.Name = "FlavorsCaptionLabel";
-        FlavorsCaptionLabel.Size = new Size(115, 23);
-        FlavorsCaptionLabel.TabIndex = 19;
-        FlavorsCaptionLabel.Text = "flavor";
+        FlavorsCaptionLabel.Size = new Size(21, 17);
+        FlavorsCaptionLabel.TabIndex = 20;
+        FlavorsCaptionLabel.Text = "味";
         FlavorsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // FlavorDataGridView
         // 
         FlavorDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        FlavorDataGridView.Columns.AddRange(new DataGridViewColumn[] { PotencyColumn, FlavorColumn, FlavorInfoColumn });
-        FlavorDataGridView.Location = new Point(133, 216);
+        FlavorDataGridView.Columns.AddRange(new DataGridViewColumn[] { FlavorColumn, PotencyColumn, FlavorInfoColumn });
+        FlavorDataGridView.Location = new Point(13, 177);
+        FlavorDataGridView.Margin = new Padding(4, 3, 4, 3);
         FlavorDataGridView.Name = "FlavorDataGridView";
         FlavorDataGridView.RowHeadersVisible = false;
-        FlavorDataGridView.Size = new Size(363, 150);
-        FlavorDataGridView.TabIndex = 20;
+        FlavorDataGridView.Size = new Size(635, 170);
+        FlavorDataGridView.TabIndex = 21;
         FlavorDataGridView.CellClick += FlavorDataGridView_CellClick;
         FlavorDataGridView.CellDoubleClick += FlavorDataGridView_CellDoubleClick;
-        // 
-        // PotencyColumn
-        // 
-        PotencyColumn.DataPropertyName = "Potency";
-        PotencyColumn.HeaderText = "potency";
-        PotencyColumn.Name = "PotencyColumn";
-        PotencyColumn.ReadOnly = true;
         // 
         // FlavorColumn
         // 
         FlavorColumn.DataPropertyName = "Flavor";
-        FlavorColumn.HeaderText = "flavor";
+        FlavorColumn.HeaderText = "味";
         FlavorColumn.Name = "FlavorColumn";
         FlavorColumn.ReadOnly = true;
         // 
+        // PotencyColumn
+        // 
+        PotencyColumn.DataPropertyName = "Potency";
+        PotencyColumn.HeaderText = "強さ";
+        PotencyColumn.Name = "PotencyColumn";
+        PotencyColumn.ReadOnly = true;
+        // 
         // FlavorInfoColumn
         // 
-        FlavorInfoColumn.HeaderText = "FlavorInfo";
+        FlavorInfoColumn.HeaderText = "詳細";
         FlavorInfoColumn.Name = "FlavorInfoColumn";
         FlavorInfoColumn.ReadOnly = true;
-        FlavorInfoColumn.Text = "Info...";
+        FlavorInfoColumn.Text = "詳細";
         FlavorInfoColumn.UseColumnTextForButtonValue = true;
         // 
         // ItemLabel
         // 
         ItemLabel.BorderStyle = BorderStyle.Fixed3D;
-        ItemLabel.Location = new Point(133, 369);
+        ItemLabel.Location = new Point(404, 66);
+        ItemLabel.Margin = new Padding(4, 0, 4, 0);
         ItemLabel.Name = "ItemLabel";
-        ItemLabel.Size = new Size(147, 23);
-        ItemLabel.TabIndex = 22;
+        ItemLabel.Size = new Size(189, 26);
+        ItemLabel.TabIndex = 14;
         ItemLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // ItemCaptionLabel
         // 
-        ItemCaptionLabel.Location = new Point(12, 369);
+        ItemCaptionLabel.AutoSize = true;
+        ItemCaptionLabel.Location = new Point(345, 71);
+        ItemCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         ItemCaptionLabel.Name = "ItemCaptionLabel";
-        ItemCaptionLabel.Size = new Size(115, 23);
-        ItemCaptionLabel.TabIndex = 21;
-        ItemCaptionLabel.Text = "item";
+        ItemCaptionLabel.Size = new Size(51, 17);
+        ItemCaptionLabel.TabIndex = 13;
+        ItemCaptionLabel.Text = "アイテム";
         ItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // ItemInfoButton
         // 
-        ItemInfoButton.Location = new Point(286, 369);
+        ItemInfoButton.Location = new Point(601, 65);
+        ItemInfoButton.Margin = new Padding(4, 3, 4, 3);
         ItemInfoButton.Name = "ItemInfoButton";
-        ItemInfoButton.Size = new Size(43, 23);
-        ItemInfoButton.TabIndex = 23;
-        ItemInfoButton.Text = "Info...";
+        ItemInfoButton.Size = new Size(47, 26);
+        ItemInfoButton.TabIndex = 15;
+        ItemInfoButton.Text = "詳細";
         ItemInfoButton.UseVisualStyleBackColor = true;
         // 
         // NaturalGiftTypeLabel
         // 
         NaturalGiftTypeLabel.BorderStyle = BorderStyle.Fixed3D;
-        NaturalGiftTypeLabel.Location = new Point(133, 392);
+        NaturalGiftTypeLabel.Location = new Point(68, 20);
+        NaturalGiftTypeLabel.Margin = new Padding(4, 0, 4, 0);
         NaturalGiftTypeLabel.Name = "NaturalGiftTypeLabel";
-        NaturalGiftTypeLabel.Size = new Size(147, 23);
-        NaturalGiftTypeLabel.TabIndex = 25;
+        NaturalGiftTypeLabel.Size = new Size(189, 26);
+        NaturalGiftTypeLabel.TabIndex = 1;
         NaturalGiftTypeLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NaturalGiftTypeCaptionLabel
         // 
-        NaturalGiftTypeCaptionLabel.Location = new Point(12, 392);
+        NaturalGiftTypeCaptionLabel.AutoSize = true;
+        NaturalGiftTypeCaptionLabel.Location = new Point(7, 24);
+        NaturalGiftTypeCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NaturalGiftTypeCaptionLabel.Name = "NaturalGiftTypeCaptionLabel";
-        NaturalGiftTypeCaptionLabel.Size = new Size(115, 23);
-        NaturalGiftTypeCaptionLabel.TabIndex = 24;
-        NaturalGiftTypeCaptionLabel.Text = "natural_gift_type";
+        NaturalGiftTypeCaptionLabel.Size = new Size(53, 17);
+        NaturalGiftTypeCaptionLabel.TabIndex = 0;
+        NaturalGiftTypeCaptionLabel.Text = "技タイプ";
         NaturalGiftTypeCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NaturalGiftTypeInfoButton
         // 
-        NaturalGiftTypeInfoButton.Location = new Point(286, 392);
+        NaturalGiftTypeInfoButton.Location = new Point(265, 20);
+        NaturalGiftTypeInfoButton.Margin = new Padding(4, 3, 4, 3);
         NaturalGiftTypeInfoButton.Name = "NaturalGiftTypeInfoButton";
-        NaturalGiftTypeInfoButton.Size = new Size(43, 23);
-        NaturalGiftTypeInfoButton.TabIndex = 26;
-        NaturalGiftTypeInfoButton.Text = "Info...";
+        NaturalGiftTypeInfoButton.Size = new Size(42, 26);
+        NaturalGiftTypeInfoButton.TabIndex = 2;
+        NaturalGiftTypeInfoButton.Text = "詳細";
         NaturalGiftTypeInfoButton.UseVisualStyleBackColor = true;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(422, 414);
+        CloseButton.Location = new Point(572, 415);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 23);
-        CloseButton.TabIndex = 27;
-        CloseButton.Text = "Close";
+        CloseButton.Size = new Size(76, 26);
+        CloseButton.TabIndex = 23;
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // NaturalGiftGroupBox
+        // 
+        NaturalGiftGroupBox.Controls.Add(NaturalGiftTypeCaptionLabel);
+        NaturalGiftGroupBox.Controls.Add(NaturalGiftTypeLabel);
+        NaturalGiftGroupBox.Controls.Add(NaturalGiftTypeInfoButton);
+        NaturalGiftGroupBox.Controls.Add(NaturalGiftPowerCaptionLabel);
+        NaturalGiftGroupBox.Controls.Add(NaturalGiftPowerLabel);
+        NaturalGiftGroupBox.Location = new Point(13, 353);
+        NaturalGiftGroupBox.Name = "NaturalGiftGroupBox";
+        NaturalGiftGroupBox.Size = new Size(321, 88);
+        NaturalGiftGroupBox.TabIndex = 22;
+        NaturalGiftGroupBox.TabStop = false;
+        NaturalGiftGroupBox.Text = "しぜんのめぐみ";
+        // 
         // BerryInfoForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(509, 449);
+        ClientSize = new Size(658, 454);
+        Controls.Add(NaturalGiftGroupBox);
         Controls.Add(CloseButton);
-        Controls.Add(NaturalGiftTypeInfoButton);
-        Controls.Add(NaturalGiftTypeCaptionLabel);
-        Controls.Add(NaturalGiftTypeLabel);
         Controls.Add(ItemInfoButton);
         Controls.Add(ItemCaptionLabel);
         Controls.Add(ItemLabel);
@@ -363,9 +417,7 @@ partial class BerryInfoForm
         Controls.Add(SmoothnessLabel);
         Controls.Add(SizeCaptionLabel);
         Controls.Add(SizeLabel);
-        Controls.Add(NaturalGiftPowerCaptionLabel);
         Controls.Add(MaxHarvestCaptionLabel);
-        Controls.Add(NaturalGiftPowerLabel);
         Controls.Add(MaxHarvestLabel);
         Controls.Add(GrowthTimeCaptionLabel);
         Controls.Add(GrowthTimeLabel);
@@ -373,13 +425,18 @@ partial class BerryInfoForm
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "BerryInfoForm";
-        Text = "Berry";
+        Text = "きのみ";
         Load += BerryInfoForm_Load;
         ((System.ComponentModel.ISupportInitialize)FlavorDataGridView).EndInit();
+        NaturalGiftGroupBox.ResumeLayout(false);
+        NaturalGiftGroupBox.PerformLayout();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
@@ -405,9 +462,6 @@ partial class BerryInfoForm
     private Button FirmnessInfoButton;
     private Label FlavorsCaptionLabel;
     private DataGridView FlavorDataGridView;
-    private DataGridViewTextBoxColumn PotencyColumn;
-    private DataGridViewTextBoxColumn FlavorColumn;
-    private DataGridViewButtonColumn FlavorInfoColumn;
     private Label ItemLabel;
     private Label ItemCaptionLabel;
     private Button ItemInfoButton;
@@ -415,4 +469,8 @@ partial class BerryInfoForm
     private Label NaturalGiftTypeCaptionLabel;
     private Button NaturalGiftTypeInfoButton;
     private Button CloseButton;
+    private GroupBox NaturalGiftGroupBox;
+    private DataGridViewTextBoxColumn FlavorColumn;
+    private DataGridViewTextBoxColumn PotencyColumn;
+    private DataGridViewButtonColumn FlavorInfoColumn;
 }

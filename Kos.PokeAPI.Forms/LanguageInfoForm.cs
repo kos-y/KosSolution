@@ -17,30 +17,6 @@ namespace Kos.PokeAPI.Forms;
 /// </summary>
 public partial class LanguageInfoForm : Form
 {
-    // 定数
-
-    #region names DataGridView 列定義
-    /// <summary>
-    /// names DataGridView 列定義
-    /// </summary>
-    enum NamesColumn : int
-    {
-        Name = 1,
-        Language,
-        Detail
-    }
-    #endregion
-
-    // フィールド
-
-    #region URL
-    /// <summary>
-    /// URL
-    /// </summary>
-    private readonly string _url;
-    #endregion
-
-
     // メソッド
 
     #region コンストラクタ
@@ -50,25 +26,13 @@ public partial class LanguageInfoForm : Form
     public LanguageInfoForm(string url)
     {
         InitializeComponent();
-        _url = url;
+        SetData(url);
     }
     #endregion
 
-    #region ロード
+    #region 言語ごとの名前 セルクリック
     /// <summary>
-    /// ロード
-    /// </summary>
-    /// <param name="sender">イベント発生オブジェクト</param>
-    /// <param name="e">イベント引数</param>
-    private void LanguageInfo_Load(object sender, EventArgs e)
-    {
-        SetData(_url);
-    }
-    #endregion
-
-    #region NamesDataGridView CellClick
-    /// <summary>
-    /// NamesDataGridView CellClick
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender">イベント発生オブジェクト</param>
     /// <param name="e">イベント引数</param>
@@ -78,23 +42,22 @@ public partial class LanguageInfoForm : Form
             return;
         }
 
-        DataGridViewCell cell = NamesDataGridView[e.ColumnIndex, e.RowIndex];
-        if (cell is not DataGridViewButtonCell) {
+        if (NamesDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
             return;
         }
 
-        object item = NamesDataGridView.Rows[e.RowIndex].DataBoundItem;
-        if (item is not Name name) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        ShowNamesDetailInfo(name?.Language?.Url);
+        using NameInfoForm form = new NameInfoForm(name);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region NamesDataGridView CellDoubleClick
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
-    /// NamesDataGridView CellDoubleClick
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender">イベント発生オブジェクト</param>
     /// <param name="e">イベント引数</param>
@@ -104,12 +67,12 @@ public partial class LanguageInfoForm : Form
             return;
         }
 
-        object item = NamesDataGridView.Rows[e.RowIndex].DataBoundItem;
-        if (item is not Name name) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        ShowNamesDetailInfo(name?.Language?.Url);
+        using NameInfoForm form = new NameInfoForm(name);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
@@ -138,29 +101,13 @@ public partial class LanguageInfoForm : Form
         }
 
         Tag = lang;
-        IdLabel.Text = $"{lang.Id}";
-        NameLabel.Text = $"{lang.Name}";
-        OfficialLabel.Text = $"{lang.Official}";
-        Iso639Label.Text = lang.Iso639;
-        Iso3166Label.Text = lang.Iso3166;
+        IdTextBox.Text = $"{lang.Id}";
+        NameTextBox.Text = lang.Name;
+        OfficialTextBox.Text = $"{lang.Official}";
+        Iso639TextBox.Text = $"{lang.Iso639}";
+        Iso3166TextBox.Text = $"{lang.Iso3166}";
+        NamesDataGridView.AutoGenerateColumns = false;
         NamesDataGridView.DataSource = lang.Names;
-    }
-    #endregion
-
-    #region names の情報画面表示
-    /// <summary>
-    /// names の情報画面表示
-    /// </summary>
-    /// <param name="url">URL</param>
-    private void ShowNamesDetailInfo(string? url)
-    {
-        if (url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(url);
-
-        _ = form.ShowDialog(this);
     }
     #endregion
 }
