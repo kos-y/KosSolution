@@ -29,23 +29,6 @@ public partial class BerryFlavorInfoForm : Form
     #endregion
 
 
-    // 静的メソッド
-
-    #region 画面の表示
-    /// <summary>
-    /// 画面の表示
-    /// </summary>
-    /// <param name="owner"></param>
-    /// <param name="url"></param>
-    public static void Show(IWin32Window owner, string url)
-    {
-        using BerryFlavorInfoForm form = new(url);
-
-        _ = form.ShowDialog(owner);
-    }
-    #endregion
-
-
     // メソッド
 
     #region コンストラクタ
@@ -60,9 +43,9 @@ public partial class BerryFlavorInfoForm : Form
     }
     #endregion
 
-    #region Load
+    #region ロード
     /// <summary>
-    /// Load
+    /// ロード
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -72,9 +55,9 @@ public partial class BerryFlavorInfoForm : Form
     }
     #endregion
 
-    #region berries CellClick
+    #region きのみ セルクリック
     /// <summary>
-    /// berries CellClick
+    /// きのみ セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -89,22 +72,22 @@ public partial class BerryFlavorInfoForm : Form
             return;
         }
 
-        if (BerriesDataGridView.Rows[e.RowIndex].DataBoundItem is not FlavorBerryMap item) {
+        if (BerriesDataGridView.Rows[e.RowIndex].DataBoundItem is not FlavorBerryMap fbm) {
             return;
         }
 
-        if (item?.Berry?.Url is null) {
+        if (fbm?.Berry?.Url is null) {
             return;
         }
 
-        using BerryInfoForm form = new(item.Berry.Url);
+        using BerryInfoForm form = new(fbm.Berry.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region berries CellDoubleClick
+    #region きのみ セルダブルクリック
     /// <summary>
-    /// berries CellDoubleClick
+    /// きのみ セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -127,20 +110,19 @@ public partial class BerryFlavorInfoForm : Form
     }
     #endregion
 
-    #region ContestType Click
+    #region コンテストの種類 クリック
     /// <summary>
-    /// ContestType Click
+    /// コンテストの種類 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ContestTypeInfoButton_Click(object sender, EventArgs e)
+    private void ContestTypeDetailButton_Click(object sender, EventArgs e)
     {
-        object? tag = ContestTypeInfoButton.Tag;
-        if (tag is null) {
+        if (ContestTypeDetailButton.Tag is null) {
             return;
         }
 
-        if (tag is not NamedAPIResource r) {
+        if (ContestTypeDetailButton.Tag is not NamedAPIResource r) {
             return;
         }
 
@@ -153,9 +135,9 @@ public partial class BerryFlavorInfoForm : Form
     }
     #endregion
 
-    #region names CellClick
+    #region 言語ごとの名前 セルクリック
     /// <summary>
-    /// names CellClick
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -169,22 +151,18 @@ public partial class BerryFlavorInfoForm : Form
             return;
         }
 
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name item) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        if (item.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(item.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region namaes CellDoubleClick
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
-    /// namaes CellDoubleClick
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -194,22 +172,18 @@ public partial class BerryFlavorInfoForm : Form
             return;
         }
 
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name item) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        if (item.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(item.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Close Click
+    #region 閉じる クリック
     /// <summary>
-    /// Close Click
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -232,12 +206,13 @@ public partial class BerryFlavorInfoForm : Form
         }
 
         Tag = bf;
-        IdLabel.Text = $"{bf.Id}";
-        NameLabel.Text = bf.Name;
+        IdTextBox.Text = $"{bf.Id}";
+        NameTextBox.Text = bf.Name;
         BerriesDataGridView.AutoGenerateColumns = false;
         BerriesDataGridView.DataSource = bf.Berries;
-        ContestTypeLabel.Text = $"{bf.ContestType?.Name}";
-        ContestTypeInfoButton.Tag = bf.ContestType;
+        ContestTypeTextBox.Text = bf.ContestType?.Name ?? string.Empty;
+        ContestTypeDetailButton.Tag = bf.ContestType;
+        NamesDataGridView.AutoGenerateColumns = false;
         NamesDataGridView.DataSource = bf.Names;
     }
     #endregion

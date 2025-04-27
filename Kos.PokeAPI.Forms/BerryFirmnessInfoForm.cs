@@ -127,10 +127,6 @@ public partial class BerryFirmnessInfoForm : Form
             return;
         }
 
-        if (name?.Language?.Url is null) {
-            return;
-        }
-
         using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
@@ -149,10 +145,6 @@ public partial class BerryFirmnessInfoForm : Form
         }
 
         if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
-            return;
-        }
-
-        if (name?.Language?.Url is null) {
             return;
         }
 
@@ -186,10 +178,11 @@ public partial class BerryFirmnessInfoForm : Form
         }
 
         Tag = bf;
-        IdLabel.Text = $"{bf.Id}";
-        NameLabel.Text = bf.Name;
+        IdTextBox.Text = $"{bf.Id}";
+        NameTextBox.Text = bf.Name;
         BerriesDataGridView.AutoGenerateColumns = false;
         BerriesDataGridView.DataSource = bf.Berries;
+        NamesDataGridView.AutoGenerateColumns = false;
         NamesDataGridView.DataSource = bf.Names;
     }
     #endregion

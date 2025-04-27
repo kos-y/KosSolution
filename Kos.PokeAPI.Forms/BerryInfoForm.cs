@@ -179,22 +179,22 @@ public partial class BerryInfoForm : Form
         }
 
         Tag = berry;
-        IdLabel.Text = $"{berry.Id}";
-        NameLabel.Text = berry.Name;
-        GrowthTimeLabel.Text = $"{berry.GrowthTime}";
-        MaxHarvestLabel.Text = $"{berry.MaxHarvest}";
-        NaturalGiftPowerLabel.Text = $"{berry.NaturalGiftPower}";
-        SizeLabel.Text = $"{berry.Size}";
-        SmoothnessLabel.Text = $"{berry.Smoothness}";
-        SoilDrynessLabel.Text = $"{berry.SoilDryness}";
-        FirmnessLabel.Text = berry.Firmness?.Name ?? string.Empty;
+        IdTextBox.Text = $"{berry.Id}";
+        NameTextBox.Text = berry.Name;
+        GrowthTimeTextBox.Text = $"{berry.GrowthTime}";
+        MaxHarvestTextBox.Text = $"{berry.MaxHarvest}";
+        NaturalGiftPowerTextBox.Text = $"{berry.NaturalGiftPower}";
+        SizeTextBox.Text = $"{berry.Size}";
+        SmoothnessTextBox.Text = $"{berry.Smoothness}";
+        SoilDrynessTextBox.Text = $"{berry.SoilDryness}";
+        FirmnessTextBox.Text = $"{berry.Firmness}";
         FirmnessDetailButton.Tag = berry.Firmness;
         FlavorDataGridView.AutoGenerateColumns = false;
         FlavorDataGridView.DataSource = berry.Flavors;
-        ItemLabel.Text = berry.Item?.Name ?? string.Empty;
+        ItemTextBox.Text = berry.Item?.Name ?? string.Empty;
         ItemDetailButton.Tag = berry.Item;
-        NaturalGiftTypeLabel.Text = berry.NaturalGiftType?.Name ?? string.Empty;
-        NaturalGiftTypeInfoButton.Tag = berry.NaturalGiftType;
+        NaturalGiftTypeTextBox.Text = berry.NaturalGiftType?.Name ?? string.Empty;
+        NaturalGiftTypeDetailButton.Tag = berry.NaturalGiftType;
     }
     #endregion
 }

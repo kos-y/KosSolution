@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.PokeAPI.Evolution.EvolutionChains;
+using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
 
@@ -37,9 +38,9 @@ public partial class EvolutionChainInfoForm : Form
     }
     #endregion
 
-    #region Form Load
+    #region ロード
     /// <summary>
-    /// Form Load
+    /// ロード
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -49,38 +50,55 @@ public partial class EvolutionChainInfoForm : Form
     }
     #endregion
 
-    #region baby_trigger_item Info Click
+    #region ベビーポケモン進化トリガーアイテム 詳細 クリック
     /// <summary>
-    /// baby_trigger_item Info Click
+    /// ベビーポケモン進化トリガーアイテム 詳細 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void BabyTriggerItemInfoButton_Click(object sender, EventArgs e)
+    private void BabyTriggerItemDetailButton_Click(object sender, EventArgs e)
     {
-
-    }
-    #endregion
-
-    #region Chain Info Click
-    /// <summary>
-    /// Chain Info Click
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void ChainInfoButton_Click(object sender, EventArgs e)
-    {
-        if (ChainInfoButton.Tag is not ChainLink tag) {
+        if (BabyTriggerItemDetailButton.Tag is null) {
             return;
         }
 
-        using ChainLinkInfoForm form = new(tag);
+        if (BabyTriggerItemDetailButton.Tag is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using ItemInfoForm form = new(api.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Close Click
+    #region 進化チェーン 詳細　クリック
     /// <summary>
-    /// Close Click
+    /// 進化チェーン 詳細　クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ChainDetailButton_Click(object sender, EventArgs e)
+    {
+        if (ChainDetailButton.Tag is null) {
+            return;
+        }
+
+        if (ChainDetailButton.Tag is not ChainLink cl) {
+            return;
+        }
+
+        using ChainLinkInfoForm form = new(cl);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 閉じる クリック
+    /// <summary>
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -102,11 +120,11 @@ public partial class EvolutionChainInfoForm : Form
             return;
         }
 
-        IdLabel.Text = $"{ec.Id}";
-        BabyTriggerItemLabel.Text = ec.BabyTriggerItem?.Name ?? string.Empty;
-        BabyTriggerItemInfoButton.Tag = ec.BabyTriggerItem;
-        ChainLabel.Text = ec.Chain?.ToString() ?? string.Empty;
-        ChainInfoButton.Tag = ec.Chain;
+        IdTextBox.Text = $"{ec.Id}";
+        BabyTriggerItemTextBox.Text = ec.BabyTriggerItem?.Name ?? string.Empty;
+        BabyTriggerItemDetailButton.Tag = ec.BabyTriggerItem;
+        ChainTextBox.Text = ec.Chain?.ToString() ?? string.Empty;
+        ChainDetailButton.Tag = ec.Chain;
     }
     #endregion
 }

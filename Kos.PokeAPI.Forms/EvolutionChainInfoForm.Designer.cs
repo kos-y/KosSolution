@@ -27,133 +27,142 @@ partial class EvolutionChainInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        IdLabel = new Label();
         IdCaptionLabel = new Label();
-        BabyTriggerItemLabel = new Label();
         BabyTriggerItemCaptionLabel = new Label();
-        BabyTriggerItemInfoButton = new Button();
+        BabyTriggerItemDetailButton = new Button();
         ChainCaptionLabel = new Label();
-        ChainLabel = new Label();
-        ChainInfoButton = new Button();
+        ChainDetailButton = new Button();
         CloseButton = new Button();
+        IdTextBox = new TextBox();
+        BabyTriggerItemTextBox = new TextBox();
+        ChainTextBox = new TextBox();
         SuspendLayout();
-        // 
-        // IdLabel
-        // 
-        IdLabel.BorderStyle = BorderStyle.Fixed3D;
-        IdLabel.Location = new Point(133, 9);
-        IdLabel.Name = "IdLabel";
-        IdLabel.Size = new Size(147, 23);
-        IdLabel.TabIndex = 1;
-        IdLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
-        IdCaptionLabel.Location = new Point(12, 9);
+        IdCaptionLabel.AutoSize = true;
+        IdCaptionLabel.Location = new Point(42, 10);
+        IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(115, 23);
+        IdCaptionLabel.Size = new Size(91, 17);
         IdCaptionLabel.TabIndex = 0;
-        IdCaptionLabel.Text = "id";
+        IdCaptionLabel.Text = "進化チェーンID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // BabyTriggerItemLabel
-        // 
-        BabyTriggerItemLabel.BorderStyle = BorderStyle.Fixed3D;
-        BabyTriggerItemLabel.Location = new Point(133, 32);
-        BabyTriggerItemLabel.Name = "BabyTriggerItemLabel";
-        BabyTriggerItemLabel.Size = new Size(147, 23);
-        BabyTriggerItemLabel.TabIndex = 3;
-        BabyTriggerItemLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // BabyTriggerItemCaptionLabel
         // 
-        BabyTriggerItemCaptionLabel.Location = new Point(12, 32);
+        BabyTriggerItemCaptionLabel.AutoSize = true;
+        BabyTriggerItemCaptionLabel.Location = new Point(15, 36);
+        BabyTriggerItemCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         BabyTriggerItemCaptionLabel.Name = "BabyTriggerItemCaptionLabel";
-        BabyTriggerItemCaptionLabel.Size = new Size(115, 23);
+        BabyTriggerItemCaptionLabel.Size = new Size(118, 34);
         BabyTriggerItemCaptionLabel.TabIndex = 2;
-        BabyTriggerItemCaptionLabel.Text = "baby_trigger_item";
+        BabyTriggerItemCaptionLabel.Text = "ベビーポケモン\r\n進化トリガーアイテム";
         BabyTriggerItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // BabyTriggerItemInfoButton
+        // BabyTriggerItemDetailButton
         // 
-        BabyTriggerItemInfoButton.Location = new Point(286, 32);
-        BabyTriggerItemInfoButton.Name = "BabyTriggerItemInfoButton";
-        BabyTriggerItemInfoButton.Size = new Size(43, 23);
-        BabyTriggerItemInfoButton.TabIndex = 4;
-        BabyTriggerItemInfoButton.Text = "Info...";
-        BabyTriggerItemInfoButton.UseVisualStyleBackColor = true;
-        BabyTriggerItemInfoButton.Click += BabyTriggerItemInfoButton_Click;
+        BabyTriggerItemDetailButton.Location = new Point(397, 44);
+        BabyTriggerItemDetailButton.Margin = new Padding(4, 3, 4, 3);
+        BabyTriggerItemDetailButton.Name = "BabyTriggerItemDetailButton";
+        BabyTriggerItemDetailButton.Size = new Size(44, 26);
+        BabyTriggerItemDetailButton.TabIndex = 4;
+        BabyTriggerItemDetailButton.Text = "詳細";
+        BabyTriggerItemDetailButton.UseVisualStyleBackColor = true;
+        BabyTriggerItemDetailButton.Click += BabyTriggerItemDetailButton_Click;
         // 
         // ChainCaptionLabel
         // 
-        ChainCaptionLabel.Location = new Point(12, 55);
+        ChainCaptionLabel.AutoSize = true;
+        ChainCaptionLabel.Location = new Point(85, 79);
+        ChainCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         ChainCaptionLabel.Name = "ChainCaptionLabel";
-        ChainCaptionLabel.Size = new Size(115, 23);
+        ChainCaptionLabel.Size = new Size(48, 17);
         ChainCaptionLabel.TabIndex = 5;
-        ChainCaptionLabel.Text = "chain";
+        ChainCaptionLabel.Text = "チェーン";
         ChainCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // ChainLabel
+        // ChainDetailButton
         // 
-        ChainLabel.BorderStyle = BorderStyle.Fixed3D;
-        ChainLabel.Location = new Point(133, 55);
-        ChainLabel.Name = "ChainLabel";
-        ChainLabel.Size = new Size(147, 23);
-        ChainLabel.TabIndex = 6;
-        ChainLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // ChainInfoButton
-        // 
-        ChainInfoButton.Location = new Point(286, 55);
-        ChainInfoButton.Name = "ChainInfoButton";
-        ChainInfoButton.Size = new Size(43, 23);
-        ChainInfoButton.TabIndex = 7;
-        ChainInfoButton.Text = "Info...";
-        ChainInfoButton.UseVisualStyleBackColor = true;
-        ChainInfoButton.Click += ChainInfoButton_Click;
+        ChainDetailButton.Location = new Point(397, 74);
+        ChainDetailButton.Margin = new Padding(4, 3, 4, 3);
+        ChainDetailButton.Name = "ChainDetailButton";
+        ChainDetailButton.Size = new Size(44, 26);
+        ChainDetailButton.TabIndex = 7;
+        ChainDetailButton.Text = "詳細";
+        ChainDetailButton.UseVisualStyleBackColor = true;
+        ChainDetailButton.Click += ChainDetailButton_Click;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(254, 84);
+        CloseButton.Location = new Point(366, 116);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 23);
+        CloseButton.Size = new Size(75, 35);
         CloseButton.TabIndex = 8;
-        CloseButton.Text = "Close";
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // IdTextBox
+        // 
+        IdTextBox.Location = new Point(140, 7);
+        IdTextBox.Name = "IdTextBox";
+        IdTextBox.ReadOnly = true;
+        IdTextBox.Size = new Size(250, 24);
+        IdTextBox.TabIndex = 1;
+        // 
+        // BabyTriggerItemTextBox
+        // 
+        BabyTriggerItemTextBox.Location = new Point(140, 42);
+        BabyTriggerItemTextBox.Name = "BabyTriggerItemTextBox";
+        BabyTriggerItemTextBox.ReadOnly = true;
+        BabyTriggerItemTextBox.Size = new Size(250, 24);
+        BabyTriggerItemTextBox.TabIndex = 3;
+        // 
+        // ChainTextBox
+        // 
+        ChainTextBox.Location = new Point(140, 76);
+        ChainTextBox.Name = "ChainTextBox";
+        ChainTextBox.ReadOnly = true;
+        ChainTextBox.Size = new Size(250, 24);
+        ChainTextBox.TabIndex = 6;
+        // 
         // EvolutionChainInfoForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(345, 126);
+        ClientSize = new Size(450, 164);
+        Controls.Add(ChainTextBox);
+        Controls.Add(BabyTriggerItemTextBox);
+        Controls.Add(IdTextBox);
         Controls.Add(CloseButton);
-        Controls.Add(ChainInfoButton);
-        Controls.Add(ChainLabel);
+        Controls.Add(ChainDetailButton);
         Controls.Add(ChainCaptionLabel);
-        Controls.Add(BabyTriggerItemInfoButton);
+        Controls.Add(BabyTriggerItemDetailButton);
         Controls.Add(BabyTriggerItemCaptionLabel);
-        Controls.Add(BabyTriggerItemLabel);
-        Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         MinimizeBox = false;
         Name = "EvolutionChainInfoForm";
-        Text = "Evolution Chain";
+        StartPosition = FormStartPosition.CenterParent;
+        Text = "進化チェーン";
         Load += EvolutionChainInfoForm_Load;
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
-
-    private Label IdLabel;
     private Label IdCaptionLabel;
-    private Label BabyTriggerItemLabel;
     private Label BabyTriggerItemCaptionLabel;
-    private Button BabyTriggerItemInfoButton;
+    private Button BabyTriggerItemDetailButton;
     private Label ChainCaptionLabel;
-    private Label ChainLabel;
-    private Button ChainInfoButton;
+    private Button ChainDetailButton;
     private Button CloseButton;
+    private TextBox IdTextBox;
+    private TextBox BabyTriggerItemTextBox;
+    private TextBox ChainTextBox;
 }
