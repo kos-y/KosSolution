@@ -4,72 +4,28 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Kos.PokeAPI.Items.ItemAttributes;
+using Kos.PokeAPI.Berries.Berries;
 using Kos.PokeAPI.Items.ItemCategories;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
-public partial class ItemAttributeInfoForm : Form
+
+/// <summary>
+/// アイテムカテゴリー
+/// </summary>
+public partial class ItemCategoryInfoForm : Form
 {
     #region コンストラクタ
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    /// <param name="url">URL</param>
-    public ItemAttributeInfoForm(string url)
+    public ItemCategoryInfoForm(string url)
     {
         InitializeComponent();
         SetData(url);
-    }
-    #endregion
-
-    #region 言語ごとの名前 セルクリック
-    /// <summary>
-    /// 言語ごとの名前 セルクリック
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void NamesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-    {
-        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
-            return;
-        }
-
-        if (NamesDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
-            return;
-        }
-
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
-            return;
-        }
-
-        using NameInfoForm form = new(name);
-        _ = form.ShowDialog(this);
-    }
-    #endregion
-
-    #region 言語ごとの名前 セルダブルクリック
-    /// <summary>
-    /// 言語ごとの名前 セルダブルクリック
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void NamesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-    {
-        if (e.RowIndex < 0) {
-            return;
-        }
-
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
-            return;
-        }
-
-        using NameInfoForm form = new(name);
-        _ = form.ShowDialog(this);
     }
     #endregion
 
@@ -127,49 +83,48 @@ public partial class ItemAttributeInfoForm : Form
     }
     #endregion
 
-    #region 言語ごとの説明 セルクリック
+    #region 言語ごとの名前 セルクリック
     /// <summary>
-    /// 言語ごとの説明 セルクリック
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void DescriptionsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    private void NamesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
     {
         if (e.RowIndex < 0 || e.ColumnIndex < 0) {
             return;
         }
 
-        if (DescriptionsDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+        if (NamesDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
             return;
         }
 
-        if (DescriptionsDataGridView.Rows[e.RowIndex].DataBoundItem is not Description desc) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        using DescriptionInfoForm form = new(desc);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region 言語ごとの説明 セルダブルクリック
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
-    /// 言語ごとの説明 セルダブルクリック
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void
-        DescriptionsDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    private void NamesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
     {
         if (e.RowIndex < 0) {
             return;
         }
 
-        if (DescriptionsDataGridView.Rows[e.RowIndex].DataBoundItem is not Description desc) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        using DescriptionInfoForm form = new(desc);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -186,27 +141,27 @@ public partial class ItemAttributeInfoForm : Form
     }
     #endregion
 
-    #region 画面にデータの設定
+    #region データを画面に設定
     /// <summary>
-    /// 画面にデータの設定
+    /// データを画面に設定
     /// </summary>
     /// <param name="url"></param>
     private void SetData(string url)
     {
-        ItemAttribute? ia = ItemAttribute.GetItemAttribute(url);
-        if (ia is null) {
+        ItemCategory? ic = ItemCategory.GetItemCategory(url);
+        if (ic is null) {
             return;
         }
 
-        Tag = ia;
-        IdTextBox.Text = $"{ia.Id}";
-        NameTextBox.Text = ia.Name;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = ia.Names;
-        DescriptionsDataGridView.AutoGenerateColumns = false;
-        DescriptionsDataGridView.DataSource = ia.Descriptions;
+        Tag = ic;
+        IdTextBox.Text = $"{ic.Id}";
+        NameTextBox.Text = ic.Name;
+        PocketTextBox.Text = ic.Pocket?.Name ?? string.Empty;
+        PocketDetailButton.Tag = ic.Pocket;
         ItemDataGridView.AutoGenerateColumns = false;
-        ItemDataGridView.DataSource = ia.Items;
+        ItemDataGridView.DataSource = ic.Items;
+        NamesDataGridView.AutoGenerateColumns = false;
+        NamesDataGridView.DataSource = ic.Names;
     }
     #endregion
 }

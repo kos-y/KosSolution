@@ -27,9 +27,7 @@ partial class ItemAttributeInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        NameLabel = new Label();
         NameCaptionLabel = new Label();
-        IdLabel = new Label();
         IdCaptionLabel = new Label();
         NamesDataGridView = new DataGridView();
         NameColumn = new DataGridViewTextBoxColumn();
@@ -37,29 +35,21 @@ partial class ItemAttributeInfoForm
         DetailColumn = new DataGridViewButtonColumn();
         NamesCaptionLabel = new Label();
         ItemDataGridView = new DataGridView();
-        ItemCaptionLabel = new Label();
         ItemNameColumn = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
+        ItemCaptionLabel = new Label();
         DescriptionsDataGridView = new DataGridView();
-        DescriptionsCaptionLabel = new Label();
         DescriptionColumn = new DataGridViewTextBoxColumn();
         dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn2 = new DataGridViewButtonColumn();
+        DescriptionsCaptionLabel = new Label();
         CloseButton = new Button();
+        NameTextBox = new TextBox();
+        IdTextBox = new TextBox();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)ItemDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)DescriptionsDataGridView).BeginInit();
         SuspendLayout();
-        // 
-        // NameLabel
-        // 
-        NameLabel.BorderStyle = BorderStyle.Fixed3D;
-        NameLabel.Location = new Point(118, 46);
-        NameLabel.Margin = new Padding(5, 0, 5, 0);
-        NameLabel.Name = "NameLabel";
-        NameLabel.Size = new Size(271, 29);
-        NameLabel.TabIndex = 7;
-        NameLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NameCaptionLabel
         // 
@@ -68,19 +58,9 @@ partial class ItemAttributeInfoForm
         NameCaptionLabel.Margin = new Padding(5, 0, 5, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
         NameCaptionLabel.Size = new Size(90, 17);
-        NameCaptionLabel.TabIndex = 6;
+        NameCaptionLabel.TabIndex = 2;
         NameCaptionLabel.Text = "アイテム特性名";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // IdLabel
-        // 
-        IdLabel.BorderStyle = BorderStyle.Fixed3D;
-        IdLabel.Location = new Point(118, 9);
-        IdLabel.Margin = new Padding(5, 0, 5, 0);
-        IdLabel.Name = "IdLabel";
-        IdLabel.Size = new Size(271, 29);
-        IdLabel.TabIndex = 5;
-        IdLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
@@ -89,7 +69,7 @@ partial class ItemAttributeInfoForm
         IdCaptionLabel.Margin = new Padding(5, 0, 5, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
         IdCaptionLabel.Size = new Size(94, 17);
-        IdCaptionLabel.TabIndex = 4;
+        IdCaptionLabel.TabIndex = 0;
         IdCaptionLabel.Text = "アイテム特性ID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -102,7 +82,9 @@ partial class ItemAttributeInfoForm
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
         NamesDataGridView.Size = new Size(379, 170);
-        NamesDataGridView.TabIndex = 13;
+        NamesDataGridView.TabIndex = 5;
+        NamesDataGridView.CellClick += NamesDataGridView_CellClick;
+        NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
         // NameColumn
         // 
@@ -138,7 +120,7 @@ partial class ItemAttributeInfoForm
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
         NamesCaptionLabel.Size = new Size(92, 17);
-        NamesCaptionLabel.TabIndex = 12;
+        NamesCaptionLabel.TabIndex = 4;
         NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -151,18 +133,9 @@ partial class ItemAttributeInfoForm
         ItemDataGridView.Name = "ItemDataGridView";
         ItemDataGridView.RowHeadersVisible = false;
         ItemDataGridView.Size = new Size(339, 237);
-        ItemDataGridView.TabIndex = 17;
-        // 
-        // ItemCaptionLabel
-        // 
-        ItemCaptionLabel.AutoSize = true;
-        ItemCaptionLabel.Location = new Point(398, 9);
-        ItemCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        ItemCaptionLabel.Name = "ItemCaptionLabel";
-        ItemCaptionLabel.Size = new Size(51, 17);
-        ItemCaptionLabel.TabIndex = 16;
-        ItemCaptionLabel.Text = "アイテム";
-        ItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        ItemDataGridView.TabIndex = 7;
+        ItemDataGridView.CellClick += ItemDataGridView_CellClick;
+        ItemDataGridView.CellDoubleClick += ItemDataGridView_CellDoubleClick;
         // 
         // ItemNameColumn
         // 
@@ -182,6 +155,17 @@ partial class ItemAttributeInfoForm
         dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
         dataGridViewButtonColumn1.Width = 23;
         // 
+        // ItemCaptionLabel
+        // 
+        ItemCaptionLabel.AutoSize = true;
+        ItemCaptionLabel.Location = new Point(398, 9);
+        ItemCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        ItemCaptionLabel.Name = "ItemCaptionLabel";
+        ItemCaptionLabel.Size = new Size(51, 17);
+        ItemCaptionLabel.TabIndex = 6;
+        ItemCaptionLabel.Text = "アイテム";
+        ItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        // 
         // DescriptionsDataGridView
         // 
         DescriptionsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -191,18 +175,9 @@ partial class ItemAttributeInfoForm
         DescriptionsDataGridView.Name = "DescriptionsDataGridView";
         DescriptionsDataGridView.RowHeadersVisible = false;
         DescriptionsDataGridView.Size = new Size(723, 170);
-        DescriptionsDataGridView.TabIndex = 19;
-        // 
-        // DescriptionsCaptionLabel
-        // 
-        DescriptionsCaptionLabel.AutoSize = true;
-        DescriptionsCaptionLabel.Location = new Point(14, 269);
-        DescriptionsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        DescriptionsCaptionLabel.Name = "DescriptionsCaptionLabel";
-        DescriptionsCaptionLabel.Size = new Size(92, 17);
-        DescriptionsCaptionLabel.TabIndex = 18;
-        DescriptionsCaptionLabel.Text = "言語ごとの名前";
-        DescriptionsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        DescriptionsDataGridView.TabIndex = 9;
+        DescriptionsDataGridView.CellClick += DescriptionsDataGridView_CellClick;
+        DescriptionsDataGridView.CellDoubleClick += DescriptionsDataGridView_CellDoubleClick;
         // 
         // DescriptionColumn
         // 
@@ -231,21 +206,51 @@ partial class ItemAttributeInfoForm
         dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
         dataGridViewButtonColumn2.Width = 40;
         // 
+        // DescriptionsCaptionLabel
+        // 
+        DescriptionsCaptionLabel.AutoSize = true;
+        DescriptionsCaptionLabel.Location = new Point(14, 269);
+        DescriptionsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        DescriptionsCaptionLabel.Name = "DescriptionsCaptionLabel";
+        DescriptionsCaptionLabel.Size = new Size(92, 17);
+        DescriptionsCaptionLabel.TabIndex = 8;
+        DescriptionsCaptionLabel.Text = "言語ごとの説明";
+        DescriptionsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        // 
         // CloseButton
         // 
         CloseButton.Location = new Point(643, 465);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(96, 52);
-        CloseButton.TabIndex = 23;
+        CloseButton.TabIndex = 10;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
+        // 
+        // NameTextBox
+        // 
+        NameTextBox.Location = new Point(116, 49);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.ReadOnly = true;
+        NameTextBox.Size = new Size(262, 24);
+        NameTextBox.TabIndex = 3;
+        // 
+        // IdTextBox
+        // 
+        IdTextBox.Location = new Point(116, 12);
+        IdTextBox.Name = "IdTextBox";
+        IdTextBox.ReadOnly = true;
+        IdTextBox.Size = new Size(261, 24);
+        IdTextBox.TabIndex = 1;
         // 
         // ItemAttributeInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(756, 524);
+        Controls.Add(NameTextBox);
+        Controls.Add(IdTextBox);
         Controls.Add(CloseButton);
         Controls.Add(DescriptionsDataGridView);
         Controls.Add(DescriptionsCaptionLabel);
@@ -253,9 +258,7 @@ partial class ItemAttributeInfoForm
         Controls.Add(ItemCaptionLabel);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
-        Controls.Add(NameLabel);
         Controls.Add(NameCaptionLabel);
-        Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -272,10 +275,7 @@ partial class ItemAttributeInfoForm
     }
 
     #endregion
-
-    private Label NameLabel;
     private Label NameCaptionLabel;
-    private Label IdLabel;
     private Label IdCaptionLabel;
     private DataGridView NamesDataGridView;
     private DataGridViewTextBoxColumn NameColumn;
@@ -292,4 +292,6 @@ partial class ItemAttributeInfoForm
     private DataGridViewButtonColumn dataGridViewButtonColumn2;
     private Label DescriptionsCaptionLabel;
     private Button CloseButton;
+    private TextBox NameTextBox;
+    private TextBox IdTextBox;
 }
