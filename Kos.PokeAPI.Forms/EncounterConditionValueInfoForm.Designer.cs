@@ -27,175 +27,192 @@ partial class EncounterConditionValueInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        NameLabel = new Label();
         NameCaptionLabel = new Label();
-        IdLabel = new Label();
         IdCaptionLabel = new Label();
-        ConditionLabel = new Label();
         ConditionCaptionLabel = new Label();
         NamesDataGridView = new DataGridView();
         NameColumn = new DataGridViewTextBoxColumn();
         LanguageColumn = new DataGridViewTextBoxColumn();
         DetailColumn = new DataGridViewButtonColumn();
         NamesCaptionLabel = new Label();
-        ConditionInfoButton = new Button();
+        ConditionDetailButton = new Button();
         CloseButton = new Button();
+        IdTextBox = new TextBox();
+        NameTextBox = new TextBox();
+        ConditionTextBox = new TextBox();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
         // 
-        // NameLabel
-        // 
-        NameLabel.BorderStyle = BorderStyle.Fixed3D;
-        NameLabel.Location = new Point(117, 32);
-        NameLabel.Name = "NameLabel";
-        NameLabel.Size = new Size(147, 23);
-        NameLabel.TabIndex = 3;
-        NameLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // NameCaptionLabel
         // 
-        NameCaptionLabel.Location = new Point(12, 32);
+        NameCaptionLabel.AutoSize = true;
+        NameCaptionLabel.Location = new Point(21, 40);
+        NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(99, 23);
+        NameCaptionLabel.Size = new Size(86, 17);
         NameCaptionLabel.TabIndex = 2;
-        NameCaptionLabel.Text = "name";
+        NameCaptionLabel.Text = "遭遇条件値名";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // IdLabel
-        // 
-        IdLabel.BorderStyle = BorderStyle.Fixed3D;
-        IdLabel.Location = new Point(117, 9);
-        IdLabel.Name = "IdLabel";
-        IdLabel.Size = new Size(147, 23);
-        IdLabel.TabIndex = 1;
-        IdLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
-        IdCaptionLabel.Location = new Point(12, 9);
+        IdCaptionLabel.AutoSize = true;
+        IdCaptionLabel.Location = new Point(15, 10);
+        IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(99, 23);
+        IdCaptionLabel.Size = new Size(90, 17);
         IdCaptionLabel.TabIndex = 0;
-        IdCaptionLabel.Text = "id";
+        IdCaptionLabel.Text = "遭遇条件値ID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // ConditionLabel
-        // 
-        ConditionLabel.BorderStyle = BorderStyle.Fixed3D;
-        ConditionLabel.Location = new Point(117, 55);
-        ConditionLabel.Name = "ConditionLabel";
-        ConditionLabel.Size = new Size(147, 23);
-        ConditionLabel.TabIndex = 5;
-        ConditionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // ConditionCaptionLabel
         // 
-        ConditionCaptionLabel.Location = new Point(12, 55);
+        ConditionCaptionLabel.AutoSize = true;
+        ConditionCaptionLabel.Location = new Point(47, 70);
+        ConditionCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         ConditionCaptionLabel.Name = "ConditionCaptionLabel";
-        ConditionCaptionLabel.Size = new Size(99, 23);
+        ConditionCaptionLabel.Size = new Size(60, 17);
         ConditionCaptionLabel.TabIndex = 4;
-        ConditionCaptionLabel.Text = "condition";
+        ConditionCaptionLabel.Text = "遭遇条件";
         ConditionCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NamesDataGridView
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(117, 78);
+        NamesDataGridView.Location = new Point(15, 124);
+        NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(434, 150);
+        NamesDataGridView.Size = new Size(767, 170);
         NamesDataGridView.TabIndex = 8;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
         // NameColumn
         // 
+        NameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         NameColumn.DataPropertyName = "Text";
-        NameColumn.HeaderText = "name";
+        NameColumn.HeaderText = "名前";
         NameColumn.Name = "NameColumn";
         NameColumn.ReadOnly = true;
+        NameColumn.Width = 59;
         // 
         // LanguageColumn
         // 
+        LanguageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         LanguageColumn.DataPropertyName = "Language";
-        LanguageColumn.HeaderText = "language";
+        LanguageColumn.HeaderText = "言語";
         LanguageColumn.Name = "LanguageColumn";
         LanguageColumn.ReadOnly = true;
+        LanguageColumn.Width = 59;
         // 
         // DetailColumn
         // 
-        DetailColumn.HeaderText = "Info";
+        DetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        DetailColumn.HeaderText = "詳細";
         DetailColumn.Name = "DetailColumn";
-        DetailColumn.Text = "Info..";
+        DetailColumn.Text = "詳細";
         DetailColumn.UseColumnTextForButtonValue = true;
+        DetailColumn.Width = 40;
         // 
         // NamesCaptionLabel
         // 
-        NamesCaptionLabel.Location = new Point(12, 78);
+        NamesCaptionLabel.AutoSize = true;
+        NamesCaptionLabel.Location = new Point(15, 104);
+        NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
-        NamesCaptionLabel.Size = new Size(99, 23);
+        NamesCaptionLabel.Size = new Size(92, 17);
         NamesCaptionLabel.TabIndex = 7;
-        NamesCaptionLabel.Text = "names";
+        NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // ConditionInfoButton
+        // ConditionDetailButton
         // 
-        ConditionInfoButton.Location = new Point(270, 55);
-        ConditionInfoButton.Name = "ConditionInfoButton";
-        ConditionInfoButton.Size = new Size(43, 23);
-        ConditionInfoButton.TabIndex = 6;
-        ConditionInfoButton.Text = "Info...";
-        ConditionInfoButton.UseVisualStyleBackColor = true;
-        ConditionInfoButton.Click += ConditionInfoButton_Click;
+        ConditionDetailButton.Location = new Point(736, 66);
+        ConditionDetailButton.Margin = new Padding(4, 3, 4, 3);
+        ConditionDetailButton.Name = "ConditionDetailButton";
+        ConditionDetailButton.Size = new Size(46, 24);
+        ConditionDetailButton.TabIndex = 6;
+        ConditionDetailButton.Text = "詳細";
+        ConditionDetailButton.UseVisualStyleBackColor = true;
+        ConditionDetailButton.Click += ConditionDetailButton_Click;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(476, 234);
+        CloseButton.Location = new Point(710, 300);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 23);
+        CloseButton.Size = new Size(72, 37);
         CloseButton.TabIndex = 9;
-        CloseButton.Text = "Close";
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // IdTextBox
+        // 
+        IdTextBox.Location = new Point(112, 7);
+        IdTextBox.Name = "IdTextBox";
+        IdTextBox.ReadOnly = true;
+        IdTextBox.Size = new Size(670, 24);
+        IdTextBox.TabIndex = 1;
+        // 
+        // NameTextBox
+        // 
+        NameTextBox.Location = new Point(112, 37);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.ReadOnly = true;
+        NameTextBox.Size = new Size(670, 24);
+        NameTextBox.TabIndex = 3;
+        // 
+        // ConditionTextBox
+        // 
+        ConditionTextBox.Location = new Point(112, 67);
+        ConditionTextBox.Name = "ConditionTextBox";
+        ConditionTextBox.ReadOnly = true;
+        ConditionTextBox.Size = new Size(617, 24);
+        ConditionTextBox.TabIndex = 5;
+        // 
         // EncounterConditionValueInfoForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(564, 270);
+        ClientSize = new Size(795, 349);
+        Controls.Add(ConditionTextBox);
+        Controls.Add(NameTextBox);
+        Controls.Add(IdTextBox);
         Controls.Add(CloseButton);
-        Controls.Add(ConditionInfoButton);
+        Controls.Add(ConditionDetailButton);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
         Controls.Add(ConditionCaptionLabel);
-        Controls.Add(ConditionLabel);
-        Controls.Add(NameLabel);
         Controls.Add(NameCaptionLabel);
-        Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "EncounterConditionValueInfoForm";
-        Text = "Encounter Condition Value";
+        StartPosition = FormStartPosition.CenterParent;
+        Text = "遭遇条件値";
         Load += EncounterConditionValueInfoForm_Load;
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
-
-    private Label NameLabel;
     private Label NameCaptionLabel;
-    private Label IdLabel;
     private Label IdCaptionLabel;
-    private Label ConditionLabel;
     private Label ConditionCaptionLabel;
     private DataGridView NamesDataGridView;
+    private Label NamesCaptionLabel;
+    private Button ConditionDetailButton;
+    private Button CloseButton;
     private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn LanguageColumn;
     private DataGridViewButtonColumn DetailColumn;
-    private Label NamesCaptionLabel;
-    private Button ConditionInfoButton;
-    private Button CloseButton;
+    private TextBox IdTextBox;
+    private TextBox NameTextBox;
+    private TextBox ConditionTextBox;
 }

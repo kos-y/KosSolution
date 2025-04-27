@@ -12,6 +12,10 @@ using Kos.PokeAPI.Items.Item;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
+
+/// <summary>
+/// アイテム
+/// </summary>
 public partial class ItemInfoForm : Form
 {
     #region コンストラクタ
@@ -23,6 +27,56 @@ public partial class ItemInfoForm : Form
     {
         InitializeComponent();
         SetData(url);
+    }
+    #endregion
+
+    #region カテゴリ 詳細 クリック
+    /// <summary>
+    /// カテゴリ 詳細 クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void CategoryDetailButton_Click(object sender, EventArgs e)
+    {
+        if (CategoryDetailButton.Tag is null) {
+            return;
+        }
+
+        if (CategoryDetailButton.Tag is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using ItemCategoryInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 「なげつける」の効果 詳細 クリック
+    /// <summary>
+    /// 「なげつける」の効果 詳細 クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void FlingEffectDetailButton_Click(object sender, EventArgs e)
+    {
+        if (FlingEffectDetailButton.Tag is null) {
+            return;
+        }
+
+        if (FlingEffectDetailButton.Tag is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using ItemFlingEffectInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
@@ -114,6 +168,60 @@ public partial class ItemInfoForm : Form
         }
 
         GenerationGameIndexInfoForm form = new(ggi);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 特性 セルクリック
+    /// <summary>
+    /// 特性 セルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void AttributesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (AttributesDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+            return;
+        }
+
+        if (AttributesDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using ItemAttributeInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 特性 セルダブルクリック
+    /// <summary>
+    /// 特性 セルダブルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void AttributesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0) {
+            return;
+        }
+
+        if (AttributesDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using ItemAttributeInfoForm form = new(api.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -265,13 +373,14 @@ public partial class ItemInfoForm : Form
             return;
         }
 
-        IdLabel.Text = $"{item.Id}";
-        NameLabel.Text = item.Name;
-        CostLabel.Text = $"{item.Cost}";
-        CategoryLabel.Text = item.Category?.Name ?? string.Empty;
-        CategoryInfoButton.Tag = item.Category;
-        FlingEffectLabel.Text = item.FlingEffect?.Name ?? string.Empty;
-        FlingPowerLabel.Text = $"{item.FlingPower}";
+        IdTextBox.Text = $"{item.Id}";
+        NameTextBox.Text = item.Name;
+        CostTextBox.Text = $"{item.Cost}";
+        CategoryTextBox.Text = item.Category?.Name ?? string.Empty;
+        CategoryDetailButton.Tag = item.Category;
+        FlingEffectTextBox.Text = item.FlingEffect?.Name ?? string.Empty;
+        FlingEffectDetailButton.Tag = item.FlingEffect;
+        FlingPowerTextBox.Text = $"{item.FlingPower}";
         if (item.BabyTriggerFor is not null) {
             BabyTriggerForInfoButton.Tag = item.BabyTriggerFor;
         } else {

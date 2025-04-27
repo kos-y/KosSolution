@@ -268,6 +268,9 @@ public partial class PokeAPIViewer : Form
             nameof(EndPoint.ItemCategories) =>
                 new NamedAPIResourceListForm(eca, typeof(ItemCategoryInfoForm)),
 
+            nameof(EndPoint.ItemFlingEffects) =>
+                new NamedAPIResourceListForm(eca, typeof(ItemFlingEffectInfoForm)),
+
             _ => null,
         };
     }

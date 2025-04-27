@@ -42,9 +42,9 @@ public partial class EncounterConditionValueInfoForm : Form
     }
     #endregion
 
-    #region Load
+    #region ロード
     /// <summary>
-    /// Load
+    /// ロード
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -54,15 +54,19 @@ public partial class EncounterConditionValueInfoForm : Form
     }
     #endregion
 
-    #region Condition Info Click
+    #region 条件 詳細 クリック
     /// <summary>
-    /// Condition Info Click
+    /// 条件 詳細 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ConditionInfoButton_Click(object sender, EventArgs e)
+    private void ConditionDetailButton_Click(object sender, EventArgs e)
     {
-        if (ConditionInfoButton.Tag is not NamedAPIResource api) {
+        if (ConditionDetailButton.Tag is null) {
+            return;
+        }
+
+        if (ConditionDetailButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -75,9 +79,9 @@ public partial class EncounterConditionValueInfoForm : Form
     }
     #endregion
 
-    #region names DataGridView CellClick
+    #region 言語ごとの名前 セルクリック
     /// <summary>
-    /// names DataGridView CellClick
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -91,22 +95,18 @@ public partial class EncounterConditionValueInfoForm : Form
             return;
         }
 
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name item) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        if (item.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(item.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region names DataGridView CellDoubleClick
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
-    /// names DataGridView CellDoubleClick
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -116,22 +116,18 @@ public partial class EncounterConditionValueInfoForm : Form
             return;
         }
 
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name item) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        if (item.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(item.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Close Click
+    #region 閉じる クリック
     /// <summary>
-    /// Close Click
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -154,10 +150,10 @@ public partial class EncounterConditionValueInfoForm : Form
         }
 
         Tag = ecv;
-        IdLabel.Text = $"{ecv.Id}";
-        NameLabel.Text = ecv.Name;
-        ConditionLabel.Text = ecv.Condition?.Name ?? string.Empty;
-        ConditionInfoButton.Tag = ecv.Condition;
+        IdTextBox.Text = $"{ecv.Id}";
+        NameTextBox.Text = ecv.Name;
+        ConditionTextBox.Text = ecv.Condition?.Name ?? string.Empty;
+        ConditionDetailButton.Tag = ecv.Condition;
         NamesDataGridView.DataSource = ecv.Names;
     }
     #endregion
