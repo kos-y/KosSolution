@@ -36,9 +36,9 @@ public partial class EncounterMethodInfoForm : Form
     }
     #endregion
 
-    #region Load
+    #region ロード
     /// <summary>
-    /// Load
+    /// ロード
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -48,9 +48,9 @@ public partial class EncounterMethodInfoForm : Form
     }
     #endregion
 
-    #region Names DataGridView CellClick
+    #region 言語ごとの名前 セルクリック
     /// <summary>
-    /// Names DataGridView CellClick
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -64,22 +64,18 @@ public partial class EncounterMethodInfoForm : Form
             return;
         }
 
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name item) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        if (item.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(item.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Names DataGridView CellDoubleClick
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
-    /// Names DataGridView CellDoubleClick
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -89,22 +85,18 @@ public partial class EncounterMethodInfoForm : Form
             return;
         }
 
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name item) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        if (item.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(item.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Close Click
+    #region 閉じる クリック
     /// <summary>
-    /// Close Click
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -127,9 +119,10 @@ public partial class EncounterMethodInfoForm : Form
         }
 
         Tag = em;
-        IdLabel.Text = $"{em.Id}";
-        NameLabel.Text = em.Name;
-        OrderLabel.Text = $"{em.Order}";
+        IdTextBox.Text = $"{em.Id}";
+        NameTextBox.Text = em.Name;
+        OrderTextBox.Text = $"{em.Order}";
+        NamesDataGridView.AutoGenerateColumns = false;
         NamesDataGridView.DataSource = em.Names;
     }
     #endregion
