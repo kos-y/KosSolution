@@ -25,23 +25,23 @@ public partial class ItemHolderPokemonVersionDetailInfoForm : Form
     public ItemHolderPokemonVersionDetailInfoForm(ItemHolderPokemonVersionDetail ihpvd)
     {
         InitializeComponent();
+        SetData(ihpvd);
     }
     #endregion
 
-    #region version Info Click
+    #region バージョン 詳細 クリック
     /// <summary>
-    /// version Info Click
+    /// バージョン 詳細 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionInfoButton_Click(object sender, EventArgs e)
+    private void VersionDetailButton_Click(object sender, EventArgs e)
     {
-        object? tag = VersionInfoButton.Tag;
-        if (tag is null) {
+        if (VersionDetailButton.Tag is null) {
             return;
         }
 
-        if (tag is not NamedAPIResource api) {
+        if (VersionDetailButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -54,9 +54,9 @@ public partial class ItemHolderPokemonVersionDetailInfoForm : Form
     }
     #endregion
 
-    #region Close Click
+    #region 閉じる クリック
     /// <summary>
-    /// Close Click
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -73,9 +73,9 @@ public partial class ItemHolderPokemonVersionDetailInfoForm : Form
     /// <param name="ihpvd"></param>
     public void SetData(ItemHolderPokemonVersionDetail ihpvd)
     {
-        RarityLabel.Text = $"{ihpvd.Rarity}";
-        VersionLabel.Text = ihpvd.Version?.Name ?? string.Empty;
-        VersionInfoButton.Tag = ihpvd.Version;
+        RarityTextBox.Text = $"{ihpvd.Rarity}";
+        VersionTextBox.Text = ihpvd.Version?.Name ?? string.Empty;
+        VersionDetailButton.Tag = ihpvd.Version;
     }
     #endregion
 }

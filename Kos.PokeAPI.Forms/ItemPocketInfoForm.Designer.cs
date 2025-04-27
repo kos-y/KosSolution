@@ -1,6 +1,6 @@
 ﻿namespace Kos.PokeAPI.Forms;
 
-partial class ItemCategoryInfoForm
+partial class ItemPocketInfoForm
 {
     /// <summary>
     /// Required designer variable.
@@ -31,113 +31,112 @@ partial class ItemCategoryInfoForm
         IdTextBox = new TextBox();
         NameCaptionLabel = new Label();
         IdCaptionLabel = new Label();
-        ItemDataGridView = new DataGridView();
-        ItemNameColumn = new DataGridViewTextBoxColumn();
+        CategoriesDataGridView = new DataGridView();
+        dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
-        ItemCaptionLabel = new Label();
+        CategoryCaptionLabel = new Label();
         NamesDataGridView = new DataGridView();
         NameColumn = new DataGridViewTextBoxColumn();
         LanguageColumn = new DataGridViewTextBoxColumn();
         DetailColumn = new DataGridViewButtonColumn();
         NamesCaptionLabel = new Label();
-        PocketTextBox = new TextBox();
-        PocketCaptionLabel = new Label();
         CloseButton = new Button();
-        PocketDetailButton = new Button();
-        ((System.ComponentModel.ISupportInitialize)ItemDataGridView).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)CategoriesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
         // 
         // NameTextBox
         // 
-        NameTextBox.Location = new Point(139, 42);
+        NameTextBox.Location = new Point(130, 42);
+        NameTextBox.Margin = new Padding(4, 3, 4, 3);
         NameTextBox.Name = "NameTextBox";
         NameTextBox.ReadOnly = true;
-        NameTextBox.Size = new Size(215, 24);
+        NameTextBox.Size = new Size(244, 24);
         NameTextBox.TabIndex = 3;
         // 
         // IdTextBox
         // 
-        IdTextBox.Location = new Point(139, 12);
+        IdTextBox.Location = new Point(130, 12);
+        IdTextBox.Margin = new Padding(4, 3, 4, 3);
         IdTextBox.Name = "IdTextBox";
         IdTextBox.ReadOnly = true;
-        IdTextBox.Size = new Size(214, 24);
+        IdTextBox.Size = new Size(244, 24);
         IdTextBox.TabIndex = 1;
         // 
         // NameCaptionLabel
         // 
         NameCaptionLabel.AutoSize = true;
-        NameCaptionLabel.Location = new Point(17, 45);
-        NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        NameCaptionLabel.Location = new Point(18, 45);
+        NameCaptionLabel.Margin = new Padding(5, 0, 5, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(115, 17);
+        NameCaptionLabel.Size = new Size(103, 17);
         NameCaptionLabel.TabIndex = 2;
-        NameCaptionLabel.Text = "アイテムカテゴリー名";
+        NameCaptionLabel.Text = "アイテムポケット名";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
         IdCaptionLabel.AutoSize = true;
-        IdCaptionLabel.Location = new Point(13, 15);
-        IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        IdCaptionLabel.Location = new Point(14, 15);
+        IdCaptionLabel.Margin = new Padding(5, 0, 5, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(119, 17);
+        IdCaptionLabel.Size = new Size(107, 17);
         IdCaptionLabel.TabIndex = 0;
-        IdCaptionLabel.Text = "アイテムカテゴリーID";
+        IdCaptionLabel.Text = "アイテムポケットID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // ItemDataGridView
+        // CategoriesDataGridView
         // 
-        ItemDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        ItemDataGridView.Columns.AddRange(new DataGridViewColumn[] { ItemNameColumn, dataGridViewButtonColumn1 });
-        ItemDataGridView.Location = new Point(13, 132);
-        ItemDataGridView.Margin = new Padding(4, 3, 4, 3);
-        ItemDataGridView.Name = "ItemDataGridView";
-        ItemDataGridView.RowHeadersVisible = false;
-        ItemDataGridView.Size = new Size(340, 237);
-        ItemDataGridView.TabIndex = 8;
-        ItemDataGridView.CellClick += ItemDataGridView_CellClick;
-        ItemDataGridView.CellDoubleClick += ItemDataGridView_CellDoubleClick;
+        CategoriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        CategoriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewButtonColumn1 });
+        CategoriesDataGridView.Location = new Point(14, 95);
+        CategoriesDataGridView.Margin = new Padding(4, 3, 4, 3);
+        CategoriesDataGridView.Name = "CategoriesDataGridView";
+        CategoriesDataGridView.RowHeadersVisible = false;
+        CategoriesDataGridView.Size = new Size(339, 170);
+        CategoriesDataGridView.TabIndex = 5;
+        CategoriesDataGridView.CellClick += CategoriesDataGridView_CellClick;
+        CategoriesDataGridView.CellDoubleClick += CategoriesDataGridView_CellDoubleClick;
         // 
-        // ItemNameColumn
+        // dataGridViewTextBoxColumn1
         // 
-        ItemNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        ItemNameColumn.DataPropertyName = "Name";
-        ItemNameColumn.HeaderText = "アイテム";
-        ItemNameColumn.Name = "ItemNameColumn";
-        ItemNameColumn.ReadOnly = true;
-        ItemNameColumn.Width = 76;
+        dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewTextBoxColumn1.DataPropertyName = "Name";
+        dataGridViewTextBoxColumn1.HeaderText = "カテゴリ";
+        dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+        dataGridViewTextBoxColumn1.ReadOnly = true;
+        dataGridViewTextBoxColumn1.Width = 73;
         // 
         // dataGridViewButtonColumn1
         // 
-        dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+        dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewButtonColumn1.HeaderText = "詳細";
         dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
         dataGridViewButtonColumn1.Text = "詳細";
         dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-        dataGridViewButtonColumn1.Width = 23;
+        dataGridViewButtonColumn1.Width = 40;
         // 
-        // ItemCaptionLabel
+        // CategoryCaptionLabel
         // 
-        ItemCaptionLabel.AutoSize = true;
-        ItemCaptionLabel.Location = new Point(13, 112);
-        ItemCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        ItemCaptionLabel.Name = "ItemCaptionLabel";
-        ItemCaptionLabel.Size = new Size(51, 17);
-        ItemCaptionLabel.TabIndex = 7;
-        ItemCaptionLabel.Text = "アイテム";
-        ItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        CategoryCaptionLabel.AutoSize = true;
+        CategoryCaptionLabel.Location = new Point(13, 75);
+        CategoryCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        CategoryCaptionLabel.Name = "CategoryCaptionLabel";
+        CategoryCaptionLabel.Size = new Size(48, 17);
+        CategoryCaptionLabel.TabIndex = 4;
+        CategoryCaptionLabel.Text = "カテゴリ";
+        CategoryCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NamesDataGridView
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(361, 132);
+        NamesDataGridView.Location = new Point(361, 95);
         NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(379, 237);
-        NamesDataGridView.TabIndex = 10;
+        NamesDataGridView.Size = new Size(379, 170);
+        NamesDataGridView.TabIndex = 7;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
@@ -171,68 +170,35 @@ partial class ItemCategoryInfoForm
         // NamesCaptionLabel
         // 
         NamesCaptionLabel.AutoSize = true;
-        NamesCaptionLabel.Location = new Point(361, 112);
+        NamesCaptionLabel.Location = new Point(361, 75);
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
         NamesCaptionLabel.Size = new Size(92, 17);
-        NamesCaptionLabel.TabIndex = 9;
+        NamesCaptionLabel.TabIndex = 6;
         NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // PocketTextBox
-        // 
-        PocketTextBox.Location = new Point(138, 72);
-        PocketTextBox.Name = "PocketTextBox";
-        PocketTextBox.ReadOnly = true;
-        PocketTextBox.Size = new Size(215, 24);
-        PocketTextBox.TabIndex = 5;
-        // 
-        // PocketCaptionLabel
-        // 
-        PocketCaptionLabel.AutoSize = true;
-        PocketCaptionLabel.Location = new Point(72, 75);
-        PocketCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        PocketCaptionLabel.Name = "PocketCaptionLabel";
-        PocketCaptionLabel.Size = new Size(60, 17);
-        PocketCaptionLabel.TabIndex = 4;
-        PocketCaptionLabel.Text = "ポケット名";
-        PocketCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(644, 375);
+        CloseButton.Location = new Point(644, 271);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(96, 52);
-        CloseButton.TabIndex = 11;
+        CloseButton.TabIndex = 8;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
-        // PocketDetailButton
-        // 
-        PocketDetailButton.Location = new Point(360, 72);
-        PocketDetailButton.Margin = new Padding(4, 3, 4, 3);
-        PocketDetailButton.Name = "PocketDetailButton";
-        PocketDetailButton.Size = new Size(45, 26);
-        PocketDetailButton.TabIndex = 6;
-        PocketDetailButton.Text = "詳細";
-        PocketDetailButton.UseVisualStyleBackColor = true;
-        PocketDetailButton.Click += PocketDetailButton_Click;
-        // 
-        // ItemCategoryInfoForm
+        // ItemPocketInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(756, 439);
-        Controls.Add(PocketDetailButton);
+        ClientSize = new Size(755, 337);
         Controls.Add(CloseButton);
-        Controls.Add(PocketCaptionLabel);
-        Controls.Add(PocketTextBox);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
-        Controls.Add(ItemDataGridView);
-        Controls.Add(ItemCaptionLabel);
+        Controls.Add(CategoriesDataGridView);
+        Controls.Add(CategoryCaptionLabel);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
         Controls.Add(NameCaptionLabel);
@@ -241,10 +207,10 @@ partial class ItemCategoryInfoForm
         FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
-        Name = "ItemCategoryInfoForm";
+        Name = "ItemPocketInfoForm";
         StartPosition = FormStartPosition.CenterParent;
-        Text = "アイテムカテゴリー";
-        ((System.ComponentModel.ISupportInitialize)ItemDataGridView).EndInit();
+        Text = "アイテムポケット";
+        ((System.ComponentModel.ISupportInitialize)CategoriesDataGridView).EndInit();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).EndInit();
         ResumeLayout(false);
         PerformLayout();
@@ -256,17 +222,14 @@ partial class ItemCategoryInfoForm
     private TextBox IdTextBox;
     private Label NameCaptionLabel;
     private Label IdCaptionLabel;
-    private DataGridView ItemDataGridView;
-    private DataGridViewTextBoxColumn ItemNameColumn;
+    private DataGridView CategoriesDataGridView;
+    private Label CategoryCaptionLabel;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
-    private Label ItemCaptionLabel;
     private DataGridView NamesDataGridView;
-    private Label NamesCaptionLabel;
-    private TextBox PocketTextBox;
-    private Label PocketCaptionLabel;
-    private Button CloseButton;
-    private Button PocketDetailButton;
     private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn LanguageColumn;
     private DataGridViewButtonColumn DetailColumn;
+    private Label NamesCaptionLabel;
+    private Button CloseButton;
 }

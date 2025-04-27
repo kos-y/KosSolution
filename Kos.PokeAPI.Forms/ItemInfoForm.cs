@@ -226,6 +226,55 @@ public partial class ItemInfoForm : Form
     }
     #endregion
 
+    #region アイテム所持ポケモン セルクリック
+    /// <summary>
+    /// アイテム所持ポケモン セルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void HeldByPokemonDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (HeldByPokemonDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+            return;
+        }
+
+        if (HeldByPokemonDataGridView.Rows[e.RowIndex].DataBoundItem is not
+            ItemHolderPokemon ihp) {
+            return;
+        }
+
+        using ItemHolderPokemonInfoForm form = new(ihp);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region アイテム所持ポケモン セルダブルクリック
+    /// <summary>
+    /// アイテム所持ポケモン セルダブルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void
+        HeldByPokemonDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (HeldByPokemonDataGridView.Rows[e.RowIndex].DataBoundItem is not
+            ItemHolderPokemon ihp) {
+            return;
+        }
+
+        using ItemHolderPokemonInfoForm form = new(ihp);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 効果 セルクリック
     /// <summary>
     /// 効果 セルクリック

@@ -27,7 +27,7 @@ partial class ItemInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
         NameCaptionLabel = new Label();
         IdCaptionLabel = new Label();
         CostCaptionLabel = new Label();
@@ -194,12 +194,13 @@ partial class ItemInfoForm
         // 
         // HeldByPokemonCaptionLabel
         // 
-        HeldByPokemonCaptionLabel.Location = new Point(362, 240);
+        HeldByPokemonCaptionLabel.AutoSize = true;
+        HeldByPokemonCaptionLabel.Location = new Point(362, 249);
         HeldByPokemonCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         HeldByPokemonCaptionLabel.Name = "HeldByPokemonCaptionLabel";
-        HeldByPokemonCaptionLabel.Size = new Size(150, 26);
+        HeldByPokemonCaptionLabel.Size = new Size(118, 17);
         HeldByPokemonCaptionLabel.TabIndex = 16;
-        HeldByPokemonCaptionLabel.Text = "held_by_pokemon";
+        HeldByPokemonCaptionLabel.Text = "アイテム所持ポケモン";
         HeldByPokemonCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // MachinesCaptionLabel
@@ -261,8 +262,8 @@ partial class ItemInfoForm
         // 
         EffectColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         EffectColumn.DataPropertyName = "ShortEffect";
-        dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-        EffectColumn.DefaultCellStyle = dataGridViewCellStyle3;
+        dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+        EffectColumn.DefaultCellStyle = dataGridViewCellStyle1;
         EffectColumn.HeaderText = "効果";
         EffectColumn.Name = "EffectColumn";
         EffectColumn.ReadOnly = true;
@@ -446,20 +447,26 @@ partial class ItemInfoForm
         HeldByPokemonDataGridView.RowHeadersVisible = false;
         HeldByPokemonDataGridView.Size = new Size(354, 170);
         HeldByPokemonDataGridView.TabIndex = 17;
+        HeldByPokemonDataGridView.CellClick += HeldByPokemonDataGridView_CellClick;
+        HeldByPokemonDataGridView.CellDoubleClick += HeldByPokemonDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn7
         // 
+        dataGridViewTextBoxColumn7.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewTextBoxColumn7.DataPropertyName = "Pokemon";
         dataGridViewTextBoxColumn7.HeaderText = "ポケモン";
         dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
         dataGridViewTextBoxColumn7.ReadOnly = true;
+        dataGridViewTextBoxColumn7.Width = 74;
         // 
         // dataGridViewButtonColumn6
         // 
+        dataGridViewButtonColumn6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewButtonColumn6.HeaderText = "詳細";
         dataGridViewButtonColumn6.Name = "dataGridViewButtonColumn6";
         dataGridViewButtonColumn6.Text = "詳細";
         dataGridViewButtonColumn6.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn6.Width = 40;
         // 
         // SpritesPictureBox
         // 
@@ -687,8 +694,6 @@ partial class ItemInfoForm
     private TabControl tabControl1;
     private TabPage EffectEntriesTabPage;
     private TabPage FlavorTextEntriesTabPage;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-    private DataGridViewButtonColumn dataGridViewButtonColumn6;
     private DataGridViewTextBoxColumn EffectColumn;
     private DataGridViewButtonColumn EffectDetailColumn;
     private DataGridViewTextBoxColumn GenerationColumn;
@@ -712,4 +717,6 @@ partial class ItemInfoForm
     private TextBox NameTextBox;
     private TextBox CostTextBox;
     private TextBox CategoryTextBox;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+    private DataGridViewButtonColumn dataGridViewButtonColumn6;
 }

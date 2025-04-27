@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.PokeAPI.Items;
 using Kos.PokeAPI.Items.Item;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -29,9 +30,9 @@ public partial class ItemHolderPokemonInfoForm : Form
     }
     #endregion
 
-    #region version_details DataGridView CellClick
+    #region バージョンごとの詳細 セルクリック
     /// <summary>
-    /// version_details DataGridView CellClick
+    /// バージョンごとの詳細 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -46,22 +47,18 @@ public partial class ItemHolderPokemonInfoForm : Form
         }
 
         if (VersionDetailsDataGridView.Rows[e.RowIndex].DataBoundItem is not
-            NamedAPIResource api) {
+            ItemHolderPokemonVersionDetail ihpvd) {
             return;
         }
 
-        if (api.Url is null) {
-            return;
-        }
-
-        using VersionInfoForm form = new(api.Url);
+        using ItemHolderPokemonVersionDetailInfoForm form = new(ihpvd);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region version_details DataGrdiView CellDoubleClick
+    #region バージョンごとの詳細 セルダブルクリック
     /// <summary>
-    /// version_details DataGrdiView CellDoubleClick
+    /// バージョンごとの詳細 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -73,15 +70,11 @@ public partial class ItemHolderPokemonInfoForm : Form
         }
 
         if (VersionDetailsDataGridView.Rows[e.RowIndex].DataBoundItem is not
-            NamedAPIResource api) {
+            ItemHolderPokemonVersionDetail ihpvd) {
             return;
         }
 
-        if (api.Url is null) {
-            return;
-        }
-
-        using VersionInfoForm form = new(api.Url);
+        using ItemHolderPokemonVersionDetailInfoForm form = new(ihpvd);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -106,9 +99,9 @@ public partial class ItemHolderPokemonInfoForm : Form
     private void SetData(ItemHolderPokemon ihp)
     {
         PokemonLabel.Text = ihp.Pokemon?.Name ?? string.Empty;
-        PokemonInfoButton.Tag = ihp.Pokemon;
+        PokemonDetailButton.Tag = ihp.Pokemon;
         VersionDetailsDataGridView.AutoGenerateColumns = false;
-        VersionDetailsDataGridView.DataSource = ihp;
+        VersionDetailsDataGridView.DataSource = ihp.VersionDetails;
     }
     #endregion
 }

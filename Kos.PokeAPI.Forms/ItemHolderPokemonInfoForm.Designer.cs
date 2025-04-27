@@ -27,116 +27,142 @@ partial class ItemHolderPokemonInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        PokemonInfoButton = new Button();
+        PokemonDetailButton = new Button();
         PokemonLabel = new Label();
         PokemonCaptionLabel = new Label();
         VersionDetailsCaptionLabel = new Label();
         VersionDetailsDataGridView = new DataGridView();
-        dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-        dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
         CloseButton = new Button();
+        dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+        Column1 = new DataGridViewTextBoxColumn();
+        dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
         ((System.ComponentModel.ISupportInitialize)VersionDetailsDataGridView).BeginInit();
         SuspendLayout();
         // 
-        // PokemonInfoButton
+        // PokemonDetailButton
         // 
-        PokemonInfoButton.Location = new Point(283, 9);
-        PokemonInfoButton.Name = "PokemonInfoButton";
-        PokemonInfoButton.Size = new Size(43, 23);
-        PokemonInfoButton.TabIndex = 2;
-        PokemonInfoButton.Text = "Info...";
-        PokemonInfoButton.UseVisualStyleBackColor = true;
+        PokemonDetailButton.Location = new Point(364, 10);
+        PokemonDetailButton.Margin = new Padding(4, 3, 4, 3);
+        PokemonDetailButton.Name = "PokemonDetailButton";
+        PokemonDetailButton.Size = new Size(55, 26);
+        PokemonDetailButton.TabIndex = 2;
+        PokemonDetailButton.Text = "詳細";
+        PokemonDetailButton.UseVisualStyleBackColor = true;
         // 
         // PokemonLabel
         // 
         PokemonLabel.BorderStyle = BorderStyle.Fixed3D;
-        PokemonLabel.Location = new Point(75, 9);
+        PokemonLabel.Location = new Point(96, 10);
+        PokemonLabel.Margin = new Padding(4, 0, 4, 0);
         PokemonLabel.Name = "PokemonLabel";
-        PokemonLabel.Size = new Size(202, 23);
+        PokemonLabel.Size = new Size(260, 26);
         PokemonLabel.TabIndex = 1;
         PokemonLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // PokemonCaptionLabel
         // 
-        PokemonCaptionLabel.Location = new Point(12, 9);
+        PokemonCaptionLabel.Location = new Point(15, 10);
+        PokemonCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         PokemonCaptionLabel.Name = "PokemonCaptionLabel";
-        PokemonCaptionLabel.Size = new Size(57, 23);
+        PokemonCaptionLabel.Size = new Size(73, 26);
         PokemonCaptionLabel.TabIndex = 0;
-        PokemonCaptionLabel.Text = "pokemon";
+        PokemonCaptionLabel.Text = "ポケモン";
         PokemonCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // VersionDetailsCaptionLabel
         // 
-        VersionDetailsCaptionLabel.Location = new Point(12, 43);
+        VersionDetailsCaptionLabel.AutoSize = true;
+        VersionDetailsCaptionLabel.Location = new Point(15, 49);
+        VersionDetailsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         VersionDetailsCaptionLabel.Name = "VersionDetailsCaptionLabel";
-        VersionDetailsCaptionLabel.Size = new Size(87, 23);
+        VersionDetailsCaptionLabel.Size = new Size(118, 17);
         VersionDetailsCaptionLabel.TabIndex = 3;
-        VersionDetailsCaptionLabel.Text = "version_details";
+        VersionDetailsCaptionLabel.Text = "バージョンごとの詳細";
         VersionDetailsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // VersionDetailsDataGridView
         // 
         VersionDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        VersionDetailsDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewButtonColumn1 });
-        VersionDetailsDataGridView.Location = new Point(12, 69);
+        VersionDetailsDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column1, dataGridViewButtonColumn1 });
+        VersionDetailsDataGridView.Location = new Point(15, 78);
+        VersionDetailsDataGridView.Margin = new Padding(4, 3, 4, 3);
         VersionDetailsDataGridView.Name = "VersionDetailsDataGridView";
         VersionDetailsDataGridView.RowHeadersVisible = false;
-        VersionDetailsDataGridView.Size = new Size(434, 150);
+        VersionDetailsDataGridView.Size = new Size(558, 170);
         VersionDetailsDataGridView.TabIndex = 4;
         VersionDetailsDataGridView.CellClick += VersionDetailsDataGridView_CellClick;
         VersionDetailsDataGridView.CellDoubleClick += VersionDetailsDataGridView_CellDoubleClick;
         // 
-        // dataGridViewTextBoxColumn1
-        // 
-        dataGridViewTextBoxColumn1.DataPropertyName = "Name";
-        dataGridViewTextBoxColumn1.HeaderText = "name";
-        dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-        dataGridViewTextBoxColumn1.ReadOnly = true;
-        // 
-        // dataGridViewButtonColumn1
-        // 
-        dataGridViewButtonColumn1.HeaderText = "Info";
-        dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-        dataGridViewButtonColumn1.Text = "Info..";
-        dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-        // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(371, 225);
+        CloseButton.Location = new Point(505, 255);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 23);
+        CloseButton.Size = new Size(68, 41);
         CloseButton.TabIndex = 5;
-        CloseButton.Text = "Close";
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // dataGridViewTextBoxColumn1
+        // 
+        dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewTextBoxColumn1.DataPropertyName = "Version";
+        dataGridViewTextBoxColumn1.HeaderText = "バージョン";
+        dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+        dataGridViewTextBoxColumn1.ReadOnly = true;
+        dataGridViewTextBoxColumn1.Width = 85;
+        // 
+        // Column1
+        // 
+        Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        Column1.DataPropertyName = "Rarity";
+        Column1.HeaderText = "確率";
+        Column1.Name = "Column1";
+        Column1.ReadOnly = true;
+        Column1.Width = 59;
+        // 
+        // dataGridViewButtonColumn1
+        // 
+        dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn1.HeaderText = "詳細";
+        dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+        dataGridViewButtonColumn1.Text = "詳細";
+        dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn1.Width = 40;
+        // 
         // ItemHolderPokemonInfoForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(464, 260);
+        ClientSize = new Size(588, 301);
         Controls.Add(CloseButton);
         Controls.Add(VersionDetailsDataGridView);
         Controls.Add(VersionDetailsCaptionLabel);
-        Controls.Add(PokemonInfoButton);
+        Controls.Add(PokemonDetailButton);
         Controls.Add(PokemonLabel);
         Controls.Add(PokemonCaptionLabel);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "ItemHolderPokemonInfoForm";
-        Text = "Item Holdrer Pokemon";
+        StartPosition = FormStartPosition.CenterParent;
+        Text = "アイテム所持ポケモン";
         ((System.ComponentModel.ISupportInitialize)VersionDetailsDataGridView).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
-    private Button PokemonInfoButton;
+    private Button PokemonDetailButton;
     private Label PokemonLabel;
     private Label PokemonCaptionLabel;
     private Label VersionDetailsCaptionLabel;
     private DataGridView VersionDetailsDataGridView;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-    private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private Button CloseButton;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+    private DataGridViewTextBoxColumn Column1;
+    private DataGridViewButtonColumn dataGridViewButtonColumn1;
 }
