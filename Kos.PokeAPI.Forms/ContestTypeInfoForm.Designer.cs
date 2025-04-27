@@ -27,179 +27,195 @@ partial class ContestTypeInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        NameLabel = new Label();
         NameCaptionLabel = new Label();
-        IdLabel = new Label();
         IdCaptionLabel = new Label();
-        BerryFlavorLabel = new Label();
         BerryFlavorCaptionLabel = new Label();
-        BerryFlavorInfoButton = new Button();
+        BerryFlavorDetailButton = new Button();
         NamesDataGridView = new DataGridView();
+        NamesCaptionLabel = new Label();
+        CloseButton = new Button();
+        IdTextBox = new TextBox();
+        NameTextBox = new TextBox();
+        BerryFlavorTextBox = new TextBox();
         NameColumn = new DataGridViewTextBoxColumn();
         ColorColumn = new DataGridViewTextBoxColumn();
         LanguageColumn = new DataGridViewTextBoxColumn();
         DetailColumn = new DataGridViewButtonColumn();
-        NamesCaptionLabel = new Label();
-        CloseButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
         // 
-        // NameLabel
-        // 
-        NameLabel.BorderStyle = BorderStyle.Fixed3D;
-        NameLabel.Location = new Point(117, 32);
-        NameLabel.Name = "NameLabel";
-        NameLabel.Size = new Size(147, 23);
-        NameLabel.TabIndex = 3;
-        NameLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // NameCaptionLabel
         // 
-        NameCaptionLabel.Location = new Point(12, 32);
+        NameCaptionLabel.AutoSize = true;
+        NameCaptionLabel.Location = new Point(19, 40);
+        NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(99, 23);
+        NameCaptionLabel.Size = new Size(110, 17);
         NameCaptionLabel.TabIndex = 2;
-        NameCaptionLabel.Text = "name";
+        NameCaptionLabel.Text = "コンテストの種類名";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // IdLabel
-        // 
-        IdLabel.BorderStyle = BorderStyle.Fixed3D;
-        IdLabel.Location = new Point(117, 9);
-        IdLabel.Name = "IdLabel";
-        IdLabel.Size = new Size(147, 23);
-        IdLabel.TabIndex = 1;
-        IdLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
-        IdCaptionLabel.Location = new Point(12, 9);
+        IdCaptionLabel.AutoSize = true;
+        IdCaptionLabel.Location = new Point(15, 10);
+        IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(99, 23);
+        IdCaptionLabel.Size = new Size(114, 17);
         IdCaptionLabel.TabIndex = 0;
-        IdCaptionLabel.Text = "id";
+        IdCaptionLabel.Text = "コンテストの種類ID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // BerryFlavorLabel
-        // 
-        BerryFlavorLabel.BorderStyle = BorderStyle.Fixed3D;
-        BerryFlavorLabel.Location = new Point(117, 55);
-        BerryFlavorLabel.Name = "BerryFlavorLabel";
-        BerryFlavorLabel.Size = new Size(147, 23);
-        BerryFlavorLabel.TabIndex = 5;
-        BerryFlavorLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // BerryFlavorCaptionLabel
         // 
-        BerryFlavorCaptionLabel.Location = new Point(12, 55);
+        BerryFlavorCaptionLabel.AutoSize = true;
+        BerryFlavorCaptionLabel.Location = new Point(63, 70);
+        BerryFlavorCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         BerryFlavorCaptionLabel.Name = "BerryFlavorCaptionLabel";
-        BerryFlavorCaptionLabel.Size = new Size(99, 23);
+        BerryFlavorCaptionLabel.Size = new Size(66, 17);
         BerryFlavorCaptionLabel.TabIndex = 4;
-        BerryFlavorCaptionLabel.Text = "berry_flavor";
+        BerryFlavorCaptionLabel.Text = "きのみの味";
         BerryFlavorCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // BerryFlavorInfoButton
+        // BerryFlavorDetailButton
         // 
-        BerryFlavorInfoButton.Location = new Point(270, 55);
-        BerryFlavorInfoButton.Name = "BerryFlavorInfoButton";
-        BerryFlavorInfoButton.Size = new Size(43, 23);
-        BerryFlavorInfoButton.TabIndex = 6;
-        BerryFlavorInfoButton.Text = "Info...";
-        BerryFlavorInfoButton.UseVisualStyleBackColor = true;
-        BerryFlavorInfoButton.Click += BerryFlavorDetailButton_Click;
+        BerryFlavorDetailButton.Location = new Point(347, 65);
+        BerryFlavorDetailButton.Margin = new Padding(4, 3, 4, 3);
+        BerryFlavorDetailButton.Name = "BerryFlavorDetailButton";
+        BerryFlavorDetailButton.Size = new Size(51, 26);
+        BerryFlavorDetailButton.TabIndex = 6;
+        BerryFlavorDetailButton.Text = "詳細";
+        BerryFlavorDetailButton.UseVisualStyleBackColor = true;
+        BerryFlavorDetailButton.Click += BerryFlavorDetailButton_Click;
         // 
         // NamesDataGridView
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, ColorColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(117, 81);
+        NamesDataGridView.Location = new Point(150, 97);
+        NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(434, 150);
+        NamesDataGridView.Size = new Size(558, 170);
         NamesDataGridView.TabIndex = 8;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
-        // NameColumn
-        // 
-        NameColumn.DataPropertyName = "Name";
-        NameColumn.HeaderText = "name";
-        NameColumn.Name = "NameColumn";
-        NameColumn.ReadOnly = true;
-        // 
-        // ColorColumn
-        // 
-        ColorColumn.DataPropertyName = "Color";
-        ColorColumn.HeaderText = "color";
-        ColorColumn.Name = "ColorColumn";
-        ColorColumn.ReadOnly = true;
-        // 
-        // LanguageColumn
-        // 
-        LanguageColumn.DataPropertyName = "Language";
-        LanguageColumn.HeaderText = "language";
-        LanguageColumn.Name = "LanguageColumn";
-        LanguageColumn.ReadOnly = true;
-        // 
-        // DetailColumn
-        // 
-        DetailColumn.HeaderText = "Lang Info";
-        DetailColumn.Name = "DetailColumn";
-        DetailColumn.Text = "Info..";
-        DetailColumn.UseColumnTextForButtonValue = true;
-        // 
         // NamesCaptionLabel
         // 
-        NamesCaptionLabel.Location = new Point(12, 81);
+        NamesCaptionLabel.AutoSize = true;
+        NamesCaptionLabel.Location = new Point(37, 97);
+        NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
-        NamesCaptionLabel.Size = new Size(99, 23);
+        NamesCaptionLabel.Size = new Size(92, 17);
         NamesCaptionLabel.TabIndex = 7;
-        NamesCaptionLabel.Text = "names";
+        NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(476, 237);
+        CloseButton.Location = new Point(632, 273);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 23);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 9;
-        CloseButton.Text = "Close";
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // IdTextBox
+        // 
+        IdTextBox.Location = new Point(150, 7);
+        IdTextBox.Name = "IdTextBox";
+        IdTextBox.ReadOnly = true;
+        IdTextBox.Size = new Size(190, 24);
+        IdTextBox.TabIndex = 1;
+        // 
+        // NameTextBox
+        // 
+        NameTextBox.Location = new Point(150, 37);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.ReadOnly = true;
+        NameTextBox.Size = new Size(190, 24);
+        NameTextBox.TabIndex = 3;
+        // 
+        // BerryFlavorTextBox
+        // 
+        BerryFlavorTextBox.Location = new Point(150, 67);
+        BerryFlavorTextBox.Name = "BerryFlavorTextBox";
+        BerryFlavorTextBox.ReadOnly = true;
+        BerryFlavorTextBox.Size = new Size(190, 24);
+        BerryFlavorTextBox.TabIndex = 5;
+        // 
+        // NameColumn
+        // 
+        NameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        NameColumn.DataPropertyName = "Name";
+        NameColumn.HeaderText = "名前";
+        NameColumn.Name = "NameColumn";
+        NameColumn.ReadOnly = true;
+        NameColumn.Width = 59;
+        // 
+        // ColorColumn
+        // 
+        ColorColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        ColorColumn.DataPropertyName = "Color";
+        ColorColumn.HeaderText = "色";
+        ColorColumn.Name = "ColorColumn";
+        ColorColumn.ReadOnly = true;
+        ColorColumn.Width = 46;
+        // 
+        // LanguageColumn
+        // 
+        LanguageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        LanguageColumn.DataPropertyName = "Language";
+        LanguageColumn.HeaderText = "言語";
+        LanguageColumn.Name = "LanguageColumn";
+        LanguageColumn.ReadOnly = true;
+        LanguageColumn.Width = 59;
+        // 
+        // DetailColumn
+        // 
+        DetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        DetailColumn.HeaderText = "詳細";
+        DetailColumn.Name = "DetailColumn";
+        DetailColumn.Text = "詳細";
+        DetailColumn.UseColumnTextForButtonValue = true;
+        DetailColumn.Width = 40;
+        // 
         // ContestTypeInfoForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(564, 270);
+        ClientSize = new Size(725, 316);
+        Controls.Add(BerryFlavorTextBox);
+        Controls.Add(NameTextBox);
+        Controls.Add(IdTextBox);
         Controls.Add(CloseButton);
         Controls.Add(NamesCaptionLabel);
         Controls.Add(NamesDataGridView);
-        Controls.Add(BerryFlavorInfoButton);
+        Controls.Add(BerryFlavorDetailButton);
         Controls.Add(BerryFlavorCaptionLabel);
-        Controls.Add(BerryFlavorLabel);
-        Controls.Add(NameLabel);
         Controls.Add(NameCaptionLabel);
-        Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "ContestTypeInfoForm";
-        Text = "Contest Type";
+        StartPosition = FormStartPosition.CenterParent;
+        Text = "コンテストの種類";
         Load += ContestTypeInfoForm_Load;
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
-
-    private Label NameLabel;
     private Label NameCaptionLabel;
-    private Label IdLabel;
     private Label IdCaptionLabel;
-    private Label BerryFlavorLabel;
     private Label BerryFlavorCaptionLabel;
-    private Button BerryFlavorInfoButton;
+    private Button BerryFlavorDetailButton;
     private DataGridView NamesDataGridView;
     private Label NamesCaptionLabel;
     private Button CloseButton;
@@ -207,4 +223,7 @@ partial class ContestTypeInfoForm
     private DataGridViewTextBoxColumn ColorColumn;
     private DataGridViewTextBoxColumn LanguageColumn;
     private DataGridViewButtonColumn DetailColumn;
+    private TextBox IdTextBox;
+    private TextBox NameTextBox;
+    private TextBox BerryFlavorTextBox;
 }

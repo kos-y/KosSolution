@@ -27,42 +27,32 @@ partial class ContestEffectInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        AppealLabel = new Label();
         AppealCaptionLabel = new Label();
-        IdLabel = new Label();
         IdCaptionLabel = new Label();
-        JamLabel = new Label();
         JamCaptionLabel = new Label();
         EffectEntriesDataGridView = new DataGridView();
-        EffectEntriesCaptionLabel = new Label();
-        FlavorTextEntriesDataGridView = new DataGridView();
-        CloseButton = new Button();
-        FlavorTextEntriesCaptionLabel = new Label();
         EffectColumn = new DataGridViewTextBoxColumn();
         EffectLanguageColumn = new DataGridViewTextBoxColumn();
         EffectLanguageDetailButtonColumn = new DataGridViewButtonColumn();
+        EffectEntriesCaptionLabel = new Label();
+        FlavorTextEntriesDataGridView = new DataGridView();
         FlavorTextColumn = new DataGridViewTextBoxColumn();
         FlavorTextLanguageColumn = new DataGridViewTextBoxColumn();
         FlavorVersionColumn = new DataGridViewTextBoxColumn();
         FlavorTextDetailButtonColumn = new DataGridViewButtonColumn();
+        CloseButton = new Button();
+        FlavorTextEntriesCaptionLabel = new Label();
+        IdTextBox = new TextBox();
+        AppealTextBox = new TextBox();
+        JamTextBox = new TextBox();
         ((System.ComponentModel.ISupportInitialize)EffectEntriesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)FlavorTextEntriesDataGridView).BeginInit();
         SuspendLayout();
         // 
-        // AppealLabel
-        // 
-        AppealLabel.BorderStyle = BorderStyle.Fixed3D;
-        AppealLabel.Location = new Point(171, 36);
-        AppealLabel.Margin = new Padding(4, 0, 4, 0);
-        AppealLabel.Name = "AppealLabel";
-        AppealLabel.Size = new Size(864, 26);
-        AppealLabel.TabIndex = 3;
-        AppealLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // AppealCaptionLabel
         // 
         AppealCaptionLabel.AutoSize = true;
-        AppealCaptionLabel.Location = new Point(15, 36);
+        AppealCaptionLabel.Location = new Point(66, 40);
         AppealCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         AppealCaptionLabel.Name = "AppealCaptionLabel";
         AppealCaptionLabel.Size = new Size(51, 17);
@@ -70,20 +60,10 @@ partial class ContestEffectInfoForm
         AppealCaptionLabel.Text = "アピール";
         AppealCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // IdLabel
-        // 
-        IdLabel.BorderStyle = BorderStyle.Fixed3D;
-        IdLabel.Location = new Point(171, 10);
-        IdLabel.Margin = new Padding(4, 0, 4, 0);
-        IdLabel.Name = "IdLabel";
-        IdLabel.Size = new Size(864, 26);
-        IdLabel.TabIndex = 1;
-        IdLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // IdCaptionLabel
         // 
         IdCaptionLabel.AutoSize = true;
-        IdCaptionLabel.Location = new Point(15, 10);
+        IdCaptionLabel.Location = new Point(40, 10);
         IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
         IdCaptionLabel.Size = new Size(76, 17);
@@ -91,20 +71,10 @@ partial class ContestEffectInfoForm
         IdCaptionLabel.Text = "コンテストID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // JamLabel
-        // 
-        JamLabel.BorderStyle = BorderStyle.Fixed3D;
-        JamLabel.Location = new Point(171, 62);
-        JamLabel.Margin = new Padding(4, 0, 4, 0);
-        JamLabel.Name = "JamLabel";
-        JamLabel.Size = new Size(864, 26);
-        JamLabel.TabIndex = 5;
-        JamLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // JamCaptionLabel
         // 
         JamCaptionLabel.AutoSize = true;
-        JamCaptionLabel.Location = new Point(15, 62);
+        JamCaptionLabel.Location = new Point(82, 67);
         JamCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         JamCaptionLabel.Name = "JamCaptionLabel";
         JamCaptionLabel.Size = new Size(34, 17);
@@ -114,62 +84,17 @@ partial class ContestEffectInfoForm
         // 
         // EffectEntriesDataGridView
         // 
+        EffectEntriesDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         EffectEntriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         EffectEntriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { EffectColumn, EffectLanguageColumn, EffectLanguageDetailButtonColumn });
-        EffectEntriesDataGridView.Location = new Point(171, 92);
+        EffectEntriesDataGridView.Location = new Point(124, 97);
         EffectEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         EffectEntriesDataGridView.Name = "EffectEntriesDataGridView";
         EffectEntriesDataGridView.RowHeadersVisible = false;
-        EffectEntriesDataGridView.Size = new Size(864, 170);
+        EffectEntriesDataGridView.Size = new Size(851, 168);
         EffectEntriesDataGridView.TabIndex = 7;
         EffectEntriesDataGridView.CellClick += EffectEntriesDataGridView_CellClick;
         EffectEntriesDataGridView.CellDoubleClick += EffectEntriesDataGridView_CellDoubleClick;
-        // 
-        // EffectEntriesCaptionLabel
-        // 
-        EffectEntriesCaptionLabel.AutoSize = true;
-        EffectEntriesCaptionLabel.Location = new Point(15, 92);
-        EffectEntriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        EffectEntriesCaptionLabel.Name = "EffectEntriesCaptionLabel";
-        EffectEntriesCaptionLabel.Size = new Size(34, 17);
-        EffectEntriesCaptionLabel.TabIndex = 6;
-        EffectEntriesCaptionLabel.Text = "効果";
-        EffectEntriesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // FlavorTextEntriesDataGridView
-        // 
-        FlavorTextEntriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        FlavorTextEntriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { FlavorTextColumn, FlavorTextLanguageColumn, FlavorVersionColumn, FlavorTextDetailButtonColumn });
-        FlavorTextEntriesDataGridView.Location = new Point(171, 269);
-        FlavorTextEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
-        FlavorTextEntriesDataGridView.Name = "FlavorTextEntriesDataGridView";
-        FlavorTextEntriesDataGridView.RowHeadersVisible = false;
-        FlavorTextEntriesDataGridView.Size = new Size(864, 170);
-        FlavorTextEntriesDataGridView.TabIndex = 9;
-        FlavorTextEntriesDataGridView.CellClick += FlavorTextEntriesDataGridView_CellClick;
-        FlavorTextEntriesDataGridView.CellDoubleClick += FlavorTextEntriesDataGridView_CellDoubleClick;
-        // 
-        // CloseButton
-        // 
-        CloseButton.Location = new Point(946, 445);
-        CloseButton.Margin = new Padding(4, 3, 4, 3);
-        CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(96, 26);
-        CloseButton.TabIndex = 10;
-        CloseButton.Text = "閉じる";
-        CloseButton.UseVisualStyleBackColor = true;
-        CloseButton.Click += CloseButton_Click;
-        // 
-        // FlavorTextEntriesCaptionLabel
-        // 
-        FlavorTextEntriesCaptionLabel.AutoSize = true;
-        FlavorTextEntriesCaptionLabel.Location = new Point(15, 269);
-        FlavorTextEntriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        FlavorTextEntriesCaptionLabel.Name = "FlavorTextEntriesCaptionLabel";
-        FlavorTextEntriesCaptionLabel.Size = new Size(103, 17);
-        FlavorTextEntriesCaptionLabel.TabIndex = 8;
-        FlavorTextEntriesCaptionLabel.Text = "フレーバーテキスト";
-        FlavorTextEntriesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // EffectColumn
         // 
@@ -197,6 +122,31 @@ partial class ContestEffectInfoForm
         EffectLanguageDetailButtonColumn.Text = "詳細";
         EffectLanguageDetailButtonColumn.UseColumnTextForButtonValue = true;
         EffectLanguageDetailButtonColumn.Width = 40;
+        // 
+        // EffectEntriesCaptionLabel
+        // 
+        EffectEntriesCaptionLabel.AutoSize = true;
+        EffectEntriesCaptionLabel.Location = new Point(82, 92);
+        EffectEntriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        EffectEntriesCaptionLabel.Name = "EffectEntriesCaptionLabel";
+        EffectEntriesCaptionLabel.Size = new Size(34, 17);
+        EffectEntriesCaptionLabel.TabIndex = 6;
+        EffectEntriesCaptionLabel.Text = "効果";
+        EffectEntriesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        // 
+        // FlavorTextEntriesDataGridView
+        // 
+        FlavorTextEntriesDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        FlavorTextEntriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        FlavorTextEntriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { FlavorTextColumn, FlavorTextLanguageColumn, FlavorVersionColumn, FlavorTextDetailButtonColumn });
+        FlavorTextEntriesDataGridView.Location = new Point(124, 273);
+        FlavorTextEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
+        FlavorTextEntriesDataGridView.Name = "FlavorTextEntriesDataGridView";
+        FlavorTextEntriesDataGridView.RowHeadersVisible = false;
+        FlavorTextEntriesDataGridView.Size = new Size(851, 168);
+        FlavorTextEntriesDataGridView.TabIndex = 9;
+        FlavorTextEntriesDataGridView.CellClick += FlavorTextEntriesDataGridView_CellClick;
+        FlavorTextEntriesDataGridView.CellDoubleClick += FlavorTextEntriesDataGridView_CellDoubleClick;
         // 
         // FlavorTextColumn
         // 
@@ -234,21 +184,71 @@ partial class ContestEffectInfoForm
         FlavorTextDetailButtonColumn.UseColumnTextForButtonValue = true;
         FlavorTextDetailButtonColumn.Width = 36;
         // 
+        // CloseButton
+        // 
+        CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+        CloseButton.Location = new Point(904, 447);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
+        CloseButton.Name = "CloseButton";
+        CloseButton.Size = new Size(70, 39);
+        CloseButton.TabIndex = 10;
+        CloseButton.Text = "閉じる";
+        CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
+        // 
+        // FlavorTextEntriesCaptionLabel
+        // 
+        FlavorTextEntriesCaptionLabel.AutoSize = true;
+        FlavorTextEntriesCaptionLabel.Location = new Point(13, 269);
+        FlavorTextEntriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        FlavorTextEntriesCaptionLabel.Name = "FlavorTextEntriesCaptionLabel";
+        FlavorTextEntriesCaptionLabel.Size = new Size(103, 17);
+        FlavorTextEntriesCaptionLabel.TabIndex = 8;
+        FlavorTextEntriesCaptionLabel.Text = "フレーバーテキスト";
+        FlavorTextEntriesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        // 
+        // IdTextBox
+        // 
+        IdTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        IdTextBox.Location = new Point(124, 7);
+        IdTextBox.Name = "IdTextBox";
+        IdTextBox.ReadOnly = true;
+        IdTextBox.Size = new Size(851, 24);
+        IdTextBox.TabIndex = 1;
+        // 
+        // AppealTextBox
+        // 
+        AppealTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        AppealTextBox.Location = new Point(124, 37);
+        AppealTextBox.Name = "AppealTextBox";
+        AppealTextBox.ReadOnly = true;
+        AppealTextBox.Size = new Size(851, 24);
+        AppealTextBox.TabIndex = 3;
+        // 
+        // JamTextBox
+        // 
+        JamTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        JamTextBox.Location = new Point(123, 67);
+        JamTextBox.Name = "JamTextBox";
+        JamTextBox.ReadOnly = true;
+        JamTextBox.Size = new Size(851, 24);
+        JamTextBox.TabIndex = 5;
+        // 
         // ContestEffectInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1051, 486);
+        ClientSize = new Size(996, 493);
+        Controls.Add(JamTextBox);
+        Controls.Add(AppealTextBox);
+        Controls.Add(IdTextBox);
         Controls.Add(FlavorTextEntriesCaptionLabel);
         Controls.Add(CloseButton);
         Controls.Add(FlavorTextEntriesDataGridView);
         Controls.Add(EffectEntriesCaptionLabel);
         Controls.Add(EffectEntriesDataGridView);
         Controls.Add(JamCaptionLabel);
-        Controls.Add(JamLabel);
-        Controls.Add(AppealLabel);
         Controls.Add(AppealCaptionLabel);
-        Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -266,12 +266,8 @@ partial class ContestEffectInfoForm
     }
 
     #endregion
-
-    private Label AppealLabel;
     private Label AppealCaptionLabel;
-    private Label IdLabel;
     private Label IdCaptionLabel;
-    private Label JamLabel;
     private Label JamCaptionLabel;
     private DataGridView EffectEntriesDataGridView;
     private Label EffectEntriesCaptionLabel;
@@ -285,4 +281,7 @@ partial class ContestEffectInfoForm
     private DataGridViewTextBoxColumn FlavorTextLanguageColumn;
     private DataGridViewTextBoxColumn FlavorVersionColumn;
     private DataGridViewButtonColumn FlavorTextDetailButtonColumn;
+    private TextBox IdTextBox;
+    private TextBox AppealTextBox;
+    private TextBox JamTextBox;
 }

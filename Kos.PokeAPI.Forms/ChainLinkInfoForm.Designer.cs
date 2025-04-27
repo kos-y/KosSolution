@@ -28,9 +28,7 @@ partial class ChainLinkInfoForm
     private void InitializeComponent()
     {
         IsBabyCaptionLabel = new Label();
-        IsBabyLabel = new Label();
         SpeciesCaptionLabel = new Label();
-        SpeciesLabel = new Label();
         SpeciesDetailButton = new Button();
         EvolutionDetailsCaptionLabel = new Label();
         EvolutionDetailsDataGridView = new DataGridView();
@@ -41,6 +39,8 @@ partial class ChainLinkInfoForm
         dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
         CloseButton = new Button();
+        IsBabyTextBox = new TextBox();
+        SpeciesTextBox = new TextBox();
         ((System.ComponentModel.ISupportInitialize)EvolutionDetailsDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)EvolvesToDataGridView).BeginInit();
         SuspendLayout();
@@ -56,36 +56,16 @@ partial class ChainLinkInfoForm
         IsBabyCaptionLabel.Text = "ベビーポケモン";
         IsBabyCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // IsBabyLabel
-        // 
-        IsBabyLabel.BorderStyle = BorderStyle.Fixed3D;
-        IsBabyLabel.Location = new Point(104, 5);
-        IsBabyLabel.Margin = new Padding(4, 0, 4, 0);
-        IsBabyLabel.Name = "IsBabyLabel";
-        IsBabyLabel.Size = new Size(189, 26);
-        IsBabyLabel.TabIndex = 1;
-        IsBabyLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // SpeciesCaptionLabel
         // 
         SpeciesCaptionLabel.AutoSize = true;
-        SpeciesCaptionLabel.Location = new Point(15, 36);
+        SpeciesCaptionLabel.Location = new Point(21, 36);
         SpeciesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         SpeciesCaptionLabel.Name = "SpeciesCaptionLabel";
         SpeciesCaptionLabel.Size = new Size(75, 17);
         SpeciesCaptionLabel.TabIndex = 2;
         SpeciesCaptionLabel.Text = "ポケモン種族";
         SpeciesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // SpeciesLabel
-        // 
-        SpeciesLabel.BorderStyle = BorderStyle.Fixed3D;
-        SpeciesLabel.Location = new Point(104, 31);
-        SpeciesLabel.Margin = new Padding(4, 0, 4, 0);
-        SpeciesLabel.Name = "SpeciesLabel";
-        SpeciesLabel.Size = new Size(189, 26);
-        SpeciesLabel.TabIndex = 3;
-        SpeciesLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SpeciesDetailButton
         // 
@@ -100,7 +80,7 @@ partial class ChainLinkInfoForm
         // EvolutionDetailsCaptionLabel
         // 
         EvolutionDetailsCaptionLabel.AutoSize = true;
-        EvolutionDetailsCaptionLabel.Location = new Point(15, 62);
+        EvolutionDetailsCaptionLabel.Location = new Point(36, 64);
         EvolutionDetailsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         EvolutionDetailsCaptionLabel.Name = "EvolutionDetailsCaptionLabel";
         EvolutionDetailsCaptionLabel.Size = new Size(60, 17);
@@ -142,7 +122,7 @@ partial class ChainLinkInfoForm
         // EvolvesToCaptionLabel
         // 
         EvolvesToCaptionLabel.AutoSize = true;
-        EvolvesToCaptionLabel.Location = new Point(15, 243);
+        EvolvesToCaptionLabel.Location = new Point(49, 238);
         EvolvesToCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         EvolvesToCaptionLabel.Name = "EvolvesToCaptionLabel";
         EvolvesToCaptionLabel.Size = new Size(47, 17);
@@ -183,20 +163,38 @@ partial class ChainLinkInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(566, 414);
+        CloseButton.Location = new Point(596, 414);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(96, 26);
+        CloseButton.Size = new Size(66, 37);
         CloseButton.TabIndex = 9;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // IsBabyTextBox
+        // 
+        IsBabyTextBox.Location = new Point(104, 7);
+        IsBabyTextBox.Name = "IsBabyTextBox";
+        IsBabyTextBox.ReadOnly = true;
+        IsBabyTextBox.Size = new Size(190, 24);
+        IsBabyTextBox.TabIndex = 1;
+        // 
+        // SpeciesTextBox
+        // 
+        SpeciesTextBox.Location = new Point(103, 33);
+        SpeciesTextBox.Name = "SpeciesTextBox";
+        SpeciesTextBox.ReadOnly = true;
+        SpeciesTextBox.Size = new Size(190, 24);
+        SpeciesTextBox.TabIndex = 3;
+        // 
         // ChainLinkInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(679, 445);
+        ClientSize = new Size(679, 463);
+        Controls.Add(SpeciesTextBox);
+        Controls.Add(IsBabyTextBox);
         Controls.Add(CloseButton);
         Controls.Add(EvolvesToDataGridView);
         Controls.Add(EvolvesToCaptionLabel);
@@ -204,9 +202,7 @@ partial class ChainLinkInfoForm
         Controls.Add(EvolutionDetailsCaptionLabel);
         Controls.Add(SpeciesDetailButton);
         Controls.Add(SpeciesCaptionLabel);
-        Controls.Add(SpeciesLabel);
         Controls.Add(IsBabyCaptionLabel);
-        Controls.Add(IsBabyLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
@@ -223,9 +219,7 @@ partial class ChainLinkInfoForm
     #endregion
 
     private Label IsBabyCaptionLabel;
-    private Label IsBabyLabel;
     private Label SpeciesCaptionLabel;
-    private Label SpeciesLabel;
     private Button SpeciesDetailButton;
     private Label EvolutionDetailsCaptionLabel;
     private DataGridView EvolutionDetailsDataGridView;
@@ -236,4 +230,6 @@ partial class ChainLinkInfoForm
     private DataGridViewButtonColumn DetailColumn;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
+    private TextBox IsBabyTextBox;
+    private TextBox SpeciesTextBox;
 }

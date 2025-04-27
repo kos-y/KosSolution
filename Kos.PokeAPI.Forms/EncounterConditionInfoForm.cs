@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.PokeAPI.Encounters.EncounterConditions;
+using Kos.PokeAPI.Encounters.EncounterConditionValues;
 using Kos.PokeAPI.Encounters.EncounterMethods;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -42,9 +43,9 @@ public partial class EncounterConditionInfoForm : Form
     }
     #endregion
 
-    #region Load
+    #region ロード
     /// <summary>
-    /// Load
+    /// ロード
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -54,9 +55,9 @@ public partial class EncounterConditionInfoForm : Form
     }
     #endregion
 
-    #region NamesDataGridView CellClick
+    #region 言語ごとの名前 セルクリック
     /// <summary>
-    /// NamesDataGridView CellClick
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -70,22 +71,18 @@ public partial class EncounterConditionInfoForm : Form
             return;
         }
 
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name item) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        if (item.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(item.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region NamesDataGridView CellDoubleClick
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
-    /// NamesDataGridView CellClick
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -95,22 +92,72 @@ public partial class EncounterConditionInfoForm : Form
             return;
         }
 
-        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name item) {
+        if (NamesDataGridView.Rows[e.RowIndex].DataBoundItem is not Name name) {
             return;
         }
 
-        if (item.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(item.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Close Click
+    #region 条件値 セルクリック
     /// <summary>
-    /// Close Click
+    /// 条件値 セルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ValuesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (ValuesDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+            return;
+        }
+
+        if (ValuesDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using EncounterConditionValueInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 条件値 セルダブルクリック
+    /// <summary>
+    /// 条件値 セルダブルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ValuesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0) {
+            return;
+        }
+
+        if (ValuesDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using EncounterConditionValueInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 閉じる クリック
+    /// <summary>
+    /// 閉じる クック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -133,8 +180,9 @@ public partial class EncounterConditionInfoForm : Form
         }
 
         Tag = ec;
-        IdLabel.Text = $"{ec.Id}";
-        NameLabel.Text = ec.Name;
+        IdTextBox.Text = $"{ec.Id}";
+        NameTextBox.Text = ec.Name;
+        NamesDataGridView.AutoGenerateColumns = false;
         NamesDataGridView.DataSource = ec.Names;
         ValuesDataGridView.AutoGenerateColumns = false;
         ValuesDataGridView.DataSource = ec.Values;

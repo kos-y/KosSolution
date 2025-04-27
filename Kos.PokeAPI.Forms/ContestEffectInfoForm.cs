@@ -137,9 +137,9 @@ public partial class ContestEffectInfoForm : Form
     }
     #endregion
 
-    #region Close Click
+    #region 閉じる クリック
     /// <summary>
-    /// Close Click
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -162,10 +162,12 @@ public partial class ContestEffectInfoForm : Form
         }
 
         Tag = ce;
-        IdLabel.Text = $"{ce.Id}";
-        AppealLabel.Text = $"{ce.Appeal}";
-        JamLabel.Text = $"{ce.Jam}";
+        IdTextBox.Text = $"{ce.Id}";
+        AppealTextBox.Text = $"{ce.Appeal}";
+        JamTextBox.Text = $"{ce.Jam}";
+        EffectEntriesDataGridView.AutoGenerateColumns = false;
         EffectEntriesDataGridView.DataSource = ce.EffectEntries;
+        FlavorTextEntriesDataGridView.AutoGenerateColumns = false;
         FlavorTextEntriesDataGridView.DataSource = ce.FlavorTextEntries;
     }
     #endregion

@@ -141,8 +141,8 @@ public partial class ChainLinkInfoForm : Form
     /// </summary>
     private void SetData(ChainLink cl)
     {
-        IsBabyLabel.Text = $"{cl.IsBaby}";
-        SpeciesLabel.Text = cl.Species?.Name ?? string.Empty;
+        IsBabyTextBox.Text = $"{cl.IsBaby}";
+        SpeciesTextBox.Text = cl.Species?.Name ?? string.Empty;
         SpeciesDetailButton.Tag = cl.Species;
         EvolutionDetailsDataGridView.AutoGenerateColumns = false;
         EvolutionDetailsDataGridView.DataSource = cl.EvolutionDetails;

@@ -52,11 +52,11 @@ public partial class ContestTypeInfoForm : Form
     /// <param name="e"></param>
     private void BerryFlavorDetailButton_Click(object sender, EventArgs e)
     {
-        if (BerryFlavorInfoButton.Tag is null) {
+        if (BerryFlavorDetailButton.Tag is null) {
             return;
         }
 
-        if (BerryFlavorInfoButton.Tag is not NamedAPIResource api) {
+        if (BerryFlavorDetailButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -140,10 +140,11 @@ public partial class ContestTypeInfoForm : Form
         }
 
         Tag = ct;
-        IdLabel.Text = $"{ct.Id}";
-        NameLabel.Text = ct.Name;
-        BerryFlavorLabel.Text = ct.BerryFlavor.Name ?? string.Empty;
-        BerryFlavorInfoButton.Tag = ct.BerryFlavor;
+        IdTextBox.Text = $"{ct.Id}";
+        NameTextBox.Text = ct.Name;
+        BerryFlavorTextBox.Text = ct.BerryFlavor.Name ?? string.Empty;
+        BerryFlavorDetailButton.Tag = ct.BerryFlavor;
+        NamesDataGridView.AutoGenerateColumns = false;
         NamesDataGridView.DataSource = ct.Names;
     }
     #endregion
