@@ -51,4 +51,31 @@ public class Encounter
     [JsonPropertyName("method")]
     public NamedAPIResource? Method { get; set; }
     #endregion
+
+    #region テキスト
+    /// <summary>
+    /// テキスト
+    /// </summary>
+    public string Text => ToString();
+    #endregion
+
+
+    // メソッド
+
+    #region 文字列化
+    /// <summary>
+    /// 文字列化
+    /// </summary>
+    /// <returns>文字列</returns>
+    public override string ToString()
+    {
+        List<string> textList = [];
+
+        textList.Add($"{Method?.Name}");
+        textList.Add($"Lv:{MinLevel}～{MaxLevel}");
+        textList.Add($"遭遇率:{Chance}");
+
+        return string.Join(" ", textList);
+    }
+    #endregion
 }

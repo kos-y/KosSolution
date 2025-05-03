@@ -22,17 +22,17 @@ public class VersionEncounterDetail
     public NamedAPIResource? Version { get; set; }
     #endregion
 
-    #region エンカウント 最大確立
+    #region 遭遇最大確立
     /// <summary>
-    /// エンカウントの最大確率
+    /// 遭遇最大確率
     /// </summary>
     [JsonPropertyName("max_chance")]
     public int? MaxChance { get; set; }
     #endregion
 
-    #region エンカウント 詳細
+    #region 遭遇情報詳細リスト
     /// <summary>
-    /// エンカウントの詳細
+    /// 遭遇情報詳細リスト
     /// </summary>
     [JsonPropertyName("encounter_details")]
     public List<Encounter>? EncounterDetails { get; set; }

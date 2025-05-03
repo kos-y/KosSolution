@@ -18,7 +18,7 @@ public class EncounterVersionDetails
     /// 遭遇確立
     /// </summary>
     [JsonPropertyName("rate")]
-    public int? Rage { get; set; }
+    public int? Rate { get; set; }
     #endregion
 
     #region バージョン
