@@ -123,6 +123,7 @@ public partial class VersionEncounterDetailInfoForm : Form
         VersionTextBox.Text = ved.Version?.Name ?? string.Empty;
         VersionDetailButton.Tag = ved.Version;
         MaxChanceTextBox.Text = $"{ved.MaxChance}";
+        EncounterDetailsDataGridView.AutoGenerateColumns = false;
         EncounterDetailsDataGridView.DataSource = ved.EncounterDetails;
     }
     #endregion

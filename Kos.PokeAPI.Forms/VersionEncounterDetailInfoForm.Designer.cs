@@ -34,9 +34,9 @@ partial class VersionEncounterDetailInfoForm
         VersionDetailButton = new Button();
         EncounterDetailsCaptionLabel = new Label();
         EncounterDetailsDataGridView = new DataGridView();
+        CloseButton = new Button();
         ValuesNameColumn = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
-        CloseButton = new Button();
         ((System.ComponentModel.ISupportInitialize)EncounterDetailsDataGridView).BeginInit();
         SuspendLayout();
         // 
@@ -113,10 +113,20 @@ partial class VersionEncounterDetailInfoForm
         EncounterDetailsDataGridView.CellClick += EncounterDetailsDataGridView_CellClick;
         EncounterDetailsDataGridView.CellDoubleClick += EncounterDetailsDataGridView_CellDoubleClick;
         // 
+        // CloseButton
+        // 
+        CloseButton.Location = new Point(293, 269);
+        CloseButton.Name = "CloseButton";
+        CloseButton.Size = new Size(63, 35);
+        CloseButton.TabIndex = 7;
+        CloseButton.Text = "閉じる";
+        CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
+        // 
         // ValuesNameColumn
         // 
         ValuesNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        ValuesNameColumn.DataPropertyName = "Name";
+        ValuesNameColumn.DataPropertyName = "Text";
         ValuesNameColumn.HeaderText = "遭遇情報";
         ValuesNameColumn.Name = "ValuesNameColumn";
         ValuesNameColumn.ReadOnly = true;
@@ -130,16 +140,6 @@ partial class VersionEncounterDetailInfoForm
         dataGridViewButtonColumn1.Text = "詳細";
         dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
         dataGridViewButtonColumn1.Width = 40;
-        // 
-        // CloseButton
-        // 
-        CloseButton.Location = new Point(293, 269);
-        CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
-        CloseButton.TabIndex = 7;
-        CloseButton.Text = "閉じる";
-        CloseButton.UseVisualStyleBackColor = true;
-        CloseButton.Click += CloseButton_Click;
         // 
         // VersionEncounterDetailInfoForm
         // 
@@ -175,7 +175,7 @@ partial class VersionEncounterDetailInfoForm
     private Button VersionDetailButton;
     private Label EncounterDetailsCaptionLabel;
     private DataGridView EncounterDetailsDataGridView;
+    private Button CloseButton;
     private DataGridViewTextBoxColumn ValuesNameColumn;
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
-    private Button CloseButton;
 }

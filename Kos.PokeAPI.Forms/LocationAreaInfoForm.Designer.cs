@@ -41,16 +41,15 @@ partial class LocationAreaInfoForm
         DetailColumn = new DataGridViewButtonColumn();
         NamesCaptionLabel = new Label();
         EncounterMethodRateDataGridView = new DataGridView();
-        EncounterMethodRateCaptionLabel = new Label();
         dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
+        EncounterMethodRateCaptionLabel = new Label();
         PokemonEncountersCaptionLabel = new Label();
         PokemonEncountersDataGridView = new DataGridView();
+        CloseButton = new Button();
+        LocationDetailButton = new Button();
         dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn3 = new DataGridViewButtonColumn();
-        CloseButton = new Button();
-        LanguageDetailButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)EncounterMethodRateDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)PokemonEncountersDataGridView).BeginInit();
@@ -142,6 +141,8 @@ partial class LocationAreaInfoForm
         NamesDataGridView.RowHeadersVisible = false;
         NamesDataGridView.Size = new Size(224, 170);
         NamesDataGridView.TabIndex = 10;
+        NamesDataGridView.CellClick += NamesDataGridView_CellClick;
+        NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
         // NameColumn
         // 
@@ -184,13 +185,33 @@ partial class LocationAreaInfoForm
         // EncounterMethodRateDataGridView
         // 
         EncounterMethodRateDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        EncounterMethodRateDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewButtonColumn1 });
+        EncounterMethodRateDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewButtonColumn1 });
         EncounterMethodRateDataGridView.Location = new Point(249, 143);
         EncounterMethodRateDataGridView.Margin = new Padding(4, 3, 4, 3);
         EncounterMethodRateDataGridView.Name = "EncounterMethodRateDataGridView";
         EncounterMethodRateDataGridView.RowHeadersVisible = false;
         EncounterMethodRateDataGridView.Size = new Size(265, 170);
         EncounterMethodRateDataGridView.TabIndex = 12;
+        EncounterMethodRateDataGridView.CellClick += EncounterMethodRateDataGridView_CellClick;
+        EncounterMethodRateDataGridView.CellDoubleClick += EncounterMethodRateDataGridView_CellDoubleClick;
+        // 
+        // dataGridViewTextBoxColumn1
+        // 
+        dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewTextBoxColumn1.DataPropertyName = "EncounterMethod";
+        dataGridViewTextBoxColumn1.HeaderText = "遭遇方法";
+        dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+        dataGridViewTextBoxColumn1.ReadOnly = true;
+        dataGridViewTextBoxColumn1.Width = 85;
+        // 
+        // dataGridViewButtonColumn1
+        // 
+        dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn1.HeaderText = "詳細";
+        dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+        dataGridViewButtonColumn1.Text = "詳細";
+        dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn1.Width = 40;
         // 
         // EncounterMethodRateCaptionLabel
         // 
@@ -202,33 +223,6 @@ partial class LocationAreaInfoForm
         EncounterMethodRateCaptionLabel.TabIndex = 11;
         EncounterMethodRateCaptionLabel.Text = "遭遇率";
         EncounterMethodRateCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // dataGridViewTextBoxColumn1
-        // 
-        dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewTextBoxColumn1.DataPropertyName = "Version";
-        dataGridViewTextBoxColumn1.HeaderText = "バージョン";
-        dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-        dataGridViewTextBoxColumn1.ReadOnly = true;
-        dataGridViewTextBoxColumn1.Width = 85;
-        // 
-        // dataGridViewTextBoxColumn2
-        // 
-        dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewTextBoxColumn2.DataPropertyName = "Rate";
-        dataGridViewTextBoxColumn2.HeaderText = "遭遇率";
-        dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-        dataGridViewTextBoxColumn2.ReadOnly = true;
-        dataGridViewTextBoxColumn2.Width = 72;
-        // 
-        // dataGridViewButtonColumn1
-        // 
-        dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewButtonColumn1.HeaderText = "詳細";
-        dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-        dataGridViewButtonColumn1.Text = "詳細";
-        dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-        dataGridViewButtonColumn1.Width = 40;
         // 
         // PokemonEncountersCaptionLabel
         // 
@@ -250,20 +244,8 @@ partial class LocationAreaInfoForm
         PokemonEncountersDataGridView.RowHeadersVisible = false;
         PokemonEncountersDataGridView.Size = new Size(497, 150);
         PokemonEncountersDataGridView.TabIndex = 14;
-        // 
-        // dataGridViewTextBoxColumn3
-        // 
-        dataGridViewTextBoxColumn3.DataPropertyName = "Name";
-        dataGridViewTextBoxColumn3.HeaderText = "ポケモン";
-        dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-        dataGridViewTextBoxColumn3.ReadOnly = true;
-        // 
-        // dataGridViewButtonColumn3
-        // 
-        dataGridViewButtonColumn3.HeaderText = "詳細";
-        dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-        dataGridViewButtonColumn3.Text = "詳細";
-        dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
+        PokemonEncountersDataGridView.CellClick += PokemonEncountersDataGridView_CellClick;
+        PokemonEncountersDataGridView.CellDoubleClick += PokemonEncountersDataGridView_CellDoubleClick;
         // 
         // CloseButton
         // 
@@ -273,23 +255,43 @@ partial class LocationAreaInfoForm
         CloseButton.TabIndex = 15;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
         // 
-        // LanguageDetailButton
+        // LocationDetailButton
         // 
-        LanguageDetailButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        LanguageDetailButton.Location = new Point(461, 96);
-        LanguageDetailButton.Name = "LanguageDetailButton";
-        LanguageDetailButton.Size = new Size(53, 23);
-        LanguageDetailButton.TabIndex = 8;
-        LanguageDetailButton.Text = "詳細";
-        LanguageDetailButton.UseVisualStyleBackColor = true;
+        LocationDetailButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        LocationDetailButton.Location = new Point(461, 96);
+        LocationDetailButton.Name = "LocationDetailButton";
+        LocationDetailButton.Size = new Size(53, 24);
+        LocationDetailButton.TabIndex = 8;
+        LocationDetailButton.Text = "詳細";
+        LocationDetailButton.UseVisualStyleBackColor = true;
+        LocationDetailButton.Click += LocationDetailButton_Click;
+        // 
+        // dataGridViewTextBoxColumn3
+        // 
+        dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewTextBoxColumn3.DataPropertyName = "Pokemon";
+        dataGridViewTextBoxColumn3.HeaderText = "ポケモン";
+        dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+        dataGridViewTextBoxColumn3.ReadOnly = true;
+        dataGridViewTextBoxColumn3.Width = 74;
+        // 
+        // dataGridViewButtonColumn3
+        // 
+        dataGridViewButtonColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn3.HeaderText = "詳細";
+        dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
+        dataGridViewButtonColumn3.Text = "詳細";
+        dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn3.Width = 40;
         // 
         // LocationAreaInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(531, 536);
-        Controls.Add(LanguageDetailButton);
+        Controls.Add(LocationDetailButton);
         Controls.Add(CloseButton);
         Controls.Add(PokemonEncountersDataGridView);
         Controls.Add(PokemonEncountersCaptionLabel);
@@ -335,14 +337,13 @@ partial class LocationAreaInfoForm
     private DataGridViewButtonColumn DetailColumn;
     private Label NamesCaptionLabel;
     private DataGridView EncounterMethodRateDataGridView;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-    private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private Label EncounterMethodRateCaptionLabel;
     private Label PokemonEncountersCaptionLabel;
     private DataGridView PokemonEncountersDataGridView;
+    private Button CloseButton;
+    private Button LocationDetailButton;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+    private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private DataGridViewButtonColumn dataGridViewButtonColumn3;
-    private Button CloseButton;
-    private Button LanguageDetailButton;
 }

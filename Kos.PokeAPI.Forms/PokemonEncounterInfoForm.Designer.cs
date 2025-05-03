@@ -1,6 +1,6 @@
 ﻿namespace Kos.PokeAPI.Forms;
 
-partial class PokemonInfoForm
+partial class PokemonEncounterInfoForm
 {
     /// <summary>
     /// Required designer variable.
@@ -31,10 +31,10 @@ partial class PokemonInfoForm
         PokemonTextBox = new TextBox();
         VersionDetailsCaptionLabel = new Label();
         EncounterDetailsDataGridView = new DataGridView();
-        NameColumn = new DataGridViewTextBoxColumn();
-        dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
         CloseButton = new Button();
         PokemonDetailButton = new Button();
+        NameColumn = new DataGridViewTextBoxColumn();
+        dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
         ((System.ComponentModel.ISupportInitialize)EncounterDetailsDataGridView).BeginInit();
         SuspendLayout();
         // 
@@ -81,24 +81,6 @@ partial class PokemonInfoForm
         EncounterDetailsDataGridView.CellClick += EncounterDetailsDataGridView_CellClick;
         EncounterDetailsDataGridView.CellDoubleClick += EncounterDetailsDataGridView_CellDoubleClick;
         // 
-        // NameColumn
-        // 
-        NameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        NameColumn.DataPropertyName = "Name";
-        NameColumn.HeaderText = "バージョン";
-        NameColumn.Name = "NameColumn";
-        NameColumn.ReadOnly = true;
-        NameColumn.Width = 85;
-        // 
-        // dataGridViewButtonColumn1
-        // 
-        dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewButtonColumn1.HeaderText = "詳細";
-        dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-        dataGridViewButtonColumn1.Text = "詳細";
-        dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-        dataGridViewButtonColumn1.Width = 40;
-        // 
         // CloseButton
         // 
         CloseButton.Location = new Point(285, 257);
@@ -120,7 +102,25 @@ partial class PokemonInfoForm
         PokemonDetailButton.UseVisualStyleBackColor = true;
         PokemonDetailButton.Click += PokemonDetailButton_Click;
         // 
-        // PokemonInfoForm
+        // NameColumn
+        // 
+        NameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        NameColumn.DataPropertyName = "Version";
+        NameColumn.HeaderText = "バージョン";
+        NameColumn.Name = "NameColumn";
+        NameColumn.ReadOnly = true;
+        NameColumn.Width = 85;
+        // 
+        // dataGridViewButtonColumn1
+        // 
+        dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn1.HeaderText = "詳細";
+        dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+        dataGridViewButtonColumn1.Text = "詳細";
+        dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn1.Width = 40;
+        // 
+        // PokemonEncounterInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
@@ -135,7 +135,7 @@ partial class PokemonInfoForm
         FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
-        Name = "PokemonInfoForm";
+        Name = "PokemonEncounterInfoForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "ポケモン 遭遇情報";
         ((System.ComponentModel.ISupportInitialize)EncounterDetailsDataGridView).EndInit();
@@ -149,8 +149,8 @@ partial class PokemonInfoForm
     private TextBox PokemonTextBox;
     private Label VersionDetailsCaptionLabel;
     private DataGridView EncounterDetailsDataGridView;
-    private DataGridViewTextBoxColumn NameColumn;
-    private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private Button CloseButton;
     private Button PokemonDetailButton;
+    private DataGridViewTextBoxColumn NameColumn;
+    private DataGridViewButtonColumn dataGridViewButtonColumn1;
 }

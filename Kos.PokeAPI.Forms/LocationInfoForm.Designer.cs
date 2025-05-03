@@ -234,6 +234,8 @@ partial class LocationInfoForm
         AreasDataGridView.RowHeadersVisible = false;
         AreasDataGridView.Size = new Size(729, 170);
         AreasDataGridView.TabIndex = 12;
+        AreasDataGridView.CellClick += AreasDataGridView_CellClick;
+        AreasDataGridView.CellDoubleClick += AreasDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn1
         // 

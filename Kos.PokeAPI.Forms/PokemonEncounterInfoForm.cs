@@ -15,14 +15,14 @@ namespace Kos.PokeAPI.Forms;
 /// <summary>
 /// ポケモン遭遇情報
 /// </summary>
-public partial class PokemonInfoForm : Form
+public partial class PokemonEncounterInfoForm : Form
 {
     #region コンストラクタ
     /// <summary>
     /// コンストラクタ
     /// </summary>
     /// <param name="pe"></param>
-    public PokemonInfoForm(PokemonEncounter pe)
+    public PokemonEncounterInfoForm(PokemonEncounter pe)
     {
         InitializeComponent();
         SetData(pe);
@@ -122,6 +122,7 @@ public partial class PokemonInfoForm : Form
     {
         PokemonTextBox.Text = pe.Pokemon?.Name ?? string.Empty;
         PokemonDetailButton.Tag = pe.Pokemon;
+        EncounterDetailsDataGridView.AutoGenerateColumns = false;
         EncounterDetailsDataGridView.DataSource = pe.VersionDetails;
     }
     #endregion

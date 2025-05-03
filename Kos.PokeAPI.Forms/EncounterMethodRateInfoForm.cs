@@ -123,6 +123,7 @@ public partial class EncounterMethodRateInfoForm : Form
     {
         EncounterMethodTextBox.Text = emr.EncounterMethod?.Name ?? string.Empty;
         EncounterMethodDetailButton.Tag = emr.EncounterMethod;
+        VersionDetailsDataGridView.AutoGenerateColumns = false;
         VersionDetailsDataGridView.DataSource = emr.VersionDetails;
     }
     #endregion
