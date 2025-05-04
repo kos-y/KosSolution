@@ -48,6 +48,8 @@ partial class BerryInfoForm
         NaturalGiftTypeDetailButton = new Button();
         CloseButton = new Button();
         NaturalGiftGroupBox = new GroupBox();
+        NaturalGiftPowerTextBox = new TextBox();
+        NaturalGiftTypeTextBox = new TextBox();
         IdTextBox = new TextBox();
         NameTextBox = new TextBox();
         SizeTextBox = new TextBox();
@@ -57,8 +59,6 @@ partial class BerryInfoForm
         GrowthTimeTextBox = new TextBox();
         MaxHarvestTextBox = new TextBox();
         SoilDrynessTextBox = new TextBox();
-        NaturalGiftTypeTextBox = new TextBox();
-        NaturalGiftPowerTextBox = new TextBox();
         ((System.ComponentModel.ISupportInitialize)FlavorDataGridView).BeginInit();
         NaturalGiftGroupBox.SuspendLayout();
         SuspendLayout();
@@ -293,6 +293,22 @@ partial class BerryInfoForm
         NaturalGiftGroupBox.TabStop = false;
         NaturalGiftGroupBox.Text = "しぜんのめぐみ";
         // 
+        // NaturalGiftPowerTextBox
+        // 
+        NaturalGiftPowerTextBox.Location = new Point(67, 51);
+        NaturalGiftPowerTextBox.Name = "NaturalGiftPowerTextBox";
+        NaturalGiftPowerTextBox.ReadOnly = true;
+        NaturalGiftPowerTextBox.Size = new Size(190, 24);
+        NaturalGiftPowerTextBox.TabIndex = 4;
+        // 
+        // NaturalGiftTypeTextBox
+        // 
+        NaturalGiftTypeTextBox.Location = new Point(68, 21);
+        NaturalGiftTypeTextBox.Name = "NaturalGiftTypeTextBox";
+        NaturalGiftTypeTextBox.ReadOnly = true;
+        NaturalGiftTypeTextBox.Size = new Size(190, 24);
+        NaturalGiftTypeTextBox.TabIndex = 1;
+        // 
         // IdTextBox
         // 
         IdTextBox.Location = new Point(80, 7);
@@ -364,22 +380,6 @@ partial class BerryInfoForm
         SoilDrynessTextBox.ReadOnly = true;
         SoilDrynessTextBox.Size = new Size(190, 24);
         SoilDrynessTextBox.TabIndex = 19;
-        // 
-        // NaturalGiftTypeTextBox
-        // 
-        NaturalGiftTypeTextBox.Location = new Point(68, 21);
-        NaturalGiftTypeTextBox.Name = "NaturalGiftTypeTextBox";
-        NaturalGiftTypeTextBox.ReadOnly = true;
-        NaturalGiftTypeTextBox.Size = new Size(190, 24);
-        NaturalGiftTypeTextBox.TabIndex = 1;
-        // 
-        // NaturalGiftPowerTextBox
-        // 
-        NaturalGiftPowerTextBox.Location = new Point(67, 51);
-        NaturalGiftPowerTextBox.Name = "NaturalGiftPowerTextBox";
-        NaturalGiftPowerTextBox.ReadOnly = true;
-        NaturalGiftPowerTextBox.Size = new Size(190, 24);
-        NaturalGiftPowerTextBox.TabIndex = 4;
         // 
         // BerryInfoForm
         // 
