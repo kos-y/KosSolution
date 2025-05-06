@@ -297,7 +297,9 @@ partial class LocationInfoForm
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
         Name = "LocationInfoForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "場所";

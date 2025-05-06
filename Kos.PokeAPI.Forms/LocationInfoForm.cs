@@ -49,6 +49,9 @@ public partial class LocationInfoForm : Form
         if (api.Url is null) {
             return;
         }
+
+        using RegionInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
     }
     #endregion
 

@@ -65,17 +65,19 @@ partial class PokedexInfoForm
         // NameLabel
         // 
         NameLabel.BorderStyle = BorderStyle.Fixed3D;
-        NameLabel.Location = new Point(133, 32);
+        NameLabel.Location = new Point(171, 36);
+        NameLabel.Margin = new Padding(4, 0, 4, 0);
         NameLabel.Name = "NameLabel";
-        NameLabel.Size = new Size(147, 23);
+        NameLabel.Size = new Size(189, 26);
         NameLabel.TabIndex = 3;
         NameLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NameCaptionLabel
         // 
-        NameCaptionLabel.Location = new Point(12, 32);
+        NameCaptionLabel.Location = new Point(15, 36);
+        NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(115, 23);
+        NameCaptionLabel.Size = new Size(148, 26);
         NameCaptionLabel.TabIndex = 2;
         NameCaptionLabel.Text = "name";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -83,26 +85,29 @@ partial class PokedexInfoForm
         // IdLabel
         // 
         IdLabel.BorderStyle = BorderStyle.Fixed3D;
-        IdLabel.Location = new Point(133, 9);
+        IdLabel.Location = new Point(171, 10);
+        IdLabel.Margin = new Padding(4, 0, 4, 0);
         IdLabel.Name = "IdLabel";
-        IdLabel.Size = new Size(147, 23);
+        IdLabel.Size = new Size(189, 26);
         IdLabel.TabIndex = 1;
         IdLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
-        IdCaptionLabel.Location = new Point(12, 9);
+        IdCaptionLabel.Location = new Point(15, 10);
+        IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(115, 23);
+        IdCaptionLabel.Size = new Size(148, 26);
         IdCaptionLabel.TabIndex = 0;
         IdCaptionLabel.Text = "id";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IsMainSeriesCaptionLabel
         // 
-        IsMainSeriesCaptionLabel.Location = new Point(12, 55);
+        IsMainSeriesCaptionLabel.Location = new Point(15, 62);
+        IsMainSeriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IsMainSeriesCaptionLabel.Name = "IsMainSeriesCaptionLabel";
-        IsMainSeriesCaptionLabel.Size = new Size(115, 23);
+        IsMainSeriesCaptionLabel.Size = new Size(148, 26);
         IsMainSeriesCaptionLabel.TabIndex = 4;
         IsMainSeriesCaptionLabel.Text = "is_main_series";
         IsMainSeriesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -110,9 +115,10 @@ partial class PokedexInfoForm
         // IsMainSeriesLabel
         // 
         IsMainSeriesLabel.BorderStyle = BorderStyle.Fixed3D;
-        IsMainSeriesLabel.Location = new Point(133, 55);
+        IsMainSeriesLabel.Location = new Point(171, 62);
+        IsMainSeriesLabel.Margin = new Padding(4, 0, 4, 0);
         IsMainSeriesLabel.Name = "IsMainSeriesLabel";
-        IsMainSeriesLabel.Size = new Size(147, 23);
+        IsMainSeriesLabel.Size = new Size(189, 26);
         IsMainSeriesLabel.TabIndex = 5;
         IsMainSeriesLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -120,10 +126,11 @@ partial class PokedexInfoForm
         // 
         DescriptionsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         DescriptionsDataGridView.Columns.AddRange(new DataGridViewColumn[] { DescriptionColumn, EffectLanguageColumn, EffectLanguageInfoButtonColumn });
-        DescriptionsDataGridView.Location = new Point(133, 81);
+        DescriptionsDataGridView.Location = new Point(171, 92);
+        DescriptionsDataGridView.Margin = new Padding(4, 3, 4, 3);
         DescriptionsDataGridView.Name = "DescriptionsDataGridView";
         DescriptionsDataGridView.RowHeadersVisible = false;
-        DescriptionsDataGridView.Size = new Size(672, 150);
+        DescriptionsDataGridView.Size = new Size(864, 170);
         DescriptionsDataGridView.TabIndex = 7;
         DescriptionsDataGridView.CellClick += DescriptionsDataGridView_CellClick;
         DescriptionsDataGridView.CellDoubleClick += DescriptionsDataGridView_CellDoubleClick;
@@ -152,9 +159,10 @@ partial class PokedexInfoForm
         // 
         // DescriptionsCaptionLabel
         // 
-        DescriptionsCaptionLabel.Location = new Point(12, 81);
+        DescriptionsCaptionLabel.Location = new Point(15, 92);
+        DescriptionsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         DescriptionsCaptionLabel.Name = "DescriptionsCaptionLabel";
-        DescriptionsCaptionLabel.Size = new Size(115, 23);
+        DescriptionsCaptionLabel.Size = new Size(148, 26);
         DescriptionsCaptionLabel.TabIndex = 6;
         DescriptionsCaptionLabel.Text = "descriptions";
         DescriptionsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -163,10 +171,11 @@ partial class PokedexInfoForm
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(133, 237);
+        NamesDataGridView.Location = new Point(171, 269);
+        NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(668, 150);
+        NamesDataGridView.Size = new Size(859, 170);
         NamesDataGridView.TabIndex = 9;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
@@ -194,9 +203,10 @@ partial class PokedexInfoForm
         // 
         // NamesCaptionLabel
         // 
-        NamesCaptionLabel.Location = new Point(12, 237);
+        NamesCaptionLabel.Location = new Point(15, 269);
+        NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
-        NamesCaptionLabel.Size = new Size(115, 23);
+        NamesCaptionLabel.Size = new Size(148, 26);
         NamesCaptionLabel.TabIndex = 8;
         NamesCaptionLabel.Text = "names";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -205,10 +215,11 @@ partial class PokedexInfoForm
         // 
         PokemonEntriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         PokemonEntriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { EntryNumberColumn, PokemonSpeciesColumn, PokemonSpeciesInfoColumn });
-        PokemonEntriesDataGridView.Location = new Point(133, 393);
+        PokemonEntriesDataGridView.Location = new Point(171, 445);
+        PokemonEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         PokemonEntriesDataGridView.Name = "PokemonEntriesDataGridView";
         PokemonEntriesDataGridView.RowHeadersVisible = false;
-        PokemonEntriesDataGridView.Size = new Size(668, 150);
+        PokemonEntriesDataGridView.Size = new Size(859, 170);
         PokemonEntriesDataGridView.TabIndex = 11;
         // 
         // EntryNumberColumn
@@ -234,9 +245,10 @@ partial class PokedexInfoForm
         // 
         // PokemonEntriesCaptionLabel
         // 
-        PokemonEntriesCaptionLabel.Location = new Point(12, 393);
+        PokemonEntriesCaptionLabel.Location = new Point(15, 445);
+        PokemonEntriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         PokemonEntriesCaptionLabel.Name = "PokemonEntriesCaptionLabel";
-        PokemonEntriesCaptionLabel.Size = new Size(115, 23);
+        PokemonEntriesCaptionLabel.Size = new Size(148, 26);
         PokemonEntriesCaptionLabel.TabIndex = 10;
         PokemonEntriesCaptionLabel.Text = "pokemon_entries";
         PokemonEntriesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -244,26 +256,29 @@ partial class PokedexInfoForm
         // RegionLabel
         // 
         RegionLabel.BorderStyle = BorderStyle.Fixed3D;
-        RegionLabel.Location = new Point(133, 546);
+        RegionLabel.Location = new Point(171, 619);
+        RegionLabel.Margin = new Padding(4, 0, 4, 0);
         RegionLabel.Name = "RegionLabel";
-        RegionLabel.Size = new Size(147, 23);
+        RegionLabel.Size = new Size(189, 26);
         RegionLabel.TabIndex = 13;
         RegionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // RegionCaptionLabel
         // 
-        RegionCaptionLabel.Location = new Point(12, 546);
+        RegionCaptionLabel.Location = new Point(15, 619);
+        RegionCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         RegionCaptionLabel.Name = "RegionCaptionLabel";
-        RegionCaptionLabel.Size = new Size(115, 23);
+        RegionCaptionLabel.Size = new Size(148, 26);
         RegionCaptionLabel.TabIndex = 12;
         RegionCaptionLabel.Text = "region";
         RegionCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // RegionInfoButton
         // 
-        RegionInfoButton.Location = new Point(286, 546);
+        RegionInfoButton.Location = new Point(368, 619);
+        RegionInfoButton.Margin = new Padding(4, 3, 4, 3);
         RegionInfoButton.Name = "RegionInfoButton";
-        RegionInfoButton.Size = new Size(43, 23);
+        RegionInfoButton.Size = new Size(55, 26);
         RegionInfoButton.TabIndex = 14;
         RegionInfoButton.Text = "Info...";
         RegionInfoButton.UseVisualStyleBackColor = true;
@@ -272,10 +287,11 @@ partial class PokedexInfoForm
         // 
         VersionGroupDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         VersionGroupDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewButtonColumn4 });
-        VersionGroupDataGridView.Location = new Point(133, 572);
+        VersionGroupDataGridView.Location = new Point(171, 648);
+        VersionGroupDataGridView.Margin = new Padding(4, 3, 4, 3);
         VersionGroupDataGridView.Name = "VersionGroupDataGridView";
         VersionGroupDataGridView.RowHeadersVisible = false;
-        VersionGroupDataGridView.Size = new Size(434, 150);
+        VersionGroupDataGridView.Size = new Size(558, 170);
         VersionGroupDataGridView.TabIndex = 16;
         VersionGroupDataGridView.CellClick += VersionGroupDataGridView_CellClick;
         VersionGroupDataGridView.CellDoubleClick += VersionGroupDataGridView_CellDoubleClick;
@@ -296,18 +312,20 @@ partial class PokedexInfoForm
         // 
         // VersionGroupCaptionLabel
         // 
-        VersionGroupCaptionLabel.Location = new Point(12, 572);
+        VersionGroupCaptionLabel.Location = new Point(15, 648);
+        VersionGroupCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         VersionGroupCaptionLabel.Name = "VersionGroupCaptionLabel";
-        VersionGroupCaptionLabel.Size = new Size(115, 23);
+        VersionGroupCaptionLabel.Size = new Size(148, 26);
         VersionGroupCaptionLabel.TabIndex = 15;
         VersionGroupCaptionLabel.Text = "version_group";
         VersionGroupCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(726, 699);
+        CloseButton.Location = new Point(933, 792);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 23);
+        CloseButton.Size = new Size(96, 26);
         CloseButton.TabIndex = 17;
         CloseButton.Text = "Close";
         CloseButton.UseVisualStyleBackColor = true;
@@ -315,9 +333,9 @@ partial class PokedexInfoForm
         // 
         // PokedexInfoForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(813, 740);
+        ClientSize = new Size(1045, 839);
         Controls.Add(CloseButton);
         Controls.Add(VersionGroupCaptionLabel);
         Controls.Add(VersionGroupDataGridView);
@@ -336,7 +354,9 @@ partial class PokedexInfoForm
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(4, 3, 4, 3);
         MinimizeBox = false;
         Name = "PokedexInfoForm";
         StartPosition = FormStartPosition.CenterParent;

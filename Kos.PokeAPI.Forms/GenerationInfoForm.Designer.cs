@@ -27,9 +27,7 @@ partial class GenerationInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        NameLabel = new Label();
         NameCaptionLabel = new Label();
-        IdLabel = new Label();
         IdCaptionLabel = new Label();
         AbilitiesCaptionLabel = new Label();
         AbilitiesDataGridView = new DataGridView();
@@ -53,6 +51,8 @@ partial class GenerationInfoForm
         dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn4 = new DataGridViewButtonColumn();
         CloseButton = new Button();
+        NameTextBox = new TextBox();
+        IdTextBox = new TextBox();
         ((System.ComponentModel.ISupportInitialize)AbilitiesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)PokemonSpeciesDataGridView).BeginInit();
@@ -60,233 +60,275 @@ partial class GenerationInfoForm
         ((System.ComponentModel.ISupportInitialize)VersionGroupDataGridView).BeginInit();
         SuspendLayout();
         // 
-        // NameLabel
-        // 
-        NameLabel.BorderStyle = BorderStyle.Fixed3D;
-        NameLabel.Location = new Point(80, 32);
-        NameLabel.Name = "NameLabel";
-        NameLabel.Size = new Size(147, 23);
-        NameLabel.TabIndex = 3;
-        NameLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // NameCaptionLabel
         // 
-        NameCaptionLabel.Location = new Point(12, 32);
+        NameCaptionLabel.AutoSize = true;
+        NameCaptionLabel.Location = new Point(15, 45);
+        NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(62, 23);
+        NameCaptionLabel.Size = new Size(47, 17);
         NameCaptionLabel.TabIndex = 2;
-        NameCaptionLabel.Text = "name";
+        NameCaptionLabel.Text = "世代名";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // IdLabel
-        // 
-        IdLabel.BorderStyle = BorderStyle.Fixed3D;
-        IdLabel.Location = new Point(80, 9);
-        IdLabel.Name = "IdLabel";
-        IdLabel.Size = new Size(147, 23);
-        IdLabel.TabIndex = 1;
-        IdLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
-        IdCaptionLabel.Location = new Point(12, 9);
+        IdCaptionLabel.AutoSize = true;
+        IdCaptionLabel.Location = new Point(11, 15);
+        IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(62, 23);
+        IdCaptionLabel.Size = new Size(51, 17);
         IdCaptionLabel.TabIndex = 0;
-        IdCaptionLabel.Text = "id";
+        IdCaptionLabel.Text = "世代ID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // AbilitiesCaptionLabel
         // 
-        AbilitiesCaptionLabel.Location = new Point(12, 55);
+        AbilitiesCaptionLabel.AutoSize = true;
+        AbilitiesCaptionLabel.Location = new Point(15, 72);
+        AbilitiesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         AbilitiesCaptionLabel.Name = "AbilitiesCaptionLabel";
-        AbilitiesCaptionLabel.Size = new Size(62, 23);
+        AbilitiesCaptionLabel.Size = new Size(34, 17);
         AbilitiesCaptionLabel.TabIndex = 4;
-        AbilitiesCaptionLabel.Text = "abilities";
+        AbilitiesCaptionLabel.Text = "特性";
         AbilitiesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // AbilitiesDataGridView
         // 
         AbilitiesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         AbilitiesDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewButtonColumn1 });
-        AbilitiesDataGridView.Location = new Point(12, 81);
+        AbilitiesDataGridView.Location = new Point(15, 92);
+        AbilitiesDataGridView.Margin = new Padding(4, 3, 4, 3);
         AbilitiesDataGridView.Name = "AbilitiesDataGridView";
         AbilitiesDataGridView.RowHeadersVisible = false;
-        AbilitiesDataGridView.Size = new Size(434, 150);
+        AbilitiesDataGridView.Size = new Size(558, 170);
         AbilitiesDataGridView.TabIndex = 5;
+        AbilitiesDataGridView.CellClick += AbilitiesDataGridView_CellClick;
         // 
         // dataGridViewTextBoxColumn1
         // 
+        dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewTextBoxColumn1.DataPropertyName = "Name";
-        dataGridViewTextBoxColumn1.HeaderText = "name";
+        dataGridViewTextBoxColumn1.HeaderText = "特性";
         dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
         dataGridViewTextBoxColumn1.ReadOnly = true;
+        dataGridViewTextBoxColumn1.Width = 59;
         // 
         // dataGridViewButtonColumn1
         // 
-        dataGridViewButtonColumn1.HeaderText = "Info";
+        dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn1.HeaderText = "詳細";
         dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-        dataGridViewButtonColumn1.Text = "Info..";
+        dataGridViewButtonColumn1.Text = "syousai ";
         dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn1.Width = 40;
         // 
         // NamesDataGridView
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(12, 273);
+        NamesDataGridView.Location = new Point(15, 294);
+        NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(434, 150);
+        NamesDataGridView.Size = new Size(558, 170);
         NamesDataGridView.TabIndex = 9;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
         // NameColumn
         // 
+        NameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         NameColumn.DataPropertyName = "Text";
-        NameColumn.HeaderText = "name";
+        NameColumn.HeaderText = "名前";
         NameColumn.Name = "NameColumn";
         NameColumn.ReadOnly = true;
+        NameColumn.Width = 59;
         // 
         // LanguageColumn
         // 
+        LanguageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         LanguageColumn.DataPropertyName = "Language";
-        LanguageColumn.HeaderText = "language";
+        LanguageColumn.HeaderText = "言語";
         LanguageColumn.Name = "LanguageColumn";
         LanguageColumn.ReadOnly = true;
+        LanguageColumn.Width = 59;
         // 
         // DetailColumn
         // 
-        DetailColumn.HeaderText = "Info";
+        DetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        DetailColumn.HeaderText = "詳細";
         DetailColumn.Name = "DetailColumn";
-        DetailColumn.Text = "Info..";
+        DetailColumn.Text = "詳細";
         DetailColumn.UseColumnTextForButtonValue = true;
+        DetailColumn.Width = 40;
         // 
         // NamesCaptionLabel
         // 
-        NamesCaptionLabel.Location = new Point(12, 247);
+        NamesCaptionLabel.AutoSize = true;
+        NamesCaptionLabel.Location = new Point(13, 274);
+        NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
-        NamesCaptionLabel.Size = new Size(62, 23);
+        NamesCaptionLabel.Size = new Size(92, 17);
         NamesCaptionLabel.TabIndex = 8;
-        NamesCaptionLabel.Text = "names";
+        NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // PokemonSpeciesCaptionLabel
         // 
-        PokemonSpeciesCaptionLabel.Location = new Point(452, 55);
+        PokemonSpeciesCaptionLabel.AutoSize = true;
+        PokemonSpeciesCaptionLabel.Location = new Point(581, 72);
+        PokemonSpeciesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         PokemonSpeciesCaptionLabel.Name = "PokemonSpeciesCaptionLabel";
-        PokemonSpeciesCaptionLabel.Size = new Size(115, 23);
+        PokemonSpeciesCaptionLabel.Size = new Size(75, 17);
         PokemonSpeciesCaptionLabel.TabIndex = 6;
-        PokemonSpeciesCaptionLabel.Text = "pokemon_species";
+        PokemonSpeciesCaptionLabel.Text = "ポケモン種族";
         PokemonSpeciesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // PokemonSpeciesDataGridView
         // 
         PokemonSpeciesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         PokemonSpeciesDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewButtonColumn2 });
-        PokemonSpeciesDataGridView.Location = new Point(452, 81);
+        PokemonSpeciesDataGridView.Location = new Point(581, 92);
+        PokemonSpeciesDataGridView.Margin = new Padding(4, 3, 4, 3);
         PokemonSpeciesDataGridView.Name = "PokemonSpeciesDataGridView";
         PokemonSpeciesDataGridView.RowHeadersVisible = false;
-        PokemonSpeciesDataGridView.Size = new Size(434, 150);
+        PokemonSpeciesDataGridView.Size = new Size(558, 170);
         PokemonSpeciesDataGridView.TabIndex = 7;
         // 
         // dataGridViewTextBoxColumn2
         // 
+        dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-        dataGridViewTextBoxColumn2.HeaderText = "name";
+        dataGridViewTextBoxColumn2.HeaderText = "ポケモン種族";
         dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
         dataGridViewTextBoxColumn2.ReadOnly = true;
         // 
         // dataGridViewButtonColumn2
         // 
-        dataGridViewButtonColumn2.HeaderText = "Info";
+        dataGridViewButtonColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn2.HeaderText = "詳細";
         dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-        dataGridViewButtonColumn2.Text = "Info..";
+        dataGridViewButtonColumn2.Text = "詳細";
         dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn2.Width = 40;
         // 
         // TypesCaptionLabel
         // 
-        TypesCaptionLabel.Location = new Point(452, 247);
+        TypesCaptionLabel.AutoSize = true;
+        TypesCaptionLabel.Location = new Point(581, 274);
+        TypesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         TypesCaptionLabel.Name = "TypesCaptionLabel";
-        TypesCaptionLabel.Size = new Size(115, 23);
+        TypesCaptionLabel.Size = new Size(40, 17);
         TypesCaptionLabel.TabIndex = 10;
-        TypesCaptionLabel.Text = "types";
+        TypesCaptionLabel.Text = "タイプ";
         TypesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // TypesDataGridView
         // 
         TypesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         TypesDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewButtonColumn3 });
-        TypesDataGridView.Location = new Point(452, 273);
+        TypesDataGridView.Location = new Point(581, 294);
+        TypesDataGridView.Margin = new Padding(4, 3, 4, 3);
         TypesDataGridView.Name = "TypesDataGridView";
         TypesDataGridView.RowHeadersVisible = false;
-        TypesDataGridView.Size = new Size(434, 150);
+        TypesDataGridView.Size = new Size(558, 170);
         TypesDataGridView.TabIndex = 11;
         // 
         // dataGridViewTextBoxColumn3
         // 
+        dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewTextBoxColumn3.DataPropertyName = "Name";
-        dataGridViewTextBoxColumn3.HeaderText = "name";
+        dataGridViewTextBoxColumn3.HeaderText = "タイプ";
         dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
         dataGridViewTextBoxColumn3.ReadOnly = true;
+        dataGridViewTextBoxColumn3.Width = 65;
         // 
         // dataGridViewButtonColumn3
         // 
-        dataGridViewButtonColumn3.HeaderText = "Info";
+        dataGridViewButtonColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn3.HeaderText = "詳細";
         dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-        dataGridViewButtonColumn3.Text = "Info..";
+        dataGridViewButtonColumn3.Text = "詳細";
         dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn3.Width = 40;
         // 
         // VersionGroupCaptionLabel
         // 
-        VersionGroupCaptionLabel.Location = new Point(12, 443);
+        VersionGroupCaptionLabel.AutoSize = true;
+        VersionGroupCaptionLabel.Location = new Point(15, 478);
+        VersionGroupCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         VersionGroupCaptionLabel.Name = "VersionGroupCaptionLabel";
-        VersionGroupCaptionLabel.Size = new Size(93, 23);
+        VersionGroupCaptionLabel.Size = new Size(104, 17);
         VersionGroupCaptionLabel.TabIndex = 12;
-        VersionGroupCaptionLabel.Text = "version_groups";
+        VersionGroupCaptionLabel.Text = "バージョングループ";
         VersionGroupCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // VersionGroupDataGridView
         // 
         VersionGroupDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         VersionGroupDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewButtonColumn4 });
-        VersionGroupDataGridView.Location = new Point(12, 469);
+        VersionGroupDataGridView.Location = new Point(15, 498);
+        VersionGroupDataGridView.Margin = new Padding(4, 3, 4, 3);
         VersionGroupDataGridView.Name = "VersionGroupDataGridView";
         VersionGroupDataGridView.RowHeadersVisible = false;
-        VersionGroupDataGridView.Size = new Size(434, 150);
+        VersionGroupDataGridView.Size = new Size(558, 170);
         VersionGroupDataGridView.TabIndex = 13;
         VersionGroupDataGridView.CellClick += VersionGroupDataGridView_CellClick;
         VersionGroupDataGridView.CellDoubleClick += VersionGroupDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn4
         // 
+        dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-        dataGridViewTextBoxColumn4.HeaderText = "name";
+        dataGridViewTextBoxColumn4.HeaderText = "バージョングループ";
         dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
         dataGridViewTextBoxColumn4.ReadOnly = true;
+        dataGridViewTextBoxColumn4.Width = 88;
         // 
         // dataGridViewButtonColumn4
         // 
-        dataGridViewButtonColumn4.HeaderText = "Info";
+        dataGridViewButtonColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn4.HeaderText = "詳細";
         dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
-        dataGridViewButtonColumn4.Text = "Info..";
+        dataGridViewButtonColumn4.Text = "詳細";
         dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn4.Width = 36;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(811, 596);
+        CloseButton.Location = new Point(1066, 666);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 23);
+        CloseButton.Size = new Size(73, 35);
         CloseButton.TabIndex = 14;
-        CloseButton.Text = "Close";
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // NameTextBox
+        // 
+        NameTextBox.Location = new Point(69, 42);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.ReadOnly = true;
+        NameTextBox.Size = new Size(191, 24);
+        NameTextBox.TabIndex = 3;
+        // 
+        // IdTextBox
+        // 
+        IdTextBox.Location = new Point(69, 12);
+        IdTextBox.Name = "IdTextBox";
+        IdTextBox.ReadOnly = true;
+        IdTextBox.Size = new Size(191, 24);
+        IdTextBox.TabIndex = 1;
+        // 
         // GenerationInfoForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(903, 636);
+        ClientSize = new Size(1161, 721);
+        Controls.Add(NameTextBox);
+        Controls.Add(IdTextBox);
         Controls.Add(CloseButton);
         Controls.Add(VersionGroupDataGridView);
         Controls.Add(VersionGroupCaptionLabel);
@@ -298,49 +340,49 @@ partial class GenerationInfoForm
         Controls.Add(NamesDataGridView);
         Controls.Add(AbilitiesDataGridView);
         Controls.Add(AbilitiesCaptionLabel);
-        Controls.Add(NameLabel);
         Controls.Add(NameCaptionLabel);
-        Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "GenerationInfoForm";
         StartPosition = FormStartPosition.CenterParent;
-        Text = "Generation";
+        Text = "世代";
         ((System.ComponentModel.ISupportInitialize)AbilitiesDataGridView).EndInit();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).EndInit();
         ((System.ComponentModel.ISupportInitialize)PokemonSpeciesDataGridView).EndInit();
         ((System.ComponentModel.ISupportInitialize)TypesDataGridView).EndInit();
         ((System.ComponentModel.ISupportInitialize)VersionGroupDataGridView).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
-
-    private Label NameLabel;
     private Label NameCaptionLabel;
-    private Label IdLabel;
     private Label IdCaptionLabel;
     private Label AbilitiesCaptionLabel;
     private DataGridView AbilitiesDataGridView;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-    private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private DataGridView NamesDataGridView;
-    private DataGridViewTextBoxColumn NameColumn;
-    private DataGridViewTextBoxColumn LanguageColumn;
-    private DataGridViewButtonColumn DetailColumn;
     private Label NamesCaptionLabel;
     private Label PokemonSpeciesCaptionLabel;
     private DataGridView PokemonSpeciesDataGridView;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-    private DataGridViewButtonColumn dataGridViewButtonColumn2;
     private Label TypesCaptionLabel;
     private DataGridView TypesDataGridView;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-    private DataGridViewButtonColumn dataGridViewButtonColumn3;
     private Label VersionGroupCaptionLabel;
     private DataGridView VersionGroupDataGridView;
+    private Button CloseButton;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+    private DataGridViewButtonColumn dataGridViewButtonColumn1;
+    private DataGridViewTextBoxColumn NameColumn;
+    private DataGridViewTextBoxColumn LanguageColumn;
+    private DataGridViewButtonColumn DetailColumn;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+    private DataGridViewButtonColumn dataGridViewButtonColumn2;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+    private DataGridViewButtonColumn dataGridViewButtonColumn3;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     private DataGridViewButtonColumn dataGridViewButtonColumn4;
-    private Button CloseButton;
+    private TextBox NameTextBox;
+    private TextBox IdTextBox;
 }

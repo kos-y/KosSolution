@@ -29,9 +29,33 @@ public partial class GenerationInfoForm : Form
     }
     #endregion
 
-    #region names DataGridView CellClick
+    #region 特性 セルクリック
     /// <summary>
-    /// names DataGridView CellClick
+    /// 特性 セルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void AbilitiesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (AbilitiesDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+            return;
+        }
+
+        if (AbilitiesDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource api) {
+            return;
+        }
+
+
+    }
+    #endregion
+
+    #region 言語ごとの名前 セルクリック
+    /// <summary>
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -49,18 +73,14 @@ public partial class GenerationInfoForm : Form
             return;
         }
 
-        if (name.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(name.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region names DataGridView CellDoubleClick
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
-    /// names DataGridView CellDoubleClick
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -74,18 +94,14 @@ public partial class GenerationInfoForm : Form
             return;
         }
 
-        if (name.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(name.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region version_group DataGridView CellClick
+    #region バージョングループ セルクリック
     /// <summary>
-    /// version_group DataGridView CellClick
+    /// バージョングループ セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -112,9 +128,9 @@ public partial class GenerationInfoForm : Form
     }
     #endregion
 
-    #region version_group DataGridView CellDoubleClick
+    #region バージョングループ セルダブルクリック
     /// <summary>
-    /// version_group DataGridView CellDoubleClick
+    /// バージョングループ セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -138,9 +154,9 @@ public partial class GenerationInfoForm : Form
     }
     #endregion
 
-    #region Close Click
+    #region 閉じる クリック
     /// <summary>
-    /// Close Click
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -162,8 +178,8 @@ public partial class GenerationInfoForm : Form
             return;
         }
 
-        IdLabel.Text = $"{g.Id}";
-        NameLabel.Text = g.Name ?? string.Empty;
+        IdTextBox.Text = $"{g.Id}";
+        NameTextBox.Text = g.Name ?? string.Empty;
         NamesDataGridView.AutoGenerateColumns = false;
         NamesDataGridView.DataSource = g.Names;
         AbilitiesDataGridView.AutoGenerateColumns = false;
