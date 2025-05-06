@@ -32,10 +32,10 @@ partial class ItemHolderPokemonInfoForm
         PokemonCaptionLabel = new Label();
         VersionDetailsCaptionLabel = new Label();
         VersionDetailsDataGridView = new DataGridView();
-        CloseButton = new Button();
         dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
         Column1 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
+        CloseButton = new Button();
         ((System.ComponentModel.ISupportInitialize)VersionDetailsDataGridView).BeginInit();
         SuspendLayout();
         // 
@@ -72,7 +72,7 @@ partial class ItemHolderPokemonInfoForm
         // VersionDetailsCaptionLabel
         // 
         VersionDetailsCaptionLabel.AutoSize = true;
-        VersionDetailsCaptionLabel.Location = new Point(15, 49);
+        VersionDetailsCaptionLabel.Location = new Point(15, 58);
         VersionDetailsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         VersionDetailsCaptionLabel.Name = "VersionDetailsCaptionLabel";
         VersionDetailsCaptionLabel.Size = new Size(118, 17);
@@ -92,17 +92,6 @@ partial class ItemHolderPokemonInfoForm
         VersionDetailsDataGridView.TabIndex = 4;
         VersionDetailsDataGridView.CellClick += VersionDetailsDataGridView_CellClick;
         VersionDetailsDataGridView.CellDoubleClick += VersionDetailsDataGridView_CellDoubleClick;
-        // 
-        // CloseButton
-        // 
-        CloseButton.Location = new Point(505, 255);
-        CloseButton.Margin = new Padding(4, 3, 4, 3);
-        CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(68, 41);
-        CloseButton.TabIndex = 5;
-        CloseButton.Text = "閉じる";
-        CloseButton.UseVisualStyleBackColor = true;
-        CloseButton.Click += CloseButton_Click;
         // 
         // dataGridViewTextBoxColumn1
         // 
@@ -130,6 +119,17 @@ partial class ItemHolderPokemonInfoForm
         dataGridViewButtonColumn1.Text = "詳細";
         dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
         dataGridViewButtonColumn1.Width = 40;
+        // 
+        // CloseButton
+        // 
+        CloseButton.Location = new Point(505, 255);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
+        CloseButton.Name = "CloseButton";
+        CloseButton.Size = new Size(68, 41);
+        CloseButton.TabIndex = 5;
+        CloseButton.Text = "閉じる";
+        CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
         // 
         // ItemHolderPokemonInfoForm
         // 

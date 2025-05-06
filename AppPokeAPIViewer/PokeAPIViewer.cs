@@ -292,6 +292,9 @@ public partial class PokeAPIViewer : Form
             nameof(EndPoint.Moves) =>
                 new NamedAPIResourceListForm(eca, typeof(MoveInfoForm)),
 
+            nameof(EndPoint.MoveAilments) =>
+                new NamedAPIResourceListForm(eca, typeof(MoveAilmentInfoForm)),
+
             _ => null,
         };
     }

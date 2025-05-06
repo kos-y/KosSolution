@@ -18,8 +18,4 @@
     <ProjectReference Include="..\KCSCore\KCSCore.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Items\" />
-  </ItemGroup>
-
 </Project>
