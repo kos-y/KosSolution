@@ -47,6 +47,7 @@ partial class AbilityEffectChangeInfoForm
         VersionGroupDetailButton.TabIndex = 2;
         VersionGroupDetailButton.Text = "詳細";
         VersionGroupDetailButton.UseVisualStyleBackColor = true;
+        VersionGroupDetailButton.Click += VersionGroupDetailButton_Click;
         // 
         // VersionGroupCaptionLabel
         // 
@@ -77,6 +78,8 @@ partial class AbilityEffectChangeInfoForm
         EffectEntriesDataGridView.RowHeadersVisible = false;
         EffectEntriesDataGridView.Size = new Size(851, 168);
         EffectEntriesDataGridView.TabIndex = 3;
+        EffectEntriesDataGridView.CellClick += EffectEntriesDataGridView_CellClick;
+        EffectEntriesDataGridView.CellDoubleClick += EffectEntriesDataGridView_CellDoubleClick;
         // 
         // EffectColumn
         // 
@@ -114,6 +117,7 @@ partial class AbilityEffectChangeInfoForm
         CloseButton.TabIndex = 4;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
         // 
         // AbilityEffectChangeInfoForm
         // 

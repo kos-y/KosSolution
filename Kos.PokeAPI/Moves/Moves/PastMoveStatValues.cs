@@ -63,4 +63,43 @@ public class PastMoveStatValues
     [JsonPropertyName("version_group")]
     public NamedAPIResource? VersionGroup { get; set; }
     #endregion
+
+    #region テキスト
+    /// <summary>
+    /// テキスト
+    /// </summary>
+    public string Text => ToString();
+    #endregion
+
+
+    // メソッド
+
+    #region 文字列化
+    /// <summary>
+    /// 文字列化
+    /// </summary>
+    /// <returns>文字列</returns>
+    public override string ToString()
+    {
+        List<string> textList = [];
+
+        if (VersionGroup?.Name is not null) {
+            textList.Add(VersionGroup.Name);
+        }
+
+        if (Type?.Name is not null) {
+            textList.Add(Type.Name);
+        }
+
+        if (Power is not null) {
+            textList.Add($"威力:{Power}");
+        }
+
+        if (PP is not null) {
+            textList.Add($"PP:{PP}");
+        }
+
+        return string.Join(" ", textList);
+    }
+    #endregion
 }

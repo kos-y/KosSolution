@@ -287,7 +287,7 @@ partial class ItemInfoForm
         FlavorTextEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         FlavorTextEntriesDataGridView.Name = "FlavorTextEntriesDataGridView";
         FlavorTextEntriesDataGridView.RowHeadersVisible = false;
-        FlavorTextEntriesDataGridView.Size = new Size(1037, 291);
+        FlavorTextEntriesDataGridView.Size = new Size(1037, 289);
         FlavorTextEntriesDataGridView.TabIndex = 0;
         FlavorTextEntriesDataGridView.CellClick += FlavorTextEntriesDataGridView_CellClick;
         FlavorTextEntriesDataGridView.CellDoubleClick += FlavorTextEntriesDataGridView_CellDoubleClick;
@@ -574,10 +574,10 @@ partial class ItemInfoForm
         // FlavorTextEntriesTabPage
         // 
         FlavorTextEntriesTabPage.Controls.Add(FlavorTextEntriesDataGridView);
-        FlavorTextEntriesTabPage.Location = new Point(4, 24);
+        FlavorTextEntriesTabPage.Location = new Point(4, 26);
         FlavorTextEntriesTabPage.Name = "FlavorTextEntriesTabPage";
         FlavorTextEntriesTabPage.Padding = new Padding(3);
-        FlavorTextEntriesTabPage.Size = new Size(1043, 297);
+        FlavorTextEntriesTabPage.Size = new Size(1043, 295);
         FlavorTextEntriesTabPage.TabIndex = 1;
         FlavorTextEntriesTabPage.Text = "フレーバーテキスト";
         FlavorTextEntriesTabPage.UseVisualStyleBackColor = true;

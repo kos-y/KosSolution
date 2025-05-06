@@ -73,6 +73,9 @@ public partial class MachineInfoForm : Form
         if (api.Url is null) {
             return;
         }
+
+        using MoveInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
     }
     #endregion
 

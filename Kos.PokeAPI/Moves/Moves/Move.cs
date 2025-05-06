@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.PokeAPI.Pokemon.Abilities;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Moves.Moves;
@@ -110,7 +111,13 @@ public class Move
     public List<VerboseEffect>? EffectEntries { get; set; }
     #endregion
 
-//    public List<>
+    #region 効果変更リスト
+    /// <summary>
+    /// 効果変更リスト
+    /// </summary>
+    [JsonPropertyName("effect_changes")]
+    public List<AbilityEffectChange>? EffectChanges { get; set; }
+    #endregion
 
     #region 習得するポケモンリスト
     /// <summary>
