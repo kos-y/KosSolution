@@ -286,6 +286,9 @@ public partial class PokeAPIViewer : Form
             nameof(EndPoint.Regions) =>
                 new NamedAPIResourceListForm(eca, typeof(RegionInfoForm)),
 
+            nameof(EndPoint.Machines) =>
+                new APIResourceListForm(eca, typeof(MachineInfoForm)),
+
             _ => null,
         };
     }
