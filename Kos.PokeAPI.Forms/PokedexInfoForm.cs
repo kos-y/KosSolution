@@ -30,9 +30,34 @@ public partial class PokedexInfoForm : Form
     }
     #endregion
 
-    #region Descriptions DataGridView CellClick
+    #region 地域 詳細 クリック
     /// <summary>
-    /// Descriptions DataGridView CellClick
+    /// 地域 詳細 クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void RegionDetailButton_Click(object sender, EventArgs e)
+    {
+        if (RegionDetailButton.Tag is null) {
+            return;
+        }
+
+        if (RegionDetailButton.Tag is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using RegionInfoForm form = new RegionInfoForm(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 説明 セルクリック
+    /// <summary>
+    /// 説明 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -50,18 +75,14 @@ public partial class PokedexInfoForm : Form
             return;
         }
 
-        if (desc?.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(desc.Language.Url);
+        using DescriptionInfoForm form = new(desc);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Descriptions DataGridView CellDoubleClick
+    #region 説明 セルダブルクリック
     /// <summary>
-    /// Descriptions DataGridView CellDoubleClick
+    /// 説明 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -75,18 +96,14 @@ public partial class PokedexInfoForm : Form
             return;
         }
 
-        if (desc?.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(desc.Language.Url);
+        using DescriptionInfoForm form = new DescriptionInfoForm(desc);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region names DataGridView CellClick
+    #region 言語ごとの名前 セルクリック
     /// <summary>
-    /// names DataGridView CellClick
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -104,18 +121,14 @@ public partial class PokedexInfoForm : Form
             return;
         }
 
-        if (name?.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm languageInfoForm = new(name.Language.Url);
-        _ = languageInfoForm.ShowDialog();
+        using NameInfoForm form = new NameInfoForm(name);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region names DataGridView CellDoubleClick
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
-    /// names DataGridView CellDoubleClick
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -129,18 +142,14 @@ public partial class PokedexInfoForm : Form
             return;
         }
 
-        if (name?.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm languageInfoForm = new(name.Language.Url);
-        _ = languageInfoForm.ShowDialog();
+        using NameInfoForm form = new(name);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region version_group DataGridView CellClick
+    #region バージョングループ セルクリック
     /// <summary>
-    /// version_group DataGridView CellClick
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -167,9 +176,9 @@ public partial class PokedexInfoForm : Form
     }
     #endregion
 
-    #region version_group DataGridView CellDoubleClick
+    #region バージョングループ セルダブルクリック
     /// <summary>
-    /// version_group DataGridView CellDoubleClick
+    /// バージョングループ セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -193,9 +202,9 @@ public partial class PokedexInfoForm : Form
     }
     #endregion
 
-    #region Close Click
+    #region 閉じる クリック
     /// <summary>
-    /// Close Click
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -217,17 +226,17 @@ public partial class PokedexInfoForm : Form
             return;
         }
 
-        IdLabel.Text = $"{p.Id}";
-        NameLabel.Text = p.Name ?? string.Empty;
-        IsMainSeriesLabel.Text = $"{p.IsMainSeries}";
+        IdTextBox.Text = $"{p.Id}";
+        NameTextBox.Text = p.Name ?? string.Empty;
+        IsMainSeriesTextBox.Text = $"{p.IsMainSeries}";
+        RegionTextBox.Text = p.Region?.Name ?? string.Empty;
+        RegionDetailButton.Tag = p.Region;
         DescriptionsDataGridView.AutoGenerateColumns = false;
         DescriptionsDataGridView.DataSource = p.Descriptions;
         NamesDataGridView.AutoGenerateColumns = false;
         NamesDataGridView.DataSource = p.Names;
         PokemonEntriesDataGridView.AutoGenerateColumns = false;
         PokemonEntriesDataGridView.DataSource = p.PokemonEntries;
-        RegionLabel.Text = p.Region?.Name ?? string.Empty;
-        RegionInfoButton.Tag = p.Region;
         VersionGroupDataGridView.AutoGenerateColumns = false;
         VersionGroupDataGridView.DataSource = p.VersionGroups;
     }

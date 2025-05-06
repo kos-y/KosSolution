@@ -27,12 +27,9 @@ partial class PokedexInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        NameLabel = new Label();
         NameCaptionLabel = new Label();
-        IdLabel = new Label();
         IdCaptionLabel = new Label();
         IsMainSeriesCaptionLabel = new Label();
-        IsMainSeriesLabel = new Label();
         DescriptionsDataGridView = new DataGridView();
         DescriptionColumn = new DataGridViewTextBoxColumn();
         EffectLanguageColumn = new DataGridViewTextBoxColumn();
@@ -48,316 +45,344 @@ partial class PokedexInfoForm
         PokemonSpeciesColumn = new DataGridViewTextBoxColumn();
         PokemonSpeciesInfoColumn = new DataGridViewButtonColumn();
         PokemonEntriesCaptionLabel = new Label();
-        RegionLabel = new Label();
         RegionCaptionLabel = new Label();
-        RegionInfoButton = new Button();
+        RegionDetailButton = new Button();
         VersionGroupDataGridView = new DataGridView();
         dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn4 = new DataGridViewButtonColumn();
         VersionGroupCaptionLabel = new Label();
         CloseButton = new Button();
+        NameTextBox = new TextBox();
+        IdTextBox = new TextBox();
+        IsMainSeriesTextBox = new TextBox();
+        RegionTextBox = new TextBox();
         ((System.ComponentModel.ISupportInitialize)DescriptionsDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)PokemonEntriesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)VersionGroupDataGridView).BeginInit();
         SuspendLayout();
         // 
-        // NameLabel
-        // 
-        NameLabel.BorderStyle = BorderStyle.Fixed3D;
-        NameLabel.Location = new Point(171, 36);
-        NameLabel.Margin = new Padding(4, 0, 4, 0);
-        NameLabel.Name = "NameLabel";
-        NameLabel.Size = new Size(189, 26);
-        NameLabel.TabIndex = 3;
-        NameLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // NameCaptionLabel
         // 
-        NameCaptionLabel.Location = new Point(15, 36);
+        NameCaptionLabel.AutoSize = true;
+        NameCaptionLabel.Location = new Point(47, 49);
         NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(148, 26);
+        NameCaptionLabel.Size = new Size(88, 17);
         NameCaptionLabel.TabIndex = 2;
-        NameCaptionLabel.Text = "name";
+        NameCaptionLabel.Text = "ポケモン図鑑名";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // IdLabel
-        // 
-        IdLabel.BorderStyle = BorderStyle.Fixed3D;
-        IdLabel.Location = new Point(171, 10);
-        IdLabel.Margin = new Padding(4, 0, 4, 0);
-        IdLabel.Name = "IdLabel";
-        IdLabel.Size = new Size(189, 26);
-        IdLabel.TabIndex = 1;
-        IdLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
-        IdCaptionLabel.Location = new Point(15, 10);
+        IdCaptionLabel.AutoSize = true;
+        IdCaptionLabel.Location = new Point(43, 15);
         IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(148, 26);
+        IdCaptionLabel.Size = new Size(92, 17);
         IdCaptionLabel.TabIndex = 0;
-        IdCaptionLabel.Text = "id";
+        IdCaptionLabel.Text = "ポケモン図鑑ID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IsMainSeriesCaptionLabel
         // 
-        IsMainSeriesCaptionLabel.Location = new Point(15, 62);
+        IsMainSeriesCaptionLabel.AutoSize = true;
+        IsMainSeriesCaptionLabel.Location = new Point(13, 83);
         IsMainSeriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IsMainSeriesCaptionLabel.Name = "IsMainSeriesCaptionLabel";
-        IsMainSeriesCaptionLabel.Size = new Size(148, 26);
+        IsMainSeriesCaptionLabel.Size = new Size(122, 17);
         IsMainSeriesCaptionLabel.TabIndex = 4;
-        IsMainSeriesCaptionLabel.Text = "is_main_series";
+        IsMainSeriesCaptionLabel.Text = "メインシリーズかどうか";
         IsMainSeriesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // IsMainSeriesLabel
-        // 
-        IsMainSeriesLabel.BorderStyle = BorderStyle.Fixed3D;
-        IsMainSeriesLabel.Location = new Point(171, 62);
-        IsMainSeriesLabel.Margin = new Padding(4, 0, 4, 0);
-        IsMainSeriesLabel.Name = "IsMainSeriesLabel";
-        IsMainSeriesLabel.Size = new Size(189, 26);
-        IsMainSeriesLabel.TabIndex = 5;
-        IsMainSeriesLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // DescriptionsDataGridView
         // 
         DescriptionsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         DescriptionsDataGridView.Columns.AddRange(new DataGridViewColumn[] { DescriptionColumn, EffectLanguageColumn, EffectLanguageInfoButtonColumn });
-        DescriptionsDataGridView.Location = new Point(171, 92);
+        DescriptionsDataGridView.Location = new Point(17, 172);
         DescriptionsDataGridView.Margin = new Padding(4, 3, 4, 3);
         DescriptionsDataGridView.Name = "DescriptionsDataGridView";
         DescriptionsDataGridView.RowHeadersVisible = false;
-        DescriptionsDataGridView.Size = new Size(864, 170);
-        DescriptionsDataGridView.TabIndex = 7;
+        DescriptionsDataGridView.Size = new Size(788, 170);
+        DescriptionsDataGridView.TabIndex = 10;
         DescriptionsDataGridView.CellClick += DescriptionsDataGridView_CellClick;
         DescriptionsDataGridView.CellDoubleClick += DescriptionsDataGridView_CellDoubleClick;
         // 
         // DescriptionColumn
         // 
+        DescriptionColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         DescriptionColumn.DataPropertyName = "Text";
-        DescriptionColumn.HeaderText = "description";
+        DescriptionColumn.HeaderText = "説明";
         DescriptionColumn.Name = "DescriptionColumn";
         DescriptionColumn.ReadOnly = true;
-        DescriptionColumn.Width = 450;
+        DescriptionColumn.Width = 59;
         // 
         // EffectLanguageColumn
         // 
+        EffectLanguageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         EffectLanguageColumn.DataPropertyName = "Language";
-        EffectLanguageColumn.HeaderText = "language";
+        EffectLanguageColumn.HeaderText = "言語";
         EffectLanguageColumn.Name = "EffectLanguageColumn";
         EffectLanguageColumn.ReadOnly = true;
+        EffectLanguageColumn.Width = 59;
         // 
         // EffectLanguageInfoButtonColumn
         // 
-        EffectLanguageInfoButtonColumn.HeaderText = "LanguageInfo";
+        EffectLanguageInfoButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        EffectLanguageInfoButtonColumn.HeaderText = "詳細";
         EffectLanguageInfoButtonColumn.Name = "EffectLanguageInfoButtonColumn";
-        EffectLanguageInfoButtonColumn.Text = "Info..";
+        EffectLanguageInfoButtonColumn.Text = "詳細";
         EffectLanguageInfoButtonColumn.UseColumnTextForButtonValue = true;
+        EffectLanguageInfoButtonColumn.Width = 40;
         // 
         // DescriptionsCaptionLabel
         // 
-        DescriptionsCaptionLabel.Location = new Point(15, 92);
+        DescriptionsCaptionLabel.AutoSize = true;
+        DescriptionsCaptionLabel.Location = new Point(17, 152);
         DescriptionsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         DescriptionsCaptionLabel.Name = "DescriptionsCaptionLabel";
-        DescriptionsCaptionLabel.Size = new Size(148, 26);
-        DescriptionsCaptionLabel.TabIndex = 6;
-        DescriptionsCaptionLabel.Text = "descriptions";
+        DescriptionsCaptionLabel.Size = new Size(34, 17);
+        DescriptionsCaptionLabel.TabIndex = 9;
+        DescriptionsCaptionLabel.Text = "説明";
         DescriptionsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NamesDataGridView
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(171, 269);
+        NamesDataGridView.Location = new Point(15, 376);
         NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(859, 170);
-        NamesDataGridView.TabIndex = 9;
+        NamesDataGridView.Size = new Size(352, 170);
+        NamesDataGridView.TabIndex = 12;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
         // NameColumn
         // 
+        NameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         NameColumn.DataPropertyName = "Text";
-        NameColumn.HeaderText = "name";
+        NameColumn.HeaderText = "名前";
         NameColumn.Name = "NameColumn";
         NameColumn.ReadOnly = true;
+        NameColumn.Width = 59;
         // 
         // LanguageColumn
         // 
+        LanguageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         LanguageColumn.DataPropertyName = "Language";
-        LanguageColumn.HeaderText = "language";
+        LanguageColumn.HeaderText = "言語";
         LanguageColumn.Name = "LanguageColumn";
         LanguageColumn.ReadOnly = true;
+        LanguageColumn.Width = 59;
         // 
         // DetailColumn
         // 
-        DetailColumn.HeaderText = "Info";
+        DetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        DetailColumn.HeaderText = "詳細";
         DetailColumn.Name = "DetailColumn";
-        DetailColumn.Text = "Info..";
+        DetailColumn.Text = "詳細";
         DetailColumn.UseColumnTextForButtonValue = true;
+        DetailColumn.Width = 40;
         // 
         // NamesCaptionLabel
         // 
-        NamesCaptionLabel.Location = new Point(15, 269);
+        NamesCaptionLabel.AutoSize = true;
+        NamesCaptionLabel.Location = new Point(17, 356);
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
-        NamesCaptionLabel.Size = new Size(148, 26);
-        NamesCaptionLabel.TabIndex = 8;
-        NamesCaptionLabel.Text = "names";
+        NamesCaptionLabel.Size = new Size(92, 17);
+        NamesCaptionLabel.TabIndex = 11;
+        NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // PokemonEntriesDataGridView
         // 
         PokemonEntriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         PokemonEntriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { EntryNumberColumn, PokemonSpeciesColumn, PokemonSpeciesInfoColumn });
-        PokemonEntriesDataGridView.Location = new Point(171, 445);
+        PokemonEntriesDataGridView.Location = new Point(373, 376);
         PokemonEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         PokemonEntriesDataGridView.Name = "PokemonEntriesDataGridView";
         PokemonEntriesDataGridView.RowHeadersVisible = false;
-        PokemonEntriesDataGridView.Size = new Size(859, 170);
-        PokemonEntriesDataGridView.TabIndex = 11;
+        PokemonEntriesDataGridView.Size = new Size(432, 372);
+        PokemonEntriesDataGridView.TabIndex = 16;
         // 
         // EntryNumberColumn
         // 
+        EntryNumberColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         EntryNumberColumn.DataPropertyName = "EntryNumber";
-        EntryNumberColumn.HeaderText = "entry_number";
+        EntryNumberColumn.HeaderText = "No.";
         EntryNumberColumn.Name = "EntryNumberColumn";
         EntryNumberColumn.ReadOnly = true;
+        EntryNumberColumn.Width = 57;
         // 
         // PokemonSpeciesColumn
         // 
+        PokemonSpeciesColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         PokemonSpeciesColumn.DataPropertyName = "PokemonSpecies";
-        PokemonSpeciesColumn.HeaderText = "pokemon_species";
+        PokemonSpeciesColumn.HeaderText = "ポケモン種族";
         PokemonSpeciesColumn.Name = "PokemonSpeciesColumn";
         PokemonSpeciesColumn.ReadOnly = true;
         // 
         // PokemonSpeciesInfoColumn
         // 
-        PokemonSpeciesInfoColumn.HeaderText = "Info";
+        PokemonSpeciesInfoColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        PokemonSpeciesInfoColumn.HeaderText = "詳細";
         PokemonSpeciesInfoColumn.Name = "PokemonSpeciesInfoColumn";
-        PokemonSpeciesInfoColumn.Text = "Info..";
+        PokemonSpeciesInfoColumn.Text = "詳細";
         PokemonSpeciesInfoColumn.UseColumnTextForButtonValue = true;
+        PokemonSpeciesInfoColumn.Width = 40;
         // 
         // PokemonEntriesCaptionLabel
         // 
-        PokemonEntriesCaptionLabel.Location = new Point(15, 445);
+        PokemonEntriesCaptionLabel.AutoSize = true;
+        PokemonEntriesCaptionLabel.Location = new Point(373, 356);
         PokemonEntriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         PokemonEntriesCaptionLabel.Name = "PokemonEntriesCaptionLabel";
-        PokemonEntriesCaptionLabel.Size = new Size(148, 26);
-        PokemonEntriesCaptionLabel.TabIndex = 10;
-        PokemonEntriesCaptionLabel.Text = "pokemon_entries";
+        PokemonEntriesCaptionLabel.Size = new Size(99, 17);
+        PokemonEntriesCaptionLabel.TabIndex = 15;
+        PokemonEntriesCaptionLabel.Text = "ポケモンエントリー";
         PokemonEntriesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // RegionLabel
-        // 
-        RegionLabel.BorderStyle = BorderStyle.Fixed3D;
-        RegionLabel.Location = new Point(171, 619);
-        RegionLabel.Margin = new Padding(4, 0, 4, 0);
-        RegionLabel.Name = "RegionLabel";
-        RegionLabel.Size = new Size(189, 26);
-        RegionLabel.TabIndex = 13;
-        RegionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // RegionCaptionLabel
         // 
-        RegionCaptionLabel.Location = new Point(15, 619);
+        RegionCaptionLabel.AutoSize = true;
+        RegionCaptionLabel.Location = new Point(101, 117);
         RegionCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         RegionCaptionLabel.Name = "RegionCaptionLabel";
-        RegionCaptionLabel.Size = new Size(148, 26);
-        RegionCaptionLabel.TabIndex = 12;
-        RegionCaptionLabel.Text = "region";
+        RegionCaptionLabel.Size = new Size(34, 17);
+        RegionCaptionLabel.TabIndex = 6;
+        RegionCaptionLabel.Text = "地域";
         RegionCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // RegionInfoButton
+        // RegionDetailButton
         // 
-        RegionInfoButton.Location = new Point(368, 619);
-        RegionInfoButton.Margin = new Padding(4, 3, 4, 3);
-        RegionInfoButton.Name = "RegionInfoButton";
-        RegionInfoButton.Size = new Size(55, 26);
-        RegionInfoButton.TabIndex = 14;
-        RegionInfoButton.Text = "Info...";
-        RegionInfoButton.UseVisualStyleBackColor = true;
+        RegionDetailButton.Location = new Point(299, 112);
+        RegionDetailButton.Margin = new Padding(4, 3, 4, 3);
+        RegionDetailButton.Name = "RegionDetailButton";
+        RegionDetailButton.Size = new Size(55, 26);
+        RegionDetailButton.TabIndex = 8;
+        RegionDetailButton.Text = "詳細";
+        RegionDetailButton.UseVisualStyleBackColor = true;
+        RegionDetailButton.Click += RegionDetailButton_Click;
         // 
         // VersionGroupDataGridView
         // 
         VersionGroupDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         VersionGroupDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewButtonColumn4 });
-        VersionGroupDataGridView.Location = new Point(171, 648);
+        VersionGroupDataGridView.Location = new Point(15, 578);
         VersionGroupDataGridView.Margin = new Padding(4, 3, 4, 3);
         VersionGroupDataGridView.Name = "VersionGroupDataGridView";
         VersionGroupDataGridView.RowHeadersVisible = false;
-        VersionGroupDataGridView.Size = new Size(558, 170);
-        VersionGroupDataGridView.TabIndex = 16;
+        VersionGroupDataGridView.Size = new Size(350, 170);
+        VersionGroupDataGridView.TabIndex = 14;
         VersionGroupDataGridView.CellClick += VersionGroupDataGridView_CellClick;
         VersionGroupDataGridView.CellDoubleClick += VersionGroupDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn4
         // 
+        dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewTextBoxColumn4.DataPropertyName = "Name";
-        dataGridViewTextBoxColumn4.HeaderText = "name";
+        dataGridViewTextBoxColumn4.HeaderText = "バージョングループ";
         dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
         dataGridViewTextBoxColumn4.ReadOnly = true;
+        dataGridViewTextBoxColumn4.Width = 88;
         // 
         // dataGridViewButtonColumn4
         // 
-        dataGridViewButtonColumn4.HeaderText = "Info";
+        dataGridViewButtonColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn4.HeaderText = "詳細";
         dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
-        dataGridViewButtonColumn4.Text = "Info..";
+        dataGridViewButtonColumn4.Text = "詳細";
         dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn4.Width = 36;
         // 
         // VersionGroupCaptionLabel
         // 
-        VersionGroupCaptionLabel.Location = new Point(15, 648);
+        VersionGroupCaptionLabel.AutoSize = true;
+        VersionGroupCaptionLabel.Location = new Point(13, 558);
         VersionGroupCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         VersionGroupCaptionLabel.Name = "VersionGroupCaptionLabel";
-        VersionGroupCaptionLabel.Size = new Size(148, 26);
-        VersionGroupCaptionLabel.TabIndex = 15;
-        VersionGroupCaptionLabel.Text = "version_group";
+        VersionGroupCaptionLabel.Size = new Size(104, 17);
+        VersionGroupCaptionLabel.TabIndex = 13;
+        VersionGroupCaptionLabel.Text = "バージョングループ";
         VersionGroupCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(933, 792);
+        CloseButton.Location = new Point(732, 754);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(96, 26);
+        CloseButton.Size = new Size(73, 40);
         CloseButton.TabIndex = 17;
-        CloseButton.Text = "Close";
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // NameTextBox
+        // 
+        NameTextBox.Location = new Point(143, 45);
+        NameTextBox.Margin = new Padding(4, 3, 4, 3);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.ReadOnly = true;
+        NameTextBox.Size = new Size(148, 24);
+        NameTextBox.TabIndex = 3;
+        // 
+        // IdTextBox
+        // 
+        IdTextBox.Location = new Point(143, 15);
+        IdTextBox.Margin = new Padding(4, 3, 4, 3);
+        IdTextBox.Name = "IdTextBox";
+        IdTextBox.ReadOnly = true;
+        IdTextBox.Size = new Size(148, 24);
+        IdTextBox.TabIndex = 1;
+        // 
+        // IsMainSeriesTextBox
+        // 
+        IsMainSeriesTextBox.Location = new Point(143, 80);
+        IsMainSeriesTextBox.Margin = new Padding(4, 3, 4, 3);
+        IsMainSeriesTextBox.Name = "IsMainSeriesTextBox";
+        IsMainSeriesTextBox.ReadOnly = true;
+        IsMainSeriesTextBox.Size = new Size(148, 24);
+        IsMainSeriesTextBox.TabIndex = 5;
+        // 
+        // RegionTextBox
+        // 
+        RegionTextBox.Location = new Point(143, 114);
+        RegionTextBox.Margin = new Padding(4, 3, 4, 3);
+        RegionTextBox.Name = "RegionTextBox";
+        RegionTextBox.ReadOnly = true;
+        RegionTextBox.Size = new Size(148, 24);
+        RegionTextBox.TabIndex = 7;
         // 
         // PokedexInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1045, 839);
+        ClientSize = new Size(819, 806);
+        Controls.Add(RegionTextBox);
+        Controls.Add(IsMainSeriesTextBox);
+        Controls.Add(NameTextBox);
+        Controls.Add(IdTextBox);
         Controls.Add(CloseButton);
         Controls.Add(VersionGroupCaptionLabel);
         Controls.Add(VersionGroupDataGridView);
-        Controls.Add(RegionInfoButton);
+        Controls.Add(RegionDetailButton);
         Controls.Add(RegionCaptionLabel);
-        Controls.Add(RegionLabel);
         Controls.Add(PokemonEntriesCaptionLabel);
         Controls.Add(PokemonEntriesDataGridView);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
         Controls.Add(DescriptionsCaptionLabel);
         Controls.Add(DescriptionsDataGridView);
-        Controls.Add(IsMainSeriesLabel);
         Controls.Add(IsMainSeriesCaptionLabel);
-        Controls.Add(NameLabel);
         Controls.Add(NameCaptionLabel);
-        Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
-        MinimizeBox = false;
+        MaximizeBox = false;
         Name = "PokedexInfoForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "ポケモン図鑑";
@@ -366,37 +391,37 @@ partial class PokedexInfoForm
         ((System.ComponentModel.ISupportInitialize)PokemonEntriesDataGridView).EndInit();
         ((System.ComponentModel.ISupportInitialize)VersionGroupDataGridView).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
-
-    private Label NameLabel;
     private Label NameCaptionLabel;
-    private Label IdLabel;
     private Label IdCaptionLabel;
     private Label IsMainSeriesCaptionLabel;
-    private Label IsMainSeriesLabel;
     private DataGridView DescriptionsDataGridView;
-    private DataGridViewTextBoxColumn DescriptionColumn;
-    private DataGridViewTextBoxColumn EffectLanguageColumn;
-    private DataGridViewButtonColumn EffectLanguageInfoButtonColumn;
     private Label DescriptionsCaptionLabel;
     private DataGridView NamesDataGridView;
-    private DataGridViewTextBoxColumn NameColumn;
-    private DataGridViewTextBoxColumn LanguageColumn;
-    private DataGridViewButtonColumn DetailColumn;
     private Label NamesCaptionLabel;
     private DataGridView PokemonEntriesDataGridView;
     private Label PokemonEntriesCaptionLabel;
+    private Label RegionCaptionLabel;
+    private Button RegionDetailButton;
+    private DataGridView VersionGroupDataGridView;
+    private Label VersionGroupCaptionLabel;
+    private Button CloseButton;
+    private DataGridViewTextBoxColumn DescriptionColumn;
+    private DataGridViewTextBoxColumn EffectLanguageColumn;
+    private DataGridViewButtonColumn EffectLanguageInfoButtonColumn;
+    private DataGridViewTextBoxColumn NameColumn;
+    private DataGridViewTextBoxColumn LanguageColumn;
+    private DataGridViewButtonColumn DetailColumn;
+    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+    private DataGridViewButtonColumn dataGridViewButtonColumn4;
     private DataGridViewTextBoxColumn EntryNumberColumn;
     private DataGridViewTextBoxColumn PokemonSpeciesColumn;
     private DataGridViewButtonColumn PokemonSpeciesInfoColumn;
-    private Label RegionLabel;
-    private Label RegionCaptionLabel;
-    private Button RegionInfoButton;
-    private DataGridView VersionGroupDataGridView;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-    private DataGridViewButtonColumn dataGridViewButtonColumn4;
-    private Label VersionGroupCaptionLabel;
-    private Button CloseButton;
+    private TextBox NameTextBox;
+    private TextBox IdTextBox;
+    private TextBox IsMainSeriesTextBox;
+    private TextBox RegionTextBox;
 }
