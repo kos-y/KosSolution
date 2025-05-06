@@ -418,6 +418,8 @@ partial class ItemInfoForm
         MachinesDataGridView.RowHeadersVisible = false;
         MachinesDataGridView.Size = new Size(342, 170);
         MachinesDataGridView.TabIndex = 19;
+        MachinesDataGridView.CellClick += MachinesDataGridView_CellClick;
+        MachinesDataGridView.CellDoubleClick += MachinesDataGridView_CellDoubleClick;
         // 
         // MachineVersionGroupColumn
         // 

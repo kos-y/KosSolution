@@ -275,6 +275,52 @@ public partial class ItemInfoForm : Form
     }
     #endregion
 
+    #region 技マシン セルクリック
+    /// <summary>
+    /// 技マシン セルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void MachinesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (MachinesDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+            return;
+        }
+
+        if (MachinesDataGridView.Rows[e.RowIndex].DataBoundItem is not MachineVersionDetail mvd) {
+            return;
+        }
+
+        using MachineVersionDetailInfoForm form = new(mvd);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 技マシン セルダブルクリック
+    /// <summary>
+    /// 技マシン セルダブルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void MachinesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0) {
+            return;
+        }
+
+        if (MachinesDataGridView.Rows[e.RowIndex].DataBoundItem is not MachineVersionDetail mvd) {
+            return;
+        }
+
+        using MachineVersionDetailInfoForm form = new(mvd);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 効果 セルクリック
     /// <summary>
     /// 効果 セルクリック
