@@ -210,7 +210,7 @@ partial class ItemInfoForm
         MachinesCaptionLabel.Name = "MachinesCaptionLabel";
         MachinesCaptionLabel.Size = new Size(150, 26);
         MachinesCaptionLabel.TabIndex = 18;
-        MachinesCaptionLabel.Text = "machines";
+        MachinesCaptionLabel.Text = "技マシン";
         MachinesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // AttributesDataGridView

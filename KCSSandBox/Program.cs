@@ -8,22 +8,5 @@ internal class Program
 {
     static void Main()
     {
-#if true
-        KNamedAPIResourceList apiList = KPokeAPI.GetLocationAreas();
-        foreach (KNamedAPIResource api in apiList.Results) {
-            var r = KLocationArea.GetResource(api.URL);
-            Console.WriteLine(r.Name);
-            foreach (var e in r.Names) {
-                Console.WriteLine($"{e.Language.Name} - {e.Name}");
-            }
-            Console.WriteLine();
-        }
-#else
-       KAPIResourceList apiList = KPokeAPI.GetEvolutionChains();
-        foreach (KAPIResource api in apiList.Results) {
-            KEvolutionChain r = KEvolutionChain.GetEvolutionChain(api.URL);
-            Console.WriteLine(r.Chain.Species.Name);
-        }
- #endif
     }
 }

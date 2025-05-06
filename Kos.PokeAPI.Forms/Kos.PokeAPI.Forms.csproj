@@ -18,6 +18,7 @@
     <ProjectReference Include="..\Kos.PokeAPI.Items\Kos.PokeAPI.Items.csproj" />
     <ProjectReference Include="..\Kos.PokeAPI.Locations\Kos.PokeAPI.Locations.csproj" />
     <ProjectReference Include="..\Kos.PokeAPI.Machines\Kos.PokeAPI.Machines.csproj" />
+    <ProjectReference Include="..\Kos.PokeAPI.Moves\Kos.PokeAPI.Moves.csproj" />
     <ProjectReference Include="..\Kos.PokeAPI.ResourceLists\Kos.PokeAPI.ResourceLists.csproj" />
     <ProjectReference Include="..\Kos.PokeAPI.Utility\Kos.PokeAPI.Utility.csproj" />
     <ProjectReference Include="..\Kos.PokeAPI\Kos.PokeAPI.csproj" />

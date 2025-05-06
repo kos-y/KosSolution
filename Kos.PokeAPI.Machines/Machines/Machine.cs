@@ -57,5 +57,4 @@ public class Machine
         return JsonSerializer.Deserialize<Machine>(json);
     }
     #endregion
-
 }
