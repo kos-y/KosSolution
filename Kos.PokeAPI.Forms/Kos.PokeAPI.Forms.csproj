@@ -10,17 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Kos.Core.Forms\Kos.Core.Forms.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Berries\Kos.PokeAPI.Berries.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Contests\Kos.PokeAPI.Contests.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Encounters\Kos.PokeAPI.Encounters.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Evolution\Kos.PokeAPI.Evolution.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Games\Kos.PokeAPI.Games.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Items\Kos.PokeAPI.Items.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Locations\Kos.PokeAPI.Locations.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Machines\Kos.PokeAPI.Machines.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Moves\Kos.PokeAPI.Moves.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.ResourceLists\Kos.PokeAPI.ResourceLists.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Utility\Kos.PokeAPI.Utility.csproj" />
     <ProjectReference Include="..\Kos.PokeAPI\Kos.PokeAPI.csproj" />
   </ItemGroup>
 

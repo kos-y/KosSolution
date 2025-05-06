@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
+using Kos.PokeAPI;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Machines.Machines;

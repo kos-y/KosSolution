@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Kos.Core.WPF\Kos.Core.WPF.csproj" />
-    <ProjectReference Include="..\Kos.PokeAPI.Utility\Kos.PokeAPI.Utility.csproj" />
+    <ProjectReference Include="..\Kos.PokeAPI\Kos.PokeAPI.csproj" />
   </ItemGroup>
 
 </Project>
