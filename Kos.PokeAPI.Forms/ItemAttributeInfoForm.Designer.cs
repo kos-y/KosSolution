@@ -219,10 +219,10 @@ partial class ItemAttributeInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(643, 465);
+        CloseButton.Location = new Point(653, 465);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(96, 52);
+        CloseButton.Size = new Size(86, 36);
         CloseButton.TabIndex = 10;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -248,7 +248,7 @@ partial class ItemAttributeInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(756, 524);
+        ClientSize = new Size(756, 519);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
         Controls.Add(CloseButton);

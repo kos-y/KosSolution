@@ -1,4 +1,9 @@
-﻿using Kos.Core;
+﻿using System;
+using System.Net;
+using System.Net.Http.Headers;
+using System.Reflection.Metadata.Ecma335;
+using System.Threading.Tasks;
+using Kos.Core;
 
 namespace Kos.PokeAPI;
 
@@ -8,6 +13,11 @@ namespace Kos.PokeAPI;
 public class PokeAPIClient
 {
     // メソッド
+
+    static PokeAPIClient()
+    {
+        Singleton<HttpClient>.Instance.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+    }
 
     #region APIリソースリストのJSON文字列を取得
     /// <summary>
@@ -19,7 +29,24 @@ public class PokeAPIClient
     {
         HttpClient client = Singleton<HttpClient>.Instance;
 
-        return client.GetStringAsync($"https://pokeapi.co/api/v2/{endPoint}/").Result;
+        for (int i = 0; i < 5; i++) {
+            Task<HttpResponseMessage> t = client.GetAsync($"https://pokeapi.co/api/v2/{endPoint}/");
+            t.Wait();
+
+            // 成功でコンテンツが空ならリトライ
+            if (t.Result.StatusCode == HttpStatusCode.OK) {
+                if (t.Result.Content.Headers.ContentLength <= 0) {
+                    continue;
+                }
+
+                return t.Result.Content.ReadAsStringAsync().Result;
+            }
+
+            // 一応リトライ
+            continue;
+        }
+
+        throw new Exception("5回連続失敗");
     }
     #endregion
 
@@ -38,7 +65,24 @@ public class PokeAPIClient
 
         HttpClient client = Singleton<HttpClient>.Instance;
 
-        return client.GetStringAsync(url).Result;
+        for (int i = 0; i < 5; i++) {
+            Task<HttpResponseMessage> t = client.GetAsync(url);
+            t.Wait();
+
+            // 成功でコンテンツが空ならリトライ
+            if (t.Result.StatusCode == HttpStatusCode.OK) {
+                if (t.Result.Content.Headers.ContentLength <= 0) {
+                    continue;
+                }
+
+                return t.Result.Content.ReadAsStringAsync().Result;
+            }
+
+            // 一応リトライ
+            continue;
+        }
+
+        throw new Exception("5回連続失敗");
     }
     #endregion
 }
