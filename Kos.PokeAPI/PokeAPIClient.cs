@@ -14,10 +14,18 @@ public class PokeAPIClient
 {
     // メソッド
 
+    #region コンストラクタ
+    /// <summary>
+    /// コンストラクタ
+    /// </summary>
     static PokeAPIClient()
     {
-        Singleton<HttpClient>.Instance.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        Singleton<HttpClient>.Instance
+                             .DefaultRequestHeaders
+                             .Accept
+                             .Add(new MediaTypeWithQualityHeaderValue("application/json"));
     }
+    #endregion
 
     #region APIリソースリストのJSON文字列を取得
     /// <summary>
