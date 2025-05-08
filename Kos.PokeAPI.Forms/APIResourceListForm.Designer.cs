@@ -42,87 +42,91 @@ partial class APIResourceListForm
         APIResourceListDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         APIResourceListDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         APIResourceListDataGridView.Columns.AddRange(new DataGridViewColumn[] { UrlColumn, InfoColumn });
-        APIResourceListDataGridView.Location = new Point(12, 12);
+        APIResourceListDataGridView.Location = new Point(14, 12);
         APIResourceListDataGridView.Name = "APIResourceListDataGridView";
         APIResourceListDataGridView.RowHeadersVisible = false;
-        APIResourceListDataGridView.Size = new Size(776, 386);
+        APIResourceListDataGridView.Size = new Size(887, 386);
         APIResourceListDataGridView.TabIndex = 0;
         APIResourceListDataGridView.CellClick += APIResourceListDataGridView_CellClick;
         APIResourceListDataGridView.CellDoubleClick += APIResourceListDataGridView_CellDoubleClick;
         // 
         // UrlColumn
         // 
+        UrlColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         UrlColumn.DataPropertyName = "Url";
-        UrlColumn.HeaderText = "url";
+        UrlColumn.HeaderText = "URL";
         UrlColumn.Name = "UrlColumn";
         UrlColumn.ReadOnly = true;
-        UrlColumn.Width = 600;
+        UrlColumn.Width = 57;
         // 
         // InfoColumn
         // 
-        InfoColumn.HeaderText = "Info";
+        InfoColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        InfoColumn.HeaderText = "詳細";
         InfoColumn.Name = "InfoColumn";
-        InfoColumn.Text = "Info...";
+        InfoColumn.Text = "詳細";
         InfoColumn.UseColumnTextForButtonValue = true;
-        InfoColumn.Width = 70;
+        InfoColumn.Width = 37;
         // 
         // NextPageButton
         // 
         NextPageButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        NextPageButton.Location = new Point(93, 404);
+        NextPageButton.Location = new Point(106, 404);
         NextPageButton.Name = "NextPageButton";
-        NextPageButton.Size = new Size(75, 34);
+        NextPageButton.Size = new Size(86, 34);
         NextPageButton.TabIndex = 2;
-        NextPageButton.Text = "Next";
+        NextPageButton.Text = "次ページ";
         NextPageButton.UseVisualStyleBackColor = true;
         NextPageButton.Click += NextPageButton_Click;
         // 
         // PrevPageButton
         // 
         PrevPageButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        PrevPageButton.Location = new Point(12, 404);
+        PrevPageButton.Location = new Point(14, 404);
         PrevPageButton.Name = "PrevPageButton";
-        PrevPageButton.Size = new Size(75, 34);
+        PrevPageButton.Size = new Size(86, 34);
         PrevPageButton.TabIndex = 1;
-        PrevPageButton.Text = "Previous";
+        PrevPageButton.Text = "前ページ";
         PrevPageButton.UseVisualStyleBackColor = true;
         PrevPageButton.Click += PrevPageButton_Click;
         // 
         // OpenButton
         // 
         OpenButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        OpenButton.Location = new Point(632, 404);
+        OpenButton.Location = new Point(722, 404);
         OpenButton.Name = "OpenButton";
-        OpenButton.Size = new Size(75, 34);
+        OpenButton.Size = new Size(86, 34);
         OpenButton.TabIndex = 3;
-        OpenButton.Text = "Open";
+        OpenButton.Text = "開く";
         OpenButton.UseVisualStyleBackColor = true;
         OpenButton.Click += OpenButton_Click;
         // 
         // CloseButton
         // 
         CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        CloseButton.Location = new Point(713, 404);
+        CloseButton.Location = new Point(815, 404);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 34);
+        CloseButton.Size = new Size(86, 34);
         CloseButton.TabIndex = 4;
-        CloseButton.Text = "Close";
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
         // APIResourceListForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(8F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(800, 450);
+        ClientSize = new Size(914, 450);
         Controls.Add(NextPageButton);
         Controls.Add(PrevPageButton);
         Controls.Add(OpenButton);
         Controls.Add(CloseButton);
         Controls.Add(APIResourceListDataGridView);
+        Font = new Font("Meiryo UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         Name = "APIResourceListForm";
+        StartPosition = FormStartPosition.CenterParent;
         Text = "APIResourceList";
         Load += APIResourceListForm_Load;
         ((System.ComponentModel.ISupportInitialize)APIResourceListDataGridView).EndInit();
@@ -132,10 +136,10 @@ partial class APIResourceListForm
     #endregion
 
     private DataGridView APIResourceListDataGridView;
-    private DataGridViewTextBoxColumn UrlColumn;
-    private DataGridViewButtonColumn InfoColumn;
     private Button NextPageButton;
     private Button PrevPageButton;
     private Button OpenButton;
     private Button CloseButton;
+    private DataGridViewTextBoxColumn UrlColumn;
+    private DataGridViewButtonColumn InfoColumn;
 }

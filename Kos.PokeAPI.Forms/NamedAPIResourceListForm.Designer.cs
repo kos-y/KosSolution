@@ -41,44 +41,48 @@ partial class NamedAPIResourceListForm
         // NextPageButton
         // 
         NextPageButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        NextPageButton.Location = new Point(93, 404);
+        NextPageButton.Location = new Point(120, 458);
+        NextPageButton.Margin = new Padding(4, 3, 4, 3);
         NextPageButton.Name = "NextPageButton";
-        NextPageButton.Size = new Size(75, 34);
+        NextPageButton.Size = new Size(96, 39);
         NextPageButton.TabIndex = 7;
-        NextPageButton.Text = "Next";
+        NextPageButton.Text = "次ページ";
         NextPageButton.UseVisualStyleBackColor = true;
         NextPageButton.Click += NextPageButton_Click;
         // 
         // PrevPageButton
         // 
         PrevPageButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        PrevPageButton.Location = new Point(12, 404);
+        PrevPageButton.Location = new Point(15, 458);
+        PrevPageButton.Margin = new Padding(4, 3, 4, 3);
         PrevPageButton.Name = "PrevPageButton";
-        PrevPageButton.Size = new Size(75, 34);
+        PrevPageButton.Size = new Size(96, 39);
         PrevPageButton.TabIndex = 6;
-        PrevPageButton.Text = "Previous";
+        PrevPageButton.Text = "前ページ";
         PrevPageButton.UseVisualStyleBackColor = true;
         PrevPageButton.Click += PrevPageButton_Click;
         // 
         // OpenButton
         // 
         OpenButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        OpenButton.Location = new Point(632, 404);
+        OpenButton.Location = new Point(813, 458);
+        OpenButton.Margin = new Padding(4, 3, 4, 3);
         OpenButton.Name = "OpenButton";
-        OpenButton.Size = new Size(75, 34);
+        OpenButton.Size = new Size(96, 39);
         OpenButton.TabIndex = 8;
-        OpenButton.Text = "Open";
+        OpenButton.Text = "開く";
         OpenButton.UseVisualStyleBackColor = true;
         OpenButton.Click += OpenButton_Click;
         // 
         // CloseButton
         // 
         CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        CloseButton.Location = new Point(713, 404);
+        CloseButton.Location = new Point(917, 458);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 34);
+        CloseButton.Size = new Size(96, 39);
         CloseButton.TabIndex = 9;
-        CloseButton.Text = "Close";
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
@@ -87,49 +91,55 @@ partial class NamedAPIResourceListForm
         NamedAPIResourceListDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         NamedAPIResourceListDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamedAPIResourceListDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, UrlColumn, InfoColumn });
-        NamedAPIResourceListDataGridView.Location = new Point(12, 12);
+        NamedAPIResourceListDataGridView.Location = new Point(15, 14);
+        NamedAPIResourceListDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamedAPIResourceListDataGridView.Name = "NamedAPIResourceListDataGridView";
         NamedAPIResourceListDataGridView.RowHeadersVisible = false;
-        NamedAPIResourceListDataGridView.Size = new Size(776, 386);
+        NamedAPIResourceListDataGridView.Size = new Size(998, 437);
         NamedAPIResourceListDataGridView.TabIndex = 5;
         NamedAPIResourceListDataGridView.CellClick += NamedAPIResourceListDataGridView_CellClick;
         NamedAPIResourceListDataGridView.CellDoubleClick += NamedAPIResourceListDataGridView_CellDoubleClick;
         // 
         // NameColumn
         // 
+        NameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         NameColumn.DataPropertyName = "Name";
-        NameColumn.HeaderText = "name";
+        NameColumn.HeaderText = "名前";
         NameColumn.Name = "NameColumn";
         NameColumn.ReadOnly = true;
-        NameColumn.Width = 200;
+        NameColumn.Width = 59;
         // 
         // UrlColumn
         // 
+        UrlColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         UrlColumn.DataPropertyName = "Url";
-        UrlColumn.HeaderText = "url";
+        UrlColumn.HeaderText = "URL";
         UrlColumn.Name = "UrlColumn";
         UrlColumn.ReadOnly = true;
-        UrlColumn.Width = 450;
+        UrlColumn.Width = 61;
         // 
         // InfoColumn
         // 
-        InfoColumn.HeaderText = "Info";
+        InfoColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        InfoColumn.HeaderText = "詳細";
         InfoColumn.Name = "InfoColumn";
-        InfoColumn.Text = "Info...";
+        InfoColumn.Text = "詳細";
         InfoColumn.UseColumnTextForButtonValue = true;
-        InfoColumn.Width = 70;
+        InfoColumn.Width = 40;
         // 
         // NamedAPIResourceListForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(800, 450);
+        ClientSize = new Size(1029, 510);
         Controls.Add(NextPageButton);
         Controls.Add(PrevPageButton);
         Controls.Add(OpenButton);
         Controls.Add(CloseButton);
         Controls.Add(NamedAPIResourceListDataGridView);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "NamedAPIResourceListForm";
         Text = "NamedAPIResourceList";
