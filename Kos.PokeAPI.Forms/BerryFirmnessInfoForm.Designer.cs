@@ -41,6 +41,7 @@ partial class BerryFirmnessInfoForm
         CloseButton = new Button();
         IdTextBox = new TextBox();
         NameTextBox = new TextBox();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)BerriesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
@@ -70,7 +71,7 @@ partial class BerryFirmnessInfoForm
         // BerriesCaptionLabel
         // 
         BerriesCaptionLabel.AutoSize = true;
-        BerriesCaptionLabel.Location = new Point(67, 66);
+        BerriesCaptionLabel.Location = new Point(15, 66);
         BerriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         BerriesCaptionLabel.Name = "BerriesCaptionLabel";
         BerriesCaptionLabel.Size = new Size(41, 17);
@@ -82,11 +83,11 @@ partial class BerryFirmnessInfoForm
         // 
         BerriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         BerriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { BerriesNameColumn, BerrieDetailButtonColumn });
-        BerriesDataGridView.Location = new Point(116, 66);
+        BerriesDataGridView.Location = new Point(15, 86);
         BerriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         BerriesDataGridView.Name = "BerriesDataGridView";
         BerriesDataGridView.RowHeadersVisible = false;
-        BerriesDataGridView.Size = new Size(324, 170);
+        BerriesDataGridView.Size = new Size(291, 170);
         BerriesDataGridView.TabIndex = 5;
         BerriesDataGridView.CellClick += BerriesDataGridView_CellClick;
         BerriesDataGridView.CellDoubleClick += BerriesDataGridView_CellDoubleClick;
@@ -114,11 +115,11 @@ partial class BerryFirmnessInfoForm
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(116, 243);
+        NamesDataGridView.Location = new Point(314, 86);
         NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(324, 170);
+        NamesDataGridView.Size = new Size(296, 170);
         NamesDataGridView.TabIndex = 7;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
@@ -153,7 +154,7 @@ partial class BerryFirmnessInfoForm
         // NamesCaptionLabel
         // 
         NamesCaptionLabel.AutoSize = true;
-        NamesCaptionLabel.Location = new Point(16, 243);
+        NamesCaptionLabel.Location = new Point(314, 66);
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
         NamesCaptionLabel.Size = new Size(92, 17);
@@ -163,11 +164,11 @@ partial class BerryFirmnessInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(371, 419);
+        CloseButton.Location = new Point(534, 262);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(69, 47);
-        CloseButton.TabIndex = 8;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 9;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
@@ -177,7 +178,7 @@ partial class BerryFirmnessInfoForm
         IdTextBox.Location = new Point(115, 7);
         IdTextBox.Name = "IdTextBox";
         IdTextBox.ReadOnly = true;
-        IdTextBox.Size = new Size(324, 24);
+        IdTextBox.Size = new Size(117, 24);
         IdTextBox.TabIndex = 1;
         // 
         // NameTextBox
@@ -185,14 +186,26 @@ partial class BerryFirmnessInfoForm
         NameTextBox.Location = new Point(115, 36);
         NameTextBox.Name = "NameTextBox";
         NameTextBox.ReadOnly = true;
-        NameTextBox.Size = new Size(324, 24);
+        NameTextBox.Size = new Size(117, 24);
         NameTextBox.TabIndex = 3;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(450, 262);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 8;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // BerryFirmnessInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(460, 478);
+        ClientSize = new Size(630, 316);
+        Controls.Add(PropertyButton);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
         Controls.Add(CloseButton);
@@ -231,4 +244,5 @@ partial class BerryFirmnessInfoForm
     private DataGridViewButtonColumn DetailColumn;
     private TextBox IdTextBox;
     private TextBox NameTextBox;
+    private Button PropertyButton;
 }

@@ -1,64 +1,86 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.Core;
 using Kos.PokeAPI.Berries.Berries;
+using Kos.PokeAPI.Items.Item;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Berries.BerryFirmnesses;
 
 /// <summary>
-/// 木の実の型さん
+/// きのみの固さ
 /// </summary>
 public class BerryFirmness
 {
     // フィールド
 
-    #region 木の実の固さID
+    #region きのみの硬さID
     /// <summary>
-    /// きのみの固さID
+    /// きのみの硬さID
     /// </summary>
     [JsonPropertyName("id")]
-    public required int Id { get; set; }
+    [DisplayName("id")]
+    [Category("基本")]
+    [Description("きのみの硬さID")]
+    public int? Id { get; set; }
     #endregion
 
-    #region 木の実の固さ名
+    #region きのみの硬さの名前
     /// <summary>
-    /// きのみの固さ名
+    /// きのみの硬さの名前
     /// </summary>
     [JsonPropertyName("name")]
-    public required string Name { get; set; }
+    [DisplayName("name")]
+    [Category("基本")]
+    [Description("きのみの硬さの名前")]
+    public string? Name { get; set; }
     #endregion
 
-    #region 木の実リスト
+    #region きのみリスト
     /// <summary>
     /// きのみリスト
     /// </summary>
     [JsonPropertyName("berries")]
-    public required List<NamedAPIResource> Berries { get; set; }
+    [DisplayName("berries")]
+    [Category("基本")]
+    [Description("きのみリスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    [ReadOnly(true)]
+    public IReadOnlyList<NamedAPIResource>? Berries { get; set; }
     #endregion
 
-    #region 名前リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// きのみの固さ名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public required List<Name> Names { get; set; }
+    [DisplayName("names")]
+    [Category("基本")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
+    [ReadOnly(true)]
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
 
     // メソッド
 
-    #region 木の実の固さリソースの取得
+    #region きのみの硬さリソースの取得
     /// <summary>
-    /// 木の実の固さリソースの取得
+    /// きのみの硬さリソースの取得
     /// </summary>
     /// <param name="url">URL</param>
-    /// <returns>木の実の固さリソース</returns>
-    public static BerryFirmness? GetBerryFirmness(string url)
+    /// <returns>きのみの硬さリソース</returns>
+    public static BerryFirmness? GetResource(string url)
     {
         string json = PokeAPIClient.GetAPIResourceUrl(url);
 

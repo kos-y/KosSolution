@@ -33,9 +33,10 @@ partial class Select2Form
         // 
         // Select1Button
         // 
-        Select1Button.Location = new Point(47, 30);
+        Select1Button.Location = new Point(60, 34);
+        Select1Button.Margin = new Padding(4, 3, 4, 3);
         Select1Button.Name = "Select1Button";
-        Select1Button.Size = new Size(255, 60);
+        Select1Button.Size = new Size(174, 53);
         Select1Button.TabIndex = 0;
         Select1Button.Text = "Select1";
         Select1Button.UseVisualStyleBackColor = true;
@@ -43,9 +44,10 @@ partial class Select2Form
         // 
         // Select2Button
         // 
-        Select2Button.Location = new Point(47, 117);
+        Select2Button.Location = new Point(60, 118);
+        Select2Button.Margin = new Padding(4, 3, 4, 3);
         Select2Button.Name = "Select2Button";
-        Select2Button.Size = new Size(255, 60);
+        Select2Button.Size = new Size(174, 53);
         Select2Button.TabIndex = 1;
         Select2Button.Text = "Select2";
         Select2Button.UseVisualStyleBackColor = true;
@@ -53,11 +55,13 @@ partial class Select2Form
         // 
         // Select2Form
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(351, 218);
+        ClientSize = new Size(278, 212);
         Controls.Add(Select2Button);
         Controls.Add(Select1Button);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
+        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "Select2Form";
         Text = "選択";

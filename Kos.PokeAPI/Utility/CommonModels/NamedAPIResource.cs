@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.ComponentModel;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Kos.PokeAPI.Utility.CommonModels;
@@ -6,23 +7,30 @@ namespace Kos.PokeAPI.Utility.CommonModels;
 /// <summary>
 /// 名前付き APIリソース
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class NamedAPIResource
 {
     // フィールド
 
-    #region リソース名
+    #region リソースの名前
     /// <summary>
-    /// リソース名
+    /// リソースの名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("name")]
+    [Category("基本")]
+    [Description("リソースの名前")]
     public string? Name { get; set; }
     #endregion
 
-    #region URL
+    #region リソースへのURL
     /// <summary>
-    /// URL
+    /// リソースへのURL
     /// </summary>
     [JsonPropertyName("url")]
+    [DisplayName("url")]
+    [Category("基本")]
+    [Description("リソースへのURL")]
     public string? Url { get; set; }
     #endregion
 

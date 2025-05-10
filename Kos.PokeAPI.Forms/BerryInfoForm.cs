@@ -1,3 +1,4 @@
+using Kos.Core.Forms;
 using Kos.PokeAPI.Berries.Berries;
 using Kos.PokeAPI.Berries.BerryFlavors;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -46,19 +47,19 @@ public partial class BerryInfoForm : Form
     }
     #endregion
 
-    #region きのみの硬さ 詳細 クリック
+    #region きのみの硬さ クリック
     /// <summary>
-    /// きのみの硬さ 詳細 クリック
+    /// きのみの硬さ クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void FirmnessDetailButton_Click(object sender, EventArgs e)
+    private void FirmnessButton_Click(object sender, EventArgs e)
     {
-        if (FirmnessDetailButton.Tag is null) {
+        if (FirmnessButton.Tag is null) {
             return;
         }
 
-        if (FirmnessDetailButton.Tag is not NamedAPIResource api) {
+        if (FirmnessButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -75,19 +76,19 @@ public partial class BerryInfoForm : Form
     }
     #endregion
 
-    #region アイテム 詳細 クリック
+    #region アイテム クリック
     /// <summary>
-    /// アイテム 詳細 クリック
+    /// アイテム クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ItemDetailButton_Click(object sender, EventArgs e)
+    private void ItemButton_Click(object sender, EventArgs e)
     {
-        if (ItemDetailButton.Tag is null) {
+        if (ItemButton.Tag is null) {
             return;
         }
 
-        if (ItemDetailButton.Tag is not NamedAPIResource api) {
+        if (ItemButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -112,11 +113,11 @@ public partial class BerryInfoForm : Form
             return;
         }
 
-        if (FlavorDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+        if (FlavorsDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
             return;
         }
 
-        if (FlavorDataGridView.Rows[e.RowIndex].DataBoundItem is not BerryFlavorMap bfm) {
+        if (FlavorsDataGridView.Rows[e.RowIndex].DataBoundItem is not BerryFlavorMap bfm) {
             return;
         }
 
@@ -141,7 +142,7 @@ public partial class BerryInfoForm : Form
             return;
         }
 
-        if (FlavorDataGridView.Rows[e.RowIndex].DataBoundItem is not BerryFlavorMap bfm) {
+        if (FlavorsDataGridView.Rows[e.RowIndex].DataBoundItem is not BerryFlavorMap bfm) {
             return;
         }
 
@@ -150,6 +151,19 @@ public partial class BerryInfoForm : Form
         }
 
         using BerryFlavorInfoForm form = new(bfm.Flavor.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -173,28 +187,23 @@ public partial class BerryInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        Berry? berry = Berry.GetBerry(url);
+        Berry? berry = Berry.GetResource(url);
         if (berry is null) {
             return;
         }
 
         Tag = berry;
-        IdTextBox.Text = $"{berry.Id}";
-        NameTextBox.Text = berry.Name;
-        GrowthTimeTextBox.Text = $"{berry.GrowthTime}";
-        MaxHarvestTextBox.Text = $"{berry.MaxHarvest}";
-        NaturalGiftPowerTextBox.Text = $"{berry.NaturalGiftPower}";
-        SizeTextBox.Text = $"{berry.Size}";
-        SmoothnessTextBox.Text = $"{berry.Smoothness}";
-        SoilDrynessTextBox.Text = $"{berry.SoilDryness}";
-        FirmnessTextBox.Text = $"{berry.Firmness}";
-        FirmnessDetailButton.Tag = berry.Firmness;
-        FlavorDataGridView.AutoGenerateColumns = false;
-        FlavorDataGridView.DataSource = berry.Flavors;
-        ItemTextBox.Text = berry.Item?.Name ?? string.Empty;
-        ItemDetailButton.Tag = berry.Item;
-        NaturalGiftTypeTextBox.Text = berry.NaturalGiftType?.Name ?? string.Empty;
-        NaturalGiftTypeDetailButton.Tag = berry.NaturalGiftType;
+        FormsHelper.SetData(berry.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(berry.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(berry.GrowthTime, GrowthTimeCaptionLabel, GrowthTimeTextBox);
+        FormsHelper.SetData(berry.MaxHarvest, MaxHarvestCaptionLabel, MaxHarvestTextBox);
+        FormsHelper.SetData(berry.NaturalGiftPower, NaturalGiftPowerCaptionLabel, NaturalGiftPowerTextBox);
+        FormsHelper.SetData(berry.Size, SizeCaptionLabel, SizeTextBox);
+        FormsHelper.SetData(berry.Smoothness, SmoothnessCaptionLabel, SmoothnessTextBox);
+        FormsHelper.SetData(berry.Firmness, FirmnessButton, FirmnessTextBox);
+        FormsHelper.SetData(berry.Flavors, FlavorsCaptionLabel, FlavorsDataGridView);
+        FormsHelper.SetData(berry.Item, ItemButton, ItemTextBox);
+        FormsHelper.SetData(berry.NaturalGiftType, NaturalGiftTypeButton, NaturalGiftTypeTextBox);
     }
     #endregion
 }

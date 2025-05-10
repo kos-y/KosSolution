@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Berries.Berries;
 using Kos.PokeAPI.Berries.BerryFirmnesses;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -153,6 +154,19 @@ public partial class BerryFirmnessInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -172,18 +186,42 @@ public partial class BerryFirmnessInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        BerryFirmness? bf = BerryFirmness.GetBerryFirmness(url);
+        BerryFirmness? bf = BerryFirmness.GetResource(url);
         if (bf is null) {
             return;
         }
 
         Tag = bf;
-        IdTextBox.Text = $"{bf.Id}";
-        NameTextBox.Text = bf.Name;
-        BerriesDataGridView.AutoGenerateColumns = false;
-        BerriesDataGridView.DataSource = bf.Berries;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = bf.Names;
+
+        if (bf.Id is null) {
+            IdCaptionLabel.Enabled = false;
+            IdTextBox.Enabled = false;
+        } else {
+            IdTextBox.Text = $"{bf.Id}";
+        }
+
+        if (bf.Name is null) {
+            NameCaptionLabel.Enabled = false;
+            NameTextBox.Enabled = false;
+        } else {
+            NameTextBox.Text = bf.Name;
+        }
+
+        if (bf.Berries is null) {
+            BerriesCaptionLabel.Enabled = false;
+            BerriesDataGridView.Enabled = false;
+        } else {
+            BerriesDataGridView.AutoGenerateColumns = false;
+            BerriesDataGridView.DataSource = bf.Berries;
+        }
+
+        if (bf.Names is null) {
+            NamesCaptionLabel.Enabled = false;
+            NamesDataGridView.Enabled = false;
+        } else {
+            NamesDataGridView.AutoGenerateColumns = false;
+            NamesDataGridView.DataSource = bf.Names;
+        }
     }
     #endregion
 }

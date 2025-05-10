@@ -34,18 +34,15 @@ partial class BerryInfoForm
         NaturalGiftPowerCaptionLabel = new Label();
         SizeCaptionLabel = new Label();
         SmoothnessCaptionLabel = new Label();
-        FirmnessCaptionLabel = new Label();
         SoilDrynessCaptionLabel = new Label();
-        FirmnessDetailButton = new Button();
+        FirmnessButton = new Button();
         FlavorsCaptionLabel = new Label();
-        FlavorDataGridView = new DataGridView();
+        FlavorsDataGridView = new DataGridView();
         FlavorColumn = new DataGridViewTextBoxColumn();
         PotencyColumn = new DataGridViewTextBoxColumn();
         FlavorDetailColumn = new DataGridViewButtonColumn();
-        ItemCaptionLabel = new Label();
-        ItemDetailButton = new Button();
-        NaturalGiftTypeCaptionLabel = new Label();
-        NaturalGiftTypeDetailButton = new Button();
+        ItemButton = new Button();
+        NaturalGiftTypeButton = new Button();
         CloseButton = new Button();
         NaturalGiftGroupBox = new GroupBox();
         NaturalGiftPowerTextBox = new TextBox();
@@ -59,14 +56,15 @@ partial class BerryInfoForm
         GrowthTimeTextBox = new TextBox();
         MaxHarvestTextBox = new TextBox();
         SoilDrynessTextBox = new TextBox();
-        ((System.ComponentModel.ISupportInitialize)FlavorDataGridView).BeginInit();
+        PropertyButton = new Button();
+        ((System.ComponentModel.ISupportInitialize)FlavorsDataGridView).BeginInit();
         NaturalGiftGroupBox.SuspendLayout();
         SuspendLayout();
         // 
         // NameCaptionLabel
         // 
         NameCaptionLabel.AutoSize = true;
-        NameCaptionLabel.Location = new Point(317, 10);
+        NameCaptionLabel.Location = new Point(45, 40);
         NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
         NameCaptionLabel.Size = new Size(79, 17);
@@ -77,7 +75,7 @@ partial class BerryInfoForm
         // IdCaptionLabel
         // 
         IdCaptionLabel.AutoSize = true;
-        IdCaptionLabel.Location = new Point(15, 10);
+        IdCaptionLabel.Location = new Point(63, 10);
         IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
         IdCaptionLabel.Size = new Size(58, 17);
@@ -88,22 +86,22 @@ partial class BerryInfoForm
         // GrowthTimeCaptionLabel
         // 
         GrowthTimeCaptionLabel.AutoSize = true;
-        GrowthTimeCaptionLabel.Location = new Point(13, 105);
+        GrowthTimeCaptionLabel.Location = new Point(63, 130);
         GrowthTimeCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         GrowthTimeCaptionLabel.Name = "GrowthTimeCaptionLabel";
         GrowthTimeCaptionLabel.Size = new Size(60, 17);
-        GrowthTimeCaptionLabel.TabIndex = 9;
+        GrowthTimeCaptionLabel.TabIndex = 8;
         GrowthTimeCaptionLabel.Text = "成長時間";
         GrowthTimeCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // MaxHarvestCaptionLabel
         // 
         MaxHarvestCaptionLabel.AutoSize = true;
-        MaxHarvestCaptionLabel.Location = new Point(286, 95);
+        MaxHarvestCaptionLabel.Location = new Point(14, 213);
         MaxHarvestCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         MaxHarvestCaptionLabel.Name = "MaxHarvestCaptionLabel";
         MaxHarvestCaptionLabel.Size = new Size(112, 34);
-        MaxHarvestCaptionLabel.TabIndex = 16;
+        MaxHarvestCaptionLabel.TabIndex = 14;
         MaxHarvestCaptionLabel.Text = "収穫最大数\r\n（第４世代以降）";
         MaxHarvestCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -114,14 +112,14 @@ partial class BerryInfoForm
         NaturalGiftPowerCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NaturalGiftPowerCaptionLabel.Name = "NaturalGiftPowerCaptionLabel";
         NaturalGiftPowerCaptionLabel.Size = new Size(34, 17);
-        NaturalGiftPowerCaptionLabel.TabIndex = 3;
+        NaturalGiftPowerCaptionLabel.TabIndex = 2;
         NaturalGiftPowerCaptionLabel.Text = "威力";
         NaturalGiftPowerCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SizeCaptionLabel
         // 
         SizeCaptionLabel.AutoSize = true;
-        SizeCaptionLabel.Location = new Point(32, 45);
+        SizeCaptionLabel.Location = new Point(80, 70);
         SizeCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         SizeCaptionLabel.Name = "SizeCaptionLabel";
         SizeCaptionLabel.Size = new Size(41, 17);
@@ -132,70 +130,59 @@ partial class BerryInfoForm
         // SmoothnessCaptionLabel
         // 
         SmoothnessCaptionLabel.AutoSize = true;
-        SmoothnessCaptionLabel.Location = new Point(344, 45);
+        SmoothnessCaptionLabel.Location = new Point(71, 160);
         SmoothnessCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         SmoothnessCaptionLabel.Name = "SmoothnessCaptionLabel";
         SmoothnessCaptionLabel.Size = new Size(52, 17);
-        SmoothnessCaptionLabel.TabIndex = 11;
+        SmoothnessCaptionLabel.TabIndex = 10;
         SmoothnessCaptionLabel.Text = "滑らかさ";
         SmoothnessCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // FirmnessCaptionLabel
-        // 
-        FirmnessCaptionLabel.AutoSize = true;
-        FirmnessCaptionLabel.Location = new Point(42, 75);
-        FirmnessCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        FirmnessCaptionLabel.Name = "FirmnessCaptionLabel";
-        FirmnessCaptionLabel.Size = new Size(31, 17);
-        FirmnessCaptionLabel.TabIndex = 6;
-        FirmnessCaptionLabel.Text = "硬さ";
-        FirmnessCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SoilDrynessCaptionLabel
         // 
         SoilDrynessCaptionLabel.AutoSize = true;
-        SoilDrynessCaptionLabel.Location = new Point(312, 141);
+        SoilDrynessCaptionLabel.Location = new Point(40, 250);
         SoilDrynessCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         SoilDrynessCaptionLabel.Name = "SoilDrynessCaptionLabel";
         SoilDrynessCaptionLabel.Size = new Size(86, 17);
-        SoilDrynessCaptionLabel.TabIndex = 18;
+        SoilDrynessCaptionLabel.TabIndex = 16;
         SoilDrynessCaptionLabel.Text = "土壌乾燥速度";
         SoilDrynessCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // FirmnessDetailButton
+        // FirmnessButton
         // 
-        FirmnessDetailButton.Location = new Point(278, 70);
-        FirmnessDetailButton.Margin = new Padding(4, 3, 4, 3);
-        FirmnessDetailButton.Name = "FirmnessDetailButton";
-        FirmnessDetailButton.Size = new Size(45, 26);
-        FirmnessDetailButton.TabIndex = 8;
-        FirmnessDetailButton.Text = "詳細";
-        FirmnessDetailButton.UseVisualStyleBackColor = true;
-        FirmnessDetailButton.Click += FirmnessDetailButton_Click;
+        FirmnessButton.Location = new Point(76, 95);
+        FirmnessButton.Margin = new Padding(4, 3, 4, 3);
+        FirmnessButton.Name = "FirmnessButton";
+        FirmnessButton.Size = new Size(45, 26);
+        FirmnessButton.TabIndex = 6;
+        FirmnessButton.Text = "硬さ";
+        FirmnessButton.UseVisualStyleBackColor = true;
+        FirmnessButton.Click += FirmnessButton_Click;
         // 
         // FlavorsCaptionLabel
         // 
         FlavorsCaptionLabel.AutoSize = true;
-        FlavorsCaptionLabel.Location = new Point(13, 157);
+        FlavorsCaptionLabel.Location = new Point(328, 9);
         FlavorsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         FlavorsCaptionLabel.Name = "FlavorsCaptionLabel";
         FlavorsCaptionLabel.Size = new Size(21, 17);
-        FlavorsCaptionLabel.TabIndex = 20;
+        FlavorsCaptionLabel.TabIndex = 18;
         FlavorsCaptionLabel.Text = "味";
         FlavorsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // FlavorDataGridView
+        // FlavorsDataGridView
         // 
-        FlavorDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        FlavorDataGridView.Columns.AddRange(new DataGridViewColumn[] { FlavorColumn, PotencyColumn, FlavorDetailColumn });
-        FlavorDataGridView.Location = new Point(13, 177);
-        FlavorDataGridView.Margin = new Padding(4, 3, 4, 3);
-        FlavorDataGridView.Name = "FlavorDataGridView";
-        FlavorDataGridView.RowHeadersVisible = false;
-        FlavorDataGridView.Size = new Size(635, 170);
-        FlavorDataGridView.TabIndex = 21;
-        FlavorDataGridView.CellClick += FlavorDataGridView_CellClick;
-        FlavorDataGridView.CellDoubleClick += FlavorDataGridView_CellDoubleClick;
+        FlavorsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        FlavorsDataGridView.Columns.AddRange(new DataGridViewColumn[] { FlavorColumn, PotencyColumn, FlavorDetailColumn });
+        FlavorsDataGridView.Location = new Point(328, 29);
+        FlavorsDataGridView.Margin = new Padding(4, 3, 4, 3);
+        FlavorsDataGridView.Name = "FlavorsDataGridView";
+        FlavorsDataGridView.RowHeadersVisible = false;
+        FlavorsDataGridView.Size = new Size(280, 170);
+        FlavorsDataGridView.TabIndex = 19;
+        FlavorsDataGridView.CellClick += FlavorDataGridView_CellClick;
+        FlavorsDataGridView.CellDoubleClick += FlavorDataGridView_CellDoubleClick;
         // 
         // FlavorColumn
         // 
@@ -225,56 +212,34 @@ partial class BerryInfoForm
         FlavorDetailColumn.UseColumnTextForButtonValue = true;
         FlavorDetailColumn.Width = 40;
         // 
-        // ItemCaptionLabel
+        // ItemButton
         // 
-        ItemCaptionLabel.AutoSize = true;
-        ItemCaptionLabel.Location = new Point(345, 75);
-        ItemCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        ItemCaptionLabel.Name = "ItemCaptionLabel";
-        ItemCaptionLabel.Size = new Size(51, 17);
-        ItemCaptionLabel.TabIndex = 13;
-        ItemCaptionLabel.Text = "アイテム";
-        ItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        ItemButton.Location = new Point(65, 185);
+        ItemButton.Margin = new Padding(4, 3, 4, 3);
+        ItemButton.Name = "ItemButton";
+        ItemButton.Size = new Size(60, 26);
+        ItemButton.TabIndex = 12;
+        ItemButton.Text = "アイテム";
+        ItemButton.UseVisualStyleBackColor = true;
+        ItemButton.Click += ItemButton_Click;
         // 
-        // ItemDetailButton
+        // NaturalGiftTypeButton
         // 
-        ItemDetailButton.Location = new Point(600, 70);
-        ItemDetailButton.Margin = new Padding(4, 3, 4, 3);
-        ItemDetailButton.Name = "ItemDetailButton";
-        ItemDetailButton.Size = new Size(47, 26);
-        ItemDetailButton.TabIndex = 15;
-        ItemDetailButton.Text = "詳細";
-        ItemDetailButton.UseVisualStyleBackColor = true;
-        ItemDetailButton.Click += ItemDetailButton_Click;
-        // 
-        // NaturalGiftTypeCaptionLabel
-        // 
-        NaturalGiftTypeCaptionLabel.AutoSize = true;
-        NaturalGiftTypeCaptionLabel.Location = new Point(7, 24);
-        NaturalGiftTypeCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        NaturalGiftTypeCaptionLabel.Name = "NaturalGiftTypeCaptionLabel";
-        NaturalGiftTypeCaptionLabel.Size = new Size(53, 17);
-        NaturalGiftTypeCaptionLabel.TabIndex = 0;
-        NaturalGiftTypeCaptionLabel.Text = "技タイプ";
-        NaturalGiftTypeCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // NaturalGiftTypeDetailButton
-        // 
-        NaturalGiftTypeDetailButton.Location = new Point(265, 19);
-        NaturalGiftTypeDetailButton.Margin = new Padding(4, 3, 4, 3);
-        NaturalGiftTypeDetailButton.Name = "NaturalGiftTypeDetailButton";
-        NaturalGiftTypeDetailButton.Size = new Size(42, 26);
-        NaturalGiftTypeDetailButton.TabIndex = 2;
-        NaturalGiftTypeDetailButton.Text = "詳細";
-        NaturalGiftTypeDetailButton.UseVisualStyleBackColor = true;
+        NaturalGiftTypeButton.Location = new Point(7, 19);
+        NaturalGiftTypeButton.Margin = new Padding(4, 3, 4, 3);
+        NaturalGiftTypeButton.Name = "NaturalGiftTypeButton";
+        NaturalGiftTypeButton.Size = new Size(61, 26);
+        NaturalGiftTypeButton.TabIndex = 0;
+        NaturalGiftTypeButton.Text = "技タイプ";
+        NaturalGiftTypeButton.UseVisualStyleBackColor = true;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(572, 402);
+        CloseButton.Location = new Point(533, 299);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 39);
-        CloseButton.TabIndex = 23;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 22;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
@@ -283,13 +248,12 @@ partial class BerryInfoForm
         // 
         NaturalGiftGroupBox.Controls.Add(NaturalGiftPowerTextBox);
         NaturalGiftGroupBox.Controls.Add(NaturalGiftTypeTextBox);
-        NaturalGiftGroupBox.Controls.Add(NaturalGiftTypeCaptionLabel);
-        NaturalGiftGroupBox.Controls.Add(NaturalGiftTypeDetailButton);
+        NaturalGiftGroupBox.Controls.Add(NaturalGiftTypeButton);
         NaturalGiftGroupBox.Controls.Add(NaturalGiftPowerCaptionLabel);
-        NaturalGiftGroupBox.Location = new Point(13, 353);
+        NaturalGiftGroupBox.Location = new Point(329, 205);
         NaturalGiftGroupBox.Name = "NaturalGiftGroupBox";
-        NaturalGiftGroupBox.Size = new Size(321, 88);
-        NaturalGiftGroupBox.TabIndex = 22;
+        NaturalGiftGroupBox.Size = new Size(280, 88);
+        NaturalGiftGroupBox.TabIndex = 20;
         NaturalGiftGroupBox.TabStop = false;
         NaturalGiftGroupBox.Text = "しぜんのめぐみ";
         // 
@@ -299,7 +263,7 @@ partial class BerryInfoForm
         NaturalGiftPowerTextBox.Name = "NaturalGiftPowerTextBox";
         NaturalGiftPowerTextBox.ReadOnly = true;
         NaturalGiftPowerTextBox.Size = new Size(190, 24);
-        NaturalGiftPowerTextBox.TabIndex = 4;
+        NaturalGiftPowerTextBox.TabIndex = 3;
         // 
         // NaturalGiftTypeTextBox
         // 
@@ -311,7 +275,7 @@ partial class BerryInfoForm
         // 
         // IdTextBox
         // 
-        IdTextBox.Location = new Point(80, 7);
+        IdTextBox.Location = new Point(131, 7);
         IdTextBox.Name = "IdTextBox";
         IdTextBox.ReadOnly = true;
         IdTextBox.Size = new Size(190, 24);
@@ -319,7 +283,7 @@ partial class BerryInfoForm
         // 
         // NameTextBox
         // 
-        NameTextBox.Location = new Point(403, 7);
+        NameTextBox.Location = new Point(130, 37);
         NameTextBox.Name = "NameTextBox";
         NameTextBox.ReadOnly = true;
         NameTextBox.Size = new Size(190, 24);
@@ -327,7 +291,7 @@ partial class BerryInfoForm
         // 
         // SizeTextBox
         // 
-        SizeTextBox.Location = new Point(81, 42);
+        SizeTextBox.Location = new Point(130, 67);
         SizeTextBox.Name = "SizeTextBox";
         SizeTextBox.ReadOnly = true;
         SizeTextBox.Size = new Size(190, 24);
@@ -335,15 +299,15 @@ partial class BerryInfoForm
         // 
         // SmoothnessTextBox
         // 
-        SmoothnessTextBox.Location = new Point(404, 42);
+        SmoothnessTextBox.Location = new Point(130, 157);
         SmoothnessTextBox.Name = "SmoothnessTextBox";
         SmoothnessTextBox.ReadOnly = true;
         SmoothnessTextBox.Size = new Size(190, 24);
-        SmoothnessTextBox.TabIndex = 12;
+        SmoothnessTextBox.TabIndex = 11;
         // 
         // FirmnessTextBox
         // 
-        FirmnessTextBox.Location = new Point(81, 72);
+        FirmnessTextBox.Location = new Point(132, 97);
         FirmnessTextBox.Name = "FirmnessTextBox";
         FirmnessTextBox.ReadOnly = true;
         FirmnessTextBox.Size = new Size(190, 24);
@@ -351,41 +315,53 @@ partial class BerryInfoForm
         // 
         // ItemTextBox
         // 
-        ItemTextBox.Location = new Point(403, 72);
+        ItemTextBox.Location = new Point(132, 187);
         ItemTextBox.Name = "ItemTextBox";
         ItemTextBox.ReadOnly = true;
         ItemTextBox.Size = new Size(190, 24);
-        ItemTextBox.TabIndex = 14;
+        ItemTextBox.TabIndex = 13;
         // 
         // GrowthTimeTextBox
         // 
-        GrowthTimeTextBox.Location = new Point(80, 102);
+        GrowthTimeTextBox.Location = new Point(130, 127);
         GrowthTimeTextBox.Name = "GrowthTimeTextBox";
         GrowthTimeTextBox.ReadOnly = true;
         GrowthTimeTextBox.Size = new Size(190, 24);
-        GrowthTimeTextBox.TabIndex = 10;
+        GrowthTimeTextBox.TabIndex = 9;
         // 
         // MaxHarvestTextBox
         // 
-        MaxHarvestTextBox.Location = new Point(404, 102);
+        MaxHarvestTextBox.Location = new Point(133, 217);
         MaxHarvestTextBox.Name = "MaxHarvestTextBox";
         MaxHarvestTextBox.ReadOnly = true;
         MaxHarvestTextBox.Size = new Size(190, 24);
-        MaxHarvestTextBox.TabIndex = 17;
+        MaxHarvestTextBox.TabIndex = 15;
         // 
         // SoilDrynessTextBox
         // 
-        SoilDrynessTextBox.Location = new Point(404, 138);
+        SoilDrynessTextBox.Location = new Point(130, 247);
         SoilDrynessTextBox.Name = "SoilDrynessTextBox";
         SoilDrynessTextBox.ReadOnly = true;
         SoilDrynessTextBox.Size = new Size(190, 24);
-        SoilDrynessTextBox.TabIndex = 19;
+        SoilDrynessTextBox.TabIndex = 17;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(449, 299);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 21;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // BerryInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(658, 452);
+        ClientSize = new Size(632, 354);
+        Controls.Add(PropertyButton);
         Controls.Add(SoilDrynessTextBox);
         Controls.Add(MaxHarvestTextBox);
         Controls.Add(GrowthTimeTextBox);
@@ -397,13 +373,11 @@ partial class BerryInfoForm
         Controls.Add(IdTextBox);
         Controls.Add(NaturalGiftGroupBox);
         Controls.Add(CloseButton);
-        Controls.Add(ItemDetailButton);
-        Controls.Add(ItemCaptionLabel);
-        Controls.Add(FlavorDataGridView);
+        Controls.Add(ItemButton);
+        Controls.Add(FlavorsDataGridView);
         Controls.Add(FlavorsCaptionLabel);
-        Controls.Add(FirmnessDetailButton);
+        Controls.Add(FirmnessButton);
         Controls.Add(SoilDrynessCaptionLabel);
-        Controls.Add(FirmnessCaptionLabel);
         Controls.Add(SmoothnessCaptionLabel);
         Controls.Add(SizeCaptionLabel);
         Controls.Add(MaxHarvestCaptionLabel);
@@ -416,9 +390,9 @@ partial class BerryInfoForm
         MaximizeBox = false;
         Name = "BerryInfoForm";
         StartPosition = FormStartPosition.CenterParent;
-        Text = "きのみの硬さ";
+        Text = "きのみ";
         Load += BerryInfoForm_Load;
-        ((System.ComponentModel.ISupportInitialize)FlavorDataGridView).EndInit();
+        ((System.ComponentModel.ISupportInitialize)FlavorsDataGridView).EndInit();
         NaturalGiftGroupBox.ResumeLayout(false);
         NaturalGiftGroupBox.PerformLayout();
         ResumeLayout(false);
@@ -435,13 +409,13 @@ partial class BerryInfoForm
     private Label SmoothnessCaptionLabel;
     private Label FirmnessCaptionLabel;
     private Label SoilDrynessCaptionLabel;
-    private Button FirmnessDetailButton;
+    private Button FirmnessButton;
     private Label FlavorsCaptionLabel;
-    private DataGridView FlavorDataGridView;
+    private DataGridView FlavorsDataGridView;
     private Label ItemCaptionLabel;
-    private Button ItemDetailButton;
+    private Button ItemButton;
     private Label NaturalGiftTypeCaptionLabel;
-    private Button NaturalGiftTypeDetailButton;
+    private Button NaturalGiftTypeButton;
     private Button CloseButton;
     private GroupBox NaturalGiftGroupBox;
     private DataGridViewTextBoxColumn FlavorColumn;
@@ -458,4 +432,5 @@ partial class BerryInfoForm
     private TextBox MaxHarvestTextBox;
     private TextBox SoilDrynessTextBox;
     private TextBox NaturalGiftPowerTextBox;
+    private Button PropertyButton;
 }
