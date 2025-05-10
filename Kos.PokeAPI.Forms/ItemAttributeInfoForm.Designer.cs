@@ -46,6 +46,7 @@ partial class ItemAttributeInfoForm
         CloseButton = new Button();
         NameTextBox = new TextBox();
         IdTextBox = new TextBox();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)ItemDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)DescriptionsDataGridView).BeginInit();
@@ -219,10 +220,10 @@ partial class ItemAttributeInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(653, 465);
+        CloseButton.Location = new Point(667, 465);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(86, 36);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 10;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -244,11 +245,23 @@ partial class ItemAttributeInfoForm
         IdTextBox.Size = new Size(261, 24);
         IdTextBox.TabIndex = 1;
         // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(583, 465);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 11;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // ItemAttributeInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(756, 519);
+        ClientSize = new Size(756, 506);
+        Controls.Add(PropertyButton);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
         Controls.Add(CloseButton);
@@ -294,4 +307,5 @@ partial class ItemAttributeInfoForm
     private Button CloseButton;
     private TextBox NameTextBox;
     private TextBox IdTextBox;
+    private Button PropertyButton;
 }

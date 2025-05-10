@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.Core;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Items.Item;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -30,19 +31,19 @@ public partial class ItemInfoForm : Form
     }
     #endregion
 
-    #region カテゴリ 詳細 クリック
+    #region カテゴリ クリック
     /// <summary>
-    /// カテゴリ 詳細 クリック
+    /// カテゴリ クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void CategoryDetailButton_Click(object sender, EventArgs e)
+    private void CategoryButton_Click(object sender, EventArgs e)
     {
-        if (CategoryDetailButton.Tag is null) {
+        if (CategoryButton.Tag is null) {
             return;
         }
 
-        if (CategoryDetailButton.Tag is not NamedAPIResource api) {
+        if (CategoryButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -55,19 +56,19 @@ public partial class ItemInfoForm : Form
     }
     #endregion
 
-    #region 「なげつける」の効果 詳細 クリック
+    #region 「なげつける」の効果 クリック
     /// <summary>
-    /// 「なげつける」の効果 詳細 クリック
+    /// 「なげつける」の効果 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void FlingEffectDetailButton_Click(object sender, EventArgs e)
+    private void FlingEffectButton_Click(object sender, EventArgs e)
     {
-        if (FlingEffectDetailButton.Tag is null) {
+        if (FlingEffectButton.Tag is null) {
             return;
         }
 
-        if (FlingEffectDetailButton.Tag is not NamedAPIResource api) {
+        if (FlingEffectButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -427,11 +428,11 @@ public partial class ItemInfoForm : Form
     /// <param name="e"></param>
     private void BabyTriggerForInfoButton_Click(object sender, EventArgs e)
     {
-        if (BabyTriggerForInfoButton.Tag is null) {
+        if (BabyTriggerForButton.Tag is null) {
             return;
         }
 
-        if (BabyTriggerForInfoButton.Tag is not APIResource api) {
+        if (BabyTriggerForButton.Tag is not APIResource api) {
             return;
         }
 
@@ -440,6 +441,23 @@ public partial class ItemInfoForm : Form
         }
 
         using EvolutionChainInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -468,45 +486,22 @@ public partial class ItemInfoForm : Form
             return;
         }
 
-        IdTextBox.Text = $"{item.Id}";
-        NameTextBox.Text = item.Name;
-        CostTextBox.Text = $"{item.Cost}";
-        CategoryTextBox.Text = item.Category?.Name ?? string.Empty;
-        CategoryDetailButton.Tag = item.Category;
-        FlingEffectTextBox.Text = item.FlingEffect?.Name ?? string.Empty;
-        FlingEffectDetailButton.Tag = item.FlingEffect;
-        FlingPowerTextBox.Text = $"{item.FlingPower}";
-        if (item.BabyTriggerFor is not null) {
-            BabyTriggerForInfoButton.Tag = item.BabyTriggerFor;
-        } else {
-            BabyTriggerForInfoButton.Enabled = false;
-        }
-        AttributesDataGridView.AutoGenerateColumns = false;
-        AttributesDataGridView.DataSource = item.Attributes;
-        FlavorTextEntriesDataGridView.AutoGenerateColumns = false;
-        FlavorTextEntriesDataGridView.DataSource = item.FlavorTextEntries;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = item.Names;
-        MachinesDataGridView.AutoGenerateColumns = false;
-        MachinesDataGridView.DataSource = item.Machines;
-        EffectEntriesDataGridView.AutoGenerateColumns = false;
-        EffectEntriesDataGridView.DataSource = item.EffectEntries;
-        GameIndiceDataGridView.AutoGenerateColumns = false;
-        GameIndiceDataGridView.DataSource = item.GameIndice;
-        HeldByPokemonDataGridView.AutoGenerateColumns = false;
-        HeldByPokemonDataGridView.DataSource = item.HeldByPokemon;
-
-        if (item.Sprites?.Default is not null) {
-            using Stream s
-                = Singleton<HttpClient>.Instance
-                                       .GetAsync(item.Sprites?.Default)
-                                       .Result
-                                       .Content
-                                       .ReadAsStreamAsync()
-                                       .Result;
-
-            SpritesPictureBox.Image = Image.FromStream(s);
-        }
+        Tag = item;
+        FormsHelper.SetData(item.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(item.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(item.Cost, CostCaptionLabel, CostTextBox);
+        FormsHelper.SetData(item.Category, CategoryButton, CategoryTextBox);
+        FormsHelper.SetData(item.FlingEffect, FlingEffectButton, FlingEffectTextBox);
+        FormsHelper.SetData(item.FlingPower, FlingPowerCaptionLabel, FlingPowerTextBox);
+        FormsHelper.SetData(item.BabyTriggerFor, BabyTriggerForButton);
+        FormsHelper.SetData(item.Attributes, AttributesCaptionLabel, AttributesDataGridView);
+        FormsHelper.SetData(item.FlavorTextEntries, FlavorTextEntriesDataGridView);
+        FormsHelper.SetData(item.Names, NameCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(item.Machines, MachinesCaptionLabel, MachinesDataGridView);
+        FormsHelper.SetData(item.EffectEntries, EffectEntriesDataGridView);
+        FormsHelper.SetData(item.GameIndice, GameIndiceCaptionLabel, GameIndiceDataGridView);
+        FormsHelper.SetData(item.HeldByPokemon, HeldByPokemonCaptionLabel, HeldByPokemonDataGridView);
+        FormsHelper.SetData(item.Sprites?.Default, SpritesPictureBox);
     }
     #endregion
 }

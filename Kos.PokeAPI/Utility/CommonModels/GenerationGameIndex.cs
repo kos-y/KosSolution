@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -10,6 +11,7 @@ namespace Kos.PokeAPI.Utility.CommonModels;
 /// <summary>
 /// 世代 ゲームIndex
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class GenerationGameIndex
 {
     // フィールド
@@ -19,6 +21,9 @@ public class GenerationGameIndex
     /// ゲームインデックス
     /// </summary>
     [JsonPropertyName("game_index")]
+    [DisplayName("game_index")]
+    [Category("(基本)")]
+    [Description("ゲームIndex")]
     public int? GameIndex { get; set; }
     #endregion
 
@@ -27,6 +32,9 @@ public class GenerationGameIndex
     /// 世代
     /// </summary>
     [JsonPropertyName("generation")]
+    [DisplayName("generation")]
+    [Category("(基本)")]
+    [Description("世代")]
     public NamedAPIResource? Generation { get; set; }
     #endregion
 }

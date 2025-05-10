@@ -8,11 +8,16 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Items.ItemAttributes;
 using Kos.PokeAPI.Items.ItemCategories;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
+
+/// <summary>
+/// アイテム特性
+/// </summary>
 public partial class ItemAttributeInfoForm : Form
 {
     #region コンストラクタ
@@ -174,6 +179,23 @@ public partial class ItemAttributeInfoForm : Form
     }
     #endregion
 
+    #region プロパティ ボタン
+    /// <summary>
+    /// プロパティ ボタン
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -193,20 +215,17 @@ public partial class ItemAttributeInfoForm : Form
     /// <param name="url"></param>
     private void SetData(string url)
     {
-        ItemAttribute? ia = ItemAttribute.GetItemAttribute(url);
-        if (ia is null) {
+        ItemAttribute? attr = ItemAttribute.GetItemAttribute(url);
+        if (attr is null) {
             return;
         }
 
-        Tag = ia;
-        IdTextBox.Text = $"{ia.Id}";
-        NameTextBox.Text = ia.Name;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = ia.Names;
-        DescriptionsDataGridView.AutoGenerateColumns = false;
-        DescriptionsDataGridView.DataSource = ia.Descriptions;
-        ItemDataGridView.AutoGenerateColumns = false;
-        ItemDataGridView.DataSource = ia.Items;
+        Tag = attr;
+        FormsHelper.SetData(attr.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(attr.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(attr.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(attr.Descriptions, DescriptionsCaptionLabel, DescriptionsDataGridView);
+        FormsHelper.SetData(attr.Items, ItemCaptionLabel, ItemDataGridView);
     }
     #endregion
 }

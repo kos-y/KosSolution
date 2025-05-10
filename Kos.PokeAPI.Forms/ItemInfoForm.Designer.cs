@@ -32,9 +32,7 @@ partial class ItemInfoForm
         IdCaptionLabel = new Label();
         CostCaptionLabel = new Label();
         FlingPowerCaptionLabel = new Label();
-        FlingEffectCaptionLabel = new Label();
         AttributesCaptionLabel = new Label();
-        CategoryCatpionLabel = new Label();
         GameIndiceCaptionLabel = new Label();
         NamesCaptionLabel = new Label();
         HeldByPokemonCaptionLabel = new Label();
@@ -69,9 +67,9 @@ partial class ItemInfoForm
         FlingPowerGroupBox = new GroupBox();
         FlingEffectTextBox = new TextBox();
         FlingPowerTextBox = new TextBox();
-        FlingEffectDetailButton = new Button();
-        BabyTriggerForInfoButton = new Button();
-        CategoryDetailButton = new Button();
+        FlingEffectButton = new Button();
+        BabyTriggerForButton = new Button();
+        CategoryButton = new Button();
         tabControl1 = new TabControl();
         EffectEntriesTabPage = new TabPage();
         FlavorTextEntriesTabPage = new TabPage();
@@ -79,6 +77,7 @@ partial class ItemInfoForm
         NameTextBox = new TextBox();
         CostTextBox = new TextBox();
         CategoryTextBox = new TextBox();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)AttributesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)EffectEntriesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)FlavorTextEntriesDataGridView).BeginInit();
@@ -137,17 +136,6 @@ partial class ItemInfoForm
         FlingPowerCaptionLabel.Text = "威力";
         FlingPowerCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // FlingEffectCaptionLabel
-        // 
-        FlingEffectCaptionLabel.AutoSize = true;
-        FlingEffectCaptionLabel.Location = new Point(13, 68);
-        FlingEffectCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        FlingEffectCaptionLabel.Name = "FlingEffectCaptionLabel";
-        FlingEffectCaptionLabel.Size = new Size(34, 17);
-        FlingEffectCaptionLabel.TabIndex = 2;
-        FlingEffectCaptionLabel.Text = "効果";
-        FlingEffectCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // AttributesCaptionLabel
         // 
         AttributesCaptionLabel.AutoSize = true;
@@ -155,20 +143,9 @@ partial class ItemInfoForm
         AttributesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         AttributesCaptionLabel.Name = "AttributesCaptionLabel";
         AttributesCaptionLabel.Size = new Size(34, 17);
-        AttributesCaptionLabel.TabIndex = 14;
+        AttributesCaptionLabel.TabIndex = 13;
         AttributesCaptionLabel.Text = "特性";
         AttributesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // CategoryCatpionLabel
-        // 
-        CategoryCatpionLabel.AutoSize = true;
-        CategoryCatpionLabel.Location = new Point(35, 112);
-        CategoryCatpionLabel.Margin = new Padding(4, 0, 4, 0);
-        CategoryCatpionLabel.Name = "CategoryCatpionLabel";
-        CategoryCatpionLabel.Size = new Size(48, 17);
-        CategoryCatpionLabel.TabIndex = 6;
-        CategoryCatpionLabel.Text = "カテゴリ";
-        CategoryCatpionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // GameIndiceCaptionLabel
         // 
@@ -177,7 +154,7 @@ partial class ItemInfoForm
         GameIndiceCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         GameIndiceCaptionLabel.Name = "GameIndiceCaptionLabel";
         GameIndiceCaptionLabel.Size = new Size(116, 17);
-        GameIndiceCaptionLabel.TabIndex = 12;
+        GameIndiceCaptionLabel.TabIndex = 11;
         GameIndiceCaptionLabel.Text = "ゲーム内インデックス";
         GameIndiceCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -188,7 +165,7 @@ partial class ItemInfoForm
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
         NamesCaptionLabel.Size = new Size(92, 17);
-        NamesCaptionLabel.TabIndex = 10;
+        NamesCaptionLabel.TabIndex = 9;
         NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -199,17 +176,18 @@ partial class ItemInfoForm
         HeldByPokemonCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         HeldByPokemonCaptionLabel.Name = "HeldByPokemonCaptionLabel";
         HeldByPokemonCaptionLabel.Size = new Size(118, 17);
-        HeldByPokemonCaptionLabel.TabIndex = 16;
+        HeldByPokemonCaptionLabel.TabIndex = 15;
         HeldByPokemonCaptionLabel.Text = "アイテム所持ポケモン";
         HeldByPokemonCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // MachinesCaptionLabel
         // 
-        MachinesCaptionLabel.Location = new Point(724, 240);
+        MachinesCaptionLabel.AutoSize = true;
+        MachinesCaptionLabel.Location = new Point(724, 249);
         MachinesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         MachinesCaptionLabel.Name = "MachinesCaptionLabel";
-        MachinesCaptionLabel.Size = new Size(150, 26);
-        MachinesCaptionLabel.TabIndex = 18;
+        MachinesCaptionLabel.Size = new Size(52, 17);
+        MachinesCaptionLabel.TabIndex = 17;
         MachinesCaptionLabel.Text = "技マシン";
         MachinesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -222,7 +200,7 @@ partial class ItemInfoForm
         AttributesDataGridView.Name = "AttributesDataGridView";
         AttributesDataGridView.RowHeadersVisible = false;
         AttributesDataGridView.Size = new Size(339, 170);
-        AttributesDataGridView.TabIndex = 15;
+        AttributesDataGridView.TabIndex = 14;
         AttributesDataGridView.CellClick += AttributesDataGridView_CellClick;
         AttributesDataGridView.CellDoubleClick += AttributesDataGridView_CellDoubleClick;
         // 
@@ -287,7 +265,7 @@ partial class ItemInfoForm
         FlavorTextEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         FlavorTextEntriesDataGridView.Name = "FlavorTextEntriesDataGridView";
         FlavorTextEntriesDataGridView.RowHeadersVisible = false;
-        FlavorTextEntriesDataGridView.Size = new Size(1037, 289);
+        FlavorTextEntriesDataGridView.Size = new Size(1037, 291);
         FlavorTextEntriesDataGridView.TabIndex = 0;
         FlavorTextEntriesDataGridView.CellClick += FlavorTextEntriesDataGridView_CellClick;
         FlavorTextEntriesDataGridView.CellDoubleClick += FlavorTextEntriesDataGridView_CellDoubleClick;
@@ -336,8 +314,8 @@ partial class ItemInfoForm
         GameIndiceDataGridView.Margin = new Padding(4, 3, 4, 3);
         GameIndiceDataGridView.Name = "GameIndiceDataGridView";
         GameIndiceDataGridView.RowHeadersVisible = false;
-        GameIndiceDataGridView.Size = new Size(342, 170);
-        GameIndiceDataGridView.TabIndex = 13;
+        GameIndiceDataGridView.Size = new Size(342, 207);
+        GameIndiceDataGridView.TabIndex = 12;
         GameIndiceDataGridView.CellClick += GameIndiceDataGridView_CellClick;
         GameIndiceDataGridView.CellDoubleClick += GameIndiceDataGridView_CellDoubleClick;
         // 
@@ -376,8 +354,8 @@ partial class ItemInfoForm
         NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(379, 170);
-        NamesDataGridView.TabIndex = 11;
+        NamesDataGridView.Size = new Size(379, 207);
+        NamesDataGridView.TabIndex = 10;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
@@ -417,7 +395,7 @@ partial class ItemInfoForm
         MachinesDataGridView.Name = "MachinesDataGridView";
         MachinesDataGridView.RowHeadersVisible = false;
         MachinesDataGridView.Size = new Size(342, 170);
-        MachinesDataGridView.TabIndex = 19;
+        MachinesDataGridView.TabIndex = 18;
         MachinesDataGridView.CellClick += MachinesDataGridView_CellClick;
         MachinesDataGridView.CellDoubleClick += MachinesDataGridView_CellDoubleClick;
         // 
@@ -448,7 +426,7 @@ partial class ItemInfoForm
         HeldByPokemonDataGridView.Name = "HeldByPokemonDataGridView";
         HeldByPokemonDataGridView.RowHeadersVisible = false;
         HeldByPokemonDataGridView.Size = new Size(354, 170);
-        HeldByPokemonDataGridView.TabIndex = 17;
+        HeldByPokemonDataGridView.TabIndex = 16;
         HeldByPokemonDataGridView.CellClick += HeldByPokemonDataGridView_CellClick;
         HeldByPokemonDataGridView.CellDoubleClick += HeldByPokemonDataGridView_CellDoubleClick;
         // 
@@ -481,10 +459,10 @@ partial class ItemInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(969, 776);
+        CloseButton.Location = new Point(990, 776);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(96, 52);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 22;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -494,13 +472,12 @@ partial class ItemInfoForm
         // 
         FlingPowerGroupBox.Controls.Add(FlingEffectTextBox);
         FlingPowerGroupBox.Controls.Add(FlingPowerTextBox);
-        FlingPowerGroupBox.Controls.Add(FlingEffectDetailButton);
+        FlingPowerGroupBox.Controls.Add(FlingEffectButton);
         FlingPowerGroupBox.Controls.Add(FlingPowerCaptionLabel);
-        FlingPowerGroupBox.Controls.Add(FlingEffectCaptionLabel);
         FlingPowerGroupBox.Location = new Point(15, 136);
         FlingPowerGroupBox.Name = "FlingPowerGroupBox";
         FlingPowerGroupBox.Size = new Size(312, 100);
-        FlingPowerGroupBox.TabIndex = 9;
+        FlingPowerGroupBox.TabIndex = 8;
         FlingPowerGroupBox.TabStop = false;
         FlingPowerGroupBox.Text = "なげつける";
         // 
@@ -509,7 +486,7 @@ partial class ItemInfoForm
         FlingEffectTextBox.Location = new Point(54, 65);
         FlingEffectTextBox.Name = "FlingEffectTextBox";
         FlingEffectTextBox.ReadOnly = true;
-        FlingEffectTextBox.Size = new Size(203, 24);
+        FlingEffectTextBox.Size = new Size(252, 24);
         FlingEffectTextBox.TabIndex = 3;
         // 
         // FlingPowerTextBox
@@ -520,35 +497,35 @@ partial class ItemInfoForm
         FlingPowerTextBox.Size = new Size(252, 24);
         FlingPowerTextBox.TabIndex = 1;
         // 
-        // FlingEffectDetailButton
+        // FlingEffectButton
         // 
-        FlingEffectDetailButton.Location = new Point(263, 63);
-        FlingEffectDetailButton.Name = "FlingEffectDetailButton";
-        FlingEffectDetailButton.Size = new Size(43, 28);
-        FlingEffectDetailButton.TabIndex = 4;
-        FlingEffectDetailButton.Text = "詳細";
-        FlingEffectDetailButton.UseVisualStyleBackColor = true;
-        FlingEffectDetailButton.Click += FlingEffectDetailButton_Click;
+        FlingEffectButton.Location = new Point(4, 62);
+        FlingEffectButton.Name = "FlingEffectButton";
+        FlingEffectButton.Size = new Size(43, 28);
+        FlingEffectButton.TabIndex = 2;
+        FlingEffectButton.Text = "効果";
+        FlingEffectButton.UseVisualStyleBackColor = true;
+        FlingEffectButton.Click += FlingEffectButton_Click;
         // 
-        // BabyTriggerForInfoButton
+        // BabyTriggerForButton
         // 
-        BabyTriggerForInfoButton.Location = new Point(15, 776);
-        BabyTriggerForInfoButton.Name = "BabyTriggerForInfoButton";
-        BabyTriggerForInfoButton.Size = new Size(103, 52);
-        BabyTriggerForInfoButton.TabIndex = 21;
-        BabyTriggerForInfoButton.Text = "ベビーポケモンの\r\n進化トリガー";
-        BabyTriggerForInfoButton.UseVisualStyleBackColor = true;
-        BabyTriggerForInfoButton.Click += BabyTriggerForInfoButton_Click;
+        BabyTriggerForButton.Location = new Point(15, 776);
+        BabyTriggerForButton.Name = "BabyTriggerForButton";
+        BabyTriggerForButton.Size = new Size(182, 35);
+        BabyTriggerForButton.TabIndex = 20;
+        BabyTriggerForButton.Text = "ベビーポケモンの進化トリガー";
+        BabyTriggerForButton.UseVisualStyleBackColor = true;
+        BabyTriggerForButton.Click += BabyTriggerForInfoButton_Click;
         // 
-        // CategoryDetailButton
+        // CategoryButton
         // 
-        CategoryDetailButton.Location = new Point(287, 105);
-        CategoryDetailButton.Name = "CategoryDetailButton";
-        CategoryDetailButton.Size = new Size(43, 28);
-        CategoryDetailButton.TabIndex = 8;
-        CategoryDetailButton.Text = "詳細";
-        CategoryDetailButton.UseVisualStyleBackColor = true;
-        CategoryDetailButton.Click += CategoryDetailButton_Click;
+        CategoryButton.Location = new Point(22, 105);
+        CategoryButton.Name = "CategoryButton";
+        CategoryButton.Size = new Size(62, 28);
+        CategoryButton.TabIndex = 6;
+        CategoryButton.Text = "カテゴリ";
+        CategoryButton.UseVisualStyleBackColor = true;
+        CategoryButton.Click += CategoryButton_Click;
         // 
         // tabControl1
         // 
@@ -558,7 +535,7 @@ partial class ItemInfoForm
         tabControl1.Name = "tabControl1";
         tabControl1.SelectedIndex = 0;
         tabControl1.Size = new Size(1051, 325);
-        tabControl1.TabIndex = 20;
+        tabControl1.TabIndex = 19;
         // 
         // EffectEntriesTabPage
         // 
@@ -574,10 +551,10 @@ partial class ItemInfoForm
         // FlavorTextEntriesTabPage
         // 
         FlavorTextEntriesTabPage.Controls.Add(FlavorTextEntriesDataGridView);
-        FlavorTextEntriesTabPage.Location = new Point(4, 26);
+        FlavorTextEntriesTabPage.Location = new Point(4, 24);
         FlavorTextEntriesTabPage.Name = "FlavorTextEntriesTabPage";
         FlavorTextEntriesTabPage.Padding = new Padding(3);
-        FlavorTextEntriesTabPage.Size = new Size(1043, 295);
+        FlavorTextEntriesTabPage.Size = new Size(1043, 297);
         FlavorTextEntriesTabPage.TabIndex = 1;
         FlavorTextEntriesTabPage.Text = "フレーバーテキスト";
         FlavorTextEntriesTabPage.UseVisualStyleBackColor = true;
@@ -614,17 +591,29 @@ partial class ItemInfoForm
         CategoryTextBox.Size = new Size(191, 24);
         CategoryTextBox.TabIndex = 7;
         // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(906, 776);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 21;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // ItemInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1078, 835);
+        Controls.Add(PropertyButton);
         Controls.Add(CategoryTextBox);
         Controls.Add(CostTextBox);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
-        Controls.Add(CategoryDetailButton);
-        Controls.Add(BabyTriggerForInfoButton);
+        Controls.Add(CategoryButton);
+        Controls.Add(BabyTriggerForButton);
         Controls.Add(FlingPowerGroupBox);
         Controls.Add(CloseButton);
         Controls.Add(SpritesPictureBox);
@@ -636,7 +625,6 @@ partial class ItemInfoForm
         Controls.Add(HeldByPokemonCaptionLabel);
         Controls.Add(NamesCaptionLabel);
         Controls.Add(GameIndiceCaptionLabel);
-        Controls.Add(CategoryCatpionLabel);
         Controls.Add(CostCaptionLabel);
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdCaptionLabel);
@@ -691,8 +679,8 @@ partial class ItemInfoForm
     private PictureBox SpritesPictureBox;
     private Button CloseButton;
     private GroupBox FlingPowerGroupBox;
-    private Button BabyTriggerForInfoButton;
-    private Button CategoryDetailButton;
+    private Button BabyTriggerForButton;
+    private Button CategoryButton;
     private TabControl tabControl1;
     private TabPage EffectEntriesTabPage;
     private TabPage FlavorTextEntriesTabPage;
@@ -714,11 +702,12 @@ partial class ItemInfoForm
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private TextBox FlingEffectTextBox;
     private TextBox FlingPowerTextBox;
-    private Button FlingEffectDetailButton;
+    private Button FlingEffectButton;
     private TextBox IdTextBox;
     private TextBox NameTextBox;
     private TextBox CostTextBox;
     private TextBox CategoryTextBox;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     private DataGridViewButtonColumn dataGridViewButtonColumn6;
+    private Button PropertyButton;
 }

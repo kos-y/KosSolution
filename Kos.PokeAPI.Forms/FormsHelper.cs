@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kos.Core;
 using Kos.PokeAPI.Utility.CommonModels;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Kos.PokeAPI.Forms;
 
@@ -77,6 +78,22 @@ public static class FormsHelper
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="data"></param>
+    /// <param name="button"></param>
+    public static void SetData<T>(T? data, Button button)
+    {
+        if (data is null) {
+            button.Enabled = false;
+        } else {
+            button.Enabled = true;
+            button.Tag = data;
+        }
+    }
+
+    /// <summary>
+    /// データの設定
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="data"></param>
     /// <param name="label"></param>
     /// <param name="dataGridView"></param>
     public static void SetData<T>(IReadOnlyList<T>? data, Label label, DataGridView dataGridView)
@@ -89,6 +106,45 @@ public static class FormsHelper
             dataGridView.Enabled = true;
             dataGridView.AutoGenerateColumns = false;
             dataGridView.DataSource = data;
+        }
+    }
+
+    /// <summary>
+    /// データの設定
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="data"></param>
+    /// <param name="label"></param>
+    /// <param name="dataGridView"></param>
+    public static void SetData<T>(IReadOnlyList<T>? data, DataGridView dataGridView)
+    {
+        if (data is null) {
+            dataGridView.Enabled = false;
+        } else {
+            dataGridView.Enabled = true;
+            dataGridView.AutoGenerateColumns = false;
+            dataGridView.DataSource = data;
+        }
+    }
+
+    /// <summary>
+    /// データの設定
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="data"></param>
+    /// <param name="picureBox"></param>
+    public static void SetData<T>(T? data, PictureBox picureBox)
+    {
+        if (data is not null) {
+            using Stream s
+                = Singleton<HttpClient>.Instance
+                                       .GetAsync(data as string)
+                                       .Result
+                                       .Content
+                                       .ReadAsStreamAsync()
+                                       .Result;
+
+            picureBox.Image = Image.FromStream(s);
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Games.Pokedexes;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -29,9 +30,34 @@ public partial class VersionInfoForm : Form
     }
     #endregion
 
-    #region names DataGridView CellClick
+    #region バージョングループ クリック
     /// <summary>
-    /// names DataGridView CellClick
+    /// バージョングループ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void VersionGroupButton_Click(object sender, EventArgs e)
+    {
+        if (VersionGroupButton.Tag is null) {
+            return;
+        }
+
+        if (VersionGroupButton.Tag is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api?.Url is null) {
+            return;
+        }
+
+        using VersionGroupInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 言語ごとの名前 セルクリック
+    /// <summary>
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -49,18 +75,14 @@ public partial class VersionInfoForm : Form
             return;
         }
 
-        if (name?.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(name.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region names DataGridView CellDoubleClick
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
-    /// names DataGridView CellDoubleClick
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -74,44 +96,31 @@ public partial class VersionInfoForm : Form
             return;
         }
 
-        if (name?.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(name.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region version_group Info Click
+    #region プロパティ クリック
     /// <summary>
-    /// version_group Info Click
+    /// プロパティ クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionGroupInfoButton_Click(object sender, EventArgs e)
+    private void PropertyButton_Click(object sender, EventArgs e)
     {
-        object? tag = VersionGroupInfoButton.Tag;
-        if (tag is null) {
+        if (Tag is null) {
             return;
         }
 
-        if (tag is not NamedAPIResource api) {
-            return;
-        }
-
-        if (api?.Url is null) {
-            return;
-        }
-
-        using VersionGroupInfoForm form = new(api.Url);
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Close Click
+    #region 閉じる クリック
     /// <summary>
-    /// Close Click
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -128,17 +137,16 @@ public partial class VersionInfoForm : Form
     /// <param name="url">URL</param>
     void SetData(string url)
     {
-        Games.Version.Version? v = Games.Version.Version.GetVersion(url);
-        if (v is null) {
+        Games.Version.Version? version = Games.Version.Version.GetVersion(url);
+        if (version is null) {
             return;
         }
 
-        IdLabel.Text = $"{v.Id}";
-        NameLabel.Text = v.Name ?? string.Empty;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = v.Names;
-        VersionGroupLabel.Text = v.VersionGroup?.Name ?? string.Empty;
-        VersionGroupInfoButton.Tag = v.VersionGroup;
+        Tag = version;
+        FormsHelper.SetData(version.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(version.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(version.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(version.VersionGroup, VersionGroupButton, VersionGroupTextBox);
     }
     #endregion
 }

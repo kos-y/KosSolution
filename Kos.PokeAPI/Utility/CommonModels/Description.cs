@@ -37,4 +37,18 @@ public class Description
     [Description("言語")]
     public NamedAPIResource? Language { get; set; }
     #endregion
+
+
+    // メソッド
+
+    #region 文字列化
+    /// <summary>
+    /// 文字列化
+    /// </summary>
+    /// <returns>文字列</returns>
+    public override string ToString()
+    {
+        return $"{Text}";
+    }
+    #endregion
 }

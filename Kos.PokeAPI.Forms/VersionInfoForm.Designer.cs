@@ -27,178 +27,197 @@ partial class VersionInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        NameLabel = new Label();
         NameCaptionLabel = new Label();
-        IdLabel = new Label();
         IdCaptionLabel = new Label();
         NamesDataGridView = new DataGridView();
         NameColumn = new DataGridViewTextBoxColumn();
         LanguageColumn = new DataGridViewTextBoxColumn();
         DetailColumn = new DataGridViewButtonColumn();
         NamesCaptionLabel = new Label();
-        VersionGroupCaptionLabel = new Label();
         CloseButton = new Button();
-        VersionGroupLabel = new Label();
-        VersionGroupInfoButton = new Button();
+        VersionGroupButton = new Button();
+        NameTextBox = new TextBox();
+        IdTextBox = new TextBox();
+        VersionGroupTextBox = new TextBox();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
         // 
-        // NameLabel
-        // 
-        NameLabel.BorderStyle = BorderStyle.Fixed3D;
-        NameLabel.Location = new Point(117, 31);
-        NameLabel.Name = "NameLabel";
-        NameLabel.Size = new Size(147, 23);
-        NameLabel.TabIndex = 3;
-        NameLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // NameCaptionLabel
         // 
-        NameCaptionLabel.Location = new Point(12, 32);
+        NameCaptionLabel.AutoSize = true;
+        NameCaptionLabel.Location = new Point(22, 45);
+        NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(99, 23);
+        NameCaptionLabel.Size = new Size(98, 17);
         NameCaptionLabel.TabIndex = 2;
-        NameCaptionLabel.Text = "name";
+        NameCaptionLabel.Text = "バージョンの名前";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // IdLabel
-        // 
-        IdLabel.BorderStyle = BorderStyle.Fixed3D;
-        IdLabel.Location = new Point(117, 8);
-        IdLabel.Name = "IdLabel";
-        IdLabel.Size = new Size(147, 23);
-        IdLabel.TabIndex = 1;
-        IdLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
-        IdCaptionLabel.Location = new Point(12, 9);
+        IdCaptionLabel.AutoSize = true;
+        IdCaptionLabel.Location = new Point(39, 15);
+        IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(99, 23);
+        IdCaptionLabel.Size = new Size(77, 17);
         IdCaptionLabel.TabIndex = 0;
-        IdCaptionLabel.Text = "id";
+        IdCaptionLabel.Text = "バージョンID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NamesDataGridView
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(117, 57);
+        NamesDataGridView.Location = new Point(8, 120);
+        NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(434, 150);
-        NamesDataGridView.TabIndex = 5;
+        NamesDataGridView.Size = new Size(395, 170);
+        NamesDataGridView.TabIndex = 7;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
         // NameColumn
         // 
+        NameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         NameColumn.DataPropertyName = "Text";
-        NameColumn.HeaderText = "name";
+        NameColumn.HeaderText = "名前";
         NameColumn.Name = "NameColumn";
         NameColumn.ReadOnly = true;
+        NameColumn.Width = 59;
         // 
         // LanguageColumn
         // 
+        LanguageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         LanguageColumn.DataPropertyName = "Language";
-        LanguageColumn.HeaderText = "language";
+        LanguageColumn.HeaderText = "言語";
         LanguageColumn.Name = "LanguageColumn";
         LanguageColumn.ReadOnly = true;
+        LanguageColumn.Width = 59;
         // 
         // DetailColumn
         // 
-        DetailColumn.HeaderText = "Info";
+        DetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        DetailColumn.HeaderText = "詳細";
         DetailColumn.Name = "DetailColumn";
-        DetailColumn.Text = "Info..";
+        DetailColumn.Text = "詳細";
         DetailColumn.UseColumnTextForButtonValue = true;
+        DetailColumn.Width = 40;
         // 
         // NamesCaptionLabel
         // 
-        NamesCaptionLabel.Location = new Point(12, 57);
+        NamesCaptionLabel.AutoSize = true;
+        NamesCaptionLabel.Location = new Point(8, 100);
+        NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
-        NamesCaptionLabel.Size = new Size(99, 23);
-        NamesCaptionLabel.TabIndex = 4;
-        NamesCaptionLabel.Text = "names";
+        NamesCaptionLabel.Size = new Size(92, 17);
+        NamesCaptionLabel.TabIndex = 6;
+        NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // VersionGroupCaptionLabel
-        // 
-        VersionGroupCaptionLabel.Location = new Point(12, 213);
-        VersionGroupCaptionLabel.Name = "VersionGroupCaptionLabel";
-        VersionGroupCaptionLabel.Size = new Size(99, 23);
-        VersionGroupCaptionLabel.TabIndex = 6;
-        VersionGroupCaptionLabel.Text = "version_groups";
-        VersionGroupCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(476, 213);
+        CloseButton.Location = new Point(327, 296);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 23);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 9;
-        CloseButton.Text = "Close";
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
-        // VersionGroupLabel
+        // VersionGroupButton
         // 
-        VersionGroupLabel.BorderStyle = BorderStyle.Fixed3D;
-        VersionGroupLabel.Location = new Point(117, 213);
-        VersionGroupLabel.Name = "VersionGroupLabel";
-        VersionGroupLabel.Size = new Size(252, 23);
-        VersionGroupLabel.TabIndex = 7;
-        VersionGroupLabel.TextAlign = ContentAlignment.MiddleLeft;
+        VersionGroupButton.Location = new Point(8, 71);
+        VersionGroupButton.Margin = new Padding(4, 3, 4, 3);
+        VersionGroupButton.Name = "VersionGroupButton";
+        VersionGroupButton.Size = new Size(112, 26);
+        VersionGroupButton.TabIndex = 4;
+        VersionGroupButton.Text = "バージョングループ";
+        VersionGroupButton.UseVisualStyleBackColor = true;
+        VersionGroupButton.Click += VersionGroupButton_Click;
         // 
-        // VersionGroupInfoButton
+        // NameTextBox
         // 
-        VersionGroupInfoButton.Location = new Point(375, 213);
-        VersionGroupInfoButton.Name = "VersionGroupInfoButton";
-        VersionGroupInfoButton.Size = new Size(43, 23);
-        VersionGroupInfoButton.TabIndex = 8;
-        VersionGroupInfoButton.Text = "Info...";
-        VersionGroupInfoButton.UseVisualStyleBackColor = true;
-        VersionGroupInfoButton.Click += VersionGroupInfoButton_Click;
+        NameTextBox.Location = new Point(128, 42);
+        NameTextBox.Margin = new Padding(4, 3, 4, 3);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.ReadOnly = true;
+        NameTextBox.Size = new Size(275, 24);
+        NameTextBox.TabIndex = 3;
+        // 
+        // IdTextBox
+        // 
+        IdTextBox.Location = new Point(128, 12);
+        IdTextBox.Margin = new Padding(4, 3, 4, 3);
+        IdTextBox.Name = "IdTextBox";
+        IdTextBox.ReadOnly = true;
+        IdTextBox.Size = new Size(275, 24);
+        IdTextBox.TabIndex = 1;
+        // 
+        // VersionGroupTextBox
+        // 
+        VersionGroupTextBox.Location = new Point(128, 73);
+        VersionGroupTextBox.Margin = new Padding(4, 3, 4, 3);
+        VersionGroupTextBox.Name = "VersionGroupTextBox";
+        VersionGroupTextBox.ReadOnly = true;
+        VersionGroupTextBox.Size = new Size(275, 24);
+        VersionGroupTextBox.TabIndex = 5;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(243, 296);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 8;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // VersionInfoForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(570, 251);
-        Controls.Add(VersionGroupInfoButton);
-        Controls.Add(VersionGroupLabel);
+        ClientSize = new Size(423, 346);
+        Controls.Add(PropertyButton);
+        Controls.Add(VersionGroupTextBox);
+        Controls.Add(NameTextBox);
+        Controls.Add(IdTextBox);
+        Controls.Add(VersionGroupButton);
         Controls.Add(CloseButton);
-        Controls.Add(VersionGroupCaptionLabel);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
-        Controls.Add(NameLabel);
         Controls.Add(NameCaptionLabel);
-        Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "VersionInfoForm";
         StartPosition = FormStartPosition.CenterParent;
-        Text = "Version";
+        Text = "バージョン";
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
-
-    private Label NameLabel;
     private Label NameCaptionLabel;
-    private Label IdLabel;
     private Label IdCaptionLabel;
     private DataGridView NamesDataGridView;
-    private DataGridViewTextBoxColumn NameColumn;
-    private DataGridViewTextBoxColumn LanguageColumn;
-    private DataGridViewButtonColumn DetailColumn;
     private Label NamesCaptionLabel;
     private DataGridView VersionGroupDataGridView;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     private DataGridViewButtonColumn dataGridViewButtonColumn4;
-    private Label VersionGroupCaptionLabel;
     private Button CloseButton;
-    private Label VersionGroupLabel;
-    private Button VersionGroupInfoButton;
+    private Button VersionGroupButton;
+    private TextBox NameTextBox;
+    private TextBox IdTextBox;
+    private TextBox VersionGroupTextBox;
+    private DataGridViewTextBoxColumn NameColumn;
+    private DataGridViewTextBoxColumn LanguageColumn;
+    private DataGridViewButtonColumn DetailColumn;
+    private Button PropertyButton;
 }

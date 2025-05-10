@@ -6,6 +6,9 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
+using Kos.PokeAPI.Items.Item;
 
 namespace Kos.PokeAPI.Items.ItemAttributes;
 
@@ -19,14 +22,20 @@ public class ItemAttribute
     /// アイテム特性ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("アイテム特性ID")]
     public int? Id { get; set; }
     #endregion
 
-    #region アイテム特性名
+    #region アイテム特性の名前
     /// <summary>
-    /// アイテム特性名
+    /// アイテム特性の名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("アイテム特性の名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -35,22 +44,34 @@ public class ItemAttribute
     /// アイテムリスト
     /// </summary>
     [JsonPropertyName("items")]
-    public List<NamedAPIResource>? Items { get; set; }
+    [DisplayName("items")]
+    [Category("(基本)")]
+    [Description("アイテムリスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? Items { get; set; }
     #endregion
 
-    #region アイテム特性名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// アイテム特性名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
     public List<Name>? Names { get; set; }
     #endregion
 
-    #region 説明リスト
+    #region 言語ごとの説明リスト
     /// <summary>
     /// 説明リスト
     /// </summary>
     [JsonPropertyName("descriptions")]
+    [DisplayName("descriptions")]
+    [Category("(基本)")]
+    [Description("言語ごとの説明リスト")]
+    [TypeConverter(typeof(ListConverter<Description>))]
     public List<Description>? Descriptions { get; set; }
     #endregion
 
