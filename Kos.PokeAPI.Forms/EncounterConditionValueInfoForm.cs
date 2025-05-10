@@ -8,6 +8,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Encounters.EncounterConditionValues;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -54,19 +55,19 @@ public partial class EncounterConditionValueInfoForm : Form
     }
     #endregion
 
-    #region 条件 詳細 クリック
+    #region 遭遇条件 クリック
     /// <summary>
-    /// 条件 詳細 クリック
+    /// 遭遇条件 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ConditionDetailButton_Click(object sender, EventArgs e)
+    private void ConditionButton_Click(object sender, EventArgs e)
     {
-        if (ConditionDetailButton.Tag is null) {
+        if (ConditionButton.Tag is null) {
             return;
         }
 
-        if (ConditionDetailButton.Tag is not NamedAPIResource api) {
+        if (ConditionButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -125,6 +126,23 @@ public partial class EncounterConditionValueInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void button1_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -144,17 +162,16 @@ public partial class EncounterConditionValueInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        EncounterConditionValue? ecv = EncounterConditionValue.GetEncountConditionValue(url);
-        if (ecv is null) {
+        EncounterConditionValue? value = EncounterConditionValue.GetEncountConditionValue(url);
+        if (value is null) {
             return;
         }
 
-        Tag = ecv;
-        IdTextBox.Text = $"{ecv.Id}";
-        NameTextBox.Text = ecv.Name;
-        ConditionTextBox.Text = ecv.Condition?.Name ?? string.Empty;
-        ConditionDetailButton.Tag = ecv.Condition;
-        NamesDataGridView.DataSource = ecv.Names;
+        Tag = value;
+        FormsHelper.SetData(value.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(value.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(value.Condition, ConditionButton, ConditionTextBox);
+        FormsHelper.SetData(value.Names, NamesCaptionLabel, NamesDataGridView);
     }
     #endregion
 }

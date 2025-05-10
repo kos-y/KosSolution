@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Encounters.EncounterConditions;
 using Kos.PokeAPI.Encounters.EncounterConditionValues;
 using Kos.PokeAPI.Encounters.EncounterMethods;
@@ -155,6 +156,23 @@ public partial class EncounterConditionInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void button1_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クック
@@ -174,18 +192,16 @@ public partial class EncounterConditionInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        EncounterCondition? ec = EncounterCondition.GetEncountCondition(url);
-        if (ec is null) {
+        EncounterCondition? condition = EncounterCondition.GetEncountCondition(url);
+        if (condition is null) {
             return;
         }
 
-        Tag = ec;
-        IdTextBox.Text = $"{ec.Id}";
-        NameTextBox.Text = ec.Name;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = ec.Names;
-        ValuesDataGridView.AutoGenerateColumns = false;
-        ValuesDataGridView.DataSource = ec.Values;
+        Tag = condition;
+        FormsHelper.SetData(condition.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(condition.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(condition.Names, NameCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(condition.Values, ValuesCaptionLabel, ValuesDataGridView);
     }
     #endregion
 }

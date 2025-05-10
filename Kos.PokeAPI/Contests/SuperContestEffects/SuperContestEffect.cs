@@ -10,7 +10,7 @@ using System.ComponentModel;
 using Kos.Core;
 using Kos.PokeAPI.Contests.ContestTypes;
 
-namespace Kos.PokeAPI.Contests.SuportContestEffects;
+namespace Kos.PokeAPI.Contests.SuperContestEffects;
 
 /// <summary>
 /// スーパーコンテスト 効果

@@ -41,6 +41,7 @@ partial class EncounterConditionInfoForm
         CloseButton = new Button();
         IdTextBox = new TextBox();
         NameTextBox = new TextBox();
+        button1 = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)ValuesDataGridView).BeginInit();
         SuspendLayout();
@@ -48,18 +49,18 @@ partial class EncounterConditionInfoForm
         // NameCaptionLabel
         // 
         NameCaptionLabel.AutoSize = true;
-        NameCaptionLabel.Location = new Point(34, 45);
+        NameCaptionLabel.Location = new Point(13, 45);
         NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(73, 17);
+        NameCaptionLabel.Size = new Size(98, 17);
         NameCaptionLabel.TabIndex = 2;
-        NameCaptionLabel.Text = "遭遇条件名";
+        NameCaptionLabel.Text = "遭遇条件の名前";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
         IdCaptionLabel.AutoSize = true;
-        IdCaptionLabel.Location = new Point(30, 15);
+        IdCaptionLabel.Location = new Point(34, 15);
         IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
         IdCaptionLabel.Size = new Size(77, 17);
@@ -71,11 +72,11 @@ partial class EncounterConditionInfoForm
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(115, 72);
+        NamesDataGridView.Location = new Point(13, 92);
         NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(558, 170);
+        NamesDataGridView.Size = new Size(263, 170);
         NamesDataGridView.TabIndex = 5;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
@@ -110,7 +111,7 @@ partial class EncounterConditionInfoForm
         // NamesCaptionLabel
         // 
         NamesCaptionLabel.AutoSize = true;
-        NamesCaptionLabel.Location = new Point(15, 72);
+        NamesCaptionLabel.Location = new Point(13, 72);
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
         NamesCaptionLabel.Size = new Size(92, 17);
@@ -122,11 +123,11 @@ partial class EncounterConditionInfoForm
         // 
         ValuesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         ValuesDataGridView.Columns.AddRange(new DataGridViewColumn[] { ValuesNameColumn, dataGridViewButtonColumn1 });
-        ValuesDataGridView.Location = new Point(115, 248);
+        ValuesDataGridView.Location = new Point(284, 92);
         ValuesDataGridView.Margin = new Padding(4, 3, 4, 3);
         ValuesDataGridView.Name = "ValuesDataGridView";
         ValuesDataGridView.RowHeadersVisible = false;
-        ValuesDataGridView.Size = new Size(558, 170);
+        ValuesDataGridView.Size = new Size(444, 170);
         ValuesDataGridView.TabIndex = 7;
         ValuesDataGridView.CellClick += ValuesDataGridView_CellClick;
         ValuesDataGridView.CellDoubleClick += ValuesDataGridView_CellDoubleClick;
@@ -152,7 +153,7 @@ partial class EncounterConditionInfoForm
         // ValuesCaptionLabel
         // 
         ValuesCaptionLabel.AutoSize = true;
-        ValuesCaptionLabel.Location = new Point(60, 248);
+        ValuesCaptionLabel.Location = new Point(284, 72);
         ValuesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         ValuesCaptionLabel.Name = "ValuesCaptionLabel";
         ValuesCaptionLabel.Size = new Size(47, 17);
@@ -162,40 +163,50 @@ partial class EncounterConditionInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(612, 424);
+        CloseButton.Location = new Point(652, 268);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(61, 35);
-        CloseButton.TabIndex = 8;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 9;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
         // IdTextBox
         // 
-        IdTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        IdTextBox.Location = new Point(114, 12);
+        IdTextBox.Location = new Point(118, 12);
         IdTextBox.Name = "IdTextBox";
         IdTextBox.ReadOnly = true;
-        IdTextBox.Size = new Size(544, 24);
+        IdTextBox.Size = new Size(158, 24);
         IdTextBox.TabIndex = 1;
-        IdTextBox.Text = "ピカチュウ";
+        IdTextBox.Text = "100";
         // 
         // NameTextBox
         // 
-        NameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        NameTextBox.Location = new Point(115, 42);
+        NameTextBox.Location = new Point(118, 42);
         NameTextBox.Name = "NameTextBox";
         NameTextBox.ReadOnly = true;
-        NameTextBox.Size = new Size(544, 24);
+        NameTextBox.Size = new Size(158, 24);
         NameTextBox.TabIndex = 3;
-        NameTextBox.Text = "ピカチュウ";
+        NameTextBox.Text = "story-progress";
+        // 
+        // button1
+        // 
+        button1.Location = new Point(568, 268);
+        button1.Margin = new Padding(4, 3, 4, 3);
+        button1.Name = "button1";
+        button1.Size = new Size(76, 35);
+        button1.TabIndex = 8;
+        button1.Text = "プロパティ";
+        button1.UseVisualStyleBackColor = true;
+        button1.Click += button1_Click;
         // 
         // EncounterConditionInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(682, 463);
+        ClientSize = new Size(743, 310);
+        Controls.Add(button1);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
         Controls.Add(CloseButton);
@@ -234,4 +245,5 @@ partial class EncounterConditionInfoForm
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private TextBox IdTextBox;
     private TextBox NameTextBox;
+    private Button button1;
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.Core.Forms;
 using Kos.PokeAPI.Contests.ContestEffects;
-using Kos.PokeAPI.Contests.SuportContestEffects;
+using Kos.PokeAPI.Contests.SuperContestEffects;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;

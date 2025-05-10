@@ -29,17 +29,17 @@ partial class EncounterConditionValueInfoForm
     {
         NameCaptionLabel = new Label();
         IdCaptionLabel = new Label();
-        ConditionCaptionLabel = new Label();
         NamesDataGridView = new DataGridView();
         NameColumn = new DataGridViewTextBoxColumn();
         LanguageColumn = new DataGridViewTextBoxColumn();
         DetailColumn = new DataGridViewButtonColumn();
         NamesCaptionLabel = new Label();
-        ConditionDetailButton = new Button();
+        ConditionButton = new Button();
         CloseButton = new Button();
         IdTextBox = new TextBox();
         NameTextBox = new TextBox();
         ConditionTextBox = new TextBox();
+        button1 = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
         // 
@@ -65,17 +65,6 @@ partial class EncounterConditionValueInfoForm
         IdCaptionLabel.Text = "遭遇条件値ID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // ConditionCaptionLabel
-        // 
-        ConditionCaptionLabel.AutoSize = true;
-        ConditionCaptionLabel.Location = new Point(47, 70);
-        ConditionCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        ConditionCaptionLabel.Name = "ConditionCaptionLabel";
-        ConditionCaptionLabel.Size = new Size(60, 17);
-        ConditionCaptionLabel.TabIndex = 4;
-        ConditionCaptionLabel.Text = "遭遇条件";
-        ConditionCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // NamesDataGridView
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -85,7 +74,7 @@ partial class EncounterConditionValueInfoForm
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
         NamesDataGridView.Size = new Size(767, 170);
-        NamesDataGridView.TabIndex = 8;
+        NamesDataGridView.TabIndex = 7;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
@@ -123,27 +112,27 @@ partial class EncounterConditionValueInfoForm
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
         NamesCaptionLabel.Size = new Size(92, 17);
-        NamesCaptionLabel.TabIndex = 7;
+        NamesCaptionLabel.TabIndex = 6;
         NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // ConditionDetailButton
+        // ConditionButton
         // 
-        ConditionDetailButton.Location = new Point(736, 66);
-        ConditionDetailButton.Margin = new Padding(4, 3, 4, 3);
-        ConditionDetailButton.Name = "ConditionDetailButton";
-        ConditionDetailButton.Size = new Size(46, 24);
-        ConditionDetailButton.TabIndex = 6;
-        ConditionDetailButton.Text = "詳細";
-        ConditionDetailButton.UseVisualStyleBackColor = true;
-        ConditionDetailButton.Click += ConditionDetailButton_Click;
+        ConditionButton.Location = new Point(15, 66);
+        ConditionButton.Margin = new Padding(4, 3, 4, 3);
+        ConditionButton.Name = "ConditionButton";
+        ConditionButton.Size = new Size(90, 24);
+        ConditionButton.TabIndex = 4;
+        ConditionButton.Text = "遭遇条件";
+        ConditionButton.UseVisualStyleBackColor = true;
+        ConditionButton.Click += ConditionButton_Click;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(710, 300);
+        CloseButton.Location = new Point(706, 300);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(72, 37);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 9;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -170,22 +159,33 @@ partial class EncounterConditionValueInfoForm
         ConditionTextBox.Location = new Point(112, 67);
         ConditionTextBox.Name = "ConditionTextBox";
         ConditionTextBox.ReadOnly = true;
-        ConditionTextBox.Size = new Size(617, 24);
+        ConditionTextBox.Size = new Size(670, 24);
         ConditionTextBox.TabIndex = 5;
+        // 
+        // button1
+        // 
+        button1.Location = new Point(622, 300);
+        button1.Margin = new Padding(4, 3, 4, 3);
+        button1.Name = "button1";
+        button1.Size = new Size(76, 35);
+        button1.TabIndex = 8;
+        button1.Text = "プロパティ";
+        button1.UseVisualStyleBackColor = true;
+        button1.Click += button1_Click;
         // 
         // EncounterConditionValueInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(795, 349);
+        Controls.Add(button1);
         Controls.Add(ConditionTextBox);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
         Controls.Add(CloseButton);
-        Controls.Add(ConditionDetailButton);
+        Controls.Add(ConditionButton);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
-        Controls.Add(ConditionCaptionLabel);
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
@@ -204,10 +204,9 @@ partial class EncounterConditionValueInfoForm
     #endregion
     private Label NameCaptionLabel;
     private Label IdCaptionLabel;
-    private Label ConditionCaptionLabel;
     private DataGridView NamesDataGridView;
     private Label NamesCaptionLabel;
-    private Button ConditionDetailButton;
+    private Button ConditionButton;
     private Button CloseButton;
     private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn LanguageColumn;
@@ -215,4 +214,5 @@ partial class EncounterConditionValueInfoForm
     private TextBox IdTextBox;
     private TextBox NameTextBox;
     private TextBox ConditionTextBox;
+    private Button button1;
 }

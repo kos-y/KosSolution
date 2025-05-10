@@ -6,6 +6,8 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
 
 namespace Kos.PokeAPI.Encounters.EncounterConditions;
 
@@ -16,35 +18,49 @@ public class EncounterCondition
 {
     // フィールド
 
-    #region エンカウント条件ID
+    #region 遭遇条件ID
     /// <summary>
-    /// エンカウント条件)D
+    /// 遭遇条件ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("遭遇条件ID")]
     public int? Id { get; set; }
     #endregion
 
-    #region エンカウント条件名
+    #region 遭遇条件の名前
     /// <summary>
-    /// エンカウント条件名
+    /// 遭遇条件の名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("遭遇条件の名前")]
     public string? Name { get; set; }
     #endregion
 
-    #region エンカウント条件名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// エンカウント条件名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public List<Name>? Names { get; set; }
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
-    #region エンカウント条件値リスト
+    #region 遭遇条件値リスト
     /// <summary>
-    /// エンカウント条件値リスト
+    /// 遭遇条件値リスト
     /// </summary>
     [JsonPropertyName("values")]
+    [DisplayName("values")]
+    [Category("(基本)")]
+    [Description("遭遇条件値リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? Values { get; set; }
     #endregion
 
