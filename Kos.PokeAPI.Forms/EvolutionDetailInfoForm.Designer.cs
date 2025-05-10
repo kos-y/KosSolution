@@ -119,7 +119,7 @@ partial class EvolutionDetailInfoForm
         LocationButton.TabIndex = 6;
         LocationButton.Text = "場所";
         LocationButton.UseVisualStyleBackColor = true;
-        LocationButton.Click += LocationDetailButton_Click;
+        LocationButton.Click += LocationButton_Click;
         // 
         // HeldItemButton
         // 

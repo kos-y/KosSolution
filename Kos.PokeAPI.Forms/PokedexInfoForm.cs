@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Games.Generations;
 using Kos.PokeAPI.Games.Pokedexes;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -38,11 +39,11 @@ public partial class PokedexInfoForm : Form
     /// <param name="e"></param>
     private void RegionDetailButton_Click(object sender, EventArgs e)
     {
-        if (RegionDetailButton.Tag is null) {
+        if (RegionButton.Tag is null) {
             return;
         }
 
-        if (RegionDetailButton.Tag is not NamedAPIResource api) {
+        if (RegionButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -202,6 +203,23 @@ public partial class PokedexInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -221,24 +239,20 @@ public partial class PokedexInfoForm : Form
     /// <param name="url">URL</param>
     public void SetData(string url)
     {
-        Pokedex? p = Pokedex.GetPokedex(url);
-        if (p is null) {
+        Pokedex? pokedex = Pokedex.GetPokedex(url);
+        if (pokedex is null) {
             return;
         }
 
-        IdTextBox.Text = $"{p.Id}";
-        NameTextBox.Text = p.Name ?? string.Empty;
-        IsMainSeriesTextBox.Text = $"{p.IsMainSeries}";
-        RegionTextBox.Text = p.Region?.Name ?? string.Empty;
-        RegionDetailButton.Tag = p.Region;
-        DescriptionsDataGridView.AutoGenerateColumns = false;
-        DescriptionsDataGridView.DataSource = p.Descriptions;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = p.Names;
-        PokemonEntriesDataGridView.AutoGenerateColumns = false;
-        PokemonEntriesDataGridView.DataSource = p.PokemonEntries;
-        VersionGroupDataGridView.AutoGenerateColumns = false;
-        VersionGroupDataGridView.DataSource = p.VersionGroups;
+        Tag = pokedex;
+        FormsHelper.SetData(pokedex.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(pokedex.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(pokedex.IsMainSeries, IsMainSeriesCaptionLabel, IsMainSeriesTextBox);
+        FormsHelper.SetData(pokedex.Region, RegionButton, RegionTextBox);
+        FormsHelper.SetData(pokedex.Descriptions, DescriptionsCaptionLabel, DescriptionsDataGridView);
+        FormsHelper.SetData(pokedex.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(pokedex.PokemonEntries, PokemonEntriesCaptionLabel, PokemonEntriesDataGridView);
+        FormsHelper.SetData(pokedex.VersionGroups, VersionGroupCaptionLabel, VersionGroupDataGridView);
     }
     #endregion
 }

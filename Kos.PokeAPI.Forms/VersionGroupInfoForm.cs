@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Games.VersionGroups;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -29,20 +30,19 @@ public partial class VersionGroupInfoForm : Form
     }
     #endregion
 
-    #region generation info Click
+    #region 世代 クリック
     /// <summary>
-    /// generation info Click
+    /// 世代 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void GenerationInfoButton_Click(object sender, EventArgs e)
     {
-        object? tag = GenerationInfoButton.Tag;
-        if (tag is null) {
+        if (GenerationButton.Tag is null) {
             return;
         }
 
-        if (tag is not NamedAPIResource api) {
+        if (GenerationButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -55,9 +55,9 @@ public partial class VersionGroupInfoForm : Form
     }
     #endregion
 
-    #region move_learn_methods DataGridView CellClick
+    #region 技の習得方法 セルクリック
     /// <summary>
-    /// move_learn_methods DataGridView CellClick
+    /// 技の習得方法 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -80,12 +80,15 @@ public partial class VersionGroupInfoForm : Form
         if (api?.Url is null) {
             return;
         }
+
+        using MoveLearnMethodInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region move_learn_methods DataGridView CellDoubleClick
+    #region 技の習得方法 セルダブルクリック
     /// <summary>
-    /// move_learn_methods DataGridView CellDoubleClick
+    /// 技の習得方法 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -104,12 +107,69 @@ public partial class VersionGroupInfoForm : Form
         if (api?.Url is null) {
             return;
         }
+
+        using MoveLearnMethodInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region pokedexes DataGridView CellClick
+    #region 地域 セルクリック
     /// <summary>
-    /// pokedexes DataGridView CellClick
+    /// 地域 セルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void RegionsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (RegionsDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+            return;
+        }
+
+        if (RegionsDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using RegionInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 地域 セルダブルクリック
+    /// <summary>
+    /// 地域 セルダブルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void RegionsDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0) {
+            return;
+        }
+
+        if (RegionsDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using RegionInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region ポケモン図鑑 セルクリック
+    /// <summary>
+    /// ポケモン図鑑 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -136,9 +196,9 @@ public partial class VersionGroupInfoForm : Form
     }
     #endregion
 
-    #region pokedexes DataGridView CellDoubleClick
+    #region ポケモン図鑑 セルダブルクリック
     /// <summary>
-    /// pokedexes DataGridView CellDoubleClick
+    /// ポケモン図鑑 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -161,9 +221,9 @@ public partial class VersionGroupInfoForm : Form
     }
     #endregion
 
-    #region versions DataGridView CellClick
+    #region バージョン セルクリック
     /// <summary>
-    /// versions DataGridView CellClick
+    /// バージョン セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -190,9 +250,9 @@ public partial class VersionGroupInfoForm : Form
     }
     #endregion
 
-    #region versions DataGridView CellDoubleClick
+    #region バージョン セルダブルクリック
     /// <summary>
-    /// versions DataGridView CellDoubleClick
+    /// バージョン セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -215,9 +275,26 @@ public partial class VersionGroupInfoForm : Form
     }
     #endregion
 
-    #region Close Click
+    #region プロティ クリック
     /// <summary>
-    /// Close Click
+    /// プロティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);  
+    }
+    #endregion
+
+    #region 閉じる クリック
+    /// <summary>
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -237,24 +314,20 @@ public partial class VersionGroupInfoForm : Form
     /// <param name="url">URL</param>
     void SetData(string url)
     {
-        VersionGroup? vg = VersionGroup.GetVersionGroup(url);
-        if (vg is null) {
+        VersionGroup? group = VersionGroup.GetVersionGroup(url);
+        if (group is null) {
             return;
         }
 
-        IdLabel.Text = $"{vg.Id}";
-        NameLabel.Text = vg.Name ?? string.Empty;
-        OrderLabel.Text = $"{vg.Order}";
-        GenerationLabel.Text = vg.Generation?.Name ?? string.Empty;
-        GenerationInfoButton.Tag = vg.Generation;
-        MoveLearnMethodsDataGridView.AutoGenerateColumns = false;
-        MoveLearnMethodsDataGridView.DataSource = vg.MoveLearnMethods;
-        PokedexesDataGridView.AutoGenerateColumns = false;
-        PokedexesDataGridView.DataSource = vg.Pokedexes;
-        RegionsDataGridView.AutoGenerateColumns = false;
-        RegionsDataGridView.DataSource = vg.Regions;
-        VersionsDataGridView.AutoGenerateColumns = false;
-        VersionsDataGridView.DataSource = vg.Versions;
+        Tag = group;
+        FormsHelper.SetData(group.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(group.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(group.Order, OrderCaptionLabel, OrderTextBox);
+        FormsHelper.SetData(group.Generation, GenerationButton, GenerationTextBox);
+        FormsHelper.SetData(group.MoveLearnMethods, MoveLearnMethodsCaptionLabel, MoveLearnMethodsDataGridView);
+        FormsHelper.SetData(group.Pokedexes, PokedexesCaptionLabel, PokedexesDataGridView);
+        FormsHelper.SetData(group.Regions, RegionsCaptionLabel, RegionsDataGridView);
+        FormsHelper.SetData(group.Versions, VersionsCaptionLabel, VersionsDataGridView);
     }
     #endregion
 }

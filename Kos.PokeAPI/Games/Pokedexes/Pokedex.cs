@@ -6,6 +6,8 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
 
 namespace Kos.PokeAPI.Games.Pokedexes;
 
@@ -21,14 +23,20 @@ public class Pokedex
     /// ポケモン図鑑ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("ポケモン図鑑ID")]
     public int? Id { get; set; }
     #endregion
 
-    #region ポケモン図鑑名
+    #region ポケモン図鑑の名前
     /// <summary>
-    /// ポケモン図鑑名
+    /// ポケモン図鑑の名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("ポケモン図鑑の名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -37,23 +45,34 @@ public class Pokedex
     /// メインシリーズか
     /// </summary>
     [JsonPropertyName("is_main_series")]
+    [DisplayName("is_main_series")]
+    [Category("(基本)")]
+    [Description("メインシリーズかどうか")]
     public bool? IsMainSeries { get; set; }
     #endregion
 
-    #region 説明リスト
+    #region 言語ごとの説明リスト
     /// <summary>
-    /// 説明リスト
+    /// 言語ごとの説明リスト
     /// </summary>
     [JsonPropertyName("descriptions")]
-    public List<Description>? Descriptions { get; set; }
+    [DisplayName("is_main_series")]
+    [Category("(基本)")]
+    [Description("言語ごとの説明リスト")]
+    [TypeConverter(typeof(ListConverter<Description>))]
+    public IReadOnlyList<Description>? Descriptions { get; set; }
     #endregion
 
-    #region ポケモン図鑑名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// ポケモン図鑑名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public List<Name>? Names { get; set; }
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
     #region ポケモン登録情報リスト
@@ -61,7 +80,11 @@ public class Pokedex
     /// ポケモン登録情報リスト
     /// </summary>
     [JsonPropertyName("pokemon_entries")]
-    public List<PokemonEntry>? PokemonEntries { get; set; }
+    [DisplayName("pokemon_entries")]
+    [Category("(基本)")]
+    [Description("ポケモン登録情報リスト")]
+    [TypeConverter(typeof(ListConverter<PokemonEntry>))]
+    public IReadOnlyList<PokemonEntry>? PokemonEntries { get; set; }
     #endregion
 
     #region 地域
@@ -69,6 +92,9 @@ public class Pokedex
     /// 地域
     /// </summary>
     [JsonPropertyName("region")]
+    [DisplayName("region")]
+    [Category("(基本)")]
+    [Description("地域")]
     public NamedAPIResource? Region { get; set; }
     #endregion
 
@@ -77,7 +103,11 @@ public class Pokedex
     /// バージョングループリスト
     /// </summary>
     [JsonPropertyName("version_groups")]
-    public List<NamedAPIResource>? VersionGroups { get; set; }
+    [DisplayName("version_groups")]
+    [Category("(基本)")]
+    [Description("バージョングループリスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? VersionGroups { get; set; }
     #endregion
 
 
@@ -91,9 +121,18 @@ public class Pokedex
     /// <returns>ポケモン図鑑リソース</returns>
     public static Pokedex? GetPokedex(string url)
     {
-        string json = PokeAPIClient.GetAPIResourceUrl(url);
+        // 全国図鑑取得時にSystem.Text.Json.JsonExceptionが1回発生しているので、５回リトライ
 
-        return JsonSerializer.Deserialize<Pokedex>(json);
+        for (int i = 0; i < 5; i++) {
+            try {
+                string json = PokeAPIClient.GetAPIResourceUrl(url);
+
+                return JsonSerializer.Deserialize<Pokedex>(json);
+            } catch (JsonException) {
+            }
+        }
+
+        return null;
     }
     #endregion
 }

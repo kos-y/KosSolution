@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -10,6 +11,7 @@ namespace Kos.PokeAPI.Utility.CommonModels;
 /// <summary>
 /// 説明
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class Description
 {
     // フィールド
@@ -19,6 +21,9 @@ public class Description
     /// 説明
     /// </summary>
     [JsonPropertyName("description")]
+    [DisplayName("description")]
+    [Category("(基本)")]
+    [Description("説明")]
     public string? Text { get; set; }
     #endregion
 
@@ -27,6 +32,9 @@ public class Description
     /// 言語
     /// </summary>
     [JsonPropertyName("language")]
+    [DisplayName("language")]
+    [Category("(基本)")]
+    [Description("言語")]
     public NamedAPIResource? Language { get; set; }
     #endregion
 }

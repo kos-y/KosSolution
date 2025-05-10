@@ -6,6 +6,8 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
 
 namespace Kos.PokeAPI.Games.VersionGroups;
 
@@ -19,14 +21,20 @@ public class VersionGroup
     /// バージョングループID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("バージョングループID")]
     public int? Id { get; set; }
     #endregion
 
-    #region バージョングループ名
+    #region バージョングループの名前
     /// <summary>
-    /// バージョングループ名
+    /// バージョングループの名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("バージョングループの名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -35,6 +43,9 @@ public class VersionGroup
     /// 順番
     /// </summary>
     [JsonPropertyName("order")]
+    [DisplayName("order")]
+    [Category("(基本)")]
+    [Description("順番")]
     public int? Order { get; set; }
     #endregion
 
@@ -43,6 +54,9 @@ public class VersionGroup
     /// 世代
     /// </summary>
     [JsonPropertyName("generation")]
+    [DisplayName("generation")]
+    [Category("(基本)")]
+    [Description("世代")]
     public NamedAPIResource? Generation { get; set; }
     #endregion
 
@@ -51,7 +65,11 @@ public class VersionGroup
     /// 技の習得方法リスト
     /// </summary>
     [JsonPropertyName("move_learn_methods")]
-    public List<NamedAPIResource>? MoveLearnMethods { get; set; }
+    [DisplayName("move_learn_methods")]
+    [Category("(基本)")]
+    [Description("技の習得方法リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? MoveLearnMethods { get; set; }
     #endregion
 
     #region ポケモン図鑑リスト
@@ -59,7 +77,11 @@ public class VersionGroup
     /// ポケモン図鑑リスト
     /// </summary>
     [JsonPropertyName("pokedexes")]
-    public List<NamedAPIResource>? Pokedexes { get; set; }
+    [DisplayName("pokedexes")]
+    [Category("(基本)")]
+    [Description("ポケモン図鑑リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? Pokedexes { get; set; }
     #endregion
 
     #region 地域リスト
@@ -67,7 +89,11 @@ public class VersionGroup
     /// 地域リスト
     /// </summary>
     [JsonPropertyName("regions")]
-    public List<NamedAPIResource>? Regions { get; set; }
+    [DisplayName("regions")]
+    [Category("(基本)")]
+    [Description("地域リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? Regions { get; set; }
     #endregion
 
     #region バージョンリスト
@@ -75,6 +101,10 @@ public class VersionGroup
     /// バージョンリスト
     /// </summary>
     [JsonPropertyName("versions")]
+    [DisplayName("versions")]
+    [Category("(基本)")]
+    [Description("バージョンリスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? Versions { get; set; }
     #endregion
 

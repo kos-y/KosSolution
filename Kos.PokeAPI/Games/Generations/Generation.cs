@@ -1,6 +1,9 @@
 ﻿using System.Text.Json.Serialization;
 using System.Text.Json;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
+using Kos.PokeAPI.Contests.ContestTypes;
 
 namespace Kos.PokeAPI.Games.Generations;
 
@@ -16,14 +19,20 @@ public class Generation
     /// 世代ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("世代ID")]
     public int? Id { get; set; }
     #endregion
 
-    #region 世代名
+    #region 世代の名前
     /// <summary>
-    /// 世代名
+    /// 世代の名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("世代の名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -32,14 +41,22 @@ public class Generation
     /// 特性リスト
     /// </summary>
     [JsonPropertyName("abilities")]
-    public List<NamedAPIResource>? Abilities { get; set; }
+    [DisplayName("abilities")]
+    [Category("(基本)")]
+    [Description("特性リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? Abilities { get; set; }
     #endregion
 
-    #region 世代名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// 世代名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
     public List<Name>? Names { get; set; }
     #endregion
 
@@ -48,6 +65,9 @@ public class Generation
     /// メイン地域
     /// </summary>
     [JsonPropertyName("main_region")]
+    [DisplayName("main_region")]
+    [Category("(基本)")]
+    [Description("メイン地域")]
     public NamedAPIResource? MainRegion { get; set; }
     #endregion
 
@@ -56,6 +76,10 @@ public class Generation
     /// 技リスト
     /// </summary>
     [JsonPropertyName("moves")]
+    [DisplayName("moves")]
+    [Category("(基本)")]
+    [Description("技リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? Moves { get; set; }
     #endregion
 
@@ -64,6 +88,10 @@ public class Generation
     /// ポケモン種族リスト
     /// </summary>
     [JsonPropertyName("pokemon_species")]
+    [DisplayName("pokemon_species")]
+    [Category("(基本)")]
+    [Description("ポケモン種族リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? PokemonSpecies { get; set; }
     #endregion
 
@@ -72,6 +100,10 @@ public class Generation
     /// タイプリスト
     /// </summary>
     [JsonPropertyName("types")]
+    [DisplayName("types")]
+    [Category("(基本)")]
+    [Description("タイプリスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? Types { get; set; }
     #endregion
 
@@ -80,6 +112,10 @@ public class Generation
     /// バージョングループリスト
     /// </summary>
     [JsonPropertyName("version_groups")]
+    [DisplayName("version_groups")]
+    [Category("(基本)")]
+    [Description("バージョングループリスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? VersionGroups { get; set; }
     #endregion
 

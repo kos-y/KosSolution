@@ -181,7 +181,7 @@ public class EvolutionDetail
     [JsonPropertyName("relative_physical_stats")]
     [DisplayName("relative_physical_stats")]
     [Category("ポケモン")]
-    [Description("攻撃と防御の関係性\n・ 1:攻撃 > 防御\n・ 0:攻撃 = 防御\n・-1:攻撃 < 防御")]
+    [Description("攻撃と防御の関係性 / 1:攻撃 > 防御 /  0:攻撃 = 防御 / -1:攻撃 < 防御")]
     public int? RelativePhysicalStats { get; set; }
     #endregion
 

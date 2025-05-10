@@ -1,43 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Kos.PokeAPI.Utility.CommonModels;
+using Kos.Core;
+using Kos.PokeAPI.Evolution.EvolutionChains;
 
 namespace Kos.PokeAPI.Evolution.EvolutionTriggers;
 
 /// <summary>
-/// 進化トリガー
+/// 進化発動条件
 /// </summary>
 public class EvolutionTrigger
 {
     // フィールド
 
-    #region 進化トリガーID
+    #region 進化発動条件ID
     /// <summary>
-    /// 進化トリガーID
+    /// 進化発動条件
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("進化発動条件")]
     public int? Id { get; set; }
     #endregion
 
-    #region 進化トリガー名
+    #region 進化発動条件の名前
     /// <summary>
-    /// 進化トリガー名
+    /// 進化発動条件の名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("進化発動条件の名前")]
     public string? Name { get; set; }
     #endregion
 
-    #region 進化トリガー名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// 進化トリガー名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public List<Name>? Names { get; set; }
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
     #region ポケモン種族リスト
@@ -45,6 +58,10 @@ public class EvolutionTrigger
     /// ポケモン種族リスト
     /// </summary>
     [JsonPropertyName("pokemon_species")]
+    [DisplayName("pokemon_species")]
+    [Category("(基本)")]
+    [Description("ポケモン種族")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? PokemonSpecies { get; set; }
     #endregion
 

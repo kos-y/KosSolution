@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Evolution.EvolutionChains;
 using Kos.PokeAPI.Evolution.EvolutionTriggers;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -30,9 +31,9 @@ public partial class EvolutionTriggerInfoForm : Form
     }
     #endregion
 
-    #region names DataGrdiView CellClick
+    #region 言語ごとの名前 セルクリック
     /// <summary>
-    /// names DataGrdiView CellClick
+    /// 言語ごとの名前 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -50,18 +51,14 @@ public partial class EvolutionTriggerInfoForm : Form
             return;
         }
 
-        if (name?.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(name.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region names DataGrdiView CellDoubleClick
+    #region 言語ごとの名前 セルダブルクリック
     /// <summary>
-    /// names DataGrdiView CellDoubleClick
+    /// 言語ごとの名前 セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -75,18 +72,31 @@ public partial class EvolutionTriggerInfoForm : Form
             return;
         }
 
-        if (name?.Language?.Url is null) {
-            return;
-        }
-
-        using LanguageInfoForm form = new(name.Language.Url);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Close Click
+    #region プロパティ クリック
     /// <summary>
-    /// Close Click
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 閉じる クリック
+    /// <summary>
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -103,17 +113,20 @@ public partial class EvolutionTriggerInfoForm : Form
     /// <param name="url">URL</param>
     public void SetData(string url)
     {
-        EvolutionTrigger? et = EvolutionTrigger.GetEvolutionTrigger(url);
-        if (et is null) {
+        EvolutionTrigger? trigger = EvolutionTrigger.GetEvolutionTrigger(url);
+        if (trigger is null) {
             return;
         }
 
-        IdLabel.Text = $"{et.Id}";
-        NameLabel.Text = et.Name ?? string.Empty;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = et.Names;
-        PokemonSpeciesDataGridView.AutoGenerateColumns = false;
-        PokemonSpeciesDataGridView.DataSource = et.PokemonSpecies;
+        Tag = trigger;
+        FormsHelper.SetData(trigger.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(trigger.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(trigger.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(
+            trigger.PokemonSpecies,
+            PokemonSpeciesCaptionLabel,
+            PokemonSpeciesDataGridView);
+
     }
     #endregion
 }

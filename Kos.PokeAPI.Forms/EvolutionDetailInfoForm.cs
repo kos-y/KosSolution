@@ -154,13 +154,13 @@ public partial class EvolutionDetailInfoForm : Form
     }
     #endregion
 
-    #region 場所 詳細 クリック
+    #region 場所 クリック
     /// <summary>
-    /// 場所 詳細 クリック
+    /// 場所 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void LocationDetailButton_Click(object sender, EventArgs e)
+    private void LocationButton_Click(object sender, EventArgs e)
     {
         if (LocationButton.Tag is null) {
             return;

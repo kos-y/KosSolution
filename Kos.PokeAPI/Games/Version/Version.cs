@@ -6,6 +6,8 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
 
 namespace Kos.PokeAPI.Games.Version;
 
@@ -21,14 +23,20 @@ public class Version
     /// バージョンID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("バージョンID")]
     public int? Id { get; set; }
     #endregion
 
-    #region バージョン名
+    #region バージョンの名前
     /// <summary>
-    /// バージョン名
+    /// バージョンの名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("バージョンの名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -37,7 +45,11 @@ public class Version
     /// バージョン名リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public List<Name>? Names { get; set; }
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
     #region バージョングループ
@@ -45,6 +57,9 @@ public class Version
     /// バージョングループ
     /// </summary>
     [JsonPropertyName("version_group")]
+    [DisplayName("version_group")]
+    [Category("(基本)")]
+    [Description("バージョングループ")]
     public NamedAPIResource? VersionGroup { get; set; }
     #endregion
 

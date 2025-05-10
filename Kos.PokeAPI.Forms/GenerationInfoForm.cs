@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Evolution.EvolutionTriggers;
 using Kos.PokeAPI.Games.Generations;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -49,7 +50,9 @@ public partial class GenerationInfoForm : Form
             return;
         }
 
-
+        if (api.Url is null) {
+            return;
+        }
     }
     #endregion
 
@@ -154,6 +157,23 @@ public partial class GenerationInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -173,23 +193,20 @@ public partial class GenerationInfoForm : Form
     /// <param name="url">URL</param>
     public void SetData(string url)
     {
-        Generation? g = Generation.GetGeneration(url);
-        if (g is null) {
+        Generation? generation = Generation.GetGeneration(url);
+        if (generation is null) {
             return;
         }
 
-        IdTextBox.Text = $"{g.Id}";
-        NameTextBox.Text = g.Name ?? string.Empty;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = g.Names;
-        AbilitiesDataGridView.AutoGenerateColumns = false;
-        AbilitiesDataGridView.DataSource = g.Abilities;
-        VersionGroupDataGridView.AutoGenerateColumns = false;
-        VersionGroupDataGridView.DataSource = g.VersionGroups;
-        PokemonSpeciesDataGridView.AutoGenerateColumns = false;
-        PokemonSpeciesDataGridView.DataSource = g.PokemonSpecies;
-        TypesDataGridView.AutoGenerateColumns = false;
-        TypesDataGridView.DataSource = g.Types;
+        Tag = generation;
+        FormsHelper.SetData(generation.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(generation.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(generation.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(generation.Abilities, AbilitiesCaptionLabel, AbilitiesDataGridView);
+        FormsHelper.SetData(generation.VersionGroups, VersionGroupCaptionLabel, VersionGroupDataGridView);
+        FormsHelper.SetData(generation.PokemonSpecies, PokemonSpeciesCaptionLabel, PokemonSpeciesDataGridView);
+        FormsHelper.SetData(generation.VersionGroups, VersionGroupCaptionLabel, VersionGroupDataGridView);
+        FormsHelper.SetData(generation.Types, TypesCaptionLabel, TypesDataGridView);
     }
     #endregion
 }
