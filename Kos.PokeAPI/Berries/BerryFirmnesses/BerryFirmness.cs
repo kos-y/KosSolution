@@ -28,8 +28,8 @@ public class BerryFirmness
     /// きのみの硬さID
     /// </summary>
     [JsonPropertyName("id")]
-    [DisplayName("id")]
-    [Category("基本")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
     [Description("きのみの硬さID")]
     public int? Id { get; set; }
     #endregion
@@ -39,8 +39,8 @@ public class BerryFirmness
     /// きのみの硬さの名前
     /// </summary>
     [JsonPropertyName("name")]
-    [DisplayName("name")]
-    [Category("基本")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
     [Description("きのみの硬さの名前")]
     public string? Name { get; set; }
     #endregion

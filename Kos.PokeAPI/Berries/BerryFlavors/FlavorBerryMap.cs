@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -9,25 +10,32 @@ using Kos.PokeAPI.Utility.CommonModels;
 namespace Kos.PokeAPI.Berries.BerryFlavors;
 
 /// <summary>
-/// 味と木の実のマップ
+/// きのみと味の強さ
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class FlavorBerryMap
 {
     // フィールド
+
+    #region きのみ
+    /// <summary>
+    /// きのみ
+    /// </summary>
+    [JsonPropertyName("berry")]
+    [DisplayName("berry")]
+    [Category("(基本)")]
+    [Description("きのみ")]
+    public NamedAPIResource? Berry { get; set; }
+    #endregion
 
     #region 味の強さ
     /// <summary>
     /// 味の強さ
     /// </summary>
     [JsonPropertyName("potency")]
+    [DisplayName("potency")]
+    [Category("(基本)")]
+    [Description("味の強さ")]
     public int? Potency { get; set; }
-    #endregion
-
-    #region 木の実
-    /// <summary>
-    /// 木の実
-    /// </summary>
-    [JsonPropertyName("berry")]
-    public NamedAPIResource? Berry { get; set; }
     #endregion
 }

@@ -118,11 +118,11 @@ public partial class BerryFlavorInfoForm : Form
     /// <param name="e"></param>
     private void ContestTypeDetailButton_Click(object sender, EventArgs e)
     {
-        if (ContestTypeDetailButton.Tag is null) {
+        if (ContestTypeButton.Tag is null) {
             return;
         }
 
-        if (ContestTypeDetailButton.Tag is not NamedAPIResource r) {
+        if (ContestTypeButton.Tag is not NamedAPIResource r) {
             return;
         }
 
@@ -211,7 +211,7 @@ public partial class BerryFlavorInfoForm : Form
         BerriesDataGridView.AutoGenerateColumns = false;
         BerriesDataGridView.DataSource = bf.Berries;
         ContestTypeTextBox.Text = bf.ContestType?.Name ?? string.Empty;
-        ContestTypeDetailButton.Tag = bf.ContestType;
+        ContestTypeButton.Tag = bf.ContestType;
         NamesDataGridView.AutoGenerateColumns = false;
         NamesDataGridView.DataSource = bf.Names;
     }
