@@ -192,36 +192,10 @@ public partial class BerryFirmnessInfoForm : Form
         }
 
         Tag = bf;
-
-        if (bf.Id is null) {
-            IdCaptionLabel.Enabled = false;
-            IdTextBox.Enabled = false;
-        } else {
-            IdTextBox.Text = $"{bf.Id}";
-        }
-
-        if (bf.Name is null) {
-            NameCaptionLabel.Enabled = false;
-            NameTextBox.Enabled = false;
-        } else {
-            NameTextBox.Text = bf.Name;
-        }
-
-        if (bf.Berries is null) {
-            BerriesCaptionLabel.Enabled = false;
-            BerriesDataGridView.Enabled = false;
-        } else {
-            BerriesDataGridView.AutoGenerateColumns = false;
-            BerriesDataGridView.DataSource = bf.Berries;
-        }
-
-        if (bf.Names is null) {
-            NamesCaptionLabel.Enabled = false;
-            NamesDataGridView.Enabled = false;
-        } else {
-            NamesDataGridView.AutoGenerateColumns = false;
-            NamesDataGridView.DataSource = bf.Names;
-        }
+        FormsHelper.SetData(bf.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(bf.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(bf.Berries, BerriesCaptionLabel, BerriesDataGridView);
+        FormsHelper.SetData(bf.Names, NamesCaptionLabel, NamesDataGridView);
     }
     #endregion
 }

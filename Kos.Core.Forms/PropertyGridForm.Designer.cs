@@ -49,7 +49,6 @@ partial class PropertyGridForm
         PropertyGrid.CommandsVisibleIfAvailable = false;
         PropertyGrid.Location = new Point(12, 12);
         PropertyGrid.Name = "PropertyGrid";
-        PropertyGrid.PropertySort = PropertySort.NoSort;
         PropertyGrid.Size = new Size(1005, 445);
         PropertyGrid.TabIndex = 0;
         // 

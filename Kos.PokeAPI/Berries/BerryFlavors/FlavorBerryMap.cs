@@ -15,8 +15,6 @@ namespace Kos.PokeAPI.Berries.BerryFlavors;
 [TypeConverter(typeof(ExpandableObjectConverter))]
 public class FlavorBerryMap
 {
-    // フィールド
-
     #region きのみ
     /// <summary>
     /// きのみ
@@ -38,4 +36,16 @@ public class FlavorBerryMap
     [Description("味の強さ")]
     public int? Potency { get; set; }
     #endregion
+
+
+    // メソッド
+
+    /// <summary>
+    /// 文字列化
+    /// </summary>
+    /// <returns>文字列</returns>
+    public override string ToString()
+    {
+        return $"{Berry} {Potency}";
+    }
 }

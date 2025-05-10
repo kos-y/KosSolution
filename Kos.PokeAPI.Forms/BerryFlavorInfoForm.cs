@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Berries.BerryFirmnesses;
 using Kos.PokeAPI.Berries.BerryFlavors;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -116,7 +117,7 @@ public partial class BerryFlavorInfoForm : Form
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ContestTypeDetailButton_Click(object sender, EventArgs e)
+    private void ContestTypeButton_Click(object sender, EventArgs e)
     {
         if (ContestTypeButton.Tag is null) {
             return;
@@ -181,6 +182,19 @@ public partial class BerryFlavorInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -206,14 +220,11 @@ public partial class BerryFlavorInfoForm : Form
         }
 
         Tag = bf;
-        IdTextBox.Text = $"{bf.Id}";
-        NameTextBox.Text = bf.Name;
-        BerriesDataGridView.AutoGenerateColumns = false;
-        BerriesDataGridView.DataSource = bf.Berries;
-        ContestTypeTextBox.Text = bf.ContestType?.Name ?? string.Empty;
-        ContestTypeButton.Tag = bf.ContestType;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = bf.Names;
+        FormsHelper.SetData(bf.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(bf.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(bf.ContestType, ContestTypeButton, ContestTypeTextBox);
+        FormsHelper.SetData(bf.Berries, BerriesCaptionLabel, BerriesDataGridView);
+        FormsHelper.SetData(bf.Names, NamesCaptionLabel, NamesDataGridView);
     }
     #endregion
 }

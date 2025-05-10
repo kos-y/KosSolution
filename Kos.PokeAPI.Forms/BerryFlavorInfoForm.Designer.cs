@@ -194,7 +194,7 @@ partial class BerryFlavorInfoForm
         ContestTypeButton.TabIndex = 4;
         ContestTypeButton.Text = "コンテストの種類";
         ContestTypeButton.UseVisualStyleBackColor = true;
-        ContestTypeButton.Click += ContestTypeDetailButton_Click;
+        ContestTypeButton.Click += ContestTypeButton_Click;
         // 
         // IdTextBox
         // 
@@ -229,6 +229,7 @@ partial class BerryFlavorInfoForm
         PropertyButton.TabIndex = 10;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // BerryFlavorInfoForm
         // 
