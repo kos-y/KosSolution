@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Evolution.EvolutionChains;
 
 namespace Kos.PokeAPI.Forms;
@@ -20,10 +21,10 @@ public partial class ChainLinkInfoForm : Form
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    public ChainLinkInfoForm(ChainLink cl)
+    public ChainLinkInfoForm(ChainLink link)
     {
         InitializeComponent();
-        SetData(cl);
+        SetData(link);
     }
     #endregion
 
@@ -123,6 +124,23 @@ public partial class ChainLinkInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -139,15 +157,16 @@ public partial class ChainLinkInfoForm : Form
     /// <summary>
     /// データの表示
     /// </summary>
-    private void SetData(ChainLink cl)
+    private void SetData(ChainLink link)
     {
-        IsBabyTextBox.Text = $"{cl.IsBaby}";
-        SpeciesTextBox.Text = cl.Species?.Name ?? string.Empty;
-        SpeciesDetailButton.Tag = cl.Species;
-        EvolutionDetailsDataGridView.AutoGenerateColumns = false;
-        EvolutionDetailsDataGridView.DataSource = cl.EvolutionDetails;
-        EvolvesToDataGridView.AutoGenerateColumns = false;
-        EvolvesToDataGridView.DataSource = cl.EvolvesTo;
+        Tag = link;
+        FormsHelper.SetData(link.IsBaby, IsBabyCaptionLabel, IsBabyTextBox);
+        FormsHelper.SetData(link.Species?.Name, SpeciesButton, SpeciesTextBox);
+        FormsHelper.SetData(
+            link.EvolutionDetails,
+            EvolutionDetailsCaptionLabel,
+            EvolutionDetailsDataGridView);
+        FormsHelper.SetData(link.EvolvesTo, EvolvesToCaptionLabel, EvolvesToDataGridView);
     }
     #endregion
 }

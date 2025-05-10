@@ -27,32 +27,23 @@ partial class EvolutionDetailInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        ItemDetailButton = new Button();
-        ItemCaptionLabel = new Label();
-        TriggerDetailButton = new Button();
-        TriggerCaptionLabel = new Label();
+        ItemButton = new Button();
+        TriggerButton = new Button();
         GenderCaptionLabel = new Label();
-        HeldItemDetailButton = new Button();
-        HeldItemCaptionLabel = new Label();
-        KnownMoveDetailButton = new Button();
-        KnownMoveCaptionLabel = new Label();
-        KnownMoveTypeDetailButton = new Button();
-        KnownMoveTypeCaptionLabel = new Label();
-        LocationDetailButton = new Button();
-        LocationCaptionLabel = new Label();
+        LocationButton = new Button();
+        HeldItemButton = new Button();
+        KnownMoveButton = new Button();
+        KnownMoveTypeButton = new Button();
         MinLevelCaptionLabel = new Label();
         MinHappinessCaptionLabel = new Label();
         MinBeautyCaptionLabel = new Label();
         MinAffectionCaptionLabel = new Label();
         NeedsOverworldRainCaptionLabel = new Label();
-        PartySpeciesDetailButton = new Button();
-        PartySpeciesCaptionLabel = new Label();
-        PartyTypeDetailButton = new Button();
-        PartyTypeCaptionLabel = new Label();
+        PartySpeciesButton = new Button();
+        PartyTypeButton = new Button();
         RelativePhysicalStatsCaptionLabel = new Label();
         TimeOfDayCaptionLabel = new Label();
         TradeSpeciesDetailButton = new Button();
-        TradeSpeciesCaptionLabel = new Label();
         TurnUpsideDownCaptionlabel = new Label();
         CloseButton = new Button();
         ItemTextBox = new TextBox();
@@ -73,506 +64,473 @@ partial class EvolutionDetailInfoForm
         TimeOfDayTextBox = new TextBox();
         TradeSpeciesTextBox = new TextBox();
         TurnUpsideDownTextBox = new TextBox();
+        PropertyButton = new Button();
+        PokemonGroupBox = new GroupBox();
+        ItemGroupBox = new GroupBox();
+        KnownMoveGroupBox = new GroupBox();
+        PokemonMinGroupBox = new GroupBox();
+        PartyGroupBox = new GroupBox();
+        PokemonGroupBox.SuspendLayout();
+        ItemGroupBox.SuspendLayout();
+        KnownMoveGroupBox.SuspendLayout();
+        PokemonMinGroupBox.SuspendLayout();
+        PartyGroupBox.SuspendLayout();
         SuspendLayout();
         // 
-        // ItemDetailButton
+        // ItemButton
         // 
-        ItemDetailButton.Location = new Point(405, 10);
-        ItemDetailButton.Margin = new Padding(4, 3, 4, 3);
-        ItemDetailButton.Name = "ItemDetailButton";
-        ItemDetailButton.Size = new Size(55, 26);
-        ItemDetailButton.TabIndex = 2;
-        ItemDetailButton.Text = "詳細";
-        ItemDetailButton.UseVisualStyleBackColor = true;
-        ItemDetailButton.Click += ItemDetailButton_Click;
+        ItemButton.Location = new Point(7, 23);
+        ItemButton.Margin = new Padding(4, 3, 4, 3);
+        ItemButton.Name = "ItemButton";
+        ItemButton.Size = new Size(50, 26);
+        ItemButton.TabIndex = 0;
+        ItemButton.Text = "使用";
+        ItemButton.UseVisualStyleBackColor = true;
+        ItemButton.Click += ItemButton_Click;
         // 
-        // ItemCaptionLabel
+        // TriggerButton
         // 
-        ItemCaptionLabel.AutoSize = true;
-        ItemCaptionLabel.Location = new Point(90, 15);
-        ItemCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        ItemCaptionLabel.Name = "ItemCaptionLabel";
-        ItemCaptionLabel.Size = new Size(51, 17);
-        ItemCaptionLabel.TabIndex = 0;
-        ItemCaptionLabel.Text = "アイテム";
-        ItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // TriggerDetailButton
-        // 
-        TriggerDetailButton.Location = new Point(405, 40);
-        TriggerDetailButton.Margin = new Padding(4, 3, 4, 3);
-        TriggerDetailButton.Name = "TriggerDetailButton";
-        TriggerDetailButton.Size = new Size(55, 26);
-        TriggerDetailButton.TabIndex = 5;
-        TriggerDetailButton.Text = "詳細";
-        TriggerDetailButton.UseVisualStyleBackColor = true;
-        TriggerDetailButton.Click += TriggerDetailButton_Click;
-        // 
-        // TriggerCaptionLabel
-        // 
-        TriggerCaptionLabel.AutoSize = true;
-        TriggerCaptionLabel.Location = new Point(92, 45);
-        TriggerCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        TriggerCaptionLabel.Name = "TriggerCaptionLabel";
-        TriggerCaptionLabel.Size = new Size(49, 17);
-        TriggerCaptionLabel.TabIndex = 3;
-        TriggerCaptionLabel.Text = "トリガー";
-        TriggerCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        TriggerButton.Location = new Point(13, 12);
+        TriggerButton.Margin = new Padding(4, 3, 4, 3);
+        TriggerButton.Name = "TriggerButton";
+        TriggerButton.Size = new Size(100, 26);
+        TriggerButton.TabIndex = 0;
+        TriggerButton.Text = "進化発動条件";
+        TriggerButton.UseVisualStyleBackColor = true;
+        TriggerButton.Click += TriggerButton_Click;
         // 
         // GenderCaptionLabel
         // 
         GenderCaptionLabel.AutoSize = true;
-        GenderCaptionLabel.Location = new Point(99, 105);
+        GenderCaptionLabel.Location = new Point(15, 30);
         GenderCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         GenderCaptionLabel.Name = "GenderCaptionLabel";
         GenderCaptionLabel.Size = new Size(34, 17);
-        GenderCaptionLabel.TabIndex = 9;
+        GenderCaptionLabel.TabIndex = 0;
         GenderCaptionLabel.Text = "性別";
         GenderCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // HeldItemDetailButton
+        // LocationButton
         // 
-        HeldItemDetailButton.Location = new Point(405, 70);
-        HeldItemDetailButton.Margin = new Padding(4, 3, 4, 3);
-        HeldItemDetailButton.Name = "HeldItemDetailButton";
-        HeldItemDetailButton.Size = new Size(55, 26);
-        HeldItemDetailButton.TabIndex = 8;
-        HeldItemDetailButton.Text = "詳細";
-        HeldItemDetailButton.UseVisualStyleBackColor = true;
-        HeldItemDetailButton.Click += HeldItemDetailButton_Click;
+        LocationButton.Location = new Point(520, 179);
+        LocationButton.Margin = new Padding(4, 3, 4, 3);
+        LocationButton.Name = "LocationButton";
+        LocationButton.Size = new Size(109, 26);
+        LocationButton.TabIndex = 6;
+        LocationButton.Text = "場所";
+        LocationButton.UseVisualStyleBackColor = true;
+        LocationButton.Click += LocationDetailButton_Click;
         // 
-        // HeldItemCaptionLabel
+        // HeldItemButton
         // 
-        HeldItemCaptionLabel.AutoSize = true;
-        HeldItemCaptionLabel.Location = new Point(65, 135);
-        HeldItemCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        HeldItemCaptionLabel.Name = "HeldItemCaptionLabel";
-        HeldItemCaptionLabel.Size = new Size(77, 17);
-        HeldItemCaptionLabel.TabIndex = 11;
-        HeldItemCaptionLabel.Text = "所持アイテム";
-        HeldItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        HeldItemButton.Location = new Point(7, 55);
+        HeldItemButton.Margin = new Padding(4, 3, 4, 3);
+        HeldItemButton.Name = "HeldItemButton";
+        HeldItemButton.Size = new Size(50, 26);
+        HeldItemButton.TabIndex = 2;
+        HeldItemButton.Text = "所持";
+        HeldItemButton.UseVisualStyleBackColor = true;
+        HeldItemButton.Click += HeldItemButton_Click;
         // 
-        // KnownMoveDetailButton
+        // KnownMoveButton
         // 
-        KnownMoveDetailButton.Location = new Point(405, 130);
-        KnownMoveDetailButton.Margin = new Padding(4, 3, 4, 3);
-        KnownMoveDetailButton.Name = "KnownMoveDetailButton";
-        KnownMoveDetailButton.Size = new Size(55, 26);
-        KnownMoveDetailButton.TabIndex = 13;
-        KnownMoveDetailButton.Text = "詳細";
-        KnownMoveDetailButton.UseVisualStyleBackColor = true;
+        KnownMoveButton.Location = new Point(7, 26);
+        KnownMoveButton.Margin = new Padding(4, 3, 4, 3);
+        KnownMoveButton.Name = "KnownMoveButton";
+        KnownMoveButton.Size = new Size(57, 26);
+        KnownMoveButton.TabIndex = 0;
+        KnownMoveButton.Text = "技";
+        KnownMoveButton.UseVisualStyleBackColor = true;
+        KnownMoveButton.Click += KnownMoveButton_Click;
         // 
-        // KnownMoveCaptionLabel
+        // KnownMoveTypeButton
         // 
-        KnownMoveCaptionLabel.AutoSize = true;
-        KnownMoveCaptionLabel.Location = new Point(95, 165);
-        KnownMoveCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        KnownMoveCaptionLabel.Name = "KnownMoveCaptionLabel";
-        KnownMoveCaptionLabel.Size = new Size(47, 17);
-        KnownMoveCaptionLabel.TabIndex = 14;
-        KnownMoveCaptionLabel.Text = "習得技";
-        KnownMoveCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // KnownMoveTypeDetailButton
-        // 
-        KnownMoveTypeDetailButton.Location = new Point(405, 160);
-        KnownMoveTypeDetailButton.Margin = new Padding(4, 3, 4, 3);
-        KnownMoveTypeDetailButton.Name = "KnownMoveTypeDetailButton";
-        KnownMoveTypeDetailButton.Size = new Size(55, 26);
-        KnownMoveTypeDetailButton.TabIndex = 16;
-        KnownMoveTypeDetailButton.Text = "詳細";
-        KnownMoveTypeDetailButton.UseVisualStyleBackColor = true;
-        // 
-        // KnownMoveTypeCaptionLabel
-        // 
-        KnownMoveTypeCaptionLabel.AutoSize = true;
-        KnownMoveTypeCaptionLabel.Location = new Point(62, 195);
-        KnownMoveTypeCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        KnownMoveTypeCaptionLabel.Name = "KnownMoveTypeCaptionLabel";
-        KnownMoveTypeCaptionLabel.Size = new Size(79, 17);
-        KnownMoveTypeCaptionLabel.TabIndex = 17;
-        KnownMoveTypeCaptionLabel.Text = "習得技タイプ";
-        KnownMoveTypeCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // LocationDetailButton
-        // 
-        LocationDetailButton.Location = new Point(405, 190);
-        LocationDetailButton.Margin = new Padding(4, 3, 4, 3);
-        LocationDetailButton.Name = "LocationDetailButton";
-        LocationDetailButton.Size = new Size(55, 26);
-        LocationDetailButton.TabIndex = 19;
-        LocationDetailButton.Text = "詳細";
-        LocationDetailButton.UseVisualStyleBackColor = true;
-        LocationDetailButton.Click += LocationDetailButton_Click;
-        // 
-        // LocationCaptionLabel
-        // 
-        LocationCaptionLabel.AutoSize = true;
-        LocationCaptionLabel.Location = new Point(99, 75);
-        LocationCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        LocationCaptionLabel.Name = "LocationCaptionLabel";
-        LocationCaptionLabel.Size = new Size(34, 17);
-        LocationCaptionLabel.TabIndex = 6;
-        LocationCaptionLabel.Text = "場所";
-        LocationCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        KnownMoveTypeButton.Location = new Point(8, 58);
+        KnownMoveTypeButton.Margin = new Padding(4, 3, 4, 3);
+        KnownMoveTypeButton.Name = "KnownMoveTypeButton";
+        KnownMoveTypeButton.Size = new Size(56, 26);
+        KnownMoveTypeButton.TabIndex = 2;
+        KnownMoveTypeButton.Text = "タイプ";
+        KnownMoveTypeButton.UseVisualStyleBackColor = true;
+        KnownMoveTypeButton.Click += KnownMoveTypeButton_Click;
         // 
         // MinLevelCaptionLabel
         // 
         MinLevelCaptionLabel.AutoSize = true;
-        MinLevelCaptionLabel.Location = new Point(71, 225);
+        MinLevelCaptionLabel.Location = new Point(25, 26);
         MinLevelCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         MinLevelCaptionLabel.Name = "MinLevelCaptionLabel";
-        MinLevelCaptionLabel.Size = new Size(66, 17);
-        MinLevelCaptionLabel.TabIndex = 20;
-        MinLevelCaptionLabel.Text = "最低レベル";
+        MinLevelCaptionLabel.Size = new Size(40, 17);
+        MinLevelCaptionLabel.TabIndex = 0;
+        MinLevelCaptionLabel.Text = "レベル";
         MinLevelCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // MinHappinessCaptionLabel
         // 
         MinHappinessCaptionLabel.AutoSize = true;
-        MinHappinessCaptionLabel.Location = new Point(61, 255);
+        MinHappinessCaptionLabel.Location = new Point(11, 59);
         MinHappinessCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         MinHappinessCaptionLabel.Name = "MinHappinessCaptionLabel";
-        MinHappinessCaptionLabel.Size = new Size(80, 17);
-        MinHappinessCaptionLabel.TabIndex = 22;
-        MinHappinessCaptionLabel.Text = "最低なつき度";
+        MinHappinessCaptionLabel.Size = new Size(54, 17);
+        MinHappinessCaptionLabel.TabIndex = 2;
+        MinHappinessCaptionLabel.Text = "なつき度";
         MinHappinessCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // MinBeautyCaptionLabel
         // 
         MinBeautyCaptionLabel.AutoSize = true;
-        MinBeautyCaptionLabel.Location = new Point(57, 285);
+        MinBeautyCaptionLabel.Location = new Point(7, 89);
         MinBeautyCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         MinBeautyCaptionLabel.Name = "MinBeautyCaptionLabel";
-        MinBeautyCaptionLabel.Size = new Size(84, 17);
-        MinBeautyCaptionLabel.TabIndex = 24;
-        MinBeautyCaptionLabel.Text = "最低かっこよさ";
+        MinBeautyCaptionLabel.Size = new Size(58, 17);
+        MinBeautyCaptionLabel.TabIndex = 4;
+        MinBeautyCaptionLabel.Text = "かっこよさ";
         MinBeautyCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // MinAffectionCaptionLabel
         // 
         MinAffectionCaptionLabel.AutoSize = true;
-        MinAffectionCaptionLabel.Location = new Point(69, 315);
+        MinAffectionCaptionLabel.Location = new Point(18, 119);
         MinAffectionCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         MinAffectionCaptionLabel.Name = "MinAffectionCaptionLabel";
-        MinAffectionCaptionLabel.Size = new Size(73, 17);
-        MinAffectionCaptionLabel.TabIndex = 26;
-        MinAffectionCaptionLabel.Text = "最低親密度";
+        MinAffectionCaptionLabel.Size = new Size(47, 17);
+        MinAffectionCaptionLabel.TabIndex = 6;
+        MinAffectionCaptionLabel.Text = "親密度";
         MinAffectionCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NeedsOverworldRainCaptionLabel
         // 
         NeedsOverworldRainCaptionLabel.AutoSize = true;
-        NeedsOverworldRainCaptionLabel.Location = new Point(43, 345);
+        NeedsOverworldRainCaptionLabel.Location = new Point(535, 213);
         NeedsOverworldRainCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NeedsOverworldRainCaptionLabel.Name = "NeedsOverworldRainCaptionLabel";
         NeedsOverworldRainCaptionLabel.Size = new Size(98, 17);
-        NeedsOverworldRainCaptionLabel.TabIndex = 28;
+        NeedsOverworldRainCaptionLabel.TabIndex = 8;
         NeedsOverworldRainCaptionLabel.Text = "天候の影響有無";
         NeedsOverworldRainCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // PartySpeciesDetailButton
+        // PartySpeciesButton
         // 
-        PartySpeciesDetailButton.Location = new Point(405, 370);
-        PartySpeciesDetailButton.Margin = new Padding(4, 3, 4, 3);
-        PartySpeciesDetailButton.Name = "PartySpeciesDetailButton";
-        PartySpeciesDetailButton.Size = new Size(55, 26);
-        PartySpeciesDetailButton.TabIndex = 32;
-        PartySpeciesDetailButton.Text = "詳細";
-        PartySpeciesDetailButton.UseVisualStyleBackColor = true;
+        PartySpeciesButton.Location = new Point(9, 23);
+        PartySpeciesButton.Margin = new Padding(4, 3, 4, 3);
+        PartySpeciesButton.Name = "PartySpeciesButton";
+        PartySpeciesButton.Size = new Size(84, 26);
+        PartySpeciesButton.TabIndex = 0;
+        PartySpeciesButton.Text = "ポケモン種族";
+        PartySpeciesButton.UseVisualStyleBackColor = true;
         // 
-        // PartySpeciesCaptionLabel
+        // PartyTypeButton
         // 
-        PartySpeciesCaptionLabel.AutoSize = true;
-        PartySpeciesCaptionLabel.Location = new Point(29, 375);
-        PartySpeciesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        PartySpeciesCaptionLabel.Name = "PartySpeciesCaptionLabel";
-        PartySpeciesCaptionLabel.Size = new Size(112, 17);
-        PartySpeciesCaptionLabel.TabIndex = 30;
-        PartySpeciesCaptionLabel.Text = "手持ちポケモン種族";
-        PartySpeciesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // PartyTypeDetailButton
-        // 
-        PartyTypeDetailButton.Location = new Point(405, 400);
-        PartyTypeDetailButton.Margin = new Padding(4, 3, 4, 3);
-        PartyTypeDetailButton.Name = "PartyTypeDetailButton";
-        PartyTypeDetailButton.Size = new Size(55, 26);
-        PartyTypeDetailButton.TabIndex = 35;
-        PartyTypeDetailButton.Text = "詳細";
-        PartyTypeDetailButton.UseVisualStyleBackColor = true;
-        // 
-        // PartyTypeCaptionLabel
-        // 
-        PartyTypeCaptionLabel.AutoSize = true;
-        PartyTypeCaptionLabel.Location = new Point(23, 405);
-        PartyTypeCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        PartyTypeCaptionLabel.Name = "PartyTypeCaptionLabel";
-        PartyTypeCaptionLabel.Size = new Size(118, 17);
-        PartyTypeCaptionLabel.TabIndex = 33;
-        PartyTypeCaptionLabel.Text = "手持ちポケモンタイプ";
-        PartyTypeCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        PartyTypeButton.Location = new Point(9, 53);
+        PartyTypeButton.Margin = new Padding(4, 3, 4, 3);
+        PartyTypeButton.Name = "PartyTypeButton";
+        PartyTypeButton.Size = new Size(85, 26);
+        PartyTypeButton.TabIndex = 2;
+        PartyTypeButton.Text = "タイプ";
+        PartyTypeButton.UseVisualStyleBackColor = true;
         // 
         // RelativePhysicalStatsCaptionLabel
         // 
         RelativePhysicalStatsCaptionLabel.AutoSize = true;
-        RelativePhysicalStatsCaptionLabel.Location = new Point(17, 432);
+        RelativePhysicalStatsCaptionLabel.Location = new Point(15, 216);
         RelativePhysicalStatsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         RelativePhysicalStatsCaptionLabel.Name = "RelativePhysicalStatsCaptionLabel";
         RelativePhysicalStatsCaptionLabel.Size = new Size(125, 34);
-        RelativePhysicalStatsCaptionLabel.TabIndex = 36;
+        RelativePhysicalStatsCaptionLabel.TabIndex = 3;
         RelativePhysicalStatsCaptionLabel.Text = "「こうげき」と「ぼうぎょ」\r\nの関係性";
         RelativePhysicalStatsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // TimeOfDayCaptionLabel
         // 
         TimeOfDayCaptionLabel.AutoSize = true;
-        TimeOfDayCaptionLabel.Location = new Point(86, 479);
+        TimeOfDayCaptionLabel.Location = new Point(586, 243);
         TimeOfDayCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         TimeOfDayCaptionLabel.Name = "TimeOfDayCaptionLabel";
         TimeOfDayCaptionLabel.Size = new Size(47, 17);
-        TimeOfDayCaptionLabel.TabIndex = 38;
+        TimeOfDayCaptionLabel.TabIndex = 10;
         TimeOfDayCaptionLabel.Text = "時間帯";
         TimeOfDayCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // TradeSpeciesDetailButton
         // 
-        TradeSpeciesDetailButton.Location = new Point(401, 504);
+        TradeSpeciesDetailButton.Location = new Point(519, 147);
         TradeSpeciesDetailButton.Margin = new Padding(4, 3, 4, 3);
         TradeSpeciesDetailButton.Name = "TradeSpeciesDetailButton";
-        TradeSpeciesDetailButton.Size = new Size(55, 26);
-        TradeSpeciesDetailButton.TabIndex = 42;
-        TradeSpeciesDetailButton.Text = "詳細";
+        TradeSpeciesDetailButton.Size = new Size(110, 26);
+        TradeSpeciesDetailButton.TabIndex = 4;
+        TradeSpeciesDetailButton.Text = "交換ポケモン種族";
         TradeSpeciesDetailButton.UseVisualStyleBackColor = true;
-        // 
-        // TradeSpeciesCaptionLabel
-        // 
-        TradeSpeciesCaptionLabel.AutoSize = true;
-        TradeSpeciesCaptionLabel.Location = new Point(13, 509);
-        TradeSpeciesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        TradeSpeciesCaptionLabel.Name = "TradeSpeciesCaptionLabel";
-        TradeSpeciesCaptionLabel.Size = new Size(127, 17);
-        TradeSpeciesCaptionLabel.TabIndex = 40;
-        TradeSpeciesCaptionLabel.Text = "交換対象ポケモン種族";
-        TradeSpeciesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // TurnUpsideDownCaptionlabel
         // 
         TurnUpsideDownCaptionlabel.AutoSize = true;
-        TurnUpsideDownCaptionlabel.Location = new Point(23, 539);
+        TurnUpsideDownCaptionlabel.Location = new Point(515, 273);
         TurnUpsideDownCaptionlabel.Margin = new Padding(4, 0, 4, 0);
         TurnUpsideDownCaptionlabel.Name = "TurnUpsideDownCaptionlabel";
         TurnUpsideDownCaptionlabel.Size = new Size(118, 17);
-        TurnUpsideDownCaptionlabel.TabIndex = 43;
+        TurnUpsideDownCaptionlabel.TabIndex = 12;
         TurnUpsideDownCaptionlabel.Text = "ゲーム機の上下反転";
         TurnUpsideDownCaptionlabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(388, 566);
+        CloseButton.Location = new Point(711, 300);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(72, 39);
-        CloseButton.TabIndex = 45;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 15;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
         // ItemTextBox
         // 
-        ItemTextBox.Location = new Point(148, 12);
+        ItemTextBox.Location = new Point(64, 25);
         ItemTextBox.Name = "ItemTextBox";
         ItemTextBox.ReadOnly = true;
-        ItemTextBox.Size = new Size(250, 24);
+        ItemTextBox.Size = new Size(191, 24);
         ItemTextBox.TabIndex = 1;
         // 
         // TriggerTextBox
         // 
-        TriggerTextBox.Location = new Point(148, 42);
+        TriggerTextBox.Location = new Point(117, 14);
         TriggerTextBox.Name = "TriggerTextBox";
         TriggerTextBox.ReadOnly = true;
-        TriggerTextBox.Size = new Size(250, 24);
-        TriggerTextBox.TabIndex = 4;
+        TriggerTextBox.Size = new Size(182, 24);
+        TriggerTextBox.TabIndex = 1;
         // 
         // LocationTextBox
         // 
-        LocationTextBox.Location = new Point(148, 72);
+        LocationTextBox.Location = new Point(640, 179);
         LocationTextBox.Name = "LocationTextBox";
         LocationTextBox.ReadOnly = true;
-        LocationTextBox.Size = new Size(250, 24);
+        LocationTextBox.Size = new Size(143, 24);
         LocationTextBox.TabIndex = 7;
         // 
         // GenderTextBox
         // 
-        GenderTextBox.Location = new Point(148, 102);
+        GenderTextBox.Location = new Point(60, 23);
         GenderTextBox.Name = "GenderTextBox";
         GenderTextBox.ReadOnly = true;
-        GenderTextBox.Size = new Size(250, 24);
-        GenderTextBox.TabIndex = 10;
+        GenderTextBox.Size = new Size(78, 24);
+        GenderTextBox.TabIndex = 1;
         // 
         // HeldItemTextBox
         // 
-        HeldItemTextBox.Location = new Point(148, 132);
+        HeldItemTextBox.Location = new Point(59, 57);
         HeldItemTextBox.Name = "HeldItemTextBox";
         HeldItemTextBox.ReadOnly = true;
-        HeldItemTextBox.Size = new Size(250, 24);
-        HeldItemTextBox.TabIndex = 12;
+        HeldItemTextBox.Size = new Size(196, 24);
+        HeldItemTextBox.TabIndex = 3;
         // 
         // KnownMoveTextBox
         // 
-        KnownMoveTextBox.Location = new Point(148, 162);
+        KnownMoveTextBox.Location = new Point(71, 26);
         KnownMoveTextBox.Name = "KnownMoveTextBox";
         KnownMoveTextBox.ReadOnly = true;
-        KnownMoveTextBox.Size = new Size(250, 24);
-        KnownMoveTextBox.TabIndex = 15;
+        KnownMoveTextBox.Size = new Size(184, 24);
+        KnownMoveTextBox.TabIndex = 1;
         // 
         // KnownMoveTypeTextBox
         // 
-        KnownMoveTypeTextBox.Location = new Point(148, 192);
+        KnownMoveTypeTextBox.Location = new Point(71, 56);
         KnownMoveTypeTextBox.Name = "KnownMoveTypeTextBox";
         KnownMoveTypeTextBox.ReadOnly = true;
-        KnownMoveTypeTextBox.Size = new Size(250, 24);
-        KnownMoveTypeTextBox.TabIndex = 18;
+        KnownMoveTypeTextBox.Size = new Size(184, 24);
+        KnownMoveTypeTextBox.TabIndex = 3;
         // 
         // MinLevelTextBox
         // 
-        MinLevelTextBox.Location = new Point(148, 222);
+        MinLevelTextBox.Location = new Point(72, 23);
         MinLevelTextBox.Name = "MinLevelTextBox";
         MinLevelTextBox.ReadOnly = true;
-        MinLevelTextBox.Size = new Size(250, 24);
-        MinLevelTextBox.TabIndex = 21;
+        MinLevelTextBox.Size = new Size(78, 24);
+        MinLevelTextBox.TabIndex = 1;
         // 
         // MinHappinessTextBox
         // 
-        MinHappinessTextBox.Location = new Point(148, 252);
+        MinHappinessTextBox.Location = new Point(72, 53);
         MinHappinessTextBox.Name = "MinHappinessTextBox";
         MinHappinessTextBox.ReadOnly = true;
-        MinHappinessTextBox.Size = new Size(250, 24);
-        MinHappinessTextBox.TabIndex = 23;
+        MinHappinessTextBox.Size = new Size(78, 24);
+        MinHappinessTextBox.TabIndex = 3;
         // 
         // MinBeautyTextBox
         // 
-        MinBeautyTextBox.Location = new Point(148, 282);
+        MinBeautyTextBox.Location = new Point(72, 86);
         MinBeautyTextBox.Name = "MinBeautyTextBox";
         MinBeautyTextBox.ReadOnly = true;
-        MinBeautyTextBox.Size = new Size(250, 24);
-        MinBeautyTextBox.TabIndex = 25;
+        MinBeautyTextBox.Size = new Size(78, 24);
+        MinBeautyTextBox.TabIndex = 5;
         // 
         // MinAffectionTextBox
         // 
-        MinAffectionTextBox.Location = new Point(148, 312);
+        MinAffectionTextBox.Location = new Point(72, 116);
         MinAffectionTextBox.Name = "MinAffectionTextBox";
         MinAffectionTextBox.ReadOnly = true;
-        MinAffectionTextBox.Size = new Size(250, 24);
-        MinAffectionTextBox.TabIndex = 27;
+        MinAffectionTextBox.Size = new Size(78, 24);
+        MinAffectionTextBox.TabIndex = 7;
         // 
         // NeedsOverworldRainTextBox
         // 
-        NeedsOverworldRainTextBox.Location = new Point(148, 342);
+        NeedsOverworldRainTextBox.Location = new Point(640, 210);
         NeedsOverworldRainTextBox.Name = "NeedsOverworldRainTextBox";
         NeedsOverworldRainTextBox.ReadOnly = true;
-        NeedsOverworldRainTextBox.Size = new Size(250, 24);
-        NeedsOverworldRainTextBox.TabIndex = 29;
+        NeedsOverworldRainTextBox.Size = new Size(147, 24);
+        NeedsOverworldRainTextBox.TabIndex = 9;
         // 
         // PartySpeciesTextBox
         // 
-        PartySpeciesTextBox.Location = new Point(148, 372);
+        PartySpeciesTextBox.Location = new Point(101, 25);
         PartySpeciesTextBox.Name = "PartySpeciesTextBox";
         PartySpeciesTextBox.ReadOnly = true;
-        PartySpeciesTextBox.Size = new Size(250, 24);
-        PartySpeciesTextBox.TabIndex = 31;
+        PartySpeciesTextBox.Size = new Size(149, 24);
+        PartySpeciesTextBox.TabIndex = 1;
         // 
         // PartyTypeTextBox
         // 
-        PartyTypeTextBox.Location = new Point(148, 402);
+        PartyTypeTextBox.Location = new Point(101, 55);
         PartyTypeTextBox.Name = "PartyTypeTextBox";
         PartyTypeTextBox.ReadOnly = true;
-        PartyTypeTextBox.Size = new Size(250, 24);
-        PartyTypeTextBox.TabIndex = 34;
+        PartyTypeTextBox.Size = new Size(149, 24);
+        PartyTypeTextBox.TabIndex = 3;
         // 
         // RelativePhysicalStatsTextBox
         // 
-        RelativePhysicalStatsTextBox.Location = new Point(148, 438);
+        RelativePhysicalStatsTextBox.Location = new Point(147, 222);
         RelativePhysicalStatsTextBox.Name = "RelativePhysicalStatsTextBox";
         RelativePhysicalStatsTextBox.ReadOnly = true;
-        RelativePhysicalStatsTextBox.Size = new Size(250, 24);
-        RelativePhysicalStatsTextBox.TabIndex = 37;
+        RelativePhysicalStatsTextBox.Size = new Size(44, 24);
+        RelativePhysicalStatsTextBox.TabIndex = 4;
         // 
         // TimeOfDayTextBox
         // 
-        TimeOfDayTextBox.Location = new Point(144, 476);
+        TimeOfDayTextBox.Location = new Point(640, 240);
         TimeOfDayTextBox.Name = "TimeOfDayTextBox";
         TimeOfDayTextBox.ReadOnly = true;
-        TimeOfDayTextBox.Size = new Size(250, 24);
-        TimeOfDayTextBox.TabIndex = 39;
+        TimeOfDayTextBox.Size = new Size(147, 24);
+        TimeOfDayTextBox.TabIndex = 11;
         // 
         // TradeSpeciesTextBox
         // 
-        TradeSpeciesTextBox.Location = new Point(144, 506);
+        TradeSpeciesTextBox.Location = new Point(640, 149);
         TradeSpeciesTextBox.Name = "TradeSpeciesTextBox";
         TradeSpeciesTextBox.ReadOnly = true;
-        TradeSpeciesTextBox.Size = new Size(250, 24);
-        TradeSpeciesTextBox.TabIndex = 41;
+        TradeSpeciesTextBox.Size = new Size(143, 24);
+        TradeSpeciesTextBox.TabIndex = 5;
         // 
         // TurnUpsideDownTextBox
         // 
-        TurnUpsideDownTextBox.Location = new Point(148, 536);
+        TurnUpsideDownTextBox.Location = new Point(640, 270);
         TurnUpsideDownTextBox.Name = "TurnUpsideDownTextBox";
         TurnUpsideDownTextBox.ReadOnly = true;
-        TurnUpsideDownTextBox.Size = new Size(250, 24);
-        TurnUpsideDownTextBox.TabIndex = 44;
+        TurnUpsideDownTextBox.Size = new Size(147, 24);
+        TurnUpsideDownTextBox.TabIndex = 13;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(627, 300);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 14;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
+        // PokemonGroupBox
+        // 
+        PokemonGroupBox.Controls.Add(ItemGroupBox);
+        PokemonGroupBox.Controls.Add(KnownMoveGroupBox);
+        PokemonGroupBox.Controls.Add(PokemonMinGroupBox);
+        PokemonGroupBox.Controls.Add(GenderTextBox);
+        PokemonGroupBox.Controls.Add(GenderCaptionLabel);
+        PokemonGroupBox.Controls.Add(RelativePhysicalStatsCaptionLabel);
+        PokemonGroupBox.Controls.Add(RelativePhysicalStatsTextBox);
+        PokemonGroupBox.Location = new Point(16, 44);
+        PokemonGroupBox.Name = "PokemonGroupBox";
+        PokemonGroupBox.Size = new Size(497, 268);
+        PokemonGroupBox.TabIndex = 2;
+        PokemonGroupBox.TabStop = false;
+        PokemonGroupBox.Text = "ポケモン";
+        // 
+        // ItemGroupBox
+        // 
+        ItemGroupBox.Controls.Add(ItemButton);
+        ItemGroupBox.Controls.Add(HeldItemButton);
+        ItemGroupBox.Controls.Add(ItemTextBox);
+        ItemGroupBox.Controls.Add(HeldItemTextBox);
+        ItemGroupBox.Location = new Point(206, 155);
+        ItemGroupBox.Name = "ItemGroupBox";
+        ItemGroupBox.Size = new Size(276, 100);
+        ItemGroupBox.TabIndex = 6;
+        ItemGroupBox.TabStop = false;
+        ItemGroupBox.Text = "アイテム";
+        // 
+        // KnownMoveGroupBox
+        // 
+        KnownMoveGroupBox.Controls.Add(KnownMoveButton);
+        KnownMoveGroupBox.Controls.Add(KnownMoveTypeButton);
+        KnownMoveGroupBox.Controls.Add(KnownMoveTextBox);
+        KnownMoveGroupBox.Controls.Add(KnownMoveTypeTextBox);
+        KnownMoveGroupBox.Location = new Point(206, 53);
+        KnownMoveGroupBox.Name = "KnownMoveGroupBox";
+        KnownMoveGroupBox.Size = new Size(276, 96);
+        KnownMoveGroupBox.TabIndex = 5;
+        KnownMoveGroupBox.TabStop = false;
+        KnownMoveGroupBox.Text = "覚えている技";
+        // 
+        // PokemonMinGroupBox
+        // 
+        PokemonMinGroupBox.Controls.Add(MinLevelCaptionLabel);
+        PokemonMinGroupBox.Controls.Add(MinLevelTextBox);
+        PokemonMinGroupBox.Controls.Add(MinHappinessTextBox);
+        PokemonMinGroupBox.Controls.Add(MinAffectionTextBox);
+        PokemonMinGroupBox.Controls.Add(MinBeautyTextBox);
+        PokemonMinGroupBox.Controls.Add(MinHappinessCaptionLabel);
+        PokemonMinGroupBox.Controls.Add(MinBeautyCaptionLabel);
+        PokemonMinGroupBox.Controls.Add(MinAffectionCaptionLabel);
+        PokemonMinGroupBox.Location = new Point(15, 53);
+        PokemonMinGroupBox.Name = "PokemonMinGroupBox";
+        PokemonMinGroupBox.Size = new Size(176, 149);
+        PokemonMinGroupBox.TabIndex = 2;
+        PokemonMinGroupBox.TabStop = false;
+        PokemonMinGroupBox.Text = "最低値";
+        // 
+        // PartyGroupBox
+        // 
+        PartyGroupBox.Controls.Add(PartySpeciesButton);
+        PartyGroupBox.Controls.Add(PartyTypeButton);
+        PartyGroupBox.Controls.Add(PartySpeciesTextBox);
+        PartyGroupBox.Controls.Add(PartyTypeTextBox);
+        PartyGroupBox.Location = new Point(519, 44);
+        PartyGroupBox.Name = "PartyGroupBox";
+        PartyGroupBox.Size = new Size(264, 100);
+        PartyGroupBox.TabIndex = 3;
+        PartyGroupBox.TabStop = false;
+        PartyGroupBox.Text = "手持ちポケモン";
         // 
         // EvolutionDetailInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(478, 625);
+        ClientSize = new Size(810, 352);
+        Controls.Add(PartyGroupBox);
+        Controls.Add(PokemonGroupBox);
+        Controls.Add(PropertyButton);
         Controls.Add(TurnUpsideDownTextBox);
         Controls.Add(TradeSpeciesTextBox);
         Controls.Add(TimeOfDayTextBox);
-        Controls.Add(RelativePhysicalStatsTextBox);
-        Controls.Add(PartyTypeTextBox);
-        Controls.Add(PartySpeciesTextBox);
         Controls.Add(NeedsOverworldRainTextBox);
-        Controls.Add(MinAffectionTextBox);
-        Controls.Add(MinBeautyTextBox);
-        Controls.Add(MinHappinessTextBox);
-        Controls.Add(MinLevelTextBox);
-        Controls.Add(KnownMoveTypeTextBox);
-        Controls.Add(KnownMoveTextBox);
-        Controls.Add(HeldItemTextBox);
-        Controls.Add(GenderTextBox);
         Controls.Add(LocationTextBox);
         Controls.Add(TriggerTextBox);
-        Controls.Add(ItemTextBox);
         Controls.Add(CloseButton);
         Controls.Add(TurnUpsideDownCaptionlabel);
         Controls.Add(TradeSpeciesDetailButton);
-        Controls.Add(TradeSpeciesCaptionLabel);
         Controls.Add(TimeOfDayCaptionLabel);
-        Controls.Add(RelativePhysicalStatsCaptionLabel);
-        Controls.Add(PartyTypeDetailButton);
-        Controls.Add(PartyTypeCaptionLabel);
-        Controls.Add(PartySpeciesDetailButton);
-        Controls.Add(PartySpeciesCaptionLabel);
         Controls.Add(NeedsOverworldRainCaptionLabel);
-        Controls.Add(MinAffectionCaptionLabel);
-        Controls.Add(MinBeautyCaptionLabel);
-        Controls.Add(MinHappinessCaptionLabel);
-        Controls.Add(MinLevelCaptionLabel);
-        Controls.Add(LocationDetailButton);
-        Controls.Add(LocationCaptionLabel);
-        Controls.Add(KnownMoveTypeDetailButton);
-        Controls.Add(KnownMoveTypeCaptionLabel);
-        Controls.Add(KnownMoveDetailButton);
-        Controls.Add(KnownMoveCaptionLabel);
-        Controls.Add(HeldItemDetailButton);
-        Controls.Add(HeldItemCaptionLabel);
-        Controls.Add(GenderCaptionLabel);
-        Controls.Add(TriggerDetailButton);
-        Controls.Add(TriggerCaptionLabel);
-        Controls.Add(ItemDetailButton);
-        Controls.Add(ItemCaptionLabel);
+        Controls.Add(LocationButton);
+        Controls.Add(TriggerButton);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
@@ -580,38 +538,45 @@ partial class EvolutionDetailInfoForm
         Name = "EvolutionDetailInfoForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "進化詳細";
+        PokemonGroupBox.ResumeLayout(false);
+        PokemonGroupBox.PerformLayout();
+        ItemGroupBox.ResumeLayout(false);
+        ItemGroupBox.PerformLayout();
+        KnownMoveGroupBox.ResumeLayout(false);
+        KnownMoveGroupBox.PerformLayout();
+        PokemonMinGroupBox.ResumeLayout(false);
+        PokemonMinGroupBox.PerformLayout();
+        PartyGroupBox.ResumeLayout(false);
+        PartyGroupBox.PerformLayout();
         ResumeLayout(false);
         PerformLayout();
     }
 
     #endregion
 
-    private Button ItemDetailButton;
-    private Label ItemCaptionLabel;
-    private Button TriggerDetailButton;
+    private Button ItemButton;
+    private Button TriggerButton;
     private Label TriggerCaptionLabel;
     private Label GenderCaptionLabel;
-    private Button HeldItemDetailButton;
+    private Button HeldItemButton;
     private Label HeldItemCaptionLabel;
-    private Button KnownMoveDetailButton;
+    private Button KnownMoveButton;
     private Label KnownMoveCaptionLabel;
-    private Button KnownMoveTypeDetailButton;
+    private Button KnownMoveTypeButton;
     private Label KnownMoveTypeCaptionLabel;
-    private Button LocationDetailButton;
+    private Button LocationButton;
     private Label LocationCaptionLabel;
     private Label MinLevelCaptionLabel;
     private Label MinHappinessCaptionLabel;
     private Label MinBeautyCaptionLabel;
     private Label MinAffectionCaptionLabel;
     private Label NeedsOverworldRainCaptionLabel;
-    private Button PartySpeciesDetailButton;
+    private Button PartySpeciesButton;
     private Label PartySpeciesCaptionLabel;
-    private Button PartyTypeDetailButton;
-    private Label PartyTypeCaptionLabel;
+    private Button PartyTypeButton;
     private Label RelativePhysicalStatsCaptionLabel;
     private Label TimeOfDayCaptionLabel;
     private Button TradeSpeciesDetailButton;
-    private Label TradeSpeciesCaptionLabel;
     private Label TurnUpsideDownCaptionlabel;
     private Button CloseButton;
     private TextBox ItemTextBox;
@@ -632,4 +597,10 @@ partial class EvolutionDetailInfoForm
     private TextBox TimeOfDayTextBox;
     private TextBox TradeSpeciesTextBox;
     private TextBox TurnUpsideDownTextBox;
+    private Button PropertyButton;
+    private GroupBox PokemonGroupBox;
+    private GroupBox PokemonMinGroupBox;
+    private GroupBox KnownMoveGroupBox;
+    private GroupBox ItemGroupBox;
+    private GroupBox PartyGroupBox;
 }

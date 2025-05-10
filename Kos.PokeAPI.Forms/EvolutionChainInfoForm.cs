@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Evolution.EvolutionChains;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -58,11 +59,11 @@ public partial class EvolutionChainInfoForm : Form
     /// <param name="e"></param>
     private void BabyTriggerItemDetailButton_Click(object sender, EventArgs e)
     {
-        if (BabyTriggerItemDetailButton.Tag is null) {
+        if (BabyTriggerItemButton.Tag is null) {
             return;
         }
 
-        if (BabyTriggerItemDetailButton.Tag is not NamedAPIResource api) {
+        if (BabyTriggerItemButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -75,23 +76,40 @@ public partial class EvolutionChainInfoForm : Form
     }
     #endregion
 
-    #region 進化チェーン 詳細　クリック
+    #region 進化チェーン クリック
     /// <summary>
-    /// 進化チェーン 詳細　クリック
+    /// 進化チェーン　クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ChainDetailButton_Click(object sender, EventArgs e)
+    private void ChainButton_Click(object sender, EventArgs e)
     {
-        if (ChainDetailButton.Tag is null) {
+        if (ChainButton.Tag is null) {
             return;
         }
 
-        if (ChainDetailButton.Tag is not ChainLink cl) {
+        if (ChainButton.Tag is not ChainLink cl) {
             return;
         }
 
         using ChainLinkInfoForm form = new(cl);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -115,16 +133,15 @@ public partial class EvolutionChainInfoForm : Form
     /// <param name="url">URL</param>
     public void SetData(string url)
     {
-        EvolutionChain? ec = EvolutionChain.GetEvolutionChain(url);
-        if (ec is null) {
+        EvolutionChain? chain = EvolutionChain.GetEvolutionChain(url);
+        if (chain is null) {
             return;
         }
 
-        IdTextBox.Text = $"{ec.Id}";
-        BabyTriggerItemTextBox.Text = ec.BabyTriggerItem?.Name ?? string.Empty;
-        BabyTriggerItemDetailButton.Tag = ec.BabyTriggerItem;
-        ChainTextBox.Text = ec.Chain?.ToString() ?? string.Empty;
-        ChainDetailButton.Tag = ec.Chain;
+        Tag = chain;
+        FormsHelper.SetData(chain.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(chain.BabyTriggerItem, BabyTriggerItemButton, BabyTriggerItemTextBox);
+        FormsHelper.SetData(chain.Chain, ChainButton, ChainTextBox);
     }
     #endregion
 }

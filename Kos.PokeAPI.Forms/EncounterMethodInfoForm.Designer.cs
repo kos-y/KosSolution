@@ -39,24 +39,25 @@ partial class EncounterMethodInfoForm
         IdTextBox = new TextBox();
         NameTextBox = new TextBox();
         OrderTextBox = new TextBox();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
         // 
         // NameCaptionLabel
         // 
         NameCaptionLabel.AutoSize = true;
-        NameCaptionLabel.Location = new Point(32, 40);
+        NameCaptionLabel.Location = new Point(7, 43);
         NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(73, 17);
+        NameCaptionLabel.Size = new Size(98, 17);
         NameCaptionLabel.TabIndex = 2;
-        NameCaptionLabel.Text = "遭遇方法名";
+        NameCaptionLabel.Text = "遭遇方法の名前";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
         IdCaptionLabel.AutoSize = true;
-        IdCaptionLabel.Location = new Point(28, 10);
+        IdCaptionLabel.Location = new Point(28, 13);
         IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
         IdCaptionLabel.Size = new Size(77, 17);
@@ -67,7 +68,7 @@ partial class EncounterMethodInfoForm
         // OrderCaptionLabel
         // 
         OrderCaptionLabel.AutoSize = true;
-        OrderCaptionLabel.Location = new Point(71, 70);
+        OrderCaptionLabel.Location = new Point(71, 73);
         OrderCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         OrderCaptionLabel.Name = "OrderCaptionLabel";
         OrderCaptionLabel.Size = new Size(34, 17);
@@ -88,10 +89,10 @@ partial class EncounterMethodInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(828, 273);
+        CloseButton.Location = new Point(463, 293);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(66, 50);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 8;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -101,11 +102,11 @@ partial class EncounterMethodInfoForm
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(115, 97);
+        NamesDataGridView.Location = new Point(13, 117);
         NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(779, 170);
+        NamesDataGridView.Size = new Size(526, 170);
         NamesDataGridView.TabIndex = 7;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
@@ -139,33 +140,45 @@ partial class EncounterMethodInfoForm
         // 
         // IdTextBox
         // 
-        IdTextBox.Location = new Point(112, 7);
+        IdTextBox.Location = new Point(112, 10);
         IdTextBox.Name = "IdTextBox";
         IdTextBox.ReadOnly = true;
-        IdTextBox.Size = new Size(782, 24);
+        IdTextBox.Size = new Size(427, 24);
         IdTextBox.TabIndex = 1;
         // 
         // NameTextBox
         // 
-        NameTextBox.Location = new Point(112, 37);
+        NameTextBox.Location = new Point(112, 40);
         NameTextBox.Name = "NameTextBox";
         NameTextBox.ReadOnly = true;
-        NameTextBox.Size = new Size(782, 24);
+        NameTextBox.Size = new Size(427, 24);
         NameTextBox.TabIndex = 3;
         // 
         // OrderTextBox
         // 
-        OrderTextBox.Location = new Point(112, 67);
+        OrderTextBox.Location = new Point(112, 70);
         OrderTextBox.Name = "OrderTextBox";
         OrderTextBox.ReadOnly = true;
-        OrderTextBox.Size = new Size(782, 24);
+        OrderTextBox.Size = new Size(427, 24);
         OrderTextBox.TabIndex = 5;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(379, 293);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 9;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // EncounterMethodInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(907, 327);
+        ClientSize = new Size(558, 338);
+        Controls.Add(PropertyButton);
         Controls.Add(OrderTextBox);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
@@ -179,7 +192,6 @@ partial class EncounterMethodInfoForm
         FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
-        MinimizeBox = false;
         Name = "EncounterMethodInfoForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "遭遇方法";
@@ -202,4 +214,5 @@ partial class EncounterMethodInfoForm
     private TextBox IdTextBox;
     private TextBox NameTextBox;
     private TextBox OrderTextBox;
+    private Button PropertyButton;
 }

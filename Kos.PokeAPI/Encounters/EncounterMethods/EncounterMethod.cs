@@ -1,6 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 using System.Text.Json;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
 
 namespace Kos.PokeAPI.Encounters.EncounterMethods;
 
@@ -11,19 +13,25 @@ public class EncounterMethod
 {
     // フィールド
 
-    #region エンカウントの方法ID
+    #region 遭遇方法ID
     /// <summary>
-    /// エンカウントの方法ID
+    /// 遭遇方法ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("遭遇方法ID")]
     public int? Id { get; set; }
     #endregion
 
-    #region エンカウントの方法名
+    #region 遭遇方法の名前
     /// <summary>
-    /// エンカウントの方法名
+    /// 遭遇方法の名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("遭遇方法の名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -32,15 +40,22 @@ public class EncounterMethod
     /// 順番
     /// </summary>
     [JsonPropertyName("order")]
+    [DisplayName("order")]
+    [Category("(基本)")]
+    [Description("順番")]
     public int? Order { get; set; }
     #endregion
 
-    #region エンカウントの方法名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// エンカウントの方法名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public List<Name>? Names { get; set; }
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
 

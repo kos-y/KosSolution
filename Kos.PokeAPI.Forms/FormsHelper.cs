@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kos.PokeAPI.Utility.CommonModels;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Kos.PokeAPI.Forms;
@@ -62,7 +63,11 @@ public static class FormsHelper
         } else {
             button.Enabled = true;
             button.Tag = data;
-            textBox.Text = $"{data}";
+            if (data is NamedAPIResource api) {
+                textBox.Text = $"{api.Name}";
+            } else {
+                textBox.Text = $"{data}";
+            }
             textBox.Enabled = true;
         }
     }

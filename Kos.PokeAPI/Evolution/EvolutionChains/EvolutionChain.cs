@@ -1,6 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using System.Text.Json;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
 
 namespace Kos.PokeAPI.Evolution.EvolutionChains;
 
@@ -14,6 +15,9 @@ public class EvolutionChain
     /// 進化チェーンID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("進化チェーンID")]
     public int? Id { get; set; }
     #endregion
 
@@ -22,6 +26,9 @@ public class EvolutionChain
     /// ベビーポケモンが進化するアイテム
     /// </summary>
     [JsonPropertyName("baby_trigger_item")]
+    [DisplayName("baby_trigger_item")]
+    [Category("(基本)")]
+    [Description("ベビーポケモンが進化するアイテム")]
     public NamedAPIResource? BabyTriggerItem { get; set; }
     #endregion
 
@@ -30,6 +37,9 @@ public class EvolutionChain
     /// チェーン
     /// </summary>
     [JsonPropertyName("chain")]
+    [DisplayName("chain")]
+    [Category("(基本)")]
+    [Description("チェーン")]
     public ChainLink? Chain { get; set; }
     #endregion
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Contests.ContestEffects;
 using Kos.PokeAPI.Encounters.EncounterMethods;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -23,6 +24,9 @@ public partial class EncounterMethodInfoForm : Form
     /// </summary>
     private readonly string _url;
     #endregion
+
+
+    // メソッド
 
     #region コンストラクタ
     /// <summary>
@@ -94,6 +98,23 @@ public partial class EncounterMethodInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -113,17 +134,16 @@ public partial class EncounterMethodInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        EncounterMethod? em = EncounterMethod.GetEncountMethod(url);
-        if (em is null) {
+        EncounterMethod? method = EncounterMethod.GetEncountMethod(url);
+        if (method is null) {
             return;
         }
 
-        Tag = em;
-        IdTextBox.Text = $"{em.Id}";
-        NameTextBox.Text = em.Name;
-        OrderTextBox.Text = $"{em.Order}";
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = em.Names;
+        Tag = method;
+        FormsHelper.SetData(method.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(method.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(method.Order, OrderCaptionLabel, OrderTextBox);
+        FormsHelper.SetData(method.Names, NamesCaptionLabel, NamesDataGridView);
     }
     #endregion
 }
