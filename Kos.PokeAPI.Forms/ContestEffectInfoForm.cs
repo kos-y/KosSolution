@@ -137,6 +137,23 @@ public partial class ContestEffectInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -156,19 +173,17 @@ public partial class ContestEffectInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        ContestEffect? ce = ContestEffect.GetContestEffect(url);
-        if (ce is null) {
+        ContestEffect? effect = ContestEffect.GetContestEffect(url);
+        if (effect is null) {
             return;
         }
 
-        Tag = ce;
-        IdTextBox.Text = $"{ce.Id}";
-        AppealTextBox.Text = $"{ce.Appeal}";
-        JamTextBox.Text = $"{ce.Jam}";
-        EffectEntriesDataGridView.AutoGenerateColumns = false;
-        EffectEntriesDataGridView.DataSource = ce.EffectEntries;
-        FlavorTextEntriesDataGridView.AutoGenerateColumns = false;
-        FlavorTextEntriesDataGridView.DataSource = ce.FlavorTextEntries;
+        Tag = effect;
+        FormsHelper.SetData(effect.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(effect.Appeal, AppealCaptionLabel, AppealTextBox);
+        FormsHelper.SetData(effect.Jam, JamCaptionLabel, JamTextBox);
+        FormsHelper.SetData(effect.EffectEntries, EffectEntriesCaptionLabel, EffectEntriesDataGridView);
+        FormsHelper.SetData(effect.FlavorTextEntries, FlavorTextEntriesCaptionLabel, FlavorTextEntriesDataGridView);
     }
     #endregion
 }

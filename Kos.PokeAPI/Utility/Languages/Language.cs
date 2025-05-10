@@ -56,12 +56,12 @@ public class Language
     public string? Iso3166 { get; set; }
     #endregion
 
-    #region 名前リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// 名前リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public List<Name>? Names { get; set; }
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Kos.PokeAPI.Forms;
 
@@ -20,14 +21,28 @@ public static class FormsHelper
     /// <param name="textBox"></param>
     public static void SetData<T>(T? data, Label label, TextBox textBox)
     {
-        if (data is null) {
-            label.Enabled = false;
-            textBox.Text = string.Empty;
-            textBox.Enabled = false;
+        if (!textBox.Multiline) {
+            if (data is null) {
+                label.Enabled = false;
+                textBox.Text = string.Empty;
+                textBox.Enabled = false;
+            } else {
+                label.Enabled = true;
+                textBox.Text = $"{data}";
+                textBox.Enabled = true;
+            }
         } else {
-            label.Enabled = true;
-            textBox.Text = $"{data}";
-            textBox.Enabled = true;
+            if (data is null) {
+                label.Enabled = false;
+                textBox.Text = string.Empty;
+                textBox.Enabled = false;
+            } else {
+                label.Enabled = true;
+                textBox.Text
+                    = $"{data}".Replace("\r\n", "\n")
+                               .Replace("\n", Environment.NewLine);
+                textBox.Enabled = true;
+            }
         }
     }
 

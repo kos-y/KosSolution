@@ -27,204 +27,225 @@ partial class SuperContestEffectInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        AppealLabel = new Label();
         AppealCaptionLabel = new Label();
-        IdLabel = new Label();
         IdCaptionLabel = new Label();
         FlavorTextEntriesDataGridView = new DataGridView();
         FlavorTextColumn = new DataGridViewTextBoxColumn();
         FlavorTextLanguageColumn = new DataGridViewTextBoxColumn();
-        FlavorVersionColumn = new DataGridViewTextBoxColumn();
-        FlavorTextLanguageInfoButtonColumn = new DataGridViewButtonColumn();
-        FlavorTextVersionInfoButtonColumn = new DataGridViewButtonColumn();
+        FlavorTextButtonColumn = new DataGridViewButtonColumn();
         FlavorTextEntriesCaptionLabel = new Label();
         MovesDataGridView = new DataGridView();
         MovesColumn = new DataGridViewTextBoxColumn();
         MovesInfoColumn = new DataGridViewButtonColumn();
         MovesCaptionLabel = new Label();
         CloseButton = new Button();
+        PropetyButton = new Button();
+        IdTextBox = new TextBox();
+        AppealTextBox = new TextBox();
         ((System.ComponentModel.ISupportInitialize)FlavorTextEntriesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)MovesDataGridView).BeginInit();
         SuspendLayout();
         // 
-        // AppealLabel
-        // 
-        AppealLabel.BorderStyle = BorderStyle.Fixed3D;
-        AppealLabel.Location = new Point(133, 32);
-        AppealLabel.Name = "AppealLabel";
-        AppealLabel.Size = new Size(147, 23);
-        AppealLabel.TabIndex = 3;
-        AppealLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // AppealCaptionLabel
         // 
-        AppealCaptionLabel.Location = new Point(12, 32);
+        AppealCaptionLabel.AutoSize = true;
+        AppealCaptionLabel.Location = new Point(121, 45);
+        AppealCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         AppealCaptionLabel.Name = "AppealCaptionLabel";
-        AppealCaptionLabel.Size = new Size(115, 23);
+        AppealCaptionLabel.Size = new Size(51, 17);
         AppealCaptionLabel.TabIndex = 2;
-        AppealCaptionLabel.Text = "appeal";
+        AppealCaptionLabel.Text = "アピール";
         AppealCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // IdLabel
-        // 
-        IdLabel.BorderStyle = BorderStyle.Fixed3D;
-        IdLabel.Location = new Point(133, 9);
-        IdLabel.Name = "IdLabel";
-        IdLabel.Size = new Size(147, 23);
-        IdLabel.TabIndex = 1;
-        IdLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
-        IdCaptionLabel.Location = new Point(12, 9);
+        IdCaptionLabel.AutoSize = true;
+        IdCaptionLabel.Location = new Point(13, 12);
+        IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(115, 23);
+        IdCaptionLabel.Size = new Size(159, 22);
         IdCaptionLabel.TabIndex = 0;
-        IdCaptionLabel.Text = "id";
+        IdCaptionLabel.Text = "スーパーコンテストの効果ID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        IdCaptionLabel.UseCompatibleTextRendering = true;
         // 
         // FlavorTextEntriesDataGridView
         // 
         FlavorTextEntriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        FlavorTextEntriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { FlavorTextColumn, FlavorTextLanguageColumn, FlavorVersionColumn, FlavorTextLanguageInfoButtonColumn, FlavorTextVersionInfoButtonColumn });
-        FlavorTextEntriesDataGridView.Location = new Point(133, 58);
+        FlavorTextEntriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { FlavorTextColumn, FlavorTextLanguageColumn, FlavorTextButtonColumn });
+        FlavorTextEntriesDataGridView.Location = new Point(13, 86);
+        FlavorTextEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         FlavorTextEntriesDataGridView.Name = "FlavorTextEntriesDataGridView";
         FlavorTextEntriesDataGridView.RowHeadersVisible = false;
-        FlavorTextEntriesDataGridView.Size = new Size(672, 150);
+        FlavorTextEntriesDataGridView.Size = new Size(790, 170);
         FlavorTextEntriesDataGridView.TabIndex = 5;
         FlavorTextEntriesDataGridView.CellClick += FlavorTextEntriesDataGridView_CellClick;
         FlavorTextEntriesDataGridView.CellDoubleClick += FlavorTextEntriesDataGridView_CellDoubleClick;
         // 
         // FlavorTextColumn
         // 
+        FlavorTextColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         FlavorTextColumn.DataPropertyName = "Text";
-        FlavorTextColumn.HeaderText = "flavor_text";
+        FlavorTextColumn.HeaderText = "フレーバーテキスト";
         FlavorTextColumn.Name = "FlavorTextColumn";
         FlavorTextColumn.ReadOnly = true;
-        FlavorTextColumn.Width = 250;
+        FlavorTextColumn.Width = 88;
         // 
         // FlavorTextLanguageColumn
         // 
+        FlavorTextLanguageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         FlavorTextLanguageColumn.DataPropertyName = "Language";
-        FlavorTextLanguageColumn.HeaderText = "language";
+        FlavorTextLanguageColumn.HeaderText = "言語";
         FlavorTextLanguageColumn.Name = "FlavorTextLanguageColumn";
         FlavorTextLanguageColumn.ReadOnly = true;
+        FlavorTextLanguageColumn.Width = 55;
         // 
-        // FlavorVersionColumn
+        // FlavorTextButtonColumn
         // 
-        FlavorVersionColumn.DataPropertyName = "Version";
-        FlavorVersionColumn.HeaderText = "version";
-        FlavorVersionColumn.Name = "FlavorVersionColumn";
-        FlavorVersionColumn.ReadOnly = true;
-        // 
-        // FlavorTextLanguageInfoButtonColumn
-        // 
-        FlavorTextLanguageInfoButtonColumn.HeaderText = "LanguageInfo";
-        FlavorTextLanguageInfoButtonColumn.Name = "FlavorTextLanguageInfoButtonColumn";
-        FlavorTextLanguageInfoButtonColumn.Text = "Info..";
-        FlavorTextLanguageInfoButtonColumn.UseColumnTextForButtonValue = true;
-        // 
-        // FlavorTextVersionInfoButtonColumn
-        // 
-        FlavorTextVersionInfoButtonColumn.HeaderText = "VersionInfo";
-        FlavorTextVersionInfoButtonColumn.Name = "FlavorTextVersionInfoButtonColumn";
-        FlavorTextVersionInfoButtonColumn.Text = "Info...";
-        FlavorTextVersionInfoButtonColumn.UseColumnTextForButtonValue = true;
+        FlavorTextButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        FlavorTextButtonColumn.HeaderText = "詳細";
+        FlavorTextButtonColumn.Name = "FlavorTextButtonColumn";
+        FlavorTextButtonColumn.Text = "詳細";
+        FlavorTextButtonColumn.UseColumnTextForButtonValue = true;
+        FlavorTextButtonColumn.Width = 36;
         // 
         // FlavorTextEntriesCaptionLabel
         // 
-        FlavorTextEntriesCaptionLabel.Location = new Point(12, 58);
+        FlavorTextEntriesCaptionLabel.AutoSize = true;
+        FlavorTextEntriesCaptionLabel.Location = new Point(13, 66);
+        FlavorTextEntriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         FlavorTextEntriesCaptionLabel.Name = "FlavorTextEntriesCaptionLabel";
-        FlavorTextEntriesCaptionLabel.Size = new Size(115, 23);
+        FlavorTextEntriesCaptionLabel.Size = new Size(103, 17);
         FlavorTextEntriesCaptionLabel.TabIndex = 4;
-        FlavorTextEntriesCaptionLabel.Text = "flavor_text_entries";
+        FlavorTextEntriesCaptionLabel.Text = "フレーバーテキスト";
         FlavorTextEntriesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // MovesDataGridView
         // 
         MovesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         MovesDataGridView.Columns.AddRange(new DataGridViewColumn[] { MovesColumn, MovesInfoColumn });
-        MovesDataGridView.Location = new Point(133, 214);
+        MovesDataGridView.Location = new Point(13, 279);
+        MovesDataGridView.Margin = new Padding(4, 3, 4, 3);
         MovesDataGridView.Name = "MovesDataGridView";
         MovesDataGridView.RowHeadersVisible = false;
-        MovesDataGridView.Size = new Size(672, 150);
+        MovesDataGridView.Size = new Size(423, 170);
         MovesDataGridView.TabIndex = 7;
+        MovesDataGridView.CellClick += MovesDataGridView_CellClick;
+        MovesDataGridView.CellDoubleClick += MovesDataGridView_CellDoubleClick;
         // 
         // MovesColumn
         // 
+        MovesColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         MovesColumn.DataPropertyName = "Name";
-        MovesColumn.HeaderText = "move";
+        MovesColumn.HeaderText = "技";
         MovesColumn.Name = "MovesColumn";
         MovesColumn.ReadOnly = true;
-        MovesColumn.Width = 200;
+        MovesColumn.Width = 46;
         // 
         // MovesInfoColumn
         // 
-        MovesInfoColumn.HeaderText = "Info";
+        MovesInfoColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        MovesInfoColumn.HeaderText = "詳細";
         MovesInfoColumn.Name = "MovesInfoColumn";
-        MovesInfoColumn.Text = "Info...";
+        MovesInfoColumn.Text = "詳細";
         MovesInfoColumn.UseColumnTextForButtonValue = true;
+        MovesInfoColumn.Width = 40;
         // 
         // MovesCaptionLabel
         // 
-        MovesCaptionLabel.Location = new Point(12, 214);
+        MovesCaptionLabel.AutoSize = true;
+        MovesCaptionLabel.Location = new Point(13, 259);
+        MovesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         MovesCaptionLabel.Name = "MovesCaptionLabel";
-        MovesCaptionLabel.Size = new Size(115, 23);
+        MovesCaptionLabel.Size = new Size(21, 17);
         MovesCaptionLabel.TabIndex = 6;
-        MovesCaptionLabel.Text = "moves";
+        MovesCaptionLabel.Text = "技";
         MovesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(730, 370);
+        CloseButton.Location = new Point(727, 414);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(75, 23);
-        CloseButton.TabIndex = 8;
-        CloseButton.Text = "Close";
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 9;
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // PropetyButton
+        // 
+        PropetyButton.Location = new Point(653, 414);
+        PropetyButton.Margin = new Padding(4, 3, 4, 3);
+        PropetyButton.Name = "PropetyButton";
+        PropetyButton.Size = new Size(76, 35);
+        PropetyButton.TabIndex = 8;
+        PropetyButton.Text = "プロパティ";
+        PropetyButton.UseVisualStyleBackColor = true;
+        PropetyButton.Click += PropetyButton_Click;
+        // 
+        // IdTextBox
+        // 
+        IdTextBox.Location = new Point(181, 12);
+        IdTextBox.Margin = new Padding(5, 3, 5, 3);
+        IdTextBox.Name = "IdTextBox";
+        IdTextBox.ReadOnly = true;
+        IdTextBox.Size = new Size(172, 24);
+        IdTextBox.TabIndex = 1;
+        // 
+        // AppealTextBox
+        // 
+        AppealTextBox.Location = new Point(181, 42);
+        AppealTextBox.Margin = new Padding(5, 3, 5, 3);
+        AppealTextBox.Name = "AppealTextBox";
+        AppealTextBox.ReadOnly = true;
+        AppealTextBox.Size = new Size(172, 24);
+        AppealTextBox.TabIndex = 3;
+        // 
         // SuperContestEffectInfoForm
         // 
-        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(820, 399);
+        ClientSize = new Size(822, 456);
+        Controls.Add(AppealTextBox);
+        Controls.Add(IdTextBox);
+        Controls.Add(PropetyButton);
         Controls.Add(CloseButton);
         Controls.Add(MovesCaptionLabel);
         Controls.Add(MovesDataGridView);
         Controls.Add(FlavorTextEntriesCaptionLabel);
         Controls.Add(FlavorTextEntriesDataGridView);
-        Controls.Add(AppealLabel);
         Controls.Add(AppealCaptionLabel);
-        Controls.Add(IdLabel);
         Controls.Add(IdCaptionLabel);
+        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         MinimizeBox = false;
         Name = "SuperContestEffectInfoForm";
-        Text = "Super Contest Effect";
+        StartPosition = FormStartPosition.CenterParent;
+        Text = "スーパーコンテストの効果";
         Load += SuperContestEffectInfoForm_Load;
         ((System.ComponentModel.ISupportInitialize)FlavorTextEntriesDataGridView).EndInit();
         ((System.ComponentModel.ISupportInitialize)MovesDataGridView).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
-
-    private Label AppealLabel;
     private Label AppealCaptionLabel;
-    private Label IdLabel;
     private Label IdCaptionLabel;
     private DataGridView FlavorTextEntriesDataGridView;
-    private DataGridViewTextBoxColumn FlavorTextColumn;
-    private DataGridViewTextBoxColumn FlavorTextLanguageColumn;
-    private DataGridViewTextBoxColumn FlavorVersionColumn;
-    private DataGridViewButtonColumn FlavorTextLanguageInfoButtonColumn;
-    private DataGridViewButtonColumn FlavorTextVersionInfoButtonColumn;
     private Label FlavorTextEntriesCaptionLabel;
     private DataGridView MovesDataGridView;
     private Label MovesCaptionLabel;
+    private Button CloseButton;
     private DataGridViewTextBoxColumn MovesColumn;
     private DataGridViewButtonColumn MovesInfoColumn;
-    private Button CloseButton;
+    private Button PropetyButton;
+    private TextBox IdTextBox;
+    private TextBox AppealTextBox;
+    private DataGridViewTextBoxColumn FlavorTextColumn;
+    private DataGridViewTextBoxColumn FlavorTextLanguageColumn;
+    private DataGridViewButtonColumn FlavorTextButtonColumn;
 }

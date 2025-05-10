@@ -6,6 +6,9 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
+using Kos.PokeAPI.Contests.ContestTypes;
 
 namespace Kos.PokeAPI.Contests.ContestEffects;
 
@@ -21,6 +24,9 @@ public class ContestEffect
     /// コンテストの効果ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("コンテストの効果ID")]
     public int? Id { get; set; }
     #endregion
 
@@ -29,6 +35,9 @@ public class ContestEffect
     /// アピールポイント
     /// </summary>
     [JsonPropertyName("appeal")]
+    [DisplayName("appeal")]
+    [Category("(基本)")]
+    [Description("アピールポイント")]
     public int? Appeal { get; set; }
     #endregion
 
@@ -37,6 +46,9 @@ public class ContestEffect
     /// 妨害ポイント
     /// </summary>
     [JsonPropertyName("jam")]
+    [DisplayName("jam")]
+    [Category("(基本)")]
+    [Description("妨害ポイント")]
     public int? Jam { get; set; }
     #endregion
 
@@ -45,7 +57,11 @@ public class ContestEffect
     /// 効果リスト
     /// </summary>
     [JsonPropertyName("effect_entries")]
-    public List<Effect>? EffectEntries { get; set; }
+    [DisplayName("effect_entries")]
+    [Category("(基本)")]
+    [Description("効果リスト")]
+    [TypeConverter(typeof(ListConverter<Effect>))]
+    public IReadOnlyList<Effect>? EffectEntries { get; set; }
     #endregion
 
     #region フレーバーテキストリスト
@@ -53,7 +69,11 @@ public class ContestEffect
     /// フレーバーテキストリスト
     /// </summary>
     [JsonPropertyName("flavor_text_entries")]
-    public List<FlavorText>? FlavorTextEntries { get; set; }
+    [DisplayName("flavor_text_entries")]
+    [Category("(基本)")]
+    [Description("フレーバーテキストリスト")]
+    [TypeConverter(typeof(ListConverter<FlavorText>))]
+    public IReadOnlyList<FlavorText>? FlavorTextEntries { get; set; }
     #endregion
 
 

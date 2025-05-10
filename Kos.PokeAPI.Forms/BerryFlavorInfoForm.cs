@@ -214,17 +214,17 @@ public partial class BerryFlavorInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        BerryFlavor? bf = BerryFlavor.GetBerryFlavor(url);
-        if (bf is null) {
+        BerryFlavor? flavor = BerryFlavor.GetBerryFlavor(url);
+        if (flavor is null) {
             return;
         }
 
-        Tag = bf;
-        FormsHelper.SetData(bf.Id, IdCaptionLabel, IdTextBox);
-        FormsHelper.SetData(bf.Name, NameCaptionLabel, NameTextBox);
-        FormsHelper.SetData(bf.ContestType, ContestTypeButton, ContestTypeTextBox);
-        FormsHelper.SetData(bf.Berries, BerriesCaptionLabel, BerriesDataGridView);
-        FormsHelper.SetData(bf.Names, NamesCaptionLabel, NamesDataGridView);
+        Tag = flavor;
+        FormsHelper.SetData(flavor.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(flavor.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(flavor.ContestType, ContestTypeButton, ContestTypeTextBox);
+        FormsHelper.SetData(flavor.Berries, BerriesCaptionLabel, BerriesDataGridView);
+        FormsHelper.SetData(flavor.Names, NamesCaptionLabel, NamesDataGridView);
     }
     #endregion
 }

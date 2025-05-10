@@ -6,46 +6,62 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
+using Kos.PokeAPI.Berries.Berries;
 
 namespace Kos.PokeAPI.Contests.ContestTypes;
 
 /// <summary>
-/// コンテストの部門
+/// コンテストの種類
 /// </summary>
 public class ContestType
 {
     // フィールド
 
-    #region コンテストの部門ID
+    #region コンテストの種類ID
     /// <summary>
-    /// コンテストの部門ID
+    /// コンテストの種類ID
     /// </summary>
     [JsonPropertyName("id")]
-    public required int Id { get; set; }
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("コンテストの種類ID")]
+    public int? Id { get; set; }
     #endregion
 
-    #region コンテストの部門名
+    #region コンテストの種類の名前
     /// <summary>
-    /// コンテストの部門名
+    /// コンテストの種類の名前
     /// </summary>
     [JsonPropertyName("name")]
-    public required string Name { get; set; }
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("コンテストの種類の名前")]
+    public string? Name { get; set; }
     #endregion
 
-    #region 木の実の味
+    #region きのみの味
     /// <summary>
     /// きのみの味
     /// </summary>
     [JsonPropertyName("berry_flavor")]
+    [DisplayName("berry_flavor")]
+    [Category("(基本)")]
+    [Description("きのみの味")]
     public required NamedAPIResource BerryFlavor { get; set; }
     #endregion
 
-    #region コンテストの部門名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// コンテストの部門名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public List<ContestName>? Names { get; set; }
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<ContestName>))]
+    public IReadOnlyList<ContestName>? Names { get; set; }
     #endregion
 
 

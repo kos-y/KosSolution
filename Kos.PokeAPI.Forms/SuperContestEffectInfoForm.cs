@@ -43,9 +43,9 @@ public partial class SuperContestEffectInfoForm : Form
     }
     #endregion
 
-    #region Load
+    #region ロード
     /// <summary>
-    /// Load
+    /// ロード
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -55,14 +55,16 @@ public partial class SuperContestEffectInfoForm : Form
     }
     #endregion
 
-    #region flavor_text_entries DataGridView CellClick
+    #region フレーバーテキスト セルクリック
     /// <summary>
-    /// flavor_text_entries DataGridView CellClick
+    /// フレーバーテキスト セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void
-        FlavorTextEntriesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        FlavorTextEntriesDataGridView_CellClick(
+            object sender, DataGridViewCellEventArgs e
+        )
     {
         if (e.RowIndex < 0 || e.ColumnIndex < 0) {
             return;
@@ -73,80 +75,112 @@ public partial class SuperContestEffectInfoForm : Form
             return;
         }
 
-        if (FlavorTextEntriesDataGridView.Rows[e.RowIndex].DataBoundItem is not FlavorText ft) {
+        if (FlavorTextEntriesDataGridView.Rows[e.RowIndex].DataBoundItem is not FlavorText text) {
             return;
         }
 
-        switch (FlavorTextEntriesDataGridView.Columns[e.ColumnIndex].Name) {
-        case nameof(FlavorTextLanguageInfoButtonColumn): {
-                if (ft.Language?.Url is null) {
-                    return;
-                }
-
-                using LanguageInfoForm form = new(ft.Language.Url);
-                _ = form.ShowDialog(this);
-            }
-            break;
-
-        case nameof(FlavorTextVersionInfoButtonColumn): {
-                if (ft.Version?.Url is null) {
-                    return;
-                }
-            }
-            break;
-
-        default:
-            break;
-        }
+        using FlavorTextInfoForm form = new(text);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region flavor_text_entries DataGridView CellDoubleClick
+    #region フレーバーテキスト セルダブルクリック
     /// <summary>
-    /// flavor_text_entries DataGridView CellDoubleClick
+    /// フレーバーテキスト セルダブルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void FlavorTextEntriesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    private void
+        FlavorTextEntriesDataGridView_CellDoubleClick(
+            object sender, DataGridViewCellEventArgs e)
     {
         if (e.RowIndex < 0) {
             return;
         }
 
-        if (FlavorTextEntriesDataGridView.Rows[e.RowIndex].DataBoundItem is not FlavorText ft) {
+        if (FlavorTextEntriesDataGridView.Rows[e.RowIndex].DataBoundItem is not FlavorText text) {
             return;
         }
 
-        Select2Form selForm = new("Language", "Version");
-        if (selForm.ShowDialog(this) == DialogResult.OK) {
-            switch (selForm.Result) {
-            case Select2Result.Select1: {
-                    if (ft.Language?.Url is null) {
-                        return;
-                    }
-
-                    using LanguageInfoForm form = new(ft.Language.Url);
-                    _ = form.ShowDialog(this);
-                }
-                break;
-
-            case Select2Result.Select2: {
-                    if (ft.Version?.Url is null) {
-                        return;
-                    }
-                }
-                break;
-
-            default:
-                break;
-            }
-        }
+        using FlavorTextInfoForm form = new(text);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region Close Click
+    #region 技 セルクリック
     /// <summary>
-    /// Close Click
+    /// 技 セルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void MovesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (MovesDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+            return;
+        }
+
+        if (MovesDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using MoveInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 技 セルダブルクリック
+    /// <summary>
+    /// 技 セルダブルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void MovesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0) {
+            return;
+        }
+
+        if (MovesDataGridView.Rows[e.RowIndex].DataBoundItem is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using MoveInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropetyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 閉じる クリック
+    /// <summary>
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -163,17 +197,16 @@ public partial class SuperContestEffectInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        SuperContestEffect? sce = SuperContestEffect.GetSuperContestEffect(url);
-        if (sce is null) {
+        SuperContestEffect? effect = SuperContestEffect.GetSuperContestEffect(url);
+        if (effect is null) {
             return;
         }
 
-        Tag = sce;
-        IdLabel.Text = $"{sce.Id}";
-        AppealLabel.Text = $"{sce.Appeal}";
-        FlavorTextEntriesDataGridView.DataSource = sce.FlavorTextEntries;
-        MovesDataGridView.AutoGenerateColumns = false;
-        MovesDataGridView.DataSource = sce.Moves;
+        Tag = effect;
+        FormsHelper.SetData(effect.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(effect.Appeal, AppealCaptionLabel, AppealTextBox);
+        FormsHelper.SetData(effect.FlavorTextEntries, FlavorTextEntriesCaptionLabel, FlavorTextEntriesDataGridView);
+        FormsHelper.SetData(effect.Moves, MovesCaptionLabel, MovesDataGridView);
     }
     #endregion
 }

@@ -28,66 +28,52 @@ partial class ContestNameInfoForm
     private void InitializeComponent()
     {
         CloseButton = new Button();
-        LanguageDetailButton = new Button();
+        LanguageButton = new Button();
         LanguageTextBox = new TextBox();
         ContestNameTextBox = new TextBox();
-        LanguageCaptionLabel = new Label();
         ContestNameCaptionLabel = new Label();
         ColorTextBox = new TextBox();
         ColorCaptionLabel = new Label();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
         // CloseButton
         // 
-        CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        CloseButton.Location = new Point(389, 113);
+        CloseButton.Location = new Point(262, 96);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 7;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
-        // LanguageDetailButton
+        // LanguageButton
         // 
-        LanguageDetailButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        LanguageDetailButton.Location = new Point(399, 66);
-        LanguageDetailButton.Name = "LanguageDetailButton";
-        LanguageDetailButton.Size = new Size(53, 27);
-        LanguageDetailButton.TabIndex = 6;
-        LanguageDetailButton.Text = "詳細";
-        LanguageDetailButton.UseVisualStyleBackColor = true;
-        LanguageDetailButton.Click += LanguageDetailButton_Click;
+        LanguageButton.Location = new Point(56, 66);
+        LanguageButton.Name = "LanguageButton";
+        LanguageButton.Size = new Size(53, 27);
+        LanguageButton.TabIndex = 4;
+        LanguageButton.Text = "言語";
+        LanguageButton.UseVisualStyleBackColor = true;
+        LanguageButton.Click += LanguageDetailButton_Click;
         // 
         // LanguageTextBox
         // 
-        LanguageTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        LanguageTextBox.Location = new Point(124, 66);
+        LanguageTextBox.Location = new Point(115, 66);
         LanguageTextBox.Name = "LanguageTextBox";
         LanguageTextBox.ReadOnly = true;
-        LanguageTextBox.Size = new Size(269, 24);
+        LanguageTextBox.Size = new Size(223, 24);
         LanguageTextBox.TabIndex = 5;
         LanguageTextBox.Text = "ja-Hrkt";
         // 
         // ContestNameTextBox
         // 
-        ContestNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        ContestNameTextBox.Location = new Point(124, 6);
+        ContestNameTextBox.Location = new Point(115, 6);
         ContestNameTextBox.Name = "ContestNameTextBox";
         ContestNameTextBox.ReadOnly = true;
-        ContestNameTextBox.Size = new Size(328, 24);
+        ContestNameTextBox.Size = new Size(223, 24);
         ContestNameTextBox.TabIndex = 1;
         ContestNameTextBox.Text = "ピカチュウ";
-        // 
-        // LanguageCaptionLabel
-        // 
-        LanguageCaptionLabel.AutoSize = true;
-        LanguageCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        LanguageCaptionLabel.Location = new Point(75, 69);
-        LanguageCaptionLabel.Name = "LanguageCaptionLabel";
-        LanguageCaptionLabel.Size = new Size(34, 17);
-        LanguageCaptionLabel.TabIndex = 4;
-        LanguageCaptionLabel.Text = "言語";
         // 
         // ContestNameCaptionLabel
         // 
@@ -101,11 +87,10 @@ partial class ContestNameInfoForm
         // 
         // ColorTextBox
         // 
-        ColorTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        ColorTextBox.Location = new Point(124, 36);
+        ColorTextBox.Location = new Point(115, 36);
         ColorTextBox.Name = "ColorTextBox";
         ColorTextBox.ReadOnly = true;
-        ColorTextBox.Size = new Size(328, 24);
+        ColorTextBox.Size = new Size(223, 24);
         ColorTextBox.TabIndex = 3;
         ColorTextBox.Text = "ピカチュウ";
         // 
@@ -119,18 +104,28 @@ partial class ContestNameInfoForm
         ColorCaptionLabel.TabIndex = 2;
         ColorCaptionLabel.Text = "色";
         // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(180, 96);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 6;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // ContestNameInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(464, 160);
+        ClientSize = new Size(358, 143);
+        Controls.Add(PropertyButton);
         Controls.Add(ColorTextBox);
         Controls.Add(ColorCaptionLabel);
         Controls.Add(CloseButton);
-        Controls.Add(LanguageDetailButton);
+        Controls.Add(LanguageButton);
         Controls.Add(LanguageTextBox);
         Controls.Add(ContestNameTextBox);
-        Controls.Add(LanguageCaptionLabel);
         Controls.Add(ContestNameCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         Margin = new Padding(4, 3, 4, 3);
@@ -145,11 +140,11 @@ partial class ContestNameInfoForm
     #endregion
 
     private Button CloseButton;
-    private Button LanguageDetailButton;
+    private Button LanguageButton;
     private TextBox LanguageTextBox;
     private TextBox ContestNameTextBox;
-    private Label LanguageCaptionLabel;
     private Label ContestNameCaptionLabel;
     private TextBox ColorTextBox;
     private Label ColorCaptionLabel;
+    private Button PropertyButton;
 }

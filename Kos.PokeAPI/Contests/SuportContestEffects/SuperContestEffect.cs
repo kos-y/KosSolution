@@ -6,6 +6,9 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
+using Kos.PokeAPI.Contests.ContestTypes;
 
 namespace Kos.PokeAPI.Contests.SuportContestEffects;
 
@@ -21,6 +24,9 @@ public class SuperContestEffect
     /// スーパーコンテストの効果ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("スーパーコンテストの効果ID")]
     public int? Id { get; set; }
     #endregion
 
@@ -29,6 +35,9 @@ public class SuperContestEffect
     /// アピールポイント
     /// </summary>
     [JsonPropertyName("appeal")]
+    [DisplayName("appeal")]
+    [Category("(基本)")]
+    [Description("アピールポイント")]
     public int? Appeal { get; set; }
     #endregion
 
@@ -37,7 +46,11 @@ public class SuperContestEffect
     /// フレーバーテキストリスト
     /// </summary>
     [JsonPropertyName("flavor_text_entries")]
-    public List<FlavorText>? FlavorTextEntries { get; set; }
+    [DisplayName("flavor_text_entries")]
+    [Category("(基本)")]
+    [Description("フレーバーテキストリスト")]
+    [TypeConverter(typeof(ListConverter<FlavorText>))]
+    public IReadOnlyList<FlavorText>? FlavorTextEntries { get; set; }
     #endregion
 
     #region 技リスト
@@ -45,6 +58,10 @@ public class SuperContestEffect
     /// 技リスト
     /// </summary>
     [JsonPropertyName("moves")]
+    [DisplayName("moves")]
+    [Category("(基本)")]
+    [Description("技リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? Moves { get; set; }
     #endregion
 

@@ -34,15 +34,15 @@ partial class LanguageInfoForm
         Iso3166CaptionLabel = new Label();
         NamesCaptionLabel = new Label();
         NamesDataGridView = new DataGridView();
-        NameColumn = new DataGridViewTextBoxColumn();
-        LanguageColumn = new DataGridViewTextBoxColumn();
-        DetailColumn = new DataGridViewButtonColumn();
         CloseButton = new Button();
         IdTextBox = new TextBox();
         NameTextBox = new TextBox();
         OfficialTextBox = new TextBox();
         Iso639TextBox = new TextBox();
         Iso3166TextBox = new TextBox();
+        NameColumn = new DataGridViewTextBoxColumn();
+        LanguageColumn = new DataGridViewTextBoxColumn();
+        DetailColumn = new DataGridViewButtonColumn();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
         // 
@@ -119,27 +119,6 @@ partial class LanguageInfoForm
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
-        // NameColumn
-        // 
-        NameColumn.DataPropertyName = "Text";
-        NameColumn.HeaderText = "言語名";
-        NameColumn.Name = "NameColumn";
-        NameColumn.ReadOnly = true;
-        // 
-        // LanguageColumn
-        // 
-        LanguageColumn.DataPropertyName = "Language";
-        LanguageColumn.HeaderText = "表示言語";
-        LanguageColumn.Name = "LanguageColumn";
-        LanguageColumn.ReadOnly = true;
-        // 
-        // DetailColumn
-        // 
-        DetailColumn.HeaderText = "詳細";
-        DetailColumn.Name = "DetailColumn";
-        DetailColumn.Text = "詳細";
-        DetailColumn.UseColumnTextForButtonValue = true;
-        // 
         // CloseButton
         // 
         CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -196,6 +175,33 @@ partial class LanguageInfoForm
         Iso3166TextBox.Size = new Size(375, 25);
         Iso3166TextBox.TabIndex = 17;
         // 
+        // NameColumn
+        // 
+        NameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        NameColumn.DataPropertyName = "Text";
+        NameColumn.HeaderText = "名前";
+        NameColumn.Name = "NameColumn";
+        NameColumn.ReadOnly = true;
+        NameColumn.Width = 59;
+        // 
+        // LanguageColumn
+        // 
+        LanguageColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        LanguageColumn.DataPropertyName = "Language";
+        LanguageColumn.HeaderText = "表示言語";
+        LanguageColumn.Name = "LanguageColumn";
+        LanguageColumn.ReadOnly = true;
+        LanguageColumn.Width = 85;
+        // 
+        // DetailColumn
+        // 
+        DetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        DetailColumn.HeaderText = "詳細";
+        DetailColumn.Name = "DetailColumn";
+        DetailColumn.Text = "詳細";
+        DetailColumn.UseColumnTextForButtonValue = true;
+        DetailColumn.Width = 40;
+        // 
         // LanguageInfoForm
         // 
         AutoScaleDimensions = new SizeF(8F, 17F);
@@ -235,12 +241,12 @@ partial class LanguageInfoForm
     private Label NamesCaptionLabel;
     private DataGridView NamesDataGridView;
     private Button CloseButton;
-    private DataGridViewTextBoxColumn NameColumn;
-    private DataGridViewTextBoxColumn LanguageColumn;
-    private DataGridViewButtonColumn DetailColumn;
     private TextBox IdTextBox;
     private TextBox NameTextBox;
     private TextBox OfficialTextBox;
     private TextBox Iso639TextBox;
     private TextBox Iso3166TextBox;
+    private DataGridViewTextBoxColumn NameColumn;
+    private DataGridViewTextBoxColumn LanguageColumn;
+    private DataGridViewButtonColumn DetailColumn;
 }

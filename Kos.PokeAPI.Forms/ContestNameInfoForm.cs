@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Contests.ContestTypes;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -29,19 +30,19 @@ public partial class ContestNameInfoForm : Form
     }
     #endregion
 
-    #region 言語 詳細 クリック
+    #region 言語 クリック
     /// <summary>
-    /// 言語 詳細 クリック
+    /// 言語 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void LanguageDetailButton_Click(object sender, EventArgs e)
     {
-        if (LanguageDetailButton.Tag is null) {
+        if (LanguageButton.Tag is null) {
             return;
         }
 
-        if (LanguageDetailButton.Tag is not NamedAPIResource api) {
+        if (LanguageButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -50,6 +51,23 @@ public partial class ContestNameInfoForm : Form
         }
 
         using LanguageInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -70,13 +88,13 @@ public partial class ContestNameInfoForm : Form
     /// <summary>
     /// データに画面を表示
     /// </summary>
-    /// <param name="cn"></param>
-    public void SetData(ContestName cn)
+    /// <param name="name"></param>
+    public void SetData(ContestName name)
     {
-        ContestNameTextBox.Text = cn.Name ?? string.Empty;
-        ColorTextBox.Text = cn.Color ?? string.Empty;
-        LanguageTextBox.Text = cn.Language?.Name ?? string.Empty;
-        LanguageDetailButton.Tag = cn.Language;
+        Tag = name;
+        FormsHelper.SetData(name.Name, ContestNameCaptionLabel, ContestNameTextBox);
+        FormsHelper.SetData(name.Color, ColorCaptionLabel, ColorTextBox);
+        FormsHelper.SetData(name.Language, LanguageButton, LanguageTextBox);
     }
     #endregion
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -10,6 +11,7 @@ namespace Kos.PokeAPI.Utility.CommonModels;
 /// <summary>
 /// フレーバーテキスト
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class FlavorText
 {
     // フィールド
@@ -19,15 +21,10 @@ public class FlavorText
     /// フレーバーテキスト
     /// </summary>
     [JsonPropertyName("flavor_text")]
+    [DisplayName("flavor_text")]
+    [Category("(基本)")]
+    [Description("フレーバーテキスト")]
     public string? Text { get; set; }
-    #endregion
-
-    #region 言語
-    /// <summary>
-    /// 言語
-    /// </summary>
-    [JsonPropertyName("language")]
-    public NamedAPIResource? Language { get; set; }
     #endregion
 
     #region バージョン
@@ -35,6 +32,20 @@ public class FlavorText
     /// バージョン
     /// </summary>
     [JsonPropertyName("version")]
+    [DisplayName("version")]
+    [Category("(基本)")]
+    [Description("バージョン")]
     public NamedAPIResource? Version { get; set; }
+    #endregion
+
+    #region 言語
+    /// <summary>
+    /// 言語
+    /// </summary>
+    [JsonPropertyName("language")]
+    [DisplayName("language")]
+    [Category("(基本)")]
+    [Description("言語")]
+    public NamedAPIResource? Language { get; set; }
     #endregion
 }

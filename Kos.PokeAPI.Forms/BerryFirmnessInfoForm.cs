@@ -186,16 +186,16 @@ public partial class BerryFirmnessInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        BerryFirmness? bf = BerryFirmness.GetResource(url);
-        if (bf is null) {
+        BerryFirmness? firmness = BerryFirmness.GetResource(url);
+        if (firmness is null) {
             return;
         }
 
-        Tag = bf;
-        FormsHelper.SetData(bf.Id, IdCaptionLabel, IdTextBox);
-        FormsHelper.SetData(bf.Name, NameCaptionLabel, NameTextBox);
-        FormsHelper.SetData(bf.Berries, BerriesCaptionLabel, BerriesDataGridView);
-        FormsHelper.SetData(bf.Names, NamesCaptionLabel, NamesDataGridView);
+        Tag = firmness;
+        FormsHelper.SetData(firmness.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(firmness.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(firmness.Berries, BerriesCaptionLabel, BerriesDataGridView);
+        FormsHelper.SetData(firmness.Names, NamesCaptionLabel, NamesDataGridView);
     }
     #endregion
 }

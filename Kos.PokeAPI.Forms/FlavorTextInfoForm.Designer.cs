@@ -29,127 +29,109 @@ partial class FlavorTextInfoForm
     {
         FlavorTextCaptionLabel = new Label();
         FlavorTextTextBox = new TextBox();
-        LanguageDetailButton = new Button();
+        LanguageButton = new Button();
         LanguageTextBox = new TextBox();
-        LanguageCaptionLabel = new Label();
-        VersionCaptionLabel = new Label();
         VersionTextBox = new TextBox();
-        VersionDetailButton = new Button();
+        VersionButton = new Button();
         CloseButton = new Button();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
         // FlavorTextCaptionLabel
         // 
         FlavorTextCaptionLabel.AutoSize = true;
         FlavorTextCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        FlavorTextCaptionLabel.Location = new Point(12, 9);
+        FlavorTextCaptionLabel.Location = new Point(12, 69);
         FlavorTextCaptionLabel.Name = "FlavorTextCaptionLabel";
         FlavorTextCaptionLabel.Size = new Size(103, 17);
-        FlavorTextCaptionLabel.TabIndex = 0;
+        FlavorTextCaptionLabel.TabIndex = 4;
         FlavorTextCaptionLabel.Text = "フレーバーテキスト";
         // 
         // FlavorTextTextBox
         // 
-        FlavorTextTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-        FlavorTextTextBox.Location = new Point(12, 29);
+        FlavorTextTextBox.Location = new Point(12, 89);
         FlavorTextTextBox.Multiline = true;
         FlavorTextTextBox.Name = "FlavorTextTextBox";
         FlavorTextTextBox.ReadOnly = true;
         FlavorTextTextBox.Size = new Size(297, 170);
-        FlavorTextTextBox.TabIndex = 1;
+        FlavorTextTextBox.TabIndex = 5;
         FlavorTextTextBox.Text = "ピカチュウ";
         // 
-        // LanguageDetailButton
+        // LanguageButton
         // 
-        LanguageDetailButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        LanguageDetailButton.Location = new Point(258, 205);
-        LanguageDetailButton.Name = "LanguageDetailButton";
-        LanguageDetailButton.Size = new Size(53, 23);
-        LanguageDetailButton.TabIndex = 4;
-        LanguageDetailButton.Text = "詳細";
-        LanguageDetailButton.UseVisualStyleBackColor = true;
-        LanguageDetailButton.Click += LanguageDetailButton_Click;
+        LanguageButton.Location = new Point(12, 41);
+        LanguageButton.Name = "LanguageButton";
+        LanguageButton.Size = new Size(72, 25);
+        LanguageButton.TabIndex = 2;
+        LanguageButton.Text = "言語";
+        LanguageButton.UseVisualStyleBackColor = true;
+        LanguageButton.Click += LanguageButton_Click;
         // 
         // LanguageTextBox
         // 
-        LanguageTextBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-        LanguageTextBox.Location = new Point(80, 205);
+        LanguageTextBox.Location = new Point(90, 42);
         LanguageTextBox.Name = "LanguageTextBox";
         LanguageTextBox.ReadOnly = true;
         LanguageTextBox.Size = new Size(172, 24);
         LanguageTextBox.TabIndex = 3;
-        LanguageTextBox.Text = "ピカチュウ";
-        // 
-        // LanguageCaptionLabel
-        // 
-        LanguageCaptionLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        LanguageCaptionLabel.AutoSize = true;
-        LanguageCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        LanguageCaptionLabel.Location = new Point(14, 208);
-        LanguageCaptionLabel.Name = "LanguageCaptionLabel";
-        LanguageCaptionLabel.Size = new Size(34, 17);
-        LanguageCaptionLabel.TabIndex = 2;
-        LanguageCaptionLabel.Text = "言語";
-        // 
-        // VersionCaptionLabel
-        // 
-        VersionCaptionLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        VersionCaptionLabel.AutoSize = true;
-        VersionCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        VersionCaptionLabel.Location = new Point(14, 237);
-        VersionCaptionLabel.Name = "VersionCaptionLabel";
-        VersionCaptionLabel.Size = new Size(60, 17);
-        VersionCaptionLabel.TabIndex = 5;
-        VersionCaptionLabel.Text = "バージョン";
+        LanguageTextBox.Text = "ja-Hrkt";
         // 
         // VersionTextBox
         // 
-        VersionTextBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-        VersionTextBox.Location = new Point(80, 235);
+        VersionTextBox.Location = new Point(90, 12);
         VersionTextBox.Name = "VersionTextBox";
         VersionTextBox.ReadOnly = true;
         VersionTextBox.Size = new Size(172, 24);
-        VersionTextBox.TabIndex = 6;
-        VersionTextBox.Text = "ピカチュウ";
+        VersionTextBox.TabIndex = 1;
+        VersionTextBox.Text = "Red";
         // 
-        // VersionDetailButton
+        // VersionButton
         // 
-        VersionDetailButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        VersionDetailButton.Location = new Point(258, 234);
-        VersionDetailButton.Name = "VersionDetailButton";
-        VersionDetailButton.Size = new Size(53, 23);
-        VersionDetailButton.TabIndex = 7;
-        VersionDetailButton.Text = "詳細";
-        VersionDetailButton.UseVisualStyleBackColor = true;
-        VersionDetailButton.Click += VersionDetailButton_Click;
+        VersionButton.Location = new Point(12, 12);
+        VersionButton.Name = "VersionButton";
+        VersionButton.Size = new Size(72, 24);
+        VersionButton.TabIndex = 0;
+        VersionButton.Text = "バージョン";
+        VersionButton.UseVisualStyleBackColor = true;
+        VersionButton.Click += VersionDetailButton_Click;
         // 
         // CloseButton
         // 
-        CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        CloseButton.Location = new Point(258, 274);
+        CloseButton.Location = new Point(233, 265);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
-        CloseButton.TabIndex = 8;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 7;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(151, 265);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 6;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // FlavorTextInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(335, 322);
+        ClientSize = new Size(327, 312);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
-        Controls.Add(VersionDetailButton);
+        Controls.Add(VersionButton);
         Controls.Add(VersionTextBox);
-        Controls.Add(VersionCaptionLabel);
-        Controls.Add(LanguageDetailButton);
+        Controls.Add(LanguageButton);
         Controls.Add(LanguageTextBox);
-        Controls.Add(LanguageCaptionLabel);
         Controls.Add(FlavorTextTextBox);
         Controls.Add(FlavorTextCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
         Name = "FlavorTextInfoForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "フレーバーテキスト";
@@ -161,11 +143,10 @@ partial class FlavorTextInfoForm
 
     private Label FlavorTextCaptionLabel;
     private TextBox FlavorTextTextBox;
-    private Button LanguageDetailButton;
+    private Button LanguageButton;
     private TextBox LanguageTextBox;
-    private Label LanguageCaptionLabel;
-    private Label VersionCaptionLabel;
     private TextBox VersionTextBox;
-    private Button VersionDetailButton;
+    private Button VersionButton;
     private Button CloseButton;
+    private Button PropertyButton;
 }

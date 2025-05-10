@@ -38,6 +38,8 @@ public class ListConverter<T> : TypeConverter
 
     public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
     {
-        return "(Collection)";
+        IReadOnlyList<T>? list = value as IReadOnlyList<T>;
+
+        return $"(Collection Count={list?.Count})";
     }
 }

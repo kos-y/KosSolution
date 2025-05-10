@@ -1,3 +1,4 @@
+using Kos.Core.Forms;
 using Kos.PokeAPI.Contests.ContestTypes;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -44,19 +45,19 @@ public partial class ContestTypeInfoForm : Form
     }
     #endregion
 
-    #region きのみの味 詳細 クリック
+    #region きのみの味 クリック
     /// <summary>
-    /// きのみの味 詳細 クリック
+    /// きのみの味 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void BerryFlavorDetailButton_Click(object sender, EventArgs e)
+    private void BerryFlavorButton_Click(object sender, EventArgs e)
     {
-        if (BerryFlavorDetailButton.Tag is null) {
+        if (BerryFlavorButton.Tag is null) {
             return;
         }
 
-        if (BerryFlavorDetailButton.Tag is not NamedAPIResource api) {
+        if (BerryFlavorButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -115,6 +116,19 @@ public partial class ContestTypeInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -134,18 +148,16 @@ public partial class ContestTypeInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        ContestType? ct = ContestType.GetContestType(url);
-        if (ct is null) {
+        ContestType? type = ContestType.GetContestType(url);
+        if (type is null) {
             return;
         }
 
-        Tag = ct;
-        IdTextBox.Text = $"{ct.Id}";
-        NameTextBox.Text = ct.Name;
-        BerryFlavorTextBox.Text = ct.BerryFlavor.Name ?? string.Empty;
-        BerryFlavorDetailButton.Tag = ct.BerryFlavor;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = ct.Names;
+        Tag = type;
+        FormsHelper.SetData(type.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(type.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(type.BerryFlavor, BerryFlavorButton, BerryFlavorTextBox);
+        FormsHelper.SetData(type.Names, NameCaptionLabel, NamesDataGridView);
     }
     #endregion
 }

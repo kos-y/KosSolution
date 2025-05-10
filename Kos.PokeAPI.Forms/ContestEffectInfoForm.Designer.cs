@@ -45,6 +45,7 @@ partial class ContestEffectInfoForm
         IdTextBox = new TextBox();
         AppealTextBox = new TextBox();
         JamTextBox = new TextBox();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)EffectEntriesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)FlavorTextEntriesDataGridView).BeginInit();
         SuspendLayout();
@@ -52,7 +53,7 @@ partial class ContestEffectInfoForm
         // AppealCaptionLabel
         // 
         AppealCaptionLabel.AutoSize = true;
-        AppealCaptionLabel.Location = new Point(66, 40);
+        AppealCaptionLabel.Location = new Point(35, 45);
         AppealCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         AppealCaptionLabel.Name = "AppealCaptionLabel";
         AppealCaptionLabel.Size = new Size(51, 17);
@@ -63,7 +64,7 @@ partial class ContestEffectInfoForm
         // IdCaptionLabel
         // 
         IdCaptionLabel.AutoSize = true;
-        IdCaptionLabel.Location = new Point(40, 10);
+        IdCaptionLabel.Location = new Point(9, 15);
         IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
         IdCaptionLabel.Size = new Size(76, 17);
@@ -74,7 +75,7 @@ partial class ContestEffectInfoForm
         // JamCaptionLabel
         // 
         JamCaptionLabel.AutoSize = true;
-        JamCaptionLabel.Location = new Point(82, 67);
+        JamCaptionLabel.Location = new Point(51, 72);
         JamCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         JamCaptionLabel.Name = "JamCaptionLabel";
         JamCaptionLabel.Size = new Size(34, 17);
@@ -84,14 +85,13 @@ partial class ContestEffectInfoForm
         // 
         // EffectEntriesDataGridView
         // 
-        EffectEntriesDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         EffectEntriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         EffectEntriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { EffectColumn, EffectLanguageColumn, EffectLanguageDetailButtonColumn });
-        EffectEntriesDataGridView.Location = new Point(124, 97);
+        EffectEntriesDataGridView.Location = new Point(13, 117);
         EffectEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         EffectEntriesDataGridView.Name = "EffectEntriesDataGridView";
         EffectEntriesDataGridView.RowHeadersVisible = false;
-        EffectEntriesDataGridView.Size = new Size(851, 168);
+        EffectEntriesDataGridView.Size = new Size(750, 168);
         EffectEntriesDataGridView.TabIndex = 7;
         EffectEntriesDataGridView.CellClick += EffectEntriesDataGridView_CellClick;
         EffectEntriesDataGridView.CellDoubleClick += EffectEntriesDataGridView_CellDoubleClick;
@@ -126,7 +126,7 @@ partial class ContestEffectInfoForm
         // EffectEntriesCaptionLabel
         // 
         EffectEntriesCaptionLabel.AutoSize = true;
-        EffectEntriesCaptionLabel.Location = new Point(82, 92);
+        EffectEntriesCaptionLabel.Location = new Point(13, 97);
         EffectEntriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         EffectEntriesCaptionLabel.Name = "EffectEntriesCaptionLabel";
         EffectEntriesCaptionLabel.Size = new Size(34, 17);
@@ -136,14 +136,13 @@ partial class ContestEffectInfoForm
         // 
         // FlavorTextEntriesDataGridView
         // 
-        FlavorTextEntriesDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         FlavorTextEntriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         FlavorTextEntriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { FlavorTextColumn, FlavorTextLanguageColumn, FlavorVersionColumn, FlavorTextDetailButtonColumn });
-        FlavorTextEntriesDataGridView.Location = new Point(124, 273);
+        FlavorTextEntriesDataGridView.Location = new Point(13, 308);
         FlavorTextEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         FlavorTextEntriesDataGridView.Name = "FlavorTextEntriesDataGridView";
         FlavorTextEntriesDataGridView.RowHeadersVisible = false;
-        FlavorTextEntriesDataGridView.Size = new Size(851, 168);
+        FlavorTextEntriesDataGridView.Size = new Size(750, 168);
         FlavorTextEntriesDataGridView.TabIndex = 9;
         FlavorTextEntriesDataGridView.CellClick += FlavorTextEntriesDataGridView_CellClick;
         FlavorTextEntriesDataGridView.CellDoubleClick += FlavorTextEntriesDataGridView_CellDoubleClick;
@@ -186,12 +185,11 @@ partial class ContestEffectInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        CloseButton.Location = new Point(904, 447);
+        CloseButton.Location = new Point(687, 482);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(70, 39);
-        CloseButton.TabIndex = 10;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 11;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
@@ -199,7 +197,7 @@ partial class ContestEffectInfoForm
         // FlavorTextEntriesCaptionLabel
         // 
         FlavorTextEntriesCaptionLabel.AutoSize = true;
-        FlavorTextEntriesCaptionLabel.Location = new Point(13, 269);
+        FlavorTextEntriesCaptionLabel.Location = new Point(13, 288);
         FlavorTextEntriesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         FlavorTextEntriesCaptionLabel.Name = "FlavorTextEntriesCaptionLabel";
         FlavorTextEntriesCaptionLabel.Size = new Size(103, 17);
@@ -209,36 +207,45 @@ partial class ContestEffectInfoForm
         // 
         // IdTextBox
         // 
-        IdTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        IdTextBox.Location = new Point(124, 7);
+        IdTextBox.Location = new Point(93, 12);
         IdTextBox.Name = "IdTextBox";
         IdTextBox.ReadOnly = true;
-        IdTextBox.Size = new Size(851, 24);
+        IdTextBox.Size = new Size(74, 24);
         IdTextBox.TabIndex = 1;
         // 
         // AppealTextBox
         // 
-        AppealTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        AppealTextBox.Location = new Point(124, 37);
+        AppealTextBox.Location = new Point(93, 42);
         AppealTextBox.Name = "AppealTextBox";
         AppealTextBox.ReadOnly = true;
-        AppealTextBox.Size = new Size(851, 24);
+        AppealTextBox.Size = new Size(74, 24);
         AppealTextBox.TabIndex = 3;
         // 
         // JamTextBox
         // 
-        JamTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        JamTextBox.Location = new Point(123, 67);
+        JamTextBox.Location = new Point(92, 72);
         JamTextBox.Name = "JamTextBox";
         JamTextBox.ReadOnly = true;
-        JamTextBox.Size = new Size(851, 24);
+        JamTextBox.Size = new Size(75, 24);
         JamTextBox.TabIndex = 5;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(603, 482);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 10;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // ContestEffectInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(996, 493);
+        ClientSize = new Size(772, 529);
+        Controls.Add(PropertyButton);
         Controls.Add(JamTextBox);
         Controls.Add(AppealTextBox);
         Controls.Add(IdTextBox);
@@ -254,7 +261,6 @@ partial class ContestEffectInfoForm
         FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
-        MinimizeBox = false;
         Name = "ContestEffectInfoForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "コンテスト効果";
@@ -284,4 +290,5 @@ partial class ContestEffectInfoForm
     private TextBox IdTextBox;
     private TextBox AppealTextBox;
     private TextBox JamTextBox;
+    private Button PropertyButton;
 }
