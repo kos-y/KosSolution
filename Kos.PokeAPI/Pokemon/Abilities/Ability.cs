@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Kos.Core;
+using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Pokemon.Abilities;
@@ -68,7 +70,7 @@ public class Ability
     [Category("(基本)")]
     [Description("言語ごとの名前リスト")]
     [TypeConverter(typeof(ListConverter<Name>))]
-    public List<Name>? Names { get; set; }
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
     #region 言語ごとの効果
@@ -80,7 +82,7 @@ public class Ability
     [Category("(基本)")]
     [Description("言語ごとの効果リスト")]
     [TypeConverter(typeof(ListConverter<VerboseEffect>))]
-    public List<VerboseEffect>? EffectEntries { get; set; }
+    public IReadOnlyList<VerboseEffect>? EffectEntries { get; set; }
     #endregion
 
     #region 効果の変更歴リスト
@@ -92,7 +94,7 @@ public class Ability
     [Category("(基本)")]
     [Description("効果の変更歴リスト")]
     [TypeConverter(typeof(ListConverter<AbilityEffectChange>))]
-    public List<AbilityEffectChange>? EffectChanges { get; set; }
+    public IReadOnlyList<AbilityEffectChange>? EffectChanges { get; set; }
     #endregion
 
     #region フレーバーテキストリスト
@@ -103,8 +105,8 @@ public class Ability
     [DisplayName("flavor_text_entries")]
     [Category("(基本)")]
     [Description("フレーバーテキストリスト")]
-    [TypeConverter(typeof(ListConverter<AbilityEffectChange>))]
-    public List<AbilityFlavorText>? FlavorTextEntries { get; set; }
+    [TypeConverter(typeof(ListConverter<AbilityFlavorText>))]
+    public IReadOnlyList<AbilityFlavorText>? FlavorTextEntries { get; set; }
     #endregion
 
     #region ポケモンリスト
@@ -116,6 +118,23 @@ public class Ability
     [Category("(基本)")]
     [Description("ポケモンリスト")]
     [TypeConverter(typeof(ListConverter<AbilityPokemon>))]
-    public List<AbilityPokemon>? Pokemon { get; set; }
+    public IReadOnlyList<AbilityPokemon>? Pokemon { get; set; }
+    #endregion
+
+
+    // メソッド
+
+    #region リソースの取得
+    /// <summary>
+    /// リソースの取得
+    /// </summary>
+    /// <param name="url">URL</param>
+    /// <returns>リソース</returns>
+    public static Ability? GetResource(string url)
+    {
+        string json = PokeAPIClient.GetAPIResourceUrl(url);
+
+        return JsonSerializer.Deserialize<Ability>(json);
+    }
     #endregion
 }

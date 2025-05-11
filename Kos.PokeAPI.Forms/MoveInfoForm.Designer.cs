@@ -598,10 +598,10 @@ partial class MoveInfoForm
         // EffectTabPage
         // 
         EffectTabPage.Controls.Add(EffectEntriesDataGridView);
-        EffectTabPage.Location = new Point(4, 24);
+        EffectTabPage.Location = new Point(4, 26);
         EffectTabPage.Name = "EffectTabPage";
         EffectTabPage.Padding = new Padding(3);
-        EffectTabPage.Size = new Size(1058, 510);
+        EffectTabPage.Size = new Size(1058, 508);
         EffectTabPage.TabIndex = 0;
         EffectTabPage.Text = "効果";
         EffectTabPage.UseVisualStyleBackColor = true;
@@ -615,7 +615,7 @@ partial class MoveInfoForm
         EffectEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         EffectEntriesDataGridView.Name = "EffectEntriesDataGridView";
         EffectEntriesDataGridView.RowHeadersVisible = false;
-        EffectEntriesDataGridView.Size = new Size(1052, 504);
+        EffectEntriesDataGridView.Size = new Size(1052, 502);
         EffectEntriesDataGridView.TabIndex = 1;
         EffectEntriesDataGridView.CellClick += EffectEntriesDataGridView_CellClick;
         EffectEntriesDataGridView.CellDoubleClick += EffectEntriesDataGridView_CellDoubleClick;
