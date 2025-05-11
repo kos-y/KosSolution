@@ -27,8 +27,8 @@ partial class MoveInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
         NameTextBox = new TextBox();
         IdTextBox = new TextBox();
         NameCaptionLabel = new Label();
@@ -273,6 +273,7 @@ partial class MoveInfoForm
         DamageClassButton.TabIndex = 21;
         DamageClassButton.Text = "ダメージの種類";
         DamageClassButton.UseVisualStyleBackColor = true;
+        DamageClassButton.Click += DamageClassButton_Click;
         // 
         // ContestGroupBox
         // 
@@ -400,6 +401,7 @@ partial class MoveInfoForm
         TargetButton.TabIndex = 15;
         TargetButton.Text = "対象";
         TargetButton.UseVisualStyleBackColor = true;
+        TargetButton.Click += TargetButton_Click;
         // 
         // TargetTextBox
         // 
@@ -622,8 +624,8 @@ partial class MoveInfoForm
         // 
         EffectColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         EffectColumn.DataPropertyName = "ShortEffect";
-        dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-        EffectColumn.DefaultCellStyle = dataGridViewCellStyle3;
+        dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+        EffectColumn.DefaultCellStyle = dataGridViewCellStyle1;
         EffectColumn.HeaderText = "効果";
         EffectColumn.Name = "EffectColumn";
         EffectColumn.ReadOnly = true;
@@ -667,8 +669,8 @@ partial class MoveInfoForm
         // 
         dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         dataGridViewTextBoxColumn1.DataPropertyName = "VersionGroup";
-        dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-        dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+        dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+        dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
         dataGridViewTextBoxColumn1.HeaderText = "バージョングループ";
         dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
         dataGridViewTextBoxColumn1.ReadOnly = true;

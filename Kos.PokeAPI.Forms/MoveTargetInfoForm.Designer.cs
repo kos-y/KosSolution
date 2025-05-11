@@ -46,6 +46,7 @@ partial class MoveTargetInfoForm
         dataGridViewButtonColumn2 = new DataGridViewButtonColumn();
         DescriptionsCaptionLabel = new Label();
         CloseButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)MoveDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)DescriptionsDataGridView).BeginInit();
@@ -237,20 +238,32 @@ partial class MoveTargetInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(601, 495);
+        CloseButton.Location = new Point(598, 495);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(73, 40);
-        CloseButton.TabIndex = 10;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 11;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(514, 495);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 10;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // MoveTargetInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(688, 546);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(DescriptionsDataGridView);
         Controls.Add(DescriptionsCaptionLabel);
@@ -297,4 +310,5 @@ partial class MoveTargetInfoForm
     private DataGridViewButtonColumn dataGridViewButtonColumn2;
     private Label DescriptionsCaptionLabel;
     private Button CloseButton;
+    private Button PropertyButton;
 }

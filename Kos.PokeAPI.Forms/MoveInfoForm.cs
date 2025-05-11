@@ -89,6 +89,56 @@ public partial class MoveInfoForm : Form
     }
     #endregion
 
+    #region 対象 クリック
+    /// <summary>
+    /// 対象 クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void TargetButton_Click(object sender, EventArgs e)
+    {
+        if (TargetButton.Tag is null) {
+            return;
+        }
+
+        if (TargetButton.Tag is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using MoveTargetInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region ダメージの種類 クリック
+    /// <summary>
+    /// ダメージの種類 クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void DamageClassButton_Click(object sender, EventArgs e)
+    {
+        if (DamageClassButton.Tag is null) {
+            return;
+        }
+
+        if (DamageClassButton.Tag is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using MoveDamageClassInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region コンテストの種類 クリック
     /// <summary>
     /// コンテストの種類 クリック
