@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.Core;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Pokemon.Abilities;
@@ -16,13 +19,21 @@ public class Ability
     /// <summary>
     /// 特性ID
     /// </summary>
+    [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("特性ID")]
     public int? Id { get; set; }
     #endregion
 
-    #region 特性名
+    #region 特性の名前
     /// <summary>
-    /// 特性名
+    /// 特性の名前
     /// </summary>
+    [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("特性の名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -30,6 +41,10 @@ public class Ability
     /// <summary>
     /// メインシリーズか
     /// </summary>
+    [JsonPropertyName("is_main_series")]
+    [DisplayName("is_main_series")]
+    [Category("(基本)")]
+    [Description("メインシリーズか")]
     public bool? IsMainSeries { get; set; }
     #endregion
 
@@ -37,6 +52,10 @@ public class Ability
     /// <summary>
     /// 世代
     /// </summary>
+    [JsonPropertyName("generation")]
+    [DisplayName("generation")]
+    [Category("(基本)")]
+    [Description("世代")]
     public NamedAPIResource? Generation { get; set; }
     #endregion
 
@@ -44,6 +63,11 @@ public class Ability
     /// <summary>
     /// 言語ごとの名前
     /// </summary>
+    [JsonPropertyName("names")]
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
     public List<Name>? Names { get; set; }
     #endregion
 
@@ -51,6 +75,11 @@ public class Ability
     /// <summary>
     /// 言語ごとの効果
     /// </summary>
+    [JsonPropertyName("effect_entries")]
+    [DisplayName("effect_entries")]
+    [Category("(基本)")]
+    [Description("言語ごとの効果リスト")]
+    [TypeConverter(typeof(ListConverter<VerboseEffect>))]
     public List<VerboseEffect>? EffectEntries { get; set; }
     #endregion
 
@@ -58,6 +87,11 @@ public class Ability
     /// <summary>
     /// 効果の変更歴リスト
     /// </summary>
+    [JsonPropertyName("effect_changes")]
+    [DisplayName("effect_changes")]
+    [Category("(基本)")]
+    [Description("効果の変更歴リスト")]
+    [TypeConverter(typeof(ListConverter<AbilityEffectChange>))]
     public List<AbilityEffectChange>? EffectChanges { get; set; }
     #endregion
 
@@ -65,6 +99,11 @@ public class Ability
     /// <summary>
     /// フレーバーテキストリスト
     /// </summary>
+    [JsonPropertyName("flavor_text_entries")]
+    [DisplayName("flavor_text_entries")]
+    [Category("(基本)")]
+    [Description("フレーバーテキストリスト")]
+    [TypeConverter(typeof(ListConverter<AbilityEffectChange>))]
     public List<AbilityFlavorText>? FlavorTextEntries { get; set; }
     #endregion
 
@@ -72,6 +111,11 @@ public class Ability
     /// <summary>
     /// ポケモンリスト
     /// </summary>
+    [JsonPropertyName("pokemon")]
+    [DisplayName("pokemon")]
+    [Category("(基本)")]
+    [Description("ポケモンリスト")]
+    [TypeConverter(typeof(ListConverter<AbilityPokemon>))]
     public List<AbilityPokemon>? Pokemon { get; set; }
     #endregion
 }

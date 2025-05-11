@@ -27,36 +27,25 @@ partial class AbilityPokemonInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        PokemonDetailButton = new Button();
-        PokemonCaptionLabel = new Label();
+        PokemonButton = new Button();
         PokemonTextBox = new TextBox();
-        label1 = new Label();
+        IsHiddenCaptionLabel = new Label();
         IsHiddenTextBox = new TextBox();
         SlotCaptionLabel = new Label();
         SlotTextBox = new TextBox();
         CloseButton = new Button();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
-        // PokemonDetailButton
+        // PokemonButton
         // 
-        PokemonDetailButton.Location = new Point(278, 10);
-        PokemonDetailButton.Margin = new Padding(4, 3, 4, 3);
-        PokemonDetailButton.Name = "PokemonDetailButton";
-        PokemonDetailButton.Size = new Size(55, 27);
-        PokemonDetailButton.TabIndex = 2;
-        PokemonDetailButton.Text = "詳細";
-        PokemonDetailButton.UseVisualStyleBackColor = true;
-        // 
-        // PokemonCaptionLabel
-        // 
-        PokemonCaptionLabel.AutoSize = true;
-        PokemonCaptionLabel.Location = new Point(13, 15);
-        PokemonCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        PokemonCaptionLabel.Name = "PokemonCaptionLabel";
-        PokemonCaptionLabel.Size = new Size(49, 17);
-        PokemonCaptionLabel.TabIndex = 0;
-        PokemonCaptionLabel.Text = "ポケモン";
-        PokemonCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        PokemonButton.Location = new Point(13, 9);
+        PokemonButton.Margin = new Padding(4, 3, 4, 3);
+        PokemonButton.Name = "PokemonButton";
+        PokemonButton.Size = new Size(60, 27);
+        PokemonButton.TabIndex = 0;
+        PokemonButton.Text = "ポケモン";
+        PokemonButton.UseVisualStyleBackColor = true;
         // 
         // PokemonTextBox
         // 
@@ -66,16 +55,16 @@ partial class AbilityPokemonInfoForm
         PokemonTextBox.Size = new Size(191, 24);
         PokemonTextBox.TabIndex = 1;
         // 
-        // label1
+        // IsHiddenCaptionLabel
         // 
-        label1.AutoSize = true;
-        label1.Location = new Point(15, 75);
-        label1.Margin = new Padding(4, 0, 4, 0);
-        label1.Name = "label1";
-        label1.Size = new Size(58, 17);
-        label1.TabIndex = 5;
-        label1.Text = "隠れ特性";
-        label1.TextAlign = ContentAlignment.MiddleLeft;
+        IsHiddenCaptionLabel.AutoSize = true;
+        IsHiddenCaptionLabel.Location = new Point(15, 75);
+        IsHiddenCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        IsHiddenCaptionLabel.Name = "IsHiddenCaptionLabel";
+        IsHiddenCaptionLabel.Size = new Size(58, 17);
+        IsHiddenCaptionLabel.TabIndex = 4;
+        IsHiddenCaptionLabel.Text = "隠れ特性";
+        IsHiddenCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IsHiddenTextBox
         // 
@@ -83,17 +72,17 @@ partial class AbilityPokemonInfoForm
         IsHiddenTextBox.Name = "IsHiddenTextBox";
         IsHiddenTextBox.ReadOnly = true;
         IsHiddenTextBox.Size = new Size(191, 24);
-        IsHiddenTextBox.TabIndex = 6;
+        IsHiddenTextBox.TabIndex = 5;
         // 
         // SlotCaptionLabel
         // 
         SlotCaptionLabel.AutoSize = true;
-        SlotCaptionLabel.Location = new Point(15, 45);
+        SlotCaptionLabel.Location = new Point(26, 45);
         SlotCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         SlotCaptionLabel.Name = "SlotCaptionLabel";
         SlotCaptionLabel.Size = new Size(47, 17);
-        SlotCaptionLabel.TabIndex = 3;
-        SlotCaptionLabel.Text = "スロッド";
+        SlotCaptionLabel.TabIndex = 2;
+        SlotCaptionLabel.Text = "スロット";
         SlotCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // SlotTextBox
@@ -102,31 +91,42 @@ partial class AbilityPokemonInfoForm
         SlotTextBox.Name = "SlotTextBox";
         SlotTextBox.ReadOnly = true;
         SlotTextBox.Size = new Size(191, 24);
-        SlotTextBox.TabIndex = 4;
+        SlotTextBox.TabIndex = 3;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(264, 102);
+        CloseButton.Location = new Point(195, 102);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(69, 36);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 7;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(111, 102);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 6;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // AbilityPokemonInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(355, 161);
+        ClientSize = new Size(291, 145);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(SlotCaptionLabel);
         Controls.Add(SlotTextBox);
-        Controls.Add(label1);
+        Controls.Add(IsHiddenCaptionLabel);
         Controls.Add(IsHiddenTextBox);
-        Controls.Add(PokemonDetailButton);
-        Controls.Add(PokemonCaptionLabel);
+        Controls.Add(PokemonButton);
         Controls.Add(PokemonTextBox);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -141,12 +141,12 @@ partial class AbilityPokemonInfoForm
 
     #endregion
 
-    private Button PokemonDetailButton;
-    private Label PokemonCaptionLabel;
+    private Button PokemonButton;
     private TextBox PokemonTextBox;
-    private Label label1;
+    private Label IsHiddenCaptionLabel;
     private TextBox IsHiddenTextBox;
     private Label SlotCaptionLabel;
     private TextBox SlotTextBox;
     private Button CloseButton;
+    private Button PropertyButton;
 }

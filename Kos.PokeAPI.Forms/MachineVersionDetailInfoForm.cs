@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
@@ -20,27 +21,27 @@ public partial class MachineVersionDetailInfoForm : Form
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    /// <param name="mvd"></param>
-    public MachineVersionDetailInfoForm(MachineVersionDetail mvd)
+    /// <param name="detail"></param>
+    public MachineVersionDetailInfoForm(MachineVersionDetail detail)
     {
         InitializeComponent();
-        SetData(mvd);
+        SetData(detail);
     }
     #endregion
 
-    #region バージョングループ 詳細 クリック
+    #region バージョングループ クリック
     /// <summary>
-    /// バージョングループ 詳細 クリック
+    /// バージョングループ クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionGroupDetailButton_Click(object sender, EventArgs e)
+    private void VersionGroupButton_Click(object sender, EventArgs e)
     {
-        if (VersionGroupDetailButton.Tag is null) {
+        if (VersionGroupButton.Tag is null) {
             return;
         }
 
-        if (VersionGroupDetailButton.Tag is not NamedAPIResource api) {
+        if (VersionGroupButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -53,19 +54,19 @@ public partial class MachineVersionDetailInfoForm : Form
     }
     #endregion
 
-    #region 技マシン 詳細 クリック
+    #region 技マシン クリック
     /// <summary>
-    /// 技マシン 詳細 クリック
+    /// 技マシン クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void MachineDetailButton_Click(object sender, EventArgs e)
+    private void MachineButton_Click(object sender, EventArgs e)
     {
-        if (MachineDetailButton.Tag is null) {
+        if (MachineButton.Tag is null) {
             return;
         }
 
-        if (MachineDetailButton.Tag is not APIResource api) {
+        if (MachineButton.Tag is not APIResource api) {
             return;
         }
 
@@ -74,6 +75,23 @@ public partial class MachineVersionDetailInfoForm : Form
         }
 
         using MachineInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ ボタン
+    /// <summary>
+    /// プロパティ ボタン
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -94,12 +112,12 @@ public partial class MachineVersionDetailInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="mvd"></param>
-    private void SetData(MachineVersionDetail mvd)
+    /// <param name="detail"></param>
+    private void SetData(MachineVersionDetail detail)
     {
-        VersionGroupTextBox.Text = mvd.VersionGroup?.Name ?? string.Empty;
-        VersionGroupDetailButton.Tag = mvd.VersionGroup;
-        MachineDetailButton.Tag = mvd.Machine;
+        Tag = detail;
+        FormsHelper.SetData(detail.VersionGroup, VersionGroupCaptionLabel, VersionGroupTextBox);
+        FormsHelper.SetData(detail.Machine, MachineButton);
     }
     #endregion
 }

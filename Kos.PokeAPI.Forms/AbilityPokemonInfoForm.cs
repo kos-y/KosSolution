@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Pokemon.Abilities;
 
 namespace Kos.PokeAPI.Forms;
@@ -20,10 +21,27 @@ public partial class AbilityPokemonInfoForm : Form
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    public AbilityPokemonInfoForm(AbilityPokemon ap)
+    public AbilityPokemonInfoForm(AbilityPokemon pokemon)
     {
         InitializeComponent();
-        SetData(ap);
+        SetData(pokemon);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
@@ -43,13 +61,13 @@ public partial class AbilityPokemonInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="ap"></param>
-    private void SetData(AbilityPokemon ap)
+    /// <param name="pokemon"></param>
+    private void SetData(AbilityPokemon pokemon)
     {
-        PokemonTextBox.Text = ap.Pokemon?.Name ?? string.Empty;
-        PokemonDetailButton.Tag = ap.Pokemon;
-        SlotTextBox.Text = $"{ap.Slot}";
-        IsHiddenTextBox.Text = $"{ap.IsHidden}";
+        Tag = pokemon;
+        FormsHelper.SetData(pokemon.Pokemon, PokemonButton, PokemonTextBox);
+        FormsHelper.SetData(pokemon.Slot, SlotCaptionLabel, SlotTextBox);
+        FormsHelper.SetData(pokemon.IsHidden, IsHiddenCaptionLabel, IsHiddenTextBox);
     }
     #endregion
 }

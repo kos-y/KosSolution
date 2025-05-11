@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
@@ -29,19 +30,19 @@ public partial class VerboseEffectInfoForm : Form
     }
     #endregion
 
-    #region 言語 詳細 クリック
+    #region 言語 クリック
     /// <summary>
-    /// 言語 詳細 クリック
+    /// 言語 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void LanguageDetailButton_Click(object sender, EventArgs e)
+    private void LanguageButton_Click(object sender, EventArgs e)
     {
-        if (LanguageDetailButton.Tag is null) {
+        if (LanguageButton.Tag is null) {
             return;
         }
 
-        if (LanguageDetailButton.Tag is not NamedAPIResource api) {
+        if (LanguageButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -54,9 +55,26 @@ public partial class VerboseEffectInfoForm : Form
     }
     #endregion
 
-    #region 閉じる
+    #region プロパティ クリック
     /// <summary>
-    /// 閉じる
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 閉じる クリック
+    /// <summary>
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -73,12 +91,10 @@ public partial class VerboseEffectInfoForm : Form
     /// <param name="ve">効果</param>
     private void SetData(VerboseEffect ve)
     {
-        ShortEffectTextBox.Text = ve.ShortEffect ?? string.Empty;
-        EffectTextBox.Text
-            = (ve.Effect ?? string.Empty).Replace("\r\n", "\n")
-                                         .Replace("\n", $"{Environment.NewLine}");
-        LanguageTextBox.Text = ve.Language?.Name ?? string.Empty;
-        LanguageDetailButton.Tag = ve.Language;
+        Tag = ve;
+        FormsHelper.SetData(ve.Language, LanguageButton, LanguageTextBox);
+        FormsHelper.SetData(ve.ShortEffect, ShortEffectCaptionLabel, ShortEffectTextBox);
+        FormsHelper.SetData(ve.Effect, EffectCaptionLabel, EffectTextBox);
     }
     #endregion
 }

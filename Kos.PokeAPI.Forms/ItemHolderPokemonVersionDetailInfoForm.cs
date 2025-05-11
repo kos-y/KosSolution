@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Items;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -29,19 +30,19 @@ public partial class ItemHolderPokemonVersionDetailInfoForm : Form
     }
     #endregion
 
-    #region バージョン 詳細 クリック
+    #region バージョン クリック
     /// <summary>
-    /// バージョン 詳細 クリック
+    /// バージョン クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionDetailButton_Click(object sender, EventArgs e)
+    private void VersionButton_Click(object sender, EventArgs e)
     {
-        if (VersionDetailButton.Tag is null) {
+        if (VersionButton.Tag is null) {
             return;
         }
 
-        if (VersionDetailButton.Tag is not NamedAPIResource api) {
+        if (VersionButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -50,6 +51,23 @@ public partial class ItemHolderPokemonVersionDetailInfoForm : Form
         }
 
         using VersionInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -70,12 +88,12 @@ public partial class ItemHolderPokemonVersionDetailInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="ihpvd"></param>
-    public void SetData(ItemHolderPokemonVersionDetail ihpvd)
+    /// <param name="version"></param>
+    public void SetData(ItemHolderPokemonVersionDetail version)
     {
-        RarityTextBox.Text = $"{ihpvd.Rarity}";
-        VersionTextBox.Text = ihpvd.Version?.Name ?? string.Empty;
-        VersionDetailButton.Tag = ihpvd.Version;
+        Tag = version;
+        FormsHelper.SetData(version.Version, VersionButton, VersionTextBox);
+        FormsHelper.SetData(version.Rarity, RarityCaptionLabel, RarityTextBox);
     }
     #endregion
 }

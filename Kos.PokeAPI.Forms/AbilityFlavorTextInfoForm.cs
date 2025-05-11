@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Pokemon.Abilities;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -21,26 +22,26 @@ public partial class AbilityFlavorTextInfoForm : Form
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    public AbilityFlavorTextInfoForm(AbilityFlavorText aft)
+    public AbilityFlavorTextInfoForm(AbilityFlavorText text)
     {
         InitializeComponent();
-        SetData(aft);
+        SetData(text);
     }
     #endregion
 
-    #region バージョングループ 詳細 クリック
+    #region バージョングループ クリック
     /// <summary>
     /// バージョングループ 詳細 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionGroupDetailButton_Click(object sender, EventArgs e)
+    private void VersionGroupButton_Click(object sender, EventArgs e)
     {
-        if (VersionGroupDetailButton.Tag is null) {
+        if (VersionGroupButton.Tag is null) {
             return;
         }
 
-        if (VersionGroupDetailButton.Tag is not NamedAPIResource api) {
+        if (VersionGroupButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -53,23 +54,70 @@ public partial class AbilityFlavorTextInfoForm : Form
     }
     #endregion
 
-    private void LanguageDetailButton_Click(object sender, EventArgs e)
+    #region 言語 クリック
+    /// <summary>
+    /// 言語 クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void LanguageButton_Click(object sender, EventArgs e)
     {
+        if (LanguageButton.Tag is null) {
+            return;
+        }
 
+        if (LanguageButton.Tag is not NamedAPIResource api) {
+            return;
+        }
+
+        if (api.Url is null) {
+            return;
+        }
+
+        using LanguageInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
     }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 閉じる クリック
+    /// <summary>
+    /// 閉じる クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void CloseButton_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
+    #endregion
 
     #region データの設定
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="aft"></param>
-    public void SetData(AbilityFlavorText aft)
+    /// <param name="text"></param>
+    public void SetData(AbilityFlavorText text)
     {
-        VersionGroupTextBox.Text = aft.VersionGroup?.Name ?? string.Empty;
-        VersionGroupDetailButton.Tag = aft.VersionGroup;
-        LanguageTextBox.Text = aft.Language?.Name ?? string.Empty;
-        LanguageDetailButton.Tag = aft.Language;
-        FlavorTextTextBox.Text = aft.FlavorText;
+        FormsHelper.SetData(text.VersionGroup, VersionGroupButton, VersionGroupTextBox);
+        FormsHelper.SetData(text.Language, LanguageButton, LanguageTextBox);
+        FormsHelper.SetData(text.FlavorText, FlavorTextCaptionLabel, FlavorTextTextBox);
     }
     #endregion
 }

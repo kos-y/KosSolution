@@ -28,52 +28,41 @@ partial class ItemHolderPokemonVersionDetailInfoForm
     private void InitializeComponent()
     {
         RarityCaptionLabel = new Label();
-        VersionCaptionLabel = new Label();
-        VersionDetailButton = new Button();
+        VersionButton = new Button();
         CloseButton = new Button();
         VersionTextBox = new TextBox();
         RarityTextBox = new TextBox();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
         // RarityCaptionLabel
         // 
         RarityCaptionLabel.AutoSize = true;
-        RarityCaptionLabel.Location = new Point(15, 10);
+        RarityCaptionLabel.Location = new Point(24, 44);
         RarityCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         RarityCaptionLabel.Name = "RarityCaptionLabel";
         RarityCaptionLabel.Size = new Size(60, 17);
-        RarityCaptionLabel.TabIndex = 0;
+        RarityCaptionLabel.TabIndex = 2;
         RarityCaptionLabel.Text = "所持確立";
         RarityCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // VersionCaptionLabel
+        // VersionButton
         // 
-        VersionCaptionLabel.AutoSize = true;
-        VersionCaptionLabel.Location = new Point(15, 43);
-        VersionCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        VersionCaptionLabel.Name = "VersionCaptionLabel";
-        VersionCaptionLabel.Size = new Size(60, 17);
-        VersionCaptionLabel.TabIndex = 2;
-        VersionCaptionLabel.Text = "バージョン";
-        VersionCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // VersionDetailButton
-        // 
-        VersionDetailButton.Location = new Point(364, 38);
-        VersionDetailButton.Margin = new Padding(4, 3, 4, 3);
-        VersionDetailButton.Name = "VersionDetailButton";
-        VersionDetailButton.Size = new Size(55, 26);
-        VersionDetailButton.TabIndex = 4;
-        VersionDetailButton.Text = "詳細";
-        VersionDetailButton.UseVisualStyleBackColor = true;
-        VersionDetailButton.Click += VersionDetailButton_Click;
+        VersionButton.Location = new Point(13, 12);
+        VersionButton.Margin = new Padding(4, 3, 4, 3);
+        VersionButton.Name = "VersionButton";
+        VersionButton.Size = new Size(71, 26);
+        VersionButton.TabIndex = 0;
+        VersionButton.Text = "バージョン";
+        VersionButton.UseVisualStyleBackColor = true;
+        VersionButton.Click += VersionButton_Click;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(350, 70);
+        CloseButton.Location = new Point(187, 74);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(69, 40);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 5;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -81,30 +70,41 @@ partial class ItemHolderPokemonVersionDetailInfoForm
         // 
         // VersionTextBox
         // 
-        VersionTextBox.Location = new Point(82, 40);
+        VersionTextBox.Location = new Point(91, 14);
         VersionTextBox.Name = "VersionTextBox";
         VersionTextBox.ReadOnly = true;
-        VersionTextBox.Size = new Size(275, 24);
-        VersionTextBox.TabIndex = 3;
+        VersionTextBox.Size = new Size(172, 24);
+        VersionTextBox.TabIndex = 1;
         // 
         // RarityTextBox
         // 
-        RarityTextBox.Location = new Point(82, 10);
+        RarityTextBox.Location = new Point(91, 44);
         RarityTextBox.Name = "RarityTextBox";
         RarityTextBox.ReadOnly = true;
-        RarityTextBox.Size = new Size(275, 24);
-        RarityTextBox.TabIndex = 1;
+        RarityTextBox.Size = new Size(172, 24);
+        RarityTextBox.TabIndex = 3;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(103, 74);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 4;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // ItemHolderPokemonVersionDetailInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(435, 122);
+        ClientSize = new Size(276, 119);
+        Controls.Add(PropertyButton);
         Controls.Add(RarityTextBox);
         Controls.Add(VersionTextBox);
         Controls.Add(CloseButton);
-        Controls.Add(VersionDetailButton);
-        Controls.Add(VersionCaptionLabel);
+        Controls.Add(VersionButton);
         Controls.Add(RarityCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -119,9 +119,9 @@ partial class ItemHolderPokemonVersionDetailInfoForm
 
     #endregion
     private Label RarityCaptionLabel;
-    private Label VersionCaptionLabel;
-    private Button VersionDetailButton;
+    private Button VersionButton;
     private Button CloseButton;
     private TextBox VersionTextBox;
     private TextBox RarityTextBox;
+    private Button PropertyButton;
 }

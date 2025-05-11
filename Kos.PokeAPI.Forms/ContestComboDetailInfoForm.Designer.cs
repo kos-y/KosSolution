@@ -36,6 +36,7 @@ partial class ContestComboDetailInfoForm
         dataGridViewButtonColumn2 = new DataGridViewButtonColumn();
         UseAfterCaptionLabel = new Label();
         CloseButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)UseBeforeDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)UseAfterDataGridView).BeginInit();
         SuspendLayout();
@@ -122,20 +123,32 @@ partial class ContestComboDetailInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(524, 205);
+        CloseButton.Location = new Point(521, 205);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(73, 35);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 4;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(437, 205);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 5;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // ContestComboDetailInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(615, 250);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(UseAfterDataGridView);
         Controls.Add(UseAfterCaptionLabel);
@@ -165,4 +178,5 @@ partial class ContestComboDetailInfoForm
     private DataGridViewButtonColumn dataGridViewButtonColumn2;
     private Label UseAfterCaptionLabel;
     private Button CloseButton;
+    private Button PropertyButton;
 }

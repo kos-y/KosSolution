@@ -41,9 +41,9 @@ partial class ItemCategoryInfoForm
         DetailColumn = new DataGridViewButtonColumn();
         NamesCaptionLabel = new Label();
         PocketTextBox = new TextBox();
-        PocketCaptionLabel = new Label();
         CloseButton = new Button();
-        PocketDetailButton = new Button();
+        PocketButton = new Button();
+        button1 = new Button();
         ((System.ComponentModel.ISupportInitialize)ItemDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
@@ -95,7 +95,7 @@ partial class ItemCategoryInfoForm
         ItemDataGridView.Name = "ItemDataGridView";
         ItemDataGridView.RowHeadersVisible = false;
         ItemDataGridView.Size = new Size(340, 237);
-        ItemDataGridView.TabIndex = 8;
+        ItemDataGridView.TabIndex = 7;
         ItemDataGridView.CellClick += ItemDataGridView_CellClick;
         ItemDataGridView.CellDoubleClick += ItemDataGridView_CellDoubleClick;
         // 
@@ -124,7 +124,7 @@ partial class ItemCategoryInfoForm
         ItemCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         ItemCaptionLabel.Name = "ItemCaptionLabel";
         ItemCaptionLabel.Size = new Size(51, 17);
-        ItemCaptionLabel.TabIndex = 7;
+        ItemCaptionLabel.TabIndex = 6;
         ItemCaptionLabel.Text = "アイテム";
         ItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -137,7 +137,7 @@ partial class ItemCategoryInfoForm
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
         NamesDataGridView.Size = new Size(379, 237);
-        NamesDataGridView.TabIndex = 10;
+        NamesDataGridView.TabIndex = 9;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
@@ -175,7 +175,7 @@ partial class ItemCategoryInfoForm
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
         NamesCaptionLabel.Size = new Size(92, 17);
-        NamesCaptionLabel.TabIndex = 9;
+        NamesCaptionLabel.TabIndex = 8;
         NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -187,47 +187,47 @@ partial class ItemCategoryInfoForm
         PocketTextBox.Size = new Size(215, 24);
         PocketTextBox.TabIndex = 5;
         // 
-        // PocketCaptionLabel
-        // 
-        PocketCaptionLabel.AutoSize = true;
-        PocketCaptionLabel.Location = new Point(72, 75);
-        PocketCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        PocketCaptionLabel.Name = "PocketCaptionLabel";
-        PocketCaptionLabel.Size = new Size(60, 17);
-        PocketCaptionLabel.TabIndex = 4;
-        PocketCaptionLabel.Text = "ポケット名";
-        PocketCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(644, 375);
+        CloseButton.Location = new Point(667, 375);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(96, 52);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 11;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
-        // PocketDetailButton
+        // PocketButton
         // 
-        PocketDetailButton.Location = new Point(360, 72);
-        PocketDetailButton.Margin = new Padding(4, 3, 4, 3);
-        PocketDetailButton.Name = "PocketDetailButton";
-        PocketDetailButton.Size = new Size(45, 26);
-        PocketDetailButton.TabIndex = 6;
-        PocketDetailButton.Text = "詳細";
-        PocketDetailButton.UseVisualStyleBackColor = true;
-        PocketDetailButton.Click += PocketDetailButton_Click;
+        PocketButton.Location = new Point(73, 72);
+        PocketButton.Margin = new Padding(4, 3, 4, 3);
+        PocketButton.Name = "PocketButton";
+        PocketButton.Size = new Size(58, 26);
+        PocketButton.TabIndex = 4;
+        PocketButton.Text = "ポケット";
+        PocketButton.UseVisualStyleBackColor = true;
+        PocketButton.Click += PocketButton_Click;
+        // 
+        // button1
+        // 
+        button1.Location = new Point(583, 375);
+        button1.Margin = new Padding(4, 3, 4, 3);
+        button1.Name = "button1";
+        button1.Size = new Size(76, 35);
+        button1.TabIndex = 10;
+        button1.Text = "プロパティ";
+        button1.UseVisualStyleBackColor = true;
+        button1.Click += button1_Click;
         // 
         // ItemCategoryInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(756, 439);
-        Controls.Add(PocketDetailButton);
+        ClientSize = new Size(756, 420);
+        Controls.Add(button1);
+        Controls.Add(PocketButton);
         Controls.Add(CloseButton);
-        Controls.Add(PocketCaptionLabel);
         Controls.Add(PocketTextBox);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
@@ -263,10 +263,10 @@ partial class ItemCategoryInfoForm
     private DataGridView NamesDataGridView;
     private Label NamesCaptionLabel;
     private TextBox PocketTextBox;
-    private Label PocketCaptionLabel;
     private Button CloseButton;
-    private Button PocketDetailButton;
+    private Button PocketButton;
     private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn LanguageColumn;
     private DataGridViewButtonColumn DetailColumn;
+    private Button button1;
 }

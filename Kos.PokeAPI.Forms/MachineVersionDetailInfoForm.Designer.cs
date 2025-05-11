@@ -27,87 +27,74 @@ partial class MachineVersionDetailInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        VersionGroupDetailButton = new Button();
-        VersionGroupCaptionLabel = new Label();
+        VersionGroupButton = new Button();
         VersionGroupTextBox = new TextBox();
-        MachineCaptionLabel = new Label();
-        MachineDetailButton = new Button();
+        MachineButton = new Button();
         CloseButton = new Button();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
-        // VersionGroupDetailButton
+        // VersionGroupButton
         // 
-        VersionGroupDetailButton.Location = new Point(322, 9);
-        VersionGroupDetailButton.Margin = new Padding(4, 3, 4, 3);
-        VersionGroupDetailButton.Name = "VersionGroupDetailButton";
-        VersionGroupDetailButton.Size = new Size(55, 27);
-        VersionGroupDetailButton.TabIndex = 2;
-        VersionGroupDetailButton.Text = "詳細";
-        VersionGroupDetailButton.UseVisualStyleBackColor = true;
-        VersionGroupDetailButton.Click += VersionGroupDetailButton_Click;
-        // 
-        // VersionGroupCaptionLabel
-        // 
-        VersionGroupCaptionLabel.AutoSize = true;
-        VersionGroupCaptionLabel.Location = new Point(13, 14);
-        VersionGroupCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        VersionGroupCaptionLabel.Name = "VersionGroupCaptionLabel";
-        VersionGroupCaptionLabel.Size = new Size(104, 17);
-        VersionGroupCaptionLabel.TabIndex = 0;
-        VersionGroupCaptionLabel.Text = "バージョングループ";
-        VersionGroupCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        VersionGroupButton.Location = new Point(13, 12);
+        VersionGroupButton.Margin = new Padding(4, 3, 4, 3);
+        VersionGroupButton.Name = "VersionGroupButton";
+        VersionGroupButton.Size = new Size(124, 27);
+        VersionGroupButton.TabIndex = 0;
+        VersionGroupButton.Text = "バージョングループ";
+        VersionGroupButton.UseVisualStyleBackColor = true;
+        VersionGroupButton.Click += VersionGroupButton_Click;
         // 
         // VersionGroupTextBox
         // 
-        VersionGroupTextBox.Location = new Point(124, 12);
+        VersionGroupTextBox.Location = new Point(13, 45);
         VersionGroupTextBox.Name = "VersionGroupTextBox";
         VersionGroupTextBox.ReadOnly = true;
         VersionGroupTextBox.Size = new Size(191, 24);
         VersionGroupTextBox.TabIndex = 1;
         // 
-        // MachineCaptionLabel
+        // MachineButton
         // 
-        MachineCaptionLabel.AutoSize = true;
-        MachineCaptionLabel.Location = new Point(65, 47);
-        MachineCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        MachineCaptionLabel.Name = "MachineCaptionLabel";
-        MachineCaptionLabel.Size = new Size(52, 17);
-        MachineCaptionLabel.TabIndex = 3;
-        MachineCaptionLabel.Text = "技マシン";
-        MachineCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // MachineDetailButton
-        // 
-        MachineDetailButton.Location = new Point(124, 42);
-        MachineDetailButton.Margin = new Padding(4, 3, 4, 3);
-        MachineDetailButton.Name = "MachineDetailButton";
-        MachineDetailButton.Size = new Size(55, 27);
-        MachineDetailButton.TabIndex = 4;
-        MachineDetailButton.Text = "詳細";
-        MachineDetailButton.UseVisualStyleBackColor = true;
-        MachineDetailButton.Click += MachineDetailButton_Click;
+        MachineButton.Location = new Point(13, 75);
+        MachineButton.Margin = new Padding(4, 3, 4, 3);
+        MachineButton.Name = "MachineButton";
+        MachineButton.Size = new Size(66, 27);
+        MachineButton.TabIndex = 2;
+        MachineButton.Text = "技マシン";
+        MachineButton.UseVisualStyleBackColor = true;
+        MachineButton.Click += MachineButton_Click;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(306, 82);
+        CloseButton.Location = new Point(128, 108);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(71, 31);
-        CloseButton.TabIndex = 5;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 4;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(44, 108);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 3;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // MachineVersionDetailInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(389, 124);
+        ClientSize = new Size(225, 159);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
-        Controls.Add(MachineDetailButton);
-        Controls.Add(MachineCaptionLabel);
-        Controls.Add(VersionGroupDetailButton);
-        Controls.Add(VersionGroupCaptionLabel);
+        Controls.Add(MachineButton);
+        Controls.Add(VersionGroupButton);
         Controls.Add(VersionGroupTextBox);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -122,10 +109,11 @@ partial class MachineVersionDetailInfoForm
 
     #endregion
 
-    private Button VersionGroupDetailButton;
+    private Button VersionGroupButton;
     private Label VersionGroupCaptionLabel;
     private TextBox VersionGroupTextBox;
     private Label MachineCaptionLabel;
-    private Button MachineDetailButton;
+    private Button MachineButton;
     private Button CloseButton;
+    private Button PropertyButton;
 }

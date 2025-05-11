@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Locations.LocationAreas;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -28,19 +29,19 @@ public partial class EncounterMethodRateInfoForm : Form
     }
     #endregion
 
-    #region 遭遇方法 詳細 ボタン
+    #region 遭遇方法 ボタン
     /// <summary>
-    /// 遭遇方法 詳細 ボタン
+    /// 遭遇方法 ボタン
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void EncounterMethodDetailButton_Click(object sender, EventArgs e)
+    private void EncounterMethodButton_Click(object sender, EventArgs e)
     {
-        if (EncounterMethodDetailButton.Tag is null) {
+        if (EncounterMethodButton.Tag is null) {
             return;
         }
 
-        if (EncounterMethodDetailButton.Tag is not NamedAPIResource api) {
+        if (EncounterMethodButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -102,6 +103,23 @@ public partial class EncounterMethodRateInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -118,13 +136,12 @@ public partial class EncounterMethodRateInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="emr"></param>
-    public void SetData(EncounterMethodRate emr)
+    /// <param name="rate"></param>
+    public void SetData(EncounterMethodRate rate)
     {
-        EncounterMethodTextBox.Text = emr.EncounterMethod?.Name ?? string.Empty;
-        EncounterMethodDetailButton.Tag = emr.EncounterMethod;
-        VersionDetailsDataGridView.AutoGenerateColumns = false;
-        VersionDetailsDataGridView.DataSource = emr.VersionDetails;
+        Tag = rate;
+        FormsHelper.SetData(rate.EncounterMethod, EncounterMethodButton, EncounterMethodTextBox);
+        FormsHelper.SetData(rate.VersionDetails, VersionDetailsCaptionLabel, VersionDetailsDataGridView);
     }
     #endregion
 }

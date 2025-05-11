@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Utility.CommonModels;
 using Kos.PokeAPI.Utility.Languages;
 
@@ -76,9 +77,26 @@ public partial class LanguageInfoForm : Form
     }
     #endregion
 
-    #region Close クリック
+    #region プロパティ クリック
     /// <summary>
-    /// Close クリック
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 閉じる クリック
+    /// <summary>
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender">イベント発生オブジェクト</param>
     /// <param name="e">イベント引数</param>
@@ -101,13 +119,12 @@ public partial class LanguageInfoForm : Form
         }
 
         Tag = lang;
-        IdTextBox.Text = $"{lang.Id}";
-        NameTextBox.Text = lang.Name;
-        OfficialTextBox.Text = $"{lang.Official}";
-        Iso639TextBox.Text = $"{lang.Iso639}";
-        Iso3166TextBox.Text = $"{lang.Iso3166}";
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = lang.Names;
+        FormsHelper.SetData(lang.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(lang.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(lang.Official, OfficialCaptionLabel, OfficialTextBox);
+        FormsHelper.SetData(lang.Iso639, Iso639CaptionLabel, Iso639TextBox);
+        FormsHelper.SetData(lang.Iso3166, Iso3166CaptionLabel, Iso3166TextBox);
+        FormsHelper.SetData(lang.Names, NamesCaptionLabel, NamesDataGridView);
     }
     #endregion
 }

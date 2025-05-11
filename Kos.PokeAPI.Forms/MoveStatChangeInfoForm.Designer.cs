@@ -28,81 +28,81 @@ partial class MoveStatChangeInfoForm
     private void InitializeComponent()
     {
         StatTextBox = new TextBox();
-        StatCaptionLabel = new Label();
         ChangeTextBox = new TextBox();
         ChangeCaptionLabel = new Label();
-        StatDetailButton = new Button();
+        StatButton = new Button();
         CloseButton = new Button();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
         // StatTextBox
         // 
-        StatTextBox.Location = new Point(79, 12);
+        StatTextBox.Location = new Point(88, 16);
         StatTextBox.Name = "StatTextBox";
         StatTextBox.ReadOnly = true;
         StatTextBox.Size = new Size(124, 24);
-        StatTextBox.TabIndex = 2;
+        StatTextBox.TabIndex = 1;
         StatTextBox.Text = "Normal";
-        // 
-        // StatCaptionLabel
-        // 
-        StatCaptionLabel.AutoSize = true;
-        StatCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        StatCaptionLabel.Location = new Point(12, 15);
-        StatCaptionLabel.Name = "StatCaptionLabel";
-        StatCaptionLabel.Size = new Size(61, 17);
-        StatCaptionLabel.TabIndex = 3;
-        StatCaptionLabel.Text = "ステータス";
         // 
         // ChangeTextBox
         // 
-        ChangeTextBox.Location = new Point(79, 42);
+        ChangeTextBox.Location = new Point(88, 46);
         ChangeTextBox.Name = "ChangeTextBox";
         ChangeTextBox.ReadOnly = true;
         ChangeTextBox.Size = new Size(124, 24);
-        ChangeTextBox.TabIndex = 4;
+        ChangeTextBox.TabIndex = 3;
         ChangeTextBox.Text = "999";
         // 
         // ChangeCaptionLabel
         // 
         ChangeCaptionLabel.AutoSize = true;
         ChangeCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        ChangeCaptionLabel.Location = new Point(26, 45);
+        ChangeCaptionLabel.Location = new Point(35, 49);
         ChangeCaptionLabel.Name = "ChangeCaptionLabel";
         ChangeCaptionLabel.Size = new Size(47, 17);
-        ChangeCaptionLabel.TabIndex = 5;
+        ChangeCaptionLabel.TabIndex = 2;
         ChangeCaptionLabel.Text = "変化量";
         // 
-        // StatDetailButton
+        // StatButton
         // 
-        StatDetailButton.Location = new Point(209, 8);
-        StatDetailButton.Name = "StatDetailButton";
-        StatDetailButton.Size = new Size(53, 30);
-        StatDetailButton.TabIndex = 6;
-        StatDetailButton.Text = "詳細";
-        StatDetailButton.UseVisualStyleBackColor = true;
-        StatDetailButton.Click += StatDetailButton_Click;
+        StatButton.Location = new Point(12, 12);
+        StatButton.Name = "StatButton";
+        StatButton.Size = new Size(70, 30);
+        StatButton.TabIndex = 0;
+        StatButton.Text = "ステータス";
+        StatButton.UseVisualStyleBackColor = true;
+        StatButton.Click += StatButton_Click;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(199, 72);
+        CloseButton.Location = new Point(136, 79);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
-        CloseButton.TabIndex = 16;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 5;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(54, 79);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 4;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // MoveStatChangeInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(279, 126);
+        ClientSize = new Size(228, 126);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
-        Controls.Add(StatDetailButton);
+        Controls.Add(StatButton);
         Controls.Add(ChangeCaptionLabel);
         Controls.Add(ChangeTextBox);
-        Controls.Add(StatCaptionLabel);
         Controls.Add(StatTextBox);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -118,9 +118,9 @@ partial class MoveStatChangeInfoForm
     #endregion
 
     private TextBox StatTextBox;
-    private Label StatCaptionLabel;
     private TextBox ChangeTextBox;
     private Label ChangeCaptionLabel;
-    private Button StatDetailButton;
+    private Button StatButton;
     private Button CloseButton;
+    private Button PropertyButton;
 }

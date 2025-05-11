@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Pokemon.Abilities;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -21,27 +22,27 @@ public partial class AbilityEffectChangeInfoForm : Form
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    /// <param name="aec"></param>
-    public AbilityEffectChangeInfoForm(AbilityEffectChange aec)
+    /// <param name="change"></param>
+    public AbilityEffectChangeInfoForm(AbilityEffectChange change)
     {
         InitializeComponent();
-        SetData(aec);
+        SetData(change);
     }
     #endregion
 
-    #region バージョングループ 詳細 クリック
+    #region バージョングループ クリック
     /// <summary>
-    /// バージョングループ 詳細 クリック
+    /// バージョングループ クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionGroupDetailButton_Click(object sender, EventArgs e)
+    private void VersionGroupButton_Click(object sender, EventArgs e)
     {
-        if (VersionGroupDetailButton.Tag is null) {
+        if (VersionGroupButton.Tag is null) {
             return;
         }
 
-        if (VersionGroupDetailButton.Tag is not NamedAPIResource api) {
+        if (VersionGroupButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -100,6 +101,23 @@ public partial class AbilityEffectChangeInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -116,13 +134,11 @@ public partial class AbilityEffectChangeInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="aec"></param>
-    public void SetData(AbilityEffectChange aec)
+    /// <param name="change"></param>
+    public void SetData(AbilityEffectChange change)
     {
-        VersionGroupTextBox.Text = aec.VersionGroup?.Name ?? string.Empty;
-        VersionGroupDetailButton.Tag = aec.VersionGroup;
-        EffectEntriesDataGridView.AutoGenerateColumns = false;
-        EffectEntriesDataGridView.DataSource = aec.EffectEntries;
+        FormsHelper.SetData(change.VersionGroup, VersionGroupButton, VersionGroupTextBox);
+        FormsHelper.SetData(change.EffectEntries, EffectEntriesDataGridView);
     }
     #endregion
 }

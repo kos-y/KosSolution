@@ -27,73 +27,61 @@ partial class ContestComboSetsInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        NormalDetailButton = new Button();
-        NormalCaptionLabel = new Label();
-        SuperCaptionLabel = new Label();
-        SuperDetailButton = new Button();
+        NormalButton = new Button();
+        SuperButton = new Button();
         CloseButton = new Button();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
-        // NormalDetailButton
+        // NormalButton
         // 
-        NormalDetailButton.Location = new Point(142, 10);
-        NormalDetailButton.Name = "NormalDetailButton";
-        NormalDetailButton.Size = new Size(53, 27);
-        NormalDetailButton.TabIndex = 1;
-        NormalDetailButton.Text = "詳細";
-        NormalDetailButton.UseVisualStyleBackColor = true;
-        NormalDetailButton.Click += NormalDetailButton_Click;
+        NormalButton.Location = new Point(37, 12);
+        NormalButton.Name = "NormalButton";
+        NormalButton.Size = new Size(169, 35);
+        NormalButton.TabIndex = 0;
+        NormalButton.Text = "ポケモンコンテスト";
+        NormalButton.UseVisualStyleBackColor = true;
+        NormalButton.Click += NormalButton_Click;
         // 
-        // NormalCaptionLabel
+        // SuperButton
         // 
-        NormalCaptionLabel.AutoSize = true;
-        NormalCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        NormalCaptionLabel.Location = new Point(12, 15);
-        NormalCaptionLabel.Name = "NormalCaptionLabel";
-        NormalCaptionLabel.Size = new Size(100, 17);
-        NormalCaptionLabel.TabIndex = 0;
-        NormalCaptionLabel.Text = "ポケモンコンテスト";
-        // 
-        // SuperCaptionLabel
-        // 
-        SuperCaptionLabel.AutoSize = true;
-        SuperCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        SuperCaptionLabel.Location = new Point(8, 48);
-        SuperCaptionLabel.Name = "SuperCaptionLabel";
-        SuperCaptionLabel.Size = new Size(104, 17);
-        SuperCaptionLabel.TabIndex = 2;
-        SuperCaptionLabel.Text = "スーパーコンテスト";
-        // 
-        // SuperDetailButton
-        // 
-        SuperDetailButton.Location = new Point(142, 43);
-        SuperDetailButton.Name = "SuperDetailButton";
-        SuperDetailButton.Size = new Size(53, 27);
-        SuperDetailButton.TabIndex = 3;
-        SuperDetailButton.Text = "詳細";
-        SuperDetailButton.UseVisualStyleBackColor = true;
-        SuperDetailButton.Click += SuperDetailButton_Click;
+        SuperButton.Location = new Point(37, 53);
+        SuperButton.Name = "SuperButton";
+        SuperButton.Size = new Size(169, 35);
+        SuperButton.TabIndex = 1;
+        SuperButton.Text = "スーパーコンテスト";
+        SuperButton.UseVisualStyleBackColor = true;
+        SuperButton.Click += SuperButton_Click;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(200, 78);
+        CloseButton.Location = new Point(162, 99);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
-        CloseButton.TabIndex = 4;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 3;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(80, 99);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 2;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // ContestComboSetsInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(275, 125);
+        ClientSize = new Size(250, 146);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
-        Controls.Add(SuperDetailButton);
-        Controls.Add(SuperCaptionLabel);
-        Controls.Add(NormalDetailButton);
-        Controls.Add(NormalCaptionLabel);
+        Controls.Add(SuperButton);
+        Controls.Add(NormalButton);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
@@ -102,14 +90,12 @@ partial class ContestComboSetsInfoForm
         StartPosition = FormStartPosition.CenterParent;
         Text = "コンテストのコンボセット";
         ResumeLayout(false);
-        PerformLayout();
     }
 
     #endregion
 
-    private Button NormalDetailButton;
-    private Label NormalCaptionLabel;
-    private Label SuperCaptionLabel;
-    private Button SuperDetailButton;
+    private Button NormalButton;
+    private Button SuperButton;
     private Button CloseButton;
+    private Button PropertyButton;
 }

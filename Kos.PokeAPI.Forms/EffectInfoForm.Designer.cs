@@ -28,64 +28,50 @@ partial class EffectInfoForm
     private void InitializeComponent()
     {
         CloseButton = new Button();
-        LanguageDetailButton = new Button();
+        LanguageButton = new Button();
         LanguageTextBox = new TextBox();
         EffectTextBox = new TextBox();
-        LanguageCaptionLabel = new Label();
         EffectCaptionLabel = new Label();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
         // CloseButton
         // 
-        CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        CloseButton.Location = new Point(700, 79);
+        CloseButton.Location = new Point(642, 71);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
-        CloseButton.TabIndex = 11;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 5;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
-        // LanguageDetailButton
+        // LanguageButton
         // 
-        LanguageDetailButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        LanguageDetailButton.Location = new Point(710, 42);
-        LanguageDetailButton.Name = "LanguageDetailButton";
-        LanguageDetailButton.Size = new Size(53, 23);
-        LanguageDetailButton.TabIndex = 10;
-        LanguageDetailButton.Text = "詳細";
-        LanguageDetailButton.UseVisualStyleBackColor = true;
-        LanguageDetailButton.Click += LanguageDetailButton_Click;
+        LanguageButton.Location = new Point(12, 42);
+        LanguageButton.Name = "LanguageButton";
+        LanguageButton.Size = new Size(53, 23);
+        LanguageButton.TabIndex = 2;
+        LanguageButton.Text = "言語";
+        LanguageButton.UseVisualStyleBackColor = true;
+        LanguageButton.Click += LanguageButton_Click;
         // 
         // LanguageTextBox
         // 
-        LanguageTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        LanguageTextBox.Location = new Point(57, 42);
+        LanguageTextBox.Location = new Point(71, 41);
         LanguageTextBox.Name = "LanguageTextBox";
         LanguageTextBox.ReadOnly = true;
         LanguageTextBox.Size = new Size(647, 24);
-        LanguageTextBox.TabIndex = 9;
+        LanguageTextBox.TabIndex = 3;
         LanguageTextBox.Text = "ja-Hrkt";
         // 
         // EffectTextBox
         // 
-        EffectTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        EffectTextBox.Location = new Point(57, 12);
+        EffectTextBox.Location = new Point(71, 12);
         EffectTextBox.Name = "EffectTextBox";
         EffectTextBox.ReadOnly = true;
-        EffectTextBox.Size = new Size(706, 24);
-        EffectTextBox.TabIndex = 7;
+        EffectTextBox.Size = new Size(647, 24);
+        EffectTextBox.TabIndex = 1;
         EffectTextBox.Text = "ピカチュウ";
-        // 
-        // LanguageCaptionLabel
-        // 
-        LanguageCaptionLabel.AutoSize = true;
-        LanguageCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        LanguageCaptionLabel.Location = new Point(17, 45);
-        LanguageCaptionLabel.Name = "LanguageCaptionLabel";
-        LanguageCaptionLabel.Size = new Size(34, 17);
-        LanguageCaptionLabel.TabIndex = 8;
-        LanguageCaptionLabel.Text = "言語";
         // 
         // EffectCaptionLabel
         // 
@@ -94,19 +80,29 @@ partial class EffectInfoForm
         EffectCaptionLabel.Location = new Point(17, 15);
         EffectCaptionLabel.Name = "EffectCaptionLabel";
         EffectCaptionLabel.Size = new Size(34, 17);
-        EffectCaptionLabel.TabIndex = 6;
+        EffectCaptionLabel.TabIndex = 0;
         EffectCaptionLabel.Text = "効果";
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(560, 71);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 4;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // EffectInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(770, 126);
+        ClientSize = new Size(737, 111);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
-        Controls.Add(LanguageDetailButton);
+        Controls.Add(LanguageButton);
         Controls.Add(LanguageTextBox);
         Controls.Add(EffectTextBox);
-        Controls.Add(LanguageCaptionLabel);
         Controls.Add(EffectCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         Margin = new Padding(4, 3, 4, 3);
@@ -121,9 +117,9 @@ partial class EffectInfoForm
     #endregion
 
     private Button CloseButton;
-    private Button LanguageDetailButton;
+    private Button LanguageButton;
     private TextBox LanguageTextBox;
     private TextBox EffectTextBox;
-    private Label LanguageCaptionLabel;
     private Label EffectCaptionLabel;
+    private Button PropertyButton;
 }

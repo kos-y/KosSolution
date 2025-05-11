@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Moves.Moves;
 
 namespace Kos.PokeAPI.Forms;
@@ -20,11 +21,28 @@ public partial class ContestComboDetailInfoForm : Form
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    /// <param name="ccd"></param>
-    public ContestComboDetailInfoForm(ContestComboDetail ccd)
+    /// <param name="combo"></param>
+    public ContestComboDetailInfoForm(ContestComboDetail combo)
     {
         InitializeComponent();
-        SetData(ccd);
+        SetData(combo);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
@@ -44,13 +62,12 @@ public partial class ContestComboDetailInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="ccd"></param>
-    private void SetData(ContestComboDetail ccd)
+    /// <param name="combo"></param>
+    private void SetData(ContestComboDetail combo)
     {
-        UseBeforeDataGridView.AutoGenerateColumns = false;
-        UseBeforeDataGridView.DataSource = ccd.UseBefore;
-        UseAfterDataGridView.AutoGenerateColumns = false;
-        UseAfterDataGridView.DataSource = ccd.UseAfter;
+        Tag = combo;
+        FormsHelper.SetData(combo.UseBefore, UseBeforeCaptionLabel, UseBeforeDataGridView);
+        FormsHelper.SetData(combo.UseAfter, UseAfterCaptionLabel, UseAfterDataGridView);
     }
     #endregion
 }

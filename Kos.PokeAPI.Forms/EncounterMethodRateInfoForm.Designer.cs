@@ -28,47 +28,36 @@ partial class EncounterMethodRateInfoForm
     private void InitializeComponent()
     {
         EncounterMethodTextBox = new TextBox();
-        EncounterMethodCaptionLabel = new Label();
-        EncounterMethodDetailButton = new Button();
+        EncounterMethodButton = new Button();
         VersionDetailsCaptionLabel = new Label();
         VersionDetailsDataGridView = new DataGridView();
+        CloseButton = new Button();
+        PropertyButton = new Button();
         NameColumn = new DataGridViewTextBoxColumn();
         RateColumn = new DataGridViewTextBoxColumn();
         DetailColumn = new DataGridViewButtonColumn();
-        CloseButton = new Button();
         ((System.ComponentModel.ISupportInitialize)VersionDetailsDataGridView).BeginInit();
         SuspendLayout();
         // 
         // EncounterMethodTextBox
         // 
-        EncounterMethodTextBox.Location = new Point(83, 12);
+        EncounterMethodTextBox.Location = new Point(94, 15);
         EncounterMethodTextBox.Margin = new Padding(4, 3, 4, 3);
         EncounterMethodTextBox.Name = "EncounterMethodTextBox";
         EncounterMethodTextBox.ReadOnly = true;
         EncounterMethodTextBox.Size = new Size(204, 24);
         EncounterMethodTextBox.TabIndex = 1;
         // 
-        // EncounterMethodCaptionLabel
+        // EncounterMethodButton
         // 
-        EncounterMethodCaptionLabel.AutoSize = true;
-        EncounterMethodCaptionLabel.Location = new Point(14, 15);
-        EncounterMethodCaptionLabel.Margin = new Padding(5, 0, 5, 0);
-        EncounterMethodCaptionLabel.Name = "EncounterMethodCaptionLabel";
-        EncounterMethodCaptionLabel.Size = new Size(60, 17);
-        EncounterMethodCaptionLabel.TabIndex = 0;
-        EncounterMethodCaptionLabel.Text = "遭遇方法";
-        EncounterMethodCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // EncounterMethodDetailButton
-        // 
-        EncounterMethodDetailButton.Location = new Point(296, 9);
-        EncounterMethodDetailButton.Margin = new Padding(5, 3, 5, 3);
-        EncounterMethodDetailButton.Name = "EncounterMethodDetailButton";
-        EncounterMethodDetailButton.Size = new Size(42, 29);
-        EncounterMethodDetailButton.TabIndex = 2;
-        EncounterMethodDetailButton.Text = "詳細";
-        EncounterMethodDetailButton.UseVisualStyleBackColor = true;
-        EncounterMethodDetailButton.Click += EncounterMethodDetailButton_Click;
+        EncounterMethodButton.Location = new Point(14, 12);
+        EncounterMethodButton.Margin = new Padding(5, 3, 5, 3);
+        EncounterMethodButton.Name = "EncounterMethodButton";
+        EncounterMethodButton.Size = new Size(71, 29);
+        EncounterMethodButton.TabIndex = 0;
+        EncounterMethodButton.Text = "遭遇方法";
+        EncounterMethodButton.UseVisualStyleBackColor = true;
+        EncounterMethodButton.Click += EncounterMethodButton_Click;
         // 
         // VersionDetailsCaptionLabel
         // 
@@ -77,7 +66,7 @@ partial class EncounterMethodRateInfoForm
         VersionDetailsCaptionLabel.Margin = new Padding(5, 0, 5, 0);
         VersionDetailsCaptionLabel.Name = "VersionDetailsCaptionLabel";
         VersionDetailsCaptionLabel.Size = new Size(131, 17);
-        VersionDetailsCaptionLabel.TabIndex = 3;
+        VersionDetailsCaptionLabel.TabIndex = 2;
         VersionDetailsCaptionLabel.Text = "バージョンごとの遭遇率";
         VersionDetailsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -90,9 +79,29 @@ partial class EncounterMethodRateInfoForm
         VersionDetailsDataGridView.Name = "VersionDetailsDataGridView";
         VersionDetailsDataGridView.RowHeadersVisible = false;
         VersionDetailsDataGridView.Size = new Size(324, 170);
-        VersionDetailsDataGridView.TabIndex = 4;
+        VersionDetailsDataGridView.TabIndex = 3;
         VersionDetailsDataGridView.CellClick += VersionDetailsDataGridView_CellClick;
         VersionDetailsDataGridView.CellDoubleClick += VersionDetailsDataGridView_CellDoubleClick;
+        // 
+        // CloseButton
+        // 
+        CloseButton.Location = new Point(262, 248);
+        CloseButton.Name = "CloseButton";
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 5;
+        CloseButton.Text = "閉じる";
+        CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(180, 248);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 4;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // NameColumn
         // 
@@ -105,10 +114,12 @@ partial class EncounterMethodRateInfoForm
         // 
         // RateColumn
         // 
+        RateColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         RateColumn.DataPropertyName = "Rate";
         RateColumn.HeaderText = "遭遇率";
         RateColumn.Name = "RateColumn";
         RateColumn.ReadOnly = true;
+        RateColumn.Width = 72;
         // 
         // DetailColumn
         // 
@@ -119,26 +130,16 @@ partial class EncounterMethodRateInfoForm
         DetailColumn.UseColumnTextForButtonValue = true;
         DetailColumn.Width = 40;
         // 
-        // CloseButton
-        // 
-        CloseButton.Location = new Point(275, 248);
-        CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
-        CloseButton.TabIndex = 5;
-        CloseButton.Text = "閉じる";
-        CloseButton.UseVisualStyleBackColor = true;
-        CloseButton.Click += CloseButton_Click;
-        // 
         // EncounterMethodRateInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(357, 297);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(VersionDetailsDataGridView);
         Controls.Add(VersionDetailsCaptionLabel);
-        Controls.Add(EncounterMethodDetailButton);
-        Controls.Add(EncounterMethodCaptionLabel);
+        Controls.Add(EncounterMethodButton);
         Controls.Add(EncounterMethodTextBox);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -155,12 +156,12 @@ partial class EncounterMethodRateInfoForm
     #endregion
 
     private TextBox EncounterMethodTextBox;
-    private Label EncounterMethodCaptionLabel;
-    private Button EncounterMethodDetailButton;
+    private Button EncounterMethodButton;
     private Label VersionDetailsCaptionLabel;
     private DataGridView VersionDetailsDataGridView;
+    private Button CloseButton;
+    private Button PropertyButton;
     private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn RateColumn;
     private DataGridViewButtonColumn DetailColumn;
-    private Button CloseButton;
 }

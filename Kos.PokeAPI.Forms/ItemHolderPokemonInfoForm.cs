@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Items;
 using Kos.PokeAPI.Items.Item;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -79,9 +80,26 @@ public partial class ItemHolderPokemonInfoForm : Form
     }
     #endregion
 
-    #region Close Button
+    #region プロパティ クリック
     /// <summary>
-    /// Close Button
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 閉じる クリック
+    /// <summary>
+    /// 閉じる クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -95,13 +113,12 @@ public partial class ItemHolderPokemonInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="ihp">アイテム保持ポケモン</param>
-    private void SetData(ItemHolderPokemon ihp)
+    /// <param name="pokemon">アイテム保持ポケモン</param>
+    private void SetData(ItemHolderPokemon pokemon)
     {
-        PokemonLabel.Text = ihp.Pokemon?.Name ?? string.Empty;
-        PokemonDetailButton.Tag = ihp.Pokemon;
-        VersionDetailsDataGridView.AutoGenerateColumns = false;
-        VersionDetailsDataGridView.DataSource = ihp.VersionDetails;
+        Tag = pokemon;
+        FormsHelper.SetData(pokemon.Pokemon, PokemonButton, PokemonTextBox);
+        FormsHelper.SetData(pokemon.VersionDetails, VersionDetailsCaptionLabel, VersionDetailsDataGridView);
     }
     #endregion
 }

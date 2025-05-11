@@ -27,85 +27,84 @@ partial class EncounterVersionDetailsInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        VersionDetailButton = new Button();
-        VersionCaptionLabel = new Label();
+        VersionButton = new Button();
         VersionTextBox = new TextBox();
         RateTextBox = new TextBox();
         RateCaptionLabel = new Label();
         CloseButton = new Button();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
-        // VersionDetailButton
+        // VersionButton
         // 
-        VersionDetailButton.Location = new Point(299, 4);
-        VersionDetailButton.Margin = new Padding(5, 3, 5, 3);
-        VersionDetailButton.Name = "VersionDetailButton";
-        VersionDetailButton.Size = new Size(42, 29);
-        VersionDetailButton.TabIndex = 2;
-        VersionDetailButton.Text = "詳細";
-        VersionDetailButton.UseVisualStyleBackColor = true;
-        VersionDetailButton.Click += VersionDetailButton_Click;
-        // 
-        // VersionCaptionLabel
-        // 
-        VersionCaptionLabel.AutoSize = true;
-        VersionCaptionLabel.Location = new Point(17, 10);
-        VersionCaptionLabel.Margin = new Padding(5, 0, 5, 0);
-        VersionCaptionLabel.Name = "VersionCaptionLabel";
-        VersionCaptionLabel.Size = new Size(60, 17);
-        VersionCaptionLabel.TabIndex = 0;
-        VersionCaptionLabel.Text = "バージョン";
-        VersionCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        VersionButton.Location = new Point(14, 12);
+        VersionButton.Margin = new Padding(5, 3, 5, 3);
+        VersionButton.Name = "VersionButton";
+        VersionButton.Size = new Size(72, 29);
+        VersionButton.TabIndex = 0;
+        VersionButton.Text = "バージョン";
+        VersionButton.UseVisualStyleBackColor = true;
+        VersionButton.Click += VersionButton_Click;
         // 
         // VersionTextBox
         // 
-        VersionTextBox.Location = new Point(86, 7);
+        VersionTextBox.Location = new Point(95, 15);
         VersionTextBox.Margin = new Padding(4, 3, 4, 3);
         VersionTextBox.Name = "VersionTextBox";
         VersionTextBox.ReadOnly = true;
-        VersionTextBox.Size = new Size(204, 24);
+        VersionTextBox.Size = new Size(168, 24);
         VersionTextBox.TabIndex = 1;
         // 
         // RateTextBox
         // 
-        RateTextBox.Location = new Point(86, 37);
+        RateTextBox.Location = new Point(86, 45);
         RateTextBox.Margin = new Padding(4, 3, 4, 3);
         RateTextBox.Name = "RateTextBox";
         RateTextBox.ReadOnly = true;
-        RateTextBox.Size = new Size(255, 24);
-        RateTextBox.TabIndex = 4;
+        RateTextBox.Size = new Size(177, 24);
+        RateTextBox.TabIndex = 3;
         // 
         // RateCaptionLabel
         // 
         RateCaptionLabel.AutoSize = true;
-        RateCaptionLabel.Location = new Point(30, 40);
+        RateCaptionLabel.Location = new Point(39, 48);
         RateCaptionLabel.Margin = new Padding(5, 0, 5, 0);
         RateCaptionLabel.Name = "RateCaptionLabel";
         RateCaptionLabel.Size = new Size(47, 17);
-        RateCaptionLabel.TabIndex = 3;
+        RateCaptionLabel.TabIndex = 2;
         RateCaptionLabel.Text = "遭遇率";
         RateCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(278, 67);
+        CloseButton.Location = new Point(187, 75);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 5;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(105, 75);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 4;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // EncounterVersionDetailsInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(352, 109);
+        ClientSize = new Size(275, 120);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(RateCaptionLabel);
         Controls.Add(RateTextBox);
-        Controls.Add(VersionDetailButton);
-        Controls.Add(VersionCaptionLabel);
+        Controls.Add(VersionButton);
         Controls.Add(VersionTextBox);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -120,10 +119,10 @@ partial class EncounterVersionDetailsInfoForm
 
     #endregion
 
-    private Button VersionDetailButton;
-    private Label VersionCaptionLabel;
+    private Button VersionButton;
     private TextBox VersionTextBox;
     private TextBox RateTextBox;
     private Label RateCaptionLabel;
     private Button CloseButton;
+    private Button PropertyButton;
 }

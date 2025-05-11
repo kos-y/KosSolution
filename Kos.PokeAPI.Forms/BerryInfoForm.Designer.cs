@@ -360,7 +360,7 @@ partial class BerryInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(632, 354);
+        ClientSize = new Size(618, 348);
         Controls.Add(PropertyButton);
         Controls.Add(SoilDrynessTextBox);
         Controls.Add(MaxHarvestTextBox);

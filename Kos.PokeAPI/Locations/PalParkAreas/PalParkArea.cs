@@ -48,7 +48,7 @@ public class PalParkArea
     [Category("(基本)")]
     [Description("言語ごとの名前リスト")]
     [TypeConverter(typeof(ListConverter<Name>))]
-    public List<Name>? Names { get; set; }
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
     #region 遭遇するポケモン種族リスト
@@ -60,7 +60,7 @@ public class PalParkArea
     [Category("(基本)")]
     [Description("言語ごとの名前リスト")]
     [TypeConverter(typeof(ListConverter<PalParkEncounterSpecies>))]
-    public List<PalParkEncounterSpecies>? PokemonEncounters { get; set; }
+    public IReadOnlyList<PalParkEncounterSpecies>? PokemonEncounters { get; set; }
     #endregion
 
 

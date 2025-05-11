@@ -27,31 +27,20 @@ partial class PokemonEncounterInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        PokemonCaptionLabel = new Label();
         PokemonTextBox = new TextBox();
         VersionDetailsCaptionLabel = new Label();
         EncounterDetailsDataGridView = new DataGridView();
-        CloseButton = new Button();
-        PokemonDetailButton = new Button();
         NameColumn = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
+        CloseButton = new Button();
+        PokemonButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)EncounterDetailsDataGridView).BeginInit();
         SuspendLayout();
         // 
-        // PokemonCaptionLabel
-        // 
-        PokemonCaptionLabel.AutoSize = true;
-        PokemonCaptionLabel.Location = new Point(14, 15);
-        PokemonCaptionLabel.Margin = new Padding(5, 0, 5, 0);
-        PokemonCaptionLabel.Name = "PokemonCaptionLabel";
-        PokemonCaptionLabel.Size = new Size(49, 17);
-        PokemonCaptionLabel.TabIndex = 0;
-        PokemonCaptionLabel.Text = "ポケモン";
-        PokemonCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // PokemonTextBox
         // 
-        PokemonTextBox.Location = new Point(71, 12);
+        PokemonTextBox.Location = new Point(78, 14);
         PokemonTextBox.Name = "PokemonTextBox";
         PokemonTextBox.ReadOnly = true;
         PokemonTextBox.Size = new Size(226, 24);
@@ -60,11 +49,11 @@ partial class PokemonEncounterInfoForm
         // VersionDetailsCaptionLabel
         // 
         VersionDetailsCaptionLabel.AutoSize = true;
-        VersionDetailsCaptionLabel.Location = new Point(14, 61);
+        VersionDetailsCaptionLabel.Location = new Point(13, 41);
         VersionDetailsCaptionLabel.Margin = new Padding(5, 0, 5, 0);
         VersionDetailsCaptionLabel.Name = "VersionDetailsCaptionLabel";
         VersionDetailsCaptionLabel.Size = new Size(144, 17);
-        VersionDetailsCaptionLabel.TabIndex = 3;
+        VersionDetailsCaptionLabel.TabIndex = 2;
         VersionDetailsCaptionLabel.Text = "バージョンごとの遭遇詳細";
         VersionDetailsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -72,35 +61,14 @@ partial class PokemonEncounterInfoForm
         // 
         EncounterDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         EncounterDetailsDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, dataGridViewButtonColumn1 });
-        EncounterDetailsDataGridView.Location = new Point(14, 81);
+        EncounterDetailsDataGridView.Location = new Point(14, 61);
         EncounterDetailsDataGridView.Margin = new Padding(4, 3, 4, 3);
         EncounterDetailsDataGridView.Name = "EncounterDetailsDataGridView";
         EncounterDetailsDataGridView.RowHeadersVisible = false;
         EncounterDetailsDataGridView.Size = new Size(334, 170);
-        EncounterDetailsDataGridView.TabIndex = 4;
+        EncounterDetailsDataGridView.TabIndex = 3;
         EncounterDetailsDataGridView.CellClick += EncounterDetailsDataGridView_CellClick;
         EncounterDetailsDataGridView.CellDoubleClick += EncounterDetailsDataGridView_CellDoubleClick;
-        // 
-        // CloseButton
-        // 
-        CloseButton.Location = new Point(285, 257);
-        CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
-        CloseButton.TabIndex = 5;
-        CloseButton.Text = "閉じる";
-        CloseButton.UseVisualStyleBackColor = true;
-        CloseButton.Click += CloseButton_Click;
-        // 
-        // PokemonDetailButton
-        // 
-        PokemonDetailButton.Location = new Point(304, 10);
-        PokemonDetailButton.Margin = new Padding(4, 3, 4, 3);
-        PokemonDetailButton.Name = "PokemonDetailButton";
-        PokemonDetailButton.Size = new Size(44, 26);
-        PokemonDetailButton.TabIndex = 2;
-        PokemonDetailButton.Text = "詳細";
-        PokemonDetailButton.UseVisualStyleBackColor = true;
-        PokemonDetailButton.Click += PokemonDetailButton_Click;
         // 
         // NameColumn
         // 
@@ -120,17 +88,48 @@ partial class PokemonEncounterInfoForm
         dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
         dataGridViewButtonColumn1.Width = 40;
         // 
+        // CloseButton
+        // 
+        CloseButton.Location = new Point(272, 237);
+        CloseButton.Name = "CloseButton";
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 5;
+        CloseButton.Text = "閉じる";
+        CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
+        // 
+        // PokemonButton
+        // 
+        PokemonButton.Location = new Point(13, 12);
+        PokemonButton.Margin = new Padding(4, 3, 4, 3);
+        PokemonButton.Name = "PokemonButton";
+        PokemonButton.Size = new Size(58, 26);
+        PokemonButton.TabIndex = 0;
+        PokemonButton.Text = "ポケモン";
+        PokemonButton.UseVisualStyleBackColor = true;
+        PokemonButton.Click += PokemonButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(190, 237);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 4;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // PokemonEncounterInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(368, 306);
-        Controls.Add(PokemonDetailButton);
+        ClientSize = new Size(368, 290);
+        Controls.Add(PropertyButton);
+        Controls.Add(PokemonButton);
         Controls.Add(CloseButton);
         Controls.Add(EncounterDetailsDataGridView);
         Controls.Add(VersionDetailsCaptionLabel);
         Controls.Add(PokemonTextBox);
-        Controls.Add(PokemonCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
@@ -144,13 +143,12 @@ partial class PokemonEncounterInfoForm
     }
 
     #endregion
-
-    private Label PokemonCaptionLabel;
     private TextBox PokemonTextBox;
     private Label VersionDetailsCaptionLabel;
     private DataGridView EncounterDetailsDataGridView;
     private Button CloseButton;
-    private Button PokemonDetailButton;
+    private Button PokemonButton;
     private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
+    private Button PropertyButton;
 }

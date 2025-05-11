@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -11,6 +12,7 @@ namespace Kos.PokeAPI.Pokemon.Abilities;
 /// <summary>
 /// 特性のフレーバーテキスト
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class AbilityFlavorText
 {
     #region バージョングループ
@@ -18,6 +20,9 @@ public class AbilityFlavorText
     /// バージョングループ
     /// </summary>
     [JsonPropertyName("version_group")]
+    [DisplayName("version_group")]
+    [Category("(基本)")]
+    [Description("バージョングループ")]
     public NamedAPIResource? VersionGroup { get; set; }
     #endregion
 
@@ -26,6 +31,9 @@ public class AbilityFlavorText
     /// 言語
     /// </summary>
     [JsonPropertyName("language")]
+    [DisplayName("language")]
+    [Category("(基本)")]
+    [Description("言語")]
     public NamedAPIResource? Language { get; set; }
     #endregion
 
@@ -34,6 +42,9 @@ public class AbilityFlavorText
     /// フレーバーテキスト
     /// </summary>
     [JsonPropertyName("flavor_text")]
+    [DisplayName("flavor_text")]
+    [Category("(基本)")]
+    [Description("フレーバーテキスト")]
     public string? FlavorText { get; set; }
     #endregion
 }

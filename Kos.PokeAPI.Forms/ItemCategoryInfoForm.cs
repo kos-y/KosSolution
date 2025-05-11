@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Berries.Berries;
 using Kos.PokeAPI.Items.ItemCategories;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -29,19 +30,19 @@ public partial class ItemCategoryInfoForm : Form
     }
     #endregion
 
-    #region ポケット 詳細 クリック
+    #region ポケット クリック
     /// <summary>
-    /// ポケット 詳細 クリック
+    /// ポケット クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void PocketDetailButton_Click(object sender, EventArgs e)
+    private void PocketButton_Click(object sender, EventArgs e)
     {
-        if (PocketDetailButton.Tag is null) {
+        if (PocketButton.Tag is null) {
             return;
         }
 
-        if (PocketDetailButton.Tag is not NamedAPIResource api) {
+        if (PocketButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -154,6 +155,23 @@ public partial class ItemCategoryInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void button1_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -173,20 +191,17 @@ public partial class ItemCategoryInfoForm : Form
     /// <param name="url"></param>
     private void SetData(string url)
     {
-        ItemCategory? ic = ItemCategory.GetItemCategory(url);
-        if (ic is null) {
+        ItemCategory? category = ItemCategory.GetItemCategory(url);
+        if (category is null) {
             return;
         }
 
-        Tag = ic;
-        IdTextBox.Text = $"{ic.Id}";
-        NameTextBox.Text = ic.Name;
-        PocketTextBox.Text = ic.Pocket?.Name ?? string.Empty;
-        PocketDetailButton.Tag = ic.Pocket;
-        ItemDataGridView.AutoGenerateColumns = false;
-        ItemDataGridView.DataSource = ic.Items;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = ic.Names;
+        Tag = category;
+        FormsHelper.SetData(category.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(category.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(category.Pocket, PocketButton, PocketTextBox);
+        FormsHelper.SetData(category.Items, ItemCaptionLabel, ItemDataGridView);
+        FormsHelper.SetData(category.Names, NamesCaptionLabel, NamesDataGridView);
     }
     #endregion
 }

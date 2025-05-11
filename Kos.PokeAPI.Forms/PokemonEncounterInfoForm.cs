@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Locations.LocationAreas;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -29,19 +30,19 @@ public partial class PokemonEncounterInfoForm : Form
     }
     #endregion
 
-    #region ポケモン 詳細 クリック
+    #region ポケモン クリック
     /// <summary>
-    /// ポケモン 詳細 クリック
+    /// ポケモン クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void PokemonDetailButton_Click(object sender, EventArgs e)
+    private void PokemonButton_Click(object sender, EventArgs e)
     {
-        if (PokemonDetailButton.Tag is null) {
+        if (PokemonButton.Tag is null) {
             return;
         }
 
-        if (PokemonDetailButton.Tag is not NamedAPIResource api) {
+        if (PokemonButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -101,6 +102,23 @@ public partial class PokemonEncounterInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -120,10 +138,9 @@ public partial class PokemonEncounterInfoForm : Form
     /// <param name="pe"></param>
     private void SetData(PokemonEncounter pe)
     {
-        PokemonTextBox.Text = pe.Pokemon?.Name ?? string.Empty;
-        PokemonDetailButton.Tag = pe.Pokemon;
-        EncounterDetailsDataGridView.AutoGenerateColumns = false;
-        EncounterDetailsDataGridView.DataSource = pe.VersionDetails;
+        Tag = pe;
+        FormsHelper.SetData(pe.Pokemon, PokemonButton, PokemonTextBox);
+        FormsHelper.SetData(pe.VersionDetails, VersionDetailsCaptionLabel, VersionDetailsCaptionLabel);
     }
     #endregion
 }

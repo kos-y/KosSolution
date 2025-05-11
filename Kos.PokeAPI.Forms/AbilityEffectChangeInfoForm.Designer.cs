@@ -27,42 +27,31 @@ partial class AbilityEffectChangeInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        VersionGroupDetailButton = new Button();
-        VersionGroupCaptionLabel = new Label();
+        VersionGroupButton = new Button();
         VersionGroupTextBox = new TextBox();
         EffectEntriesDataGridView = new DataGridView();
         EffectColumn = new DataGridViewTextBoxColumn();
         EffectLanguageColumn = new DataGridViewTextBoxColumn();
         EffectLanguageDetailButtonColumn = new DataGridViewButtonColumn();
         CloseButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)EffectEntriesDataGridView).BeginInit();
         SuspendLayout();
         // 
-        // VersionGroupDetailButton
+        // VersionGroupButton
         // 
-        VersionGroupDetailButton.Location = new Point(321, 10);
-        VersionGroupDetailButton.Margin = new Padding(4, 3, 4, 3);
-        VersionGroupDetailButton.Name = "VersionGroupDetailButton";
-        VersionGroupDetailButton.Size = new Size(55, 27);
-        VersionGroupDetailButton.TabIndex = 2;
-        VersionGroupDetailButton.Text = "詳細";
-        VersionGroupDetailButton.UseVisualStyleBackColor = true;
-        VersionGroupDetailButton.Click += VersionGroupDetailButton_Click;
-        // 
-        // VersionGroupCaptionLabel
-        // 
-        VersionGroupCaptionLabel.AutoSize = true;
-        VersionGroupCaptionLabel.Location = new Point(12, 15);
-        VersionGroupCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        VersionGroupCaptionLabel.Name = "VersionGroupCaptionLabel";
-        VersionGroupCaptionLabel.Size = new Size(104, 17);
-        VersionGroupCaptionLabel.TabIndex = 0;
-        VersionGroupCaptionLabel.Text = "バージョングループ";
-        VersionGroupCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        VersionGroupButton.Location = new Point(13, 10);
+        VersionGroupButton.Margin = new Padding(4, 3, 4, 3);
+        VersionGroupButton.Name = "VersionGroupButton";
+        VersionGroupButton.Size = new Size(115, 27);
+        VersionGroupButton.TabIndex = 0;
+        VersionGroupButton.Text = "バージョングループ";
+        VersionGroupButton.UseVisualStyleBackColor = true;
+        VersionGroupButton.Click += VersionGroupButton_Click;
         // 
         // VersionGroupTextBox
         // 
-        VersionGroupTextBox.Location = new Point(123, 12);
+        VersionGroupTextBox.Location = new Point(135, 12);
         VersionGroupTextBox.Name = "VersionGroupTextBox";
         VersionGroupTextBox.ReadOnly = true;
         VersionGroupTextBox.Size = new Size(191, 24);
@@ -77,7 +66,7 @@ partial class AbilityEffectChangeInfoForm
         EffectEntriesDataGridView.Name = "EffectEntriesDataGridView";
         EffectEntriesDataGridView.RowHeadersVisible = false;
         EffectEntriesDataGridView.Size = new Size(851, 168);
-        EffectEntriesDataGridView.TabIndex = 3;
+        EffectEntriesDataGridView.TabIndex = 2;
         EffectEntriesDataGridView.CellClick += EffectEntriesDataGridView_CellClick;
         EffectEntriesDataGridView.CellDoubleClick += EffectEntriesDataGridView_CellDoubleClick;
         // 
@@ -110,24 +99,35 @@ partial class AbilityEffectChangeInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(781, 217);
+        CloseButton.Location = new Point(787, 218);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(82, 40);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 4;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(703, 218);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 3;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // AbilityEffectChangeInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(877, 265);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(EffectEntriesDataGridView);
-        Controls.Add(VersionGroupDetailButton);
-        Controls.Add(VersionGroupCaptionLabel);
+        Controls.Add(VersionGroupButton);
         Controls.Add(VersionGroupTextBox);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -143,12 +143,12 @@ partial class AbilityEffectChangeInfoForm
 
     #endregion
 
-    private Button VersionGroupDetailButton;
-    private Label VersionGroupCaptionLabel;
+    private Button VersionGroupButton;
     private TextBox VersionGroupTextBox;
     private DataGridView EffectEntriesDataGridView;
     private DataGridViewTextBoxColumn EffectColumn;
     private DataGridViewTextBoxColumn EffectLanguageColumn;
     private DataGridViewButtonColumn EffectLanguageDetailButtonColumn;
     private Button CloseButton;
+    private Button PropertyButton;
 }

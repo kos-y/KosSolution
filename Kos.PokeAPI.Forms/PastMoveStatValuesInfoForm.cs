@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -21,26 +22,26 @@ public partial class PastMoveStatValuesInfoForm : Form
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    public PastMoveStatValuesInfoForm(PastMoveStatValues pmsv)
+    public PastMoveStatValuesInfoForm(PastMoveStatValues past)
     {
         InitializeComponent();
-        SetData(pmsv);
+        SetData(past);
     }
     #endregion
 
-    #region バージョングループ 詳細 クリック
+    #region バージョングループ クリック
     /// <summary>
-    /// バージョングループ 詳細 クリック
+    /// バージョングループ クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionGroupDetailButton_Click(object sender, EventArgs e)
+    private void VersionGroupButton_Click(object sender, EventArgs e)
     {
-        if (VersionGroupDetailButton.Tag is null) {
+        if (VersionGroupButton.Tag is null) {
             return;
         }
 
-        if (VersionGroupDetailButton.Tag is not NamedAPIResource api) {
+        if (VersionGroupButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -53,19 +54,19 @@ public partial class PastMoveStatValuesInfoForm : Form
     }
     #endregion
 
-    #region タイプ 詳細 クリック
+    #region タイプ クリック
     /// <summary>
-    /// タイプ 詳細 クリック
+    /// タイプ クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void TypeDetailButton_Click(object sender, EventArgs e)
+    private void TypeButton_Click(object sender, EventArgs e)
     {
-        if (TypeDetailButton.Tag is null) {
+        if (TypeButton.Tag is null) {
             return;
         }
 
-        if (TypeDetailButton.Tag is not NamedAPIResource api) {
+        if (TypeButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -122,6 +123,23 @@ public partial class PastMoveStatValuesInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -138,19 +156,17 @@ public partial class PastMoveStatValuesInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="pmsv"></param>
-    private void SetData(PastMoveStatValues pmsv)
+    /// <param name="past"></param>
+    private void SetData(PastMoveStatValues past)
     {
-        VersionGroupTextBox.Text = pmsv.VersionGroup?.Name ?? string.Empty;
-        VersionGroupDetailButton.Tag = pmsv.VersionGroup;
-        TypeTextBox.Text = pmsv.Type?.Name ?? string.Empty;
-        TypeDetailButton.Tag = pmsv.Type;
-        PPTextBox.Text = $"{pmsv.PP}";
-        AccuracyTextBox.Text = $"{pmsv.Accuracy}";
-        EffectChanceTextBox.Text = $"{pmsv.EffectChance}";
-        PowerTextBox.Text = $"{pmsv.Power}";
-        EffectEntriesDataGridView.AutoGenerateColumns = false;
-        EffectEntriesDataGridView.DataSource = pmsv.EffectEntries;
+        Tag = past;
+        FormsHelper.SetData(past.VersionGroup, VersionGroupButton, VersionGroupTextBox);
+        FormsHelper.SetData(past.Type, TypeButton, TypeTextBox);
+        FormsHelper.SetData(past.PP, PPCaptionLabel, PPTextBox);
+        FormsHelper.SetData(past.Accuracy, AccuracyCaptionLabel, AccuracyTextBox);
+        FormsHelper.SetData(past.EffectChance, EffectChanceCaptionLabel, EffectChanceTextBox);
+        FormsHelper.SetData(past.Power, PowerCaptionLabel, PowerTextBox);
+        FormsHelper.SetData(past.EffectEntries, EffectEntriesDataGridView);
     }
     #endregion
 }

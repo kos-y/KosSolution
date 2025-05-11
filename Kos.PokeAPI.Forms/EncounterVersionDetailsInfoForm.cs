@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Locations.LocationAreas;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -21,27 +22,27 @@ public partial class EncounterVersionDetailsInfoForm : Form
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    /// <param name="evd"></param>
-    public EncounterVersionDetailsInfoForm(EncounterVersionDetails evd)
+    /// <param name="detail"></param>
+    public EncounterVersionDetailsInfoForm(EncounterVersionDetails detail)
     {
         InitializeComponent();
-        SetData(evd);
+        SetData(detail);
     }
     #endregion
 
-    #region バージョン 詳細 クリック
+    #region バージョン クリック
     /// <summary>
-    /// バージョン 詳細 クリック
+    /// バージョン クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionDetailButton_Click(object sender, EventArgs e)
+    private void VersionButton_Click(object sender, EventArgs e)
     {
-        if (VersionDetailButton.Tag is null) {
+        if (VersionButton.Tag is null) {
             return;
         }
 
-        if (VersionDetailButton.Tag is not NamedAPIResource api) {
+        if (VersionButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -50,6 +51,23 @@ public partial class EncounterVersionDetailsInfoForm : Form
         }
 
         using VersionInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -70,12 +88,12 @@ public partial class EncounterVersionDetailsInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="evd"></param>
-    public void SetData(EncounterVersionDetails evd)
+    /// <param name="detail"></param>
+    public void SetData(EncounterVersionDetails detail)
     {
-        VersionTextBox.Text = evd.Version?.Name ?? string.Empty;
-        VersionDetailButton.Tag = evd.Version;
-        RateTextBox.Text = $"{evd.Rate}";
+        Tag = detail;
+        FormsHelper.SetData(detail.Version, VersionButton, VersionTextBox);
+        FormsHelper.SetData(detail.Rate, RateCaptionLabel, RateTextBox);
     }
     #endregion
 }

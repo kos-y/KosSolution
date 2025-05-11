@@ -27,11 +27,10 @@ partial class EncounterInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        MethodCaptionLabel = new Label();
         MethodTextBox = new TextBox();
         ChanceTextBox = new TextBox();
         ChanceCaptionLabel = new Label();
-        MethodDetailButton = new Button();
+        MethodButton = new Button();
         LevelCaptionLabel = new Label();
         MinLevelTextBox = new TextBox();
         MaxLevelTextBox = new TextBox();
@@ -41,22 +40,13 @@ partial class EncounterInfoForm
         dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn3 = new DataGridViewButtonColumn();
         CloseButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)ConditionValuesDataGridView).BeginInit();
         SuspendLayout();
         // 
-        // MethodCaptionLabel
-        // 
-        MethodCaptionLabel.AutoSize = true;
-        MethodCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        MethodCaptionLabel.Location = new Point(12, 15);
-        MethodCaptionLabel.Name = "MethodCaptionLabel";
-        MethodCaptionLabel.Size = new Size(60, 17);
-        MethodCaptionLabel.TabIndex = 0;
-        MethodCaptionLabel.Text = "遭遇方法";
-        // 
         // MethodTextBox
         // 
-        MethodTextBox.Location = new Point(84, 12);
+        MethodTextBox.Location = new Point(95, 12);
         MethodTextBox.Name = "MethodTextBox";
         MethodTextBox.ReadOnly = true;
         MethodTextBox.Size = new Size(129, 24);
@@ -65,90 +55,90 @@ partial class EncounterInfoForm
         // 
         // ChanceTextBox
         // 
-        ChanceTextBox.Location = new Point(84, 42);
+        ChanceTextBox.Location = new Point(95, 42);
         ChanceTextBox.Name = "ChanceTextBox";
         ChanceTextBox.ReadOnly = true;
         ChanceTextBox.Size = new Size(129, 24);
-        ChanceTextBox.TabIndex = 4;
+        ChanceTextBox.TabIndex = 3;
         ChanceTextBox.Text = "ピカチュウ";
         // 
         // ChanceCaptionLabel
         // 
         ChanceCaptionLabel.AutoSize = true;
         ChanceCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        ChanceCaptionLabel.Location = new Point(25, 45);
+        ChanceCaptionLabel.Location = new Point(42, 45);
         ChanceCaptionLabel.Name = "ChanceCaptionLabel";
         ChanceCaptionLabel.Size = new Size(47, 17);
-        ChanceCaptionLabel.TabIndex = 3;
+        ChanceCaptionLabel.TabIndex = 2;
         ChanceCaptionLabel.Text = "遭遇率";
         // 
-        // MethodDetailButton
+        // MethodButton
         // 
-        MethodDetailButton.Location = new Point(219, 10);
-        MethodDetailButton.Name = "MethodDetailButton";
-        MethodDetailButton.Size = new Size(53, 27);
-        MethodDetailButton.TabIndex = 2;
-        MethodDetailButton.Text = "詳細";
-        MethodDetailButton.UseVisualStyleBackColor = true;
-        MethodDetailButton.Click += MethodDetailButton_Click;
+        MethodButton.Location = new Point(12, 10);
+        MethodButton.Name = "MethodButton";
+        MethodButton.Size = new Size(77, 27);
+        MethodButton.TabIndex = 0;
+        MethodButton.Text = "遭遇方法";
+        MethodButton.UseVisualStyleBackColor = true;
+        MethodButton.Click += MethodButton_Click;
         // 
         // LevelCaptionLabel
         // 
         LevelCaptionLabel.AutoSize = true;
         LevelCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        LevelCaptionLabel.Location = new Point(32, 75);
+        LevelCaptionLabel.Location = new Point(49, 75);
         LevelCaptionLabel.Name = "LevelCaptionLabel";
         LevelCaptionLabel.Size = new Size(40, 17);
-        LevelCaptionLabel.TabIndex = 5;
+        LevelCaptionLabel.TabIndex = 4;
         LevelCaptionLabel.Text = "レベル";
         // 
         // MinLevelTextBox
         // 
-        MinLevelTextBox.Location = new Point(84, 72);
+        MinLevelTextBox.Location = new Point(95, 72);
         MinLevelTextBox.Name = "MinLevelTextBox";
         MinLevelTextBox.ReadOnly = true;
         MinLevelTextBox.Size = new Size(39, 24);
-        MinLevelTextBox.TabIndex = 6;
+        MinLevelTextBox.TabIndex = 5;
         MinLevelTextBox.Text = "100";
         // 
         // MaxLevelTextBox
         // 
-        MaxLevelTextBox.Location = new Point(156, 76);
+        MaxLevelTextBox.Location = new Point(167, 72);
         MaxLevelTextBox.Name = "MaxLevelTextBox";
         MaxLevelTextBox.ReadOnly = true;
         MaxLevelTextBox.Size = new Size(39, 24);
-        MaxLevelTextBox.TabIndex = 8;
+        MaxLevelTextBox.TabIndex = 7;
         MaxLevelTextBox.Text = "100";
         // 
         // LevelRangeLabel
         // 
         LevelRangeLabel.AutoSize = true;
         LevelRangeLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        LevelRangeLabel.Location = new Point(129, 79);
+        LevelRangeLabel.Location = new Point(140, 75);
         LevelRangeLabel.Name = "LevelRangeLabel";
         LevelRangeLabel.Size = new Size(21, 17);
-        LevelRangeLabel.TabIndex = 7;
+        LevelRangeLabel.TabIndex = 6;
         LevelRangeLabel.Text = "～";
         // 
         // ConditionValueCaptionLabel
         // 
         ConditionValueCaptionLabel.AutoSize = true;
         ConditionValueCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        ConditionValueCaptionLabel.Location = new Point(278, 15);
+        ConditionValueCaptionLabel.Location = new Point(230, 15);
         ConditionValueCaptionLabel.Name = "ConditionValueCaptionLabel";
         ConditionValueCaptionLabel.Size = new Size(73, 17);
-        ConditionValueCaptionLabel.TabIndex = 9;
+        ConditionValueCaptionLabel.TabIndex = 8;
         ConditionValueCaptionLabel.Text = "遭遇条件値";
         // 
         // ConditionValuesDataGridView
         // 
         ConditionValuesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         ConditionValuesDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewButtonColumn3 });
-        ConditionValuesDataGridView.Location = new Point(278, 35);
+        ConditionValuesDataGridView.Location = new Point(230, 35);
         ConditionValuesDataGridView.Name = "ConditionValuesDataGridView";
         ConditionValuesDataGridView.RowHeadersVisible = false;
         ConditionValuesDataGridView.Size = new Size(260, 150);
-        ConditionValuesDataGridView.TabIndex = 10;
+        ConditionValuesDataGridView.TabIndex = 9;
         ConditionValuesDataGridView.CellClick += ConditionValuesDataGridView_CellClick;
         ConditionValuesDataGridView.CellDoubleClick += ConditionValuesDataGridView_CellDoubleClick;
         // 
@@ -172,20 +162,32 @@ partial class EncounterInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(453, 191);
+        CloseButton.Location = new Point(414, 191);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(85, 43);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 11;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(330, 191);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 10;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // EncounterInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(562, 249);
+        ClientSize = new Size(504, 237);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(ConditionValuesDataGridView);
         Controls.Add(ConditionValueCaptionLabel);
@@ -193,11 +195,10 @@ partial class EncounterInfoForm
         Controls.Add(MaxLevelTextBox);
         Controls.Add(MinLevelTextBox);
         Controls.Add(LevelCaptionLabel);
-        Controls.Add(MethodDetailButton);
+        Controls.Add(MethodButton);
         Controls.Add(ChanceCaptionLabel);
         Controls.Add(ChanceTextBox);
         Controls.Add(MethodTextBox);
-        Controls.Add(MethodCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
@@ -211,12 +212,10 @@ partial class EncounterInfoForm
     }
 
     #endregion
-
-    private Label MethodCaptionLabel;
     private TextBox MethodTextBox;
     private TextBox ChanceTextBox;
     private Label ChanceCaptionLabel;
-    private Button MethodDetailButton;
+    private Button MethodButton;
     private Label LevelCaptionLabel;
     private TextBox MinLevelTextBox;
     private TextBox MaxLevelTextBox;
@@ -226,4 +225,5 @@ partial class EncounterInfoForm
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private DataGridViewButtonColumn dataGridViewButtonColumn3;
     private Button CloseButton;
+    private Button PropertyButton;
 }

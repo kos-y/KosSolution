@@ -31,105 +31,99 @@ partial class VerboseEffectInfoForm
         ShortEffectTextBox = new TextBox();
         EffectCaptionLabel = new Label();
         EffectTextBox = new TextBox();
-        LanguageCaptionLabel = new Label();
         LanguageTextBox = new TextBox();
-        LanguageDetailButton = new Button();
+        LanguageButton = new Button();
         CloseButton = new Button();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
         // ShortEffectCaptionLabel
         // 
         ShortEffectCaptionLabel.AutoSize = true;
         ShortEffectCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        ShortEffectCaptionLabel.Location = new Point(12, 9);
+        ShortEffectCaptionLabel.Location = new Point(12, 45);
         ShortEffectCaptionLabel.Name = "ShortEffectCaptionLabel";
         ShortEffectCaptionLabel.Size = new Size(64, 17);
-        ShortEffectCaptionLabel.TabIndex = 0;
+        ShortEffectCaptionLabel.TabIndex = 2;
         ShortEffectCaptionLabel.Text = "効果 概略";
         // 
         // ShortEffectTextBox
         // 
-        ShortEffectTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        ShortEffectTextBox.Location = new Point(82, 6);
+        ShortEffectTextBox.Location = new Point(12, 65);
         ShortEffectTextBox.Name = "ShortEffectTextBox";
         ShortEffectTextBox.ReadOnly = true;
-        ShortEffectTextBox.Size = new Size(418, 24);
-        ShortEffectTextBox.TabIndex = 1;
+        ShortEffectTextBox.Size = new Size(488, 24);
+        ShortEffectTextBox.TabIndex = 3;
         ShortEffectTextBox.Text = "ピカチュウ";
         // 
         // EffectCaptionLabel
         // 
         EffectCaptionLabel.AutoSize = true;
         EffectCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        EffectCaptionLabel.Location = new Point(12, 33);
+        EffectCaptionLabel.Location = new Point(12, 97);
         EffectCaptionLabel.Name = "EffectCaptionLabel";
         EffectCaptionLabel.Size = new Size(64, 17);
-        EffectCaptionLabel.TabIndex = 2;
+        EffectCaptionLabel.TabIndex = 4;
         EffectCaptionLabel.Text = "効果 詳細";
         // 
         // EffectTextBox
         // 
-        EffectTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-        EffectTextBox.Location = new Point(12, 53);
+        EffectTextBox.Location = new Point(12, 117);
         EffectTextBox.Multiline = true;
         EffectTextBox.Name = "EffectTextBox";
         EffectTextBox.ReadOnly = true;
         EffectTextBox.Size = new Size(488, 172);
-        EffectTextBox.TabIndex = 3;
+        EffectTextBox.TabIndex = 5;
         EffectTextBox.Text = "ピカチュウ";
-        // 
-        // LanguageCaptionLabel
-        // 
-        LanguageCaptionLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        LanguageCaptionLabel.AutoSize = true;
-        LanguageCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        LanguageCaptionLabel.Location = new Point(12, 234);
-        LanguageCaptionLabel.Name = "LanguageCaptionLabel";
-        LanguageCaptionLabel.Size = new Size(34, 17);
-        LanguageCaptionLabel.TabIndex = 4;
-        LanguageCaptionLabel.Text = "言語";
         // 
         // LanguageTextBox
         // 
-        LanguageTextBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-        LanguageTextBox.Location = new Point(52, 231);
+        LanguageTextBox.Location = new Point(71, 13);
         LanguageTextBox.Name = "LanguageTextBox";
         LanguageTextBox.ReadOnly = true;
-        LanguageTextBox.Size = new Size(389, 24);
-        LanguageTextBox.TabIndex = 5;
-        LanguageTextBox.Text = "ピカチュウ";
+        LanguageTextBox.Size = new Size(201, 24);
+        LanguageTextBox.TabIndex = 1;
+        LanguageTextBox.Text = "ja-Hrkt";
         // 
-        // LanguageDetailButton
+        // LanguageButton
         // 
-        LanguageDetailButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        LanguageDetailButton.Location = new Point(447, 231);
-        LanguageDetailButton.Name = "LanguageDetailButton";
-        LanguageDetailButton.Size = new Size(53, 23);
-        LanguageDetailButton.TabIndex = 6;
-        LanguageDetailButton.Text = "詳細";
-        LanguageDetailButton.UseVisualStyleBackColor = true;
-        LanguageDetailButton.Click += LanguageDetailButton_Click;
+        LanguageButton.Location = new Point(12, 12);
+        LanguageButton.Name = "LanguageButton";
+        LanguageButton.Size = new Size(53, 24);
+        LanguageButton.TabIndex = 0;
+        LanguageButton.Text = "言語";
+        LanguageButton.UseVisualStyleBackColor = true;
+        LanguageButton.Click += LanguageButton_Click;
         // 
         // CloseButton
         // 
-        CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        CloseButton.Location = new Point(437, 272);
+        CloseButton.Location = new Point(424, 295);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 7;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(342, 295);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 6;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // VerboseEffectInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(512, 312);
+        ClientSize = new Size(512, 344);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
-        Controls.Add(LanguageDetailButton);
+        Controls.Add(LanguageButton);
         Controls.Add(LanguageTextBox);
-        Controls.Add(LanguageCaptionLabel);
         Controls.Add(EffectTextBox);
         Controls.Add(EffectCaptionLabel);
         Controls.Add(ShortEffectTextBox);
@@ -149,8 +143,8 @@ partial class VerboseEffectInfoForm
     private TextBox ShortEffectTextBox;
     private Label EffectCaptionLabel;
     private TextBox EffectTextBox;
-    private Label LanguageCaptionLabel;
     private TextBox LanguageTextBox;
-    private Button LanguageDetailButton;
+    private Button LanguageButton;
     private Button CloseButton;
+    private Button PropertyButton;
 }

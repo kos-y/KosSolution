@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Moves.Moves;
 
 namespace Kos.PokeAPI.Forms;
@@ -21,22 +22,39 @@ public partial class MoveStatChangeInfoForm : Form
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    public MoveStatChangeInfoForm(MoveStatChange msc)
+    public MoveStatChangeInfoForm(MoveStatChange change)
     {
         InitializeComponent();
-        SetData(msc);
+        SetData(change);
     }
     #endregion
 
-    #region ステータス 詳細 クリック
+    #region ステータス クリック
     /// <summary>
-    /// ステータス 詳細 クリック
+    /// ステータス クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void StatDetailButton_Click(object sender, EventArgs e)
+    private void StatButton_Click(object sender, EventArgs e)
     {
 
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
@@ -56,12 +74,12 @@ public partial class MoveStatChangeInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="msc"></param>
-    private void SetData(MoveStatChange msc)
+    /// <param name="change"></param>
+    private void SetData(MoveStatChange change)
     {
-        StatTextBox.Text = msc.Stat?.Name ?? string.Empty;
-        StatDetailButton.Tag = msc.Stat;
-        ChangeTextBox.Text = $"{msc.Change}";
+        Tag = change;
+        FormsHelper.SetData(change.Stat, StatButton, StatTextBox);
+        FormsHelper.SetData(change.Change, ChangeCaptionLabel, ChangeTextBox);
     }
     #endregion
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
@@ -28,19 +29,19 @@ public partial class EncounterInfoForm : Form
     }
     #endregion
 
-    #region 遭遇方法 詳細 クリック
+    #region 遭遇方法 クリック
     /// <summary>
-    /// 遭遇方法 詳細 クリック
+    /// 遭遇方法 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void MethodDetailButton_Click(object sender, EventArgs e)
+    private void MethodButton_Click(object sender, EventArgs e)
     {
-        if (MethodDetailButton.Tag is null) {
+        if (MethodButton.Tag is null) {
             return;
         }
 
-        if (MethodDetailButton.Tag is not NamedAPIResource api) {
+        if (MethodButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -110,6 +111,23 @@ public partial class EncounterInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -129,12 +147,13 @@ public partial class EncounterInfoForm : Form
     /// <param name="e">遭遇</param>
     private void SetData(Encounter e)
     {
-        MethodTextBox.Text = e.Method?.Name ?? string.Empty;
-        MethodDetailButton.Tag = e.Method;
-        ChanceTextBox.Text = $"{e.Chance}";
-        MinLevelTextBox.Text = $"{e.MinLevel}";
-        MaxLevelTextBox.Text = $"{e.MaxLevel}";
-        ConditionValuesDataGridView.DataSource = e.ConditionValues;
+        Tag = e;
+        FormsHelper.SetData(e.Method, MethodButton, MethodTextBox);
+        FormsHelper.SetData(e.Chance, ChanceCaptionLabel, ChanceTextBox);
+        FormsHelper.SetData(
+            e.MinLevel, e.MaxLevel,
+            LevelCaptionLabel, MinLevelTextBox, LevelRangeLabel, MaxLevelTextBox);
+        FormsHelper.SetData(e.ConditionValues, ConditionValueCaptionLabel, ConditionValuesDataGridView);
     }
     #endregion
 }

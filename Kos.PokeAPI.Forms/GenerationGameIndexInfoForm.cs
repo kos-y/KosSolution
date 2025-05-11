@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Games.Generations;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -29,20 +30,19 @@ public partial class GenerationGameIndexInfoForm : Form
     }
     #endregion
 
-    #region 世代 詳細 クリック
+    #region 世代 クリック
     /// <summary>
-    /// 世代 詳細 クリック
+    /// 世代 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void GenerationDetailButton_Click(object sender, EventArgs e)
+    private void GenerationButton_Click(object sender, EventArgs e)
     {
-        object? tag = GenerationDetailButton?.Tag;
-        if (tag is null) {
+        if (GenerationButton?.Tag is null) {
             return;
         }
 
-        if (tag is not NamedAPIResource api) {
+        if (GenerationButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -51,6 +51,23 @@ public partial class GenerationGameIndexInfoForm : Form
         }
 
         using GenerationInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -67,17 +84,16 @@ public partial class GenerationGameIndexInfoForm : Form
     }
     #endregion
 
-
     #region 画面にデータの設定
     /// <summary>
     /// 画面にデータの設定
     /// </summary>
-    /// <param name="ggi">世代ごとのゲームインデックス</param>
-    private void SetData(GenerationGameIndex ggi)
+    /// <param name="index">世代ごとのゲームインデックス</param>
+    private void SetData(GenerationGameIndex index)
     {
-        GenerationTextBox.Text = ggi.Generation?.Name ?? string.Empty;
-        GenerationDetailButton.Tag = ggi.Generation;
-        GameIndexTextBox.Text = $"{ggi.GameIndex}";
+        Tag = index;
+        FormsHelper.SetData(index.Generation, GenerationButton, GenerationTextBox);
+        FormsHelper.SetData(index.GameIndex, GameIndexCaptionLabel, GameIndexTextBox);
     }
     #endregion
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
@@ -27,28 +28,44 @@ public partial class DescriptionInfoForm : Form
     }
     #endregion
 
-    #region 言語 詳細 クリック
+    #region 言語 クリック
     /// <summary>
-    /// 言語 詳細 クリック
+    /// 言語 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void LanguageDetailButton_Click(object sender, EventArgs e)
     {
-        object? tag = LanguageDetailButton.Tag;
-        if (tag is null) {
+        if (LanguageButton.Tag is null) {
             return;
         }
 
-        if (tag is not NamedAPIResource api) {
+        if (LanguageButton.Tag is not NamedAPIResource api) {
             return;
         }
 
-        if (api?.Url is null) {
+        if (api.Url is null) {
             return;
         }
 
         using LanguageInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -72,9 +89,9 @@ public partial class DescriptionInfoForm : Form
     /// <param name="desc"></param>
     private void SetData(Description desc)
     {
-        DescriptionTextBox.Text = desc.Text;
-        LanguageTextBox.Text = desc.Language?.Name ?? string.Empty;
-        LanguageDetailButton.Tag = desc.Language;
+        Tag = desc;
+        FormsHelper.SetData(desc.Text, DescriptionCaptionLabel, DescriptionTextBox);
+        FormsHelper.SetData(desc.Language, LanguageButton, LanguageTextBox);
     }
     #endregion
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Moves.Moves;
 
 namespace Kos.PokeAPI.Forms;
@@ -16,30 +17,31 @@ namespace Kos.PokeAPI.Forms;
 /// </summary>
 public partial class ContestComboSetsInfoForm : Form
 {
-    #region コンテスト
+    #region コンストラクタ
     /// <summary>
-    /// コンテスト
+    /// コンストラクタ
     /// </summary>
-    /// <param name="ccs"></param>
-    public ContestComboSetsInfoForm(ContestComboSets ccs)
+    /// <param name="sets"></param>
+    public ContestComboSetsInfoForm(ContestComboSets sets)
     {
         InitializeComponent();
+        SetData(sets);
     }
     #endregion
 
-    #region ポケモンコンテスト 詳細 クリック
+    #region ポケモンコンテスト クリック
     /// <summary>
-    /// ポケモンコンテスト 詳細 クリック
+    /// ポケモンコンテスト クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void NormalDetailButton_Click(object sender, EventArgs e)
+    private void NormalButton_Click(object sender, EventArgs e)
     {
-        if (NormalDetailButton.Tag is null) {
+        if (NormalButton.Tag is null) {
             return;
         }
 
-        if (NormalDetailButton.Tag is not ContestComboDetail ccd) {
+        if (NormalButton.Tag is not ContestComboDetail ccd) {
             return;
         }
 
@@ -48,23 +50,40 @@ public partial class ContestComboSetsInfoForm : Form
     }
     #endregion
 
-    #region スーパーコンテスト 詳細 クリック
+    #region スーパーコンテスト クリック
     /// <summary>
-    /// スーパーコンテスト 詳細 クリック
+    /// スーパーコンテスト クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void SuperDetailButton_Click(object sender, EventArgs e)
+    private void SuperButton_Click(object sender, EventArgs e)
     {
-        if (SuperDetailButton.Tag is null) {
+        if (SuperButton.Tag is null) {
             return;
         }
 
-        if (SuperDetailButton.Tag is not ContestComboDetail ccd) {
+        if (SuperButton.Tag is not ContestComboDetail ccd) {
             return;
         }
 
         using ContestComboDetailInfoForm form = new(ccd);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -85,11 +104,12 @@ public partial class ContestComboSetsInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="ccs"></param>
-    private void SetData(ContestComboSets ccs)
+    /// <param name="sets"></param>
+    private void SetData(ContestComboSets sets)
     {
-        NormalDetailButton.Tag = ccs.Normal;
-        SuperDetailButton.Tag = ccs.Super;
+        Tag = sets;
+        FormsHelper.SetData(sets.Normal, NormalButton);
+        FormsHelper.SetData(sets.Super, SuperButton);
     }
     #endregion
 }
