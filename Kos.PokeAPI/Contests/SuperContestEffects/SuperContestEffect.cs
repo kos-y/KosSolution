@@ -62,7 +62,7 @@ public class SuperContestEffect
     [Category("(基本)")]
     [Description("技リスト")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
-    public List<NamedAPIResource>? Moves { get; set; }
+    public IReadOnlyList<NamedAPIResource>? Moves { get; set; }
     #endregion
 
 

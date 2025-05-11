@@ -105,7 +105,7 @@ public class VersionGroup
     [Category("(基本)")]
     [Description("バージョンリスト")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
-    public List<NamedAPIResource>? Versions { get; set; }
+    public IReadOnlyList<NamedAPIResource>? Versions { get; set; }
     #endregion
 
 

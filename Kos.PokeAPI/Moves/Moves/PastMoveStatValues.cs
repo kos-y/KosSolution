@@ -64,7 +64,7 @@ public class PastMoveStatValues
     [Category("(基本)")]
     [Description("効果リスト")]
     [TypeConverter(typeof(ListConverter<VerboseEffect>))]
-    public List<VerboseEffect>? EffectEntries { get; set; }
+    public IReadOnlyList<VerboseEffect>? EffectEntries { get; set; }
     #endregion
 
     #region 技タイプ

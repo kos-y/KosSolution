@@ -47,7 +47,7 @@ public class ItemPocket
     [Category("(基本)")]
     [Description("アイテムポケットの名前")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
-    public List<NamedAPIResource>? Categories { get; set; }
+    public IReadOnlyList<NamedAPIResource>? Categories { get; set; }
     #endregion
 
     #region 言語ごとの名前リスト
@@ -59,7 +59,7 @@ public class ItemPocket
     [Category("(基本)")]
     [Description("言語ごとの名前リスト")]
     [TypeConverter(typeof(ListConverter<Name>))]
-    public List<Name>? Names { get; set; }
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
 

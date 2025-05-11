@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -10,6 +11,7 @@ namespace Kos.PokeAPI.Utility.CommonModels;
 /// <summary>
 /// 技マシン バージョンごとの詳細
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class MachineVersionDetail
 {
     // フィールド
@@ -19,6 +21,9 @@ public class MachineVersionDetail
     /// 技マシン
     /// </summary>
     [JsonPropertyName("machine")]
+    [DisplayName("machine")]
+    [Category("(基本)")]
+    [Description("技マシン")]
     public APIResource? Machine { get; set; }
     #endregion
 
@@ -27,6 +32,9 @@ public class MachineVersionDetail
     /// バージョングループ
     /// </summary>
     [JsonPropertyName("version_group")]
+    [DisplayName("version_group")]
+    [Category("(基本)")]
+    [Description("バージョングループ")]
     public NamedAPIResource? VersionGroup { get; set; }
     #endregion
 }

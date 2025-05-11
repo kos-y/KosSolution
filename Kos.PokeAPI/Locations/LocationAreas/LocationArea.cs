@@ -60,7 +60,7 @@ public class LocationArea
     [Category("(基本)")]
     [Description("遭遇方法ごとの確率リスト")]
     [TypeConverter(typeof(ListConverter<EncounterMethodRate>))]
-    public List<EncounterMethodRate>? EncounterMethodRates { get; set; }
+    public IReadOnlyList<EncounterMethodRate>? EncounterMethodRates { get; set; }
     #endregion
 
     #region 場所
@@ -83,7 +83,7 @@ public class LocationArea
     [Category("(基本)")]
     [Description("言語ごとの名前リスト")]
     [TypeConverter(typeof(ListConverter<Name>))]
-    public List<Name>? Names { get; set; }
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
     #region 遭遇するポケモンリスト
@@ -95,7 +95,7 @@ public class LocationArea
     [Category("(基本)")]
     [Description("遭遇するポケモンリスト")]
     [TypeConverter(typeof(ListConverter<PokemonEncounter>))]
-    public List<PokemonEncounter>? PokemonEncounters { get; set; }
+    public IReadOnlyList<PokemonEncounter>? PokemonEncounters { get; set; }
     #endregion
 
 

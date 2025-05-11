@@ -57,7 +57,7 @@ public class Generation
     [Category("(基本)")]
     [Description("言語ごとの名前リスト")]
     [TypeConverter(typeof(ListConverter<Name>))]
-    public List<Name>? Names { get; set; }
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
     #region メイン地域
@@ -80,7 +80,7 @@ public class Generation
     [Category("(基本)")]
     [Description("技リスト")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
-    public List<NamedAPIResource>? Moves { get; set; }
+    public IReadOnlyList<NamedAPIResource>? Moves { get; set; }
     #endregion
 
     #region ポケモン種族リスト
@@ -92,7 +92,7 @@ public class Generation
     [Category("(基本)")]
     [Description("ポケモン種族リスト")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
-    public List<NamedAPIResource>? PokemonSpecies { get; set; }
+    public IReadOnlyList<NamedAPIResource>? PokemonSpecies { get; set; }
     #endregion
 
     #region タイプリスト
@@ -104,7 +104,7 @@ public class Generation
     [Category("(基本)")]
     [Description("タイプリスト")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
-    public List<NamedAPIResource>? Types { get; set; }
+    public IReadOnlyList<NamedAPIResource>? Types { get; set; }
     #endregion
 
     #region バージョングループリスト
@@ -116,7 +116,7 @@ public class Generation
     [Category("(基本)")]
     [Description("バージョングループリスト")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
-    public List<NamedAPIResource>? VersionGroups { get; set; }
+    public IReadOnlyList<NamedAPIResource>? VersionGroups { get; set; }
     #endregion
 
 

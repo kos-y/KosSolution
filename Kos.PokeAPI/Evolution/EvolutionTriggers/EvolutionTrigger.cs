@@ -62,7 +62,7 @@ public class EvolutionTrigger
     [Category("(基本)")]
     [Description("ポケモン種族")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
-    public List<NamedAPIResource>? PokemonSpecies { get; set; }
+    public IReadOnlyList<NamedAPIResource>? PokemonSpecies { get; set; }
     #endregion
 
 

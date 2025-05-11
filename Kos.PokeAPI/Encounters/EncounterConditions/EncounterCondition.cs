@@ -61,7 +61,7 @@ public class EncounterCondition
     [Category("(基本)")]
     [Description("遭遇条件値リスト")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
-    public List<NamedAPIResource>? Values { get; set; }
+    public IReadOnlyList<NamedAPIResource>? Values { get; set; }
     #endregion
 
 

@@ -60,7 +60,7 @@ public class ItemAttribute
     [Category("(基本)")]
     [Description("言語ごとの名前リスト")]
     [TypeConverter(typeof(ListConverter<Name>))]
-    public List<Name>? Names { get; set; }
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
     #region 言語ごとの説明リスト
@@ -72,7 +72,7 @@ public class ItemAttribute
     [Category("(基本)")]
     [Description("言語ごとの説明リスト")]
     [TypeConverter(typeof(ListConverter<Description>))]
-    public List<Description>? Descriptions { get; set; }
+    public IReadOnlyList<Description>? Descriptions { get; set; }
     #endregion
 
 

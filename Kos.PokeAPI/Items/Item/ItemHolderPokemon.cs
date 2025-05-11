@@ -36,6 +36,6 @@ public class ItemHolderPokemon
     [Category("(基本)")]
     [Description("詳細リスト")]
     [TypeConverter(typeof(ListConverter<ItemHolderPokemonVersionDetail>))]
-    public List<ItemHolderPokemonVersionDetail>? VersionDetails { get; set; }
+    public IReadOnlyList<ItemHolderPokemonVersionDetail>? VersionDetails { get; set; }
     #endregion
 }

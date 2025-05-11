@@ -49,7 +49,7 @@ public class BerryFlavor
     [Category("(基本)")]
     [Description("きのみリスト")]
     [TypeConverter(typeof(ListConverter<FlavorBerryMap>))]
-    public List<FlavorBerryMap>? Berries { get; set; }
+    public IReadOnlyList<FlavorBerryMap>? Berries { get; set; }
     #endregion
 
     #region ポケモンコンテストの種類
@@ -72,7 +72,7 @@ public class BerryFlavor
     [Category("(基本)")]
     [Description("言語との名前リスト")]
     [TypeConverter(typeof(ListConverter<Name>))]
-    public List<Name>? Names { get; set; }
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
 

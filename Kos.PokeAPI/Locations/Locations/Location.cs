@@ -53,7 +53,7 @@ public class Location
     [Category("(基本)")]
     [Description("言語ごとの名前リスト")]
     [TypeConverter(typeof(ListConverter<Name>))]
-    public List<Name>? Names { get; set; }
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
     #region 世代ごとのゲームIndexリスト
@@ -65,7 +65,7 @@ public class Location
     [Category("(基本)")]
     [Description("世代ごとのゲームIndexリスト")]
     [TypeConverter(typeof(ListConverter<GenerationGameIndex>))]
-    public List<GenerationGameIndex>? GameIndices { get; set; }
+    public IReadOnlyList<GenerationGameIndex>? GameIndices { get; set; }
     #endregion
 
     #region エリアリスト
@@ -77,7 +77,7 @@ public class Location
     [Category("(基本)")]
     [Description("エリアリスト")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
-    public List<NamedAPIResource>? Areas { get; set; }
+    public IReadOnlyList<NamedAPIResource>? Areas { get; set; }
     #endregion
 
 

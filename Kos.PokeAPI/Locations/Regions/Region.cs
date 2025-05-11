@@ -48,7 +48,7 @@ public class Region
     [Category("(基本)")]
     [Description("場所リスト")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
-    public List<NamedAPIResource>? Locations { get; set; }
+    public IReadOnlyList<NamedAPIResource>? Locations { get; set; }
     #endregion
 
     #region 言語ごとの名前リスト
@@ -60,7 +60,7 @@ public class Region
     [Category("(基本)")]
     [Description("言語ごとの名前リスト")]
     [TypeConverter(typeof(ListConverter<Name>))]
-    public List<Name>? Names { get; set; }
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
     #region メインの世代
