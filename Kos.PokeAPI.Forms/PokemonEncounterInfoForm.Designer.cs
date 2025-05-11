@@ -29,13 +29,13 @@ partial class PokemonEncounterInfoForm
     {
         PokemonTextBox = new TextBox();
         VersionDetailsCaptionLabel = new Label();
-        EncounterDetailsDataGridView = new DataGridView();
+        VersionDetailsDataGridView = new DataGridView();
         NameColumn = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
         CloseButton = new Button();
         PokemonButton = new Button();
         PropertyButton = new Button();
-        ((System.ComponentModel.ISupportInitialize)EncounterDetailsDataGridView).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)VersionDetailsDataGridView).BeginInit();
         SuspendLayout();
         // 
         // PokemonTextBox
@@ -57,18 +57,18 @@ partial class PokemonEncounterInfoForm
         VersionDetailsCaptionLabel.Text = "バージョンごとの遭遇詳細";
         VersionDetailsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // EncounterDetailsDataGridView
+        // VersionDetailsDataGridView
         // 
-        EncounterDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        EncounterDetailsDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, dataGridViewButtonColumn1 });
-        EncounterDetailsDataGridView.Location = new Point(14, 61);
-        EncounterDetailsDataGridView.Margin = new Padding(4, 3, 4, 3);
-        EncounterDetailsDataGridView.Name = "EncounterDetailsDataGridView";
-        EncounterDetailsDataGridView.RowHeadersVisible = false;
-        EncounterDetailsDataGridView.Size = new Size(334, 170);
-        EncounterDetailsDataGridView.TabIndex = 3;
-        EncounterDetailsDataGridView.CellClick += EncounterDetailsDataGridView_CellClick;
-        EncounterDetailsDataGridView.CellDoubleClick += EncounterDetailsDataGridView_CellDoubleClick;
+        VersionDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        VersionDetailsDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, dataGridViewButtonColumn1 });
+        VersionDetailsDataGridView.Location = new Point(14, 61);
+        VersionDetailsDataGridView.Margin = new Padding(4, 3, 4, 3);
+        VersionDetailsDataGridView.Name = "VersionDetailsDataGridView";
+        VersionDetailsDataGridView.RowHeadersVisible = false;
+        VersionDetailsDataGridView.Size = new Size(334, 170);
+        VersionDetailsDataGridView.TabIndex = 3;
+        VersionDetailsDataGridView.CellClick += EncounterDetailsDataGridView_CellClick;
+        VersionDetailsDataGridView.CellDoubleClick += EncounterDetailsDataGridView_CellDoubleClick;
         // 
         // NameColumn
         // 
@@ -127,7 +127,7 @@ partial class PokemonEncounterInfoForm
         Controls.Add(PropertyButton);
         Controls.Add(PokemonButton);
         Controls.Add(CloseButton);
-        Controls.Add(EncounterDetailsDataGridView);
+        Controls.Add(VersionDetailsDataGridView);
         Controls.Add(VersionDetailsCaptionLabel);
         Controls.Add(PokemonTextBox);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
@@ -137,7 +137,7 @@ partial class PokemonEncounterInfoForm
         Name = "PokemonEncounterInfoForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "ポケモン 遭遇情報";
-        ((System.ComponentModel.ISupportInitialize)EncounterDetailsDataGridView).EndInit();
+        ((System.ComponentModel.ISupportInitialize)VersionDetailsDataGridView).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -145,7 +145,7 @@ partial class PokemonEncounterInfoForm
     #endregion
     private TextBox PokemonTextBox;
     private Label VersionDetailsCaptionLabel;
-    private DataGridView EncounterDetailsDataGridView;
+    private DataGridView VersionDetailsDataGridView;
     private Button CloseButton;
     private Button PokemonButton;
     private DataGridViewTextBoxColumn NameColumn;

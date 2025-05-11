@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
@@ -27,19 +28,19 @@ public partial class VersionGroupFlavorTextInfoForm : Form
     }
     #endregion
 
-    #region 言語 詳細 クリック
+    #region 言語 クリック
     /// <summary>
-    /// 言語 詳細 クリック
+    /// 言語 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void LanguageDetailButton_Click(object sender, EventArgs e)
+    private void LanguageButton_Click(object sender, EventArgs e)
     {
-        if (LanguageDetailButton.Tag is null) {
+        if (LanguageButton.Tag is null) {
             return;
         }
 
-        if (LanguageDetailButton.Tag is not NamedAPIResource api) {
+        if (LanguageButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -52,19 +53,19 @@ public partial class VersionGroupFlavorTextInfoForm : Form
     }
     #endregion
 
-    #region バージョングループ 詳細 クリック
+    #region バージョングループ クリック
     /// <summary>
-    /// バージョングループ 詳細 クリック
+    /// バージョングループ クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionGroupDetailButton_Click(object sender, EventArgs e)
+    private void VersionGroupButton_Click(object sender, EventArgs e)
     {
-        if (VersionGroupDetailButton.Tag is null) {
+        if (VersionGroupButton.Tag is null) {
             return;
         }
 
-        if (VersionGroupDetailButton.Tag is not NamedAPIResource api) {
+        if (VersionGroupButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -73,6 +74,23 @@ public partial class VersionGroupFlavorTextInfoForm : Form
         }
 
         using VersionGroupInfoForm form = new VersionGroupInfoForm(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -93,14 +111,13 @@ public partial class VersionGroupFlavorTextInfoForm : Form
     /// <summary>
     /// データを画面に設定
     /// </summary>
-    /// <param name="vgft">バージョングループのフレーバーテキスト</param>
-    private void SetData(VersionGroupFlavorText vgft)
+    /// <param name="text">バージョングループのフレーバーテキスト</param>
+    private void SetData(VersionGroupFlavorText text)
     {
-        FlavorTextTextBox.Text = vgft.Text;
-        LanguageTextBox.Text = vgft.Language?.Name ?? string.Empty;
-        LanguageDetailButton.Tag = vgft.Language;
-        VersionGroupTextBox.Text = vgft.VersionGroup?.Name ?? string.Empty;
-        VersionGroupDetailButton.Tag = vgft.VersionGroup;
+        Tag = text;
+        FormsHelper.SetData(text.Text, FlavorTextCaptionLabel, FlavorTextTextBox);
+        FormsHelper.SetData(text.Language, LanguageButton, LanguageTextBox);
+        FormsHelper.SetData(text.VersionGroup, VersionGroupButton, VersionGroupTextBox);
     }
     #endregion
 }

@@ -28,75 +28,64 @@ partial class VersionEncounterDetailInfoForm
     private void InitializeComponent()
     {
         VersionTextBox = new TextBox();
-        VersionCaptionLabel = new Label();
         MaxChanceTextBox = new TextBox();
         MaxChanceCaptionLabel = new Label();
-        VersionDetailButton = new Button();
+        VersionButton = new Button();
         EncounterDetailsCaptionLabel = new Label();
         EncounterDetailsDataGridView = new DataGridView();
-        CloseButton = new Button();
         ValuesNameColumn = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
+        CloseButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)EncounterDetailsDataGridView).BeginInit();
         SuspendLayout();
         // 
         // VersionTextBox
         // 
-        VersionTextBox.Location = new Point(106, 12);
+        VersionTextBox.Location = new Point(106, 14);
         VersionTextBox.Name = "VersionTextBox";
         VersionTextBox.ReadOnly = true;
         VersionTextBox.Size = new Size(199, 24);
         VersionTextBox.TabIndex = 1;
         // 
-        // VersionCaptionLabel
-        // 
-        VersionCaptionLabel.AutoSize = true;
-        VersionCaptionLabel.Location = new Point(39, 15);
-        VersionCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        VersionCaptionLabel.Name = "VersionCaptionLabel";
-        VersionCaptionLabel.Size = new Size(60, 17);
-        VersionCaptionLabel.TabIndex = 0;
-        VersionCaptionLabel.Text = "バージョン";
-        VersionCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // MaxChanceTextBox
         // 
-        MaxChanceTextBox.Location = new Point(106, 42);
+        MaxChanceTextBox.Location = new Point(106, 44);
         MaxChanceTextBox.Name = "MaxChanceTextBox";
         MaxChanceTextBox.ReadOnly = true;
-        MaxChanceTextBox.Size = new Size(250, 24);
-        MaxChanceTextBox.TabIndex = 4;
+        MaxChanceTextBox.Size = new Size(188, 24);
+        MaxChanceTextBox.TabIndex = 3;
         // 
         // MaxChanceCaptionLabel
         // 
         MaxChanceCaptionLabel.AutoSize = true;
-        MaxChanceCaptionLabel.Location = new Point(13, 45);
+        MaxChanceCaptionLabel.Location = new Point(13, 44);
         MaxChanceCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         MaxChanceCaptionLabel.Name = "MaxChanceCaptionLabel";
         MaxChanceCaptionLabel.Size = new Size(86, 17);
-        MaxChanceCaptionLabel.TabIndex = 3;
+        MaxChanceCaptionLabel.TabIndex = 2;
         MaxChanceCaptionLabel.Text = "最大遭遇確立";
         MaxChanceCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // VersionDetailButton
+        // VersionButton
         // 
-        VersionDetailButton.Location = new Point(312, 10);
-        VersionDetailButton.Margin = new Padding(4, 3, 4, 3);
-        VersionDetailButton.Name = "VersionDetailButton";
-        VersionDetailButton.Size = new Size(44, 26);
-        VersionDetailButton.TabIndex = 2;
-        VersionDetailButton.Text = "詳細";
-        VersionDetailButton.UseVisualStyleBackColor = true;
-        VersionDetailButton.Click += VersionDetailButton_Click;
+        VersionButton.Location = new Point(13, 12);
+        VersionButton.Margin = new Padding(4, 3, 4, 3);
+        VersionButton.Name = "VersionButton";
+        VersionButton.Size = new Size(86, 26);
+        VersionButton.TabIndex = 0;
+        VersionButton.Text = "バージョン";
+        VersionButton.UseVisualStyleBackColor = true;
+        VersionButton.Click += VersionButton_Click;
         // 
         // EncounterDetailsCaptionLabel
         // 
         EncounterDetailsCaptionLabel.AutoSize = true;
-        EncounterDetailsCaptionLabel.Location = new Point(13, 73);
+        EncounterDetailsCaptionLabel.Location = new Point(13, 79);
         EncounterDetailsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         EncounterDetailsCaptionLabel.Name = "EncounterDetailsCaptionLabel";
         EncounterDetailsCaptionLabel.Size = new Size(86, 17);
-        EncounterDetailsCaptionLabel.TabIndex = 5;
+        EncounterDetailsCaptionLabel.TabIndex = 4;
         EncounterDetailsCaptionLabel.Text = "遭遇情報詳細";
         EncounterDetailsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -104,24 +93,14 @@ partial class VersionEncounterDetailInfoForm
         // 
         EncounterDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         EncounterDetailsDataGridView.Columns.AddRange(new DataGridViewColumn[] { ValuesNameColumn, dataGridViewButtonColumn1 });
-        EncounterDetailsDataGridView.Location = new Point(22, 93);
+        EncounterDetailsDataGridView.Location = new Point(13, 99);
         EncounterDetailsDataGridView.Margin = new Padding(4, 3, 4, 3);
         EncounterDetailsDataGridView.Name = "EncounterDetailsDataGridView";
         EncounterDetailsDataGridView.RowHeadersVisible = false;
         EncounterDetailsDataGridView.Size = new Size(334, 170);
-        EncounterDetailsDataGridView.TabIndex = 6;
+        EncounterDetailsDataGridView.TabIndex = 5;
         EncounterDetailsDataGridView.CellClick += EncounterDetailsDataGridView_CellClick;
         EncounterDetailsDataGridView.CellDoubleClick += EncounterDetailsDataGridView_CellDoubleClick;
-        // 
-        // CloseButton
-        // 
-        CloseButton.Location = new Point(293, 269);
-        CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
-        CloseButton.TabIndex = 7;
-        CloseButton.Text = "閉じる";
-        CloseButton.UseVisualStyleBackColor = true;
-        CloseButton.Click += CloseButton_Click;
         // 
         // ValuesNameColumn
         // 
@@ -141,18 +120,38 @@ partial class VersionEncounterDetailInfoForm
         dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
         dataGridViewButtonColumn1.Width = 40;
         // 
+        // CloseButton
+        // 
+        CloseButton.Location = new Point(271, 275);
+        CloseButton.Name = "CloseButton";
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 7;
+        CloseButton.Text = "閉じる";
+        CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(189, 275);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 6;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // VersionEncounterDetailInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(378, 317);
+        ClientSize = new Size(356, 319);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(EncounterDetailsDataGridView);
         Controls.Add(EncounterDetailsCaptionLabel);
-        Controls.Add(VersionDetailButton);
+        Controls.Add(VersionButton);
         Controls.Add(MaxChanceCaptionLabel);
         Controls.Add(MaxChanceTextBox);
-        Controls.Add(VersionCaptionLabel);
         Controls.Add(VersionTextBox);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -169,13 +168,13 @@ partial class VersionEncounterDetailInfoForm
     #endregion
 
     private TextBox VersionTextBox;
-    private Label VersionCaptionLabel;
     private TextBox MaxChanceTextBox;
     private Label MaxChanceCaptionLabel;
-    private Button VersionDetailButton;
+    private Button VersionButton;
     private Label EncounterDetailsCaptionLabel;
     private DataGridView EncounterDetailsDataGridView;
     private Button CloseButton;
     private DataGridViewTextBoxColumn ValuesNameColumn;
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
+    private Button PropertyButton;
 }

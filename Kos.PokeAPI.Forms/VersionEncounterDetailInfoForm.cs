@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
@@ -33,14 +34,13 @@ public partial class VersionEncounterDetailInfoForm : Form
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionDetailButton_Click(object sender, EventArgs e)
+    private void VersionButton_Click(object sender, EventArgs e)
     {
-        object? tag = VersionDetailButton.Tag;
-        if (tag is null) {
+        if (VersionButton.Tag is null) {
             return;
         }
 
-        if (tag is not NamedAPIResource api) {
+        if (VersionButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -101,6 +101,23 @@ public partial class VersionEncounterDetailInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -120,11 +137,10 @@ public partial class VersionEncounterDetailInfoForm : Form
     /// <param name="ved"></param>
     private void SetData(VersionEncounterDetail ved)
     {
-        VersionTextBox.Text = ved.Version?.Name ?? string.Empty;
-        VersionDetailButton.Tag = ved.Version;
-        MaxChanceTextBox.Text = $"{ved.MaxChance}";
-        EncounterDetailsDataGridView.AutoGenerateColumns = false;
-        EncounterDetailsDataGridView.DataSource = ved.EncounterDetails;
+        Tag = ved;
+        FormsHelper.SetData(ved.Version, VersionButton, VersionTextBox);
+        FormsHelper.SetData(ved.MaxChance, MaxChanceCaptionLabel, MaxChanceTextBox);
+        FormsHelper.SetData(ved.EncounterDetails, EncounterDetailsCaptionLabel, EncounterDetailsDataGridView);
     }
     #endregion
 }

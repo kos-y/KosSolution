@@ -64,12 +64,12 @@ public partial class PokemonEncounterInfoForm : Form
             return;
         }
 
-        if (EncounterDetailsDataGridView[e.ColumnIndex, e.RowIndex] is not
+        if (VersionDetailsDataGridView[e.ColumnIndex, e.RowIndex] is not
             DataGridViewButtonCell) {
             return;
         }
 
-        if (EncounterDetailsDataGridView.Rows[e.RowIndex].DataBoundItem is not
+        if (VersionDetailsDataGridView.Rows[e.RowIndex].DataBoundItem is not
             VersionEncounterDetail evd) {
             return;
         }
@@ -92,7 +92,7 @@ public partial class PokemonEncounterInfoForm : Form
             return;
         }
 
-        if (EncounterDetailsDataGridView.Rows[e.RowIndex].DataBoundItem is not
+        if (VersionDetailsDataGridView.Rows[e.RowIndex].DataBoundItem is not
             VersionEncounterDetail evd) {
             return;
         }
@@ -140,7 +140,7 @@ public partial class PokemonEncounterInfoForm : Form
     {
         Tag = pe;
         FormsHelper.SetData(pe.Pokemon, PokemonButton, PokemonTextBox);
-        FormsHelper.SetData(pe.VersionDetails, VersionDetailsCaptionLabel, VersionDetailsCaptionLabel);
+        FormsHelper.SetData(pe.VersionDetails, VersionDetailsCaptionLabel, VersionDetailsDataGridView);
     }
     #endregion
 }
