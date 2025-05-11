@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
@@ -36,11 +37,11 @@ public partial class RegionInfoForm : Form
     /// <param name="e"></param>
     private void MainGenerationDetailButton_Click(object sender, EventArgs e)
     {
-        if (MainGenerationDetailButton.Tag is null) {
+        if (MainGenerationButton.Tag is null) {
             return;
         }
 
-        if (MainGenerationDetailButton.Tag is not NamedAPIResource api) {
+        if (MainGenerationButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -261,6 +262,23 @@ public partial class RegionInfoForm : Form
     }
     #endregion
 
+    #region プロパティ ボタン
+    /// <summary>
+    /// プロパティ ボタン
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -280,23 +298,19 @@ public partial class RegionInfoForm : Form
     /// <param name="url">URL</param>
     public void SetData(string url)
     {
-        Locations.Regions.Region? r = Locations.Regions.Region.GetResource(url);
-        if (r is null) {
+        Locations.Regions.Region? region = Locations.Regions.Region.GetResource(url);
+        if (region is null) {
             return;
         }
 
-        IdTextBox.Text = $"{r.Id}";
-        NameTextBox.Text = r.Name;
-        MainGenerationTextBox.Text = r.MainGeneration?.Name ?? string.Empty;
-        MainGenerationDetailButton.Tag = r.MainGeneration;
-        LocationsDataGridView.AutoGenerateColumns = false;
-        LocationsDataGridView.DataSource = r.Locations;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = r.Names;
-        PokedexesDataGridView.AutoGenerateColumns = false;
-        PokedexesDataGridView.DataSource = r.Pokedexes;
-        VersionGroupDataGridView.AutoGenerateColumns = false;
-        VersionGroupDataGridView.DataSource = r.VersionGroups;
+        Tag = region;
+        FormsHelper.SetData(region.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(region.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(region.MainGeneration, MainGenerationButton, MainGenerationTextBox);
+        FormsHelper.SetData(region.Locations, LocationsCaptionLabel, LocationsDataGridView);
+        FormsHelper.SetData(region.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(region.Pokedexes, PokedexesCaptionLabel, PokedexesDataGridView);
+        FormsHelper.SetData(region.VersionGroups, VersionGroupCaptionLabel, VersionGroupDataGridView);
     }
     #endregion
 }

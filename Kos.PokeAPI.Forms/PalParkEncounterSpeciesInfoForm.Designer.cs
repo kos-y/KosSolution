@@ -28,109 +28,123 @@ partial class PalParkEncounterSpeciesInfoForm
     private void InitializeComponent()
     {
         PokemonSpeciesTextBox = new TextBox();
-        PokemonSpeciesCaptionLabel = new Label();
         BaseScoreTextBox = new TextBox();
-        BaseSCoreCaptionLabel = new Label();
+        BaseScoreCaptionLabel = new Label();
         RateTextBox = new TextBox();
         RateCaptionLabel = new Label();
-        PokemonSpeciesDetailButton = new Button();
+        PokemonSpeciesButton = new Button();
         CloseButton = new Button();
+        button1 = new Button();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
         // PokemonSpeciesTextBox
         // 
-        PokemonSpeciesTextBox.Location = new Point(95, 12);
+        PokemonSpeciesTextBox.Location = new Point(105, 12);
         PokemonSpeciesTextBox.Name = "PokemonSpeciesTextBox";
         PokemonSpeciesTextBox.ReadOnly = true;
-        PokemonSpeciesTextBox.Size = new Size(190, 24);
+        PokemonSpeciesTextBox.Size = new Size(218, 24);
         PokemonSpeciesTextBox.TabIndex = 1;
-        // 
-        // PokemonSpeciesCaptionLabel
-        // 
-        PokemonSpeciesCaptionLabel.AutoSize = true;
-        PokemonSpeciesCaptionLabel.Location = new Point(13, 15);
-        PokemonSpeciesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        PokemonSpeciesCaptionLabel.Name = "PokemonSpeciesCaptionLabel";
-        PokemonSpeciesCaptionLabel.Size = new Size(75, 17);
-        PokemonSpeciesCaptionLabel.TabIndex = 0;
-        PokemonSpeciesCaptionLabel.Text = "ポケモン種族";
-        PokemonSpeciesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // BaseScoreTextBox
         // 
-        BaseScoreTextBox.Location = new Point(95, 42);
+        BaseScoreTextBox.Location = new Point(105, 42);
         BaseScoreTextBox.Name = "BaseScoreTextBox";
         BaseScoreTextBox.ReadOnly = true;
-        BaseScoreTextBox.Size = new Size(190, 24);
-        BaseScoreTextBox.TabIndex = 4;
+        BaseScoreTextBox.Size = new Size(218, 24);
+        BaseScoreTextBox.TabIndex = 3;
         // 
-        // BaseSCoreCaptionLabel
+        // BaseScoreCaptionLabel
         // 
-        BaseSCoreCaptionLabel.AutoSize = true;
-        BaseSCoreCaptionLabel.Location = new Point(22, 45);
-        BaseSCoreCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        BaseSCoreCaptionLabel.Name = "BaseSCoreCaptionLabel";
-        BaseSCoreCaptionLabel.Size = new Size(66, 17);
-        BaseSCoreCaptionLabel.TabIndex = 3;
-        BaseSCoreCaptionLabel.Text = "基本スコア";
-        BaseSCoreCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        BaseScoreCaptionLabel.AutoSize = true;
+        BaseScoreCaptionLabel.Location = new Point(32, 45);
+        BaseScoreCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        BaseScoreCaptionLabel.Name = "BaseScoreCaptionLabel";
+        BaseScoreCaptionLabel.Size = new Size(66, 17);
+        BaseScoreCaptionLabel.TabIndex = 2;
+        BaseScoreCaptionLabel.Text = "基本スコア";
+        BaseScoreCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // RateTextBox
         // 
-        RateTextBox.Location = new Point(95, 72);
+        RateTextBox.Location = new Point(105, 72);
         RateTextBox.Name = "RateTextBox";
         RateTextBox.ReadOnly = true;
-        RateTextBox.Size = new Size(190, 24);
-        RateTextBox.TabIndex = 6;
+        RateTextBox.Size = new Size(218, 24);
+        RateTextBox.TabIndex = 5;
         // 
         // RateCaptionLabel
         // 
         RateCaptionLabel.AutoSize = true;
-        RateCaptionLabel.Location = new Point(41, 75);
+        RateCaptionLabel.Location = new Point(51, 75);
         RateCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         RateCaptionLabel.Name = "RateCaptionLabel";
         RateCaptionLabel.Size = new Size(47, 17);
-        RateCaptionLabel.TabIndex = 5;
+        RateCaptionLabel.TabIndex = 4;
         RateCaptionLabel.Text = "遭遇率";
         RateCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // PokemonSpeciesDetailButton
+        // PokemonSpeciesButton
         // 
-        PokemonSpeciesDetailButton.Location = new Point(292, 10);
-        PokemonSpeciesDetailButton.Margin = new Padding(4, 3, 4, 3);
-        PokemonSpeciesDetailButton.Name = "PokemonSpeciesDetailButton";
-        PokemonSpeciesDetailButton.Size = new Size(47, 26);
-        PokemonSpeciesDetailButton.TabIndex = 2;
-        PokemonSpeciesDetailButton.Text = "詳細";
-        PokemonSpeciesDetailButton.UseVisualStyleBackColor = true;
-        PokemonSpeciesDetailButton.Click += PokemonSpeciesDetailButton_Click;
+        PokemonSpeciesButton.Location = new Point(13, 10);
+        PokemonSpeciesButton.Margin = new Padding(4, 3, 4, 3);
+        PokemonSpeciesButton.Name = "PokemonSpeciesButton";
+        PokemonSpeciesButton.Size = new Size(85, 26);
+        PokemonSpeciesButton.TabIndex = 0;
+        PokemonSpeciesButton.Text = "ポケモン種族";
+        PokemonSpeciesButton.UseVisualStyleBackColor = true;
+        PokemonSpeciesButton.Click += PokemonSpeciesButton_Click;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(263, 102);
+        CloseButton.Location = new Point(247, 102);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 39);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 7;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // button1
+        // 
+        button1.Location = new Point(-100, 102);
+        button1.Margin = new Padding(4, 3, 4, 3);
+        button1.Name = "button1";
+        button1.Size = new Size(114, 35);
+        button1.TabIndex = 8;
+        button1.Text = "プロパティ";
+        button1.UseVisualStyleBackColor = true;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(163, 102);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 6;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // PalParkEncounterSpeciesInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(354, 149);
+        ClientSize = new Size(336, 149);
+        Controls.Add(PropertyButton);
+        Controls.Add(button1);
         Controls.Add(CloseButton);
-        Controls.Add(PokemonSpeciesDetailButton);
+        Controls.Add(PokemonSpeciesButton);
         Controls.Add(RateCaptionLabel);
         Controls.Add(RateTextBox);
         Controls.Add(BaseScoreTextBox);
-        Controls.Add(BaseSCoreCaptionLabel);
+        Controls.Add(BaseScoreCaptionLabel);
         Controls.Add(PokemonSpeciesTextBox);
-        Controls.Add(PokemonSpeciesCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
         Name = "PalParkEncounterSpeciesInfoForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "パルパークエリア内で遭遇するポケモン種族";
@@ -141,11 +155,12 @@ partial class PalParkEncounterSpeciesInfoForm
     #endregion
 
     private TextBox PokemonSpeciesTextBox;
-    private Label PokemonSpeciesCaptionLabel;
     private TextBox BaseScoreTextBox;
-    private Label BaseSCoreCaptionLabel;
+    private Label BaseScoreCaptionLabel;
     private TextBox RateTextBox;
     private Label RateCaptionLabel;
-    private Button PokemonSpeciesDetailButton;
+    private Button PokemonSpeciesButton;
     private Button CloseButton;
+    private Button button1;
+    private Button PropertyButton;
 }

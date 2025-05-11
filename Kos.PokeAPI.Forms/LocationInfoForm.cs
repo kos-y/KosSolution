@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Items.ItemCategories;
 using Kos.PokeAPI.Locations.Locations;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -30,19 +31,19 @@ public partial class LocationInfoForm : Form
     }
     #endregion
 
-    #region 地域 詳細 クリック
+    #region 地域 クリック
     /// <summary>
-    /// 地域 詳細 クリック
+    /// 地域 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void RegionDetailButton_Click(object sender, EventArgs e)
+    private void RegionButton_Click(object sender, EventArgs e)
     {
-        if (RegionDetailButton.Tag is null) {
+        if (RegionButton.Tag is null) {
             return;
         }
 
-        if (RegionDetailButton.Tag is not NamedAPIResource api) {
+        if (RegionButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -201,6 +202,23 @@ public partial class LocationInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -220,23 +238,19 @@ public partial class LocationInfoForm : Form
     /// <param name="url"></param>
     private void SetData(string url)
     {
-        Kos.PokeAPI.Locations.Locations.Location? l
+        Kos.PokeAPI.Locations.Locations.Location? location
             = Kos.PokeAPI.Locations.Locations.Location.GetResource(url);
-        if (l is null) {
+        if (location is null) {
             return;
         }
 
-        Tag = l;
-        IdTextBox.Text = $"{l.Id}";
-        NameTextBox.Text = l.Name;
-        RegionTextBox.Text = l.Region?.Name ?? string.Empty;
-        RegionDetailButton.Tag = l.Region;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = l.Names;
-        GameIndiceDataGridView.AutoGenerateColumns = false;
-        GameIndiceDataGridView.DataSource = l.GameIndices;
-        AreasDataGridView.AutoGenerateColumns = false;
-        AreasDataGridView.DataSource = l.Areas;
+        Tag = location;
+        FormsHelper.SetData(location.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(location.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(location.Region, RegionButton, RegionTextBox);
+        FormsHelper.SetData(location.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(location.GameIndices, GameIndiceCaptionLabel, GameIndiceDataGridView);
+        FormsHelper.SetData(location.Areas, AreasCaptionLabel, AreasDataGridView);
     }
     #endregion
 }

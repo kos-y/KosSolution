@@ -43,6 +43,7 @@ partial class PalParkAreaInfoForm
         DetailButtonColumn = new DataGridViewButtonColumn();
         PokemonEncountersCaptionLabel = new Label();
         CloseButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)PokemonEncountersDataGridView).BeginInit();
         SuspendLayout();
@@ -199,20 +200,32 @@ partial class PalParkAreaInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(655, 269);
+        CloseButton.Location = new Point(652, 268);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(74, 34);
-        CloseButton.TabIndex = 8;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 9;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(568, 268);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 8;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // PalParkAreaInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(741, 315);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(PokemonEncountersDataGridView);
         Controls.Add(PokemonEncountersCaptionLabel);
@@ -253,4 +266,5 @@ partial class PalParkAreaInfoForm
     private DataGridViewTextBoxColumn BaseScoreRate;
     private DataGridViewTextBoxColumn Column1;
     private DataGridViewButtonColumn DetailButtonColumn;
+    private Button PropertyButton;
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Locations.PalParkAreas;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -123,6 +124,23 @@ public partial class PalParkAreaInfoForm : Form
     }
     #endregion
 
+    #region プロパティ ボタン
+    /// <summary>
+    /// プロパティ ボタン
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -142,17 +160,16 @@ public partial class PalParkAreaInfoForm : Form
     /// <param name="url"></param>
     private void SetData(string url)
     {
-        PalParkArea? ppa = PalParkArea.GetResource(url);
-        if (ppa is null) {
+        PalParkArea? area = PalParkArea.GetResource(url);
+        if (area is null) {
             return;
         }
 
-        IdTextBox.Text = $"{ppa.Id}";
-        NameTextBox.Text = ppa.Name;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = ppa.Names;
-        PokemonEncountersDataGridView.AutoGenerateColumns = false;
-        PokemonEncountersDataGridView.DataSource = ppa.PokemonEncounters;
+        Tag = area;
+        FormsHelper.SetData(area.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(area.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(area.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(area.PokemonEncounters, PokemonEncountersCaptionLabel, PokemonEncountersDataGridView);
     }
     #endregion
 }

@@ -32,8 +32,7 @@ partial class LocationInfoForm
         NameCaptionLabel = new Label();
         IdCaptionLabel = new Label();
         RegionTextBox = new TextBox();
-        RegionCaptionLabel = new Label();
-        RegionDetailButton = new Button();
+        RegionButton = new Button();
         NamesDataGridView = new DataGridView();
         NameColumn = new DataGridViewTextBoxColumn();
         LanguageColumn = new DataGridViewTextBoxColumn();
@@ -49,6 +48,7 @@ partial class LocationInfoForm
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
         AreasCaptionLabel = new Label();
         CloseButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)GameIndiceDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)AreasDataGridView).BeginInit();
@@ -56,7 +56,7 @@ partial class LocationInfoForm
         // 
         // NameTextBox
         // 
-        NameTextBox.Location = new Point(70, 42);
+        NameTextBox.Location = new Point(95, 42);
         NameTextBox.Name = "NameTextBox";
         NameTextBox.ReadOnly = true;
         NameTextBox.Size = new Size(191, 24);
@@ -64,7 +64,7 @@ partial class LocationInfoForm
         // 
         // IdTextBox
         // 
-        IdTextBox.Location = new Point(70, 12);
+        IdTextBox.Location = new Point(95, 12);
         IdTextBox.Name = "IdTextBox";
         IdTextBox.ReadOnly = true;
         IdTextBox.Size = new Size(191, 24);
@@ -76,15 +76,15 @@ partial class LocationInfoForm
         NameCaptionLabel.Location = new Point(16, 45);
         NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(47, 17);
+        NameCaptionLabel.Size = new Size(72, 17);
         NameCaptionLabel.TabIndex = 2;
-        NameCaptionLabel.Text = "場所名";
+        NameCaptionLabel.Text = "場所の名前";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
         IdCaptionLabel.AutoSize = true;
-        IdCaptionLabel.Location = new Point(12, 15);
+        IdCaptionLabel.Location = new Point(33, 15);
         IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
         IdCaptionLabel.Size = new Size(51, 17);
@@ -94,33 +94,22 @@ partial class LocationInfoForm
         // 
         // RegionTextBox
         // 
-        RegionTextBox.Location = new Point(70, 72);
+        RegionTextBox.Location = new Point(95, 72);
         RegionTextBox.Name = "RegionTextBox";
         RegionTextBox.ReadOnly = true;
         RegionTextBox.Size = new Size(191, 24);
         RegionTextBox.TabIndex = 5;
         // 
-        // RegionCaptionLabel
+        // RegionButton
         // 
-        RegionCaptionLabel.AutoSize = true;
-        RegionCaptionLabel.Location = new Point(29, 75);
-        RegionCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        RegionCaptionLabel.Name = "RegionCaptionLabel";
-        RegionCaptionLabel.Size = new Size(34, 17);
-        RegionCaptionLabel.TabIndex = 4;
-        RegionCaptionLabel.Text = "地域";
-        RegionCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // RegionDetailButton
-        // 
-        RegionDetailButton.Location = new Point(268, 70);
-        RegionDetailButton.Margin = new Padding(4, 3, 4, 3);
-        RegionDetailButton.Name = "RegionDetailButton";
-        RegionDetailButton.Size = new Size(55, 26);
-        RegionDetailButton.TabIndex = 6;
-        RegionDetailButton.Text = "詳細";
-        RegionDetailButton.UseVisualStyleBackColor = true;
-        RegionDetailButton.Click += RegionDetailButton_Click;
+        RegionButton.Location = new Point(33, 70);
+        RegionButton.Margin = new Padding(4, 3, 4, 3);
+        RegionButton.Name = "RegionButton";
+        RegionButton.Size = new Size(55, 26);
+        RegionButton.TabIndex = 4;
+        RegionButton.Text = "地域";
+        RegionButton.UseVisualStyleBackColor = true;
+        RegionButton.Click += RegionButton_Click;
         // 
         // NamesDataGridView
         // 
@@ -131,7 +120,7 @@ partial class LocationInfoForm
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
         NamesDataGridView.Size = new Size(379, 170);
-        NamesDataGridView.TabIndex = 8;
+        NamesDataGridView.TabIndex = 7;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
@@ -169,7 +158,7 @@ partial class LocationInfoForm
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
         NamesCaptionLabel.Size = new Size(92, 17);
-        NamesCaptionLabel.TabIndex = 7;
+        NamesCaptionLabel.TabIndex = 6;
         NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -182,7 +171,7 @@ partial class LocationInfoForm
         GameIndiceDataGridView.Name = "GameIndiceDataGridView";
         GameIndiceDataGridView.RowHeadersVisible = false;
         GameIndiceDataGridView.Size = new Size(342, 170);
-        GameIndiceDataGridView.TabIndex = 10;
+        GameIndiceDataGridView.TabIndex = 9;
         GameIndiceDataGridView.CellClick += GameIndiceDataGridView_CellClick;
         GameIndiceDataGridView.CellDoubleClick += GameIndiceDataGridView_CellDoubleClick;
         // 
@@ -220,7 +209,7 @@ partial class LocationInfoForm
         GameIndiceCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         GameIndiceCaptionLabel.Name = "GameIndiceCaptionLabel";
         GameIndiceCaptionLabel.Size = new Size(116, 17);
-        GameIndiceCaptionLabel.TabIndex = 9;
+        GameIndiceCaptionLabel.TabIndex = 8;
         GameIndiceCaptionLabel.Text = "ゲーム内インデックス";
         GameIndiceCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -233,7 +222,7 @@ partial class LocationInfoForm
         AreasDataGridView.Name = "AreasDataGridView";
         AreasDataGridView.RowHeadersVisible = false;
         AreasDataGridView.Size = new Size(729, 170);
-        AreasDataGridView.TabIndex = 12;
+        AreasDataGridView.TabIndex = 11;
         AreasDataGridView.CellClick += AreasDataGridView_CellClick;
         AreasDataGridView.CellDoubleClick += AreasDataGridView_CellDoubleClick;
         // 
@@ -262,26 +251,38 @@ partial class LocationInfoForm
         AreasCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         AreasCaptionLabel.Name = "AreasCaptionLabel";
         AreasCaptionLabel.Size = new Size(38, 17);
-        AreasCaptionLabel.TabIndex = 11;
+        AreasCaptionLabel.TabIndex = 10;
         AreasCaptionLabel.Text = "エリア";
         AreasCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(670, 488);
+        CloseButton.Location = new Point(667, 488);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(82, 40);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 13;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(583, 488);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 12;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // LocationInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(765, 543);
+        ClientSize = new Size(765, 535);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(AreasDataGridView);
         Controls.Add(AreasCaptionLabel);
@@ -289,8 +290,7 @@ partial class LocationInfoForm
         Controls.Add(GameIndiceCaptionLabel);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
-        Controls.Add(RegionDetailButton);
-        Controls.Add(RegionCaptionLabel);
+        Controls.Add(RegionButton);
         Controls.Add(RegionTextBox);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
@@ -317,8 +317,7 @@ partial class LocationInfoForm
     private Label NameCaptionLabel;
     private Label IdCaptionLabel;
     private TextBox RegionTextBox;
-    private Label RegionCaptionLabel;
-    private Button RegionDetailButton;
+    private Button RegionButton;
     private DataGridView NamesDataGridView;
     private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn LanguageColumn;
@@ -334,4 +333,5 @@ partial class LocationInfoForm
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private Button CloseButton;
+    private Button PropertyButton;
 }

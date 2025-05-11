@@ -1,6 +1,9 @@
 ﻿using System.Text.Json.Serialization;
 using System.Text.Json;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
+using Kos.PokeAPI.Locations.LocationAreas;
 
 namespace Kos.PokeAPI.Locations.Locations;
 
@@ -14,14 +17,19 @@ public class Location
     /// 場所ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("場所ID")]
     public int? Id { get; set; }
     #endregion
 
-    #region 場所名
-    /// <summary>
+    #region 場所の名前
     /// 場所名
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("場所の名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -30,14 +38,21 @@ public class Location
     /// 地域
     /// </summary>
     [JsonPropertyName("region")]
+    [DisplayName("region")]
+    [Category("(基本)")]
+    [Description("地域")]
     public NamedAPIResource? Region { get; set; }
     #endregion
 
-    #region 場所名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
     /// 場所名リスト
     /// </summary>
     [JsonPropertyName("names")]
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
     public List<Name>? Names { get; set; }
     #endregion
 
@@ -46,6 +61,10 @@ public class Location
     /// 世代ごとのゲームIndexリスト
     /// </summary>
     [JsonPropertyName("game_indices")]
+    [DisplayName("game_indices")]
+    [Category("(基本)")]
+    [Description("世代ごとのゲームIndexリスト")]
+    [TypeConverter(typeof(ListConverter<GenerationGameIndex>))]
     public List<GenerationGameIndex>? GameIndices { get; set; }
     #endregion
 
@@ -54,6 +73,10 @@ public class Location
     /// エリアリスト
     /// </summary>
     [JsonPropertyName("areas")]
+    [DisplayName("areas")]
+    [Category("(基本)")]
+    [Description("エリアリスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? Areas { get; set; }
     #endregion
 

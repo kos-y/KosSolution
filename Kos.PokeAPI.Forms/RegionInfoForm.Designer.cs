@@ -40,7 +40,6 @@ partial class RegionInfoForm
         LanguageColumn = new DataGridViewTextBoxColumn();
         DetailColumn = new DataGridViewButtonColumn();
         NamesCaptionLabel = new Label();
-        MainGenerationCaptionLabel = new Label();
         MainGenerationTextBox = new TextBox();
         PokedexesDataGridView = new DataGridView();
         dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
@@ -51,7 +50,8 @@ partial class RegionInfoForm
         dataGridViewButtonColumn3 = new DataGridViewButtonColumn();
         VersionGroupCaptionLabel = new Label();
         CloseButton = new Button();
-        MainGenerationDetailButton = new Button();
+        MainGenerationButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)LocationsDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)PokedexesDataGridView).BeginInit();
@@ -79,7 +79,7 @@ partial class RegionInfoForm
         // NameCaptionLabel
         // 
         NameCaptionLabel.AutoSize = true;
-        NameCaptionLabel.Location = new Point(33, 45);
+        NameCaptionLabel.Location = new Point(37, 45);
         NameCaptionLabel.Margin = new Padding(6, 0, 6, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
         NameCaptionLabel.Size = new Size(47, 17);
@@ -90,7 +90,7 @@ partial class RegionInfoForm
         // IdCaptionLabel
         // 
         IdCaptionLabel.AutoSize = true;
-        IdCaptionLabel.Location = new Point(29, 15);
+        IdCaptionLabel.Location = new Point(33, 15);
         IdCaptionLabel.Margin = new Padding(6, 0, 6, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
         IdCaptionLabel.Size = new Size(51, 17);
@@ -107,7 +107,7 @@ partial class RegionInfoForm
         LocationsDataGridView.Name = "LocationsDataGridView";
         LocationsDataGridView.RowHeadersVisible = false;
         LocationsDataGridView.Size = new Size(339, 170);
-        LocationsDataGridView.TabIndex = 8;
+        LocationsDataGridView.TabIndex = 7;
         LocationsDataGridView.CellClick += LocationsDataGridView_CellClick;
         LocationsDataGridView.CellDoubleClick += LocationsDataGridView_CellDoubleClick;
         // 
@@ -136,7 +136,7 @@ partial class RegionInfoForm
         LocationsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         LocationsCaptionLabel.Name = "LocationsCaptionLabel";
         LocationsCaptionLabel.Size = new Size(34, 17);
-        LocationsCaptionLabel.TabIndex = 7;
+        LocationsCaptionLabel.TabIndex = 6;
         LocationsCaptionLabel.Text = "場所";
         LocationsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -149,7 +149,7 @@ partial class RegionInfoForm
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
         NamesDataGridView.Size = new Size(379, 170);
-        NamesDataGridView.TabIndex = 10;
+        NamesDataGridView.TabIndex = 9;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
@@ -187,24 +187,13 @@ partial class RegionInfoForm
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
         NamesCaptionLabel.Size = new Size(92, 17);
-        NamesCaptionLabel.TabIndex = 9;
+        NamesCaptionLabel.TabIndex = 8;
         NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // MainGenerationCaptionLabel
-        // 
-        MainGenerationCaptionLabel.AutoSize = true;
-        MainGenerationCaptionLabel.Location = new Point(15, 73);
-        MainGenerationCaptionLabel.Margin = new Padding(6, 0, 6, 0);
-        MainGenerationCaptionLabel.Name = "MainGenerationCaptionLabel";
-        MainGenerationCaptionLabel.Size = new Size(65, 17);
-        MainGenerationCaptionLabel.TabIndex = 4;
-        MainGenerationCaptionLabel.Text = "メイン世代";
-        MainGenerationCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // MainGenerationTextBox
         // 
-        MainGenerationTextBox.Location = new Point(91, 70);
+        MainGenerationTextBox.Location = new Point(91, 72);
         MainGenerationTextBox.Margin = new Padding(5, 3, 5, 3);
         MainGenerationTextBox.Name = "MainGenerationTextBox";
         MainGenerationTextBox.ReadOnly = true;
@@ -220,7 +209,7 @@ partial class RegionInfoForm
         PokedexesDataGridView.Name = "PokedexesDataGridView";
         PokedexesDataGridView.RowHeadersVisible = false;
         PokedexesDataGridView.Size = new Size(339, 170);
-        PokedexesDataGridView.TabIndex = 12;
+        PokedexesDataGridView.TabIndex = 11;
         PokedexesDataGridView.CellClick += PokedexesDataGridView_CellClick;
         PokedexesDataGridView.CellDoubleClick += PokedexesDataGridView_CellDoubleClick;
         // 
@@ -248,7 +237,7 @@ partial class RegionInfoForm
         PokedexesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         PokedexesCaptionLabel.Name = "PokedexesCaptionLabel";
         PokedexesCaptionLabel.Size = new Size(75, 17);
-        PokedexesCaptionLabel.TabIndex = 11;
+        PokedexesCaptionLabel.TabIndex = 10;
         PokedexesCaptionLabel.Text = "ポケモン図鑑";
         PokedexesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -261,7 +250,7 @@ partial class RegionInfoForm
         VersionGroupDataGridView.Name = "VersionGroupDataGridView";
         VersionGroupDataGridView.RowHeadersVisible = false;
         VersionGroupDataGridView.Size = new Size(379, 170);
-        VersionGroupDataGridView.TabIndex = 14;
+        VersionGroupDataGridView.TabIndex = 13;
         VersionGroupDataGridView.CellClick += VersionGroupDataGridView_CellClick;
         VersionGroupDataGridView.CellDoubleClick += VersionGroupDataGridView_CellDoubleClick;
         // 
@@ -290,44 +279,55 @@ partial class RegionInfoForm
         VersionGroupCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         VersionGroupCaptionLabel.Name = "VersionGroupCaptionLabel";
         VersionGroupCaptionLabel.Size = new Size(104, 17);
-        VersionGroupCaptionLabel.TabIndex = 13;
+        VersionGroupCaptionLabel.TabIndex = 12;
         VersionGroupCaptionLabel.Text = "バージョングループ";
         VersionGroupCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(670, 496);
+        CloseButton.Location = new Point(663, 496);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(69, 39);
+        CloseButton.Size = new Size(76, 35);
         CloseButton.TabIndex = 15;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
-        // MainGenerationDetailButton
+        // MainGenerationButton
         // 
-        MainGenerationDetailButton.Location = new Point(271, 67);
-        MainGenerationDetailButton.Name = "MainGenerationDetailButton";
-        MainGenerationDetailButton.Size = new Size(43, 28);
-        MainGenerationDetailButton.TabIndex = 6;
-        MainGenerationDetailButton.Text = "詳細";
-        MainGenerationDetailButton.UseVisualStyleBackColor = true;
-        MainGenerationDetailButton.Click += MainGenerationDetailButton_Click;
+        MainGenerationButton.Location = new Point(12, 69);
+        MainGenerationButton.Name = "MainGenerationButton";
+        MainGenerationButton.Size = new Size(78, 28);
+        MainGenerationButton.TabIndex = 4;
+        MainGenerationButton.Text = "メイン世代";
+        MainGenerationButton.UseVisualStyleBackColor = true;
+        MainGenerationButton.Click += MainGenerationDetailButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(579, 496);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 14;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // RegionInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(748, 547);
-        Controls.Add(MainGenerationDetailButton);
+        Controls.Add(PropertyButton);
+        Controls.Add(MainGenerationButton);
         Controls.Add(CloseButton);
         Controls.Add(VersionGroupDataGridView);
         Controls.Add(VersionGroupCaptionLabel);
         Controls.Add(PokedexesDataGridView);
         Controls.Add(PokedexesCaptionLabel);
         Controls.Add(MainGenerationTextBox);
-        Controls.Add(MainGenerationCaptionLabel);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
         Controls.Add(LocationsDataGridView);
@@ -377,5 +377,6 @@ partial class RegionInfoForm
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private DataGridViewButtonColumn dataGridViewButtonColumn3;
     private Button CloseButton;
-    private Button MainGenerationDetailButton;
+    private Button MainGenerationButton;
+    private Button PropertyButton;
 }

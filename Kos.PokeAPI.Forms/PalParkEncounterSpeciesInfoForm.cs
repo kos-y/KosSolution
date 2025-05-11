@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Locations.PalParkAreas;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -29,19 +30,19 @@ public partial class PalParkEncounterSpeciesInfoForm : Form
     }
     #endregion
 
-    #region ポケモン種族 詳細 クリック
+    #region ポケモン種族 クリック
     /// <summary>
-    /// ポケモン種族 詳細 クリック
+    /// ポケモン種族 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void PokemonSpeciesDetailButton_Click(object sender, EventArgs e)
+    private void PokemonSpeciesButton_Click(object sender, EventArgs e)
     {
-        if (PokemonSpeciesDetailButton.Tag is null) {
+        if (PokemonSpeciesButton.Tag is null) {
             return;
         }
 
-        if (PokemonSpeciesDetailButton.Tag is not NamedAPIResource api) {
+        if (PokemonSpeciesButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -50,6 +51,23 @@ public partial class PalParkEncounterSpeciesInfoForm : Form
         }
 
 
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
     }
     #endregion
 
@@ -69,13 +87,13 @@ public partial class PalParkEncounterSpeciesInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="ppes"></param>
-    private void SetData(PalParkEncounterSpecies ppes)
+    /// <param name="species"></param>
+    private void SetData(PalParkEncounterSpecies species)
     {
-        PokemonSpeciesTextBox.Text = ppes.PokemonSpecies?.Name ?? string.Empty;
-        PokemonSpeciesDetailButton.Tag = ppes.PokemonSpecies;
-        BaseScoreTextBox.Text = $"{ppes.BaseScore}";
-        RateTextBox.Text = $"{ppes.Rate}";
+        Tag = species;
+        FormsHelper.SetData(species.PokemonSpecies, PokemonSpeciesButton, PokemonSpeciesTextBox);
+        FormsHelper.SetData(species.BaseScore, BaseScoreCaptionLabel, BaseScoreTextBox);
+        FormsHelper.SetData(species.Rate, RateCaptionLabel, RateTextBox);
     }
     #endregion
 }

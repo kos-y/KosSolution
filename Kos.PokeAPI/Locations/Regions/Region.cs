@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.Core;
 using Kos.PokeAPI.Locations.PalParkAreas;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -20,14 +22,20 @@ public class Region
     /// 地域ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("地域ID")]
     public int? Id { get; set; }
     #endregion
 
-    #region 地域名
+    #region 地域の名前
     /// <summary>
-    /// 地域名
+    /// 地域の名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("地域の名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -36,14 +44,22 @@ public class Region
     /// 場所リスト
     /// </summary>
     [JsonPropertyName("locations")]
+    [DisplayName("locations")]
+    [Category("(基本)")]
+    [Description("場所リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? Locations { get; set; }
     #endregion
 
-    #region 地域名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// 地域名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
     public List<Name>? Names { get; set; }
     #endregion
 
@@ -52,6 +68,9 @@ public class Region
     /// メインの世代
     /// </summary>
     [JsonPropertyName("main_generation")]
+    [DisplayName("main_generation")]
+    [Category("(基本)")]
+    [Description("メインの世代")]
     public NamedAPIResource? MainGeneration { get; set; }
     #endregion
 
@@ -60,7 +79,11 @@ public class Region
     /// ポケモン図鑑リスト
     /// </summary>
     [JsonPropertyName("pokedexes")]
-    public List<NamedAPIResource>? Pokedexes { get; set; }
+    [DisplayName("pokedexes")]
+    [Category("(基本)")]
+    [Description("ポケモン図鑑リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? Pokedexes { get; set; }
     #endregion
 
     #region バージョングループリスト
@@ -68,7 +91,11 @@ public class Region
     /// バージョングループリスト
     /// </summary>
     [JsonPropertyName("version_groups")]
-    public List<NamedAPIResource>? VersionGroups { get; set; }
+    [DisplayName("version_groups")]
+    [Category("(基本)")]
+    [Description("バージョングループリスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? VersionGroups { get; set; }
     #endregion
 
 

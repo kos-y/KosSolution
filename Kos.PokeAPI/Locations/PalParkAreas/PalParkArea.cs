@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.Core;
 using Kos.PokeAPI.Locations.Locations;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -20,22 +22,32 @@ public class PalParkArea
     /// パルパークエリアID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("パルパークエリアID")]
     public int? Id { get; set; }
     #endregion
 
-    #region パルパークエリア名
+    #region パルパークエリアの名前
     /// <summary>
-    /// パルパークエリア名
+    /// パルパークエリアの名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("パルパークエリアの名前")]
     public string? Name { get; set; }
     #endregion
 
-    #region パルパークエリア名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// パルパークエリア名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
     public List<Name>? Names { get; set; }
     #endregion
 
@@ -44,6 +56,10 @@ public class PalParkArea
     /// 遭遇するポケモン種族リスト
     /// </summary>
     [JsonPropertyName("pokemon_encounters")]
+    [DisplayName("pokemon_encounters")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<PalParkEncounterSpecies>))]
     public List<PalParkEncounterSpecies>? PokemonEncounters { get; set; }
     #endregion
 
