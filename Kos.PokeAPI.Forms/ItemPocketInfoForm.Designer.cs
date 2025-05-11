@@ -41,6 +41,7 @@ partial class ItemPocketInfoForm
         DetailColumn = new DataGridViewButtonColumn();
         NamesCaptionLabel = new Label();
         CloseButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)CategoriesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
@@ -180,20 +181,32 @@ partial class ItemPocketInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(644, 271);
+        CloseButton.Location = new Point(664, 271);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(96, 52);
-        CloseButton.TabIndex = 8;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 9;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(580, 271);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 8;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // ItemPocketInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(755, 337);
+        ClientSize = new Size(755, 312);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
@@ -232,4 +245,5 @@ partial class ItemPocketInfoForm
     private DataGridViewButtonColumn DetailColumn;
     private Label NamesCaptionLabel;
     private Button CloseButton;
+    private Button PropertyButton;
 }

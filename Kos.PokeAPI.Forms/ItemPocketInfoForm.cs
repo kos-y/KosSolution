@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Items.ItemPockets;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -129,6 +130,23 @@ public partial class ItemPocketInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -148,17 +166,16 @@ public partial class ItemPocketInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        ItemPocket? ip = ItemPocket.GetResource(url);
-        if (ip is null) {
+        ItemPocket? pocket = ItemPocket.GetResource(url);
+        if (pocket is null) {
             return;
         }
 
-        IdTextBox.Text = $"{ip.Id}";
-        NameTextBox.Text = ip.Name;
-        CategoriesDataGridView.AutoGenerateColumns = false;
-        CategoriesDataGridView.DataSource = ip.Categories;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = ip.Names;
+        Tag = pocket;
+        FormsHelper.SetData(pocket.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(pocket.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(pocket.Categories, CategoryCaptionLabel, CategoriesDataGridView);
+        FormsHelper.SetData(pocket.Names, NamesCaptionLabel, NamesDataGridView);
     }
     #endregion
 }

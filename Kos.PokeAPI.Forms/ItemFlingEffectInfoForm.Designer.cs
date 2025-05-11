@@ -41,6 +41,7 @@ partial class ItemFlingEffectInfoForm
         ItemNameColumn = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
         ItemCaptionLabel = new Label();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)EffectEntriesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)ItemDataGridView).BeginInit();
         SuspendLayout();
@@ -136,11 +137,11 @@ partial class ItemFlingEffectInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(660, 272);
+        CloseButton.Location = new Point(657, 272);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(72, 37);
-        CloseButton.TabIndex = 8;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 9;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
@@ -187,11 +188,23 @@ partial class ItemFlingEffectInfoForm
         ItemCaptionLabel.Text = "アイテム";
         ItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(573, 272);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 8;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // ItemFlingEffectInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(746, 316);
+        Controls.Add(PropertyButton);
         Controls.Add(ItemDataGridView);
         Controls.Add(ItemCaptionLabel);
         Controls.Add(CloseButton);
@@ -230,4 +243,5 @@ partial class ItemFlingEffectInfoForm
     private DataGridViewTextBoxColumn ItemNameColumn;
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private Label ItemCaptionLabel;
+    private Button PropertyButton;
 }

@@ -6,6 +6,8 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
 
 namespace Kos.PokeAPI.Items.ItemPockets;
 
@@ -19,14 +21,20 @@ public class ItemPocket
     /// アイテムポケットID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("アイテムポケットID")]
     public int? Id { get; set; }
     #endregion
 
-    #region アイテムポケット名
+    #region アイテムポケットの名前
     /// <summary>
-    /// アイテムポケット名
+    /// アイテムポケットの名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("アイテムポケットの名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -35,14 +43,22 @@ public class ItemPocket
     /// カテゴリリスト
     /// </summary>
     [JsonPropertyName("categories")]
+    [DisplayName("categories")]
+    [Category("(基本)")]
+    [Description("アイテムポケットの名前")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? Categories { get; set; }
     #endregion
 
-    #region アイテムポケット名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// アイテムポケット名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
     public List<Name>? Names { get; set; }
     #endregion
 

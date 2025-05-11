@@ -6,6 +6,8 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Kos.PokeAPI.Utility.CommonModels;
+using System.ComponentModel;
+using Kos.Core;
 
 namespace Kos.PokeAPI.Items.ItemFlingEffects;
 
@@ -19,14 +21,20 @@ public class ItemFlingEffect
     /// 効果ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("効果ID")]
     public int? Id { get; set; }
     #endregion
 
-    #region 効果名
+    #region 効果の名前
     /// <summary>
-    /// 効果名
+    /// 効果の名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("効果の名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -35,7 +43,11 @@ public class ItemFlingEffect
     /// 効果リスト
     /// </summary>
     [JsonPropertyName("effect_entries")]
-    public List<Effect>? EffectEntries { get; set; }
+    [DisplayName("effect_entries")]
+    [Category("(基本)")]
+    [Description("効果リスト")]
+    [TypeConverter(typeof(ListConverter<Effect>))]
+    public IReadOnlyList<Effect>? EffectEntries { get; set; }
     #endregion
 
     #region アイテムリスト
@@ -43,7 +55,11 @@ public class ItemFlingEffect
     /// アイテムリスト
     /// </summary>
     [JsonPropertyName("items")]
-    public List<NamedAPIResource>? Items { get; set; }
+    [DisplayName("items")]
+    [Category("(基本)")]
+    [Description("アイテムリスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? Items { get; set; }
     #endregion
 
 

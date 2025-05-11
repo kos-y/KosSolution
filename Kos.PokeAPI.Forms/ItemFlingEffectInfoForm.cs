@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Encounters.EncounterConditionValues;
 using Kos.PokeAPI.Items.ItemFlingEffects;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -131,6 +132,23 @@ public partial class ItemFlingEffectInfoForm : Form
     }
     #endregion
 
+    #region プロパティ ボタン
+    /// <summary>
+    /// プロパティ ボタン
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -150,17 +168,16 @@ public partial class ItemFlingEffectInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        ItemFlingEffect? ife = ItemFlingEffect.GetResource(url);
-        if (ife is null) {
+        ItemFlingEffect? flingEffect = ItemFlingEffect.GetResource(url);
+        if (flingEffect is null) {
             return;
         }
 
-        IdTextBox.Text = $"{ife.Id}";
-        NameTextBox.Text = ife.Name;
-        EffectEntriesDataGridView.AutoGenerateColumns = false;
-        EffectEntriesDataGridView.DataSource = ife.EffectEntries;
-        ItemDataGridView.AutoGenerateColumns = false;
-        ItemDataGridView.DataSource = ife.Items;
+        Tag = flingEffect;
+        FormsHelper.SetData(flingEffect.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(flingEffect.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(flingEffect.EffectEntries, EffectCaptionLabel, EffectEntriesDataGridView);
+        FormsHelper.SetData(flingEffect.Items, ItemCaptionLabel, ItemDataGridView);
     }
     #endregion
 }
