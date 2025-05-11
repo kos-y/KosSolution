@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Locations.LocationAreas;
 using Kos.PokeAPI.Utility.CommonModels;
 using Kos.PokeAPI.Utility.Languages;
@@ -30,19 +31,19 @@ public partial class LocationAreaInfoForm : Form
     }
     #endregion
 
-    #region 場所 詳細 クリック
+    #region 場所 クリック
     /// <summary>
-    /// 場所 詳細 クリック
+    /// 場所 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void LocationDetailButton_Click(object sender, EventArgs e)
+    private void LocationButton_Click(object sender, EventArgs e)
     {
-        if (LocationDetailButton.Tag is null) {
+        if (LocationButton.Tag is null) {
             return;
         }
 
-        if (LocationDetailButton.Tag is not NamedAPIResource api) {
+        if (LocationButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -203,6 +204,23 @@ public partial class LocationAreaInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -222,20 +240,25 @@ public partial class LocationAreaInfoForm : Form
     /// <param name="url">URL</param>
     private void SetData(string url)
     {
-        LocationArea? la = LocationArea.GetResource(url);
-        if (la is null) {
+        LocationArea? area = LocationArea.GetResource(url);
+        if (area is null) {
             return;
         }
 
-        Tag = la;
-        IdTextBox.Text = $"{la.Id}";
-        NameTextBox.Text = la.Name;
-        GameIndexTextBox.Text = $"{la.GameIndex}";
-        LocationTextBox.Text = la.Location?.Name ?? string.Empty;
-        LocationDetailButton.Tag = la.Location;
-        NamesDataGridView.DataSource = la.Names;
-        EncounterMethodRateDataGridView.DataSource = la.EncounterMethodRates;
-        PokemonEncountersDataGridView.DataSource = la.PokemonEncounters;
+        Tag = area;
+        FormsHelper.SetData(area.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(area.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(area.GameIndex, GameIndexCaptionLabel, GameIndexTextBox);
+        FormsHelper.SetData(area.Location, LocationButton, LocationTextBox);
+        FormsHelper.SetData(area.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(
+            area.EncounterMethodRates,
+            EncounterMethodRateCaptionLabel,
+            EncounterMethodRateDataGridView);
+        FormsHelper.SetData(
+            area.PokemonEncounters,
+            PokemonEncountersCaptionLabel,
+            PokemonEncountersDataGridView);
     }
     #endregion
 }

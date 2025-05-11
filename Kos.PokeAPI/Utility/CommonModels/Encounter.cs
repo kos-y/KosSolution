@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -10,6 +11,7 @@ namespace Kos.PokeAPI.Utility.CommonModels;
 /// <summary>
 /// 遭遇
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class Encounter
 {
     #region 最低レベル
@@ -17,6 +19,9 @@ public class Encounter
     /// 最低レベル
     /// </summary>
     [JsonPropertyName("min_level")]
+    [DisplayName("min_level")]
+    [Category("レベル")]
+    [Description("最低レベル")]
     public int? MinLevel { get; set; }
     #endregion
 
@@ -25,6 +30,9 @@ public class Encounter
     /// 最高レベル
     /// </summary>
     [JsonPropertyName("max_level")]
+    [DisplayName("max_level")]
+    [Category("レベル")]
+    [Description("最高レベル")]
     public int? MaxLevel { get; set; }
     #endregion
 
@@ -33,6 +41,9 @@ public class Encounter
     /// 遭遇条件値
     /// </summary>
     [JsonPropertyName("condition_values")]
+    [DisplayName("condition_values")]
+    [Category("遭遇")]
+    [Description("遭遇条件値")]
     public List<NamedAPIResource>? ConditionValues { get; set; }
     #endregion
 
@@ -41,6 +52,9 @@ public class Encounter
     /// 遭遇率
     /// </summary>
     [JsonPropertyName("chance")]
+    [DisplayName("chance")]
+    [Category("遭遇")]
+    [Description("遭遇率")]
     public int? Chance { get; set; }
     #endregion
 
@@ -49,6 +63,9 @@ public class Encounter
     /// 遭遇方法
     /// </summary>
     [JsonPropertyName("method")]
+    [DisplayName("method")]
+    [Category("遭遇")]
+    [Description("遭遇方法")]
     public NamedAPIResource? Method { get; set; }
     #endregion
 
@@ -56,6 +73,8 @@ public class Encounter
     /// <summary>
     /// テキスト
     /// </summary>
+    [Category("(基本)")]
+    [Description("概略")]
     public string Text => ToString();
     #endregion
 

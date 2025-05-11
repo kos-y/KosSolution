@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.Core;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Locations.LocationAreas;
@@ -11,6 +13,7 @@ namespace Kos.PokeAPI.Locations.LocationAreas;
 /// <summary>
 /// 遭遇ポケモン
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonEncounter
 {
     #region ポケモン
@@ -18,14 +21,21 @@ public class PokemonEncounter
     /// ポケモン
     /// </summary>
     [JsonPropertyName("pokemon")]
+    [DisplayName("pokemon")]
+    [Category("(基本)")]
+    [Description("ポケモン")]
     public NamedAPIResource? Pokemon { get; set; }
     #endregion
 
-    #region バージョンごとのエンカウント詳細
+    #region バージョンごとの遭遇情報詳細
     /// <summary>
-    /// バージョンごとのエンカウント詳細
+    /// バージョンごとの遇情報詳細
     /// </summary>
     [JsonPropertyName("version_details")]
-    public List<VersionEncounterDetail>? VersionDetails { get; set; }
+    [DisplayName("version_details")]
+    [Category("(基本)")]
+    [Description("バージョンごとの遇情報詳細")]
+    [TypeConverter(typeof(ListConverter<VersionEncounterDetail>))]
+    public IReadOnlyList<VersionEncounterDetail>? VersionDetails { get; set; }
     #endregion
 }

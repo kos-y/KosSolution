@@ -34,7 +34,6 @@ partial class LocationAreaInfoForm
         GameIndexCaptionLabel = new Label();
         GameIndexTextBox = new TextBox();
         LocationTextBox = new TextBox();
-        LocationCatpionLabel = new Label();
         NamesDataGridView = new DataGridView();
         NameColumn = new DataGridViewTextBoxColumn();
         LanguageColumn = new DataGridViewTextBoxColumn();
@@ -46,10 +45,11 @@ partial class LocationAreaInfoForm
         EncounterMethodRateCaptionLabel = new Label();
         PokemonEncountersCaptionLabel = new Label();
         PokemonEncountersDataGridView = new DataGridView();
-        CloseButton = new Button();
-        LocationDetailButton = new Button();
         dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn3 = new DataGridViewButtonColumn();
+        CloseButton = new Button();
+        LocationButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)EncounterMethodRateDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)PokemonEncountersDataGridView).BeginInit();
@@ -117,19 +117,8 @@ partial class LocationAreaInfoForm
         LocationTextBox.Location = new Point(101, 96);
         LocationTextBox.Name = "LocationTextBox";
         LocationTextBox.ReadOnly = true;
-        LocationTextBox.Size = new Size(354, 24);
+        LocationTextBox.Size = new Size(413, 24);
         LocationTextBox.TabIndex = 7;
-        // 
-        // LocationCatpionLabel
-        // 
-        LocationCatpionLabel.AutoSize = true;
-        LocationCatpionLabel.Location = new Point(60, 99);
-        LocationCatpionLabel.Margin = new Padding(4, 0, 4, 0);
-        LocationCatpionLabel.Name = "LocationCatpionLabel";
-        LocationCatpionLabel.Size = new Size(34, 17);
-        LocationCatpionLabel.TabIndex = 6;
-        LocationCatpionLabel.Text = "場所";
-        LocationCatpionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // NamesDataGridView
         // 
@@ -140,7 +129,7 @@ partial class LocationAreaInfoForm
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
         NamesDataGridView.Size = new Size(224, 170);
-        NamesDataGridView.TabIndex = 10;
+        NamesDataGridView.TabIndex = 9;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
@@ -178,7 +167,7 @@ partial class LocationAreaInfoForm
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
         NamesCaptionLabel.Size = new Size(92, 17);
-        NamesCaptionLabel.TabIndex = 9;
+        NamesCaptionLabel.TabIndex = 8;
         NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -191,7 +180,7 @@ partial class LocationAreaInfoForm
         EncounterMethodRateDataGridView.Name = "EncounterMethodRateDataGridView";
         EncounterMethodRateDataGridView.RowHeadersVisible = false;
         EncounterMethodRateDataGridView.Size = new Size(265, 170);
-        EncounterMethodRateDataGridView.TabIndex = 12;
+        EncounterMethodRateDataGridView.TabIndex = 11;
         EncounterMethodRateDataGridView.CellClick += EncounterMethodRateDataGridView_CellClick;
         EncounterMethodRateDataGridView.CellDoubleClick += EncounterMethodRateDataGridView_CellDoubleClick;
         // 
@@ -220,7 +209,7 @@ partial class LocationAreaInfoForm
         EncounterMethodRateCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         EncounterMethodRateCaptionLabel.Name = "EncounterMethodRateCaptionLabel";
         EncounterMethodRateCaptionLabel.Size = new Size(47, 17);
-        EncounterMethodRateCaptionLabel.TabIndex = 11;
+        EncounterMethodRateCaptionLabel.TabIndex = 10;
         EncounterMethodRateCaptionLabel.Text = "遭遇率";
         EncounterMethodRateCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -231,7 +220,7 @@ partial class LocationAreaInfoForm
         PokemonEncountersCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         PokemonEncountersCaptionLabel.Name = "PokemonEncountersCaptionLabel";
         PokemonEncountersCaptionLabel.Size = new Size(75, 17);
-        PokemonEncountersCaptionLabel.TabIndex = 13;
+        PokemonEncountersCaptionLabel.TabIndex = 12;
         PokemonEncountersCaptionLabel.Text = "遭遇ポケモン";
         PokemonEncountersCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -243,30 +232,9 @@ partial class LocationAreaInfoForm
         PokemonEncountersDataGridView.Name = "PokemonEncountersDataGridView";
         PokemonEncountersDataGridView.RowHeadersVisible = false;
         PokemonEncountersDataGridView.Size = new Size(497, 150);
-        PokemonEncountersDataGridView.TabIndex = 14;
+        PokemonEncountersDataGridView.TabIndex = 13;
         PokemonEncountersDataGridView.CellClick += PokemonEncountersDataGridView_CellClick;
         PokemonEncountersDataGridView.CellDoubleClick += PokemonEncountersDataGridView_CellDoubleClick;
-        // 
-        // CloseButton
-        // 
-        CloseButton.Location = new Point(451, 492);
-        CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
-        CloseButton.TabIndex = 15;
-        CloseButton.Text = "閉じる";
-        CloseButton.UseVisualStyleBackColor = true;
-        CloseButton.Click += CloseButton_Click;
-        // 
-        // LocationDetailButton
-        // 
-        LocationDetailButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        LocationDetailButton.Location = new Point(461, 96);
-        LocationDetailButton.Name = "LocationDetailButton";
-        LocationDetailButton.Size = new Size(53, 24);
-        LocationDetailButton.TabIndex = 8;
-        LocationDetailButton.Text = "詳細";
-        LocationDetailButton.UseVisualStyleBackColor = true;
-        LocationDetailButton.Click += LocationDetailButton_Click;
         // 
         // dataGridViewTextBoxColumn3
         // 
@@ -286,12 +254,44 @@ partial class LocationAreaInfoForm
         dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
         dataGridViewButtonColumn3.Width = 40;
         // 
+        // CloseButton
+        // 
+        CloseButton.Location = new Point(438, 492);
+        CloseButton.Name = "CloseButton";
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 15;
+        CloseButton.Text = "閉じる";
+        CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
+        // 
+        // LocationButton
+        // 
+        LocationButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        LocationButton.Location = new Point(39, 96);
+        LocationButton.Name = "LocationButton";
+        LocationButton.Size = new Size(53, 24);
+        LocationButton.TabIndex = 6;
+        LocationButton.Text = "場所";
+        LocationButton.UseVisualStyleBackColor = true;
+        LocationButton.Click += LocationButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(356, 492);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 14;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // LocationAreaInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(531, 536);
-        Controls.Add(LocationDetailButton);
+        Controls.Add(PropertyButton);
+        Controls.Add(LocationButton);
         Controls.Add(CloseButton);
         Controls.Add(PokemonEncountersDataGridView);
         Controls.Add(PokemonEncountersCaptionLabel);
@@ -299,7 +299,6 @@ partial class LocationAreaInfoForm
         Controls.Add(EncounterMethodRateCaptionLabel);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
-        Controls.Add(LocationCatpionLabel);
         Controls.Add(LocationTextBox);
         Controls.Add(GameIndexTextBox);
         Controls.Add(GameIndexCaptionLabel);
@@ -330,7 +329,6 @@ partial class LocationAreaInfoForm
     private Label GameIndexCaptionLabel;
     private TextBox GameIndexTextBox;
     private TextBox LocationTextBox;
-    private Label LocationCatpionLabel;
     private DataGridView NamesDataGridView;
     private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn LanguageColumn;
@@ -341,9 +339,10 @@ partial class LocationAreaInfoForm
     private Label PokemonEncountersCaptionLabel;
     private DataGridView PokemonEncountersDataGridView;
     private Button CloseButton;
-    private Button LocationDetailButton;
+    private Button LocationButton;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     private DataGridViewButtonColumn dataGridViewButtonColumn3;
+    private Button PropertyButton;
 }
