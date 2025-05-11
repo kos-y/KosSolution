@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
+using Kos.Core;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Moves.Moves;
@@ -6,6 +8,7 @@ namespace Kos.PokeAPI.Moves.Moves;
 /// <summary>
 /// 技がもつ過去のステータス値
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PastMoveStatValues
 {
     #region 命中率
@@ -13,6 +16,9 @@ public class PastMoveStatValues
     /// 命中率
     /// </summary>
     [JsonPropertyName("accuracy")]
+    [DisplayName("accuracy")]
+    [Category("(基本)")]
+    [Description("命中率")]
     public int? Accuracy { get; set; }
     #endregion
 
@@ -21,6 +27,9 @@ public class PastMoveStatValues
     /// 効果が発生する確率
     /// </summary>
     [JsonPropertyName("effect_chance")]
+    [DisplayName("effect_chance")]
+    [Category("(基本)")]
+    [Description("効果が発生する確率")]
     public int? EffectChance { get; set; }
     #endregion
 
@@ -29,6 +38,9 @@ public class PastMoveStatValues
     /// 威力
     /// </summary>
     [JsonPropertyName("power")]
+    [DisplayName("power")]
+    [Category("(基本)")]
+    [Description("威力")]
     public int? Power { get; set; }
     #endregion
 
@@ -37,6 +49,9 @@ public class PastMoveStatValues
     /// 消費PP
     /// </summary>
     [JsonPropertyName("pp")]
+    [DisplayName("pp")]
+    [Category("(基本)")]
+    [Description("消費PP")]
     public int? PP { get; set; }
     #endregion
 
@@ -45,6 +60,10 @@ public class PastMoveStatValues
     /// 効果リスト
     /// </summary>
     [JsonPropertyName("effect_entries")]
+    [DisplayName("effect_entries")]
+    [Category("(基本)")]
+    [Description("効果リスト")]
+    [TypeConverter(typeof(ListConverter<VerboseEffect>))]
     public List<VerboseEffect>? EffectEntries { get; set; }
     #endregion
 
@@ -53,6 +72,9 @@ public class PastMoveStatValues
     /// 技タイプ
     /// </summary>
     [JsonPropertyName("type")]
+    [DisplayName("type")]
+    [Category("(基本)")]
+    [Description("技タイプ")]
     public NamedAPIResource? Type { get; set; }
     #endregion
 
@@ -61,13 +83,18 @@ public class PastMoveStatValues
     /// バージョングループ
     /// </summary>
     [JsonPropertyName("version_group")]
+    [DisplayName("version_group")]
+    [Category("(基本)")]
+    [Description("バージョングループ")]
     public NamedAPIResource? VersionGroup { get; set; }
     #endregion
 
-    #region テキスト
+    #region 概略
     /// <summary>
-    /// テキスト
+    /// 概略
     /// </summary>
+    [Category("(基本)")]
+    [Description("概略")]
     public string Text => ToString();
     #endregion
 

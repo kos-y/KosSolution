@@ -195,19 +195,17 @@ public partial class MoveDamageClassInfoForm : Form
     /// <param name="url"></param>
     private void SetData(string url)
     {
-        MoveDamageClass? mdc = MoveDamageClass.GetResource(url);
-        if (mdc is null) {
+        MoveDamageClass? damage = MoveDamageClass.GetResource(url);
+        if (damage is null) {
             return;
         }
 
-        IdTextBox.Text = $"{mdc.Id}";
-        NameTextBox.Text = mdc.Name;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = mdc.Names;
-        MovesDataGridView.AutoGenerateColumns = false;
-        MovesDataGridView.DataSource = mdc.Moves;
-        DescriptionsDataGridView.AutoGenerateColumns = false;
-        DescriptionsDataGridView.DataSource = mdc.Descriptions;
+        Tag = damage;
+        FormsHelper.SetData(damage.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(damage.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(damage.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(damage.Moves, MoveCaptionLabel, MovesDataGridView);
+        FormsHelper.SetData(damage.Descriptions, DescriptionsCaptionLabel, DescriptionsDataGridView);
     }
     #endregion
 }

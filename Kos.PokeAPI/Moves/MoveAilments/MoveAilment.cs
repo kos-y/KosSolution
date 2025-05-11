@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.Core;
 using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -20,14 +22,20 @@ public class MoveAilment
     /// 状態異常ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("状態異常ID")]
     public int? Id { get; set; }
     #endregion
 
-    #region 状態異常名
+    #region 状態異常の名前
     /// <summary>
     /// 状態異常名
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("状態異常の名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -36,15 +44,23 @@ public class MoveAilment
     /// 状態異常が発動する技リスト
     /// </summary>
     [JsonPropertyName("moves")]
-    public List<NamedAPIResource>? Moves { get; set; }
+    [DisplayName("moves")]
+    [Category("(基本)")]
+    [Description("状態異常が発動する技リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? Moves { get; set; }
     #endregion
 
-    #region 状態異常名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
     /// 状態異常名リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public List<Name>? Names { get; set; }
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
 

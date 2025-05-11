@@ -41,13 +41,14 @@ partial class MoveCategoryInfoForm
         dataGridViewButtonColumn2 = new DataGridViewButtonColumn();
         DescriptionsCaptionLabel = new Label();
         CloseButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)MovesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)DescriptionsDataGridView).BeginInit();
         SuspendLayout();
         // 
         // NameTextBox
         // 
-        NameTextBox.Location = new Point(115, 42);
+        NameTextBox.Location = new Point(132, 42);
         NameTextBox.Margin = new Padding(4, 3, 4, 3);
         NameTextBox.Name = "NameTextBox";
         NameTextBox.ReadOnly = true;
@@ -56,7 +57,7 @@ partial class MoveCategoryInfoForm
         // 
         // IdTextBox
         // 
-        IdTextBox.Location = new Point(115, 12);
+        IdTextBox.Location = new Point(132, 12);
         IdTextBox.Margin = new Padding(4, 3, 4, 3);
         IdTextBox.Name = "IdTextBox";
         IdTextBox.ReadOnly = true;
@@ -66,18 +67,18 @@ partial class MoveCategoryInfoForm
         // NameCaptionLabel
         // 
         NameCaptionLabel.AutoSize = true;
-        NameCaptionLabel.Location = new Point(21, 45);
+        NameCaptionLabel.Location = new Point(13, 45);
         NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(86, 17);
+        NameCaptionLabel.Size = new Size(111, 17);
         NameCaptionLabel.TabIndex = 2;
-        NameCaptionLabel.Text = "技のカテゴリ名";
+        NameCaptionLabel.Text = "技のカテゴリの名前";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
         IdCaptionLabel.AutoSize = true;
-        IdCaptionLabel.Location = new Point(17, 15);
+        IdCaptionLabel.Location = new Point(34, 15);
         IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         IdCaptionLabel.Name = "IdCaptionLabel";
         IdCaptionLabel.Size = new Size(90, 17);
@@ -89,12 +90,12 @@ partial class MoveCategoryInfoForm
         // 
         MovesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         MovesDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewButtonColumn1 });
-        MovesDataGridView.Location = new Point(13, 93);
+        MovesDataGridView.Location = new Point(13, 291);
         MovesDataGridView.Margin = new Padding(4, 3, 4, 3);
         MovesDataGridView.Name = "MovesDataGridView";
         MovesDataGridView.RowHeadersVisible = false;
         MovesDataGridView.Size = new Size(329, 192);
-        MovesDataGridView.TabIndex = 5;
+        MovesDataGridView.TabIndex = 7;
         MovesDataGridView.CellClick += MovesDataGridView_CellClick;
         MovesDataGridView.CellDoubleClick += MovesDataGridView_CellDoubleClick;
         // 
@@ -119,11 +120,11 @@ partial class MoveCategoryInfoForm
         // MoveCaptionLabel
         // 
         MoveCaptionLabel.AutoSize = true;
-        MoveCaptionLabel.Location = new Point(13, 73);
+        MoveCaptionLabel.Location = new Point(13, 271);
         MoveCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         MoveCaptionLabel.Name = "MoveCaptionLabel";
         MoveCaptionLabel.Size = new Size(21, 17);
-        MoveCaptionLabel.TabIndex = 4;
+        MoveCaptionLabel.TabIndex = 6;
         MoveCaptionLabel.Text = "技";
         MoveCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -131,12 +132,12 @@ partial class MoveCategoryInfoForm
         // 
         DescriptionsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         DescriptionsDataGridView.Columns.AddRange(new DataGridViewColumn[] { DescriptionColumn, dataGridViewTextBoxColumn2, dataGridViewButtonColumn2 });
-        DescriptionsDataGridView.Location = new Point(13, 315);
+        DescriptionsDataGridView.Location = new Point(13, 97);
         DescriptionsDataGridView.Margin = new Padding(4, 3, 4, 3);
         DescriptionsDataGridView.Name = "DescriptionsDataGridView";
         DescriptionsDataGridView.RowHeadersVisible = false;
         DescriptionsDataGridView.Size = new Size(723, 170);
-        DescriptionsDataGridView.TabIndex = 7;
+        DescriptionsDataGridView.TabIndex = 5;
         DescriptionsDataGridView.CellClick += DescriptionsDataGridView_CellClick;
         DescriptionsDataGridView.CellDoubleClick += DescriptionsDataGridView_CellDoubleClick;
         // 
@@ -170,30 +171,42 @@ partial class MoveCategoryInfoForm
         // DescriptionsCaptionLabel
         // 
         DescriptionsCaptionLabel.AutoSize = true;
-        DescriptionsCaptionLabel.Location = new Point(11, 295);
+        DescriptionsCaptionLabel.Location = new Point(13, 77);
         DescriptionsCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         DescriptionsCaptionLabel.Name = "DescriptionsCaptionLabel";
         DescriptionsCaptionLabel.Size = new Size(92, 17);
-        DescriptionsCaptionLabel.TabIndex = 6;
+        DescriptionsCaptionLabel.TabIndex = 4;
         DescriptionsCaptionLabel.Text = "言語ごとの説明";
         DescriptionsCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(650, 491);
+        CloseButton.Location = new Point(660, 448);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(86, 36);
-        CloseButton.TabIndex = 8;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 9;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(576, 448);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 8;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // MoveCategoryInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(752, 540);
+        ClientSize = new Size(752, 499);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(DescriptionsDataGridView);
         Controls.Add(DescriptionsCaptionLabel);
@@ -232,4 +245,5 @@ partial class MoveCategoryInfoForm
     private DataGridViewButtonColumn dataGridViewButtonColumn2;
     private Label DescriptionsCaptionLabel;
     private Button CloseButton;
+    private Button PropertyButton;
 }

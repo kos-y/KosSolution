@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Moves.MoveLearnMethods;
 using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -176,6 +177,23 @@ public partial class MoveLearnMethodInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -195,19 +213,17 @@ public partial class MoveLearnMethodInfoForm : Form
     /// <param name="url"></param>
     private void SetData(string url)
     {
-        MoveLearnMethod? mlm = MoveLearnMethod.GetResource(url);
-        if (mlm is null) {
+        MoveLearnMethod? method = MoveLearnMethod.GetResource(url);
+        if (method is null) {
             return;
         }
 
-        IdTextBox.Text = $"{mlm.Id}";
-        NameTextBox.Text = mlm.Name;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = mlm.Names;
-        VersionGroupDataGridView.AutoGenerateColumns = false;
-        VersionGroupDataGridView.DataSource = mlm.VersionGroups;
-        DescriptionsDataGridView.AutoGenerateColumns = false;
-        DescriptionsDataGridView.DataSource = mlm.Descriptions;
+        Tag = method;
+        FormsHelper.SetData(method.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(method.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(method.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(method.VersionGroups, VersionGroupCaptionLabel, VersionGroupDataGridView);
+        FormsHelper.SetData(method.Descriptions, DescriptionsCaptionLabel, DescriptionsDataGridView);
     }
     #endregion
 }

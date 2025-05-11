@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Pokemon.Abilities;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -30,13 +31,13 @@ public partial class MoveInfoForm : Form
     }
     #endregion
 
-    #region タイプ 種別 クリック
+    #region タイプ クリック
     /// <summary>
     /// タイプ 種別 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void TypeDetailButton_Click(object sender, EventArgs e)
+    private void TypeButton_Click(object sender, EventArgs e)
     {
 
     }
@@ -48,13 +49,13 @@ public partial class MoveInfoForm : Form
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void MetaDetailButton_Click(object sender, EventArgs e)
+    private void MetaButton_Click(object sender, EventArgs e)
     {
-        if (MetaDetailButton.Tag is null) {
+        if (MetaButton.Tag is null) {
             return;
         }
 
-        if (MetaDetailButton.Tag is not MoveMetaData meta) {
+        if (MetaButton.Tag is not MoveMetaData meta) {
             return;
         }
 
@@ -63,19 +64,19 @@ public partial class MoveInfoForm : Form
     }
     #endregion
 
-    #region 世代 詳細 クリック
+    #region 世代 クリック
     /// <summary>
-    /// 世代 詳細 クリック
+    /// 世代 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void GenerationDetailButton_Click(object sender, EventArgs e)
+    private void GenerationButton_Click(object sender, EventArgs e)
     {
-        if (GenerationDetailButton.Tag is null) {
+        if (GenerationButton.Tag is null) {
             return;
         }
 
-        if (GenerationDetailButton.Tag is not NamedAPIResource api) {
+        if (GenerationButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -88,19 +89,19 @@ public partial class MoveInfoForm : Form
     }
     #endregion
 
-    #region コンテスト 種類 詳細 クリック
+    #region コンテストの種類 クリック
     /// <summary>
-    /// コンテストの種類 詳細 クリック
+    /// コンテストの種類 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ContestTypeDetailButton_Click(object sender, EventArgs e)
+    private void ContestTypeButton_Click(object sender, EventArgs e)
     {
-        if (ContestTypeDetailButton.Tag is null) {
+        if (ContestTypeButton.Tag is null) {
             return;
         }
 
-        if (ContestTypeDetailButton.Tag is not NamedAPIResource api) {
+        if (ContestTypeButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -113,40 +114,40 @@ public partial class MoveInfoForm : Form
     }
     #endregion
 
-    #region コンテスト コンボ 詳細 クリック
+    #region コンテスト コンボ クリック
     /// <summary>
-    /// コンテスト コンボ 詳細 クリック
+    /// コンテスト コンボ クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ContestCombosDetailButton_Click(object sender, EventArgs e)
+    private void ContestCombosButton_Click(object sender, EventArgs e)
     {
-        if (ContestCombosDetailButton.Tag is null) {
+        if (ContestCombosButton.Tag is null) {
             return;
         }
 
-        if (ContestCombosDetailButton.Tag is not ContestComboSets ccs) {
+        if (ContestCombosButton.Tag is not ContestComboSets combo) {
             return;
         }
 
-        using ContestComboSetsInfoForm form = new(ccs);
+        using ContestComboSetsInfoForm form = new(combo);
         _ = form.ShowDialog(this);
     }
     #endregion
 
-    #region ポケモンコンテスト 効果 詳細 クリック
+    #region ポケモンコンテスト 効果 クリック
     /// <summary>
-    /// ポケモンコンテスト 効果 詳細 クリック
+    /// ポケモンコンテスト 効果 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ContestEffectDetailButton_Click(object sender, EventArgs e)
+    private void ContestEffectButton_Click(object sender, EventArgs e)
     {
-        if (ContestEffectDetailButton.Tag is null) {
+        if (ContestEffectButton.Tag is null) {
             return;
         }
 
-        if (ContestEffectDetailButton.Tag is not NamedAPIResource api) {
+        if (ContestEffectButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -159,19 +160,19 @@ public partial class MoveInfoForm : Form
     }
     #endregion
 
-    #region スーパーコンテスト 効果 詳細 クリック
+    #region スーパーコンテスト 効果 クリック
     /// <summary>
-    /// スーパーコンテスト 効果 詳細 クリック
+    /// スーパーコンテスト 効果 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void SuperContestEffectDetailButton_Click(object sender, EventArgs e)
+    private void SuperContestEffectButton_Click(object sender, EventArgs e)
     {
-        if (SuperContestEffectDetailButton.Tag is null) {
+        if (SuperContestEffectButton.Tag is null) {
             return;
         }
 
-        if (SuperContestEffectDetailButton.Tag is not NamedAPIResource api) {
+        if (SuperContestEffectButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -513,6 +514,23 @@ public partial class MoveInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -537,48 +555,31 @@ public partial class MoveInfoForm : Form
             return;
         }
 
-        IdTextBox.Text = $"{move.Id}";
-        NameTextBox.Text = move.Name;
-        TypeTextBox.Text = move.Type?.Name ?? string.Empty;
-        TypeDetailButton.Tag = move.Type;
-        PPTextBox.Text = $"{move.PP}";
-        MetaDetailButton.Tag = move.Meta;
-        AccuracyTextBox.Text = $"{move.Accurary}";
-        PowerTextBox.Text = $"{move.Power}";
-        GenerationTextBox.Text = move.Generation?.Name ?? string.Empty;
-        GenerationDetailButton.Tag = move.Generation;
-        TargetTextBox.Text = move.Target?.Name ?? string.Empty;
-        TargetDetailButton.Tag = move.Target;
-        EffectChanceTextBox.Text = $"{move.EffectChance}";
-        PriorityTextBox.Text = $"{move.Priority}";
-        DamageClassTextBox.Text = move.DamageClass?.Name ?? string.Empty;
-        DamageClassDetailButton.Tag = move.DamageClass;
-        ContestTypeTextBox.Text = move.ContestType?.Name ?? string.Empty;
-        ContestTypeDetailButton.Tag = move.ContestType;
-        if (move.ContestCombos is null) {
-            ContestCombosDetailButton.Enabled = false;
-        }
-        ContestCombosDetailButton.Tag = move.ContestCombos;
-        ContestEffectTextBox.Text = move.ContestEffect?.Name ?? string.Empty;
-        ContestEffectDetailButton.Tag = move.ContestEffect;
-        SuperContestEffectTextBox.Text = move.SuperContestEffect?.Name ?? string.Empty;
-        SuperContestEffectDetailButton.Tag = move.SuperContestEffect;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = move.Names;
-        LearnedByPokemonDataGridView.AutoGenerateColumns = false;
-        LearnedByPokemonDataGridView.DataSource = move.LearnedByPokemon;
-        FlavorTextEntriesDataGridView.AutoGenerateColumns = false;
-        FlavorTextEntriesDataGridView.DataSource = move.FlavorTextEntries;
-        EffectEntriesDataGridView.AutoGenerateColumns = false;
-        EffectEntriesDataGridView.DataSource = move.EffectEntries;
-        EffectChangesDataGridView.AutoGenerateColumns = false;
-        EffectChangesDataGridView.DataSource = move.EffectChanges;
-        MachinesDataGridView.AutoGenerateColumns = false;
-        MachinesDataGridView.DataSource = move.Machines;
-        StatChangeDataGridView.AutoGenerateColumns = false;
-        StatChangeDataGridView.DataSource = move.StatChanges;
-        PastValuesDataGridView.AutoGenerateColumns = false;
-        PastValuesDataGridView.DataSource = move.PastValues;
+        Tag = move;
+        FormsHelper.SetData(move.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(move.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(move.Type, TypeButton, TypeTextBox);
+        FormsHelper.SetData(move.PP, PPCaptionLabel, PPTextBox);
+        FormsHelper.SetData(move.Meta, MetaButton);
+        FormsHelper.SetData(move.Accurary, AccuracyCaptionLabel, AccuracyTextBox);
+        FormsHelper.SetData(move.Power, PowerCaptionLabel, PowerTextBox);
+        FormsHelper.SetData(move.Generation, GenerationButton, GenerationTextBox);
+        FormsHelper.SetData(move.Target, TargetButton, TargetTextBox);
+        FormsHelper.SetData(move.EffectChance, EffectChanceCaptionLabel, EffectChanceTextBox);
+        FormsHelper.SetData(move.Priority, PriorityCaptionLabel, PriorityTextBox);
+        FormsHelper.SetData(move.DamageClass, DamageClassButton, DamageClassTextBox);
+        FormsHelper.SetData(move.ContestType, ContestTypeButton, ContestTypeTextBox);
+        FormsHelper.SetData(move.ContestCombos, ContestCombosButton);
+        FormsHelper.SetData(move.ContestEffect, ContestEffectButton, ContestEffectTextBox);
+        FormsHelper.SetData(move.SuperContestEffect, SuperContestEffectButton, SuperContestEffectTextBox);
+        FormsHelper.SetData(move.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(move.LearnedByPokemon, LearnedByPokemonCaptionLabel, LearnedByPokemonDataGridView);
+        FormsHelper.SetData(move.FlavorTextEntries, FlavorTextEntriesDataGridView);
+        FormsHelper.SetData(move.EffectEntries, EffectEntriesDataGridView);
+        FormsHelper.SetData(move.EffectChanges, EffectChangesDataGridView);
+        FormsHelper.SetData(move.Machines, MachinesDataGridView);
+        FormsHelper.SetData(move.StatChanges, StatChangeDataGridView);
+        FormsHelper.SetData(move.PastValues, PastValuesDataGridView);
     }
     #endregion
 }

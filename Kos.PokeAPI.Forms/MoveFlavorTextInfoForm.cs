@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -29,19 +30,19 @@ public partial class MoveFlavorTextInfoForm : Form
     }
     #endregion
 
-    #region バージョングループ 詳細 クリック
+    #region バージョングループ クリック
     /// <summary>
-    /// バージョングループ 詳細 クリック
+    /// バージョングループ クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionGroupDetailButton_Click(object sender, EventArgs e)
+    private void VersionGroupButton_Click(object sender, EventArgs e)
     {
-        if (VersionGroupDetailButton.Tag is null) {
+        if (VersionGroupButton.Tag is null) {
             return;
         }
 
-        if (VersionGroupDetailButton.Tag is not NamedAPIResource api) {
+        if (VersionGroupButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -54,19 +55,19 @@ public partial class MoveFlavorTextInfoForm : Form
     }
     #endregion
 
-    #region 言語 詳細 クリック
+    #region 言語 クリック
     /// <summary>
-    /// 言語 詳細 クリック
+    /// 言語 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void LanguageDetailButton_Click(object sender, EventArgs e)
+    private void LanguageButton_Click(object sender, EventArgs e)
     {
-        if (LanguageDetailButton.Tag is null) {
+        if (LanguageButton.Tag is null) {
             return;
         }
 
-        if (LanguageDetailButton.Tag is not NamedAPIResource api) {
+        if (LanguageButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -75,6 +76,23 @@ public partial class MoveFlavorTextInfoForm : Form
         }
 
         using LanguageInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyGrid_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -95,14 +113,13 @@ public partial class MoveFlavorTextInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="mft"></param>
-    private void SetData(MoveFlavorText mft)
+    /// <param name="text"></param>
+    private void SetData(MoveFlavorText text)
     {
-        VersionGroupTextBox.Text = mft.VersionGroup?.Name ?? string.Empty;
-        VersionGroupDetailButton.Tag = mft.VersionGroup;
-        LanguageTextBox.Text = mft.Language?.Name ?? string.Empty;
-        LanguageDetailButton.Tag = mft.Language;
-        FlavorTextTextBox.Text = mft.FlavorText;
+        Tag = text;
+        FormsHelper.SetData(text.VersionGroup, VersionGroupButton, VersionGroupTextBox);
+        FormsHelper.SetData(text.Language, LanguageButton, LanguageTextBox);
+        FormsHelper.SetData(text.FlavorText, FlavorTextCaptionLabel, FlavorTextTextBox);
     }
     #endregion
 }

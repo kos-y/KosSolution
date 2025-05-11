@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Moves.MoveAilments;
 using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -129,6 +130,23 @@ public partial class MoveAilmentInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -148,17 +166,16 @@ public partial class MoveAilmentInfoForm : Form
     /// <param name="url"></param>
     private void SetData(string url)
     {
-        MoveAilment? ma = MoveAilment.GetResource(url);
-        if (ma is null) {
+        MoveAilment? ailment = MoveAilment.GetResource(url);
+        if (ailment is null) {
             return;
         }
 
-        IdTextBox.Text = $"{ma.Id}";
-        NameTextBox.Text = ma.Name ?? string.Empty;
-        NamesDataGridView.AutoGenerateColumns = false;
-        NamesDataGridView.DataSource = ma.Names;
-        MoveDataGridView.AutoGenerateColumns = false;
-        MoveDataGridView.DataSource = ma.Moves;
+        Tag = ailment;
+        FormsHelper.SetData(ailment.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(ailment.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(ailment.Names, NamesCaptionLabel, NamesDataGridView);
+        FormsHelper.SetData(ailment.Moves, MoveCaptionLabel, MoveDataGridView);
     }
     #endregion
 }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.Core;
 using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -20,14 +22,20 @@ public class MoveLearnMethod
     /// 技の習得方法ID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("技の習得方法ID")]
     public int? Id { get; set; }
     #endregion
 
-    #region 技の習得方法名
+    #region 技の習得方法の名前
     /// <summary>
-    /// 技の習得方法名
+    /// 技の習得方法の名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("技の習得方法の名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -36,15 +44,23 @@ public class MoveLearnMethod
     /// 説明リスト
     /// </summary>
     [JsonPropertyName("descriptions")]
-    public List<Description>? Descriptions { get; set; }
+    [DisplayName("descriptions")]
+    [Category("(基本)")]
+    [Description("説明リスト")]
+    [TypeConverter(typeof(ListConverter<Description>))]
+    public IReadOnlyList<Description>? Descriptions { get; set; }
     #endregion
 
-    #region 技の習得方法名リスト
+    #region 言語ごとの名前リスト
     /// <summary>
-    /// 技の習得方法名リスト
+    /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public List<Name>? Names { get; set; }
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
     #region バージョングループリスト
@@ -52,7 +68,11 @@ public class MoveLearnMethod
     /// バージョングループリスト
     /// </summary>
     [JsonPropertyName("version_groups")]
-    public List<NamedAPIResource>? VersionGroups { get; set; }
+    [DisplayName("version_groups")]
+    [Category("(基本)")]
+    [Description("バージョングループリスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? VersionGroups { get; set; }
     #endregion
 
 

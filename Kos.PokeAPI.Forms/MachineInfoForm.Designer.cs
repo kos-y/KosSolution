@@ -29,21 +29,19 @@ partial class MachineInfoForm
     {
         ItemTextBox = new TextBox();
         IdTextBox = new TextBox();
-        ItemCaptionLabel = new Label();
         IdCaptionLabel = new Label();
         MoveTextBox = new TextBox();
-        MoveCaptionLabel = new Label();
         VersionGroupTextBox = new TextBox();
-        VersionGroupCaptionLabel = new Label();
-        MoveDetailButton = new Button();
-        VersionGroupDetailButton = new Button();
+        MoveButton = new Button();
+        VersionGroupButton = new Button();
         CloseButton = new Button();
-        ItemDetailButton = new Button();
+        ItemButton = new Button();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
         // ItemTextBox
         // 
-        ItemTextBox.Location = new Point(124, 42);
+        ItemTextBox.Location = new Point(135, 42);
         ItemTextBox.Name = "ItemTextBox";
         ItemTextBox.ReadOnly = true;
         ItemTextBox.Size = new Size(191, 24);
@@ -51,22 +49,11 @@ partial class MachineInfoForm
         // 
         // IdTextBox
         // 
-        IdTextBox.Location = new Point(124, 12);
+        IdTextBox.Location = new Point(135, 12);
         IdTextBox.Name = "IdTextBox";
         IdTextBox.ReadOnly = true;
         IdTextBox.Size = new Size(191, 24);
         IdTextBox.TabIndex = 1;
-        // 
-        // ItemCaptionLabel
-        // 
-        ItemCaptionLabel.AutoSize = true;
-        ItemCaptionLabel.Location = new Point(66, 45);
-        ItemCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        ItemCaptionLabel.Name = "ItemCaptionLabel";
-        ItemCaptionLabel.Size = new Size(51, 17);
-        ItemCaptionLabel.TabIndex = 2;
-        ItemCaptionLabel.Text = "アイテム";
-        ItemCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // IdCaptionLabel
         // 
@@ -81,102 +68,89 @@ partial class MachineInfoForm
         // 
         // MoveTextBox
         // 
-        MoveTextBox.Location = new Point(124, 72);
+        MoveTextBox.Location = new Point(135, 72);
         MoveTextBox.Name = "MoveTextBox";
         MoveTextBox.ReadOnly = true;
         MoveTextBox.Size = new Size(191, 24);
-        MoveTextBox.TabIndex = 6;
-        // 
-        // MoveCaptionLabel
-        // 
-        MoveCaptionLabel.AutoSize = true;
-        MoveCaptionLabel.Location = new Point(96, 75);
-        MoveCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        MoveCaptionLabel.Name = "MoveCaptionLabel";
-        MoveCaptionLabel.Size = new Size(21, 17);
-        MoveCaptionLabel.TabIndex = 5;
-        MoveCaptionLabel.Text = "技";
-        MoveCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        MoveTextBox.TabIndex = 5;
         // 
         // VersionGroupTextBox
         // 
-        VersionGroupTextBox.Location = new Point(124, 102);
+        VersionGroupTextBox.Location = new Point(135, 102);
         VersionGroupTextBox.Name = "VersionGroupTextBox";
         VersionGroupTextBox.ReadOnly = true;
         VersionGroupTextBox.Size = new Size(191, 24);
-        VersionGroupTextBox.TabIndex = 9;
+        VersionGroupTextBox.TabIndex = 7;
         // 
-        // VersionGroupCaptionLabel
+        // MoveButton
         // 
-        VersionGroupCaptionLabel.AutoSize = true;
-        VersionGroupCaptionLabel.Location = new Point(13, 105);
-        VersionGroupCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        VersionGroupCaptionLabel.Name = "VersionGroupCaptionLabel";
-        VersionGroupCaptionLabel.Size = new Size(104, 17);
-        VersionGroupCaptionLabel.TabIndex = 8;
-        VersionGroupCaptionLabel.Text = "バージョングループ";
-        VersionGroupCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        MoveButton.Location = new Point(13, 70);
+        MoveButton.Margin = new Padding(4, 3, 4, 3);
+        MoveButton.Name = "MoveButton";
+        MoveButton.Size = new Size(115, 27);
+        MoveButton.TabIndex = 4;
+        MoveButton.Text = "技";
+        MoveButton.UseVisualStyleBackColor = true;
+        MoveButton.Click += MoveButton_Click;
         // 
-        // MoveDetailButton
+        // VersionGroupButton
         // 
-        MoveDetailButton.Location = new Point(322, 70);
-        MoveDetailButton.Margin = new Padding(4, 3, 4, 3);
-        MoveDetailButton.Name = "MoveDetailButton";
-        MoveDetailButton.Size = new Size(55, 27);
-        MoveDetailButton.TabIndex = 7;
-        MoveDetailButton.Text = "詳細";
-        MoveDetailButton.UseVisualStyleBackColor = true;
-        MoveDetailButton.Click += MoveDetailButton_Click;
-        // 
-        // VersionGroupDetailButton
-        // 
-        VersionGroupDetailButton.Location = new Point(322, 100);
-        VersionGroupDetailButton.Margin = new Padding(4, 3, 4, 3);
-        VersionGroupDetailButton.Name = "VersionGroupDetailButton";
-        VersionGroupDetailButton.Size = new Size(55, 27);
-        VersionGroupDetailButton.TabIndex = 10;
-        VersionGroupDetailButton.Text = "詳細";
-        VersionGroupDetailButton.UseVisualStyleBackColor = true;
-        VersionGroupDetailButton.Click += VersionGroupDetailButton_Click;
+        VersionGroupButton.Location = new Point(13, 100);
+        VersionGroupButton.Margin = new Padding(4, 3, 4, 3);
+        VersionGroupButton.Name = "VersionGroupButton";
+        VersionGroupButton.Size = new Size(115, 27);
+        VersionGroupButton.TabIndex = 6;
+        VersionGroupButton.Text = "バージョングループ";
+        VersionGroupButton.UseVisualStyleBackColor = true;
+        VersionGroupButton.Click += VersionGroupButton_Click;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(295, 133);
+        CloseButton.Location = new Point(250, 135);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(82, 40);
-        CloseButton.TabIndex = 11;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 9;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
-        // ItemDetailButton
+        // ItemButton
         // 
-        ItemDetailButton.Location = new Point(322, 40);
-        ItemDetailButton.Margin = new Padding(4, 3, 4, 3);
-        ItemDetailButton.Name = "ItemDetailButton";
-        ItemDetailButton.Size = new Size(55, 27);
-        ItemDetailButton.TabIndex = 4;
-        ItemDetailButton.Text = "詳細";
-        ItemDetailButton.UseVisualStyleBackColor = true;
-        ItemDetailButton.Click += ItemDetailButton_Click;
+        ItemButton.Location = new Point(13, 40);
+        ItemButton.Margin = new Padding(4, 3, 4, 3);
+        ItemButton.Name = "ItemButton";
+        ItemButton.Size = new Size(115, 27);
+        ItemButton.TabIndex = 2;
+        ItemButton.Text = "アイテム";
+        ItemButton.UseVisualStyleBackColor = true;
+        ItemButton.Click += ItemButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(166, 135);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 8;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // MachineInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(396, 182);
-        Controls.Add(ItemDetailButton);
+        ClientSize = new Size(337, 182);
+        Controls.Add(PropertyButton);
+        Controls.Add(ItemButton);
         Controls.Add(CloseButton);
-        Controls.Add(VersionGroupDetailButton);
-        Controls.Add(MoveDetailButton);
-        Controls.Add(VersionGroupCaptionLabel);
+        Controls.Add(VersionGroupButton);
+        Controls.Add(MoveButton);
         Controls.Add(VersionGroupTextBox);
-        Controls.Add(MoveCaptionLabel);
         Controls.Add(MoveTextBox);
         Controls.Add(ItemTextBox);
         Controls.Add(IdTextBox);
-        Controls.Add(ItemCaptionLabel);
         Controls.Add(IdCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -196,11 +170,10 @@ partial class MachineInfoForm
     private Label ItemCaptionLabel;
     private Label IdCaptionLabel;
     private TextBox MoveTextBox;
-    private Label MoveCaptionLabel;
     private TextBox VersionGroupTextBox;
-    private Label VersionGroupCaptionLabel;
-    private Button MoveDetailButton;
-    private Button VersionGroupDetailButton;
+    private Button MoveButton;
+    private Button VersionGroupButton;
     private Button CloseButton;
-    private Button ItemDetailButton;
+    private Button ItemButton;
+    private Button PropertyButton;
 }

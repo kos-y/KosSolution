@@ -27,8 +27,8 @@ partial class MoveInfoForm
     /// </summary>
     private void InitializeComponent()
     {
-        DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-        DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+        DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
         NameTextBox = new TextBox();
         IdTextBox = new TextBox();
         NameCaptionLabel = new Label();
@@ -44,31 +44,23 @@ partial class MoveInfoForm
         PriorityTextBox = new TextBox();
         PriorityCaptionLabel = new Label();
         DamageClassTextBox = new TextBox();
-        DamageClassCaptionLabel = new Label();
-        DamageClassDetailButton = new Button();
+        DamageClassButton = new Button();
         ContestGroupBox = new GroupBox();
         ContestEffectGroupBox = new GroupBox();
-        SuperContestEffectDetailButton = new Button();
-        SuperContestEffectCaptionLabel = new Label();
+        SuperContestEffectButton = new Button();
         SuperContestEffectTextBox = new TextBox();
         ContestEffectTextBox = new TextBox();
-        ContestEffectCaptionLabel = new Label();
-        ContestEffectDetailButton = new Button();
-        ContestCombosDetailButton = new Button();
-        ContestCombosCaptionLabel = new Label();
-        ContestTypeDetailButton = new Button();
+        ContestEffectButton = new Button();
+        ContestCombosButton = new Button();
+        ContestTypeButton = new Button();
         ContestTypeTextBox = new TextBox();
-        ContestTypeCaptionLabel = new Label();
-        GenerationCaptionLabel = new Label();
         GenerationTextBox = new TextBox();
-        GenerationDetailButton = new Button();
-        MetaDetailButton = new Button();
-        TargetDetailButton = new Button();
+        GenerationButton = new Button();
+        MetaButton = new Button();
+        TargetButton = new Button();
         TargetTextBox = new TextBox();
-        TargetCaptionLabel = new Label();
-        TypeDetailButton = new Button();
+        TypeButton = new Button();
         TypeTextBox = new TextBox();
-        TypeCaptionLabel = new Label();
         NamesDataGridView = new DataGridView();
         NameColumn = new DataGridViewTextBoxColumn();
         LanguageColumn = new DataGridViewTextBoxColumn();
@@ -81,6 +73,10 @@ partial class MoveInfoForm
         tabControl1 = new TabControl();
         FlavorTextTabPage = new TabPage();
         FlavorTextEntriesDataGridView = new DataGridView();
+        FlavorTextVersionGroupColumn = new DataGridViewTextBoxColumn();
+        FlavorTextLanguageColumn = new DataGridViewTextBoxColumn();
+        FlavorTextColumn = new DataGridViewTextBoxColumn();
+        FlavorTextDetailColumn = new DataGridViewButtonColumn();
         EffectTabPage = new TabPage();
         EffectEntriesDataGridView = new DataGridView();
         EffectColumn = new DataGridViewTextBoxColumn();
@@ -103,10 +99,7 @@ partial class MoveInfoForm
         dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn4 = new DataGridViewButtonColumn();
         CloseButton = new Button();
-        FlavorTextVersionGroupColumn = new DataGridViewTextBoxColumn();
-        FlavorTextLanguageColumn = new DataGridViewTextBoxColumn();
-        FlavorTextColumn = new DataGridViewTextBoxColumn();
-        FlavorTextDetailColumn = new DataGridViewButtonColumn();
+        PropertyButton = new Button();
         ContestGroupBox.SuspendLayout();
         ContestEffectGroupBox.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
@@ -170,7 +163,7 @@ partial class MoveInfoForm
         PPTextBox.Name = "PPTextBox";
         PPTextBox.ReadOnly = true;
         PPTextBox.Size = new Size(56, 24);
-        PPTextBox.TabIndex = 8;
+        PPTextBox.TabIndex = 7;
         PPTextBox.Text = "99";
         // 
         // PPCaptionLabel
@@ -180,7 +173,7 @@ partial class MoveInfoForm
         PPCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         PPCaptionLabel.Name = "PPCaptionLabel";
         PPCaptionLabel.Size = new Size(52, 17);
-        PPCaptionLabel.TabIndex = 7;
+        PPCaptionLabel.TabIndex = 6;
         PPCaptionLabel.Text = "消費PP";
         PPCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -191,7 +184,7 @@ partial class MoveInfoForm
         AccuracyCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         AccuracyCaptionLabel.Name = "AccuracyCaptionLabel";
         AccuracyCaptionLabel.Size = new Size(47, 17);
-        AccuracyCaptionLabel.TabIndex = 10;
+        AccuracyCaptionLabel.TabIndex = 9;
         AccuracyCaptionLabel.Text = "命中率";
         AccuracyCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -201,7 +194,7 @@ partial class MoveInfoForm
         AccuracyTextBox.Name = "AccuracyTextBox";
         AccuracyTextBox.ReadOnly = true;
         AccuracyTextBox.Size = new Size(56, 24);
-        AccuracyTextBox.TabIndex = 11;
+        AccuracyTextBox.TabIndex = 10;
         AccuracyTextBox.Text = "99";
         // 
         // EffectChanceTextBox
@@ -210,7 +203,7 @@ partial class MoveInfoForm
         EffectChanceTextBox.Name = "EffectChanceTextBox";
         EffectChanceTextBox.ReadOnly = true;
         EffectChanceTextBox.Size = new Size(56, 24);
-        EffectChanceTextBox.TabIndex = 21;
+        EffectChanceTextBox.TabIndex = 18;
         EffectChanceTextBox.Text = "99";
         // 
         // EffectChanceCaptionLabel
@@ -220,7 +213,7 @@ partial class MoveInfoForm
         EffectChanceCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         EffectChanceCaptionLabel.Name = "EffectChanceCaptionLabel";
         EffectChanceCaptionLabel.Size = new Size(99, 17);
-        EffectChanceCaptionLabel.TabIndex = 20;
+        EffectChanceCaptionLabel.TabIndex = 17;
         EffectChanceCaptionLabel.Text = "追加効果発動率";
         EffectChanceCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -230,7 +223,7 @@ partial class MoveInfoForm
         PowerTextBox.Name = "PowerTextBox";
         PowerTextBox.ReadOnly = true;
         PowerTextBox.Size = new Size(56, 24);
-        PowerTextBox.TabIndex = 13;
+        PowerTextBox.TabIndex = 12;
         PowerTextBox.Text = "99";
         // 
         // PowerCaptionLabel
@@ -240,7 +233,7 @@ partial class MoveInfoForm
         PowerCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         PowerCaptionLabel.Name = "PowerCaptionLabel";
         PowerCaptionLabel.Size = new Size(34, 17);
-        PowerCaptionLabel.TabIndex = 12;
+        PowerCaptionLabel.TabIndex = 11;
         PowerCaptionLabel.Text = "威力";
         PowerCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -250,7 +243,7 @@ partial class MoveInfoForm
         PriorityTextBox.Name = "PriorityTextBox";
         PriorityTextBox.ReadOnly = true;
         PriorityTextBox.Size = new Size(56, 24);
-        PriorityTextBox.TabIndex = 23;
+        PriorityTextBox.TabIndex = 20;
         PriorityTextBox.Text = "99";
         // 
         // PriorityCaptionLabel
@@ -260,7 +253,7 @@ partial class MoveInfoForm
         PriorityCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         PriorityCaptionLabel.Name = "PriorityCaptionLabel";
         PriorityCaptionLabel.Size = new Size(85, 17);
-        PriorityCaptionLabel.TabIndex = 22;
+        PriorityCaptionLabel.TabIndex = 19;
         PriorityCaptionLabel.Text = "技の発動順番";
         PriorityCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -270,78 +263,52 @@ partial class MoveInfoForm
         DamageClassTextBox.Name = "DamageClassTextBox";
         DamageClassTextBox.ReadOnly = true;
         DamageClassTextBox.Size = new Size(191, 24);
-        DamageClassTextBox.TabIndex = 25;
+        DamageClassTextBox.TabIndex = 22;
         // 
-        // DamageClassCaptionLabel
+        // DamageClassButton
         // 
-        DamageClassCaptionLabel.AutoSize = true;
-        DamageClassCaptionLabel.Location = new Point(344, 105);
-        DamageClassCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        DamageClassCaptionLabel.Name = "DamageClassCaptionLabel";
-        DamageClassCaptionLabel.Size = new Size(89, 17);
-        DamageClassCaptionLabel.TabIndex = 24;
-        DamageClassCaptionLabel.Text = "ダメージの種類";
-        DamageClassCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // DamageClassDetailButton
-        // 
-        DamageClassDetailButton.Location = new Point(637, 102);
-        DamageClassDetailButton.Name = "DamageClassDetailButton";
-        DamageClassDetailButton.Size = new Size(53, 24);
-        DamageClassDetailButton.TabIndex = 26;
-        DamageClassDetailButton.Text = "詳細";
-        DamageClassDetailButton.UseVisualStyleBackColor = true;
+        DamageClassButton.Location = new Point(334, 101);
+        DamageClassButton.Name = "DamageClassButton";
+        DamageClassButton.Size = new Size(99, 24);
+        DamageClassButton.TabIndex = 21;
+        DamageClassButton.Text = "ダメージの種類";
+        DamageClassButton.UseVisualStyleBackColor = true;
         // 
         // ContestGroupBox
         // 
         ContestGroupBox.Controls.Add(ContestEffectGroupBox);
-        ContestGroupBox.Controls.Add(ContestCombosDetailButton);
-        ContestGroupBox.Controls.Add(ContestCombosCaptionLabel);
-        ContestGroupBox.Controls.Add(ContestTypeDetailButton);
+        ContestGroupBox.Controls.Add(ContestCombosButton);
+        ContestGroupBox.Controls.Add(ContestTypeButton);
         ContestGroupBox.Controls.Add(ContestTypeTextBox);
-        ContestGroupBox.Controls.Add(ContestTypeCaptionLabel);
         ContestGroupBox.Location = new Point(13, 171);
         ContestGroupBox.Name = "ContestGroupBox";
-        ContestGroupBox.Size = new Size(423, 212);
-        ContestGroupBox.TabIndex = 27;
+        ContestGroupBox.Size = new Size(361, 187);
+        ContestGroupBox.TabIndex = 23;
         ContestGroupBox.TabStop = false;
         ContestGroupBox.Text = "コンテスト";
         // 
         // ContestEffectGroupBox
         // 
-        ContestEffectGroupBox.Controls.Add(SuperContestEffectDetailButton);
-        ContestEffectGroupBox.Controls.Add(SuperContestEffectCaptionLabel);
+        ContestEffectGroupBox.Controls.Add(SuperContestEffectButton);
         ContestEffectGroupBox.Controls.Add(SuperContestEffectTextBox);
         ContestEffectGroupBox.Controls.Add(ContestEffectTextBox);
-        ContestEffectGroupBox.Controls.Add(ContestEffectCaptionLabel);
-        ContestEffectGroupBox.Controls.Add(ContestEffectDetailButton);
-        ContestEffectGroupBox.Location = new Point(9, 93);
+        ContestEffectGroupBox.Controls.Add(ContestEffectButton);
+        ContestEffectGroupBox.Location = new Point(11, 83);
         ContestEffectGroupBox.Name = "ContestEffectGroupBox";
-        ContestEffectGroupBox.Size = new Size(397, 103);
-        ContestEffectGroupBox.TabIndex = 5;
+        ContestEffectGroupBox.Size = new Size(344, 90);
+        ContestEffectGroupBox.TabIndex = 3;
         ContestEffectGroupBox.TabStop = false;
         ContestEffectGroupBox.Text = "効果";
         // 
-        // SuperContestEffectDetailButton
+        // SuperContestEffectButton
         // 
-        SuperContestEffectDetailButton.Location = new Point(326, 56);
-        SuperContestEffectDetailButton.Name = "SuperContestEffectDetailButton";
-        SuperContestEffectDetailButton.Size = new Size(53, 24);
-        SuperContestEffectDetailButton.TabIndex = 5;
-        SuperContestEffectDetailButton.Text = "詳細";
-        SuperContestEffectDetailButton.UseVisualStyleBackColor = true;
-        SuperContestEffectDetailButton.Click += SuperContestEffectDetailButton_Click;
-        // 
-        // SuperContestEffectCaptionLabel
-        // 
-        SuperContestEffectCaptionLabel.AutoSize = true;
-        SuperContestEffectCaptionLabel.Location = new Point(16, 56);
-        SuperContestEffectCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        SuperContestEffectCaptionLabel.Name = "SuperContestEffectCaptionLabel";
-        SuperContestEffectCaptionLabel.Size = new Size(104, 17);
-        SuperContestEffectCaptionLabel.TabIndex = 3;
-        SuperContestEffectCaptionLabel.Text = "スーパーコンテスト";
-        SuperContestEffectCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        SuperContestEffectButton.Location = new Point(7, 53);
+        SuperContestEffectButton.Name = "SuperContestEffectButton";
+        SuperContestEffectButton.Size = new Size(113, 24);
+        SuperContestEffectButton.TabIndex = 2;
+        SuperContestEffectButton.Text = "スーパーコンテスト";
+        SuperContestEffectButton.UseVisualStyleBackColor = true;
+        SuperContestEffectButton.Click += SuperContestEffectButton_Click;
         // 
         // SuperContestEffectTextBox
         // 
@@ -349,7 +316,7 @@ partial class MoveInfoForm
         SuperContestEffectTextBox.Name = "SuperContestEffectTextBox";
         SuperContestEffectTextBox.ReadOnly = true;
         SuperContestEffectTextBox.Size = new Size(191, 24);
-        SuperContestEffectTextBox.TabIndex = 4;
+        SuperContestEffectTextBox.TabIndex = 3;
         // 
         // ContestEffectTextBox
         // 
@@ -359,87 +326,43 @@ partial class MoveInfoForm
         ContestEffectTextBox.Size = new Size(191, 24);
         ContestEffectTextBox.TabIndex = 1;
         // 
-        // ContestEffectCaptionLabel
+        // ContestEffectButton
         // 
-        ContestEffectCaptionLabel.AutoSize = true;
-        ContestEffectCaptionLabel.Location = new Point(16, 26);
-        ContestEffectCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        ContestEffectCaptionLabel.Name = "ContestEffectCaptionLabel";
-        ContestEffectCaptionLabel.Size = new Size(100, 17);
-        ContestEffectCaptionLabel.TabIndex = 0;
-        ContestEffectCaptionLabel.Text = "ポケモンコンテスト";
-        ContestEffectCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
+        ContestEffectButton.Location = new Point(7, 22);
+        ContestEffectButton.Name = "ContestEffectButton";
+        ContestEffectButton.Size = new Size(113, 24);
+        ContestEffectButton.TabIndex = 0;
+        ContestEffectButton.Text = "ポケモンコンテスト";
+        ContestEffectButton.UseVisualStyleBackColor = true;
+        ContestEffectButton.Click += ContestEffectButton_Click;
         // 
-        // ContestEffectDetailButton
+        // ContestCombosButton
         // 
-        ContestEffectDetailButton.Location = new Point(326, 23);
-        ContestEffectDetailButton.Name = "ContestEffectDetailButton";
-        ContestEffectDetailButton.Size = new Size(53, 24);
-        ContestEffectDetailButton.TabIndex = 2;
-        ContestEffectDetailButton.Text = "詳細";
-        ContestEffectDetailButton.UseVisualStyleBackColor = true;
-        ContestEffectDetailButton.Click += ContestEffectDetailButton_Click;
+        ContestCombosButton.Location = new Point(12, 53);
+        ContestCombosButton.Name = "ContestCombosButton";
+        ContestCombosButton.Size = new Size(53, 24);
+        ContestCombosButton.TabIndex = 2;
+        ContestCombosButton.Text = "コンボ";
+        ContestCombosButton.UseVisualStyleBackColor = true;
+        ContestCombosButton.Click += ContestCombosButton_Click;
         // 
-        // ContestCombosDetailButton
+        // ContestTypeButton
         // 
-        ContestCombosDetailButton.Location = new Point(79, 52);
-        ContestCombosDetailButton.Name = "ContestCombosDetailButton";
-        ContestCombosDetailButton.Size = new Size(53, 24);
-        ContestCombosDetailButton.TabIndex = 4;
-        ContestCombosDetailButton.Text = "詳細";
-        ContestCombosDetailButton.UseVisualStyleBackColor = true;
-        ContestCombosDetailButton.Click += ContestCombosDetailButton_Click;
-        // 
-        // ContestCombosCaptionLabel
-        // 
-        ContestCombosCaptionLabel.AutoSize = true;
-        ContestCombosCaptionLabel.Location = new Point(33, 56);
-        ContestCombosCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        ContestCombosCaptionLabel.Name = "ContestCombosCaptionLabel";
-        ContestCombosCaptionLabel.Size = new Size(39, 17);
-        ContestCombosCaptionLabel.TabIndex = 3;
-        ContestCombosCaptionLabel.Text = "コンボ";
-        ContestCombosCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // ContestTypeDetailButton
-        // 
-        ContestTypeDetailButton.Location = new Point(276, 23);
-        ContestTypeDetailButton.Name = "ContestTypeDetailButton";
-        ContestTypeDetailButton.Size = new Size(53, 24);
-        ContestTypeDetailButton.TabIndex = 2;
-        ContestTypeDetailButton.Text = "詳細";
-        ContestTypeDetailButton.UseVisualStyleBackColor = true;
-        ContestTypeDetailButton.Click += ContestTypeDetailButton_Click;
+        ContestTypeButton.Location = new Point(12, 23);
+        ContestTypeButton.Name = "ContestTypeButton";
+        ContestTypeButton.Size = new Size(53, 24);
+        ContestTypeButton.TabIndex = 0;
+        ContestTypeButton.Text = "種類";
+        ContestTypeButton.UseVisualStyleBackColor = true;
+        ContestTypeButton.Click += ContestTypeButton_Click;
         // 
         // ContestTypeTextBox
         // 
-        ContestTypeTextBox.Location = new Point(79, 23);
+        ContestTypeTextBox.Location = new Point(71, 23);
         ContestTypeTextBox.Name = "ContestTypeTextBox";
         ContestTypeTextBox.ReadOnly = true;
         ContestTypeTextBox.Size = new Size(191, 24);
         ContestTypeTextBox.TabIndex = 1;
-        // 
-        // ContestTypeCaptionLabel
-        // 
-        ContestTypeCaptionLabel.AutoSize = true;
-        ContestTypeCaptionLabel.Location = new Point(38, 26);
-        ContestTypeCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        ContestTypeCaptionLabel.Name = "ContestTypeCaptionLabel";
-        ContestTypeCaptionLabel.Size = new Size(34, 17);
-        ContestTypeCaptionLabel.TabIndex = 0;
-        ContestTypeCaptionLabel.Text = "種類";
-        ContestTypeCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // GenerationCaptionLabel
-        // 
-        GenerationCaptionLabel.AutoSize = true;
-        GenerationCaptionLabel.Location = new Point(399, 15);
-        GenerationCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        GenerationCaptionLabel.Name = "GenerationCaptionLabel";
-        GenerationCaptionLabel.Size = new Size(34, 17);
-        GenerationCaptionLabel.TabIndex = 14;
-        GenerationCaptionLabel.Text = "世代";
-        GenerationCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // GenerationTextBox
         // 
@@ -447,36 +370,36 @@ partial class MoveInfoForm
         GenerationTextBox.Name = "GenerationTextBox";
         GenerationTextBox.ReadOnly = true;
         GenerationTextBox.Size = new Size(191, 24);
-        GenerationTextBox.TabIndex = 15;
+        GenerationTextBox.TabIndex = 14;
         // 
-        // GenerationDetailButton
+        // GenerationButton
         // 
-        GenerationDetailButton.Location = new Point(637, 11);
-        GenerationDetailButton.Name = "GenerationDetailButton";
-        GenerationDetailButton.Size = new Size(53, 24);
-        GenerationDetailButton.TabIndex = 16;
-        GenerationDetailButton.Text = "詳細";
-        GenerationDetailButton.UseVisualStyleBackColor = true;
-        GenerationDetailButton.Click += GenerationDetailButton_Click;
+        GenerationButton.Location = new Point(334, 11);
+        GenerationButton.Name = "GenerationButton";
+        GenerationButton.Size = new Size(100, 24);
+        GenerationButton.TabIndex = 13;
+        GenerationButton.Text = "世代";
+        GenerationButton.UseVisualStyleBackColor = true;
+        GenerationButton.Click += GenerationButton_Click;
         // 
-        // MetaDetailButton
+        // MetaButton
         // 
-        MetaDetailButton.Location = new Point(167, 101);
-        MetaDetailButton.Name = "MetaDetailButton";
-        MetaDetailButton.Size = new Size(101, 24);
-        MetaDetailButton.TabIndex = 9;
-        MetaDetailButton.Text = "技の詳細情報";
-        MetaDetailButton.UseVisualStyleBackColor = true;
-        MetaDetailButton.Click += MetaDetailButton_Click;
+        MetaButton.Location = new Point(167, 101);
+        MetaButton.Name = "MetaButton";
+        MetaButton.Size = new Size(101, 24);
+        MetaButton.TabIndex = 8;
+        MetaButton.Text = "技の詳細情報";
+        MetaButton.UseVisualStyleBackColor = true;
+        MetaButton.Click += MetaButton_Click;
         // 
-        // TargetDetailButton
+        // TargetButton
         // 
-        TargetDetailButton.Location = new Point(637, 41);
-        TargetDetailButton.Name = "TargetDetailButton";
-        TargetDetailButton.Size = new Size(53, 24);
-        TargetDetailButton.TabIndex = 19;
-        TargetDetailButton.Text = "詳細";
-        TargetDetailButton.UseVisualStyleBackColor = true;
+        TargetButton.Location = new Point(334, 41);
+        TargetButton.Name = "TargetButton";
+        TargetButton.Size = new Size(100, 24);
+        TargetButton.TabIndex = 15;
+        TargetButton.Text = "対象";
+        TargetButton.UseVisualStyleBackColor = true;
         // 
         // TargetTextBox
         // 
@@ -484,28 +407,17 @@ partial class MoveInfoForm
         TargetTextBox.Name = "TargetTextBox";
         TargetTextBox.ReadOnly = true;
         TargetTextBox.Size = new Size(191, 24);
-        TargetTextBox.TabIndex = 18;
+        TargetTextBox.TabIndex = 16;
         // 
-        // TargetCaptionLabel
+        // TypeButton
         // 
-        TargetCaptionLabel.AutoSize = true;
-        TargetCaptionLabel.Location = new Point(399, 45);
-        TargetCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        TargetCaptionLabel.Name = "TargetCaptionLabel";
-        TargetCaptionLabel.Size = new Size(34, 17);
-        TargetCaptionLabel.TabIndex = 17;
-        TargetCaptionLabel.Text = "対象";
-        TargetCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // TypeDetailButton
-        // 
-        TypeDetailButton.Location = new Point(274, 68);
-        TypeDetailButton.Name = "TypeDetailButton";
-        TypeDetailButton.Size = new Size(53, 24);
-        TypeDetailButton.TabIndex = 6;
-        TypeDetailButton.Text = "詳細";
-        TypeDetailButton.UseVisualStyleBackColor = true;
-        TypeDetailButton.Click += TypeDetailButton_Click;
+        TypeButton.Location = new Point(12, 71);
+        TypeButton.Name = "TypeButton";
+        TypeButton.Size = new Size(53, 24);
+        TypeButton.TabIndex = 4;
+        TypeButton.Text = "タイプ";
+        TypeButton.UseVisualStyleBackColor = true;
+        TypeButton.Click += TypeButton_Click;
         // 
         // TypeTextBox
         // 
@@ -515,27 +427,16 @@ partial class MoveInfoForm
         TypeTextBox.Size = new Size(191, 24);
         TypeTextBox.TabIndex = 5;
         // 
-        // TypeCaptionLabel
-        // 
-        TypeCaptionLabel.AutoSize = true;
-        TypeCaptionLabel.Location = new Point(25, 75);
-        TypeCaptionLabel.Margin = new Padding(4, 0, 4, 0);
-        TypeCaptionLabel.Name = "TypeCaptionLabel";
-        TypeCaptionLabel.Size = new Size(40, 17);
-        TypeCaptionLabel.TabIndex = 4;
-        TypeCaptionLabel.Text = "タイプ";
-        TypeCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
-        // 
         // NamesDataGridView
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(442, 191);
+        NamesDataGridView.Location = new Point(381, 180);
         NamesDataGridView.Margin = new Padding(4, 3, 4, 3);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(379, 192);
-        NamesDataGridView.TabIndex = 29;
+        NamesDataGridView.Size = new Size(269, 192);
+        NamesDataGridView.TabIndex = 25;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
         // 
@@ -569,11 +470,11 @@ partial class MoveInfoForm
         // NamesCaptionLabel
         // 
         NamesCaptionLabel.AutoSize = true;
-        NamesCaptionLabel.Location = new Point(440, 171);
+        NamesCaptionLabel.Location = new Point(381, 160);
         NamesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
         NamesCaptionLabel.Size = new Size(92, 17);
-        NamesCaptionLabel.TabIndex = 28;
+        NamesCaptionLabel.TabIndex = 24;
         NamesCaptionLabel.Text = "言語ごとの名前";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -581,12 +482,12 @@ partial class MoveInfoForm
         // 
         LearnedByPokemonDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         LearnedByPokemonDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewButtonColumn6 });
-        LearnedByPokemonDataGridView.Location = new Point(831, 32);
+        LearnedByPokemonDataGridView.Location = new Point(658, 32);
         LearnedByPokemonDataGridView.Margin = new Padding(4, 3, 4, 3);
         LearnedByPokemonDataGridView.Name = "LearnedByPokemonDataGridView";
         LearnedByPokemonDataGridView.RowHeadersVisible = false;
-        LearnedByPokemonDataGridView.Size = new Size(408, 351);
-        LearnedByPokemonDataGridView.TabIndex = 31;
+        LearnedByPokemonDataGridView.Size = new Size(408, 340);
+        LearnedByPokemonDataGridView.TabIndex = 27;
         // 
         // dataGridViewTextBoxColumn7
         // 
@@ -609,11 +510,11 @@ partial class MoveInfoForm
         // LearnedByPokemonCaptionLabel
         // 
         LearnedByPokemonCaptionLabel.AutoSize = true;
-        LearnedByPokemonCaptionLabel.Location = new Point(831, 12);
+        LearnedByPokemonCaptionLabel.Location = new Point(658, 12);
         LearnedByPokemonCaptionLabel.Margin = new Padding(4, 0, 4, 0);
         LearnedByPokemonCaptionLabel.Name = "LearnedByPokemonCaptionLabel";
         LearnedByPokemonCaptionLabel.Size = new Size(75, 17);
-        LearnedByPokemonCaptionLabel.TabIndex = 30;
+        LearnedByPokemonCaptionLabel.TabIndex = 26;
         LearnedByPokemonCaptionLabel.Text = "習得ポケモン";
         LearnedByPokemonCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -628,8 +529,8 @@ partial class MoveInfoForm
         tabControl1.Location = new Point(13, 389);
         tabControl1.Name = "tabControl1";
         tabControl1.SelectedIndex = 0;
-        tabControl1.Size = new Size(1226, 538);
-        tabControl1.TabIndex = 32;
+        tabControl1.Size = new Size(1066, 538);
+        tabControl1.TabIndex = 28;
         // 
         // FlavorTextTabPage
         // 
@@ -637,7 +538,7 @@ partial class MoveInfoForm
         FlavorTextTabPage.Location = new Point(4, 26);
         FlavorTextTabPage.Name = "FlavorTextTabPage";
         FlavorTextTabPage.Padding = new Padding(3);
-        FlavorTextTabPage.Size = new Size(1218, 508);
+        FlavorTextTabPage.Size = new Size(1058, 508);
         FlavorTextTabPage.TabIndex = 3;
         FlavorTextTabPage.Text = "フレーバーテキスト";
         FlavorTextTabPage.UseVisualStyleBackColor = true;
@@ -651,246 +552,10 @@ partial class MoveInfoForm
         FlavorTextEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
         FlavorTextEntriesDataGridView.Name = "FlavorTextEntriesDataGridView";
         FlavorTextEntriesDataGridView.RowHeadersVisible = false;
-        FlavorTextEntriesDataGridView.Size = new Size(1212, 502);
+        FlavorTextEntriesDataGridView.Size = new Size(1052, 502);
         FlavorTextEntriesDataGridView.TabIndex = 1;
         FlavorTextEntriesDataGridView.CellClick += FlavorTextEntriesDataGridView_CellClick;
         FlavorTextEntriesDataGridView.CellDoubleClick += FlavorTextEntriesDataGridView_CellDoubleClick;
-        // 
-        // EffectTabPage
-        // 
-        EffectTabPage.Controls.Add(EffectEntriesDataGridView);
-        EffectTabPage.Location = new Point(4, 24);
-        EffectTabPage.Name = "EffectTabPage";
-        EffectTabPage.Padding = new Padding(3);
-        EffectTabPage.Size = new Size(1218, 510);
-        EffectTabPage.TabIndex = 0;
-        EffectTabPage.Text = "効果";
-        EffectTabPage.UseVisualStyleBackColor = true;
-        // 
-        // EffectEntriesDataGridView
-        // 
-        EffectEntriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        EffectEntriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { EffectColumn, EffectDetailColumn });
-        EffectEntriesDataGridView.Dock = DockStyle.Fill;
-        EffectEntriesDataGridView.Location = new Point(3, 3);
-        EffectEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
-        EffectEntriesDataGridView.Name = "EffectEntriesDataGridView";
-        EffectEntriesDataGridView.RowHeadersVisible = false;
-        EffectEntriesDataGridView.Size = new Size(1212, 504);
-        EffectEntriesDataGridView.TabIndex = 1;
-        EffectEntriesDataGridView.CellClick += EffectEntriesDataGridView_CellClick;
-        EffectEntriesDataGridView.CellDoubleClick += EffectEntriesDataGridView_CellDoubleClick;
-        // 
-        // EffectColumn
-        // 
-        EffectColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        EffectColumn.DataPropertyName = "ShortEffect";
-        dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-        EffectColumn.DefaultCellStyle = dataGridViewCellStyle1;
-        EffectColumn.HeaderText = "効果";
-        EffectColumn.Name = "EffectColumn";
-        EffectColumn.ReadOnly = true;
-        EffectColumn.Width = 59;
-        // 
-        // EffectDetailColumn
-        // 
-        EffectDetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        EffectDetailColumn.HeaderText = "詳細";
-        EffectDetailColumn.Name = "EffectDetailColumn";
-        EffectDetailColumn.Text = "詳細";
-        EffectDetailColumn.UseColumnTextForButtonValue = true;
-        EffectDetailColumn.Width = 40;
-        // 
-        // EffectChangesTabPage
-        // 
-        EffectChangesTabPage.Controls.Add(EffectChangesDataGridView);
-        EffectChangesTabPage.Location = new Point(4, 24);
-        EffectChangesTabPage.Name = "EffectChangesTabPage";
-        EffectChangesTabPage.Padding = new Padding(3);
-        EffectChangesTabPage.Size = new Size(1218, 510);
-        EffectChangesTabPage.TabIndex = 1;
-        EffectChangesTabPage.Text = "効果変更";
-        EffectChangesTabPage.UseVisualStyleBackColor = true;
-        // 
-        // EffectChangesDataGridView
-        // 
-        EffectChangesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        EffectChangesDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewButtonColumn1 });
-        EffectChangesDataGridView.Dock = DockStyle.Fill;
-        EffectChangesDataGridView.Location = new Point(3, 3);
-        EffectChangesDataGridView.Margin = new Padding(4, 3, 4, 3);
-        EffectChangesDataGridView.Name = "EffectChangesDataGridView";
-        EffectChangesDataGridView.RowHeadersVisible = false;
-        EffectChangesDataGridView.Size = new Size(1212, 504);
-        EffectChangesDataGridView.TabIndex = 2;
-        EffectChangesDataGridView.CellClick += EffectChangesDataGridView_CellClick;
-        EffectChangesDataGridView.CellDoubleClick += EffectChangesDataGridView_CellDoubleClick;
-        // 
-        // dataGridViewTextBoxColumn1
-        // 
-        dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewTextBoxColumn1.DataPropertyName = "VersionGroup";
-        dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-        dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-        dataGridViewTextBoxColumn1.HeaderText = "バージョングループ";
-        dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-        dataGridViewTextBoxColumn1.ReadOnly = true;
-        dataGridViewTextBoxColumn1.Width = 88;
-        // 
-        // dataGridViewButtonColumn1
-        // 
-        dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewButtonColumn1.HeaderText = "詳細";
-        dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-        dataGridViewButtonColumn1.Text = "詳細";
-        dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-        dataGridViewButtonColumn1.Width = 36;
-        // 
-        // MachineTabPage
-        // 
-        MachineTabPage.Controls.Add(MachinesDataGridView);
-        MachineTabPage.Location = new Point(4, 24);
-        MachineTabPage.Name = "MachineTabPage";
-        MachineTabPage.Size = new Size(1218, 510);
-        MachineTabPage.TabIndex = 4;
-        MachineTabPage.Text = "技マシン";
-        MachineTabPage.UseVisualStyleBackColor = true;
-        // 
-        // MachinesDataGridView
-        // 
-        MachinesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        MachinesDataGridView.Columns.AddRange(new DataGridViewColumn[] { MachineVersionGroupColumn, MachineDetailColumn });
-        MachinesDataGridView.Dock = DockStyle.Fill;
-        MachinesDataGridView.Location = new Point(0, 0);
-        MachinesDataGridView.Margin = new Padding(4, 3, 4, 3);
-        MachinesDataGridView.Name = "MachinesDataGridView";
-        MachinesDataGridView.RowHeadersVisible = false;
-        MachinesDataGridView.Size = new Size(1218, 510);
-        MachinesDataGridView.TabIndex = 20;
-        MachinesDataGridView.CellClick += MachinesDataGridView_CellClick;
-        MachinesDataGridView.CellDoubleClick += MachinesDataGridView_CellDoubleClick;
-        // 
-        // MachineVersionGroupColumn
-        // 
-        MachineVersionGroupColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        MachineVersionGroupColumn.DataPropertyName = "VersionGroup";
-        MachineVersionGroupColumn.HeaderText = "バージョングループ";
-        MachineVersionGroupColumn.Name = "MachineVersionGroupColumn";
-        MachineVersionGroupColumn.ReadOnly = true;
-        MachineVersionGroupColumn.Width = 88;
-        // 
-        // MachineDetailColumn
-        // 
-        MachineDetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        MachineDetailColumn.HeaderText = "詳細";
-        MachineDetailColumn.Name = "MachineDetailColumn";
-        MachineDetailColumn.Text = "詳細";
-        MachineDetailColumn.UseColumnTextForButtonValue = true;
-        MachineDetailColumn.Width = 36;
-        // 
-        // StatChangeTabPage
-        // 
-        StatChangeTabPage.Controls.Add(StatChangeDataGridView);
-        StatChangeTabPage.Location = new Point(4, 26);
-        StatChangeTabPage.Name = "StatChangeTabPage";
-        StatChangeTabPage.Size = new Size(1218, 508);
-        StatChangeTabPage.TabIndex = 5;
-        StatChangeTabPage.Text = "ステータス変更";
-        StatChangeTabPage.UseVisualStyleBackColor = true;
-        // 
-        // StatChangeDataGridView
-        // 
-        StatChangeDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        StatChangeDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewButtonColumn3 });
-        StatChangeDataGridView.Dock = DockStyle.Fill;
-        StatChangeDataGridView.Location = new Point(0, 0);
-        StatChangeDataGridView.Margin = new Padding(4, 3, 4, 3);
-        StatChangeDataGridView.Name = "StatChangeDataGridView";
-        StatChangeDataGridView.RowHeadersVisible = false;
-        StatChangeDataGridView.Size = new Size(1218, 508);
-        StatChangeDataGridView.TabIndex = 2;
-        StatChangeDataGridView.CellClick += StatChangeDataGridView_CellClick;
-        StatChangeDataGridView.CellDoubleClick += StatChangeDataGridView_CellDoubleClick;
-        // 
-        // dataGridViewTextBoxColumn3
-        // 
-        dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewTextBoxColumn3.DataPropertyName = "Stat";
-        dataGridViewTextBoxColumn3.HeaderText = "ステータス";
-        dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-        dataGridViewTextBoxColumn3.ReadOnly = true;
-        dataGridViewTextBoxColumn3.Width = 86;
-        // 
-        // dataGridViewTextBoxColumn4
-        // 
-        dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewTextBoxColumn4.DataPropertyName = "Change";
-        dataGridViewTextBoxColumn4.HeaderText = "変更量";
-        dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-        dataGridViewTextBoxColumn4.ReadOnly = true;
-        dataGridViewTextBoxColumn4.Width = 72;
-        // 
-        // dataGridViewButtonColumn3
-        // 
-        dataGridViewButtonColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewButtonColumn3.HeaderText = "詳細";
-        dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
-        dataGridViewButtonColumn3.Text = "詳細";
-        dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
-        dataGridViewButtonColumn3.Width = 40;
-        // 
-        // PastStatChangeTabPage
-        // 
-        PastStatChangeTabPage.Controls.Add(PastValuesDataGridView);
-        PastStatChangeTabPage.Location = new Point(4, 24);
-        PastStatChangeTabPage.Name = "PastStatChangeTabPage";
-        PastStatChangeTabPage.Size = new Size(1218, 510);
-        PastStatChangeTabPage.TabIndex = 6;
-        PastStatChangeTabPage.Text = "過去のステータス変更";
-        PastStatChangeTabPage.UseVisualStyleBackColor = true;
-        // 
-        // PastValuesDataGridView
-        // 
-        PastValuesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        PastValuesDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn6, dataGridViewButtonColumn4 });
-        PastValuesDataGridView.Dock = DockStyle.Fill;
-        PastValuesDataGridView.Location = new Point(0, 0);
-        PastValuesDataGridView.Margin = new Padding(4, 3, 4, 3);
-        PastValuesDataGridView.Name = "PastValuesDataGridView";
-        PastValuesDataGridView.RowHeadersVisible = false;
-        PastValuesDataGridView.Size = new Size(1218, 510);
-        PastValuesDataGridView.TabIndex = 3;
-        PastValuesDataGridView.CellClick += PastValuesDataGridView_CellClick;
-        PastValuesDataGridView.CellDoubleClick += PastValuesDataGridView_CellDoubleClick;
-        // 
-        // dataGridViewTextBoxColumn6
-        // 
-        dataGridViewTextBoxColumn6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewTextBoxColumn6.DataPropertyName = "Text";
-        dataGridViewTextBoxColumn6.HeaderText = "内容";
-        dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-        dataGridViewTextBoxColumn6.ReadOnly = true;
-        dataGridViewTextBoxColumn6.Width = 59;
-        // 
-        // dataGridViewButtonColumn4
-        // 
-        dataGridViewButtonColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        dataGridViewButtonColumn4.HeaderText = "詳細";
-        dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
-        dataGridViewButtonColumn4.Text = "詳細";
-        dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
-        dataGridViewButtonColumn4.Width = 40;
-        // 
-        // CloseButton
-        // 
-        CloseButton.Location = new Point(1153, 933);
-        CloseButton.Margin = new Padding(4, 3, 4, 3);
-        CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(82, 40);
-        CloseButton.TabIndex = 33;
-        CloseButton.Text = "閉じる";
-        CloseButton.UseVisualStyleBackColor = true;
-        CloseButton.Click += CloseButton_Click;
         // 
         // FlavorTextVersionGroupColumn
         // 
@@ -928,30 +593,274 @@ partial class MoveInfoForm
         FlavorTextDetailColumn.UseColumnTextForButtonValue = true;
         FlavorTextDetailColumn.Width = 36;
         // 
+        // EffectTabPage
+        // 
+        EffectTabPage.Controls.Add(EffectEntriesDataGridView);
+        EffectTabPage.Location = new Point(4, 24);
+        EffectTabPage.Name = "EffectTabPage";
+        EffectTabPage.Padding = new Padding(3);
+        EffectTabPage.Size = new Size(1058, 510);
+        EffectTabPage.TabIndex = 0;
+        EffectTabPage.Text = "効果";
+        EffectTabPage.UseVisualStyleBackColor = true;
+        // 
+        // EffectEntriesDataGridView
+        // 
+        EffectEntriesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        EffectEntriesDataGridView.Columns.AddRange(new DataGridViewColumn[] { EffectColumn, EffectDetailColumn });
+        EffectEntriesDataGridView.Dock = DockStyle.Fill;
+        EffectEntriesDataGridView.Location = new Point(3, 3);
+        EffectEntriesDataGridView.Margin = new Padding(4, 3, 4, 3);
+        EffectEntriesDataGridView.Name = "EffectEntriesDataGridView";
+        EffectEntriesDataGridView.RowHeadersVisible = false;
+        EffectEntriesDataGridView.Size = new Size(1052, 504);
+        EffectEntriesDataGridView.TabIndex = 1;
+        EffectEntriesDataGridView.CellClick += EffectEntriesDataGridView_CellClick;
+        EffectEntriesDataGridView.CellDoubleClick += EffectEntriesDataGridView_CellDoubleClick;
+        // 
+        // EffectColumn
+        // 
+        EffectColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        EffectColumn.DataPropertyName = "ShortEffect";
+        dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+        EffectColumn.DefaultCellStyle = dataGridViewCellStyle3;
+        EffectColumn.HeaderText = "効果";
+        EffectColumn.Name = "EffectColumn";
+        EffectColumn.ReadOnly = true;
+        EffectColumn.Width = 59;
+        // 
+        // EffectDetailColumn
+        // 
+        EffectDetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        EffectDetailColumn.HeaderText = "詳細";
+        EffectDetailColumn.Name = "EffectDetailColumn";
+        EffectDetailColumn.Text = "詳細";
+        EffectDetailColumn.UseColumnTextForButtonValue = true;
+        EffectDetailColumn.Width = 40;
+        // 
+        // EffectChangesTabPage
+        // 
+        EffectChangesTabPage.Controls.Add(EffectChangesDataGridView);
+        EffectChangesTabPage.Location = new Point(4, 24);
+        EffectChangesTabPage.Name = "EffectChangesTabPage";
+        EffectChangesTabPage.Padding = new Padding(3);
+        EffectChangesTabPage.Size = new Size(1058, 510);
+        EffectChangesTabPage.TabIndex = 1;
+        EffectChangesTabPage.Text = "効果変更";
+        EffectChangesTabPage.UseVisualStyleBackColor = true;
+        // 
+        // EffectChangesDataGridView
+        // 
+        EffectChangesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        EffectChangesDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewButtonColumn1 });
+        EffectChangesDataGridView.Dock = DockStyle.Fill;
+        EffectChangesDataGridView.Location = new Point(3, 3);
+        EffectChangesDataGridView.Margin = new Padding(4, 3, 4, 3);
+        EffectChangesDataGridView.Name = "EffectChangesDataGridView";
+        EffectChangesDataGridView.RowHeadersVisible = false;
+        EffectChangesDataGridView.Size = new Size(1052, 504);
+        EffectChangesDataGridView.TabIndex = 2;
+        EffectChangesDataGridView.CellClick += EffectChangesDataGridView_CellClick;
+        EffectChangesDataGridView.CellDoubleClick += EffectChangesDataGridView_CellDoubleClick;
+        // 
+        // dataGridViewTextBoxColumn1
+        // 
+        dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewTextBoxColumn1.DataPropertyName = "VersionGroup";
+        dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+        dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+        dataGridViewTextBoxColumn1.HeaderText = "バージョングループ";
+        dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+        dataGridViewTextBoxColumn1.ReadOnly = true;
+        dataGridViewTextBoxColumn1.Width = 88;
+        // 
+        // dataGridViewButtonColumn1
+        // 
+        dataGridViewButtonColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn1.HeaderText = "詳細";
+        dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+        dataGridViewButtonColumn1.Text = "詳細";
+        dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn1.Width = 36;
+        // 
+        // MachineTabPage
+        // 
+        MachineTabPage.Controls.Add(MachinesDataGridView);
+        MachineTabPage.Location = new Point(4, 24);
+        MachineTabPage.Name = "MachineTabPage";
+        MachineTabPage.Size = new Size(1058, 510);
+        MachineTabPage.TabIndex = 4;
+        MachineTabPage.Text = "技マシン";
+        MachineTabPage.UseVisualStyleBackColor = true;
+        // 
+        // MachinesDataGridView
+        // 
+        MachinesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        MachinesDataGridView.Columns.AddRange(new DataGridViewColumn[] { MachineVersionGroupColumn, MachineDetailColumn });
+        MachinesDataGridView.Dock = DockStyle.Fill;
+        MachinesDataGridView.Location = new Point(0, 0);
+        MachinesDataGridView.Margin = new Padding(4, 3, 4, 3);
+        MachinesDataGridView.Name = "MachinesDataGridView";
+        MachinesDataGridView.RowHeadersVisible = false;
+        MachinesDataGridView.Size = new Size(1058, 510);
+        MachinesDataGridView.TabIndex = 20;
+        MachinesDataGridView.CellClick += MachinesDataGridView_CellClick;
+        MachinesDataGridView.CellDoubleClick += MachinesDataGridView_CellDoubleClick;
+        // 
+        // MachineVersionGroupColumn
+        // 
+        MachineVersionGroupColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        MachineVersionGroupColumn.DataPropertyName = "VersionGroup";
+        MachineVersionGroupColumn.HeaderText = "バージョングループ";
+        MachineVersionGroupColumn.Name = "MachineVersionGroupColumn";
+        MachineVersionGroupColumn.ReadOnly = true;
+        MachineVersionGroupColumn.Width = 88;
+        // 
+        // MachineDetailColumn
+        // 
+        MachineDetailColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        MachineDetailColumn.HeaderText = "詳細";
+        MachineDetailColumn.Name = "MachineDetailColumn";
+        MachineDetailColumn.Text = "詳細";
+        MachineDetailColumn.UseColumnTextForButtonValue = true;
+        MachineDetailColumn.Width = 36;
+        // 
+        // StatChangeTabPage
+        // 
+        StatChangeTabPage.Controls.Add(StatChangeDataGridView);
+        StatChangeTabPage.Location = new Point(4, 24);
+        StatChangeTabPage.Name = "StatChangeTabPage";
+        StatChangeTabPage.Size = new Size(1058, 510);
+        StatChangeTabPage.TabIndex = 5;
+        StatChangeTabPage.Text = "ステータス変更";
+        StatChangeTabPage.UseVisualStyleBackColor = true;
+        // 
+        // StatChangeDataGridView
+        // 
+        StatChangeDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        StatChangeDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewButtonColumn3 });
+        StatChangeDataGridView.Dock = DockStyle.Fill;
+        StatChangeDataGridView.Location = new Point(0, 0);
+        StatChangeDataGridView.Margin = new Padding(4, 3, 4, 3);
+        StatChangeDataGridView.Name = "StatChangeDataGridView";
+        StatChangeDataGridView.RowHeadersVisible = false;
+        StatChangeDataGridView.Size = new Size(1058, 510);
+        StatChangeDataGridView.TabIndex = 2;
+        StatChangeDataGridView.CellClick += StatChangeDataGridView_CellClick;
+        StatChangeDataGridView.CellDoubleClick += StatChangeDataGridView_CellDoubleClick;
+        // 
+        // dataGridViewTextBoxColumn3
+        // 
+        dataGridViewTextBoxColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewTextBoxColumn3.DataPropertyName = "Stat";
+        dataGridViewTextBoxColumn3.HeaderText = "ステータス";
+        dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+        dataGridViewTextBoxColumn3.ReadOnly = true;
+        dataGridViewTextBoxColumn3.Width = 86;
+        // 
+        // dataGridViewTextBoxColumn4
+        // 
+        dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewTextBoxColumn4.DataPropertyName = "Change";
+        dataGridViewTextBoxColumn4.HeaderText = "変更量";
+        dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+        dataGridViewTextBoxColumn4.ReadOnly = true;
+        dataGridViewTextBoxColumn4.Width = 72;
+        // 
+        // dataGridViewButtonColumn3
+        // 
+        dataGridViewButtonColumn3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn3.HeaderText = "詳細";
+        dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
+        dataGridViewButtonColumn3.Text = "詳細";
+        dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn3.Width = 40;
+        // 
+        // PastStatChangeTabPage
+        // 
+        PastStatChangeTabPage.Controls.Add(PastValuesDataGridView);
+        PastStatChangeTabPage.Location = new Point(4, 24);
+        PastStatChangeTabPage.Name = "PastStatChangeTabPage";
+        PastStatChangeTabPage.Size = new Size(1058, 510);
+        PastStatChangeTabPage.TabIndex = 6;
+        PastStatChangeTabPage.Text = "過去のステータス変更";
+        PastStatChangeTabPage.UseVisualStyleBackColor = true;
+        // 
+        // PastValuesDataGridView
+        // 
+        PastValuesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        PastValuesDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn6, dataGridViewButtonColumn4 });
+        PastValuesDataGridView.Dock = DockStyle.Fill;
+        PastValuesDataGridView.Location = new Point(0, 0);
+        PastValuesDataGridView.Margin = new Padding(4, 3, 4, 3);
+        PastValuesDataGridView.Name = "PastValuesDataGridView";
+        PastValuesDataGridView.RowHeadersVisible = false;
+        PastValuesDataGridView.Size = new Size(1058, 510);
+        PastValuesDataGridView.TabIndex = 3;
+        PastValuesDataGridView.CellClick += PastValuesDataGridView_CellClick;
+        PastValuesDataGridView.CellDoubleClick += PastValuesDataGridView_CellDoubleClick;
+        // 
+        // dataGridViewTextBoxColumn6
+        // 
+        dataGridViewTextBoxColumn6.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewTextBoxColumn6.DataPropertyName = "Text";
+        dataGridViewTextBoxColumn6.HeaderText = "内容";
+        dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+        dataGridViewTextBoxColumn6.ReadOnly = true;
+        dataGridViewTextBoxColumn6.Width = 59;
+        // 
+        // dataGridViewButtonColumn4
+        // 
+        dataGridViewButtonColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        dataGridViewButtonColumn4.HeaderText = "詳細";
+        dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
+        dataGridViewButtonColumn4.Text = "詳細";
+        dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
+        dataGridViewButtonColumn4.Width = 40;
+        // 
+        // CloseButton
+        // 
+        CloseButton.Location = new Point(1003, 929);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
+        CloseButton.Name = "CloseButton";
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 29;
+        CloseButton.Text = "閉じる";
+        CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(919, 929);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 34;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
+        // 
         // MoveInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1264, 985);
+        ClientSize = new Size(1093, 977);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(tabControl1);
         Controls.Add(LearnedByPokemonDataGridView);
         Controls.Add(LearnedByPokemonCaptionLabel);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
-        Controls.Add(TypeDetailButton);
+        Controls.Add(TypeButton);
         Controls.Add(TypeTextBox);
-        Controls.Add(TypeCaptionLabel);
-        Controls.Add(TargetDetailButton);
+        Controls.Add(TargetButton);
         Controls.Add(TargetTextBox);
-        Controls.Add(TargetCaptionLabel);
-        Controls.Add(MetaDetailButton);
-        Controls.Add(GenerationDetailButton);
+        Controls.Add(MetaButton);
+        Controls.Add(GenerationButton);
         Controls.Add(GenerationTextBox);
-        Controls.Add(GenerationCaptionLabel);
         Controls.Add(ContestGroupBox);
-        Controls.Add(DamageClassDetailButton);
-        Controls.Add(DamageClassCaptionLabel);
+        Controls.Add(DamageClassButton);
         Controls.Add(DamageClassTextBox);
         Controls.Add(PriorityCaptionLabel);
         Controls.Add(PriorityTextBox);
@@ -968,7 +877,9 @@ partial class MoveInfoForm
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdCaptionLabel);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
         Name = "MoveInfoForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "技";
@@ -1012,31 +923,27 @@ partial class MoveInfoForm
     private TextBox PriorityTextBox;
     private Label PriorityCaptionLabel;
     private TextBox DamageClassTextBox;
-    private Label DamageClassCaptionLabel;
-    private Button DamageClassDetailButton;
+    private Button DamageClassButton;
     private GroupBox ContestGroupBox;
     private Label ContestEffectCaptionLabel;
-    private Button ContestTypeDetailButton;
+    private Button ContestTypeButton;
     private TextBox ContestTypeTextBox;
     private Label ContestTypeCaptionLabel;
-    private Button ContestEffectDetailButton;
+    private Button ContestEffectButton;
     private TextBox ContestEffectTextBox;
-    private Button ContestCombosDetailButton;
+    private Button ContestCombosButton;
     private Label ContestCombosCaptionLabel;
-    private Label GenerationCaptionLabel;
     private TextBox GenerationTextBox;
-    private Button GenerationDetailButton;
-    private Button MetaDetailButton;
+    private Button GenerationButton;
+    private Button MetaButton;
     private GroupBox ContestEffectGroupBox;
-    private Button SuperContestEffectDetailButton;
+    private Button SuperContestEffectButton;
     private Label SuperContestEffectCaptionLabel;
     private TextBox SuperContestEffectTextBox;
-    private Button TargetDetailButton;
+    private Button TargetButton;
     private TextBox TargetTextBox;
-    private Label TargetCaptionLabel;
-    private Button TypeDetailButton;
+    private Button TypeButton;
     private TextBox TypeTextBox;
-    private Label TypeCaptionLabel;
     private DataGridView NamesDataGridView;
     private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn LanguageColumn;
@@ -1075,4 +982,5 @@ partial class MoveInfoForm
     private DataGridViewTextBoxColumn FlavorTextLanguageColumn;
     private DataGridViewTextBoxColumn FlavorTextColumn;
     private DataGridViewButtonColumn FlavorTextDetailColumn;
+    private Button PropertyButton;
 }

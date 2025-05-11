@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Moves.MoveBattleStyles;
 using Kos.PokeAPI.Moves.MoveCategories;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -129,6 +130,23 @@ public partial class MoveCategoryInfoForm : Form
     }
     #endregion
 
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
     #region 閉じる クリック
     /// <summary>
     /// 閉じる クリック
@@ -148,17 +166,16 @@ public partial class MoveCategoryInfoForm : Form
     /// <param name="url"></param>
     private void SetData(string url)
     {
-        MoveCategory? mc = MoveCategory.GetResource(url);
-        if (mc is null) {
+        MoveCategory? category = MoveCategory.GetResource(url);
+        if (category is null) {
             return;
         }
 
-        IdTextBox.Text = $"{mc.Id}";
-        NameTextBox.Text = mc.Name;
-        MovesDataGridView.AutoGenerateColumns = false;
-        MovesDataGridView.DataSource = mc.Moves;
-        DescriptionsDataGridView.AutoGenerateColumns = false;
-        DescriptionsDataGridView.DataSource = mc.Descriptions;
+        Tag = category;
+        FormsHelper.SetData(category.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(category.Name, NameCaptionLabel, NameTextBox);
+        FormsHelper.SetData(category.Moves, MoveCaptionLabel, MovesDataGridView);
+        FormsHelper.SetData(category.Descriptions, DescriptionsCaptionLabel, DescriptionsDataGridView);
     }
     #endregion
 }

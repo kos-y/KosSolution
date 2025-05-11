@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.ComponentModel;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using Kos.PokeAPI;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -15,6 +16,9 @@ public class Machine
     /// 技マシンID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("技マシンID")]
     public int? Id { get; set; }
     #endregion
 
@@ -23,6 +27,9 @@ public class Machine
     /// アイテム
     /// </summary>
     [JsonPropertyName("item")]
+    [DisplayName("item")]
+    [Category("(基本)")]
+    [Description("アイテム")]
     public NamedAPIResource? Item { get; set; }
     #endregion
 
@@ -31,6 +38,9 @@ public class Machine
     /// 技
     /// </summary>
     [JsonPropertyName("move")]
+    [DisplayName("move")]
+    [Category("(基本)")]
+    [Description("技")]
     public NamedAPIResource? Move { get; set; }
     #endregion
 
@@ -39,6 +49,9 @@ public class Machine
     /// バージョングループ
     /// </summary>
     [JsonPropertyName("version_group")]
+    [DisplayName("version_group")]
+    [Category("(基本)")]
+    [Description("バージョングループ")]
     public NamedAPIResource? VersionGroup { get; set; }
     #endregion
 

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.Core;
 using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -20,6 +22,9 @@ public class MoveDamageClass
     /// 技のダメージクラスID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("技のダメージクラスID")]
     public int? Id { get; set; }
     #endregion
 
@@ -28,6 +33,9 @@ public class MoveDamageClass
     /// 技のダメージクラス名
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("技のダメージクラス名")]
     public string? Name { get; set; }
     #endregion
 
@@ -36,7 +44,11 @@ public class MoveDamageClass
     /// 説明リスト
     /// </summary>
     [JsonPropertyName("descriptions")]
-    public List<Description>? Descriptions { get; set; }
+    [DisplayName("descriptions")]
+    [Category("(基本)")]
+    [Description("説明リスト")]
+    [TypeConverter(typeof(ListConverter<Description>))]
+    public IReadOnlyList<Description>? Descriptions { get; set; }
     #endregion
 
     #region 技リスト
@@ -44,7 +56,11 @@ public class MoveDamageClass
     /// 技リスト
     /// </summary>
     [JsonPropertyName("moves")]
-    public List<NamedAPIResource>? Moves { get; set; }
+    [DisplayName("moves")]
+    [Category("(基本)")]
+    [Description("技リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? Moves { get; set; }
     #endregion
 
     #region 言語ごとの名前リスト
@@ -52,7 +68,11 @@ public class MoveDamageClass
     /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public List<Name>? Names { get; set; }
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("説明リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
 

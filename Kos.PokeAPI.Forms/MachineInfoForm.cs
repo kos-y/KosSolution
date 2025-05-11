@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Machines.Machines;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -29,19 +30,19 @@ public partial class MachineInfoForm : Form
     }
     #endregion
 
-    #region アイテム 詳細 クリック
+    #region アイテム クリック
     /// <summary>
-    /// アイテム 詳細 クリック
+    /// アイテム クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ItemDetailButton_Click(object sender, EventArgs e)
+    private void ItemButton_Click(object sender, EventArgs e)
     {
-        if (ItemDetailButton.Tag is null) {
+        if (ItemButton.Tag is null) {
             return;
         }
 
-        if (ItemDetailButton.Tag is not NamedAPIResource api) {
+        if (ItemButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -54,19 +55,19 @@ public partial class MachineInfoForm : Form
     }
     #endregion
 
-    #region 技 詳細 クリック
+    #region 技 クリック
     /// <summary>
-    /// 技 詳細 クリック
+    /// 技 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void MoveDetailButton_Click(object sender, EventArgs e)
+    private void MoveButton_Click(object sender, EventArgs e)
     {
-        if (MoveDetailButton.Tag is null) {
+        if (MoveButton.Tag is null) {
             return;
         }
 
-        if (MoveDetailButton.Tag is not NamedAPIResource api) {
+        if (MoveButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -79,19 +80,19 @@ public partial class MachineInfoForm : Form
     }
     #endregion
 
-    #region バージョングループ 詳細 クリック
+    #region バージョングループ クリック
     /// <summary>
-    /// バージョングループ 詳細 クリック
+    /// バージョングループ クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionGroupDetailButton_Click(object sender, EventArgs e)
+    private void VersionGroupButton_Click(object sender, EventArgs e)
     {
-        if (VersionGroupDetailButton.Tag is null) {
+        if (VersionGroupButton.Tag is null) {
             return;
         }
 
-        if (VersionGroupDetailButton.Tag is not NamedAPIResource api) {
+        if (VersionGroupButton.Tag is not NamedAPIResource api) {
             return;
         }
 
@@ -100,6 +101,23 @@ public partial class MachineInfoForm : Form
         }
 
         using VersionGroupInfoForm form = new(api.Url);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -123,18 +141,16 @@ public partial class MachineInfoForm : Form
     /// <param name="url"></param>
     private void SetData(string url)
     {
-        Machine? m = Machine.GetResource(url);
-        if (m is null) {
+        Machine? machine = Machine.GetResource(url);
+        if (machine is null) {
             return;
         }
 
-        IdTextBox.Text = $"{m.Id}";
-        ItemTextBox.Text = m.Item?.Name ?? string.Empty;
-        ItemDetailButton.Tag = m.Item;
-        MoveTextBox.Text = m.Move?.Name ?? string.Empty;
-        MoveDetailButton.Tag = m.Move;
-        VersionGroupTextBox.Text = m.VersionGroup?.Name ?? string.Empty;
-        VersionGroupDetailButton.Tag = m.VersionGroup;
+        Tag = machine;
+        FormsHelper.SetData(machine.Id, IdCaptionLabel, IdTextBox);
+        FormsHelper.SetData(machine.Item, ItemButton, ItemTextBox);
+        FormsHelper.SetData(machine.Move, MoveButton, MoveTextBox);
+        FormsHelper.SetData(machine.VersionGroup, VersionGroupButton, VersionGroupTextBox);
     }
     #endregion
 }

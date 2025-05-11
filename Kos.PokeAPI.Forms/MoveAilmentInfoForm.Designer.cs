@@ -41,6 +41,7 @@ partial class MoveAilmentInfoForm
         dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
         MoveCaptionLabel = new Label();
         CloseButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)MoveDataGridView).BeginInit();
         SuspendLayout();
@@ -178,19 +179,30 @@ partial class MoveAilmentInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(663, 294);
+        CloseButton.Location = new Point(650, 294);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(63, 35);
-        CloseButton.TabIndex = 8;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 9;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(568, 294);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 8;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // MoveAilmentInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(743, 338);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(MoveDataGridView);
         Controls.Add(MoveCaptionLabel);
@@ -229,4 +241,5 @@ partial class MoveAilmentInfoForm
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private Label MoveCaptionLabel;
     private Button CloseButton;
+    private Button PropertyButton;
 }

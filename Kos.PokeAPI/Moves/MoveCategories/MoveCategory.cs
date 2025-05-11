@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.Core;
 using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -20,14 +22,20 @@ public class MoveCategory
     /// 技のカテゴリID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("技のカテゴリID")]
     public int? Id { get; set; }
     #endregion
 
-    #region 技のカテゴリ名
+    #region 技のカテゴリの名前
     /// <summary>
-    /// 技のカテゴリ名
+    /// 技のカテゴリの名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("技のカテゴリの名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -36,7 +44,11 @@ public class MoveCategory
     /// 技リスト
     /// </summary>
     [JsonPropertyName("moves")]
-    public List<NamedAPIResource>? Moves { get; set; }
+    [DisplayName("moves")]
+    [Category("(基本)")]
+    [Description("技リスト")]
+    [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
+    public IReadOnlyList<NamedAPIResource>? Moves { get; set; }
     #endregion
 
     #region 説明リスト
@@ -44,7 +56,11 @@ public class MoveCategory
     /// 説明リスト
     /// </summary>
     [JsonPropertyName("descriptions")]
-    public List<Description>? Descriptions { get; set; }
+    [DisplayName("descriptions")]
+    [Category("(基本)")]
+    [Description("説明リスト")]
+    [TypeConverter(typeof(ListConverter<Description>))]
+    public IReadOnlyList<Description>? Descriptions { get; set; }
     #endregion
 
 

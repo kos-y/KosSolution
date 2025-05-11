@@ -37,6 +37,7 @@ partial class MoveBattleStyleInfoForm
         DetailColumn = new DataGridViewButtonColumn();
         NamesCaptionLabel = new Label();
         CloseButton = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
         // 
@@ -133,20 +134,32 @@ partial class MoveBattleStyleInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(262, 272);
+        CloseButton.Location = new Point(256, 272);
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(73, 35);
-        CloseButton.TabIndex = 6;
+        CloseButton.Size = new Size(76, 35);
+        CloseButton.TabIndex = 7;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(172, 271);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 6;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // MoveBattleStyleInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(348, 318);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(NamesDataGridView);
         Controls.Add(NamesCaptionLabel);
@@ -178,4 +191,5 @@ partial class MoveBattleStyleInfoForm
     private DataGridViewButtonColumn DetailColumn;
     private Label NamesCaptionLabel;
     private Button CloseButton;
+    private Button PropertyButton;
 }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.Core;
 using Kos.PokeAPI.Moves.MoveAilments;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -20,14 +22,20 @@ public class MoveBattleStyle
     /// 技の戦闘スタイルID
     /// </summary>
     [JsonPropertyName("id")]
+    [DisplayName("(id)")]
+    [Category("(基本)")]
+    [Description("技の戦闘スタイルID")]
     public int? Id { get; set; }
     #endregion
 
-    #region 技の戦闘スタイル名
+    #region 技の戦闘スタイルの名前
     /// <summary>
-    /// 技の戦闘スタイル名
+    /// 技の戦闘スタイルの名前
     /// </summary>
     [JsonPropertyName("name")]
+    [DisplayName("(name)")]
+    [Category("(基本)")]
+    [Description("技の戦闘スタイルの名前")]
     public string? Name { get; set; }
     #endregion
 
@@ -36,7 +44,11 @@ public class MoveBattleStyle
     /// 言語ごとの名前リスト
     /// </summary>
     [JsonPropertyName("names")]
-    public List<Name>? Names { get; set; }
+    [DisplayName("names")]
+    [Category("(基本)")]
+    [Description("言語ごとの名前リスト")]
+    [TypeConverter(typeof(ListConverter<Name>))]
+    public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
 

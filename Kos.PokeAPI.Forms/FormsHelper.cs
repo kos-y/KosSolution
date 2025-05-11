@@ -147,4 +147,35 @@ public static class FormsHelper
             picureBox.Image = Image.FromStream(s);
         }
     }
+
+    /// <summary>
+    /// データの設定
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="min"></param>
+    /// <param name="max"></param>
+    /// <param name="captionLabel"></param>
+    /// <param name="minTextBox"></param>
+    /// <param name="rangeLabel"></param>
+    /// <param name="maxTextBox"></param>
+    public static void SetData<T>(
+        T? min, T? max,
+        Label captionLabel, TextBox minTextBox, Label rangeLabel, TextBox maxTextBox)
+    {
+        if (min is null && max is null) {
+            captionLabel.Enabled = false;
+            minTextBox.Enabled = false;
+            minTextBox.Text = string.Empty;
+            rangeLabel.Enabled = false;
+            maxTextBox.Enabled = false;
+            maxTextBox.Text = string.Empty;
+        } else {
+            captionLabel.Enabled = true;
+            minTextBox.Enabled = true;
+            minTextBox.Text = $"{min}";
+            rangeLabel.Enabled = true;
+            maxTextBox.Enabled = true;
+            maxTextBox.Text = $"{max}";
+        }
+    }
 }

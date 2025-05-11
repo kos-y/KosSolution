@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -10,6 +11,7 @@ namespace Kos.PokeAPI.Moves.Moves;
 /// <summary>
 /// コンテストのコンボセット
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class ContestComboSets
 {
     #region ポケモンコンテスト
@@ -17,6 +19,9 @@ public class ContestComboSets
     /// ポケモンコンテスト
     /// </summary>
     [JsonPropertyName("normal")]
+    [DisplayName("normal")]
+    [Category("(基本)")]
+    [Description("ポケモンコンテスト")]
     public ContestComboDetail? Normal { get; set; }
     #endregion
 
@@ -25,6 +30,9 @@ public class ContestComboSets
     /// スーパーコンテスト
     /// </summary>
     [JsonPropertyName("super")]
-    public ContestComboDetail Super { get; set; }
+    [DisplayName("super")]
+    [Category("(基本)")]
+    [Description("スーパーコンテスト")]
+    public ContestComboDetail? Super { get; set; }
     #endregion
 }
