@@ -316,6 +316,9 @@ public partial class PokeAPIViewer : Form
             nameof(EndPoint.Characteristics) =>
                 new APIResourceListForm(eca, typeof(CharacteristicInfoForm)),
 
+            nameof(EndPoint.EggGroups) =>
+                new NamedAPIResourceListForm(eca, typeof(EggGroupInfoForm)),
+
             _ => null,
         };
     }
