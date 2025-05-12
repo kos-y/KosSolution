@@ -124,7 +124,7 @@ public class KPokemonSpecies
     /// <summary>
     /// パルパーク エンカウント リスト
     /// </summary>
-    public List<KPalParkEncounterArea> PalParkEncounter { get; set; } = [];
+   // public List<KPalParkEncounterArea> PalParkEncounter { get; set; } = [];
 
     /// <summary>
     /// フレーバーテキストリスト

@@ -11,7 +11,6 @@ using Kos.Core.Forms;
 using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Pokemon.Abilities;
 using Kos.PokeAPI.Utility.CommonModels;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Kos.PokeAPI.Forms;
 
