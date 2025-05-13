@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Kos.Core;
+using Kos.PokeAPI.Games.Pokedexes;
+using Kos.PokeAPI.Pokemon.EggGroups;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Pokemon.Genders;
@@ -59,5 +62,29 @@ public class Gender
     [Description("性別が要求される進化")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public IReadOnlyList<NamedAPIResource>? RequiredForEvolution { get; set; }
+    #endregion
+
+
+    // メソッド
+
+    #region リソースの取得
+    /// <summary>
+    /// リソースの取得
+    /// </summary>
+    /// <param name="url">URL</param>
+    /// <returns>リソース</returns>
+    public static Gender? GetResource(string url)
+    {
+        for (int i = 0; i < 5; i++) {
+            try {
+                string json = PokeAPIClient.GetAPIResourceUrl(url);
+
+                return JsonSerializer.Deserialize<Gender>(json);
+            } catch (JsonException) {
+            }
+        }
+
+        return null;
+    }
     #endregion
 }
