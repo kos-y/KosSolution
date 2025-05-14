@@ -38,7 +38,7 @@ public partial class GrowthRateInfoForm : Form
     /// <param name="e"></param>
     private void DescriptionsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
     {
-        if (e.RowIndex < 0 || e.ColumnIndex < < 0) {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
             return;
         }
 
