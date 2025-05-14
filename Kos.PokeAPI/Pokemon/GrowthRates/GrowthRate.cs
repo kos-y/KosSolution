@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Kos.Core;
+using Kos.PokeAPI.Pokemon.Genders;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Pokemon.GrowthRates;
@@ -82,5 +84,29 @@ public class GrowthRate
     [Description("ポケモン種族リスト")]
     [TypeConverter(typeof(ListConverter<NamedAPIResource>))]
     public List<NamedAPIResource>? PokemonSpecies { get; set; }
+    #endregion
+
+
+    // メソッド
+
+    #region リソースの取得
+    /// <summary>
+    /// リソースの取得
+    /// </summary>
+    /// <param name="url">URL</param>
+    /// <returns>リソース</returns>
+    public static GrowthRate? GetResource(string url)
+    {
+        for (int i = 0; i < 5; i++) {
+            try {
+                string json = PokeAPIClient.GetAPIResourceUrl(url);
+
+                return JsonSerializer.Deserialize<GrowthRate>(json);
+            } catch (JsonException) {
+            }
+        }
+
+        return null;
+    }
     #endregion
 }
