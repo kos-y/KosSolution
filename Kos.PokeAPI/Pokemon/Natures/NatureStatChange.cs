@@ -19,8 +19,8 @@ public class NatureStatChange
     /// <summary>
     /// ポケスロンのステータス
     /// </summary>
-    [JsonPropertyName("pokeathlon_state")]
-    [DisplayName("pokeathlon_state")]
+    [JsonPropertyName("pokeathlon_stat")]
+    [DisplayName("pokeathlon_stat")]
     [Category("(基本)")]
     [Description("ポケスロンのステータス")]
     public NamedAPIResource? PokeathlonStat { get; set; }

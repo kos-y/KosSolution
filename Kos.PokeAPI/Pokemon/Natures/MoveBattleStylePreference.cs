@@ -15,6 +15,28 @@ namespace Kos.PokeAPI.Pokemon.Natures;
 [TypeConverter(typeof(ExpandableObjectConverter))]
 public class MoveBattleStylePreference
 {
+    #region 戦闘スタイル
+    /// <summary>
+    /// 戦闘スタイル
+    /// </summary>
+    [JsonPropertyName("move_battle_style")]
+    [DisplayName("move_battle_style")]
+    [Category("(基本)")]
+    [Description("技の戦闘スタイル")]
+    public NamedAPIResource? MoveBattleStyle { get; set; }
+    #endregion
+
+    #region HPが高い状態でどのぐらい好まれるか
+    /// <summary>
+    /// HPが高い状態でどのぐらい好まれるか}
+    /// </summary>
+    [JsonPropertyName("high_hp_preference")]
+    [DisplayName("high_hp_preference")]
+    [Category("(基本)")]
+    [Description("HPが高い状態でどのぐらい好まれるか")]
+    public int? HighHPPreference { get; set; }
+    #endregion
+
     #region HPが低い状態でどのぐらい好まれるか
     /// </summary>
     /// <summary>
@@ -25,27 +47,5 @@ public class MoveBattleStylePreference
     [Category("(基本)")]
     [Description("HPが低い状態でどのぐらい好まれるか")]
     public int? LowHPPreference { get; set; }
-    #endregion
-
-    #region HPが高い状態でどのぐらい好まれるか
-    /// <summary>
-    /// HPが高い状態でどのぐらい好まれるか}
-    /// </summary>
-    [JsonPropertyName("hight_hp_preference")]
-    [DisplayName("hight_hp_preference")]
-    [Category("(基本)")]
-    [Description("HPが高い状態でどのぐらい好まれるか")]
-    public int? HighHPPreference { get; set; }
-    #endregion
-
-    #region 戦闘スタイル
-    /// <summary>
-    /// 戦闘スタイル
-    /// </summary>
-    [JsonPropertyName("move_battle_style")]
-    [DisplayName("move_battle_style")]
-    [Category("(基本)")]
-    [Description("技の戦闘スタイル")]
-    public NamedAPIResource? MoveBattleStyle { get; set; }
     #endregion
 }
