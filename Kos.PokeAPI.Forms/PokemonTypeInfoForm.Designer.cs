@@ -32,6 +32,7 @@ partial class PokemonTypeInfoForm
         TypeButton = new Button();
         TypeTextBox = new TextBox();
         CloseButton = new Button();
+        PropertyButton = new Button();
         SuspendLayout();
         // 
         // SlotCaptionLabel
@@ -78,15 +79,28 @@ partial class PokemonTypeInfoForm
         CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(76, 35);
-        CloseButton.TabIndex = 4;
+        CloseButton.TabIndex = 5;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
+        // 
+        // PropertyButton
+        // 
+        PropertyButton.Location = new Point(44, 72);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 4;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // PokemonTypeInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(217, 117);
+        Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(TypeTextBox);
         Controls.Add(TypeButton);
@@ -110,4 +124,5 @@ partial class PokemonTypeInfoForm
     private Button TypeButton;
     private TextBox TypeTextBox;
     private Button CloseButton;
+    private Button PropertyButton;
 }

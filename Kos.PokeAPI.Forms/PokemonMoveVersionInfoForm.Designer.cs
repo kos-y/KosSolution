@@ -55,6 +55,7 @@ partial class PokemonMoveVersionInfoForm
         VersionGroupButton.TabIndex = 0;
         VersionGroupButton.Text = "バージョングループ";
         VersionGroupButton.UseVisualStyleBackColor = true;
+        VersionGroupButton.Click += VersionGroupButton_Click;
         // 
         // MoveLearnMethodButton
         // 
@@ -65,6 +66,7 @@ partial class PokemonMoveVersionInfoForm
         MoveLearnMethodButton.TabIndex = 2;
         MoveLearnMethodButton.Text = "技の習得方法";
         MoveLearnMethodButton.UseVisualStyleBackColor = true;
+        MoveLearnMethodButton.Click += MoveLearnMethodButton_Click;
         // 
         // MoveLearnMethodTextBox
         // 
@@ -104,6 +106,7 @@ partial class PokemonMoveVersionInfoForm
         PropertyButton.TabIndex = 6;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // CloseButton
         // 
@@ -114,6 +117,7 @@ partial class PokemonMoveVersionInfoForm
         CloseButton.TabIndex = 7;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
         // 
         // PokemonMoveVersionInfoForm
         // 

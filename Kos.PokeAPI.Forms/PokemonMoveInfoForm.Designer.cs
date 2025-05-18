@@ -29,12 +29,12 @@ partial class PokemonMoveInfoForm
     {
         MoveTextBox = new TextBox();
         MoveButton = new Button();
-        VersionDetailsDataGridView = new DataGridView();
+        VersionGroupDetailsDataGridView = new DataGridView();
         dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
         dataGridViewButtonColumn6 = new DataGridViewButtonColumn();
         PropertyButton = new Button();
         CloseButton = new Button();
-        ((System.ComponentModel.ISupportInitialize)VersionDetailsDataGridView).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)VersionGroupDetailsDataGridView).BeginInit();
         SuspendLayout();
         // 
         // MoveTextBox
@@ -54,17 +54,20 @@ partial class PokemonMoveInfoForm
         MoveButton.TabIndex = 0;
         MoveButton.Text = "技";
         MoveButton.UseVisualStyleBackColor = true;
+        MoveButton.Click += MoveButton_Click;
         // 
-        // VersionDetailsDataGridView
+        // VersionGroupDetailsDataGridView
         // 
-        VersionDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        VersionDetailsDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewButtonColumn6 });
-        VersionDetailsDataGridView.Location = new Point(13, 43);
-        VersionDetailsDataGridView.Margin = new Padding(4, 3, 4, 3);
-        VersionDetailsDataGridView.Name = "VersionDetailsDataGridView";
-        VersionDetailsDataGridView.RowHeadersVisible = false;
-        VersionDetailsDataGridView.Size = new Size(355, 246);
-        VersionDetailsDataGridView.TabIndex = 2;
+        VersionGroupDetailsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        VersionGroupDetailsDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn7, dataGridViewButtonColumn6 });
+        VersionGroupDetailsDataGridView.Location = new Point(13, 43);
+        VersionGroupDetailsDataGridView.Margin = new Padding(4, 3, 4, 3);
+        VersionGroupDetailsDataGridView.Name = "VersionGroupDetailsDataGridView";
+        VersionGroupDetailsDataGridView.RowHeadersVisible = false;
+        VersionGroupDetailsDataGridView.Size = new Size(355, 246);
+        VersionGroupDetailsDataGridView.TabIndex = 2;
+        VersionGroupDetailsDataGridView.CellClick += VersionGroupDetailsDataGridView_CellClick;
+        VersionGroupDetailsDataGridView.CellDoubleClick += VersionGroupDetailsDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn7
         // 
@@ -93,6 +96,7 @@ partial class PokemonMoveInfoForm
         PropertyButton.TabIndex = 3;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // CloseButton
         // 
@@ -103,6 +107,7 @@ partial class PokemonMoveInfoForm
         CloseButton.TabIndex = 4;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
         // 
         // PokemonMoveInfoForm
         // 
@@ -111,7 +116,7 @@ partial class PokemonMoveInfoForm
         ClientSize = new Size(380, 341);
         Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
-        Controls.Add(VersionDetailsDataGridView);
+        Controls.Add(VersionGroupDetailsDataGridView);
         Controls.Add(MoveTextBox);
         Controls.Add(MoveButton);
         Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
@@ -121,7 +126,7 @@ partial class PokemonMoveInfoForm
         Name = "PokemonMoveInfoForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "ポケモンの技";
-        ((System.ComponentModel.ISupportInitialize)VersionDetailsDataGridView).EndInit();
+        ((System.ComponentModel.ISupportInitialize)VersionGroupDetailsDataGridView).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -130,7 +135,7 @@ partial class PokemonMoveInfoForm
 
     private TextBox MoveTextBox;
     private Button MoveButton;
-    private DataGridView VersionDetailsDataGridView;
+    private DataGridView VersionGroupDetailsDataGridView;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     private DataGridViewButtonColumn dataGridViewButtonColumn6;
     private Button PropertyButton;

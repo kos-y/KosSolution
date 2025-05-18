@@ -7,12 +7,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
+using Kos.PokeAPI.Pokemon.Pokemon;
 
 namespace Kos.PokeAPI.Forms;
+
+/// <summary>
+/// ポケモンのステータス
+/// </summary>
 public partial class PokemonStatInfoForm : Form
 {
-    public PokemonStatInfoForm()
+    #region コンストラクタ
+    /// <summary>
+    /// コンストラクタ
+    /// </summary>
+    /// <param name="stat">ステータス</param>
+    public PokemonStatInfoForm(PokemonStat stat)
     {
         InitializeComponent();
+        SetData(stat);
     }
+    #endregion
+
+    #region プロパティ クリック
+    /// </summary>
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 閉じる クリック
+    /// <summary>
+    /// 閉じる クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void CloseButton_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
+    #endregion
+
+    #region データの設定
+    /// <summary>
+    /// データの設定
+    /// </summary>
+    /// <param name="stat"></param>
+    private void SetData(PokemonStat stat)
+    {
+        Tag = stat;
+        FormsHelper.SetData(stat.Stat, StatButton, StatTextBox);
+        FormsHelper.SetData(stat.BaseStat, BaseStatCaptionLabel, BaseStatTextBox);
+        FormsHelper.SetData(stat.Effort, EffortCaptionLabel, EffortTextBox);
+    }
+    #endregion
 }

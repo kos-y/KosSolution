@@ -104,6 +104,7 @@ partial class PokemonStatInfoForm
         CloseButton.TabIndex = 7;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
         // 
         // PropertyButton
         // 
@@ -114,6 +115,7 @@ partial class PokemonStatInfoForm
         PropertyButton.TabIndex = 6;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // PokemonStatInfoForm
         // 

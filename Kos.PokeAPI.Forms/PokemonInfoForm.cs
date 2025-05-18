@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.Core.Forms;
 using Kos.PokeAPI.Pokemon.Pokemon;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -74,8 +75,55 @@ public partial class PokemonInfoForm : Form
     }
     #endregion
 
+    #region タイプ セルクリック
     /// <summary>
-    /// アビリティ セルクリック
+    /// タイプ セルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void TypesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (TypesDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+            return;
+        }
+
+        if (TypesDataGridView.Rows[e.RowIndex].DataBoundItem is not PokemonType type) {
+            return;
+        }
+
+        using PokemonTypeInfoForm form = new(type);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region タイプ セルダブルクリック
+    /// <summary>
+    /// タイプ セルダブルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void TypesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0) {
+            return;
+        }
+
+        if (TypesDataGridView.Rows[e.RowIndex].DataBoundItem is not PokemonType type) {
+            return;
+        }
+
+        using PokemonTypeInfoForm form = new(type);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 特性 セルクリック
+    /// <summary>
+    /// 特性 セルクリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -96,8 +144,151 @@ public partial class PokemonInfoForm : Form
         using PokemonAbilityInfoForm form = new(ability);
         _ = form.ShowDialog(this);
     }
+    #endregion
 
+    #region 特性 セルダブルクリック
+    /// <summary>
+    /// 特性 セルダブルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void AbilitiesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0) {
+            return;
+        }
 
+        if (AbilitiesDataGridView.Rows[e.RowIndex].DataBoundItem is not PokemonAbility ability) {
+            return;
+        }
+
+        using PokemonAbilityInfoForm form = new(ability);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region ステータス セルクリック
+    /// <summary>
+    /// ステータス セルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void StatsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (StatsDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+            return;
+        }
+
+        if (StatsDataGridView.Rows[e.RowIndex].DataBoundItem is not PokemonStat stat) {
+            return;
+        }
+
+        using PokemonStatInfoForm form = new(stat);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region ステータス セルダブルクリック
+    /// <summary>
+    /// ステータス セルダブルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void StatsDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0) {
+            return;
+        }
+
+        if (StatsDataGridView.Rows[e.RowIndex].DataBoundItem is not PokemonStat stat) {
+            return;
+        }
+
+        using PokemonStatInfoForm form = new(stat);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 技 セルクリック
+    /// <summary>
+    /// 技 セルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void MovesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0 || e.ColumnIndex < 0) {
+            return;
+        }
+
+        if (MovesDataGridView[e.ColumnIndex, e.RowIndex] is not DataGridViewButtonCell) {
+            return;
+        }
+
+        if (MovesDataGridView.Rows[e.RowIndex].DataBoundItem is not PokemonMove move) {
+            return;
+        }
+
+        using PokemonMoveInfoForm form = new(move);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 技 セルダブルクリック
+    /// <summary>
+    /// 技 セルダブルクリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void MovesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (e.RowIndex < 0) {
+            return;
+        }
+
+        if (MovesDataGridView.Rows[e.RowIndex].DataBoundItem is not PokemonMove move) {
+            return;
+        }
+
+        using PokemonMoveInfoForm form = new(move);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region プロパティ クリック
+    /// <summary>
+    /// プロパティ クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void PropertyButton_Click(object sender, EventArgs e)
+    {
+        if (Tag is null) {
+            return;
+        }
+
+        using PropertyGridForm form = new(Tag);
+        _ = form.ShowDialog(this);
+    }
+    #endregion
+
+    #region 閉じる クリック
+    /// <summary>
+    /// 閉じる クリック
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void CloseButton_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
+    #endregion
+
+    #region データの設定
     /// <summary>
     /// データの設定
     /// </summary>
@@ -133,5 +324,7 @@ public partial class PokemonInfoForm : Form
         FormsHelper.SetData(pokemon.Sprites?.BackShiny, SpriteBackShinyPictureBox);
         FormsHelper.SetData(pokemon.Sprites?.BackFemale, SpriteBackFemalePictureBox);
         FormsHelper.SetData(pokemon.Sprites?.BackShinyFemale, SpriteBackShinyFemalePictureBox);
+        FormsHelper.SetData(pokemon.LocationAreaEncounters, LocationAreaEncountersButton);
     }
+    #endregion
 }

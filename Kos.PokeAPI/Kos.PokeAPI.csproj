@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Pokemon\Pokemon\PokemonSpritesPattern1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Kos.Core\Kos.Core.csproj" />
   </ItemGroup>
 

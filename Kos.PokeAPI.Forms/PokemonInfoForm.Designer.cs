@@ -155,6 +155,7 @@ partial class PokemonInfoForm
         PropertyButton.TabIndex = 30;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // CloseButton
         // 
@@ -165,6 +166,7 @@ partial class PokemonInfoForm
         CloseButton.TabIndex = 31;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
+        CloseButton.Click += CloseButton_Click;
         // 
         // SpeciesButton
         // 
@@ -358,6 +360,8 @@ partial class PokemonInfoForm
         TypesDataGridView.RowHeadersVisible = false;
         TypesDataGridView.Size = new Size(223, 84);
         TypesDataGridView.TabIndex = 16;
+        TypesDataGridView.CellClick += TypesDataGridView_CellClick;
+        TypesDataGridView.CellDoubleClick += TypesDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn1
         // 
@@ -428,6 +432,8 @@ partial class PokemonInfoForm
         StatsDataGridView.RowHeadersVisible = false;
         StatsDataGridView.Size = new Size(203, 405);
         StatsDataGridView.TabIndex = 20;
+        StatsDataGridView.CellClick += StatsDataGridView_CellClick;
+        StatsDataGridView.CellDoubleClick += StatsDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn3
         // 
@@ -458,6 +464,7 @@ partial class PokemonInfoForm
         AbilitiesDataGridView.Size = new Size(223, 197);
         AbilitiesDataGridView.TabIndex = 18;
         AbilitiesDataGridView.CellClick += AbilitiesDataGridView_CellClick;
+        AbilitiesDataGridView.CellDoubleClick += AbilitiesDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn4
         // 
@@ -527,6 +534,8 @@ partial class PokemonInfoForm
         MovesDataGridView.RowHeadersVisible = false;
         MovesDataGridView.Size = new Size(233, 405);
         MovesDataGridView.TabIndex = 24;
+        MovesDataGridView.CellClick += MovesDataGridView_CellClick;
+        MovesDataGridView.CellDoubleClick += MovesDataGridView_CellDoubleClick;
         // 
         // dataGridViewTextBoxColumn6
         // 

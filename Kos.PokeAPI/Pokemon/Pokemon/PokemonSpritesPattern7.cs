@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace Kos.PokeAPI.Pokemon.Pokemon;
 
 /// <summary>
-/// ポケモンのスプライト
+/// ポケモン - スプライト
 /// </summary>
-public class PokemonSprites
+public class PokemonSpritesPattern7
 {
     #region 正面
     /// <summary>
@@ -19,7 +19,7 @@ public class PokemonSprites
     /// </summary>
     [JsonPropertyName("front_default")]
     [DisplayName("front_default")]
-    [Category("(基本)")]
+    [Category("ポケモン - スプライト")]
     [Description("正面")]
     public string? FrontDefault { get; set; }
     #endregion
@@ -30,7 +30,7 @@ public class PokemonSprites
     /// </summary>
     [JsonPropertyName("front_shiny")]
     [DisplayName("front_shiny")]
-    [Category("(基本)")]
+    [Category("ポケモン - スプライト")]
     [Description("正面 色違い")]
     public string? FrontShiny { get; set; }
     #endregion
@@ -41,7 +41,7 @@ public class PokemonSprites
     /// </summary>
     [JsonPropertyName("front_female")]
     [DisplayName("front_female")]
-    [Category("(基本)")]
+    [Category("ポケモン - スプライト")]
     [Description("正面 メス")]
     public string? FrontFemale { get; set; }
     #endregion
@@ -52,7 +52,7 @@ public class PokemonSprites
     /// </summary>
     [JsonPropertyName("front_shiny_female")]
     [DisplayName("front_shiny_female")]
-    [Category("(基本)")]
+    [Category("ポケモン - スプライト")]
     [Description("正面 色違い メス")]
     public string? FrontShinyFemale { get; set; }
     #endregion
@@ -63,7 +63,7 @@ public class PokemonSprites
     /// </summary>
     [JsonPropertyName("back_default")]
     [DisplayName("back_default")]
-    [Category("(基本)")]
+    [Category("ポケモン - スプライト")]
     [Description("背面")]
     public string? BackDefault { get; set; }
     #endregion
@@ -74,7 +74,7 @@ public class PokemonSprites
     /// </summary>
     [JsonPropertyName("back_shiny")]
     [DisplayName("back_shiny")]
-    [Category("(基本)")]
+    [Category("ポケモン - スプライト")]
     [Description("背面 色違い")]
     public string? BackShiny { get; set; }
     #endregion
@@ -85,7 +85,7 @@ public class PokemonSprites
     /// </summary>
     [JsonPropertyName("back_female")]
     [DisplayName("back_female")]
-    [Category("(基本)")]
+    [Category("ポケモン - スプライト")]
     [Description("背面 メス")]
     public string? BackFemale { get; set; }
     #endregion
@@ -96,19 +96,19 @@ public class PokemonSprites
     /// </summary>
     [JsonPropertyName("back_shiny_female")]
     [DisplayName("back_shiny_female")]
-    [Category("(基本)")]
+    [Category("ポケモン - スプライト")]
     [Description("背面 色違い メス")]
     public string? BackShinyFemale { get; set; }
     #endregion
 
-    #region その他
+    #region アニメーション
     /// <summary>
-    /// その他
+    /// アニメーション
     /// </summary>
-    [JsonPropertyName("other")]
-    [DisplayName("other")]
+    [JsonPropertyName("animated")]
+    [DisplayName("animated")]
     [Category("ポケモン - スプライト")]
-    [Description("その他")]
-    public PokemonSpritesOther? Other { get; set; }
+    [Description("アニメーション")]
+    PokemonSpritesPattern6? Animated { get; set; }
     #endregion
 }
