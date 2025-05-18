@@ -331,6 +331,9 @@ public partial class PokeAPIViewer : Form
             nameof(EndPoint.PokeathlonStats) =>
                 new NamedAPIResourceListForm(eca, typeof(PokeathlonStatInfoForm)),
 
+            nameof(EndPoint.Pokemon) =>
+                new NamedAPIResourceListForm(eca, typeof(PokemonInfoForm)),
+
             _ => null,
         };
     }

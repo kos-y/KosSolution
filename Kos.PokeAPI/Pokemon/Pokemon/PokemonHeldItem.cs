@@ -33,6 +33,6 @@ public class PokemonHeldItem
     [DisplayName("version_details")]
     [Category("(基本)")]
     [Description("バージョンごとの詳細")]
-    public List<PokemonHeldItemVersion>? VersionDetails { get; set; }
+    public IReadOnlyList<PokemonHeldItemVersion>? VersionDetails { get; set; }
     #endregion
 }

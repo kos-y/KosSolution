@@ -14,17 +14,6 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// </summary>
 public class PokemonType
 {
-    #region　タイプ
-    /// <summary>
-    /// タイプ
-    /// </summary>
-    [JsonPropertyName("type")]
-    [DisplayName("type")]
-    [Category("(基本)")]
-    [Description("タイプ")]
-    public NamedAPIResource? Type { get; set; }
-    #endregion
-
     #region スロット
     /// <summary>
     /// スロット
@@ -34,5 +23,16 @@ public class PokemonType
     [Category("(基本)")]
     [Description("スロット")]
     public int? Slot { get; set; }
+    #endregion
+
+    #region　タイプ
+    /// <summary>
+    /// タイプ
+    /// </summary>
+    [JsonPropertyName("type")]
+    [DisplayName("type")]
+    [Category("(基本)")]
+    [Description("タイプ")]
+    public NamedAPIResource? Type { get; set; }
     #endregion
 }

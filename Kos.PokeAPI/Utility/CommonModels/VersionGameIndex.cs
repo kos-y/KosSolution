@@ -16,17 +16,6 @@ public class VersionGameIndex
 {
     // フィールド
 
-    #region ゲームIndex
-    /// <summary>
-    /// ゲームインデックス
-    /// </summary>
-    [JsonPropertyName("game_index")]
-    [DisplayName("game_index")]
-    [Category("(基本)")]
-    [Description("ゲームIndex")]
-    public int? GameIndex { get; set; }
-    #endregion
-
     #region バージョン
     /// <summary>
     /// バージョン
@@ -36,5 +25,16 @@ public class VersionGameIndex
     [Category("(基本)")]
     [Description("バージョン")]
     public NamedAPIResource? Version { get; set; }
+    #endregion
+
+    #region ゲームIndex
+    /// <summary>
+    /// ゲームインデックス
+    /// </summary>
+    [JsonPropertyName("game_index")]
+    [DisplayName("game_index")]
+    [Category("(基本)")]
+    [Description("ゲームIndex")]
+    public int? GameIndex { get; set; }
     #endregion
 }

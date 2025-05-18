@@ -14,17 +14,6 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// </summary>
 public class PokemonAbility
 {
-    #region 特性
-    /// <summary>
-    /// 特性
-    /// </summary>
-    [JsonPropertyName("ability")]
-    [DisplayName("ability")]
-    [Category("(基本)")]
-    [Description("特性")]
-    public NamedAPIResource? Ability { get; set; }
-    #endregion
-
     #region スロット
     /// <summary>
     /// スロット
@@ -34,6 +23,17 @@ public class PokemonAbility
     [Category("(基本)")]
     [Description("スロット")]
     public int? Slot { get; set; }
+    #endregion
+
+    #region 特性
+    /// <summary>
+    /// 特性
+    /// </summary>
+    [JsonPropertyName("ability")]
+    [DisplayName("ability")]
+    [Category("(基本)")]
+    [Description("特性")]
+    public NamedAPIResource? Ability { get; set; }
     #endregion
 
     #region 隠し特性

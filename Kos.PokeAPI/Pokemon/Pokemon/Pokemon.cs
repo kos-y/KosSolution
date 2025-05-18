@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Kos.PokeAPI.Pokemon.PokeathlonStats;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Pokemon.Pokemon;
@@ -45,6 +47,17 @@ public class Pokemon
     [Category("ポケモン")]
     [Description("種族")]
     public NamedAPIResource? Species { get; set; }
+    #endregion
+
+    #region ポケモン種族のデフォルトか
+    /// <summary>
+    /// ポケモン種族のデフォルトか
+    /// </summary>
+    [JsonPropertyName("is_default")]
+    [DisplayName("is_default")]
+    [Category("ポケモン")]
+    [Description("ポケモン種族のデフォルトか")]
+    public bool? IsDefault { get; set; }
     #endregion
 
     #region 基本経験値
@@ -91,6 +104,17 @@ public class Pokemon
     public int? Weight { get; set; }
     #endregion
 
+    #region リージョンフォーム
+    /// <summary>
+    /// リージョンフォーム
+    /// </summary>
+    [JsonPropertyName("forms")]
+    [DisplayName("forms")]
+    [Category("ポケモン")]
+    [Description("リージョンフォーム")]
+    public IReadOnlyList<NamedAPIResource>? Forms { get; set; }
+    #endregion
+
     #region 鳴き声
     /// <summary>
     /// 鳴き声
@@ -111,17 +135,6 @@ public class Pokemon
     [Category("ポケモン")]
     [Description("スプライト")]
     public PokemonSprites? Sprites { get; set; }
-    #endregion
-
-    #region ポケモン種族のデフォルトか
-    /// <summary>
-    /// ポケモン種族のデフォルトか
-    /// </summary>
-    [JsonPropertyName("is_default")]
-    [DisplayName("is_default")]
-    [Category("ポケモン")]
-    [Description("ポケモン種族のデフォルトか")]
-    public bool? IsDefault { get; set; }
     #endregion
 
     #region 全国図鑑の表示順番
@@ -155,17 +168,6 @@ public class Pokemon
     [Category("ポケモン")]
     [Description("特性リスト")]
     public IReadOnlyList<PokemonAbility>? Abilities { get; set; }
-    #endregion
-
-    #region リージョンフォーム
-    /// <summary>
-    /// リージョンフォーム
-    /// </summary>
-    [JsonPropertyName("forms")]
-    [DisplayName("forms")]
-    [Category("ポケモン")]
-    [Description("リージョンフォーム")]
-    public NamedAPIResource? Forms { get; set; }
     #endregion
 
     #region ゲーム内のインデックスリスト
@@ -232,5 +234,29 @@ public class Pokemon
     [Category("ポケモン")]
     [Description("過去の特性リスト")]
     public IReadOnlyList<PokemonAbilityPast>? PastAbilities { get; set; }
+    #endregion
+
+
+    // メソッド
+
+    #region リソースの取得
+    /// <summary>
+    /// リソースの取得
+    /// </summary>
+    /// <param name="url">URL</param>
+    /// <returns>リソース</returns>
+    public static Pokemon? GetResource(string url)
+    {
+        for (int i = 0; i < 5; i++) {
+            try {
+                string json = PokeAPIClient.GetAPIResourceUrl(url);
+
+                return JsonSerializer.Deserialize<Pokemon>(json);
+            } catch (JsonException) {
+            }
+        }
+
+        return null;
+    }
     #endregion
 }
