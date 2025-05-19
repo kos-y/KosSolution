@@ -11,6 +11,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモン - スプライト
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonSpritesIcons
 {
     #region 正面

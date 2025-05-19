@@ -12,6 +12,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモン ステータス
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonStat
 {
     #region ステータス

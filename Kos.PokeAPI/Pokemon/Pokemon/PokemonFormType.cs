@@ -12,6 +12,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// リーフォンフォームのポケモンタイプ
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonFormType
 {
     #region　タイプ

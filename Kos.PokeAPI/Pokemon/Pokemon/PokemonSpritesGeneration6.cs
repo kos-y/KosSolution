@@ -11,6 +11,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモン - スプライト - 第6世代
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonSpritesGeneration6
 {
     #region X・Y

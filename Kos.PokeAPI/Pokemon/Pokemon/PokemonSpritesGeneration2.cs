@@ -12,6 +12,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモン - スプライト - 第2世代
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonSpritesGeneration2
 {
     #region 金

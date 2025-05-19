@@ -11,6 +11,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモン - スプライト
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonSpritesPattern1
 {
     #region 正面
@@ -28,8 +29,8 @@ public class PokemonSpritesPattern1
     /// <summary>
     /// 正面 モノクロ
     /// </summary>
-    [JsonPropertyName("front_default")]
-    [DisplayName("front_default")]
+    [JsonPropertyName("front_gray")]
+    [DisplayName("front_gray")]
     [Category("ポケモン - スプライト")]
     [Description("正面 モノクロ")]
     public string? FrontGray { get; set; }
@@ -39,8 +40,8 @@ public class PokemonSpritesPattern1
     /// <summary>
     /// 正面 透過
     /// </summary>
-    [JsonPropertyName("front_default")]
-    [DisplayName("front_default")]
+    [JsonPropertyName("front_transparent")]
+    [DisplayName("front_transparent")]
     [Category("ポケモン - スプライト")]
     [Description("正面 透過")]
     public string? FrontTransparent { get; set; }
@@ -61,8 +62,8 @@ public class PokemonSpritesPattern1
     /// <summary>
     /// 背面 モノクロ
     /// </summary>
-    [JsonPropertyName("back_default")]
-    [DisplayName("back_default")]
+    [JsonPropertyName("back_gray")]
+    [DisplayName("back_gray")]
     [Category("ポケモン - スプライト")]
     [Description("背面 モノクロ")]
     public string? BackGray { get; set; }
@@ -72,8 +73,8 @@ public class PokemonSpritesPattern1
     /// <summary>
     /// 背面 透過
     /// </summary>
-    [JsonPropertyName("back_default")]
-    [DisplayName("back_default")]
+    [JsonPropertyName("back_transparent")]
+    [DisplayName("back_transparent")]
     [Category("ポケモン - スプライト")]
     [Description("背面 透過")]
     public string? BackTransparent { get; set; }

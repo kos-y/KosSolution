@@ -12,6 +12,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモンの所持アイテム
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonHeldItem
 {
     #region アイテム

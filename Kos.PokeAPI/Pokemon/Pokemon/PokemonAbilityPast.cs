@@ -12,6 +12,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// 過去のポケモン特性
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonAbilityPast
 {
     #region 世代

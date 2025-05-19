@@ -12,6 +12,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモンの特性
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonAbility
 {
     #region スロット

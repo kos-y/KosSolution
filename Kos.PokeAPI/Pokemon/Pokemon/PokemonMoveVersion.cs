@@ -12,6 +12,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモンが覚える技 バージョンごと
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonMoveVersion
 {
     #region バージョングループ

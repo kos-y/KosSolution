@@ -11,6 +11,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモンの鳴き声
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonCries
 {
     #region 最新の鳴き声

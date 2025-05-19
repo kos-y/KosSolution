@@ -12,6 +12,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモン所持アイテム バージョン
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonHeldItemVersion
 {
     #region バージョン

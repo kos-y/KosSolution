@@ -11,6 +11,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモンのスプライト
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonSprites
 {
     #region 正面
@@ -99,6 +100,17 @@ public class PokemonSprites
     [Category("(基本)")]
     [Description("背面 色違い メス")]
     public string? BackShinyFemale { get; set; }
+    #endregion
+
+    #region バージョンごと
+    /// <summary>
+    /// バージョンごと
+    /// </summary>
+    [JsonPropertyName("versions")]
+    [DisplayName("versions")]
+    [Category("ポケモン - スプライト")]
+    [Description("バージョンごと")]
+    public PokemonSpritesVersions? Versions { get; set; }
     #endregion
 
     #region その他

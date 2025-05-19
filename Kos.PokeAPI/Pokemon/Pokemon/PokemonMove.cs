@@ -12,6 +12,7 @@ namespace Kos.PokeAPI.Pokemon.Pokemon;
 /// <summary>
 /// ポケモンの技
 /// </summary>
+[TypeConverter(typeof(ExpandableObjectConverter))]
 public class PokemonMove
 {
     #region 技
