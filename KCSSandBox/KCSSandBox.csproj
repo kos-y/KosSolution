@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\KCSPokeAPI\KCSPokeAPI.csproj" />
-  </ItemGroup>
-
 </Project>

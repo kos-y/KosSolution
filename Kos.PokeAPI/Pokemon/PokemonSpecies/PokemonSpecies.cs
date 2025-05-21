@@ -256,4 +256,59 @@ public class PokemonSpecies
     public IReadOnlyList<Name>? Names { get; set; }
     #endregion
 
+    #region 遭遇するパルパークエリアリスト
+    /// <summary>
+    /// 遭遇するパルパークのエリアリスト
+    /// </summary>
+    [JsonPropertyName("pal_park_encounters")]
+    [DisplayName("pal_park_encounters")]
+    [Category("ポケモン種族")]
+    [Description("遭遇するパルパークエリアリスト")]
+    public IReadOnlyList<PalParkEncounterArea>? PalParkEncounters { get; set; }
+    #endregion
+
+    #region フレーバーテキストリスト
+    /// <summary>
+    /// フレーバーテキストリスト
+    /// </summary>
+    [JsonPropertyName("flavor_text_entries")]
+    [DisplayName("flavor_text_entries")]
+    [Category("ポケモン種族")]
+    [Description("フレーバーテキストリスト")]
+    public IReadOnlyList<FlavorText>? FlavorTextEntries { get; set; }
+    #endregion
+
+    #region フォルムの説明リスト
+    /// <summary>
+    /// フォルムの説明リスト
+    /// </summary>
+    [JsonPropertyName("form_descriptions")]
+    [DisplayName("form_descriptions")]
+    [Category("ポケモン種族")]
+    [Description("フォルムの説明リスト")]
+    public IReadOnlyList<Description>? FormDescriptions { get; set; }
+    #endregion
+
+    #region 分類リスト
+    /// <summary>
+    /// 分類リスト
+    /// </summary>
+    [JsonPropertyName("genera")]
+    [DisplayName("genera")]
+    [Category("ポケモン種族")]
+    [Description("分類リスト")]
+    public IReadOnlyList<Genus>? GenusList { get; set; }
+    #endregion
+
+    #region バリエーションリスト
+    /// <summary>
+    /// バリエーションリスト
+    /// </summary>
+    [JsonPropertyName("varieties")]
+    [DisplayName("varieties")]
+    [Category("ポケモン種族")]
+    [Description("バリエーションリスト")]
+    public IReadOnlyList<PokemonSpeciesVariety>? Varieties { get; set; }
+    #endregion
+
 }
