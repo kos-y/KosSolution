@@ -11,7 +11,7 @@ using Kos.Core.Forms;
 using Kos.PokeAPI.Utility.CommonModels;
 using Kos.PokeAPI.Utility.Languages;
 
-namespace Kos.PokeAPI.Forms;
+namespace Kos.PokeAPI.Forms.Utility.Languages;
 
 /// <summary>
 /// 言語情報 フォーム

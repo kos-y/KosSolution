@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kos.Core.Forms\Kos.Core.Forms.csproj" />
+    <ProjectReference Include="..\Kos.Core.WPF\Kos.Core.WPF.csproj" />
+    <ProjectReference Include="..\Kos.PokeAPI\Kos.PokeAPI.csproj" />
+  </ItemGroup>
+
+</Project>

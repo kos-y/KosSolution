@@ -1,4 +1,4 @@
-﻿namespace Kos.PokeAPI.Forms;
+﻿namespace Kos.PokeAPI.Forms.Utility.Languages;
 
 partial class LanguageInfoForm
 {
@@ -50,9 +50,9 @@ partial class LanguageInfoForm
         // IdCaptionLabel
         // 
         IdCaptionLabel.AutoSize = true;
-        IdCaptionLabel.Location = new Point(59, 16);
+        IdCaptionLabel.Location = new Point(52, 14);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(47, 17);
+        IdCaptionLabel.Size = new Size(42, 15);
         IdCaptionLabel.TabIndex = 0;
         IdCaptionLabel.Text = "言語ID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -60,9 +60,9 @@ partial class LanguageInfoForm
         // NameCaptionLabel
         // 
         NameCaptionLabel.AutoSize = true;
-        NameCaptionLabel.Location = new Point(59, 46);
+        NameCaptionLabel.Location = new Point(52, 41);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(47, 17);
+        NameCaptionLabel.Size = new Size(43, 15);
         NameCaptionLabel.TabIndex = 2;
         NameCaptionLabel.Text = "言語名";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -70,9 +70,9 @@ partial class LanguageInfoForm
         // OfficialCaptionLabel
         // 
         OfficialCaptionLabel.AutoSize = true;
-        OfficialCaptionLabel.Location = new Point(14, 77);
+        OfficialCaptionLabel.Location = new Point(12, 68);
         OfficialCaptionLabel.Name = "OfficialCaptionLabel";
-        OfficialCaptionLabel.Size = new Size(92, 17);
+        OfficialCaptionLabel.Size = new Size(83, 15);
         OfficialCaptionLabel.TabIndex = 4;
         OfficialCaptionLabel.Text = "オフィシャル言語";
         OfficialCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -80,9 +80,9 @@ partial class LanguageInfoForm
         // Iso639CaptionLabel
         // 
         Iso639CaptionLabel.AutoSize = true;
-        Iso639CaptionLabel.Location = new Point(56, 108);
+        Iso639CaptionLabel.Location = new Point(49, 95);
         Iso639CaptionLabel.Name = "Iso639CaptionLabel";
-        Iso639CaptionLabel.Size = new Size(50, 17);
+        Iso639CaptionLabel.Size = new Size(43, 15);
         Iso639CaptionLabel.TabIndex = 6;
         Iso639CaptionLabel.Text = "ISO639";
         Iso639CaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -90,9 +90,9 @@ partial class LanguageInfoForm
         // Iso3166CaptionLabel
         // 
         Iso3166CaptionLabel.AutoSize = true;
-        Iso3166CaptionLabel.Location = new Point(51, 139);
+        Iso3166CaptionLabel.Location = new Point(45, 123);
         Iso3166CaptionLabel.Name = "Iso3166CaptionLabel";
-        Iso3166CaptionLabel.Size = new Size(55, 17);
+        Iso3166CaptionLabel.Size = new Size(49, 15);
         Iso3166CaptionLabel.TabIndex = 8;
         Iso3166CaptionLabel.Text = "ISO3166";
         Iso3166CaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -100,9 +100,9 @@ partial class LanguageInfoForm
         // NamesCaptionLabel
         // 
         NamesCaptionLabel.AutoSize = true;
-        NamesCaptionLabel.Location = new Point(14, 164);
+        NamesCaptionLabel.Location = new Point(255, 14);
         NamesCaptionLabel.Name = "NamesCaptionLabel";
-        NamesCaptionLabel.Size = new Size(103, 17);
+        NamesCaptionLabel.Size = new Size(94, 15);
         NamesCaptionLabel.TabIndex = 10;
         NamesCaptionLabel.Text = "言語ごとの言語名";
         NamesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -111,10 +111,10 @@ partial class LanguageInfoForm
         // 
         NamesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         NamesDataGridView.Columns.AddRange(new DataGridViewColumn[] { NameColumn, LanguageColumn, DetailColumn });
-        NamesDataGridView.Location = new Point(14, 184);
+        NamesDataGridView.Location = new Point(255, 31);
         NamesDataGridView.Name = "NamesDataGridView";
         NamesDataGridView.RowHeadersVisible = false;
-        NamesDataGridView.Size = new Size(270, 208);
+        NamesDataGridView.Size = new Size(236, 184);
         NamesDataGridView.TabIndex = 11;
         NamesDataGridView.CellClick += NamesDataGridView_CellClick;
         NamesDataGridView.CellDoubleClick += NamesDataGridView_CellDoubleClick;
@@ -126,7 +126,7 @@ partial class LanguageInfoForm
         NameColumn.HeaderText = "名前";
         NameColumn.Name = "NameColumn";
         NameColumn.ReadOnly = true;
-        NameColumn.Width = 59;
+        NameColumn.Width = 56;
         // 
         // LanguageColumn
         // 
@@ -135,7 +135,7 @@ partial class LanguageInfoForm
         LanguageColumn.HeaderText = "表示言語";
         LanguageColumn.Name = "LanguageColumn";
         LanguageColumn.ReadOnly = true;
-        LanguageColumn.Width = 85;
+        LanguageColumn.Width = 80;
         // 
         // DetailColumn
         // 
@@ -144,13 +144,13 @@ partial class LanguageInfoForm
         DetailColumn.Name = "DetailColumn";
         DetailColumn.Text = "詳細";
         DetailColumn.UseColumnTextForButtonValue = true;
-        DetailColumn.Width = 40;
+        DetailColumn.Width = 37;
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(208, 398);
+        CloseButton.Location = new Point(425, 221);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 35);
+        CloseButton.Size = new Size(66, 31);
         CloseButton.TabIndex = 13;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -158,49 +158,49 @@ partial class LanguageInfoForm
         // 
         // IdTextBox
         // 
-        IdTextBox.Location = new Point(112, 12);
+        IdTextBox.Location = new Point(98, 11);
         IdTextBox.Name = "IdTextBox";
         IdTextBox.ReadOnly = true;
-        IdTextBox.Size = new Size(172, 25);
+        IdTextBox.Size = new Size(151, 23);
         IdTextBox.TabIndex = 1;
         // 
         // NameTextBox
         // 
-        NameTextBox.Location = new Point(112, 43);
+        NameTextBox.Location = new Point(98, 38);
         NameTextBox.Name = "NameTextBox";
         NameTextBox.ReadOnly = true;
-        NameTextBox.Size = new Size(172, 25);
+        NameTextBox.Size = new Size(151, 23);
         NameTextBox.TabIndex = 3;
         // 
         // OfficialTextBox
         // 
-        OfficialTextBox.Location = new Point(112, 74);
+        OfficialTextBox.Location = new Point(98, 65);
         OfficialTextBox.Name = "OfficialTextBox";
         OfficialTextBox.ReadOnly = true;
-        OfficialTextBox.Size = new Size(172, 25);
+        OfficialTextBox.Size = new Size(151, 23);
         OfficialTextBox.TabIndex = 5;
         // 
         // Iso639TextBox
         // 
-        Iso639TextBox.Location = new Point(112, 105);
+        Iso639TextBox.Location = new Point(98, 93);
         Iso639TextBox.Name = "Iso639TextBox";
         Iso639TextBox.ReadOnly = true;
-        Iso639TextBox.Size = new Size(172, 25);
+        Iso639TextBox.Size = new Size(151, 23);
         Iso639TextBox.TabIndex = 7;
         // 
         // Iso3166TextBox
         // 
-        Iso3166TextBox.Location = new Point(112, 136);
+        Iso3166TextBox.Location = new Point(98, 120);
         Iso3166TextBox.Name = "Iso3166TextBox";
         Iso3166TextBox.ReadOnly = true;
-        Iso3166TextBox.Size = new Size(172, 25);
+        Iso3166TextBox.Size = new Size(151, 23);
         Iso3166TextBox.TabIndex = 9;
         // 
         // PropertyButton
         // 
-        PropertyButton.Location = new Point(126, 398);
+        PropertyButton.Location = new Point(353, 221);
         PropertyButton.Name = "PropertyButton";
-        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.Size = new Size(66, 31);
         PropertyButton.TabIndex = 12;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
@@ -208,9 +208,9 @@ partial class LanguageInfoForm
         // 
         // LanguageInfoForm
         // 
-        AutoScaleDimensions = new SizeF(8F, 17F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(306, 446);
+        ClientSize = new Size(510, 261);
         Controls.Add(PropertyButton);
         Controls.Add(Iso3166TextBox);
         Controls.Add(Iso639TextBox);
@@ -225,7 +225,7 @@ partial class LanguageInfoForm
         Controls.Add(OfficialCaptionLabel);
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdCaptionLabel);
-        Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
+        FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         Name = "LanguageInfoForm";
         StartPosition = FormStartPosition.CenterParent;

@@ -26,7 +26,7 @@
     <Compile Update="ContestTypeInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="LanguageInfoForm.cs">
+    <Compile Update="Utility\Languages\LanguageInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="NamedAPIResourceListForm.cs">

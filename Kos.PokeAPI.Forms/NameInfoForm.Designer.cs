@@ -38,36 +38,39 @@ partial class NameInfoForm
         // NameCaptionLabel
         // 
         NameCaptionLabel.AutoSize = true;
-        NameCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        NameCaptionLabel.Location = new Point(31, 15);
+        NameCaptionLabel.Location = new Point(19, 14);
+        NameCaptionLabel.Margin = new Padding(2, 0, 2, 0);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(34, 17);
+        NameCaptionLabel.Size = new Size(31, 15);
         NameCaptionLabel.TabIndex = 0;
         NameCaptionLabel.Text = "名前";
         // 
         // NameTextBox
         // 
-        NameTextBox.Location = new Point(71, 12);
+        NameTextBox.Location = new Point(55, 11);
+        NameTextBox.Margin = new Padding(2, 3, 2, 3);
         NameTextBox.Name = "NameTextBox";
         NameTextBox.ReadOnly = true;
-        NameTextBox.Size = new Size(252, 24);
+        NameTextBox.Size = new Size(197, 23);
         NameTextBox.TabIndex = 1;
         NameTextBox.Text = "ピカチュウ";
         // 
         // LanguageTextBox
         // 
-        LanguageTextBox.Location = new Point(71, 42);
+        LanguageTextBox.Location = new Point(55, 37);
+        LanguageTextBox.Margin = new Padding(2, 3, 2, 3);
         LanguageTextBox.Name = "LanguageTextBox";
         LanguageTextBox.ReadOnly = true;
-        LanguageTextBox.Size = new Size(252, 24);
+        LanguageTextBox.Size = new Size(197, 23);
         LanguageTextBox.TabIndex = 3;
         LanguageTextBox.Text = "ja-Hrkt";
         // 
         // LanguageButton
         // 
-        LanguageButton.Location = new Point(12, 42);
+        LanguageButton.Location = new Point(9, 37);
+        LanguageButton.Margin = new Padding(2, 3, 2, 3);
         LanguageButton.Name = "LanguageButton";
-        LanguageButton.Size = new Size(53, 24);
+        LanguageButton.Size = new Size(41, 21);
         LanguageButton.TabIndex = 2;
         LanguageButton.Text = "言語";
         LanguageButton.UseVisualStyleBackColor = true;
@@ -75,9 +78,10 @@ partial class NameInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(247, 72);
+        CloseButton.Location = new Point(192, 64);
+        CloseButton.Margin = new Padding(2, 3, 2, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 35);
+        CloseButton.Size = new Size(59, 31);
         CloseButton.TabIndex = 5;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -85,9 +89,10 @@ partial class NameInfoForm
         // 
         // PropertyButton
         // 
-        PropertyButton.Location = new Point(165, 74);
+        PropertyButton.Location = new Point(128, 65);
+        PropertyButton.Margin = new Padding(2, 3, 2, 3);
         PropertyButton.Name = "PropertyButton";
-        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.Size = new Size(59, 31);
         PropertyButton.TabIndex = 4;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
@@ -95,17 +100,17 @@ partial class NameInfoForm
         // 
         // NameInfoForm
         // 
-        AutoScaleDimensions = new SizeF(9F, 17F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(339, 121);
+        ClientSize = new Size(264, 107);
         Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(LanguageButton);
         Controls.Add(LanguageTextBox);
         Controls.Add(NameTextBox);
         Controls.Add(NameCaptionLabel);
-        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
+        Margin = new Padding(2, 3, 2, 3);
         MaximizeBox = false;
         Name = "NameInfoForm";
         StartPosition = FormStartPosition.CenterParent;

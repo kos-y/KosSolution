@@ -2,6 +2,7 @@ using System.Reflection;
 using Kos.PokeAPI;
 using Kos.PokeAPI.Attribute;
 using Kos.PokeAPI.Forms;
+using Kos.PokeAPI.Forms.Utility.Languages;
 using Kos.PokeAPI.ResourceLists;
 using Kos.PokeAPI.Utility.CommonModels;
 

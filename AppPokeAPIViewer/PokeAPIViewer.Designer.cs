@@ -59,7 +59,7 @@ partial class PokeAPIViewer
         CloseButton.Name = "CloseButton";
         CloseButton.Size = new Size(75, 31);
         CloseButton.TabIndex = 3;
-        CloseButton.Text = "Close";
+        CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
         CloseButton.Click += CloseButton_Click;
         // 
@@ -69,7 +69,7 @@ partial class PokeAPIViewer
         OpenButton.Name = "OpenButton";
         OpenButton.Size = new Size(75, 31);
         OpenButton.TabIndex = 2;
-        OpenButton.Text = "Open";
+        OpenButton.Text = "開く";
         OpenButton.UseVisualStyleBackColor = true;
         OpenButton.Click += OpenButton_Click;
         // 

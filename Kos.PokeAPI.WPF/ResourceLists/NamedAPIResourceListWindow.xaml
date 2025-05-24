@@ -1,0 +1,51 @@
+﻿<Window x:Class="Kos.PokeAPI.WPF.ResourceLists.NamedAPIResourceListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kos.PokeAPI.WPF.ResourceLists"
+        mc:Ignorable="d"
+        Title="名前付きAPIリソースリスト" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        
+        <DataGrid Grid.Row="0" SelectedItem="{Binding SelectedItem}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="名前" Binding="{Binding Name}" Width="Auto"/>
+                <DataGridTextColumn Header="URL" Binding="{Binding Url}" Width="Auto"/>
+                <DataGridTemplateColumn Header="情報">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="情報"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="64"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="64"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="64"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="64"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0" Content="前ページ"/>
+            <Button Grid.Column="2" Content="次ページ"/>
+            <Button Grid.Column="4" Content="開く"/>
+            
+            <Button Grid.Column="6"
+                    x:Name="CloseButton"
+                    Content="閉じる"
+                    Click="CloseButton_Click"/>
+        </Grid>
+    </Grid>
+</Window>
