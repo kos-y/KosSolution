@@ -79,7 +79,7 @@ public partial class EncounterInfoForm : Form
             return;
         }
 
-        using EncounterConditionValueInfoForm form = new EncounterConditionValueInfoForm(api.Url);
+        using EncounterConditionValueInfoForm form = new(api.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -106,7 +106,7 @@ public partial class EncounterInfoForm : Form
             return;
         }
 
-        using EncounterConditionValueInfoForm form = new EncounterConditionValueInfoForm(api.Url);
+        using EncounterConditionValueInfoForm form = new(api.Url);
         _ = form.ShowDialog(this);
     }
     #endregion

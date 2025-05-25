@@ -11,7 +11,7 @@ using Kos.Core.Forms;
 using Kos.PokeAPI.Games.Generations;
 using Kos.PokeAPI.Utility.CommonModels;
 
-namespace Kos.PokeAPI.Forms;
+namespace Kos.PokeAPI.Forms.Utility.CommonModels;
 
 /// <summary>
 /// 世代ごとのゲームインデックス

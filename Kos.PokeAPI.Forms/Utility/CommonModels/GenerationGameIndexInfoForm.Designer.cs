@@ -1,4 +1,4 @@
-﻿namespace Kos.PokeAPI.Forms;
+﻿namespace Kos.PokeAPI.Forms.Utility.CommonModels;
 
 partial class GenerationGameIndexInfoForm
 {
@@ -37,40 +37,40 @@ partial class GenerationGameIndexInfoForm
         // 
         // GenerationTextBox
         // 
-        GenerationTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        GenerationTextBox.Location = new Point(146, 12);
+        GenerationTextBox.Location = new Point(75, 15);
+        GenerationTextBox.Margin = new Padding(2, 3, 2, 3);
         GenerationTextBox.Name = "GenerationTextBox";
         GenerationTextBox.ReadOnly = true;
-        GenerationTextBox.Size = new Size(198, 24);
+        GenerationTextBox.Size = new Size(155, 23);
         GenerationTextBox.TabIndex = 1;
         GenerationTextBox.Text = "generation-iii";
         // 
         // GameIndexCaptionLabel
         // 
         GameIndexCaptionLabel.AutoSize = true;
-        GameIndexCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        GameIndexCaptionLabel.Location = new Point(12, 45);
+        GameIndexCaptionLabel.Location = new Point(11, 47);
+        GameIndexCaptionLabel.Margin = new Padding(2, 0, 2, 0);
         GameIndexCaptionLabel.Name = "GameIndexCaptionLabel";
-        GameIndexCaptionLabel.Size = new Size(128, 17);
+        GameIndexCaptionLabel.Size = new Size(60, 15);
         GameIndexCaptionLabel.TabIndex = 2;
-        GameIndexCaptionLabel.Text = "ゲーム上のインデックス";
+        GameIndexCaptionLabel.Text = "インデックス";
         // 
         // GameIndexTextBox
         // 
-        GameIndexTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        GameIndexTextBox.Location = new Point(146, 42);
+        GameIndexTextBox.Location = new Point(75, 44);
+        GameIndexTextBox.Margin = new Padding(2, 3, 2, 3);
         GameIndexTextBox.Name = "GameIndexTextBox";
         GameIndexTextBox.ReadOnly = true;
-        GameIndexTextBox.Size = new Size(198, 24);
+        GameIndexTextBox.Size = new Size(155, 23);
         GameIndexTextBox.TabIndex = 3;
         GameIndexTextBox.Text = "99999";
         // 
         // GenerationButton
         // 
-        GenerationButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        GenerationButton.Location = new Point(12, 12);
+        GenerationButton.Location = new Point(11, 12);
+        GenerationButton.Margin = new Padding(2, 3, 2, 3);
         GenerationButton.Name = "GenerationButton";
-        GenerationButton.Size = new Size(128, 30);
+        GenerationButton.Size = new Size(60, 26);
         GenerationButton.TabIndex = 0;
         GenerationButton.Text = "世代";
         GenerationButton.UseVisualStyleBackColor = true;
@@ -78,9 +78,10 @@ partial class GenerationGameIndexInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(268, 77);
+        CloseButton.Location = new Point(171, 73);
+        CloseButton.Margin = new Padding(2, 3, 2, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 35);
+        CloseButton.Size = new Size(59, 31);
         CloseButton.TabIndex = 5;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -88,9 +89,10 @@ partial class GenerationGameIndexInfoForm
         // 
         // PropertyButton
         // 
-        PropertyButton.Location = new Point(186, 77);
+        PropertyButton.Location = new Point(108, 73);
+        PropertyButton.Margin = new Padding(2, 3, 2, 3);
         PropertyButton.Name = "PropertyButton";
-        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.Size = new Size(59, 31);
         PropertyButton.TabIndex = 4;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
@@ -98,21 +100,19 @@ partial class GenerationGameIndexInfoForm
         // 
         // GenerationGameIndexInfoForm
         // 
-        AutoScaleDimensions = new SizeF(9F, 17F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(356, 119);
+        ClientSize = new Size(241, 110);
         Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(GenerationButton);
         Controls.Add(GameIndexTextBox);
         Controls.Add(GameIndexCaptionLabel);
         Controls.Add(GenerationTextBox);
-        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "GenerationGameIndexInfoForm";
         StartPosition = FormStartPosition.CenterParent;
-        Text = "世代ごとのゲームインデックス";
+        Text = "ゲームインデックス";
         ResumeLayout(false);
         PerformLayout();
     }

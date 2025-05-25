@@ -40,28 +40,30 @@ partial class FlavorTextInfoForm
         // FlavorTextCaptionLabel
         // 
         FlavorTextCaptionLabel.AutoSize = true;
-        FlavorTextCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        FlavorTextCaptionLabel.Location = new Point(12, 69);
+        FlavorTextCaptionLabel.Location = new Point(11, 78);
+        FlavorTextCaptionLabel.Margin = new Padding(2, 0, 2, 0);
         FlavorTextCaptionLabel.Name = "FlavorTextCaptionLabel";
-        FlavorTextCaptionLabel.Size = new Size(103, 17);
+        FlavorTextCaptionLabel.Size = new Size(85, 15);
         FlavorTextCaptionLabel.TabIndex = 4;
         FlavorTextCaptionLabel.Text = "フレーバーテキスト";
         // 
         // FlavorTextTextBox
         // 
-        FlavorTextTextBox.Location = new Point(12, 89);
+        FlavorTextTextBox.Location = new Point(11, 96);
+        FlavorTextTextBox.Margin = new Padding(2, 3, 2, 3);
         FlavorTextTextBox.Multiline = true;
         FlavorTextTextBox.Name = "FlavorTextTextBox";
         FlavorTextTextBox.ReadOnly = true;
-        FlavorTextTextBox.Size = new Size(297, 170);
+        FlavorTextTextBox.Size = new Size(232, 150);
         FlavorTextTextBox.TabIndex = 5;
         FlavorTextTextBox.Text = "ピカチュウ";
         // 
         // LanguageButton
         // 
-        LanguageButton.Location = new Point(12, 41);
+        LanguageButton.Location = new Point(11, 41);
+        LanguageButton.Margin = new Padding(2, 3, 2, 3);
         LanguageButton.Name = "LanguageButton";
-        LanguageButton.Size = new Size(72, 25);
+        LanguageButton.Size = new Size(63, 23);
         LanguageButton.TabIndex = 2;
         LanguageButton.Text = "言語";
         LanguageButton.UseVisualStyleBackColor = true;
@@ -69,27 +71,30 @@ partial class FlavorTextInfoForm
         // 
         // LanguageTextBox
         // 
-        LanguageTextBox.Location = new Point(90, 42);
+        LanguageTextBox.Location = new Point(78, 42);
+        LanguageTextBox.Margin = new Padding(2, 3, 2, 3);
         LanguageTextBox.Name = "LanguageTextBox";
         LanguageTextBox.ReadOnly = true;
-        LanguageTextBox.Size = new Size(172, 24);
+        LanguageTextBox.Size = new Size(165, 23);
         LanguageTextBox.TabIndex = 3;
         LanguageTextBox.Text = "ja-Hrkt";
         // 
         // VersionTextBox
         // 
-        VersionTextBox.Location = new Point(90, 12);
+        VersionTextBox.Location = new Point(78, 12);
+        VersionTextBox.Margin = new Padding(2, 3, 2, 3);
         VersionTextBox.Name = "VersionTextBox";
         VersionTextBox.ReadOnly = true;
-        VersionTextBox.Size = new Size(172, 24);
+        VersionTextBox.Size = new Size(165, 23);
         VersionTextBox.TabIndex = 1;
         VersionTextBox.Text = "Red";
         // 
         // VersionButton
         // 
-        VersionButton.Location = new Point(12, 12);
+        VersionButton.Location = new Point(11, 11);
+        VersionButton.Margin = new Padding(2, 3, 2, 3);
         VersionButton.Name = "VersionButton";
-        VersionButton.Size = new Size(72, 24);
+        VersionButton.Size = new Size(63, 23);
         VersionButton.TabIndex = 0;
         VersionButton.Text = "バージョン";
         VersionButton.UseVisualStyleBackColor = true;
@@ -97,9 +102,10 @@ partial class FlavorTextInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(233, 265);
+        CloseButton.Location = new Point(184, 252);
+        CloseButton.Margin = new Padding(2, 3, 2, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 35);
+        CloseButton.Size = new Size(59, 31);
         CloseButton.TabIndex = 7;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -107,9 +113,10 @@ partial class FlavorTextInfoForm
         // 
         // PropertyButton
         // 
-        PropertyButton.Location = new Point(151, 265);
+        PropertyButton.Location = new Point(121, 252);
+        PropertyButton.Margin = new Padding(2, 3, 2, 3);
         PropertyButton.Name = "PropertyButton";
-        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.Size = new Size(59, 31);
         PropertyButton.TabIndex = 6;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
@@ -117,9 +124,9 @@ partial class FlavorTextInfoForm
         // 
         // FlavorTextInfoForm
         // 
-        AutoScaleDimensions = new SizeF(9F, 17F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(327, 312);
+        ClientSize = new Size(256, 292);
         Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(VersionButton);
@@ -128,9 +135,7 @@ partial class FlavorTextInfoForm
         Controls.Add(LanguageTextBox);
         Controls.Add(FlavorTextTextBox);
         Controls.Add(FlavorTextCaptionLabel);
-        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
-        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "FlavorTextInfoForm";
         StartPosition = FormStartPosition.CenterParent;

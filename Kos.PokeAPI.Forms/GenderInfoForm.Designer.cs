@@ -47,27 +47,28 @@ partial class GenderInfoForm
         // 
         // NameTextBox
         // 
-        NameTextBox.Location = new Point(92, 42);
+        NameTextBox.Location = new Point(82, 41);
+        NameTextBox.Margin = new Padding(2, 3, 2, 3);
         NameTextBox.Name = "NameTextBox";
         NameTextBox.ReadOnly = true;
-        NameTextBox.Size = new Size(183, 24);
+        NameTextBox.Size = new Size(143, 23);
         NameTextBox.TabIndex = 3;
         // 
         // IdTextBox
         // 
-        IdTextBox.Location = new Point(92, 12);
+        IdTextBox.Location = new Point(82, 12);
+        IdTextBox.Margin = new Padding(2, 3, 2, 3);
         IdTextBox.Name = "IdTextBox";
         IdTextBox.ReadOnly = true;
-        IdTextBox.Size = new Size(183, 24);
+        IdTextBox.Size = new Size(143, 23);
         IdTextBox.TabIndex = 1;
         // 
         // NameCaptionLabel
         // 
         NameCaptionLabel.AutoSize = true;
-        NameCaptionLabel.Location = new Point(13, 45);
-        NameCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        NameCaptionLabel.Location = new Point(12, 44);
         NameCaptionLabel.Name = "NameCaptionLabel";
-        NameCaptionLabel.Size = new Size(72, 17);
+        NameCaptionLabel.Size = new Size(65, 15);
         NameCaptionLabel.TabIndex = 2;
         NameCaptionLabel.Text = "性別の名前";
         NameCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -75,10 +76,9 @@ partial class GenderInfoForm
         // IdCaptionLabel
         // 
         IdCaptionLabel.AutoSize = true;
-        IdCaptionLabel.Location = new Point(34, 15);
-        IdCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        IdCaptionLabel.Location = new Point(35, 15);
         IdCaptionLabel.Name = "IdCaptionLabel";
-        IdCaptionLabel.Size = new Size(51, 17);
+        IdCaptionLabel.Size = new Size(42, 15);
         IdCaptionLabel.TabIndex = 0;
         IdCaptionLabel.Text = "性別ID";
         IdCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -87,11 +87,10 @@ partial class GenderInfoForm
         // 
         PokemonSpeciesDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         PokemonSpeciesDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewButtonColumn2 });
-        PokemonSpeciesDataGridView.Location = new Point(283, 29);
-        PokemonSpeciesDataGridView.Margin = new Padding(4, 3, 4, 3);
+        PokemonSpeciesDataGridView.Location = new Point(240, 30);
         PokemonSpeciesDataGridView.Name = "PokemonSpeciesDataGridView";
         PokemonSpeciesDataGridView.RowHeadersVisible = false;
-        PokemonSpeciesDataGridView.Size = new Size(191, 239);
+        PokemonSpeciesDataGridView.Size = new Size(149, 215);
         PokemonSpeciesDataGridView.TabIndex = 7;
         PokemonSpeciesDataGridView.CellClick += PokemonSpeciesDataGridView_CellClick;
         PokemonSpeciesDataGridView.CellDoubleClick += PokemonSpeciesDataGridView_CellDoubleClick;
@@ -103,6 +102,7 @@ partial class GenderInfoForm
         dataGridViewTextBoxColumn2.HeaderText = "ポケモン種族";
         dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
         dataGridViewTextBoxColumn2.ReadOnly = true;
+        dataGridViewTextBoxColumn2.Width = 93;
         // 
         // dataGridViewButtonColumn2
         // 
@@ -111,15 +111,14 @@ partial class GenderInfoForm
         dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
         dataGridViewButtonColumn2.Text = "詳細";
         dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
-        dataGridViewButtonColumn2.Width = 40;
+        dataGridViewButtonColumn2.Width = 37;
         // 
         // PokemonSpeciesCaptionLabel
         // 
         PokemonSpeciesCaptionLabel.AutoSize = true;
-        PokemonSpeciesCaptionLabel.Location = new Point(283, 9);
-        PokemonSpeciesCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        PokemonSpeciesCaptionLabel.Location = new Point(240, 12);
         PokemonSpeciesCaptionLabel.Name = "PokemonSpeciesCaptionLabel";
-        PokemonSpeciesCaptionLabel.Size = new Size(75, 17);
+        PokemonSpeciesCaptionLabel.Size = new Size(68, 15);
         PokemonSpeciesCaptionLabel.TabIndex = 6;
         PokemonSpeciesCaptionLabel.Text = "ポケモン種族";
         PokemonSpeciesCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
@@ -128,11 +127,10 @@ partial class GenderInfoForm
         // 
         RequiredForEvolutionDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         RequiredForEvolutionDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewButtonColumn1 });
-        RequiredForEvolutionDataGridView.Location = new Point(13, 98);
-        RequiredForEvolutionDataGridView.Margin = new Padding(4, 3, 4, 3);
+        RequiredForEvolutionDataGridView.Location = new Point(12, 95);
         RequiredForEvolutionDataGridView.Name = "RequiredForEvolutionDataGridView";
         RequiredForEvolutionDataGridView.RowHeadersVisible = false;
-        RequiredForEvolutionDataGridView.Size = new Size(262, 170);
+        RequiredForEvolutionDataGridView.Size = new Size(204, 150);
         RequiredForEvolutionDataGridView.TabIndex = 5;
         // 
         // dataGridViewTextBoxColumn1
@@ -142,7 +140,7 @@ partial class GenderInfoForm
         dataGridViewTextBoxColumn1.HeaderText = "名前";
         dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
         dataGridViewTextBoxColumn1.ReadOnly = true;
-        dataGridViewTextBoxColumn1.Width = 59;
+        dataGridViewTextBoxColumn1.Width = 56;
         // 
         // dataGridViewButtonColumn1
         // 
@@ -151,25 +149,23 @@ partial class GenderInfoForm
         dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
         dataGridViewButtonColumn1.Text = "詳細";
         dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-        dataGridViewButtonColumn1.Width = 40;
+        dataGridViewButtonColumn1.Width = 37;
         // 
         // RequiredForEvolutionCaptionLabel
         // 
         RequiredForEvolutionCaptionLabel.AutoSize = true;
-        RequiredForEvolutionCaptionLabel.Location = new Point(13, 78);
-        RequiredForEvolutionCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        RequiredForEvolutionCaptionLabel.Location = new Point(12, 77);
         RequiredForEvolutionCaptionLabel.Name = "RequiredForEvolutionCaptionLabel";
-        RequiredForEvolutionCaptionLabel.Size = new Size(129, 17);
+        RequiredForEvolutionCaptionLabel.Size = new Size(117, 15);
         RequiredForEvolutionCaptionLabel.TabIndex = 4;
         RequiredForEvolutionCaptionLabel.Text = "性別が要求される進化";
         RequiredForEvolutionCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // PropertyButton
         // 
-        PropertyButton.Location = new Point(314, 274);
-        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Location = new Point(264, 251);
         PropertyButton.Name = "PropertyButton";
-        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.Size = new Size(59, 31);
         PropertyButton.TabIndex = 8;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
@@ -177,10 +173,9 @@ partial class GenderInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(398, 274);
-        CloseButton.Margin = new Padding(4, 3, 4, 3);
+        CloseButton.Location = new Point(330, 251);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 35);
+        CloseButton.Size = new Size(59, 31);
         CloseButton.TabIndex = 9;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -188,9 +183,9 @@ partial class GenderInfoForm
         // 
         // GenderInfoForm
         // 
-        AutoScaleDimensions = new SizeF(9F, 17F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(487, 322);
+        ClientSize = new Size(406, 295);
         Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(RequiredForEvolutionDataGridView);
@@ -201,9 +196,7 @@ partial class GenderInfoForm
         Controls.Add(IdTextBox);
         Controls.Add(NameCaptionLabel);
         Controls.Add(IdCaptionLabel);
-        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
-        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "GenderInfoForm";
         StartPosition = FormStartPosition.CenterParent;
