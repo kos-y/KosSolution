@@ -11,7 +11,7 @@ using Kos.Core.Forms;
 using Kos.PokeAPI.Forms.Utility.Languages;
 using Kos.PokeAPI.Utility.CommonModels;
 
-namespace Kos.PokeAPI.Forms;
+namespace Kos.PokeAPI.Forms.Utility.CommonModels;
 
 /// <summary>
 /// バージョングループのフレーバーテキスト
@@ -74,7 +74,7 @@ public partial class VersionGroupFlavorTextInfoForm : Form
             return;
         }
 
-        using VersionGroupInfoForm form = new VersionGroupInfoForm(api.Url);
+        using VersionGroupInfoForm form = new(api.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
