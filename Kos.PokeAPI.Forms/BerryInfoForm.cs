@@ -163,6 +163,10 @@ public partial class BerryInfoForm : Form
     /// <param name="e"></param>
     private void PropertyButton_Click(object sender, EventArgs e)
     {
+        if (Tag is null) {
+            return;
+        }
+
         using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.Core.Forms;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Items.ItemAttributes;
 using Kos.PokeAPI.Items.ItemCategories;
 using Kos.PokeAPI.Utility.CommonModels;

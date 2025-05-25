@@ -366,7 +366,6 @@ partial class RegionInfoForm
     private DataGridViewTextBoxColumn LanguageColumn;
     private DataGridViewButtonColumn DetailColumn;
     private Label NamesCaptionLabel;
-    private Label MainGenerationCaptionLabel;
     private TextBox MainGenerationTextBox;
     private DataGridView PokedexesDataGridView;
     private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

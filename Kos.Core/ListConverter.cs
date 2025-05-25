@@ -24,7 +24,10 @@ public class ListConverter<T> : TypeConverter
     public override PropertyDescriptorCollection?
         GetProperties(ITypeDescriptorContext? context, object value, Attribute[]? attributes)
     {
-        IReadOnlyList<T>? list = value as IReadOnlyList<T>;
+        if (value is not IReadOnlyList<T> list) {
+            return null;
+
+        }
         PropertyDescriptor[] properties = new PropertyDescriptor[list.Count];
 
         for (int i = 0; i < list.Count; i++) {

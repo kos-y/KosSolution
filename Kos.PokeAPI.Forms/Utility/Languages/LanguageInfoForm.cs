@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.Core.Forms;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Utility.CommonModels;
 using Kos.PokeAPI.Utility.Languages;
 
@@ -18,8 +19,6 @@ namespace Kos.PokeAPI.Forms.Utility.Languages;
 /// </summary>
 public partial class LanguageInfoForm : Form
 {
-    // メソッド
-
     #region コンストラクタ
     /// <summary>
     /// コンストラクタ
@@ -51,7 +50,7 @@ public partial class LanguageInfoForm : Form
             return;
         }
 
-        using NameInfoForm form = new NameInfoForm(name);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -72,7 +71,7 @@ public partial class LanguageInfoForm : Form
             return;
         }
 
-        using NameInfoForm form = new NameInfoForm(name);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion

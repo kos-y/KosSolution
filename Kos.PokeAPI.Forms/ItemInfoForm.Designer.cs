@@ -660,11 +660,7 @@ partial class ItemInfoForm
     private Label IdCaptionLabel;
     private Label CostCaptionLabel;
     private Label FlingPowerCaptionLabel;
-    private Label FlingEffectCaptionLabel;
     private Label AttributesCaptionLabel;
-    private Label CategoryCatpionLabel;
-    private Label EffectEntriesCaptionLabel;
-    private Label FlavorTextEntriesCaptionLabel;
     private Label GameIndiceCaptionLabel;
     private Label NamesCaptionLabel;
     private Label HeldByPokemonCaptionLabel;

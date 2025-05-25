@@ -11,7 +11,7 @@ using Kos.Core.Forms;
 using Kos.PokeAPI.Forms.Utility.Languages;
 using Kos.PokeAPI.Utility.CommonModels;
 
-namespace Kos.PokeAPI.Forms;
+namespace Kos.PokeAPI.Forms.Utility.CommonModels;
 
 /// <summary>
 /// 名前

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.Core.Forms;
 using Kos.PokeAPI.Berries.Berries;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Items.ItemCategories;
 using Kos.PokeAPI.Utility.CommonModels;
 
@@ -161,7 +162,7 @@ public partial class ItemCategoryInfoForm : Form
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void button1_Click(object sender, EventArgs e)
+    private void PropertyButton_Click(object sender, EventArgs e)
     {
         if (Tag is null) {
             return;

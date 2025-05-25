@@ -41,7 +41,7 @@ partial class EncounterConditionInfoForm
         CloseButton = new Button();
         IdTextBox = new TextBox();
         NameTextBox = new TextBox();
-        button1 = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)ValuesDataGridView).BeginInit();
         SuspendLayout();
@@ -190,23 +190,23 @@ partial class EncounterConditionInfoForm
         NameTextBox.TabIndex = 3;
         NameTextBox.Text = "story-progress";
         // 
-        // button1
+        // PropertyButton
         // 
-        button1.Location = new Point(568, 268);
-        button1.Margin = new Padding(4, 3, 4, 3);
-        button1.Name = "button1";
-        button1.Size = new Size(76, 35);
-        button1.TabIndex = 8;
-        button1.Text = "プロパティ";
-        button1.UseVisualStyleBackColor = true;
-        button1.Click += button1_Click;
+        PropertyButton.Location = new Point(568, 268);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 8;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // EncounterConditionInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(743, 310);
-        Controls.Add(button1);
+        Controls.Add(PropertyButton);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
         Controls.Add(CloseButton);
@@ -245,5 +245,5 @@ partial class EncounterConditionInfoForm
     private DataGridViewButtonColumn dataGridViewButtonColumn1;
     private TextBox IdTextBox;
     private TextBox NameTextBox;
-    private Button button1;
+    private Button PropertyButton;
 }

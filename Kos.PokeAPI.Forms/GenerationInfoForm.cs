@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.Core.Forms;
 using Kos.PokeAPI.Evolution.EvolutionTriggers;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Games.Generations;
 using Kos.PokeAPI.Utility.CommonModels;
 

@@ -208,9 +208,6 @@ partial class VersionInfoForm
     private Label IdCaptionLabel;
     private DataGridView NamesDataGridView;
     private Label NamesCaptionLabel;
-    private DataGridView VersionGroupDataGridView;
-    private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-    private DataGridViewButtonColumn dataGridViewButtonColumn4;
     private Button CloseButton;
     private Button VersionGroupButton;
     private TextBox NameTextBox;

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Kos.Core.Forms;
 using Kos.PokeAPI.Evolution.EvolutionChains;
 using Kos.PokeAPI.Evolution.EvolutionTriggers;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;

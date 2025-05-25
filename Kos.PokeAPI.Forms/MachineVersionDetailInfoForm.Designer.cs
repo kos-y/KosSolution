@@ -110,9 +110,7 @@ partial class MachineVersionDetailInfoForm
     #endregion
 
     private Button VersionGroupButton;
-    private Label VersionGroupCaptionLabel;
     private TextBox VersionGroupTextBox;
-    private Label MachineCaptionLabel;
     private Button MachineButton;
     private Button CloseButton;
     private Button PropertyButton;

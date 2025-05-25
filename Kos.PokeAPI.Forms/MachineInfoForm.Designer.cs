@@ -167,7 +167,6 @@ partial class MachineInfoForm
 
     private TextBox ItemTextBox;
     private TextBox IdTextBox;
-    private Label ItemCaptionLabel;
     private Label IdCaptionLabel;
     private TextBox MoveTextBox;
     private TextBox VersionGroupTextBox;

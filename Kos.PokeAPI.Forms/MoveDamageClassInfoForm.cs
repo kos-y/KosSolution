@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Moves.MoveCategories;
 using Kos.PokeAPI.Moves.MoveDamageClasses;
 using Kos.PokeAPI.Utility.CommonModels;

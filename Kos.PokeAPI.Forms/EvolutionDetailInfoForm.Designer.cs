@@ -556,23 +556,17 @@ partial class EvolutionDetailInfoForm
 
     private Button ItemButton;
     private Button TriggerButton;
-    private Label TriggerCaptionLabel;
     private Label GenderCaptionLabel;
     private Button HeldItemButton;
-    private Label HeldItemCaptionLabel;
     private Button KnownMoveButton;
-    private Label KnownMoveCaptionLabel;
     private Button KnownMoveTypeButton;
-    private Label KnownMoveTypeCaptionLabel;
     private Button LocationButton;
-    private Label LocationCaptionLabel;
     private Label MinLevelCaptionLabel;
     private Label MinHappinessCaptionLabel;
     private Label MinBeautyCaptionLabel;
     private Label MinAffectionCaptionLabel;
     private Label NeedsOverworldRainCaptionLabel;
     private Button PartySpeciesButton;
-    private Label PartySpeciesCaptionLabel;
     private Button PartyTypeButton;
     private Label RelativePhysicalStatsCaptionLabel;
     private Label TimeOfDayCaptionLabel;

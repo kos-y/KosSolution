@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.Core.Forms;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Moves.Moves;
 using Kos.PokeAPI.Moves.MoveTargets;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -50,7 +51,7 @@ public partial class MoveTargetInfoForm : Form
             return;
         }
 
-        using NameInfoForm form = new NameInfoForm(name);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -71,7 +72,7 @@ public partial class MoveTargetInfoForm : Form
             return;
         }
 
-        using NameInfoForm form = new NameInfoForm(name);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion

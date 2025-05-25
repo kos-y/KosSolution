@@ -48,7 +48,7 @@ public class Name
     /// <returns>文字列</returns>
     public override string ToString()
     {
-        return Text;
+        return $"{Text}";
     }
     #endregion
 }

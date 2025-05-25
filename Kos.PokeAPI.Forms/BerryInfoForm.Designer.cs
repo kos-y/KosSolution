@@ -407,14 +407,11 @@ partial class BerryInfoForm
     private Label NaturalGiftPowerCaptionLabel;
     private Label SizeCaptionLabel;
     private Label SmoothnessCaptionLabel;
-    private Label FirmnessCaptionLabel;
     private Label SoilDrynessCaptionLabel;
     private Button FirmnessButton;
     private Label FlavorsCaptionLabel;
     private DataGridView FlavorsDataGridView;
-    private Label ItemCaptionLabel;
     private Button ItemButton;
-    private Label NaturalGiftTypeCaptionLabel;
     private Button NaturalGiftTypeButton;
     private Button CloseButton;
     private GroupBox NaturalGiftGroupBox;

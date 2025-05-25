@@ -44,6 +44,10 @@ public partial class VersionGameIndexInfoForm : Form
             return;
         }
 
+        if (api.Url is null) {
+            return;
+        }
+
         using VersionInfoForm form = new(api.Url);
         _ = form.ShowDialog(this);
     }

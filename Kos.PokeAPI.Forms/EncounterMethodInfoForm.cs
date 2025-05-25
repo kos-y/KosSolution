@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Kos.Core.Forms;
 using Kos.PokeAPI.Contests.ContestEffects;
 using Kos.PokeAPI.Encounters.EncounterMethods;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Utility.CommonModels;
 using Kos.PokeAPI.Utility.Languages;
 

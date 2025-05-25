@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Kos.Core.Forms;
 using Kos.PokeAPI.Berries.Berries;
 using Kos.PokeAPI.Berries.BerryFirmnesses;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;
@@ -162,6 +163,10 @@ public partial class BerryFirmnessInfoForm : Form
     /// <param name="e"></param>
     private void PropertyButton_Click(object sender, EventArgs e)
     {
+        if (Tag is null) {
+            return;
+        }
+
         using PropertyGridForm form = new(Tag);
         _ = form.ShowDialog(this);
     }

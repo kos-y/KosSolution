@@ -39,7 +39,7 @@ partial class EncounterConditionValueInfoForm
         IdTextBox = new TextBox();
         NameTextBox = new TextBox();
         ConditionTextBox = new TextBox();
-        button1 = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
         // 
@@ -162,23 +162,23 @@ partial class EncounterConditionValueInfoForm
         ConditionTextBox.Size = new Size(670, 24);
         ConditionTextBox.TabIndex = 5;
         // 
-        // button1
+        // PropertyButton
         // 
-        button1.Location = new Point(622, 300);
-        button1.Margin = new Padding(4, 3, 4, 3);
-        button1.Name = "button1";
-        button1.Size = new Size(76, 35);
-        button1.TabIndex = 8;
-        button1.Text = "プロパティ";
-        button1.UseVisualStyleBackColor = true;
-        button1.Click += button1_Click;
+        PropertyButton.Location = new Point(622, 300);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 8;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // EncounterConditionValueInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(795, 349);
-        Controls.Add(button1);
+        Controls.Add(PropertyButton);
         Controls.Add(ConditionTextBox);
         Controls.Add(NameTextBox);
         Controls.Add(IdTextBox);
@@ -214,5 +214,5 @@ partial class EncounterConditionValueInfoForm
     private TextBox IdTextBox;
     private TextBox NameTextBox;
     private TextBox ConditionTextBox;
-    private Button button1;
+    private Button PropertyButton;
 }

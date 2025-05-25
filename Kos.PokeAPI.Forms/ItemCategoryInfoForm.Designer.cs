@@ -43,7 +43,7 @@ partial class ItemCategoryInfoForm
         PocketTextBox = new TextBox();
         CloseButton = new Button();
         PocketButton = new Button();
-        button1 = new Button();
+        PropertyButton = new Button();
         ((System.ComponentModel.ISupportInitialize)ItemDataGridView).BeginInit();
         ((System.ComponentModel.ISupportInitialize)NamesDataGridView).BeginInit();
         SuspendLayout();
@@ -209,23 +209,23 @@ partial class ItemCategoryInfoForm
         PocketButton.UseVisualStyleBackColor = true;
         PocketButton.Click += PocketButton_Click;
         // 
-        // button1
+        // PropertyButton
         // 
-        button1.Location = new Point(583, 375);
-        button1.Margin = new Padding(4, 3, 4, 3);
-        button1.Name = "button1";
-        button1.Size = new Size(76, 35);
-        button1.TabIndex = 10;
-        button1.Text = "プロパティ";
-        button1.UseVisualStyleBackColor = true;
-        button1.Click += button1_Click;
+        PropertyButton.Location = new Point(583, 375);
+        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Name = "PropertyButton";
+        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.TabIndex = 10;
+        PropertyButton.Text = "プロパティ";
+        PropertyButton.UseVisualStyleBackColor = true;
+        PropertyButton.Click += PropertyButton_Click;
         // 
         // ItemCategoryInfoForm
         // 
         AutoScaleDimensions = new SizeF(9F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(756, 420);
-        Controls.Add(button1);
+        Controls.Add(PropertyButton);
         Controls.Add(PocketButton);
         Controls.Add(CloseButton);
         Controls.Add(PocketTextBox);
@@ -268,5 +268,5 @@ partial class ItemCategoryInfoForm
     private DataGridViewTextBoxColumn NameColumn;
     private DataGridViewTextBoxColumn LanguageColumn;
     private DataGridViewButtonColumn DetailColumn;
-    private Button button1;
+    private Button PropertyButton;
 }

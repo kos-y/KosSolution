@@ -34,10 +34,10 @@ partial class PropertyGridForm
         // CloseButton
         // 
         CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        CloseButton.Location = new Point(939, 463);
-        CloseButton.Margin = new Padding(5, 3, 5, 3);
+        CloseButton.Location = new Point(730, 409);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 35);
+        CloseButton.Size = new Size(59, 31);
         CloseButton.TabIndex = 1;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -47,20 +47,19 @@ partial class PropertyGridForm
         // 
         PropertyGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         PropertyGrid.CommandsVisibleIfAvailable = false;
-        PropertyGrid.Location = new Point(12, 12);
+        PropertyGrid.Location = new Point(9, 11);
+        PropertyGrid.Margin = new Padding(2, 3, 2, 3);
         PropertyGrid.Name = "PropertyGrid";
-        PropertyGrid.Size = new Size(1005, 445);
+        PropertyGrid.Size = new Size(782, 393);
         PropertyGrid.TabIndex = 0;
         // 
         // PropertyGridForm
         // 
-        AutoScaleDimensions = new SizeF(9F, 17F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1029, 510);
+        ClientSize = new Size(800, 450);
         Controls.Add(PropertyGrid);
         Controls.Add(CloseButton);
-        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        Margin = new Padding(4, 3, 4, 3);
         Name = "PropertyGridForm";
         StartPosition = FormStartPosition.CenterParent;
         Text = "プロパティ情報";

@@ -116,7 +116,7 @@ public partial class MachineVersionDetailInfoForm : Form
     private void SetData(MachineVersionDetail detail)
     {
         Tag = detail;
-        FormsHelper.SetData(detail.VersionGroup, VersionGroupCaptionLabel, VersionGroupTextBox);
+        FormsHelper.SetData(detail.VersionGroup, VersionGroupButton, VersionGroupTextBox);
         FormsHelper.SetData(detail.Machine, MachineButton);
     }
     #endregion

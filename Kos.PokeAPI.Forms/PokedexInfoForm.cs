@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.Core.Forms;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Games.Generations;
 using Kos.PokeAPI.Games.Pokedexes;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -51,7 +52,7 @@ public partial class PokedexInfoForm : Form
             return;
         }
 
-        using RegionInfoForm form = new RegionInfoForm(api.Url);
+        using RegionInfoForm form = new(api.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -97,7 +98,7 @@ public partial class PokedexInfoForm : Form
             return;
         }
 
-        using DescriptionInfoForm form = new DescriptionInfoForm(desc);
+        using DescriptionInfoForm form = new(desc);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -122,7 +123,7 @@ public partial class PokedexInfoForm : Form
             return;
         }
 
-        using NameInfoForm form = new NameInfoForm(name);
+        using NameInfoForm form = new(name);
         _ = form.ShowDialog(this);
     }
     #endregion
