@@ -1,4 +1,4 @@
-﻿namespace Kos.PokeAPI.Forms;
+﻿namespace Kos.PokeAPI.Forms.ResourceLists;
 
 partial class APIResourceListForm
 {
@@ -42,10 +42,10 @@ partial class APIResourceListForm
         APIResourceListDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
         APIResourceListDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         APIResourceListDataGridView.Columns.AddRange(new DataGridViewColumn[] { UrlColumn, InfoColumn });
-        APIResourceListDataGridView.Location = new Point(14, 12);
+        APIResourceListDataGridView.Location = new Point(12, 12);
         APIResourceListDataGridView.Name = "APIResourceListDataGridView";
         APIResourceListDataGridView.RowHeadersVisible = false;
-        APIResourceListDataGridView.Size = new Size(887, 386);
+        APIResourceListDataGridView.Size = new Size(776, 386);
         APIResourceListDataGridView.TabIndex = 0;
         APIResourceListDataGridView.CellClick += APIResourceListDataGridView_CellClick;
         APIResourceListDataGridView.CellDoubleClick += APIResourceListDataGridView_CellDoubleClick;
@@ -57,7 +57,7 @@ partial class APIResourceListForm
         UrlColumn.HeaderText = "URL";
         UrlColumn.Name = "UrlColumn";
         UrlColumn.ReadOnly = true;
-        UrlColumn.Width = 57;
+        UrlColumn.Width = 53;
         // 
         // InfoColumn
         // 
@@ -71,9 +71,9 @@ partial class APIResourceListForm
         // NextPageButton
         // 
         NextPageButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        NextPageButton.Location = new Point(106, 404);
+        NextPageButton.Location = new Point(93, 404);
         NextPageButton.Name = "NextPageButton";
-        NextPageButton.Size = new Size(86, 34);
+        NextPageButton.Size = new Size(75, 34);
         NextPageButton.TabIndex = 2;
         NextPageButton.Text = "次ページ";
         NextPageButton.UseVisualStyleBackColor = true;
@@ -82,9 +82,9 @@ partial class APIResourceListForm
         // PrevPageButton
         // 
         PrevPageButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        PrevPageButton.Location = new Point(14, 404);
+        PrevPageButton.Location = new Point(12, 404);
         PrevPageButton.Name = "PrevPageButton";
-        PrevPageButton.Size = new Size(86, 34);
+        PrevPageButton.Size = new Size(75, 34);
         PrevPageButton.TabIndex = 1;
         PrevPageButton.Text = "前ページ";
         PrevPageButton.UseVisualStyleBackColor = true;
@@ -93,9 +93,9 @@ partial class APIResourceListForm
         // OpenButton
         // 
         OpenButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-        OpenButton.Location = new Point(722, 404);
+        OpenButton.Location = new Point(632, 404);
         OpenButton.Name = "OpenButton";
-        OpenButton.Size = new Size(86, 34);
+        OpenButton.Size = new Size(75, 34);
         OpenButton.TabIndex = 3;
         OpenButton.Text = "開く";
         OpenButton.UseVisualStyleBackColor = true;
@@ -104,9 +104,9 @@ partial class APIResourceListForm
         // CloseButton
         // 
         CloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-        CloseButton.Location = new Point(815, 404);
+        CloseButton.Location = new Point(713, 404);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(86, 34);
+        CloseButton.Size = new Size(75, 34);
         CloseButton.TabIndex = 4;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -114,15 +114,14 @@ partial class APIResourceListForm
         // 
         // APIResourceListForm
         // 
-        AutoScaleDimensions = new SizeF(8F, 15F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(914, 450);
+        ClientSize = new Size(800, 450);
         Controls.Add(NextPageButton);
         Controls.Add(PrevPageButton);
         Controls.Add(OpenButton);
         Controls.Add(CloseButton);
         Controls.Add(APIResourceListDataGridView);
-        Font = new Font("Meiryo UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         Name = "APIResourceListForm";

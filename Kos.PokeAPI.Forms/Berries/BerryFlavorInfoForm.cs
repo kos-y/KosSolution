@@ -10,11 +10,12 @@ using System.Windows.Forms;
 using Kos.Core.Forms;
 using Kos.PokeAPI.Berries.BerryFirmnesses;
 using Kos.PokeAPI.Berries.BerryFlavors;
+using Kos.PokeAPI.Forms.Berries;
 using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Utility.CommonModels;
 using Kos.PokeAPI.Utility.Languages;
 
-namespace Kos.PokeAPI.Forms;
+namespace Kos.PokeAPI.Forms.Berries;
 
 /// <summary>
 /// Berry Flavor Form

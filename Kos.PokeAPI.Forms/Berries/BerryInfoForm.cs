@@ -3,7 +3,7 @@ using Kos.PokeAPI.Berries.Berries;
 using Kos.PokeAPI.Berries.BerryFlavors;
 using Kos.PokeAPI.Utility.CommonModels;
 
-namespace Kos.PokeAPI.Forms;
+namespace Kos.PokeAPI.Forms.Berries;
 
 /// <summary>
 /// –Ø‚ÌÀî•ñ ƒtƒH[ƒ€

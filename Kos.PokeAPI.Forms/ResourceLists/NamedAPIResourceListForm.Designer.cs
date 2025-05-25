@@ -1,4 +1,4 @@
-﻿namespace Kos.PokeAPI.Forms;
+﻿namespace Kos.PokeAPI.Forms.ResourceLists;
 
 partial class NamedAPIResourceListForm
 {

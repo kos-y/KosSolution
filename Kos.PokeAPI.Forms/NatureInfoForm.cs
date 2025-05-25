@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.Core.Forms;
+using Kos.PokeAPI.Forms.Berries;
 using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Pokemon.Natures;
 using Kos.PokeAPI.Utility.CommonModels;

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Kos.PokeAPI.Attribute;
 using Kos.PokeAPI.ResourceLists;
 
-namespace Kos.PokeAPI.Forms;
+namespace Kos.PokeAPI.Forms.ResourceLists;
 
 /// <summary>
 /// APIリソースリスト Form

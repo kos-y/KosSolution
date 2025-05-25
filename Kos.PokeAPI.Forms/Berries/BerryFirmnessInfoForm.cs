@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using Kos.Core.Forms;
 using Kos.PokeAPI.Berries.Berries;
 using Kos.PokeAPI.Berries.BerryFirmnesses;
+using Kos.PokeAPI.Forms.Berries;
 using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Utility.CommonModels;
 
-namespace Kos.PokeAPI.Forms;
+namespace Kos.PokeAPI.Forms.Berries;
 
 /// <summary>
 /// 木の実の硬さ情報フォーム

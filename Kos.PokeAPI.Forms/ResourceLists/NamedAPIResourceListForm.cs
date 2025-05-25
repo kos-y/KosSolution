@@ -4,7 +4,7 @@ using Kos.PokeAPI.Attribute;
 using Kos.PokeAPI.ResourceLists;
 using Kos.PokeAPI.Utility.CommonModels;
 
-namespace Kos.PokeAPI.Forms;
+namespace Kos.PokeAPI.Forms.ResourceLists;
 
 /// <summary>
 /// 名前付きAPIリソースリスト フォーム
@@ -73,9 +73,9 @@ public partial class NamedAPIResourceListForm : Form
     }
     #endregion
 
-    #region フォーム Load
+    #region ロード
     /// <summary>
-    /// フォーム Load
+    /// ロード
     /// </summary>
     /// <param name="sender">イベント発生オブジェクト</param>
     /// <param name="e">イベント引数</param>

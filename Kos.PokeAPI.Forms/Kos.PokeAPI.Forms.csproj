@@ -14,13 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="BerryFirmnessInfoForm.cs">
+    <Compile Update="Berries\BerryFirmnessInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="BerryFlavorInfoForm.cs">
+    <Compile Update="Berries\BerryFlavorInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="BerryInfoForm.cs">
+    <Compile Update="Berries\BerryInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ContestTypeInfoForm.cs">
@@ -29,7 +29,7 @@
     <Compile Update="Utility\Languages\LanguageInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="NamedAPIResourceListForm.cs">
+    <Compile Update="ResourceLists\NamedAPIResourceListForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
