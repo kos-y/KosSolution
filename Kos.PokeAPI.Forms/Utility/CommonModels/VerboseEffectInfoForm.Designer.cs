@@ -1,4 +1,4 @@
-﻿namespace Kos.PokeAPI.Forms;
+﻿namespace Kos.PokeAPI.Forms.Utility.CommonModels;
 
 partial class VerboseEffectInfoForm
 {
@@ -40,56 +40,60 @@ partial class VerboseEffectInfoForm
         // ShortEffectCaptionLabel
         // 
         ShortEffectCaptionLabel.AutoSize = true;
-        ShortEffectCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        ShortEffectCaptionLabel.Location = new Point(12, 45);
+        ShortEffectCaptionLabel.Location = new Point(9, 40);
+        ShortEffectCaptionLabel.Margin = new Padding(2, 0, 2, 0);
         ShortEffectCaptionLabel.Name = "ShortEffectCaptionLabel";
-        ShortEffectCaptionLabel.Size = new Size(64, 17);
+        ShortEffectCaptionLabel.Size = new Size(58, 15);
         ShortEffectCaptionLabel.TabIndex = 2;
         ShortEffectCaptionLabel.Text = "効果 概略";
         // 
         // ShortEffectTextBox
         // 
-        ShortEffectTextBox.Location = new Point(12, 65);
+        ShortEffectTextBox.Location = new Point(9, 57);
+        ShortEffectTextBox.Margin = new Padding(2, 3, 2, 3);
         ShortEffectTextBox.Name = "ShortEffectTextBox";
         ShortEffectTextBox.ReadOnly = true;
-        ShortEffectTextBox.Size = new Size(488, 24);
+        ShortEffectTextBox.Size = new Size(380, 23);
         ShortEffectTextBox.TabIndex = 3;
         ShortEffectTextBox.Text = "ピカチュウ";
         // 
         // EffectCaptionLabel
         // 
         EffectCaptionLabel.AutoSize = true;
-        EffectCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        EffectCaptionLabel.Location = new Point(12, 97);
+        EffectCaptionLabel.Location = new Point(9, 86);
+        EffectCaptionLabel.Margin = new Padding(2, 0, 2, 0);
         EffectCaptionLabel.Name = "EffectCaptionLabel";
-        EffectCaptionLabel.Size = new Size(64, 17);
+        EffectCaptionLabel.Size = new Size(58, 15);
         EffectCaptionLabel.TabIndex = 4;
         EffectCaptionLabel.Text = "効果 詳細";
         // 
         // EffectTextBox
         // 
-        EffectTextBox.Location = new Point(12, 117);
+        EffectTextBox.Location = new Point(9, 103);
+        EffectTextBox.Margin = new Padding(2, 3, 2, 3);
         EffectTextBox.Multiline = true;
         EffectTextBox.Name = "EffectTextBox";
         EffectTextBox.ReadOnly = true;
-        EffectTextBox.Size = new Size(488, 172);
+        EffectTextBox.Size = new Size(380, 152);
         EffectTextBox.TabIndex = 5;
         EffectTextBox.Text = "ピカチュウ";
         // 
         // LanguageTextBox
         // 
-        LanguageTextBox.Location = new Point(71, 13);
+        LanguageTextBox.Location = new Point(55, 11);
+        LanguageTextBox.Margin = new Padding(2, 3, 2, 3);
         LanguageTextBox.Name = "LanguageTextBox";
         LanguageTextBox.ReadOnly = true;
-        LanguageTextBox.Size = new Size(201, 24);
+        LanguageTextBox.Size = new Size(157, 23);
         LanguageTextBox.TabIndex = 1;
         LanguageTextBox.Text = "ja-Hrkt";
         // 
         // LanguageButton
         // 
-        LanguageButton.Location = new Point(12, 12);
+        LanguageButton.Location = new Point(11, 8);
+        LanguageButton.Margin = new Padding(2, 3, 2, 3);
         LanguageButton.Name = "LanguageButton";
-        LanguageButton.Size = new Size(53, 24);
+        LanguageButton.Size = new Size(41, 26);
         LanguageButton.TabIndex = 0;
         LanguageButton.Text = "言語";
         LanguageButton.UseVisualStyleBackColor = true;
@@ -97,9 +101,10 @@ partial class VerboseEffectInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(424, 295);
+        CloseButton.Location = new Point(330, 260);
+        CloseButton.Margin = new Padding(2, 3, 2, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 35);
+        CloseButton.Size = new Size(59, 31);
         CloseButton.TabIndex = 7;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -107,9 +112,10 @@ partial class VerboseEffectInfoForm
         // 
         // PropertyButton
         // 
-        PropertyButton.Location = new Point(342, 295);
+        PropertyButton.Location = new Point(266, 260);
+        PropertyButton.Margin = new Padding(2, 3, 2, 3);
         PropertyButton.Name = "PropertyButton";
-        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.Size = new Size(59, 31);
         PropertyButton.TabIndex = 6;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
@@ -117,9 +123,9 @@ partial class VerboseEffectInfoForm
         // 
         // VerboseEffectInfoForm
         // 
-        AutoScaleDimensions = new SizeF(9F, 17F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(512, 344);
+        ClientSize = new Size(398, 299);
         Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(LanguageButton);
@@ -128,8 +134,6 @@ partial class VerboseEffectInfoForm
         Controls.Add(EffectCaptionLabel);
         Controls.Add(ShortEffectTextBox);
         Controls.Add(ShortEffectCaptionLabel);
-        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "VerboseEffectInfoForm";
         Text = "効果";

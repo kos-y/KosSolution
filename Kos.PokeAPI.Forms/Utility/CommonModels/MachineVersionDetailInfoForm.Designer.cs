@@ -1,4 +1,4 @@
-﻿namespace Kos.PokeAPI.Forms;
+﻿namespace Kos.PokeAPI.Forms.Utility.CommonModels;
 
 partial class MachineVersionDetailInfoForm
 {
@@ -36,10 +36,9 @@ partial class MachineVersionDetailInfoForm
         // 
         // VersionGroupButton
         // 
-        VersionGroupButton.Location = new Point(13, 12);
-        VersionGroupButton.Margin = new Padding(4, 3, 4, 3);
+        VersionGroupButton.Location = new Point(10, 11);
         VersionGroupButton.Name = "VersionGroupButton";
-        VersionGroupButton.Size = new Size(124, 27);
+        VersionGroupButton.Size = new Size(96, 24);
         VersionGroupButton.TabIndex = 0;
         VersionGroupButton.Text = "バージョングループ";
         VersionGroupButton.UseVisualStyleBackColor = true;
@@ -47,18 +46,18 @@ partial class MachineVersionDetailInfoForm
         // 
         // VersionGroupTextBox
         // 
-        VersionGroupTextBox.Location = new Point(13, 45);
+        VersionGroupTextBox.Location = new Point(10, 40);
+        VersionGroupTextBox.Margin = new Padding(2, 3, 2, 3);
         VersionGroupTextBox.Name = "VersionGroupTextBox";
         VersionGroupTextBox.ReadOnly = true;
-        VersionGroupTextBox.Size = new Size(191, 24);
+        VersionGroupTextBox.Size = new Size(149, 23);
         VersionGroupTextBox.TabIndex = 1;
         // 
         // MachineButton
         // 
-        MachineButton.Location = new Point(13, 75);
-        MachineButton.Margin = new Padding(4, 3, 4, 3);
+        MachineButton.Location = new Point(10, 66);
         MachineButton.Name = "MachineButton";
-        MachineButton.Size = new Size(66, 27);
+        MachineButton.Size = new Size(57, 24);
         MachineButton.TabIndex = 2;
         MachineButton.Text = "技マシン";
         MachineButton.UseVisualStyleBackColor = true;
@@ -66,10 +65,9 @@ partial class MachineVersionDetailInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(128, 108);
-        CloseButton.Margin = new Padding(4, 3, 4, 3);
+        CloseButton.Location = new Point(100, 95);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 35);
+        CloseButton.Size = new Size(59, 31);
         CloseButton.TabIndex = 4;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -77,10 +75,9 @@ partial class MachineVersionDetailInfoForm
         // 
         // PropertyButton
         // 
-        PropertyButton.Location = new Point(44, 108);
-        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Location = new Point(34, 95);
         PropertyButton.Name = "PropertyButton";
-        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.Size = new Size(59, 31);
         PropertyButton.TabIndex = 3;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
@@ -88,21 +85,19 @@ partial class MachineVersionDetailInfoForm
         // 
         // MachineVersionDetailInfoForm
         // 
-        AutoScaleDimensions = new SizeF(9F, 17F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(225, 159);
+        ClientSize = new Size(175, 140);
         Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(MachineButton);
         Controls.Add(VersionGroupButton);
         Controls.Add(VersionGroupTextBox);
-        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
-        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "MachineVersionDetailInfoForm";
         StartPosition = FormStartPosition.CenterParent;
-        Text = "バージョンごとの技マシン情報";
+        Text = "技マシン";
         ResumeLayout(false);
         PerformLayout();
     }

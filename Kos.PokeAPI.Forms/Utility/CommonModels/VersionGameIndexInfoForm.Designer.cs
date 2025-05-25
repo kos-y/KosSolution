@@ -1,4 +1,4 @@
-﻿namespace Kos.PokeAPI.Forms;
+﻿namespace Kos.PokeAPI.Forms.Utility.CommonModels;
 
 partial class VersionGameIndexInfoForm
 {
@@ -37,9 +37,10 @@ partial class VersionGameIndexInfoForm
         // 
         // VersionButton
         // 
-        VersionButton.Location = new Point(12, 9);
+        VersionButton.Location = new Point(11, 12);
+        VersionButton.Margin = new Padding(2, 3, 2, 3);
         VersionButton.Name = "VersionButton";
-        VersionButton.Size = new Size(71, 28);
+        VersionButton.Size = new Size(62, 25);
         VersionButton.TabIndex = 0;
         VersionButton.Text = "バージョン";
         VersionButton.UseVisualStyleBackColor = true;
@@ -47,39 +48,38 @@ partial class VersionGameIndexInfoForm
         // 
         // VersionTextBox
         // 
-        VersionTextBox.Location = new Point(91, 12);
-        VersionTextBox.Margin = new Padding(5, 3, 5, 3);
+        VersionTextBox.Location = new Point(83, 14);
+        VersionTextBox.Margin = new Padding(4, 3, 4, 3);
         VersionTextBox.Name = "VersionTextBox";
         VersionTextBox.ReadOnly = true;
-        VersionTextBox.Size = new Size(172, 24);
+        VersionTextBox.Size = new Size(135, 23);
         VersionTextBox.TabIndex = 1;
         // 
         // GameIndexCaptionLabel
         // 
         GameIndexCaptionLabel.AutoSize = true;
-        GameIndexCaptionLabel.Location = new Point(13, 45);
-        GameIndexCaptionLabel.Margin = new Padding(6, 0, 6, 0);
+        GameIndexCaptionLabel.Location = new Point(14, 46);
+        GameIndexCaptionLabel.Margin = new Padding(5, 0, 5, 0);
         GameIndexCaptionLabel.Name = "GameIndexCaptionLabel";
-        GameIndexCaptionLabel.Size = new Size(70, 17);
+        GameIndexCaptionLabel.Size = new Size(60, 15);
         GameIndexCaptionLabel.TabIndex = 2;
         GameIndexCaptionLabel.Text = "インデックス";
         GameIndexCaptionLabel.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // GameIndexTextBox
         // 
-        GameIndexTextBox.Location = new Point(91, 42);
-        GameIndexTextBox.Margin = new Padding(5, 3, 5, 3);
+        GameIndexTextBox.Location = new Point(83, 43);
+        GameIndexTextBox.Margin = new Padding(4, 3, 4, 3);
         GameIndexTextBox.Name = "GameIndexTextBox";
         GameIndexTextBox.ReadOnly = true;
-        GameIndexTextBox.Size = new Size(172, 24);
+        GameIndexTextBox.Size = new Size(135, 23);
         GameIndexTextBox.TabIndex = 3;
         // 
         // PropertyButton
         // 
-        PropertyButton.Location = new Point(103, 72);
-        PropertyButton.Margin = new Padding(4, 3, 4, 3);
+        PropertyButton.Location = new Point(94, 72);
         PropertyButton.Name = "PropertyButton";
-        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.Size = new Size(59, 31);
         PropertyButton.TabIndex = 4;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
@@ -87,10 +87,9 @@ partial class VersionGameIndexInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(187, 72);
-        CloseButton.Margin = new Padding(4, 3, 4, 3);
+        CloseButton.Location = new Point(159, 72);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 35);
+        CloseButton.Size = new Size(59, 31);
         CloseButton.TabIndex = 5;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -98,22 +97,20 @@ partial class VersionGameIndexInfoForm
         // 
         // VersionGameIndexInfoForm
         // 
-        AutoScaleDimensions = new SizeF(9F, 17F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(278, 120);
+        ClientSize = new Size(227, 111);
         Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(GameIndexTextBox);
         Controls.Add(GameIndexCaptionLabel);
         Controls.Add(VersionButton);
         Controls.Add(VersionTextBox);
-        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
-        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "VersionGameIndexInfoForm";
         StartPosition = FormStartPosition.CenterParent;
-        Text = "ゲーム内インデックス";
+        Text = "ゲームインデックス";
         ResumeLayout(false);
         PerformLayout();
     }

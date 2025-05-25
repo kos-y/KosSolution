@@ -2,53 +2,56 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.PerformanceData;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.Core.Forms;
+using Kos.PokeAPI.Forms.Utility.Languages;
 using Kos.PokeAPI.Utility.CommonModels;
 
-namespace Kos.PokeAPI.Forms;
+namespace Kos.PokeAPI.Forms.Utility.CommonModels;
 
 /// <summary>
-/// ゲーム内のインデックス
+/// 効果
 /// </summary>
-public partial class VersionGameIndexInfoForm : Form
+public partial class VerboseEffectInfoForm : Form
 {
     #region コンストラクタ
     /// <summary>
     /// コンストラクタ
     /// </summary>
-    public VersionGameIndexInfoForm(VersionGameIndex index)
+    /// <param name="ve">効果</param>
+    public VerboseEffectInfoForm(VerboseEffect ve)
     {
         InitializeComponent();
-        SetData(index);
+        SetData(ve);
     }
     #endregion
 
-    #region バージョン クリック
+    #region 言語 クリック
     /// <summary>
-    /// バージョン クリック
+    /// 言語 クリック
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void VersionButton_Click(object sender, EventArgs e)
+    private void LanguageButton_Click(object sender, EventArgs e)
     {
-        if (VersionButton.Tag is null) {
+        if (LanguageButton.Tag is null) {
             return;
         }
 
-        if (VersionButton.Tag is not NamedAPIResource api) {
+        if (LanguageButton.Tag is not NamedAPIResource api) {
             return;
         }
 
-        if (api.Url is null) {
+        if (api?.Url is null) {
             return;
         }
 
-        using VersionInfoForm form = new(api.Url);
+        using LanguageInfoForm form = new(api.Url);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -86,12 +89,13 @@ public partial class VersionGameIndexInfoForm : Form
     /// <summary>
     /// データの設定
     /// </summary>
-    /// <param name="index"></param>
-    private void SetData(VersionGameIndex index)
+    /// <param name="ve">効果</param>
+    private void SetData(VerboseEffect ve)
     {
-        Tag = index;
-        FormsHelper.SetData(index.Version, VersionButton, VersionTextBox);
-        FormsHelper.SetData(index.GameIndex, GameIndexCaptionLabel, GameIndexTextBox);
+        Tag = ve;
+        FormsHelper.SetData(ve.Language, LanguageButton, LanguageTextBox);
+        FormsHelper.SetData(ve.ShortEffect, ShortEffectCaptionLabel, ShortEffectTextBox);
+        FormsHelper.SetData(ve.Effect, EffectCaptionLabel, EffectTextBox);
     }
     #endregion
 }
