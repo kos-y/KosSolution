@@ -1,6 +1,7 @@
 using Kos.Core.Forms;
 using Kos.PokeAPI.Contests.ContestEffects;
 using Kos.PokeAPI.Contests.ContestTypes;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Utility.CommonModels;
 
 namespace Kos.PokeAPI.Forms;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kos.Core.Forms;
+using Kos.PokeAPI.Forms.Utility.CommonModels;
 using Kos.PokeAPI.Moves.MoveBattleStyles;
 using Kos.PokeAPI.Moves.MoveCategories;
 using Kos.PokeAPI.Utility.CommonModels;
@@ -104,7 +105,7 @@ public partial class MoveCategoryInfoForm : Form
             return;
         }
 
-        using DescriptionInfoForm form = new DescriptionInfoForm(d);
+        using DescriptionInfoForm form = new(d);
         _ = form.ShowDialog(this);
     }
     #endregion
@@ -125,7 +126,7 @@ public partial class MoveCategoryInfoForm : Form
             return;
         }
 
-        using DescriptionInfoForm form = new DescriptionInfoForm(d);
+        using DescriptionInfoForm form = new(d);
         _ = form.ShowDialog(this);
     }
     #endregion

@@ -1,4 +1,4 @@
-﻿namespace Kos.PokeAPI.Forms;
+﻿namespace Kos.PokeAPI.Forms.Utility.CommonModels;
 
 partial class EffectInfoForm
 {
@@ -37,9 +37,10 @@ partial class EffectInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(642, 71);
+        CloseButton.Location = new Point(499, 68);
+        CloseButton.Margin = new Padding(2, 3, 2, 3);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 35);
+        CloseButton.Size = new Size(59, 31);
         CloseButton.TabIndex = 5;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -47,9 +48,10 @@ partial class EffectInfoForm
         // 
         // LanguageButton
         // 
-        LanguageButton.Location = new Point(12, 42);
+        LanguageButton.Location = new Point(11, 38);
+        LanguageButton.Margin = new Padding(2, 3, 2, 3);
         LanguageButton.Name = "LanguageButton";
-        LanguageButton.Size = new Size(53, 23);
+        LanguageButton.Size = new Size(41, 22);
         LanguageButton.TabIndex = 2;
         LanguageButton.Text = "言語";
         LanguageButton.UseVisualStyleBackColor = true;
@@ -57,37 +59,40 @@ partial class EffectInfoForm
         // 
         // LanguageTextBox
         // 
-        LanguageTextBox.Location = new Point(71, 41);
+        LanguageTextBox.Location = new Point(54, 39);
+        LanguageTextBox.Margin = new Padding(2, 3, 2, 3);
         LanguageTextBox.Name = "LanguageTextBox";
         LanguageTextBox.ReadOnly = true;
-        LanguageTextBox.Size = new Size(647, 24);
+        LanguageTextBox.Size = new Size(504, 23);
         LanguageTextBox.TabIndex = 3;
         LanguageTextBox.Text = "ja-Hrkt";
         // 
         // EffectTextBox
         // 
-        EffectTextBox.Location = new Point(71, 12);
+        EffectTextBox.Location = new Point(58, 10);
+        EffectTextBox.Margin = new Padding(2, 3, 2, 3);
         EffectTextBox.Name = "EffectTextBox";
         EffectTextBox.ReadOnly = true;
-        EffectTextBox.Size = new Size(647, 24);
+        EffectTextBox.Size = new Size(504, 23);
         EffectTextBox.TabIndex = 1;
         EffectTextBox.Text = "ピカチュウ";
         // 
         // EffectCaptionLabel
         // 
         EffectCaptionLabel.AutoSize = true;
-        EffectCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        EffectCaptionLabel.Location = new Point(17, 15);
+        EffectCaptionLabel.Location = new Point(21, 13);
+        EffectCaptionLabel.Margin = new Padding(2, 0, 2, 0);
         EffectCaptionLabel.Name = "EffectCaptionLabel";
-        EffectCaptionLabel.Size = new Size(34, 17);
+        EffectCaptionLabel.Size = new Size(31, 15);
         EffectCaptionLabel.TabIndex = 0;
         EffectCaptionLabel.Text = "効果";
         // 
         // PropertyButton
         // 
-        PropertyButton.Location = new Point(560, 71);
+        PropertyButton.Location = new Point(436, 68);
+        PropertyButton.Margin = new Padding(2, 3, 2, 3);
         PropertyButton.Name = "PropertyButton";
-        PropertyButton.Size = new Size(76, 35);
+        PropertyButton.Size = new Size(59, 31);
         PropertyButton.TabIndex = 4;
         PropertyButton.Text = "プロパティ";
         PropertyButton.UseVisualStyleBackColor = true;
@@ -95,17 +100,15 @@ partial class EffectInfoForm
         // 
         // EffectInfoForm
         // 
-        AutoScaleDimensions = new SizeF(9F, 17F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(737, 111);
+        ClientSize = new Size(573, 111);
         Controls.Add(PropertyButton);
         Controls.Add(CloseButton);
         Controls.Add(LanguageButton);
         Controls.Add(LanguageTextBox);
         Controls.Add(EffectTextBox);
         Controls.Add(EffectCaptionLabel);
-        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "EffectInfoForm";
         StartPosition = FormStartPosition.CenterParent;

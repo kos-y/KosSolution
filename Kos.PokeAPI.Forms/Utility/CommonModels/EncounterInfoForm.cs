@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Kos.Core.Forms;
 using Kos.PokeAPI.Utility.CommonModels;
 
-namespace Kos.PokeAPI.Forms;
+namespace Kos.PokeAPI.Forms.Utility.CommonModels;
 
 /// <summary>
 /// 遭遇

@@ -1,4 +1,4 @@
-﻿namespace Kos.PokeAPI.Forms;
+﻿namespace Kos.PokeAPI.Forms.Utility.CommonModels;
 
 partial class DescriptionInfoForm
 {
@@ -37,10 +37,9 @@ partial class DescriptionInfoForm
         // 
         // CloseButton
         // 
-        CloseButton.Location = new Point(396, 72);
-        CloseButton.Margin = new Padding(4, 3, 4, 3);
+        CloseButton.Location = new Point(348, 70);
         CloseButton.Name = "CloseButton";
-        CloseButton.Size = new Size(76, 35);
+        CloseButton.Size = new Size(59, 31);
         CloseButton.TabIndex = 5;
         CloseButton.Text = "閉じる";
         CloseButton.UseVisualStyleBackColor = true;
@@ -48,10 +47,9 @@ partial class DescriptionInfoForm
         // 
         // LanguageButton
         // 
-        LanguageButton.Location = new Point(17, 40);
-        LanguageButton.Margin = new Padding(4, 3, 4, 3);
+        LanguageButton.Location = new Point(12, 38);
         LanguageButton.Name = "LanguageButton";
-        LanguageButton.Size = new Size(44, 26);
+        LanguageButton.Size = new Size(39, 23);
         LanguageButton.TabIndex = 2;
         LanguageButton.Text = "言語";
         LanguageButton.UseVisualStyleBackColor = true;
@@ -59,41 +57,36 @@ partial class DescriptionInfoForm
         // 
         // LanguageTextBox
         // 
-        LanguageTextBox.Location = new Point(68, 42);
-        LanguageTextBox.Margin = new Padding(4, 3, 4, 3);
+        LanguageTextBox.Location = new Point(57, 38);
         LanguageTextBox.Name = "LanguageTextBox";
         LanguageTextBox.ReadOnly = true;
-        LanguageTextBox.Size = new Size(399, 24);
+        LanguageTextBox.Size = new Size(350, 23);
         LanguageTextBox.TabIndex = 3;
         LanguageTextBox.Text = "ja-Hrkt";
         // 
         // DescriptionTextBox
         // 
-        DescriptionTextBox.Location = new Point(68, 12);
-        DescriptionTextBox.Margin = new Padding(4, 3, 4, 3);
+        DescriptionTextBox.Location = new Point(57, 10);
         DescriptionTextBox.Name = "DescriptionTextBox";
         DescriptionTextBox.ReadOnly = true;
-        DescriptionTextBox.Size = new Size(399, 24);
+        DescriptionTextBox.Size = new Size(350, 23);
         DescriptionTextBox.TabIndex = 1;
         DescriptionTextBox.Text = "ピカチュウ";
         // 
         // DescriptionCaptionLabel
         // 
         DescriptionCaptionLabel.AutoSize = true;
-        DescriptionCaptionLabel.Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
-        DescriptionCaptionLabel.Location = new Point(27, 15);
-        DescriptionCaptionLabel.Margin = new Padding(4, 0, 4, 0);
+        DescriptionCaptionLabel.Location = new Point(20, 13);
         DescriptionCaptionLabel.Name = "DescriptionCaptionLabel";
-        DescriptionCaptionLabel.Size = new Size(34, 17);
+        DescriptionCaptionLabel.Size = new Size(31, 15);
         DescriptionCaptionLabel.TabIndex = 0;
         DescriptionCaptionLabel.Text = "説明";
         // 
         // プロパティボタン
         // 
-        プロパティボタン.Location = new Point(312, 72);
-        プロパティボタン.Margin = new Padding(4, 3, 4, 3);
+        プロパティボタン.Location = new Point(283, 70);
         プロパティボタン.Name = "プロパティボタン";
-        プロパティボタン.Size = new Size(76, 35);
+        プロパティボタン.Size = new Size(59, 31);
         プロパティボタン.TabIndex = 4;
         プロパティボタン.Text = "プロパティ";
         プロパティボタン.UseVisualStyleBackColor = true;
@@ -101,18 +94,16 @@ partial class DescriptionInfoForm
         // 
         // DescriptionInfoForm
         // 
-        AutoScaleDimensions = new SizeF(9F, 17F);
+        AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(482, 118);
+        ClientSize = new Size(420, 112);
         Controls.Add(プロパティボタン);
         Controls.Add(CloseButton);
         Controls.Add(LanguageButton);
         Controls.Add(LanguageTextBox);
         Controls.Add(DescriptionTextBox);
         Controls.Add(DescriptionCaptionLabel);
-        Font = new Font("Meiryo UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 128);
         FormBorderStyle = FormBorderStyle.FixedSingle;
-        Margin = new Padding(4, 3, 4, 3);
         MaximizeBox = false;
         Name = "DescriptionInfoForm";
         StartPosition = FormStartPosition.CenterParent;
