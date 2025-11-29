@@ -165,9 +165,9 @@ public partial class NamedAPIResourceListForm : Form
     /// <param name="e">ÉCÉxÉìÉgà¯êî</param>
     private void OpenButton_Click(object sender, EventArgs e)
     {
-        DataGridViewRow row = NamedAPIResourceListDataGridView.CurrentRow;
+        DataGridViewRow? row = NamedAPIResourceListDataGridView.CurrentRow;
 
-        ShowInfo($"{row.Cells[ColumnUrl].Value}");
+        ShowInfo($"{row?.Cells[ColumnUrl].Value}");
     }
     #endregion
 

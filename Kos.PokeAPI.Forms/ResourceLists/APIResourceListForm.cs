@@ -163,9 +163,9 @@ public partial class APIResourceListForm : Form
     /// <param name="e"></param>
     private void OpenButton_Click(object sender, EventArgs e)
     {
-        DataGridViewRow row = APIResourceListDataGridView.CurrentRow;
+        DataGridViewRow? row = APIResourceListDataGridView.CurrentRow;
 
-        ShowInfo($"{row.Cells[ColumnUrl].Value}");
+        ShowInfo($"{row?.Cells[ColumnUrl].Value}");
     }
     #endregion
 

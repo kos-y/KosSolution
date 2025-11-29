@@ -45,6 +45,6 @@
 
             <DataGrid Grid.Column="2" ItemsSource="{Binding EventLogEntries}" SelectionMode="Single"/>
         </Grid>
-
+        
     </Grid>
 </Window>
